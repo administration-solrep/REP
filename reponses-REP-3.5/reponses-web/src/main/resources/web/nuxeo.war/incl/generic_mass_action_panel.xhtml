@@ -1,0 +1,129 @@
+<div xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<a4j:outputPanel id="genericMassActionRegion" ajaxRendered="false">
+		<c:choose>
+			<c:when test="#{dossierMassActions.isMassModalVisible()}">
+
+				<rich:modalPanel id="genericMassActionPanel" autosized="true">
+					<div>
+						<f:facet name="header">
+							<h:outputText value="Traitement de masse" />
+						</f:facet>
+					</div>
+					<h:form id="genericMassActionForm">
+						<table style="height: 80px; width: 100%">
+							<tr>
+								<td><h:outputText
+										value="#{dossierMassActions.getMassCount()}" /></td>
+							</tr>
+							<c:if
+								test="#{dossierMassActions.isMassReattributionOrReaffectation()}">
+								<tr>
+									<td><nxl:layout name="ministere_reattribution" mode="edit"
+											value="#{dossierMassActions}" /></td>
+								</tr>
+							</c:if>
+							<c:if test="#{dossierMassActions.isMassReattributionDirecte()}">
+								<tr>
+									<td><nxl:layout name="reattribution_layout" mode="edit"
+											value="#{dossierMassActions}" /></td>
+								</tr>
+							</c:if>
+							<c:if test="#{dossierMassActions.isMassRattachementMinistere()}">
+								<tr>
+									<td><nxl:layout name="ministere_rattachement" mode="edit"
+											value="#{dossierMassActions}" /></td>
+								</tr>
+							</c:if>
+							<c:if test="#{dossierMassActions.isMassDirectionPilote()}">
+								<tr>
+									<td><nxl:layout name="direction_pilote" mode="edit"
+											value="#{dossierMassActions}" /></td>
+								</tr>
+							</c:if>
+							<tr>
+								<td>
+									<div id="progressbar"></div>
+								</td>
+							</tr>
+						</table>
+
+						<c:if test="#{!dossierMassActions.isMassActionStarted()}">
+							<table width="100%">
+								<tr>
+									<td>
+										<div align="center">
+											<a4j:commandButton styleClass="button" value="Confirmer"
+												id="masseConfirmButton"
+												onclick="javascript:confirmMassAction();return false;"
+												ajaxSingle="true" reRender="genericMassActionRegion" />
+										</div>
+									</td>
+									<td>
+										<div align="center">
+											<a4j:commandButton styleClass="button" value="Annuler"
+												id="masseCancelButton" onclick="disableButtons()"
+												action="#{dossierMassActions.cancelMassAction()}"
+												ajaxSingle="true" reRender="genericMassActionRegion"
+												oncomplete="Richfaces.hideModalPanel('genericMassActionPanel');" />
+										</div>
+									</td>
+								</tr>
+							</table>
+						</c:if>
+						<script>
+            <h:outputText value="var currentConversationId='#{nxu:htmlEscape(org.jboss.seam.core.manager.currentConversationId)}';"/>
+            Seam.Remoting.getContext().setConversationId(currentConversationId);
+            Seam.Remoting.contextPath = '#{contextPath}';
+  
+            var index = 0;
+          
+            function confirmMassAction() {
+            	disableButtons();
+            	Seam.Component.getInstance('dossierMassActions').getProgressPercent(refreshProgressCallBack);
+            }
+
+            function refreshProgressCallBack(percent) {
+              j("#progressbar").reportprogress(percent);
+              Seam.Component.getInstance('dossierMassActions').confirmMassAction(index, confirmMassActionCallBack);
+            }
+
+            function confirmMassActionCallBack() {
+              Seam.Component.getInstance('dossierMassActions').hasNext(hasNextCallBack);
+            }
+            
+            function disableButtons() {
+            	// On cache les 2 boutons pour éviter un clic supplémentaire
+            	j("#genericMassActionForm\\:masseConfirmButton").hide();
+                j("#genericMassActionForm\\:masseCancelButton").hide();
+            	return true;
+            }
+
+            function hasNextCallBack(value) {
+          	  if(value){
+                  index = index + 1;
+                  confirmMassAction();
+              } else {
+                  // done
+                  Richfaces.hideModalPanel('genericMassActionPanel');
+                  window.location.reload();
+              }
+            }
+          </script>
+
+					</h:form>
+
+				</rich:modalPanel>
+
+			</c:when>
+		</c:choose>
+	</a4j:outputPanel>
+</div>

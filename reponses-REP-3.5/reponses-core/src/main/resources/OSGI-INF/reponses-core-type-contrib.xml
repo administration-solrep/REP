@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Cet composant contribue les types de documents de l'application Réponses. -->
+<component name="fr.dila.reponses.core.type">
+	<require>fr.dila.reponses.core.schema</require>
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="doctype">
+
+		<!-- *********************************************************************** 
+			Facettes *********************************************************************** -->
+		<facet name="ReponsesIndexable" />
+
+		<!-- *********************************************************************** 
+			Types de documents du dossier Réponses *********************************************************************** -->
+
+		<!-- Dossier Réponses -->
+		<doctype name="Dossier" extends="Document" coretype="Dossier">
+			<schema name="dublincore" />
+			<schema name="case" />
+			<schema name="dossier_reponse" />
+			<schema name="note" />
+			<facet name="Classifiable" />
+			<facet name="Distributable" />
+			<facet name="Routable" />
+			<facet name="Folderish" />
+			<prefetch>dossier_reponse.idDocumentQuestion</prefetch>
+		</doctype>
+
+		<!-- Dossier Réponses : question -->
+		<doctype name="Question" extends="Document" coretype="Question">
+			<schema name="uid" />
+			<schema name="dublincore" />
+			<schema name="question" />
+			<schema name="indexation" />
+			<schema name="indexation_comp" />
+			<facet name="Versionable" />
+			<facet name="ReponsesIndexable" />
+			<facet name="Folderish" />
+
+			<prefetch>
+				question.hashConnexiteTitre,
+				question.hashConnexiteTexte
+			</prefetch>
+		</doctype>
+
+		<!-- Dossier Réponses : réponse -->
+		<doctype name="Reponse" extends="Document" coretype="Reponse">
+			<schema name="uid" />
+			<schema name="dublincore" />
+			<schema name="note" />
+			<schema name="reponse" />
+			<facet name="Versionable" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<!-- Dossier Réponses : fond de dossier -->
+		<doctype name="FondDeDossier" extends="Document">
+			<schema name="dublincore" />
+			<schema name="uid" />
+			<schema name="file" />
+			<schema name="files" />
+			<schema name="fondDossier" />
+			<facet name="Folderish" />
+
+			<prefetch>fondDossier.repertoire_parlement</prefetch>
+		</doctype>
+
+		<!-- Dossier Réponses : répertoire fond de dossier -->
+		<doctype name="FondDeDossierRepertoire" extends="Folder">
+			<schema name="elementFondDossier" />
+			<facet name="Folderish" />
+			<subtypes>
+				<type>FondDeDossierFichier</type>
+			</subtypes>
+			<prefetch></prefetch>
+		</doctype>
+
+		<!-- Dossier Réponses : fichier fond de dossier -->
+		<doctype name="FondDeDossierFichier" extends="File">
+			<schema name="elementFondDossier" />
+			<prefetch></prefetch>
+		</doctype>
+
+		<!-- Dossier reponse : question connexe -->
+		<!-- SPL : ce type de document n'est plus utilisé -->
+		<doctype name="QuestionConnexe" extends="Document">
+			<schema name="dublincore" />
+			<schema name="question_connexe" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<!-- Dossier reponse : allotissent -->
+		<doctype name="Allotissement" extends="Document">
+			<schema name="dublincore" />
+			<schema name="allotissement" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<doctype name="QuestionsConnexesRoot" extends="Folder" />
+
+		<doctype name="AllotissementsRoot" extends="Folder" />
+
+		<!-- *********************************************************************** 
+			Types de documents de la distribution *********************************************************************** -->
+		<!-- Dossier Link Réponses -->
+		<doctype name="DossierLink" extends="Document" coretype="DossierLink">
+			<schema name="dublincore" />
+			<schema name="distribution" />
+			<schema name="case_link" />
+			<schema name="actionnable_case_link" />
+			<schema name="dossier_reponses_link" />
+			<schema name="note" />
+			<facet name="CaseLink" />
+			<prefetch>
+				case_link.caseDocumentId,
+				dossier_reponses_link.sourceNumeroQuestion
+			</prefetch>
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Types de documents de la feuille de route *********************************************************************** -->
+		<!-- Feuille de route -->
+		<doctype name="FeuilleRoute" extends="DocumentRoute">
+			<schema name="feuille_route" />
+			<schema name="indexation" />
+			<facet name="ReponsesIndexable" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<!-- Tâche de distribution vers une Mailbox générique -->
+		<doctype name="RouteStep" extends="DocumentRouteStep">
+			<schema name="routing_task" />
+			<facet name="RouteStep" />
+			<facet name="Commentable" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Types de documents des Mailbox *********************************************************************** -->
+		<!-- Mailbox Réponses -->
+		<doctype name="ReponsesMailbox" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<schema name="distribution" />
+			<schema name="mailbox" />
+			<schema name="reponsesMailbox" />
+			<facet name="Folderish" />
+			<facet name="Mailbox" />
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Types de documents des espaces collaboratifs *********************************************************************** -->
+		<!-- Modèle de fond de dossier -->
+		<doctype name="AdminWorkspace" extends="Workspace" />
+
+		<!-- Racine des modèles de feuilles de route -->
+
+		<doctype name="FeuilleRouteModelFolder" extends="Folder"
+			coretype="FeuilleRouteModelFolder" />
+
+		<!-- *********************************************************************** 
+			Types de documents de la délégation des droits *********************************************************************** -->
+		<!-- Répertoire racine des délégations de droits -->
+		<doctype name="DelegationRoot" extends="Folder" />
+
+		<!-- Délégations de droits à un utilisateur -->
+		<doctype name="Delegation" extends="Document" coretype="Delegation">
+			<schema name="dublincore" />
+			<schema name="delegation" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<!-- Surcharge du Workspace de Nuxeo pour ajouter le schéma profil_utilisateur -->
+		<doctype name="Workspace" extends="Folder">
+			<!-- for logo -->
+			<schema name="file" />
+			<schema name="webcontainer" />
+			<schema name="publishing" />
+			<schema name="profil_utilisateur" />
+			<!-- the content of webcontainer -->
+			<schema name="files" />
+			<facet name="SuperSpace" />
+			<facet name="WebView" />
+			<subtypes>
+				<type>Workspace</type>
+				<type>Folder</type>
+				<type>File</type>
+				<type>Note</type>
+			</subtypes>
+			<prefetch></prefetch>
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Types de documents des favoris *********************************************************************** -->
+		<!-- Répertoire racine des favoris de dossier -->
+		<doctype name="FavorisDossierRoot" extends="Folder" />
+
+		<!-- Répertoire racine des favoris d'indexation -->
+		<doctype name="FavorisIndexationRoot" extends="Folder" />
+
+		<doctype name="FavorisDossierRepertoire" extends="Folder"
+			coretype="FavorisDossierRepertoire">
+			<schema name="dublincore" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<doctype name="FavorisDossier" extends="Document" coretype="FavorisDossier">
+			<schema name="dublincore" />
+			<schema name="favorisDossier" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Types de documents des favoris d'indéxation *********************************************************************** -->
+		<doctype name="FavorisIndexation" extends="Document" coretype="FavorisIndexation">
+			<schema name="dublincore" />
+			<schema name="favorisIndexation" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Types de documents de l'archivage *********************************************************************** -->
+		<!-- Répertoire racine des listes d'élimination -->
+		<doctype name="ListeEliminationRoot" extends="Folder" />
+
+		<doctype name="ListeElimination" extends="Document" coretype="ListeElimination">
+			<schema name="dublincore" />
+			<schema name="listeElimination" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Types de documents des notifications webservice *********************************************************************** -->
+		<doctype name="WsNotificationRoot" extends="Folder" />
+
+		<doctype name="WsNotification" extends="Document" coretype="WsNotification">
+			<schema name="dublincore" />
+			<schema name="wsNotification" />
+			<prefetch>dc:title, dc:creator, dc:modified</prefetch>
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Types de documents des logs en bdd *********************************************************************** -->
+		<doctype name="ReponsesLogging" extends="Document">
+			<schema name="reponses_logging" />
+			<facet name="Folderish" />
+			<prefetch></prefetch>
+		</doctype>
+
+		<doctype name="ReponsesLoggingLine" extends="Document">
+			<schema name="reponses_logging_line" />
+			<facet name="Folderish" />
+			<prefetch></prefetch>
+		</doctype>
+
+		<doctype name="ReponsesLoggingDetail" extends="Document">
+			<schema name="reponses_logging_detail" />
+			<prefetch></prefetch>
+		</doctype>
+
+		<doctype name="ReponsesLoggingRoot" extends="Folder" />
+
+		<!-- *********************************************************************** 
+			Types de documents des exports statistiques *********************************************************************** -->
+		<!-- repertoire qui contient le document d'export statistique -->
+		<doctype name="ExportStatRoot" extends="ExportFolderRoot" />
+
+		<doctype name="ExportStat" extends="ExportDocument">
+			<prefetch></prefetch>
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Types de documents du monitoring de connexion des utilisateurs *********************************************************************** -->
+		<doctype name="InfoUtilisateurConnectionRoot" extends="Folder" />
+
+		<doctype name="InfoUtilisateurConnection" extends="Document">
+			<schema name="info_utilisateur_connection" />
+			<prefetch></prefetch>
+		</doctype>
+
+		<doctype name="HistoriqueAttribution" extends="Document">
+			<schema name="historiqueAttribution" />
+			<prefetch></prefetch>
+		</doctype>
+		
+		<doctype name="EtatQuestion" extends="Document">
+			<schema name="etatQuestion" />
+			<prefetch></prefetch>
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Racine trash *********************************************************************** -->
+		<doctype name="TrashRoot" extends="Folder" />
+
+	</extension>
+
+</component>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ws:envoyerQuestionsRequest xmlns:ws="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:qn="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:repco="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:ar="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:rep="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion file:/D:/Amiral.svn/SOLON/Annexe%20CON00413-%20Interoperabilite/Interoperabilite/xsd/reponses/WSquestion.xsd&gt;">
+  <ws:questionReponse>
+    <qn:question>
+      <qn:id_question>
+        <repco:numero_question>{query_number}</repco:numero_question>
+        <repco:type>QE</repco:type>
+        <repco:source>AN</repco:source>
+        <repco:legislature>13</repco:legislature>
+      </qn:id_question>
+      <qn:date_publication_jo>{publish_date}</qn:date_publication_jo>
+      <qn:page_jo>4784</qn:page_jo>
+      <qn:ministre_depot id="{idMinistere}">
+        <repco:titre_jo>Min. Economie, industrie et emploi</repco:titre_jo>
+		<repco:intitule_min>Economie</repco:intitule_min>
+	</qn:ministre_depot>
+      <qn:ministre_attributaire id="{idMinistere}">
+        <repco:titre_jo>Min. Economie, industrie et emploi</repco:titre_jo>
+        <repco:intitule_min>Economie</repco:intitule_min>
+      </qn:ministre_attributaire>
+      <qn:auteur id_mandat="{idAuteur}">
+        <qn:civilite>M.</qn:civilite>
+        <qn:prenom>Test</qn:prenom>
+        <qn:nom>Funkload</qn:nom>
+        <qn:grp_pol>Non connu</qn:grp_pol>
+        <qn:circonscription>69</qn:circonscription>
+      </qn:auteur>
+      <qn:texte><![CDATA[{query_number} - {content}]]></qn:texte>
+      <qn:etat_question>EN_COURS</qn:etat_question>
+      <qn:indexation_an>
+        <qn:rubrique></qn:rubrique>
+        <qn:rubrique_ta></qn:rubrique_ta>
+        <qn:analyse></qn:analyse>
+      </qn:indexation_an>
+    </qn:question>
+  </ws:questionReponse>
+</ws:envoyerQuestionsRequest>
+

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les content view nécessaires aux feuilles de 
+	route. -->
+<component name="fr.dila.reponses.web.contentview.feuilleRoute">
+	<extension target="org.nuxeo.ecm.platform.ui.web.ContentViewService"
+		point="contentViews">
+
+		<!-- Content view permettant d'afficher la liste des modèles de feuilles 
+			de route -->
+		<contentView name="feuille_route_model_folder_content">
+			<coreQueryPageProvider>
+				<property name="coreSession">#{documentManager}</property>
+				<pattern quoteParameters="false" escapeParameters="false">
+					SELECT * FROM FeuilleRoute WHERE ecm:parentId = '?' AND
+					ecm:currentLifeCycleState IN ('draft', 'validated') ?
+				</pattern>
+				<parameter>#{currentDocument.id}</parameter>
+				<parameter>#{modeleFeuilleRouteActions.getContentViewCriteria()}</parameter>
+				<sort column="dc:title" ascending="true" />
+				<pageSize>20</pageSize>
+			</coreQueryPageProvider>
+
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>#{currentDocument.id}</cacheKey>
+			<cacheSize>1</cacheSize>
+
+			<resultLayouts>
+				<layout name="feuille_route_model_listing" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="CURRENT_SELECTION_LIST" />
+
+		</contentView>
+
+
+		<!-- Propose la liste des modelès de feuille de route en vue d'une selection 
+			pour substitution -->
+		<contentView name="feuille_route_model_list_content">
+			<coreQueryPageProvider>
+				<property name="coreSession">#{documentManager}</property>
+				<pattern quoteParameters="false" escapeParameters="false">
+					SELECT * FROM FeuilleRoute WHERE ecm:isProxy=0
+					AND ecm:currentLifeCycleState = 'validated'
+					AND ecm:parentId = '?' AND fdr:ministere = '?'
+				</pattern>
+				<parameter>#{modeleFeuilleRouteActions.getFeuilleRouteModelFolderId()}</parameter>
+				<parameter>#{dossierActions.getCurrentDossierMinistereAttributaire()}</parameter>
+
+				<sort column="dc:title" ascending="true" />
+				<pageSize>20</pageSize>
+			</coreQueryPageProvider>
+
+			<showRefreshPage>false</showRefreshPage>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<cacheKey>#{currentDocument.id}</cacheKey>
+			<cacheSize>10</cacheSize>
+
+			<resultLayouts>
+				<layout name="feuille_route_model_select_listing" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+		</contentView>
+
+		<!--  ContentView pour la création d'étapes de feuille de routes en masse -->
+		<contentView name="etape_feuille_de_route_mass_content">
+		<genericPageProvider class="fr.dila.ss.web.contentview.EtapesFeuilleDeRoutePageProvider">
+			<property name="coreSession">#{documentManager}</property>
+			<property name="routingActions">#{routingActions}</property>
+			<pageSize>1000000000</pageSize>
+		</genericPageProvider>
+		<useGlobalPageSize>false</useGlobalPageSize>
+		
+		<resultLayouts>
+			<layout name="routing_task_detail_listing" title="document_listing" translateTitle="true" 
+				iconPath="/icons/document_listing_icon.png" />
+		</resultLayouts>
+		
+		<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="CREATE_ROUTE_STEP_MASS" />
+		</contentView>
+	</extension>
+
+</component>

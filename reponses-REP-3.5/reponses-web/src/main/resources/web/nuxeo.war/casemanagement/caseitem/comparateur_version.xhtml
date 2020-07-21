@@ -1,0 +1,110 @@
+<div xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+
+	<script type="text/javascript"
+		src="#{contextPath}/scripts/jsdiff.js?ln=js"></script>
+
+	<h:panelGroup id="comparateurVersionRegion">
+		<style type="text/css">
+.popup-scroll {
+	overflow: auto !important;
+	height: 500px;
+}
+
+.button {
+	cursor: pointer;
+	color: #454545;
+	font-size: 10px;
+	background: #CECFD1
+		url(#{facesContext.externalContext.requestContextPath}/img/theme_galaxy/buttons.png)
+		repeat-x scroll left top;
+	border: 1px solid #BFC5CB;
+	padding: 2px 5px 2px 5px;
+	margin: 5px 10px 10px 0;
+}
+</style>
+		<div class="popup-scroll">
+			<rich:modalPanel id="comparateurVersionPanel" autosized="true">
+				<f:facet name="header">
+					<h:outputText value="Comparaison de versions" />
+				</f:facet>
+				<a4j:form id="comparateurVersionForm">
+					<nxu:set var="listVersion"
+						value="#{ComparateurActions.getVersionList()}" cache="true">
+						<table border="0" width="100%">
+							<tr valign="top">
+							</tr>
+							<!-- button close -->
+							<tr width="100%">
+								<td width="50%" align='left'><h:selectOneMenu
+										id="versionList1"
+										value="#{ComparateurActions.currentVersion1}">
+										<f:selectItems value="#{listVersion}" />
+										<a4j:support event="onchange"
+											reRender="visualiserComparaisonVersion1, compareButton"
+											eventsQueue="ajax_events_queue" />
+									</h:selectOneMenu></td>
+								<td align='left' width="25%"><h:selectOneMenu
+										id="versionList2"
+										value="#{ComparateurActions.currentVersion2}">
+										<f:selectItems value="#{listVersion}" />
+										<a4j:support event="onchange"
+											reRender="visualiserComparaisonVersion2, compareButton"
+											eventsQueue="ajax_events_queue" />
+									</h:selectOneMenu></td>
+								<td align='right' width="25%"><a4j:commandButton
+										styleClass="button" id="compareButton" value="Comparer"
+										onclick="comparerAction('#{ComparateurActions.selectedReponse1}','#{ComparateurActions.selectedReponse2}')" />
+									<a4j:commandButton styleClass="button" value="Fermer"
+										onclick="Richfaces.hideModalPanel('comparateurVersionPanel')" />
+								</td>
+							</tr>
+						</table>
+					</nxu:set>
+					<table border="0" width="100%">
+						<tr>
+							<td width="50%" align="left" valign="top"><rich:panel
+									id="visualiserComparaisonVersion1">
+									<f:facet name="header">
+										<h:outputText
+											value="Version : #{ComparateurActions.titleVersion1}" />
+									</f:facet>
+									<div id="visualiserComparaisonVersion1"
+										style="overflow: auto; height: 400px;"></div>
+								</rich:panel></td>
+							<td width="50%" align="left" valign="top"><rich:panel
+									id="visualiserComparaisonVersion2">
+									<f:facet name="header">
+										<h:outputText
+											value="Version : #{ComparateurActions.titleVersion2}" />
+									</f:facet>
+									<div id="visualiserComparaisonVersion2"
+										style="overflow: auto; height: 400px;"></div>
+								</rich:panel></td>
+						</tr>
+					</table>
+
+					<h4>
+						<h:outputText value="Légende : " />
+					</h4>
+					<ul>
+						<li><h:outputText
+								value="Rouge : différences avec les éléments non présents dans la version affichée sur la partie droite" />
+						</li>
+						<li><h:outputText
+								value="Vert : différences avec les éléments ajoutés dans la version affichée sur la partie gauche" />
+						</li>
+					</ul>
+				</a4j:form>
+			</rich:modalPanel>
+		</div>
+	</h:panelGroup>
+</div>

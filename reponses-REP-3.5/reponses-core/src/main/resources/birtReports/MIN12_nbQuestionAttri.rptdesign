@@ -1,0 +1,2569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.1.v20100902 Build &lt;2.6.1.v20100915-1750></property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">nbquestion.nbQuestion.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">nbquestion.nbQuestion.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="nbquestion.nbQuestion.x">135</property>
+    <property name="nbquestion.nbQuestion.y">80</property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage( Packages.java.lang );
+rwc1 = new Integer(1);
+reportContext.setPersistentGlobalVariable("rwc", rwc1);]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nuxeo" id="2102">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.1.15.154:1521:ORA112</property>
+            <property name="odaUser">REPONSES_STAT</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">UkVQT05TRVNfU1RBVA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="nbQuestion" id="2103">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">MINISTERE</property>
+                    <text-property name="displayName">MINISTERE</text-property>
+                    <text-property name="heading">MINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EDITION</property>
+                    <text-property name="displayName">EDITION</text-property>
+                    <text-property name="heading">EDITION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ORDRE_PROTOCOLAIRE</property>
+                    <text-property name="displayName">ORDRE_PROTOCOLAIRE</text-property>
+                    <text-property name="heading">ORDRE_PROTOCOLAIRE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ORIGINE</property>
+                    <text-property name="displayName">ORIGINE</text-property>
+                    <text-property name="heading">ORIGINE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBQUESTION</property>
+                    <text-property name="displayName">NBQUESTION</text-property>
+                    <text-property name="heading">NBQUESTION</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">MINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">EDITION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ORDRE_PROTOCOLAIRE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ORIGINE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">NBQUESTION</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">MINISTERE</property>
+                    <property name="nativeName">MINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">EDITION</property>
+                    <property name="nativeName">EDITION</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ORDRE_PROTOCOLAIRE</property>
+                    <property name="nativeName">ORDRE_PROTOCOLAIRE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ORIGINE</property>
+                    <property name="nativeName">ORIGINE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">NBQUESTION</property>
+                    <property name="nativeName">NBQUESTION</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select * from (
+SELECT t1.ministere, t1.edition, t1.ordre_protocolaire, t1.origine, t1.NBQUESTION
+FROM
+  statistique_question_reponse t1
+where T1.ministere != 'GLOBAL'
+union
+SELECT t21.ministere, t21.edition, t21.ordre_protocolaire, 'Total' as origine , sum (t21.nbquestion) 
+  FROM statistique_question_reponse t21
+  where T21.ministere != 'GLOBAL'
+  GROUP BY t21.ministere, t21.edition, t21.ordre_protocolaire)
+  order by ordre_protocolaire asc]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DateEtat" id="2341">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">DateEtat</property>
+                    <text-property name="displayName">DateEtat</text-property>
+                    <text-property name="heading">DateEtat</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">DateEtat</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">DateEtat</property>
+                    <property name="nativeName">DateEtat</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select TO_DATE(valeur,'dd/MM/YYYY') "DateEtat" from STATISTIQUE_VALEUR
+where id=17]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>MAX(DATEETAT)</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>MAX(DATEETAT)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MAX(DATEETAT)</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="nbquestion" id="2106">
+            <property name="dimensions">
+                <tabular-dimension name="Edition" id="2107">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="2108">
+                            <property name="levels">
+                                <tabular-level name="ORDRE_PROTOCOLAIRE" id="2254">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">ORDRE_PROTOCOLAIRE</property>
+                                </tabular-level>
+                                <tabular-level name="EDITION" id="2109">
+                                    <property name="dataType">string</property>
+                                    <property name="levelType">dynamic</property>
+                                    <list-property name="attributes">
+                                        <structure>
+                                            <property name="name">ORDRE_PROTOCOLAIRE</property>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="columnName">EDITION</property>
+                                    <expression name="displayColumnName" type="javascript">dataSetRow["ORDRE_PROTOCOLAIRE"]</expression>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="nbQuestionTotal" id="2111">
+                    <property name="measures">
+                        <tabular-measure name="NBQUESTIONTotal" id="2112">
+                            <property name="function">sum</property>
+                            <expression name="measureExpression" type="javascript">if(dataSetRow["ORIGINE"]=="Total"){dataSetRow["NBQUESTION"]}&#13;
+else{0}</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="nbQuestionAn" id="2113">
+                    <property name="measures">
+                        <tabular-measure name="NBQUESTIONAn" id="2114">
+                            <property name="function">sum</property>
+                            <expression name="measureExpression" type="javascript">if(dataSetRow["ORIGINE"]=="AN"){dataSetRow["NBQUESTION"]}&#13;
+else{0}</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="nbQuestionSenat" id="2115">
+                    <property name="measures">
+                        <tabular-measure name="NBQUESTIONSenat" id="2116">
+                            <property name="function">sum</property>
+                            <expression name="measureExpression" type="javascript">if(dataSetRow["ORIGINE"]=="SENAT"){dataSetRow["NBQUESTION"]}</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="PartAn" id="2845">
+                    <property name="measures">
+                        <tabular-measure name="PartAnTotal" id="2846">
+                            <property name="function">sum</property>
+                            <expression name="measureExpression" type="javascript">if(dataSetRow["ORIGINE"]=="AN"){dataSetRow["NBQUESTION"]}</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="PartSenat" id="2856">
+                    <property name="measures">
+                        <tabular-measure name="PartSenatTotal" id="2857">
+                            <property name="function">sum</property>
+                            <expression name="measureExpression" type="javascript">if(dataSetRow["ORIGINE"]=="SENAT"){dataSetRow["NBQUESTION"]}</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="PartTotal" id="3232">
+                    <property name="measures">
+                        <tabular-measure name="PartTotalTotal" id="3233">
+                            <property name="function">sum</property>
+                            <expression name="measureExpression" type="javascript">if(dataSetRow["ORIGINE"]=="Total"){dataSetRow["NBQUESTION"]}</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">nbQuestion</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">0pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">0pt</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">0pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="rightMargin">0.25in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text id="1868">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <grid id="2405">
+            <column id="2406"/>
+            <row id="2407">
+                <property name="height">0.7in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="2408">
+                    <label id="2409">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">MIN12. Nombre et répartition des questions écrites attribuées, depuis le début de la législature</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <text id="2064">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <grid id="2319">
+            <property name="width">7.947916666666667in</property>
+            <column id="2320">
+                <property name="width">1.1041666666666667in</property>
+            </column>
+            <column id="2321">
+                <property name="width">1.1041666666666667in</property>
+            </column>
+            <column id="2322">
+                <property name="width">5.739583333333333in</property>
+            </column>
+            <row id="2323">
+                <cell id="2324">
+                    <label id="2327">
+                        <property name="fontWeight">bold</property>
+                        <property name="textUnderline">underline</property>
+                        <text-property name="text">Date de l'état :</text-property>
+                    </label>
+                </cell>
+                <cell id="2325">
+                    <data id="2946">
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">dd/MM/yyyy</property>
+                        </structure>
+                        <structure name="stringFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">dd/MM/yyyy</property>
+                        </structure>
+                        <property name="whiteSpace">nowrap</property>
+                        <property name="dataSet">DateEtat</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">DateEtat</property>
+                                <text-property name="displayName">DateEtat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["DateEtat"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">DateEtat</property>
+                    </data>
+                </cell>
+                <cell id="2326"/>
+            </row>
+        </grid>
+        <text id="2065">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <grid id="2934">
+            <property name="width">8in</property>
+            <column id="2935">
+                <property name="width">40%</property>
+            </column>
+            <column id="2936">
+                <property name="width">20%</property>
+            </column>
+            <column id="2937">
+                <property name="width">20%</property>
+            </column>
+            <column id="2959">
+                <property name="width">20%</property>
+            </column>
+            <row id="3083">
+                <property name="height">0.47in</property>
+                <cell id="3084">
+                    <property name="fontSize">10pt</property>
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                </cell>
+                <cell id="3085">
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <property name="fontSize">10pt</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="2943">
+                        <property name="paddingTop">10pt</property>
+                        <property name="paddingBottom">10pt</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Assemblée nationale]]></text-property>
+                    </text>
+                </cell>
+                <cell id="3086">
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <property name="fontSize">10pt</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="2944">
+                        <property name="paddingTop">10pt</property>
+                        <property name="paddingBottom">10pt</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Sénat]]></text-property>
+                    </text>
+                </cell>
+                <cell id="3087">
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <property name="fontSize">10pt</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftColor">#000000</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightColor">#000000</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="3244">
+                        <property name="paddingTop">10pt</property>
+                        <property name="paddingBottom">10pt</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Total]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="2953">
+                <cell id="2954">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="fontSize">10pt</property>
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <extended-item extensionName="Crosstab" extensionVersion="2.5.0" id="3011">
+                        <property name="cube">nbquestion</property>
+                        <property name="measures">
+                            <extended-item extensionName="MeasureView" id="3012">
+                                <property name="measure">NBQUESTIONAn</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="3013">
+                                        <property name="aggregationOnRow">Edition/EDITION</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <list-property name="highlightRules">
+                                            <structure>
+                                                <property name="operator">eq</property>
+                                                <expression name="testExpr" type="javascript">rwch = reportContext.getPersistentGlobalVariable("rwc");&#13;
+rwch%2;</expression>
+                                                <simple-property-list name="value1">
+                                                    <value type="javascript">0</value>
+                                                </simple-property-list>
+                                                <property name="backgroundColor">#E1F0FF</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="content">
+                                            <data id="3014">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">fr</property>
+                                                </structure>
+                                                <structure name="toc"/>
+                                                <property name="resultSetColumn">NBQUESTIONAn_Edition/EDITION_1</property>
+                                            </data>
+                                        </property>
+                                        <property name="height">0.45in</property>
+                                        <property name="width">10%</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="3015">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">medium</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="3016">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">fr</property>
+                                                </structure>
+                                                <property name="resultSetColumn">NBQUESTIONAn</property>
+                                            </data>
+                                        </property>
+                                        <property name="height">0.45in</property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="3017">
+                                        <property name="content">
+                                            <label id="3018">
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text">Nombre</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">medium</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="height">0.47in</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="ComputedMeasureView" name="PartAnTotalDerived2" id="3019">
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="3020">
+                                        <property name="aggregationOnRow">Edition/EDITION</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <list-property name="highlightRules">
+                                            <structure>
+                                                <property name="operator">eq</property>
+                                                <expression name="testExpr" type="javascript">rwch = reportContext.getPersistentGlobalVariable("rwc");&#13;
+rwch%2;</expression>
+                                                <simple-property-list name="value1">
+                                                    <value type="javascript">0</value>
+                                                </simple-property-list>
+                                                <property name="backgroundColor">#E1F0FF</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="content">
+                                            <data name="PartAnTotalDerived11" id="3021">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Percent</property>
+                                                    <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">PartAnTotalDerived</property>
+                                            </data>
+                                        </property>
+                                        <property name="width">10%</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="3022">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="3023">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Percent</property>
+                                                    <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">PartAnTotalSumDerived</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="3024">
+                                        <property name="content">
+                                            <label id="3025">
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text">Part</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="paddingTop">0pt</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="MeasureView" id="3026">
+                                <property name="measure">NBQUESTIONSenat</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="3027">
+                                        <property name="aggregationOnRow">Edition/EDITION</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <list-property name="highlightRules">
+                                            <structure>
+                                                <property name="operator">eq</property>
+                                                <expression name="testExpr" type="javascript">rwch = reportContext.getPersistentGlobalVariable("rwc");&#13;
+rwch%2;</expression>
+                                                <simple-property-list name="value1">
+                                                    <value type="javascript">0</value>
+                                                </simple-property-list>
+                                                <property name="backgroundColor">#E1F0FF</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="content">
+                                            <data id="3028">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">fr</property>
+                                                </structure>
+                                                <property name="resultSetColumn">NBQUESTIONSenat_Edition/EDITION</property>
+                                            </data>
+                                        </property>
+                                        <property name="width">10%</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="3029">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">medium</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="3030">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">fr</property>
+                                                </structure>
+                                                <property name="resultSetColumn">NBQUESTIONSenat</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="3031">
+                                        <property name="content">
+                                            <label id="3032">
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text">Nombre</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">medium</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="paddingTop">0pt</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="ComputedMeasureView" name="PartSenatTotalDerived2" id="3033">
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="3034">
+                                        <property name="aggregationOnRow">Edition/EDITION</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <list-property name="highlightRules">
+                                            <structure>
+                                                <property name="operator">eq</property>
+                                                <expression name="testExpr" type="javascript">rwch = reportContext.getPersistentGlobalVariable("rwc");&#13;
+rwch%2;</expression>
+                                                <simple-property-list name="value1">
+                                                    <value type="javascript">0</value>
+                                                </simple-property-list>
+                                                <property name="backgroundColor">#E1F0FF</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="content">
+                                            <data name="PartSenatTotalDerived11" id="3035">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Percent</property>
+                                                    <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">PartSenatTotalDerived</property>
+                                            </data>
+                                        </property>
+                                        <property name="width">10%</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="3036">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="3037">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Percent</property>
+                                                    <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">PartSenatTotalSumDerived</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="3038">
+                                        <property name="content">
+                                            <label id="3039">
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text">Part</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="paddingTop">0pt</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="MeasureView" id="3040">
+                                <property name="measure">NBQUESTIONTotal</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="3041">
+                                        <property name="aggregationOnRow">Edition/EDITION</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <list-property name="highlightRules">
+                                            <structure>
+                                                <property name="operator">eq</property>
+                                                <expression name="testExpr" type="javascript">rwch = reportContext.getPersistentGlobalVariable("rwc");&#13;
+rwch%2;</expression>
+                                                <simple-property-list name="value1">
+                                                    <value type="javascript">0</value>
+                                                </simple-property-list>
+                                                <property name="backgroundColor">#E1F0FF</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="content">
+                                            <data id="3042">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">fr</property>
+                                                </structure>
+                                                <property name="resultSetColumn">NBQUESTIONTotal_Edition/EDITION</property>
+                                            </data>
+                                        </property>
+                                        <property name="width">10%</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="3043">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">medium</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="3044">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">fr</property>
+                                                </structure>
+                                                <property name="resultSetColumn">NBQUESTIONTotal</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="3045">
+                                        <property name="content">
+                                            <label id="3046">
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text">Nombre</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">medium</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">1pt</property>
+                                        <property name="paddingBottom">1pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="MeasureView" id="3234">
+                                <property name="measure">PartTotalTotal</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="3235">
+                                        <property name="aggregationOnRow">Edition/EDITION</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <list-property name="highlightRules">
+                                            <structure>
+                                                <property name="operator">eq</property>
+                                                <expression name="testExpr" type="javascript">rwch = reportContext.getPersistentGlobalVariable("rwc");&#13;
+rwch%2;</expression>
+                                                <simple-property-list name="value1">
+                                                    <value type="javascript">0</value>
+                                                </simple-property-list>
+                                                <property name="backgroundColor">#E1F0FF</property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="content">
+                                            <data name="PartSenatTotalDerived111" id="3241">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Percent</property>
+                                                    <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">PartTotal</property>
+                                            </data>
+                                        </property>
+                                        <property name="width">10%</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="3236">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="3246">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Percent</property>
+                                                    <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">TotalTotal</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="3239">
+                                        <property name="content">
+                                            <label id="3243">
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text">Part</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="paddingTop">0pt</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="ComputedMeasureView" name="ColorBinding" id="3062">
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="3063">
+                                        <property name="aggregationOnRow">Edition/EDITION</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                        <property name="content">
+                                            <data name="ColorBinding1" id="3067">
+                                                <property name="numberAlign">right</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">fr</property>
+                                                </structure>
+                                                <property name="resultSetColumn">ColorBinding_2</property>
+                                            </data>
+                                        </property>
+                                        <property name="width">0%</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="3064">
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="3065">
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="rows">
+                            <extended-item extensionName="CrosstabView" id="3053">
+                                <property name="grandTotal">
+                                    <extended-item extensionName="CrosstabCell" id="3054">
+                                        <property name="content">
+                                            <label id="3055">
+                                                <text-property name="text">Total</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">medium</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">medium</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">medium</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">medium</property>
+                                        <property name="borderRightColor">#000000</property>
+                                    </extended-item>
+                                </property>
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="3056">
+                                        <property name="dimension">Edition</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View3111" id="3057">
+                                                <property name="level">Edition/EDITION</property>
+                                                <property name="sort">
+                                                    <sort-element>
+                                                        <expression name="key" type="javascript">dimension["Edition"]["EDITION"]["ORDRE_PROTOCOLAIRE"]</expression>
+                                                        <property name="direction">asc</property>
+                                                        <property name="strength">-1</property>
+                                                    </sort-element>
+                                                </property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="3058">
+                                                        <property name="content">
+                                                            <data name="EDITION1111" id="3059">
+                                                                <property name="resultSetColumn">EDITION</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="textAlign">left</property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">medium</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">medium</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                        <list-property name="highlightRules">
+                                                            <structure>
+                                                                <property name="operator">eq</property>
+                                                                <expression name="testExpr" type="javascript">rwch = reportContext.getPersistentGlobalVariable("rwc");&#13;
+rwch%2;</expression>
+                                                                <simple-property-list name="value1">
+                                                                    <value type="javascript">0</value>
+                                                                </simple-property-list>
+                                                                <property name="backgroundColor">#E1F0FF</property>
+                                                            </structure>
+                                                        </list-property>
+                                                        <property name="width">40%</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="header">
+                            <extended-item extensionName="CrosstabCell" id="3060">
+                                <property name="content">
+                                    <label id="3061">
+                                        <property name="paddingTop">5pt</property>
+                                        <property name="paddingBottom">5pt</property>
+                                        <text-property name="text">Ministère</text-property>
+                                    </label>
+                                </property>
+                                <property name="fontWeight">bold</property>
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="paddingTop">0pt</property>
+                                <property name="paddingBottom">1pt</property>
+                            </extended-item>
+                        </property>
+                        <method name="onPrepare"><![CDATA[
+/**
+ * Called when crosstab cell is being prepared.
+ *
+ * @param cell
+ *            ICrosstabCell
+ * @param reportContext
+ *            IReportContext
+ */
+
+function onPrepareCell( cell, reportContext )
+{
+
+}
+]]></method>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EDITION</property>
+                                <expression name="expression">dimension["Edition"]["EDITION"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NBQUESTIONAn</property>
+                                <expression name="expression">measure["NBQUESTIONAn"]</expression>
+                                <property name="dataType">decimal</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NBQUESTIONAn_Edition/EDITION</property>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Edition/EDITION</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">measure["NBQUESTIONAn"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">NBQUESTIONSenat</property>
+                                <expression name="expression">measure["NBQUESTIONSenat"]</expression>
+                                <property name="dataType">decimal</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NBQUESTIONSenat_Edition/EDITION</property>
+                                <expression name="expression">measure["NBQUESTIONSenat"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Edition/EDITION</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartSenatTotal</property>
+                                <expression name="expression">measure["PartSenatTotal"]</expression>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartSenatTotal_Edition/EDITION</property>
+                                <expression name="expression">measure["PartSenatTotal"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Edition/EDITION</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NBQUESTIONTotal</property>
+                                <expression name="expression">measure["NBQUESTIONTotal"]</expression>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NBQUESTIONTotal_Edition/EDITION</property>
+                                <expression name="expression">measure["NBQUESTIONTotal"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Edition/EDITION</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartAnTotal</property>
+                                <expression name="expression">measure["PartAnTotal"]</expression>
+                                <property name="dataType">decimal</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartAnTotal_Edition/EDITION</property>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Edition/EDITION</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">measure["PartAnTotal"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartAnTotalDerived</property>
+                                <expression name="expression" type="javascript">data["NBQUESTIONAn_Edition/EDITION"]/data["NBQUESTIONAn"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartAnTotalSumDerived</property>
+                                <expression name="expression" type="javascript">data["NBQUESTIONAn"]/data["NBQUESTIONAn"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartSenatTotalDerived</property>
+                                <expression name="expression" type="javascript">data["NBQUESTIONSenat_Edition/EDITION"]/data["NBQUESTIONSenat"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartSenatTotalSumDerived</property>
+                                <expression name="expression" type="javascript">data["NBQUESTIONSenat"]/data["NBQUESTIONSenat"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ColorBinding</property>
+                                <expression name="expression" type="javascript">importPackage( Packages.java.lang );&#13;
+rwctmp = reportContext.getPersistentGlobalVariable("rwc").intValue();&#13;
+rwctmp = rwctmp + 1;&#13;
+rwci = new Integer( rwctmp );&#13;
+reportContext.setPersistentGlobalVariable("rwc", rwci);&#13;
+rwctmp</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ColorBinding_1</property>
+                                <expression name="expression" type="javascript">data["ColorBinding"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NBQUESTIONAn_Edition/EDITION_1</property>
+                                <expression name="expression">measure["NBQUESTIONAn"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Edition/EDITION</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ColorBinding_2</property>
+                                <expression name="expression" type="javascript">data["ColorBinding"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartTotalTotal</property>
+                                <expression name="expression">measure["PartTotalTotal"]</expression>
+                                <property name="dataType">decimal</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartTotalTotal_Edition/EDITION</property>
+                                <expression name="expression">measure["PartTotalTotal"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Edition/EDITION</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PartTotal</property>
+                                <expression name="expression" type="javascript">data["NBQUESTIONTotal_Edition/EDITION"]/data["NBQUESTIONTotal"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TotalTotal</property>
+                                <expression name="expression" type="javascript">data["NBQUESTIONTotal"]/data["NBQUESTIONTotal"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+        <label id="2143"/>
+        <extended-item extensionName="Chart" id="2253">
+            <xml-property name="xmlRepresentation"><![CDATA[<model:ChartWithAxes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attribute="http://www.birt.eclipse.org/ChartModelAttribute" xmlns:data="http://www.birt.eclipse.org/ChartModelData" xmlns:layout="http://www.birt.eclipse.org/ChartModelLayout" xmlns:model="http://www.birt.eclipse.org/ChartModel" xmlns:type="http://www.birt.eclipse.org/ChartModelType">
+  <Version>2.5.1</Version>
+  <Type>Tube Chart</Type>
+  <SubType>Side-by-side</SubType>
+  <Block>
+    <Children xsi:type="layout:TitleBlock">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <Label>
+        <Caption>
+          <Value>Répartition des QE attribuées</Value>
+          <Font>
+            <Size>16.0</Size>
+            <Bold>true</Bold>
+            <Alignment>
+              <horizontalAlignment>Center</horizontalAlignment>
+              <verticalAlignment>Center</verticalAlignment>
+            </Alignment>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>true</Visible>
+      </Label>
+    </Children>
+    <Children xsi:type="layout:Plot">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <HorizontalSpacing>5</HorizontalSpacing>
+      <VerticalSpacing>5</VerticalSpacing>
+      <ClientArea>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>0</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>0.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>0.0</Right>
+        </Insets>
+      </ClientArea>
+    </Children>
+    <Children xsi:type="layout:Legend">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>false</Visible>
+      <ClientArea>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>0</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>2.0</Top>
+          <Left>2.0</Left>
+          <Bottom>2.0</Bottom>
+          <Right>2.0</Right>
+        </Insets>
+      </ClientArea>
+      <Text>
+        <Value></Value>
+        <Font>
+          <Alignment/>
+        </Font>
+      </Text>
+      <Orientation>Vertical</Orientation>
+      <Direction>Top_Bottom</Direction>
+      <Separator>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>true</Visible>
+      </Separator>
+      <Position>Right</Position>
+      <ItemType>Series</ItemType>
+      <Title>
+        <Caption>
+          <Value></Value>
+          <Font>
+            <Alignment/>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>false</Visible>
+      </Title>
+      <TitlePosition>Above</TitlePosition>
+    </Children>
+    <Bounds>
+      <Left>0.0</Left>
+      <Top>0.0</Top>
+      <Width>576.0</Width>
+      <Height>684.0</Height>
+    </Bounds>
+    <Insets>
+      <Top>3.0</Top>
+      <Left>3.0</Left>
+      <Bottom>3.0</Bottom>
+      <Right>3.0</Right>
+    </Insets>
+    <Row>-1</Row>
+    <Column>-1</Column>
+    <Rowspan>-1</Rowspan>
+    <Columnspan>-1</Columnspan>
+    <Outline>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Color>
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>0</Green>
+        <Blue>0</Blue>
+      </Color>
+      <Visible>false</Visible>
+    </Outline>
+    <Visible>true</Visible>
+  </Block>
+  <Dimension>Two_Dimensional</Dimension>
+  <Units>Points</Units>
+  <SeriesThickness>10.0</SeriesThickness>
+  <ExtendedProperties>
+    <Name>enable.area.alt</Name>
+    <Value>false</Value>
+  </ExtendedProperties>
+  <SampleData>
+    <BaseSampleData>
+      <DataSetRepresentation>'A','B','C','D','E'</DataSetRepresentation>
+    </BaseSampleData>
+    <OrthogonalSampleData>
+      <DataSetRepresentation>6,4,12,8,10</DataSetRepresentation>
+      <SeriesDefinitionIndex>0</SeriesDefinitionIndex>
+    </OrthogonalSampleData>
+  </SampleData>
+  <Interactivity/>
+  <EmptyMessage>
+    <Caption>
+      <Value>This chart contains no data.</Value>
+      <Font>
+        <Alignment>
+          <horizontalAlignment>Center</horizontalAlignment>
+          <verticalAlignment>Center</verticalAlignment>
+        </Alignment>
+      </Font>
+    </Caption>
+    <Background xsi:type="attribute:ColorDefinition">
+      <Transparency>64</Transparency>
+      <Red>127</Red>
+      <Green>127</Green>
+      <Blue>127</Blue>
+    </Background>
+    <Outline>
+      <Color>
+        <Transparency>128</Transparency>
+        <Red>127</Red>
+        <Green>127</Green>
+        <Blue>127</Blue>
+      </Color>
+      <Visible>true</Visible>
+    </Outline>
+    <Insets>
+      <Top>10.0</Top>
+      <Left>10.0</Left>
+      <Bottom>10.0</Bottom>
+      <Right>10.0</Right>
+    </Insets>
+    <Visible>false</Visible>
+  </EmptyMessage>
+  <Axes>
+    <Type>Text</Type>
+    <Title>
+      <Caption>
+        <Value>X-Axis Title</Value>
+        <Font>
+          <Size>14.0</Size>
+          <Bold>true</Bold>
+          <Alignment>
+            <horizontalAlignment>Center</horizontalAlignment>
+            <verticalAlignment>Center</verticalAlignment>
+          </Alignment>
+          <Rotation>90.0</Rotation>
+        </Font>
+      </Caption>
+      <Background xsi:type="attribute:ColorDefinition">
+        <Transparency>0</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Background>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+      </Outline>
+      <Insets>
+        <Top>0.0</Top>
+        <Left>2.0</Left>
+        <Bottom>0.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Visible>false</Visible>
+    </Title>
+    <TitlePosition>Below</TitlePosition>
+    <AssociatedAxes>
+      <Type>Linear</Type>
+      <Title>
+        <Caption>
+          <Value>Y-Axis Title</Value>
+          <Font>
+            <Size>14.0</Size>
+            <Bold>true</Bold>
+            <Alignment>
+              <horizontalAlignment>Center</horizontalAlignment>
+              <verticalAlignment>Center</verticalAlignment>
+            </Alignment>
+            <Rotation>0.0</Rotation>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>false</Visible>
+      </Title>
+      <TitlePosition>Left</TitlePosition>
+      <SeriesDefinitions>
+        <Query>
+          <Definition></Definition>
+        </Query>
+        <SeriesPalette>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>80</Red>
+            <Green>166</Green>
+            <Blue>218</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>242</Red>
+            <Green>88</Green>
+            <Blue>106</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>232</Red>
+            <Green>172</Green>
+            <Blue>57</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>255</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>64</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>170</Red>
+            <Green>85</Green>
+            <Blue>85</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>192</Red>
+            <Green>192</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>192</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>7</Red>
+            <Green>146</Green>
+            <Blue>94</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>128</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>0</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>64</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>80</Red>
+            <Green>240</Green>
+            <Blue>120</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>64</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>0</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>0</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>64</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>0</Blue>
+          </Entries>
+        </SeriesPalette>
+        <Series xsi:type="type:BarSeries">
+          <Visible>true</Visible>
+          <Label>
+            <Caption>
+              <Value></Value>
+              <Font>
+                <Alignment/>
+              </Font>
+            </Caption>
+            <Background xsi:type="attribute:ColorDefinition">
+              <Transparency>0</Transparency>
+              <Red>255</Red>
+              <Green>255</Green>
+              <Blue>255</Blue>
+            </Background>
+            <Outline>
+              <Style>Solid</Style>
+              <Thickness>1</Thickness>
+              <Color>
+                <Transparency>255</Transparency>
+                <Red>0</Red>
+                <Green>0</Green>
+                <Blue>0</Blue>
+              </Color>
+              <Visible>false</Visible>
+            </Outline>
+            <Insets>
+              <Top>0.0</Top>
+              <Left>2.0</Left>
+              <Bottom>0.0</Bottom>
+              <Right>3.0</Right>
+            </Insets>
+            <Visible>false</Visible>
+          </Label>
+          <DataDefinition>
+            <Definition>row[&quot;NBQUESTION&quot;]</Definition>
+            <Grouping>
+              <Enabled>true</Enabled>
+              <GroupType>Text</GroupType>
+              <AggregateExpression>Max</AggregateExpression>
+            </Grouping>
+          </DataDefinition>
+          <SeriesIdentifier>Taux de réponses</SeriesIdentifier>
+          <DataPoint>
+            <Components>
+              <Type>Orthogonal_Value</Type>
+            </Components>
+            <Separator>, </Separator>
+          </DataPoint>
+          <LabelPosition>Outside</LabelPosition>
+          <Stacked>false</Stacked>
+          <Riser>Tube</Riser>
+        </Series>
+      </SeriesDefinitions>
+      <Orientation>Vertical</Orientation>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Visible>true</Visible>
+      </LineAttributes>
+      <Label>
+        <Caption>
+          <Value></Value>
+          <Font>
+            <Alignment/>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>true</Visible>
+      </Label>
+      <LabelPosition>Left</LabelPosition>
+      <MajorGrid>
+        <LineAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>196</Red>
+            <Green>196</Green>
+            <Blue>196</Blue>
+          </Color>
+          <Visible>true</Visible>
+        </LineAttributes>
+        <TickStyle>Across</TickStyle>
+        <TickAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>196</Red>
+            <Green>196</Green>
+            <Blue>196</Blue>
+          </Color>
+          <Visible>true</Visible>
+        </TickAttributes>
+      </MajorGrid>
+      <MinorGrid>
+        <LineAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>225</Red>
+            <Green>225</Green>
+            <Blue>225</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </LineAttributes>
+        <TickStyle>Across</TickStyle>
+        <TickAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>225</Red>
+            <Green>225</Green>
+            <Blue>225</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </TickAttributes>
+      </MinorGrid>
+      <Scale>
+        <MinorGridsPerUnit>5</MinorGridsPerUnit>
+      </Scale>
+      <Origin>
+        <Type>Min</Type>
+        <Value xsi:type="data:NumberDataElement">
+          <Value>0.0</Value>
+        </Value>
+      </Origin>
+      <PrimaryAxis>true</PrimaryAxis>
+      <Percent>false</Percent>
+    </AssociatedAxes>
+    <SeriesDefinitions>
+      <Query>
+        <Definition></Definition>
+      </Query>
+      <SeriesPalette>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>80</Red>
+          <Green>166</Green>
+          <Blue>218</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>242</Red>
+          <Green>88</Green>
+          <Blue>106</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>232</Red>
+          <Green>172</Green>
+          <Blue>57</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>255</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>64</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>170</Red>
+          <Green>85</Green>
+          <Blue>85</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>192</Red>
+          <Green>192</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>192</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>7</Red>
+          <Green>146</Green>
+          <Blue>94</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>128</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>0</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>64</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>80</Red>
+          <Green>240</Green>
+          <Blue>120</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>64</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>0</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>0</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>64</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>0</Blue>
+        </Entries>
+      </SeriesPalette>
+      <Series>
+        <Visible>true</Visible>
+        <Label>
+          <Caption>
+            <Value></Value>
+            <Font>
+              <Alignment/>
+            </Font>
+          </Caption>
+          <Background xsi:type="attribute:ColorDefinition">
+            <Transparency>0</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Background>
+          <Outline>
+            <Style>Solid</Style>
+            <Thickness>1</Thickness>
+            <Color>
+              <Transparency>255</Transparency>
+              <Red>0</Red>
+              <Green>0</Green>
+              <Blue>0</Blue>
+            </Color>
+            <Visible>false</Visible>
+          </Outline>
+          <Insets>
+            <Top>0.0</Top>
+            <Left>2.0</Left>
+            <Bottom>0.0</Bottom>
+            <Right>3.0</Right>
+          </Insets>
+          <Visible>false</Visible>
+        </Label>
+        <DataDefinition>
+          <Definition>BirtStr.left(row[&quot;EDITION&quot;],70)</Definition>
+        </DataDefinition>
+        <SeriesIdentifier></SeriesIdentifier>
+        <DataPoint>
+          <Components>
+            <Type>Orthogonal_Value</Type>
+          </Components>
+          <Separator>, </Separator>
+        </DataPoint>
+        <LabelPosition>Outside</LabelPosition>
+        <Stacked>false</Stacked>
+      </Series>
+      <Grouping>
+        <Enabled>true</Enabled>
+        <GroupType>Text</GroupType>
+        <AggregateExpression>Sum</AggregateExpression>
+      </Grouping>
+      <Sorting>Ascending</Sorting>
+      <SortKey>
+        <Definition>row[&quot;NBQUESTION&quot;]</Definition>
+      </SortKey>
+    </SeriesDefinitions>
+    <Orientation>Horizontal</Orientation>
+    <LineAttributes>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Visible>true</Visible>
+    </LineAttributes>
+    <Label>
+      <Caption>
+        <Value></Value>
+        <Font>
+          <Alignment/>
+        </Font>
+      </Caption>
+      <Background xsi:type="attribute:ColorDefinition">
+        <Transparency>0</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Background>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+      </Outline>
+      <Insets>
+        <Top>0.0</Top>
+        <Left>2.0</Left>
+        <Bottom>0.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Visible>true</Visible>
+    </Label>
+    <LabelPosition>Below</LabelPosition>
+    <MajorGrid>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>196</Red>
+          <Green>196</Green>
+          <Blue>196</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </LineAttributes>
+      <TickStyle>Across</TickStyle>
+      <TickAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>196</Red>
+          <Green>196</Green>
+          <Blue>196</Blue>
+        </Color>
+        <Visible>true</Visible>
+      </TickAttributes>
+    </MajorGrid>
+    <MinorGrid>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>225</Red>
+          <Green>225</Green>
+          <Blue>225</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </LineAttributes>
+      <TickStyle>Across</TickStyle>
+      <TickAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>225</Red>
+          <Green>225</Green>
+          <Blue>225</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </TickAttributes>
+    </MinorGrid>
+    <Scale>
+      <MinorGridsPerUnit>5</MinorGridsPerUnit>
+    </Scale>
+    <Origin>
+      <Type>Min</Type>
+      <Value xsi:type="data:NumberDataElement">
+        <Value>0.0</Value>
+      </Value>
+    </Origin>
+    <PrimaryAxis>true</PrimaryAxis>
+    <CategoryAxis>true</CategoryAxis>
+    <Percent>false</Percent>
+  </Axes>
+  <Orientation>Horizontal</Orientation>
+  <UnitSpacing>50.0</UnitSpacing>
+  <Rotation/>
+  <ReverseCategory>false</ReverseCategory>
+</model:ChartWithAxes>
+]]></xml-property>
+            <property name="outputFormat">PNG</property>
+            <property name="inheritColumns">false</property>
+            <structure name="toc"/>
+            <property name="dataSet">nbQuestion</property>
+            <property name="height">9.5in</property>
+            <property name="width">8in</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">xls</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">MINISTERE</property>
+                    <expression name="expression" type="javascript">dataSetRow["MINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">EDITION</property>
+                    <expression name="expression" type="javascript">dataSetRow["EDITION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ORDRE_PROTOCOLAIRE</property>
+                    <expression name="expression" type="javascript">dataSetRow["ORDRE_PROTOCOLAIRE"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ORIGINE</property>
+                    <expression name="expression" type="javascript">dataSetRow["ORIGINE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NBQUESTION</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBQUESTION"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+</report>

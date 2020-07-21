@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-test.lyon-dev2.local:8180/" />
+<title>07_MIN07</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">07_MIN07</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>moasword</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/statistiques/view_report.faces?conversationId=0NXMAIN</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=MIN07. Questions écrites traitées par les ministères
+					depuis le début de la législature (statistiques du Gouvernement)</td>
+				<td></td>
+			</tr>
+			<!--Tests sur Nombre total de QE attribuées-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[2]/div[contains(.,'232')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[2]/div[contains(.,'973')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total
+					Gouvernement')]/../../td[2]/div[contains(.,'36009')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur nombre de QE en cours-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[3]/div[contains(.,'74')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[3]/div[contains(.,'514')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total
+					Gouvernement')]/../../td[3]/div[contains(.,'18697')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur nombre de réponses publiées-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[4]/div[contains(.,'158')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[4]/div[contains(.,'459')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total
+					Gouvernement')]/../../td[4]/div[contains(.,'17312')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur nombre de questions traitées par le ministère-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[5]/div[contains(.,'171')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[5]/div[contains(.,'539')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total
+					Gouvernement')]/../../td[5]/div[contains(.,'19491')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur taux de réponses publiées-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[6]/div[contains(.,'68%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[6]/div[contains(.,'47%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total
+					Gouvernement')]/../../td[6]/div[contains(.,'54%')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur taux de questions traitées par le ministère-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[7]/div[contains(.,'74%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[7]/div[contains(.,'55%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total
+					Gouvernement')]/../../td[7]/div[contains(.,'60%')]</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

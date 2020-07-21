@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="logrun">
+
+
+	<property name="outputlog" value="${deploy.source.directory}/outputlog" />
+	<property name="deploy.server.command.chmod"
+		value="chmod 755 ${deploy.server.dir}/${deploy.archive}" />
+
+	<!-- ================================================================== -->
+	<!-- ========== Deploiement de l'application sur un serveur ========== -->
+	<!-- ========== ET execution des tests ========== -->
+	<!-- ================================================================== -->
+	<!-- Attention pour l'execution de cette tache, il faut ajouter le fichier 
+		jsch.jar au classpath de facon prealable a l'execution de Ant. Il est impossible 
+		d'inclure ce fichier depuis le script! -->
+	<target name="log-run" description="toto">
+
+		<!-- recuperation des logs -->
+		<scp
+			file="${deploy.server.username}@${deploy.server.hostname}:${deploy.log.file}"
+			todir="${deploy.source.directory}" password="${deploy.server.password}"
+			trust="true" />
+
+	</target>
+
+</project>
+

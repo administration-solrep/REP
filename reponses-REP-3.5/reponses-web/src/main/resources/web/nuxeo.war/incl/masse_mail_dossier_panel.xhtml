@@ -1,0 +1,80 @@
+<div xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+	<a4j:region id="masseMailDossierRegion">
+		<rich:modalPanel id="masseMailDossierPanel" autosized="true">
+			<div>
+				<f:facet name="header">
+					<h:outputText value="Envoi de dossiers par mél" />
+				</f:facet>
+			</div>
+			<h:form id="masseMailDossierForm">
+				<a4j:status for="masseMailDossierRegion">
+					<f:facet name="start">
+						<h:graphicImage value="/img/standart_waiter.gif"
+							style="position: absolute;" />
+					</f:facet>
+				</a4j:status>
+
+				<nxl:layout value="#{currentDocument}" mode="edit"
+					name="mail_dossier" />
+
+				<table style="width: 550px;">
+					<tr>
+						<td style="width: 150px; text-align: right;">Être en copie :</td>
+						<td><h:selectBooleanCheckbox id="masse_copie_mail"
+								value="#{archiveActions.formCopieMail}" /></td>
+					</tr>
+					<tr>
+						<td style="width: 150px; text-align: right;">Objet :</td>
+						<td><h:inputText id="masse_objet_mail"
+								value="#{archiveActions.formObjetMail}" style="width:400px" /></td>
+					</tr>
+					<tr>
+						<td style="width: 150px; text-align: right;">Texte :</td>
+						<td><h:inputTextarea id="masse_texte_mail"
+								value="#{archiveActions.formTexteMail}"
+								style="width: 400px; height: 200px;" /></td>
+					</tr>
+				</table>
+
+				<!-- button create -->
+				<table>
+					<tr>
+						<td>
+							<div class="popupFddDiv">
+								<a4j:commandLink
+									action="#{archiveActions.masseEnvoyerMailDossier()}"
+									id="masseEnvoyerMailButton"
+									oncomplete="Richfaces.hideModalPanel('masseMailDossierPanel')">
+									<h:graphicImage height="24" width="24"
+										url="/img/icons/check.png" alt="Créer" />
+									<h:outputText value="Valider" />
+								</a4j:commandLink>
+							</div>
+						</td>
+						<td>
+							<!-- button close -->
+							<div class="popupFddDiv">
+								<a4j:commandLink action="#{archiveActions.annulerMailDossier()}"
+									id="masseAnnulerMailDossier"
+									oncomplete="Richfaces.hideModalPanel('masseMailDossierPanel')"
+									ajaxSingle="true">
+									<h:graphicImage height="24" width="24"
+										url="/img/icons/delete.png" alt="Annuler" />
+									<h:outputText value="Annuler" />
+								</a4j:commandLink>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</h:form>
+		</rich:modalPanel>
+	</a4j:region>
+</div>

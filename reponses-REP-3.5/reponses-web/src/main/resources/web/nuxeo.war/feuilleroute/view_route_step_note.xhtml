@@ -1,0 +1,155 @@
+<div xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory">
+
+	<c:if test="#{commentManagerActions.showCommentWidget}">
+		<div>
+			<nxu:set var="dossier"
+				value="#{routeStepNoteActions.getCurrentDossierDoc().getAdapter(Dossier)}">
+				<nxu:set var="routeStep"
+					value="#{commentManagerActions.routeStepDoc.getAdapter(STRouteStep)}">
+
+					<h1>
+						<h:outputText value="#{messages['st.feuilleRoute.etape.title']}" />
+						<br />
+						<c:if test="#{!commentManagerActions.isShared()}">
+							<nxdir:directoryEntryOutput value="#{routeStep.type}"
+								directoryName="cm_routing_task_type" localize="true" />
+							<h:outputText
+								value=" - #{mailboxHelper.getMailboxTitleFromId(routeStep.distributionMailboxId)}" />
+						</c:if>
+						<c:if test="#{commentManagerActions.isShared()}">
+							<c:forEach var="routeStepDoc" varStatus="loopStatus"
+								items="#{commentManagerActions.routeStepDocs}">
+								<c:if test="${!loopStatus.first}">
+									<br />
+								</c:if>
+								<nxu:set var="routeStep"
+									value="#{routeStepDoc.getAdapter(STRouteStep)}">
+									<nxdir:directoryEntryOutput value="#{routeStep.type}"
+										directoryName="cm_routing_task_type" localize="true" />
+									<h:outputText
+										value=" - #{mailboxHelper.getMailboxTitleFromId(routeStep.distributionMailboxId)}" />
+								</nxu:set>
+							</c:forEach>
+						</c:if>
+					</h1>
+
+					<nxu:set var="isEditableNote"
+						value="#{routeStepNoteActions.isEditableNote(currentDocument)}"
+						cache="true">
+						<!-- Formulaire de création de note -->
+						<c:if test="#{isEditableNote}">
+							<h3>
+								<h:form>
+									<h:commandLink
+										actionListener="#{commentManagerActions.toggleCreateForm}"
+										rendered="#{!commentManagerActions.isShared()}">
+										<h:graphicImage url="/icons/toggle_plus.png"
+											rendered="#{!commentManagerActions.showCreateForm}" />
+										<h:graphicImage url="/icons/toggle_minus.png"
+											rendered="#{commentManagerActions.showCreateForm}" />
+										<h:outputText
+											value="#{messages['st.feuilleRoute.etape.command.add']}" />
+									</h:commandLink>
+									<h:outputText rendered="#{commentManagerActions.isShared()}"
+										value="#{messages['st.feuilleRoute.etape.command.add.shared']}" />
+								</h:form>
+							</h3>
+
+							<h:form id="createForm"
+								rendered="#{commentManagerActions.showCreateForm and commentManagerActions.savedReplyCommentId == null}">
+								<ui:include src="/incl/create_comment_form.xhtml" />
+							</h:form>
+						</c:if>
+
+						<!-- Arborescence des notes -->
+						<h:form rendered="#{!commentManagerActions.isShared()}">
+							<c:choose>
+								<c:when test="#{documentThreadedComments.size > 0}">
+									<nxu:dataList var="threadEntry"
+										value="#{documentThreadedComments}"
+										styleClass="commentsOutput" rowIndexVar="rowIndex">
+
+										<nxu:set var="comment"
+											value="#{threadEntry.comment.getAdapter(Comment)}">
+
+											<h:panelGroup layout="block"
+												style="margin-left:#{threadEntry.depth*25}px;"
+												rendered="#{documentThreadedComments.size > 0}"
+												styleClass="#{nxu:test(rowIndex % 2 == 1, 'dataRowOdd commentBlock', 'dataRowEven commentBlock')}">
+												<c:if test="#{isEditableNote}">
+													<div class="commentActions">
+														<h:commandLink
+															value="#{messages['command.comments.reply']}"
+															action="#{commentManagerActions.beginComment}">
+															<f:param name="replyCommentId"
+																value="#{threadEntry.comment.id}" />
+														</h:commandLink>
+
+														<h:panelGroup
+															rendered="#{threadEntry.comment.comment.author == commentManagerActions.principalName 
+																or commentManagerActions.principalIsAdmin 
+																or commentManagerActions.isInAuthorPoste(threadEntry.comment)}">
+															<h:outputText value=" | " />
+															<h:commandLink
+																action="#{commentManagerActions.deleteComment}"
+																value="#{messages['command.delete']}">
+																<f:param name="deleteCommentId"
+																	value="#{threadEntry.comment.id}" />
+															</h:commandLink>
+														</h:panelGroup>
+													</div>
+												</c:if>
+
+												<div class="commentAuthor">
+													<h:outputText
+														value="#{nxu:userFullName(threadEntry.comment.comment.author)}" />
+
+													<h:outputText value=" " />
+													<span class="commentCreationDate"> <h:outputText
+															value="#{threadEntry.comment.comment.creationDate}">
+															<f:convertDateTime
+																pattern="#{nxu:basicDateAndTimeFormater()}"
+																timeZone="#{timeZone}" />
+														</h:outputText>
+													</span>
+												</div>
+												<div class="commentQuote">
+													<h:outputText value="#{threadEntry.comment.comment.text}"
+														escape="false" />
+												</div>
+
+												<f:subview id="createForm"
+													rendered="#{commentManagerActions.commentStarted and threadEntry.comment.id==commentManagerActions.savedReplyCommentId }">
+													<ui:include src="/incl/create_comment_form.xhtml" />
+												</f:subview>
+											</h:panelGroup>
+
+										</nxu:set>
+									</nxu:dataList>
+								</c:when>
+								<c:otherwise>
+									<div style="margin: 2em 0;">
+										<h:outputText
+											value="#{messages['st.feuilleRoute.etape.empty']}" />
+									</div>
+								</c:otherwise>
+							</c:choose>
+							<h:commandButton value="#{messages['command.notes.fermer']}"
+								action="#{routeStepNoteActions.goBackToRoute}" class="button" />
+						</h:form>
+					</nxu:set>
+
+				</nxu:set>
+			</nxu:set>
+		</div>
+	</c:if>
+
+</div>

@@ -1,0 +1,839 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.reponses.web.reponse.widget">
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+
+		<!-- QUESTION QU -->
+
+		<widget name="numero_question_formulaire" type="text">
+			<labels>
+				<label mode="any">N° de la question :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:numeroQuestion</field>
+			</fields>
+		</widget>
+
+		<widget name="numero_question" type="int">
+			<labels>
+				<label mode="any">N° de la question :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:numeroQuestion</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+				<property name="maxlength">#{reponseActions.getQuestionNumberMaxLength()}
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="origine_question" type="selectOneDirectory">
+			<labels>
+				<label mode="any">Origine de la question :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:origineQuestion</field>
+			</fields>
+			<properties mode="any">
+				<property name="directoryName">origine_question</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+		<widget name="type_question" type="selectOneDirectory">
+			<labels>
+				<label mode="any">Type de question :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:typeQuestion</field>
+			</fields>
+			<properties mode="any">
+				<property name="directoryName">type_question</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+		<widget name="legislature_question" type="int">
+			<labels>
+				<label mode="any">Législature</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:legislatureQuestion</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+		<widget name="date_reception_question" type="datetime">
+			<labels>
+				<label mode="any">Date de réception :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:dateReceptionQuestion</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+		</widget>
+
+		<widget name="titre_question_senat" type="text">
+			<labels>
+				<label mode="any">Titre question sénat</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>qu:senatQuestionTitre</field>
+			</fields>
+		</widget>
+
+		<widget name="groupe_politique" type="selectOneDirectory">
+			<labels>
+				<label mode="any">Groupe politique d'appartenance :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:groupePolitique</field>
+			</fields>
+			<properties mode="any">
+				<property name="directoryName">groupe_politique</property>
+				<property name="localize">true</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+		<widget name="circonscription" type="text">
+			<labels>
+				<label mode="any">Circonscription :</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>qu:circonscriptionAuteur</field>
+			</fields>
+		</widget>
+
+		<widget name="auteur_widget" type="auteur_widget">
+			<labels>
+				<label mode="any">Auteur :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:civiliteAuteur</field>
+				<field>qu:nomAuteur</field>
+				<field>qu:prenomAuteur</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="nom_auteur" type="text">
+			<labels>
+				<label mode="any">Auteur (Nom) :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:nomAuteur</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="prenom_auteur" type="text">
+			<labels>
+				<label mode="any">Auteur (Prénom) :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:prenomAuteur</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="civilite_auteur" type="text">
+			<labels>
+				<label mode="any">Auteur (Civilité) :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:civiliteAuteur</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="date_publication_JO" type="datetime">
+			<labels>
+				<label mode="any">Date de publication (JO) :
+				</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:datePublicationJO</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+		</widget>
+
+		<widget name="date_transmission_assemblees" type="datetime">
+			<labels>
+				<label mode="any">Date réception des assemblées :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:dateTransmissionAssemblees</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(!dossierActions.isPropertyEmpty(value,
+					'question', 'dateTransmissionAssemblees') and mode ==
+					'view','view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<widget name="page_JO" type="text">
+			<labels>
+				<label mode="any">Page # :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:pageJO</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="ministere_interpelle" type="text">
+			<labels>
+				<label mode="any">Ministere interpellé :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:intituleMinistere</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="id_ministere_interpelle" type="text">
+			<labels>
+				<label mode="any">Id ministere interpellé :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:idMinistereInterroge</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+		<widget name="objet_question" type="textarea">
+			<labels>
+				<label mode="any">Contenu de la question :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:texteQuestion</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="escape">false</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="rows">20</property>
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="objet_question_texte_joint" type="textarea">
+			<labels>
+				<label mode="any">Texte joint :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:texte_joint</field>
+			</fields>			
+			<properties widgetMode="any">
+				<property name="escape">false</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="rows">20</property>
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="ministere_attributaire_bordereau" type="template">
+			<labels>
+				<label mode="any">Ministère attributaire :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>dos:ministereAttributaireCourant</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				<property name="organigrammeSelectionType">MIN_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+		<widget name="ministere_interpelle_bordereau" type="text">
+			<labels>
+				<label mode="any">Ministère interrogé :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:intituleMinistere</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+		<widget name="ministere_rattachement_bordereau" type="template">
+			<labels>
+				<label mode="any">Ministère de rattachement :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:idMinistereRattachement</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				<property name="organigrammeSelectionType">MIN_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+		<!-- widget directionResp bordereau -->
+		<widget name="direction_pilote_bordereau" type="template">
+			<labels>
+				<label mode="any">Direction pilote :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:idDirectionPilote</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				<property name="organigrammeSelectionType">DIR_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+
+		<widget name="date_signalement_question" type="datetime">
+			<labels>
+				<label mode="any">Date de signalement de la question :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>question:signalementsQuestion/dateDEffet</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+		</widget>
+
+		<!-- Tache en cours -->
+		<widget name="tache_cours_date" type="datetime">
+			<labels>
+				<label mode="any">Date de début de la tâche :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rtsk:dateDebutEtape</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+		</widget>
+
+		<widget name="tache_cours_poste" type="template">
+			<labels>
+				<label mode="any">Poste :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rtsk:distributionMailboxId</field>
+			</fields>
+			<properties mode="any">
+				<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				<property name="organigrammeSelectionType">MAILBOX_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="tache_cours_deadline" type="deadline_widget">
+			<labels>
+				<label mode="any">Délai :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rtsk:deadline</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="tache_cours_auto" type="bool_widget">
+			<labels>
+				<label mode="any">Franchissement automatique :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rtsk:automaticValidation</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<!-- Validation PM -->
+		<widget name="tache_finale_poste" type="template">
+			<labels>
+				<label mode="any">Poste "pour validation 1er Ministre" :</label>
+			</labels>
+			<fields>
+				<field>rtsk:distributionMailboxId</field>
+			</fields>
+			<properties mode="any">
+				<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				<property name="organigrammeSelectionType">MAILBOX_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<!-- -->
+		<!-- Donnee SENAT -->
+		<!-- -->
+		<widget name="senat_question_titre" type="text">
+			<labels>
+				<label mode="any">Titre :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:senatQuestionTitre</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+			<widgetModes>
+				<!-- not shown in view mode, conditionnal AN value for origineQuestion -->
+				<!-- 'SENAT' -->
+				<mode value="any">#{nxu:test(!dossierActions.isDossierQuestionOrigineAN(),'view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<!-- Signalement -->
+		<widget name="date_signalement_question" type="template">
+			<labels>
+				<label mode="any">Date de signalement de la question :
+				</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:signalementsQuestion</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/signalement_renouvellement_widget_template.xhtml</property>
+				<property name="typeSignalement">SIGNALEMENT</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(!dossierActions.isPropertyEmpty(value,
+					'question', 'signalementsQuestion') and mode ==
+					'view','view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<widget name="date_reponse_signalement" type="template">
+			<labels>
+				<label mode="any">Date de réponse attendue pour le signalement :
+				</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:signalementsQuestion</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/signalement_renouvellement_widget_template.xhtml</property>
+				<property name="typeSignalement">SIGNALEMENT_REPONSE</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(!dossierActions.isPropertyEmpty(value,
+					'question', 'signalementsQuestion') and mode ==
+					'view','view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<widget name="date_renouvellement_question" type="template">
+			<labels>
+				<label mode="any">Date de renouvellement de la question :
+				</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:renouvellementsQuestion</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/signalement_renouvellement_widget_template.xhtml</property>
+				<property name="typeSignalement">RENOUVELLEMENT</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(!dossierActions.isPropertyEmpty(value,
+					'question', 'renouvellementsQuestion') and mode ==
+					'view','view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<widget name="date_retrait_question" type="datetime">
+			<labels>
+				<label mode="any">Date de retrait de la question :
+				</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:dateRetraitQuestion</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(!dossierActions.isPropertyEmpty(value,
+					'question', 'dateRetraitQuestion') and mode ==
+					'view','view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<widget name="date_caducite_question" type="datetime">
+			<labels>
+				<label mode="any">Date de caducité de la question :
+				</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:dateCaduciteQuestion</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(!dossierActions.isPropertyEmpty(value,
+					'question', 'dateCaduciteQuestion') and mode ==
+					'view','view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<widget name="date_rappel_question" type="datetime">
+			<labels>
+				<label mode="any">Date de rappel de la question :
+				</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>qu:dateRappelQuestion</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(!dossierActions.isPropertyEmpty(value,
+					'question', 'dateRappelQuestion') and mode ==
+					'view','view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<!-- REPONSES REP -->
+		<widget name="reponse_identifiant" type="int">
+			<labels>
+				<label mode="any">Identifiant :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rep:identifiant</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+
+		<widget name="reponse_date_validation" type="datetime">
+			<labels>
+				<label mode="any">Date de validation :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rep:dateValidation</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+		</widget>
+
+		<widget name="reponse_page_JO" type="int">
+			<labels>
+				<label mode="any">Page # :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rep:pageJOReponse</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(!dossierActions.isPropertyEmpty(value,
+					'reponse', 'pageJOReponse') and mode == 'view','view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<widget name="reponse_date_publication_JO" type="datetime">
+			<labels>
+				<label mode="any">Date de publication :
+				</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rep:datePublicationJOReponse</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="required">true</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(!dossierActions.isPropertyEmpty(value,
+					'reponse', 'datePublicationJOReponse') and mode ==
+					'view','view','hidden')}</mode>
+			</widgetModes>
+		</widget>
+
+		<widget name="reponse_verrou" type="selectOneDirectory">
+			<labels>
+				<label mode="any">Poser un verrou :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rep:verrou</field>
+			</fields>
+			<properties mode="any">
+				<property name="directoryName">verrou</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">view</mode>
+				<mode value="create">edit</mode>
+			</widgetModes>
+		</widget>
+
+		<widget name="reponse_note" type="richtext_with_mimetype">
+			<labels>
+				<label mode="any">reponse</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>note:note</field>
+				<field>note:mime_type</field>
+			</fields>
+			<properties mode="view">
+				<property name="translatedHtml">
+					#{noteActions.translateImageLinks(field_0)}
+				</property>
+				<property name="width">
+					100
+				</property>
+			</properties>
+			<properties mode="edit">
+				<property name="width">
+					100% </property>
+			</properties>
+		</widget>
+
+
+		<!-- FOND DE DOSSIER FDD -->
+		<widget name="fdd_file" type="template">
+			<labels>
+				<label mode="any">Nouvelle version : </label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>file:content</field>
+				<field>file:filename</field>
+			</fields>
+			<widgetModes>
+				<mode value="full_edit">edit</mode>
+				<mode value="edit">edit</mode>
+				<mode value="view">view</mode>
+				<mode value="view">preview</mode>
+			</widgetModes>
+			<properties mode="any">
+				<property name="template">
+					/widgets/extended_file_widget.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="fdd_visibilite" type="selectOneDirectory">
+			<labels>
+				<label mode="any">Visibilité : </label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>elementFondDossier:niveauVisibilite</field>
+			</fields>
+			<properties mode="any">
+				<property name="directoryName">niveau_visibilite</property>
+				<property name="localize">true</property>
+			</properties>
+		</widget>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgettypes">
+
+		<widgetType name="deadline_widget">
+			<documentation>Ce widget affiche "jours" à la fin du paramètre
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/deadline_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="bool_widget">
+			<documentation>Ce widget affiche Oui si true, Non si false
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/bool_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="auteur_widget">
+			<documentation>Ce widget affiche l'auteur sous forme
+				civilité+nom+prénom
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/auteur_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="document_property_widget">
+			<documentation>Ce widget affiche une propriété d'un document
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/document_property_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="document_property_date_widget">
+			<documentation>Ce widget affiche une propriété date d'un document
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/document_property_date_widget_template.xhtml
+			</property>
+		</widgetType>
+
+	</extension>
+
+</component>

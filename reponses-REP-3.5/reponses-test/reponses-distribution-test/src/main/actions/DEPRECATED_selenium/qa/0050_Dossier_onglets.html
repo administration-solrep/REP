@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Dossier onglets</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">Dossier onglets</td>
+			</tr>
+		</thead>
+		<tbody>
+			<!--Connexion bdc-->
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection dossier -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Dernière page&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314160</td>
+				<td></td>
+			</tr>
+			<!--Test panneaux-->
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertNotVisible</td>
+				<td>collapsiblePanelIdclosed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>collapsiblePanelIdOpened_form:collapsiblePanelIdOpened_cmd</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertNotVisible</td>
+				<td>collapsiblePanelIdOpened</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>collapsiblePanelIdclosed_form:collapsiblePanelIdclosed_cmd</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertNotVisible</td>
+				<td>collapsiblePanelIdclosed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertNotVisible</td>
+				<td>openContentViewButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>toggleContentViewForm:closeContentViewButtonId</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertNotVisible</td>
+				<td>closeContentViewButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>toggleContentViewForm:openContentViewButtonId</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertNotVisible</td>
+				<td>openContentViewButton</td>
+				<td></td>
+			</tr>
+			<!--Ouverture dossier-->
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Pièces destinées au Parlement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt='Verrouiller']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt='Déverrouiller']</td>
+				<td></td>
+			</tr>
+			<!--Onglet Fond de dossier-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Fond de dossier</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Pièces destinées au Parlement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Déverrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Bordereau-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Bordereau</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Min. Economie, industrie et emploi</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Déverrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Journal-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Journal</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Parapheur</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Déverrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Réactualiser le contenu du dossier&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Déverrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Déconnexion-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

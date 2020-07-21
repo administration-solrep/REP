@@ -1,0 +1,9 @@
+.project
+.classpath
+.settings
+target
+errors.xml
+jmeter.log
+output.csv
+workdir/
+

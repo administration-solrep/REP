@@ -1,0 +1,27 @@
+<f:subview xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxd="http://nuxeo.org/nxweb/document" id="#{layout.id}">
+
+	<c:set var="isEditMode" value="#{nxl:isBoundToEditMode(layout.mode)}" />
+
+	<div style="margin: 8px;">
+		<nxl:layoutRow>
+			<nxl:layoutRowWidget>
+				<table>
+				<tr>
+				<td>
+				<h:outputText value="#{widget.label}" class="labelColumn" />
+				</td>
+				<td>
+				<nxl:widget widget="#{widget}" value="#{value}" />
+				</td>
+				</tr>
+				</table>
+			</nxl:layoutRowWidget>
+		</nxl:layoutRow>
+	</div>
+
+</f:subview>

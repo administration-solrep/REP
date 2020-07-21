@@ -1,0 +1,33 @@
+<f:subview id="#{widget.id}" xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<nxu:set var="delai" value="#{field_0}" cache="true">
+		<c:choose>
+			<c:when test="#{widget.mode == 'csv' }">
+				<c:choose>
+					<c:when test="#{delai.contains('J')}">
+						<h:outputText value="#{delai}" />
+					</c:when>
+					<c:otherwise>
+						<h:outputText value="#{messages[delai]}" />
+					</c:otherwise>
+				</c:choose>
+			</c:when>
+			<c:otherwise>
+				<c:choose>
+					<c:when test="#{delai.contains('J')}">
+						<h:outputText value="#{delai}" />
+					</c:when>
+					<c:otherwise>
+						<h:outputText styleClass="labelItalique"
+							value="#{messages[delai]}" />
+					</c:otherwise>
+				</c:choose>
+
+			</c:otherwise>
+		</c:choose>
+	</nxu:set>
+</f:subview>

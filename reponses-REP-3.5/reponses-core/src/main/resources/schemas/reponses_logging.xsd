@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://nuxeo.org/schemas/dossier_reponse/"
+	xmlns:replog="http://nuxeo.org/schemas/dossier_reponse/">
+
+	<xs:include schemaLocation="base.xsd" />
+
+	<xs:element name="startDate" type="xs:dateTime" nillable="false" />
+	<xs:element name="endDate" type="xs:dateTime" nillable="false" />
+	<xs:element name="message" type="xs:string" nillable="false" />
+	<xs:element name="endCount" type="xs:long" nillable="false" />
+	<xs:element name="previsionalCount" type="xs:long" nillable="false" />
+	<xs:element name="closeEndCount" type="xs:long" nillable="false" />
+	<xs:element name="closePrevisionalCount" type="xs:long"
+		nillable="false" />
+	<xs:element name="status" type="xs:string" nillable="false" />
+	<xs:element name="currentGouvernement" type="xs:string"
+		nillable="false" />
+	<xs:element name="nextGouvernement" type="xs:string"
+		nillable="false" />
+	<xs:element name="timbres" type="replog:timbres" />
+
+
+
+	<xs:complexType name="timbres">
+		<xs:sequence>
+			<xs:element name="timbre" type="replog:timbre" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="timbre">
+		<xs:sequence>
+			<xs:element name="currentMin" type="xs:string" />
+			<xs:element name="nextMin" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- lien vers les reponses_logging_line -->
+	<xs:element name="lines" type="replog:stringList" />
+
+</xs:schema>

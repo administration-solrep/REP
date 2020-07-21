@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>44268</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="645586">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Patrick</ns2:prenom>
+				<ns2:nom>Hetzel</ns2:nom>
+				<ns2:grp_pol>UMP</ns2:grp_pol>
+				<ns2:circonscription>Bas-Rhin 7</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Patrick Hetzel attire l'attention de M. le
+				ministre de l'éducation nationale sur la question des relations
+				école-entreprise. En effet, selon un récent sondage OpinionWay
+				révélé par la radio RTL, 62 % des professeurs de collège associent
+				l'entreprise à de l'exploitation. Quand on mentionne l'entreprise,
+				90 % des professeurs de collège l'associent au stress. Par ailleurs,
+				les termes « épanouissement » et « convivialité » sont au bas du
+				classement (respectivement 40 % et 38 %). Un autre aspect négatif
+				révèle que 66 % des professeurs de collège pensent que la
+				discrimination est répandue dans l'entreprise. Pour 56 % des
+				enseignants, l'école n'a pas à préparer les élèves au marché du
+				travail. « La majorité des enseignants craint de voir l'éducation
+				nationale perdre son âme et d'instituer une éducation « utilitariste
+				» et « élitiste » avec l'inclusion de l'entreprise », rapporte RTL.
+				Cependant, 71 % des professeurs de collège souhaitent une plus
+				grande présence de l'entreprise à l'école « pour qu'elle accomplisse
+				des missions qui ne sont pas les leurs ». Il souhaite donc savoir ce
+				qu'il compte entreprendre afin d'intensifier les liens
+				école-entreprise.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enseignement secondaire</ns2:rubrique>
+				<ns2:rubrique_ta>collèges et lycées</ns2:rubrique_ta>
+				<ns2:analyse>liens école-entreprise</ns2:analyse>
+				<ns2:analyse> développement</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

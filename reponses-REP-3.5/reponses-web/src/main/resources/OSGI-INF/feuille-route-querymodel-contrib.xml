@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.feuilleRoute.routing.queryModel">
+
+	<require>fr.dila.ecm.platform.routing.querymodel</require>
+	<extension
+		target="org.nuxeo.ecm.core.search.api.client.querymodel.QueryModelService"
+		point="model">
+
+
+		<queryModel name="DOC_ROUTING_SEARCH_ALL_ROUTE_MODELS">
+			<pattern>
+				SELECT * FROM DocumentRoute WHERE ecm:currentLifeCycleState = 'validated'
+				AND dc:title ILIKE ?
+			</pattern>
+			<sortable value="true" defaultSortColumn="dc:title"
+				defaultSortAscending="true" />
+			<max>20</max>
+		</queryModel>
+
+
+	</extension>
+
+</component>

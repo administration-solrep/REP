@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://dila.fr/solon/schemas/nav/" xmlns:nav="http://dila.fr/solon/schemas/nav/">
+
+	<xs:element name="AN_rubrique" type="xs:string" />
+	<xs:element name="SE_theme" type="xs:string" />
+</xs:schema>

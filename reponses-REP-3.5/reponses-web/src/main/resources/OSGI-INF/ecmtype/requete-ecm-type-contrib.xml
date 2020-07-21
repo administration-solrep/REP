@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les types ECM nécessaires aux recherches. -->
+<component name="fr.dila.reponses.web.ecmtype.requete">
+	<require>com.nuxeo.case-management.types</require>
+	<require>org.nuxeo.ecm.platform.smart.folder.ecmTypes</require>
+	<require>fr.dila.st.web.ecmtype</require>
+
+	<extension target="org.nuxeo.ecm.platform.types.TypeService"
+		point="types">
+
+		<type id="RequeteComposite">
+			<layouts mode="any">
+				<layout>requeteSimple</layout>
+				<layout>requeteComplexe</layout>
+				<layout>requeteTexteIntegral</layout>
+				<layout>requeteIndexAN</layout>
+				<layout>requeteIndexSenat</layout>
+				<layout>requeteIndexMinistere</layout>
+				<layout>requeteFeuilleRoute</layout>
+			</layouts>
+		</type>
+
+		<!-- Changer les icones -->
+		<type id="RequeteExperte">
+			<label>requeteExperte.title</label>
+			<icon>/icons/case_item.png</icon>
+			<bigIcon>/icons/case_item_100.png</bigIcon>
+			<category>Reponse</category>
+			<create-view>create_requeteExperte</create-view>
+			<layouts mode="any">
+				<layout>requeteExperte</layout>
+			</layouts>
+		</type>
+
+		<type id="BibliothequeRequetesRoot">
+			<subtypes>
+				<type>RequeteExperte</type>
+				<type>SmartFolder</type>
+			</subtypes>
+			<layouts mode="any">
+				<layout>heading</layout>
+			</layouts>
+		</type>
+	</extension>
+
+</component>

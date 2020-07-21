@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<ui:define name="page title">
+		<h:outputText value="#{nuxeoApplicationName}" />
+	</ui:define>
+
+	<ui:define name="body">
+
+		<h1>
+			<h:outputText value="#{messages['label.admin.param.timbres']}" />
+		</h1>
+		<br />
+
+		<ui:include src="/incl/message_banner.xhtml" />
+
+		<c:choose>
+			<c:when test="#{migrationManagerActions.isUpdateTimbreAvailable()}">
+				<div>
+					<a4j:outputPanel id="countTimbres_outputPanel">
+						<c:choose>
+							<c:when test="#{migrationManagerActions.isPollCountActivated()}">
+								<h:outputText value="#{messages['wait.counting.timbres']} "
+									style="font-weight:bold;color:#2f57b1" />
+								<br />
+								<h:graphicImage value="/img/big_loading.gif"
+									title="#{messages['wait.counting.timbres']}"
+									alt="#{messages['wait.counting.timbres']}"
+									longdesc="#{messages['wait.counting.timbres']}" />
+								<br />
+								<h:outputText value="#{messages['wait.counting.timbres']} "
+									style="font-weight:bold;color:#2f57b1" />
+								<h:outputText value="#{messages['error.count.timbres']}"
+									style="font-weight:bold;color:red"
+									rendered="#{migrationManagerActions.isErrorOccurred()}" />
+								<h:form>
+									<a4j:poll id="refreshCount_poll" interval="15000"
+										enabled="#{migrationManagerActions.checkPollCountActivation()}"
+										reRender="countTimbres_outputPanel,refreshCount_poll"
+										limitToList="true" />
+								</h:form>
+							</c:when>
+							<c:otherwise>
+								<h:outputText value="#{messages['error.count.timbres']}"
+									style="font-weight:bold;color:red"
+									rendered="#{migrationManagerActions.isErrorOccurred()}" />
+								<ui:include src="update_timbre.xhtml" />
+								<h:outputText value="#{messages['error.count.timbres']}"
+									style="font-weight:bold;color:red"
+									rendered="#{migrationManagerActions.isErrorOccurred()}" />
+							</c:otherwise>
+						</c:choose>
+					</a4j:outputPanel>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<h:outputText style="font-weight:bold;color:red"
+					value="#{messages['warn.organigrammeManager.migration.no.new.min']}" />
+			</c:otherwise>
+		</c:choose>
+
+		<script>
+	var j = jQuery.noConflict();
+	j(document).ready(function() {
+		window.onresize = resize;
+		resize();
+	});	
+</script>
+
+	</ui:define>
+</nxthemes:composition>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Test de redémarrage d'une feuille de route</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">Test de redémarrage d'une feuille
+					de route</td>
+			</tr>
+		</thead>
+		<tbody>
+			<!--Login adminsgg-->
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!-- Recherche le dossier à terminer -->
+			<tr>
+				<td>type</td>
+				<td>userMetaServicesSearchForm:questionIdInput</td>
+				<td>314159</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<!-- Termine la feuille de route du dossier (valide l'étape en cours) -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<!-- Vérifie que l'étape est validée et qu'il est impossible de redémarrer le dossier (absence de nouvelle étape) -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementNotPresent</td>
+				<td>//img[@alt=&quot;Redémarrer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementNotPresent</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<!--appel du webservice chercherReponses pour consommer le jeton-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/technique/xml_post.html</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>ws_an</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>ws_an</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>url</td>
+				<td>../site/reponses/WSreponse/chercherReponses</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>request</td>
+				<td>&lt;?xml version=&quot;1.0&quot;
+					encoding=&quot;UTF-8&quot;?&gt;&lt;p:chercherReponsesRequest
+					xmlns:p=&quot;http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSreponse&quot;
+					xmlns:p1=&quot;http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons&quot;
+					xmlns:p2=&quot;http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses&quot;
+					xmlns:p3=&quot;http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar&quot;
+					xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+					xsi:schemaLocation=&quot;http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSreponse
+					WSreponse.xsd
+					&quot;&gt;&lt;p:jeton&gt;0&lt;/p:jeton&gt;&lt;/p:chercherReponsesRequest&gt;</td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>pause</td>
+				<td>5000</td>
+				<td></td>
+			</tr>
+			<!-- Ajoute une étape "pour impression secrétariat PM" -->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>userMetaServicesSearchForm:questionIdInput</td>
+				<td>314159</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour impression</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Cabinet du Premier Ministre dans Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Secrétariat Conseillère Aff. éco et finances PM -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0:node:49::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!-- Redémarre le dossier une étape -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Déverrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Redémarrer&quot;]</td>
+				<td></td>
+			</tr>
+			<!-- Vérifie la distribution du dossier -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementNotPresent</td>
+				<td>//img[@alt=&quot;Redémarrer&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Déconnexion-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

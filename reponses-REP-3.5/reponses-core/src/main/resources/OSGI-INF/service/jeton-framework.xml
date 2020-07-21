@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue le service jeton de Réponses. -->
+<component name="fr.dila.reponses.core.service.JetonService">
+	<implementation class="fr.dila.reponses.core.service.JetonServiceImpl" />
+
+	<service>
+		<provide interface="fr.dila.st.api.service.JetonService" />
+		<provide interface="fr.dila.reponses.api.service.JetonService" />
+	</service>
+</component>

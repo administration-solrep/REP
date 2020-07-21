@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="page title">
+		<h:outputText
+			value="#{nuxeoApplicationName} - #{nxd:titleOrId(currentDocument)}" />
+	</ui:define>
+
+	<ui:define name="bookmark">
+		<link rel="bookmark"
+			href="#{navigationContext.currentDocumentFullUrl}" />
+	</ui:define>
+	<ui:define name="body">
+		<ui:include src="/incl/message_banner.xhtml" />
+		<div>
+			<h4>
+				<h:outputText value="Créer un favori" />
+			</h4>
+			<br />
+			<div style="width: 33%; border: solid 1px black;">
+				<h:form id="add_favoris_dossier_repertoire">
+					<nxl:documentLayout mode="create" value="#{changeableDocument}" />
+					<br />
+					<br />
+					<div align="center">
+						<h:commandButton value="Valider"
+							action="#{favorisDossierActions.createRepertoireAndAddFavoris()}"
+							class="button" id="favorisSubmitButton">
+						</h:commandButton>
+						<h:commandButton value="Annuler"
+							action="#{rechercheAvanceeActions.goBack()}" immediate="true"
+							styleClass="button" id="favorisCancelButton" />
+					</div>
+				</h:form>
+			</div>
+		</div>
+		<br />
+		<br />
+		<div>
+			<h4>
+				<h:outputText value="Ajouter à un favori existant" />
+			</h4>
+			<br />
+			<div style="width: 33%; border: solid 1px black;">
+				<h:form id="add_favoris_dossier_repertoire2">
+					<div align="center">
+						<br />
+						<h:selectOneMenu id="versionList1"
+							value="#{favorisDossierActions.currentVersion1}">
+							<f:selectItems value="#{favorisDossierActions.versionList}" />
+						</h:selectOneMenu>
+						<br />
+						<br />
+						<h:commandButton value="Ajouter" class="button"
+							action="#{favorisDossierActions.addFavoris()}"
+							id="favorisSubmitButton2" />
+						<h:commandButton value="Annuler"
+							action="#{rechercheAvanceeActions.goBack()}" immediate="true"
+							styleClass="button" id="favorisCancelButton2" />
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</nxthemes:composition>

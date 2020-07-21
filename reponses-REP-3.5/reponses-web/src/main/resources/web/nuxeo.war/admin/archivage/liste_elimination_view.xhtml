@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<ui:define name="page title">
+		<h:outputText value="#{messages['archivage.manage.title']}" />
+	</ui:define>
+
+	<ui:define name="body">
+
+		<script>
+    function showPDF() {
+      var day=new Date();
+      var id=day.getTime();
+      var j = jQuery.noConflict();
+      j(document).ready(function() {
+        j('#VIDER_LISTE_ELIMINATION').remove();
+      });
+      var pdfWin = window.open('',id,"width=800,height=700,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes");
+      document.getElementById('admin_liste_elimination').target=id;
+      if (pdfWin.focus) {
+        window.focus()
+      }
+    }
+    </script>
+
+		<div class="menu">
+			<h1>
+				<h:outputText value="#{currentDocument.title}" />
+				<c:if
+					test="#{currentDocument.getAdapter(ListeElimination).isEnCours()}">
+          en cours
+        </c:if>
+			</h1>
+			<br />
+			<nxu:set var="contentViewName" value="admin_liste_elimination">
+				<ui:decorate template="/incl/content_view.xhtml" />
+			</nxu:set>
+		</div>
+	</ui:define>
+
+	<ui:define name="collapsible_panel_body">
+		<ui:include src="/admin/admin_menu.xhtml" />
+	</ui:define>
+</nxthemes:composition>

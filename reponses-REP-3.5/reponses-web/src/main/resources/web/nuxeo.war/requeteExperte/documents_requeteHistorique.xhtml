@@ -1,0 +1,30 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:f="http://java.sun.com/jsf/core" id="content">
+	<nxu:set var="contentViewId" value="recherche_requeteur_historique">
+		<nxu:set var="contentViewName" value="recherche_requeteur_historique">
+			<ui:decorate template="/incl/content_view.xhtml">
+				<ui:param name="selectedResultLayoutColumns"
+					value="#{smartNXQLQueryActions.selectedLayoutColumns}" />
+				<ui:param name="contentViewSortInfos"
+					value="#{smartNXQLQueryActions.searchSortInfos}" />
+				<ui:define name="empty_folder_label">
+					<h:outputText value="#{messages['label.content.empty.search']}"
+						rendered="#{documents.rowCount == 0 and not provider.hasError()}" />
+				</ui:define>
+				<ui:define name="content_view_header_after_selector" />
+				<ui:define name="syndication_buttons">
+					<c:if test="false">syndication currently broken with content views</c:if>
+					<ui:include src="/incl/syndication_buttons.xhtml">
+						<ui:param name="type" value="search" />
+					</ui:include>
+				</ui:define>
+			</ui:decorate>
+
+		</nxu:set>
+	</nxu:set>
+</div>

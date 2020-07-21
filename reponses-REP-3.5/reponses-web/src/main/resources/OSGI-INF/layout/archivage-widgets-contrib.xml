@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.widget.archivage">
+	<!-- widget pour l'écran d'affichage des archives -->
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+		<widget name="liste_elimination_titre" type="template">
+			<labels>
+				<label mode="any">Titre</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="template">/widgets/listing/liste_elimination_titre_widget_template.xhtml</property>
+			</properties>
+		</widget>
+
+		<widget name="liste_elimination_date" type="datetime">
+			<labels>
+				<label mode="any">Date de création</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.dc.modified</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">#{nxu:basicDateAndTimeFormater()}</property>
+				<property name="format">#{nxu:basicDateAndTimeFormater()}</property>
+			</properties>
+		</widget>
+
+		<widget name="archivage_origine" type="document_property_widget">
+			<labels>
+				<label mode="any">Origine</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="className">getQuestion</property>
+				<property name="attribute">getOrigineQuestion</property>
+			</properties>
+		</widget>
+
+		<widget name="archivage_numero_question" type="document_property_widget">
+			<labels>
+				<label mode="any">N° Question</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="className">getQuestion</property>
+				<property name="attribute">getNumeroQuestion</property>
+			</properties>
+		</widget>
+
+		<widget name="archivage_nature" type="document_property_widget">
+			<labels>
+				<label mode="any">Nature (QE, QO)</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="className">getQuestion</property>
+				<property name="attribute">getTypeQuestion</property>
+			</properties>
+		</widget>
+
+		<widget name="archivage_date_publication" type="document_property_date_widget">
+			<labels>
+				<label mode="any">Date publication</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="className">getQuestion</property>
+				<property name="attribute">getDatePublicationJO</property>
+			</properties>
+		</widget>
+
+		<widget name="archivage_auteur" type="document_property_widget">
+			<labels>
+				<label mode="any">Auteur</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="className">getQuestion</property>
+				<property name="attribute">getNomCompletAuteur</property>
+			</properties>
+		</widget>
+
+		<widget name="archivage_mots_cles" type="document_property_widget">
+			<labels>
+				<label mode="any">Mots-clés</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="className">getQuestion</property>
+				<property name="attribute">getMotsClef</property>
+			</properties>
+		</widget>
+
+		<widget name="archivage_ministere" type="document_property_widget">
+			<labels>
+				<label mode="any">Ministère attributaire</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="className">getQuestion</property>
+				<property name="attribute">getIntituleMinistere</property>
+			</properties>
+		</widget>
+	</extension>
+</component>

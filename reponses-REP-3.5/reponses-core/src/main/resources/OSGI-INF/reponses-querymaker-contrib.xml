@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.core.query.contrib" version="1.0.0">
+	<require>fr.dila.st.core.query.contrib</require>
+	<extension target="org.nuxeo.ecm.core.storage.sql.jdbc.QueryMakerService"
+		point="queryMaker">
+		<queryMaker name="FNXQL">fr.dila.reponses.core.query.ReponsesFNXQLQueryMaker</queryMaker>
+	</extension>
+
+</component>

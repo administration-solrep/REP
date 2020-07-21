@@ -1,0 +1,2578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Ce composant contribue : - Les actions de l'application Réponses (y 
+	compris les actions de CM qui sont désactivées / surchargées) ; - Les filtres 
+	utilisés dans les actions. -->
+<component name="fr.dila.reponses.web.action">
+	<require>org.nuxeo.ecm.platform.smart.folder.actions</require>
+	<require>org.nuxeo.ecm.platform.actions</require>
+	<require>fr.dila.ecm.platform.routing.actions</require>
+	<require>org.nuxeo.ecm.platform.userworkspace.actions</require>
+	<require>org.nuxeo.connect.client.actions</require>
+	<require>fr.dila.cm.actions</require>
+
+	<extension target="org.nuxeo.ecm.platform.actions.ActionService"
+		point="actions">
+
+		<!-- *********************************************************************** 
+			Actions de CMF surchargées *********************************************************************** -->
+		<action id="user_dashboard" enabled="false" />
+		<action id="user_manager" enabled="false" />
+		<action id="AdminMain" enabled="false" />
+		<action id="SHOW_REPOSITORY" enabled="false" />
+		<action id="smart_search" enabled="false" />
+		<action id="TAB_MAILBOX_DRAFT" enabled="false" />
+		<action id="newCaseItemDocument" enabled="false" />
+		<action id="TAB_CASE_MANAGEMENT_VIEW_RELATED_ROUTE" enable="false" />
+		<action id="CURRENT_SELECTION_ADDTOLIST" enabled="false" />
+		<action id="CURRENT_SELECTION_TRASH" enabled="false" />
+		<action id="WORKLIST_EXPORT" enabled="false" />
+		<action id="WORKLIST_MOVE" enabled="false" />
+		<action id="WORKLIST_XMLEXPORT" enabled="false" />
+		<action id="WORKLIST_PASTE" enabled="false" />
+
+		<!-- Désactivation de l'accès à l'espace de travail personnel -->
+		<action id="userSetting" enabled="false" />
+
+		<!-- Désactivation de l'accès à l'espace de travail personnel -->
+		<action id="SHOW_PERSONAL_WORKSPACE" enabled="false" />
+
+		<action id="addCaseItem">
+			<filter-id>isNotDossier</filter-id>
+		</action>
+		<action id="TAB_CASE_MANAGEMENT_VIEW">
+			<filter-id>isNotDossier</filter-id>
+		</action>
+		<action id="distribute_cm_case">
+			<filter-id>isNotDossier</filter-id>
+		</action>
+		<action id="TAB_CASE_MANAGEMENT_RELATIONS">
+			<filter-id>isNotDossier</filter-id>
+		</action>
+		<action id="CM_TAB_FILES_EDIT">
+			<filter-id>isNotDossier</filter-id>
+		</action>
+		<action id="TAB_CASE_MANAGEMENT_HISTORY">
+			<filter-id>isNotDossier</filter-id>
+		</action>
+		<action id="CLASSIFICATION_REQUEST">
+			<filter-id>isNotDossier</filter-id>
+		</action>
+		<action id="TAB_CASE_MANAGEMENT_COMMENTS">
+			<filter-id>isNotDossier</filter-id>
+		</action>
+		<action id="TAB_CONTENT">
+			<filter-id>isNotDossier</filter-id>
+		</action>
+		<action id="TAB_MANAGE">
+			<filter-id>isInsidePersonalWorkspace</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Actions du menu de gauche *********************************************************************** -->
+		<action id="LEFT_MENU_ADMIN" link="/admin/admin_menu.xhtml" />
+		<action id="LEFT_MENU_UTILISATEUR" link="/utilisateur/utilisateur_menu.xhtml" />
+		<action id="LEFT_MENU_CORBEILLE" link="/casemanagement/mailbox/mailbox_list.xhtml" />
+		<action id="LEFT_MENU_PLAN_CLASSEMENT" link="/casemanagement/mailbox/plan_classement_list.xhtml" />
+		<action id="LEFT_MENU_FAVORIS_DOSSIER" link="/favoris/favoris_dossier_list.xhtml">
+			<category>LEFT_MENU_RECHERCHE</category>
+			<filter-id>canDisplayFavoris</filter-id>
+		</action>
+		<action id="LEFT_MENU_REQUETES" link="/requeteExperte/requete_list.xhtml"
+			order="20">
+			<category>LEFT_MENU_RECHERCHE</category>
+			<filter-id>isInSuivi</filter-id>
+		</action>
+		<action id="LEFT_MENU_ALERTES" link="/alerte/alert_list.xhtml"
+			order="30">
+			<category>LEFT_MENU_RECHERCHE</category>
+			<filter-id>isInSuivi</filter-id>
+		</action>
+
+
+		<!-- *********************************************************************** 
+			Dossier Réponses : action de création de Dossier/ feuille de route *********************************************************************** -->
+
+		<!-- new tab to create dossier via parapheur TODO delete ? -->
+		<action id="TAB_DOSSIER_CREATE"
+			link="/casemanagement/mailbox/tabs/mailbox_draft_content.xhtml"
+			label="Dossier" enabled="true">
+			<category>VIEW_MAILBOX_ACTION_LIST</category>
+		</action>
+
+		<!-- new tab feuille de route -->
+		<action id="TAB_MODEL" link="/route/route_edit.xhtml" enabled="true"
+			label="Feuilles de route">
+			<category>VIEW_MAILBOX_ACTION_LIST</category>
+			<filter-id>isGenericMailbox</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Actions au dessus de la liste des dossiers de la corbeille ************************************************************************ -->
+		<!-- Avis favorable sur un ensemble de dossiers -->
+		<action id="MASSE_ACTION_AVIS_FAVORABLE"
+			link="#{dossierMassActions.masseFdrActionDonnerAvisFavorable()}"
+			confirm="Etes-vous sûr de vouloir valider ces dossiers ?" order="10"
+			label="label.responses.dossier.toolbar.favorable" icon="/img/icons/masse/checkMasse.png">
+			<category>MAILBOX_ACTION_UPPER_LIST</category>
+			<filter-id>isInEspaceTravail</filter-id>
+		</action>
+
+		<!-- Avis défavorable avec retour sur un ensemble de dossiers -->
+		<action id="MASSE_ACTION_AVIS_DEFAVORABLE_ET_INSERER_TACHES"
+			link="#{dossierMassActions.masseFdrActionDonnerAvisDefavorableEtInsererTaches()}"
+			confirm="Etes-vous sûr ?" order="20"
+			label="label.responses.dossier.toolbar.defavorableAvecRetour" icon="/img/icons/masse/RejetRetourMasse.png">
+			<category>MAILBOX_ACTION_UPPER_LIST</category>
+			<filter-id>isInEspaceTravail</filter-id>
+		</action>
+
+		<!-- Avis défavorable sur un ensemble de dossiers -->
+		<action id="MASSE_ACTION_AVIS_DEFAVORABLE_ET_POURSUIVRE"
+			link="#{dossierMassActions.masseFdrActionDonnerAvisDefavorableEtPoursuivre()}"
+			confirm="Etes-vous sûr de vouloir invalider ces dossiers ?" order="30"
+			label="label.responses.dossier.toolbar.defavorable" icon="/img/icons/masse/RejetMasse.png">
+			<category>MAILBOX_ACTION_UPPER_LIST</category>
+			<filter-id>isInEspaceTravail</filter-id>
+		</action>
+
+		<!-- Non concerné + réorientation d'un ensemble de dossiers -->
+		<action id="MASSE_ACTION_NON_CONCERNE_REORIENTATION"
+			link="#{dossierMassActions.masseFdrActionNonConcerneReorientation()}"
+			confirm="Etes-vous sûr ?" order="40"
+			label="label.responses.dossier.toolbar.reorientationDossier" icon="/img/icons/masse/reorientationMasse.png">
+			<category>MAILBOX_ACTION_UPPER_LIST</category>
+			<filter-id>isInEspaceTravail</filter-id>
+			<filter-id>isReorientationReader</filter-id>
+		</action>
+
+		<!-- Non concerné + réattribution d'un ensemble de dossiers -->
+		<action id="MASSE_ACTION_NON_CONCERNE_REATTRIBUTION"
+			link="#{dossierMassActions.masseFdrActionNonConcerneReattribution()}"
+			order="50" label="label.responses.dossier.toolbar.reattributionDossier"
+			icon="/img/icons/masse/reattributionMasse.png">
+			<category>MAILBOX_ACTION_UPPER_LIST</category>
+			<filter-id>isReattributionReader</filter-id>
+		</action>
+
+
+		<!-- Demande d'arbitrage d'un ensemble de dossiers -->
+		<action id="MASSE_ACTION_DEMANDE_ARBITRAGE_SGG"
+			link="#{dossierMassActions.masseFdrActionDemandeArbitrageSGG()}"
+			confirm="Etes-vous sûr ?" order="60"
+			label="label.responses.dossier.toolbar.arbitrageDossier" icon="/img/icons/masse/ArbitrageMasse.png">
+			<category>MAILBOX_ACTION_UPPER_LIST</category>
+			<filter-id>isInEspaceTravail</filter-id>
+			<filter-id>isArbitrageSGGReader</filter-id>
+		</action>
+
+		<!-- Demande d'arbitrage d'un ensemble de dossiers -->
+		<action id="MASSE_ACTION_REATTRIBUTION_DIRECTE"
+			link="#{dossierMassActions.masseFdrActionReattributionDirecte()}"
+			order="65" label="label.responses.dossier.toolbar.reattribuerDirect"
+			icon="/img/icons/masse/reattributionDirecteMasse.png">
+			<category>MAILBOX_ACTION_UPPER_LIST</category>
+			<filter-id>isInEspaceTravail</filter-id>
+			<filter-id>isReattributionDirecteReader</filter-id>
+		</action>
+
+		<!-- Export ZIP d'un ensemble de dossiers -->
+		<action id="MASSE_EXPORT_ZIP" link="#{archiveActions.masseExport()}"
+			order="70" label="Export ZIP" icon="/img/icons/masse/compressMasse.png">
+			<category>MAILBOX_ACTION_UPPER_LIST</category>
+			<filter-id>isInEspaceTravail</filter-id>
+		</action>
+
+		<!-- Export mail d'un ensemble de dossiers -->
+		<action id="MASSE_EXPORT_MAIL"
+			link="javascript:Richfaces.showModalPanel('masseMailDossierPanel');"
+			order="70" label="Envoyer ces dossiers par mél" icon="/img/icons/masse/mailMasse.png">
+			<category>MAILBOX_ACTION_UPPER_LIST</category>
+			<filter-id>isInEspaceTravail</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Actions au dessus du plan de classement ************************************************************************ -->
+		<action id="MASSE_ACTION_NON_CONCERNE_REATTRIBUTION_PLAN_CLASSEMENT"
+			link="#{dossierMassActions.masseFdrActionNonConcerneReattribution()}"
+			enabled="true" order="10"
+			label="label.responses.dossier.toolbar.reattributionDossier" icon="/img/icons/masse/reattributionMasse.png">
+			<category>PLAN_CLASSEMENT_UPPER_LIST</category>
+			<filter-id>isReattributionReader</filter-id>
+		</action>
+
+		<action id="MASSE_EXPORT_ZIP_PLAN_CLASSEMENT" link="#{archiveActions.masseExport()}"
+			enabled="true" order="20" label="Export ZIP" icon="/img/icons/masse/compressMasse.png">
+			<category>PLAN_CLASSEMENT_UPPER_LIST</category>
+		</action>
+
+		<!-- Export mail d'un ensemble de dossiers -->
+		<action id="MASSE_EXPORT_MAIL_PLAN_CLASSEMENT"
+			link="javascript:Richfaces.showModalPanel('masseMailDossierPanel');"
+			order="70" label="Envoyer ces dossiers par mél" icon="/img/icons/masse/mailMasse.png">
+			<category>PLAN_CLASSEMENT_UPPER_LIST</category>
+		</action>
+
+		<!-- *********************************************************************** 
+			Actions au dessus des résultats de recherche ************************************************************************ -->
+		<action id="MASSE_ACTION_NON_CONCERNE_REATTRIBUTION_RECHERCHE"
+			link="#{dossierMassActions.masseFdrActionNonConcerneReattribution()}"
+			enabled="true" order="10"
+			label="label.responses.dossier.toolbar.reattributionDossier" icon="/img/icons/masse/reattributionMasse.png">
+			<category>RECHERCHE_UPPER_LIST</category>
+			<filter-id>isReattributionReader</filter-id>
+		</action>
+
+		<action id="MASSE_ACTION_NON_CONCERNE_REAFFECTATION_RECHERCHE"
+			link="#{dossierMassActions.masseFdrActionNonConcerneReaffectation()}"
+			enabled="true" order="10"
+			label="label.responses.dossier.toolbar.reaffectationDossier" icon="/img/icons/masse/reaffectationMasse.png">
+			<category>RECHERCHE_UPPER_LIST</category>
+			<filter-id>isReaffectationReader</filter-id>
+		</action>
+
+		<action id="MASSE_ACTION_REATTRIBUTION_DIRECTE_RECHERCHE"
+			link="#{dossierMassActions.masseFdrActionReattributionDirecte()}"
+			order="10" label="label.responses.dossier.toolbar.reattribuerDirect"
+			icon="/img/icons/masse/reattributionDirecteMasse.png">
+			<category>RECHERCHE_UPPER_LIST</category>
+			<filter-id>isReattributionDirecteReader</filter-id>
+		</action>
+
+		<action id="MASSE_ACTION_MODIFICATION_MINISTERE_RATTACHEMENT"
+			link="#{dossierMassActions.masseActionModificationMinistereRattachement()}"
+			order="10"
+			label="label.responses.dossier.toolbar.modificationMinistereRattachement"
+			icon="/img/icons/masse/Change-MinRatt.gif">
+			<category>RECHERCHE_UPPER_LIST</category>
+			<filter-id>isMinistereRattachementUpdater</filter-id>
+		</action>
+
+		<action id="MASSE_ACTION_MODIFICATION_DIRECTION_PILOTE"
+			link="#{dossierMassActions.masseActionModificationDirectionPilote()}"
+			order="10" label="label.responses.dossier.toolbar.modificationDirectionPilote"
+			icon="/img/icons/masse/Change-DirPilote.gif">
+			<category>RECHERCHE_UPPER_LIST</category>
+			<filter-id>isDirectionPiloteUpdater</filter-id>
+		</action>
+
+		<action id="MASSE_EXPORT_ZIP_RECHERCHE" link="#{archiveActions.masseExport()}"
+			enabled="true" order="20" label="Export ZIP" icon="/img/icons/masse/compressMasse.png">
+			<category>RECHERCHE_UPPER_LIST</category>
+		</action>
+
+		<!-- Export mail d'un ensemble de dossiers -->
+		<action id="MASSE_EXPORT_MAIL_RECHERCHE"
+			link="javascript:Richfaces.showModalPanel('masseMailDossierPanel');"
+			order="70" label="Envoyer ces dossiers par mél" icon="/img/icons/masse/mailMasse.png">
+			<category>RECHERCHE_UPPER_LIST</category>
+		</action>
+
+		<!-- *********************************************************************** 
+			Actions au dessous des dossiers de la corbeille X_ => tri ************************************************************************ -->
+		<action id="1_CORBEILLE_ALLOTISSEMENT" link="#{allotissementsActions.navigate()}"
+			label="command.allotissement.create" icon="">
+			<category>CORBEILLE_SELECTION_LIST</category>
+			<filter-id>canUpdateAllotissement</filter-id>
+			<filter-id>isCorbeilleListeNotEmpty</filter-id>
+		</action>
+
+		<action id="2_CORBEILLE_PREPARE_CURRENT_SELECTION_FAVORITE_ADD"
+			link="#{favorisDossierActions.newRepertoire()}" label="command.favorite.add"
+			icon="">
+			<category>CORBEILLE_SELECTION_LIST</category>
+			<filter-id>isCorbeilleListeNotEmpty</filter-id>
+		</action>
+
+		<action id="3_CORBEILLE_SELECT_ALL" link="#{dtoListingActions.selectAll()}"
+			label="command.select.all" icon="">
+			<category>CORBEILLE_SELECTION_LIST</category>
+		</action>
+
+		<action id="4_CORBEILLE_DESELECT_ALL" link="#{dtoListingActions.deselectAll()}"
+			label="command.deselect.all" icon="">
+			<category>CORBEILLE_SELECTION_LIST</category>
+			<filter-id>isCorbeilleListeNotEmpty</filter-id>
+		</action>
+
+		<action id="DOSSIER_CONNEXE_CREATE_ALLOTISSEMENT" link="#{dossierConnexeActions.createLot()}"
+			label="command.allotissement.create" icon="">
+			<category>DOSSIER_CONNEXE_SELECTION_LIST</category>
+			<filter-id>canUpdateAllotissement</filter-id>
+			<filter-id>isDossierConnexeListeNotEmpty</filter-id>
+			<filter-id>isDossierConnexeCurrentIndex</filter-id>
+			<filter-id>isDossierConnexeNotCurrentQuestion</filter-id>
+			<filter-id>notExistLot</filter-id>
+		</action>
+
+		<action id="DOSSIER_CONNEXE_UPDATE_ALLOTISSEMENT" link="#{dossierConnexeActions.updateLot()}"
+			label="command.allotissement.update" icon="">
+			<category>DOSSIER_CONNEXE_SELECTION_LIST</category>
+			<filter-id>canUpdateAllotissement</filter-id>
+			<filter-id>isDossierConnexeListeNotEmpty</filter-id>
+			<filter-id>isDossierConnexeCurrentIndex</filter-id>
+			<filter-id>isDossierConnexeNotCurrentQuestion</filter-id>
+			<filter-id>existLot</filter-id>
+
+		</action>
+
+		<!-- *********************************************************************** 
+			Dossier Réponses : action du formulaire pour creer une question et le dossier 
+			associe désactivation de l'action par défaut de nuxeo et ajout d'une action 
+			specifique *********************************************************************** -->
+		<action id="EMPTY_CASE_CREATE" enabled="false" />
+
+		<action id="CREATE_DOSSIER_ACTION" link="#{dossierActions.createDossier()}"
+			label="command.create" enabled="true">
+			<category>EMPTY_CASE_CREATE_BOTTOM_LIST</category>
+		</action>
+
+		<!-- *********************************************************************** 
+			Dossier Réponses : Liste des onglets *********************************************************************** -->
+		<!-- Onglet bordereau -->
+		<action id="TAB_DOSSIER_BORDEREAU" link="/casemanagement/caseitem/bordereau.xhtml"
+			enabled="true" order="10" label="Bordereau">
+			<category>VIEW_ACTION_LIST</category>
+			<filter-id>isDossier</filter-id>
+		</action>
+
+		<!-- Onglet parapheur -->
+		<action id="TAB_DOSSIER_PARAPHEUR" link="/casemanagement/caseitem/parapheur.xhtml"
+			enabled="true" order="15" label="Parapheur">
+			<category>VIEW_ACTION_LIST</category>
+			<filter-id>isDossier</filter-id>
+		</action>
+
+		<!-- Onglet fond de dossier -->
+		<action id="TAB_DOSSIER_FDD"
+			link="/casemanagement/caseitem/view_fond_de_dossier.xhtml" enabled="true"
+			order="20" label="Fond de dossier">
+			<category>VIEW_ACTION_LIST</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierContainsMinistere</filter-id>
+		</action>
+
+		<action id="TAB_CASE_MANAGEMENT_VIEW_RELATED_ROUTE" link="/incl/tabs/related_document_route_preview.xhtml"
+			order="250" label="label.document.routing.related.route">
+			<category>VIEW_ACTION_LIST</category>
+			<filter-id>isRoutable</filter-id>
+			<filter-id>hasRelatedRouteStarted</filter-id>
+			<filter-id>isFeuilleRouteVisible</filter-id>
+		</action>
+
+		<!-- Onglet journal -->
+		<action id="TAB_DOSSIER_JOURNAL" link="/incl/tabs/document_history.xhtml"
+			enabled="true" label="Journal" icon="/icons/file.gif" order="260">
+			<category>VIEW_ACTION_LIST</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierContainsMinistere</filter-id>
+		</action>
+
+		<!-- Onglet Questions connexes -->
+		<action id="TAB_DOSSIER_CONNEXE"
+			link="/casemanagement/caseitem/view_dossier_connexe.xhtml" enabled="true"
+			label="Dossiers Connexes" icon="/icons/file.gif" order="270">
+			<category>VIEW_ACTION_LIST</category>
+			<filter-id>canReadDossierConnexe</filter-id>
+			<filter-id>isDossier</filter-id>
+		</action>
+
+		<!-- Onglet Allotissement -->
+		<action id="TAB_ALLOTISSEMENT"
+			link="/casemanagement/caseitem/view_dossier_allotissement.xhtml"
+			enabled="true" label="Allotissement" icon="/icons/file.gif" order="280">
+			<category>VIEW_ACTION_LIST</category>
+			<filter-id>canReadAllotissement</filter-id>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isFeuilleRouteVisible</filter-id> <!-- Gestion de la visibilité de l'onglet allotissement comme celui de la 
+				feuille de route -->
+		</action>
+
+		<!-- Infobar -->
+		<action id="ESTVERROUILLE_DOSSIER" enabled="true" order="10"
+			label="Dossier verrouillé" icon="/img/icons/lock_16.png">
+			<category>DOSSIER_TOPBAR_INFOS</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>dossierIsLocked</filter-id>
+		</action>
+		<action id="ESTDEVERROUILLE_DOSSIER" enabled="true" order="10"
+			label="Dossier déverrouillé" icon="/img/icons/lock_open_16.png">
+			<category>DOSSIER_TOPBAR_INFOS</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+		</action>
+		<action id="SIGNALEMENT_DOSSIER" enabled="false" order="20"
+			label="Dossier signalé" icon="/img/icons/folder_warning.png">
+			<category>DOSSIER_TOPBAR_INFOS</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>hasSignalement</filter-id>
+		</action>
+		<action id="PRIORITE_HAUTE_DOSSIER" enabled="false" order="30"
+			label="Dossier de haute priorité" icon="/img/icons/folder_red.png">
+			<category>DOSSIER_TOPBAR_INFOS</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isUrgent</filter-id>
+		</action>
+		<action id="RAPPEL_DOSSIER" enabled="false" order="40"
+			label="Dossier rappelé" icon="/img/icons/folder_time.png">
+			<category>DOSSIER_TOPBAR_INFOS</category>
+			<filter-id>isDossier</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Dossier Réponses : boutons de verrous (tous les onglets) *********************************************************************** -->
+		<!-- Verrouillage d'un dossier -->
+		<action id="VERROUILLER_DOSSIER" link="#{reponseActions.editReponse()}"
+			enabled="true" order="20" label="reponses.dossier.lock.action.lock"
+			icon="/img/icons/lock_add_24.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_LOCKS</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotParapheur</filter-id>
+			<filter-id>isDossierLoadedOrUpdater</filter-id>
+			<filter-id>currentDocIsLockActionnableByCurrentUser</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+		</action>
+
+		<!-- Déverrouillage d'un dossier -->
+		<action id="DEVERROUILLER_DOSSIER" link="#{reponseActions.quitEditingReponse()}"
+			enabled="true" order="20" label="reponses.dossier.lock.action.unlock"
+			icon="/img/icons/lock_error_24.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_LOCKS</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>dossierIsLocked</filter-id>
+			<filter-id>isNotParapheur</filter-id>
+			<filter-id>isDossierLoadedOrUpdater</filter-id>
+			<filter-id>currentDocIsLockActionnableByCurrentUser</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+		</action>
+
+		<!-- Levée du verrou d'un dossier par l'administrateur -->
+		<action id="LEVER_VERROU_DOSSIER" link="#{reponseActions.quitEditingReponse()}"
+			order="20" label="reponses.dossier.lock.action.unlockAdmin"
+			confirm="return confirm('Etes-vous sûr de vouloir lever le verrou ?');"
+			icon="/img/icons/lock_error_24.png">
+			<category>DOSSIER_ADMIN_TOPBAR_ACTIONS_LOCKS</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>dossierIsLocked</filter-id>
+			<filter-id>isDossierLoadedOrUpdater</filter-id>
+			<filter-id>currentDocIsNotLockActionnableByCurrentUser</filter-id>
+			<filter-id>isDossierAdminUnlockable</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Dossier Réponses : onglet "Bordereau" *********************************************************************** -->
+		<!-- Bouton sauvegarder de l'onglet bordereau -->
+		<action id="SAUVEGARDER_DOSSIER_BORDEREAU" link="#{dossierActions.saveIndexationComplementaire()}"
+			enabled="true" order="20" label="Sauvegarder" icon="/img/icons/disk_blue.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_EDIT</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>dossierIsLocked</filter-id>
+			<filter-id>isInBordereau</filter-id>
+			<filter-id>currentDocIsLockActionnableByCurrentUser</filter-id>
+			<filter id="sauvegarder_indexation">
+				<rule grant="true">
+					<condition>#{dossierActions.getCanEditIndexationComplementaire()}</condition>
+				</rule>
+			</filter>
+			<filter id="sauvegarder_bordereau">
+				<!-- Possibilité de modifier un dossier distribué dans sa corbeille -->
+				<rule grant="true">
+					<condition>#{corbeilleActions.isDossierLoadedInCorbeille()}</condition>
+				</rule>
+
+				<!-- Possibilité de modifier un dossier en cours pour un administrateur -->
+				<rule grant="true">
+					<group>DossierRechercheUpdater</group>
+				</rule>
+
+				<!-- Possibilité de modifier un dossier en cours pour un administrateur 
+					ministériel -->
+				<rule grant="true">
+					<group>DossierRechercheMinUpdater</group>
+					<condition>#{dossierActions.isCurrentDossierInUserMinistere()}</condition>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Dossier Réponses : onglet "Parapheur" *********************************************************************** -->
+		<!-- Verrou sur l'onglet parapheur -->
+		<action id="LOCK_DOSSIER_PARAPHEUR" link="#{reponseActions.editReponse()}"
+			enabled="true" order="10" label="reponses.dossier.lock.action.lock"
+			icon="/img/icons/lock_add_24.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_LOCKS</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isInParapheur</filter-id>
+			<filter-id>currentDocIsLockActionnableByCurrentUser</filter-id>
+			<filter-id>isAtLastVersionReponse</filter-id>
+			<filter-id>isDossierParapheurEditable</filter-id>
+			<filter-id>isDossierLoadedOrUpdater</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+		</action>
+
+		<!-- Bouton permettant de déverrouiller dans l'onglet parapheur -->
+		<action id="UNLOCK_DOSSIER_PARAPHEUR" link="#{reponseActions.quitEditingReponse()}"
+			enabled="true" order="20" label="reponses.dossier.lock.action.unlock"
+			icon="/img/icons/lock_error_24.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_LOCKS</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>dossierIsLocked</filter-id>
+			<filter-id>isInParapheur</filter-id>
+			<filter-id>currentDocIsLockActionnableByCurrentUser</filter-id>
+			<filter-id>isDossierParapheurEditable</filter-id>
+			<filter-id>isDossierLoadedOrUpdater</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Dossier Réponses : onglet "Feuille de route" *********************************************************************** -->
+		<!-- Note : les labels de la category DOSSIER_TOPBAR_ACTIONS_FDR ne sont 
+			pas pris en compte et sont gérés dynamiquement dans rponses_toolbar.xhtml. -->
+		<!-- *********************************** Actions de validation d'étape 
+			************************************** -->
+		<action id="DONNER_AVIS_FAVORABLE_DOSSIER"
+			link="#{dossierDistributionActions.donnerAvisFavorable()}" enabled="true"
+			order="10" label="label.responses.dossier.toolbar.favorable" icon="/img/icons/check.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+
+
+		<!-- *********************************** Actions de validation d'étape grisée
+			************************************** -->
+		<action id="DONNER_AVIS_FAVORABLE_DOSSIER_GRISE"
+			link="" enabled="true"
+			order="10" label="label.responses.dossier.toolbar.favorable.grise" icon="/img/icons/check_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+		<!-- *********************************** Actions de signature/non signature avec grise quand étape déjà cliquée
+			************************************** -->
+
+		<action id="SIGNER_DOSSIER"
+			link="#{dossierDistributionActions.donnerAvisFavorable()}" enabled="true"
+			order="15" label="Signer et envoyer à l'étape suivante" icon="/img/icons/rubberstamp.png"
+			confirm="return confirm('Confirmez-vous l\'apposition du cachet serveur ?');">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isStepSignature</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="SIGNER_DOSSIER_GRISE"
+			link="" enabled="true"
+			order="15" label="Signature en cours" icon="/img/icons/rubberstamp_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isStepSignature</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+		
+		<action id="REJETER_SIGNER_DOSSIER"
+			link="#{dossierDistributionActions.donnerAvisDefavorableEtPoursuivre()}"
+			enabled="true" order="50" label="Refus de signature et envoi à l'étape suivante"
+			icon="/img/icons/rubberstamp_delete.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isStepSignature</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+		
+		<action id="REJETER_SIGNER_DOSSIER_GRISE"
+			link=""
+			enabled="true" order="50" label="Refus de signature et envoi à l'étape suivante"
+			icon="/img/icons/rubberstamp_delete_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isStepSignature</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<!-- ********************************************* Actions de refus ou 
+			non concerné d'étape ************************************************* -->
+		<action id="TRANSFERER_DOSSIER" link="#{dossierDistributionActions.nonConcerne()}"
+			enabled="true" order="25"
+			label="label.responses.dossier.toolbar.transfertDossier" icon="/img/icons/user1_into.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+		</action>
+
+		<action id="REJETER_RETOUR_DOSSIER"
+			link="#{dossierDistributionActions.donnerAvisDefavorableEtInsererTaches()}"
+			enabled="true" order="50"
+			label="label.responses.dossier.toolbar.defavorableAvecRetour" icon="/img/icons/rejetFdR_RetourArriere.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotFirstStepInBranchOrParallel</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="REJETER_RETOUR_DOSSIER_GRISE"
+			link=""
+			enabled="true" order="50"
+			label="label.responses.dossier.toolbar.defavorableAvecRetour" icon="/img/icons/rejetFdR_RetourArriere_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotFirstStepInBranchOrParallel</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+		
+		<action id="REJETER_RETOUR_BDC_DOSSIER"
+			link="#{dossierDistributionActions.donnerAvisDefavorableEtRetourBdcAttributaire()}"
+			enabled="true" order="60"
+			label="label.responses.dossier.toolbar.defavorableAvecRetourBdc"
+			icon="/img/icons/rejetFdR_RetourBDC.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotFirstStepInBranchOrParallel</filter-id>
+			<filter-id>isStepReattribution</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="REJETER_RETOUR_BDC_DOSSIER_GRISE"
+			link=""
+			enabled="true" order="60"
+			label="label.responses.dossier.toolbar.defavorableAvecRetourBdc"
+			icon="/img/icons/rejetFdR_RetourBDC_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotFirstStepInBranchOrParallel</filter-id>
+			<filter-id>isStepReattribution</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="REJETER_DOSSIER"
+			link="#{dossierDistributionActions.donnerAvisDefavorableEtPoursuivre()}"
+			enabled="true" order="55" label="label.responses.dossier.toolbar.defavorable"
+			icon="/img/icons/delete.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="REJETER_DOSSIER_GRISE"
+			link=""
+			enabled="true" order="55" label="label.responses.dossier.toolbar.defavorable"
+			icon="/img/icons/delete_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<!-- ************************************************************************** 
+			Actions de reattribution/arbitrage/reorientation de feuille de route ******************************************************************************* -->
+		<action id="REORIENTER_DOSSIER"
+			link="#{dossierDistributionActions.nonConcerneReorientation()}"
+			enabled="true" order="35"
+			label="label.responses.dossier.toolbar.reorientationDossier" icon="/img/icons/reorientation.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isReorientationReader</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotFirstStepInBranchOrParallel</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="REORIENTER_DOSSIER_GRISE"
+			link=""
+			enabled="true" order="35"
+			label="label.responses.dossier.toolbar.reorientationDossier" icon="/img/icons/reorientation_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isReorientationReader</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotFirstStepInBranchOrParallel</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="REATTRIBUER_DOSSIER"
+			link="javascript:Richfaces.showModalPanel('unconcerned_task_panel');"
+			enabled="true" order="35"
+			label="label.responses.dossier.toolbar.reattributionDossier" icon="/img/icons/reattribution.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isRootStep</filter-id>
+			<filter-id>isReattributionReader</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotDossierArbitrated</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="REATTRIBUER_DOSSIER_GRISE"
+			link=""
+			enabled="true" order="35"
+			label="label.responses.dossier.toolbar.reattributionDossier" icon="/img/icons/reattribution_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isRootStep</filter-id>
+			<filter-id>isReattributionReader</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotDossierArbitrated</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="CANT_REATTRIBUER_DOSSIER" link="" enabled="true"
+			order="35"
+			label="label.responses.dossier.toolbar.reattributionDossierIndisponible"
+			icon="/img/icons/cantreattribution.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isRootStep</filter-id>
+			<filter-id>isReattributionReader</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isDossierArbitrated</filter-id>
+		</action>
+
+		<action id="ATTRIBUER_APRES_ARBITRAGE_DOSSIER"
+			link="javascript:Richfaces.showModalPanel('attribution_apres_arbitrage_task_panel');"
+			enabled="true" order="40"
+			label="label.responses.dossier.toolbar.attributionApresArbitrage"
+			icon="/img/icons/reattributionArbitrageSGG.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isRootStep</filter-id>
+			<filter-id>isReattributionReader</filter-id>
+			<filter-id>isStepPourArbitrage</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+		
+		<action id="ATTRIBUER_APRES_ARBITRAGE_DOSSIER_GRISE"
+			link=""
+			enabled="true" order="40"
+			label="label.responses.dossier.toolbar.attributionApresArbitrage"
+			icon="/img/icons/reattributionArbitrageSGG_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isRootStep</filter-id>
+			<filter-id>isReattributionReader</filter-id>
+			<filter-id>isStepPourArbitrage</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="ARBITRER_DOSSIER"
+			link="#{dossierDistributionActions.demandeArbitrageSGG()}" enabled="true"
+			order="45" label="label.responses.dossier.toolbar.arbitrageDossier"
+			icon="/img/icons/arbitrageSGG.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isArbitrageSGGReader</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotDossierArbitrated</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+		
+		<action id="ARBITRER_DOSSIER_GRISE"
+			link="" enabled="true"
+			order="45" label="label.responses.dossier.toolbar.arbitrageDossier"
+			icon="/img/icons/arbitrageSGG_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isArbitrageSGGReader</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotDossierArbitrated</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="CANT_ARBITRER_DOSSIER" link="" enabled="true"
+			order="45" label="label.responses.dossier.toolbar.arbitrageDossierIndisponible"
+			icon="/img/icons/cantarbitrageSGG.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isArbitrageSGGReader</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isDossierArbitrated</filter-id>
+		</action>
+
+		<!-- Action permettant de réattribuer un dossier qui a été arbitré -->
+		<action id="REATTRIBUER_DIRECT_DOSSIER"
+			link="javascript:Richfaces.showModalPanel('reattribution_directe_task_panel');"
+			order="35" label="label.responses.dossier.toolbar.reattribuerDirect"
+			icon="/img/icons/reattributionDirecte.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isRootStep</filter-id>
+			<filter-id>isReattributionDirecteReader</filter-id>
+			<filter-id>isDossierArbitrated</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<!-- Action permettant de réattribuer un dossier qui a été arbitré -->
+		<action id="REATTRIBUER_DIRECT_DOSSIER_GRISE"
+			link=""
+			order="35" label="label.responses.dossier.toolbar.reattribuerDirect"
+			icon="/img/icons/reattributionDirecte_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isRootStep</filter-id>
+			<filter-id>isReattributionDirecteReader</filter-id>
+			<filter-id>isDossierArbitrated</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<!-- ******************************************************** Actions de 
+			modification FDR et d'ajout d'étape ********************************************************** -->
+		<action id="AJOUTER_FEUILLE_ROUTE_DOSSIER"
+			link="#{dossierDistributionActions.navigateToFdrModelSelection()}"
+			enabled="true" order="5" label="label.responses.dossier.toolbar.ajouter.fdr"
+			icon="/img/icons/add_fdr.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isNotDossierHasFeuilleRoute</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isFeuilleRouteSetter</filter-id>
+		</action>
+
+		<action id="METTRE_EN_ATTENTE_DOSSIER" link="#{dossierDistributionActions.mettreEnAttente()}"
+			enabled="true" order="30" label="label.responses.dossier.toolbar.enAttente"
+			icon="/img/icons/attente.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+		
+		<action id="METTRE_EN_ATTENTE_DOSSIER_GRISE" link=""
+			enabled="true" order="30" label="label.responses.dossier.toolbar.enAttente"
+			icon="/img/icons/attente_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<action id="POUR_RETOUR_PM" link="#{dossierDistributionActions.validationRetourPM()}"
+			enabled="true" order="32"
+			label="label.responses.dossier.toolbar.validationRetourPM" icon="/img/icons/retourValidationPM.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isNotEtapeEnCoursValidation</filter-id>
+		</action>
+		
+		<action id="POUR_RETOUR_PM_GRISE" link=""
+			enabled="true" order="32"
+			label="label.responses.dossier.toolbar.validationRetourPM" icon="/img/icons/retourValidationPM_grise.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierLinkLoaded</filter-id>
+			<filter-id>isDossierLockable</filter-id>
+			<filter-id>isNotNextStepReorientationOrReattributionOrArbitrage</filter-id>
+			<filter-id>isNotStepSignature</filter-id>
+			<filter-id>isNotStepPourArbitrage</filter-id>
+			<filter-id>isNotStepReattribution</filter-id>
+			<filter-id>isStepInMinistere</filter-id>
+			<filter-id>isEtapeEnCoursValidation</filter-id>
+		</action>
+
+		<!-- Action permettant de redémarrer un dossier terminé -->
+		<action id="REDEMARRER_DOSSIER" link="#{dossierDistributionActions.redemarrerDossier()}"
+			order="40" label="label.responses.dossier.toolbar.redemarrer" 
+			confirm="return confirm('Confirmez-vous le redémarrage de la question ?');"
+			icon="/img/icons/check.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_FDR</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDone</filter-id>
+			<filter-id>isDossierUnlocked</filter-id>
+			<filter-id>isFeuilleRouteRestartable</filter-id>
+			<filter-id>isFDRInstanceRestarter</filter-id>
+		</action>
+
+		<!-- Alotissement et Connexité -->
+
+		<action id="VOIR_ALLOTISSEMENT_DOSSIER" link="/casemanagement/caseitem/parapheur.xhtml"
+			enabled="false" order="10" label="Voir les dossiers allotis" icon="/img/icons/link.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_MULTI</category>
+			<filter-id>isDossier</filter-id>
+		</action>
+		<action id="VOIR_CONNEXES_DOSSIER" link="/casemanagement/caseitem/parapheur.xhtml"
+			enabled="false" order="20" label="Voir les dossiers connexes" icon="/img/icons/folders.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_MULTI</category>
+			<filter-id>isDossier</filter-id>
+		</action>
+
+		<!-- Impression & Envoi -->
+		<action id="NICE_PRINT_DOSSIER" link="/casemanagement/caseitem/parapheur.xhtml"
+			enabled="false" order="10" label="Imprimer le document avec mise en forme"
+			icon="/img/icons/document_plain.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_PRINT</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isNotJournal</filter-id>
+		</action>
+		<action id="COMPRESS_DOSSIER" link="#{archiveActions.export()}"
+			enabled="true" order="20" label="Compresser le fond de dossier au format ZIP"
+			icon="/img/icons/compress.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_PRINT</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isZippable</filter-id>
+			<filter-id>isDossierContainsMinistere</filter-id>
+		</action>
+		<action id="REFRESH_DOSSIER" link="null" enabled="true" order="30"
+			label="Réactualiser le contenu du dossier" icon="/img/icons/refresh.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_PRINT</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isJournal</filter-id>
+		</action>
+		<action id="PRINT_DOSSIER" link="javascript:openPrintView('reponses/default')"
+			enabled="true" order="40" label="Imprimer le dossier" icon="/img/icons/printer.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_PRINT</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierContainsMinistere</filter-id>
+		</action>
+
+		<action id="EMAIL_FORWARD_DOSSIER"
+			link="javascript:Richfaces.showModalPanel('mailDossierPanel');"
+			enabled="true" order="50" label="Envoyer ce dossier par mél" icon="/img/icons/mail.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_PRINT</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierContainsMinistere</filter-id>
+		</action>
+
+		<action id="GENERER_PDF_DOSSIER" link="#{reportingActions.generatePdf()}"
+			enabled="true" order="20" label="Editer la fiche du dossier au format PDF"
+			icon="/img/icons/report_pdf.png">
+			<category>DOSSIER_TOPBAR_ACTIONS_PRINT</category>
+			<filter-id>isDossier</filter-id>
+			<filter-id>isDossierContainsMinistere</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Déconnexion *********************************************************************** -->
+		<action id="non_anonymous_logout" link="logout" icon="/img/icons/logout.png"
+			confirm="if( !confirmBeforeLogout() ) return false;" label="command.logout"
+			order="200">
+			<category>USER_SERVICES_BOTTOM</category>
+		</action>
+
+		<!-- *********************************************************************** 
+			Feuilles de route *********************************************************************** -->
+		<!-- Copie les étapes de feuille de route sélectionnées -->
+		<action id="CURRENT_SELECTION_COPY"
+			link="#{routingActions.putSelectionInClipboardAndEmptySelection}"
+			label="command.clipboard.copy" icon="">
+			<category>ROUTE_STEP_SELECTION_LIST</category>
+			<filter-id>canCopyFromCurrentSelection</filter-id>
+		</action>
+
+		<!-- Copie les étapes de feuille de route sélectionnées -->
+		<action id="CURRENT_SELECTION_CREATE_SHARED_NOTE"
+				link="#{routeStepNoteActions.initCreateSharedNote}" 
+				label="command.clipboard.createSharedNote" icon="">
+			<category>ROUTE_STEP_SELECTION_LIST</category>
+			<filter-id>canCreateSharedNote</filter-id>
+		</action>
+		
+		<!-- Suppression dun type d'étape pour un type de poste dans les feuilles de route sélectionnées -->
+		<action id="CURRENT_SELECTION_DELETE_STEP_FDR"
+			link="#{modeleFeuilleRouteActions.prepareDeleteMultipleStepsFromRoute}"
+			label="command.clipboard.delete.step.fdr" icon="">
+			<category>CURRENT_SELECTION_LIST</category>
+		      <filter id="canDelete">
+		        <rule grant="true">
+		          <condition>#{deleteActions.canDelete}</condition>
+		        </rule>
+		      </filter>
+		</action>
+
+		<!-- Suppression dun type d'étape pour un type de poste dans les feuilles de route sélectionnées pour recherche -->
+		<action id="CURRENT_SELECTION_DELETE_STEP_FDR_RECHERCHE"
+			link="#{modeleFeuilleRouteActions.prepareDeleteMultipleStepsFromRoute}"
+			label="command.clipboard.delete.step.fdr" icon="">
+			<category>CURRENT_SELECTION_LIST_FDR_RECHERCHE</category>
+		      <filter id="canDelete">
+		        <rule grant="true">
+		          <condition>#{deleteActions.canDelete}</condition>
+		        </rule>
+		      </filter>
+		</action>
+
+
+		<!-- Ajout avant une étape de feuille de route (surcharge d'une action 
+			Nuxeo) -->
+		<action id="ADD_STEP_BEFORE" label="command.add.routeelement.before"
+			link="javascript:document.getElementById('selectRouteElementsTypeForCreationForm:hiddenDocOrder').value = 'before';Richfaces.showModalPanel('selectRouteElementsTypePanel');"
+			icon="/icons/add.png" order="10">
+			<category>ADD_STEP_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isNotSerialStepFolder</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+		</action>
+
+		<!-- Ajout après une étape de feuille de route (surcharge d'une action 
+			Nuxeo) -->
+		<action id="ADD_STEP_AFTER" label="command.add.routeelement.after"
+			link="javascript:document.getElementById('selectRouteElementsTypeForCreationForm:hiddenDocOrder').value = 'after';Richfaces.showModalPanel('selectRouteElementsTypePanel');"
+			icon="/icons/add.png" order="20">
+			<category>ADD_STEP_ACTIONS_LIST</category>
+			<filter-id>isNotSerialStepFolder</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+		</action>
+
+		<!-- Ajout d'une nouvelle branche dans un conteneur parallèle d'étapes 
+			de feuille de route -->
+		<action id="ADD_FORK_IN_PARALLEL_STEP_FOLDER" label="st.feuilleRoute.etape.command.addBranch"
+			link="#{routingActions.createNewForkInParallelRouteStep}" icon="/icons/add.png"
+			order="30">
+			<category>ADD_STEP_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isParallelStepFolder</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+		</action>
+
+		<!-- Ajout dans un conteneur vide de feuille de route (surcharge d'une 
+			action Nuxeo) -->
+		<action id="ADD_STEP_BETWEEN" label="st.feuilleRoute.etape.command.addChild"
+			link="javascript:document.getElementById('selectRouteElementsTypeForCreationForm:hiddenDocOrder').value = 'in';Richfaces.showModalPanel('selectRouteElementsTypePanel');"
+			icon="/icons/add.png" order="30">
+			<category>ADD_STEP_IN_FORK_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+		</action>
+
+		<!-- Coller des étapes avant une étape de feuille de route -->
+		<action id="PASTE_STEP_BEFORE" label="st.feuilleRoute.etape.command.pasteBefore"
+			link="#{routingActions.pasteBefore}" icon="/icons/add.png" order="40">
+			<category>PASTE_STEP_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+			<filter-id>isPastableRouteStep</filter-id>
+		</action>
+
+		<!-- Coller des étapes après une étape de feuille de route -->
+		<action id="PASTE_STEP_AFTER" label="st.feuilleRoute.etape.command.pasteAfter"
+			link="#{routingActions.pasteAfter}" icon="/icons/add.png" order="50">
+			<category>PASTE_STEP_ACTIONS_LIST</category>
+			<filter-id>isEditableRoute</filter-id>
+			<filter-id>isPastableRouteStep</filter-id>
+		</action>
+
+		<!-- Coller des étapes dans un conteneur d'étapes de feuille de route -->
+		<action id="PASTE_STEP_BETWEEN" label="st.feuilleRoute.etape.command.pasteInto"
+			link="#{routingActions.pasteInto}" icon="/icons/add.png" order="60">
+			<category>PASTE_STEP_IN_FORK_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+			<filter-id>isPastableRouteStep</filter-id>
+		</action>
+
+		<!-- Suppression d'une étape de feuille de route (surcharge d'une action 
+			Nuxeo) -->
+		<action id="REMOVE_STEP" label="command.delete" link="#{routingActions.removeStep}"
+			icon="/icons/delete.png">
+			<category>REMOVE_STEP_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+			<filter id="isNotStepFolder">
+				<rule grant="false">
+					<type>StepFolder</type>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- Suppression d'une branche de feuille de route -->
+		<action id="REMOVE_BRANCH" label="st.feuilleRoute.etape.command.deleteBranch"
+			link="#{routingActions.removeStep}" icon="/icons/delete.png">
+			<category>REMOVE_STEP_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+			<filter id="isStepFolder">
+				<rule grant="true">
+					<type>StepFolder</type>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- Mise à jour d'une étape de feuille de route (surcharge d'une action 
+			Nuxeo) -->
+		<action id="UPDATE_STEP" label="command.edit" link="#{routingActions.editStep}"
+			icon="/icons/modify.png">
+			<category>EDIT_STEP_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+		</action>
+
+		<!-- Déplacement vers le haut d'une étape de feuille de route (surcharge 
+			d'une action Nuxeo) -->
+		<action id="MOVE_STEP_UP" label="command.selection.moveUp"
+			link="#{routingActions.moveRouteElement('up')}" icon="/icons/move_up.png">
+			<category>EDIT_STEP_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+		</action>
+
+		<!-- Déplacement vers le bas d'une étape de feuille de route (surcharge 
+			d'une action Nuxeo) -->
+		<action id="MOVE_STEP_DOWN" label="command.selection.moveDown"
+			link="#{routingActions.moveRouteElement('down')}" icon="/icons/move_down.png">
+			<category>EDIT_STEP_ACTIONS_LIST</category>
+			<filter-id>isNotRunning</filter-id>
+			<filter-id>isNotDone</filter-id>
+			<filter-id>isEditableRoute</filter-id>
+		</action>
+
+		<!-- Surcharge nuxeo : désactivation copie d'une feuille de route -->
+		<action id="SAVE_ROUTE_AS_NEW_INSTANCE" enabled="false" />
+		<action id="SAVE_ATTACHED_ROUTE_AS_NEW_INSTANCE" enabled="false" />
+
+		<!-- Creation d'étapes de feuilles de routes en masse : ajout d'une étape dans le tableau de création -->
+		<action id="ADD_ROUTE_STEP_MASS" styleClass="button" label="Ajouter une étape" link="#{routingActions.addEtapeFeuilleDeRoute()}" oncomplete="bind()" order="10">
+			<category>CREATE_ROUTE_STEP_MASS</category>
+		</action>
+		
+		<!-- Creation d'étapes de feuilles de routes en masse : création -->
+		<action id="SAVE_ROUTE_STEP_MASS" styleClass="button" label="Sauvegarder" link="#{routingActions.saveRouteElementMass()}" order="20">
+			<category>CREATE_ROUTE_STEP_MASS</category>
+		</action>
+		
+		<!-- Creation d'étapes de feuilles de routes en masse : annuler -->
+		<action id="CANCEL_ROUTE_STEP_MASS" styleClass="button" label="Annuler" link="#{routingActions.goBackToRouteFromCreateMass}" order="30">
+			<category>CREATE_ROUTE_STEP_MASS</category>
+		</action>
+    
+		<!-- *********************************************************************** 
+			Espace de traitement *********************************************************************** -->
+		<!-- Menu principal : espace de travail -->
+		<action id="espace_travail" link="#{corbeilleActions.navigateToEspaceTravail}"
+			label="command.espaceCorbeille" icon="/img/icons/espace_corbeille.png"
+			order="0">
+			<category>USER_SERVICES</category>
+			<!--<filter id="espace_corbeille_reader_grid"> <rule grant="true"> <group>EspaceAdministrationReader</group> 
+				<group>administrators</group> </rule> </filter> -->
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace plan de classement *********************************************************************** -->
+		<action id="espace_plan_classement"
+			link="#{planClassementActions.navigateToEspacePlanClassement}" label="Plan de classement"
+			order="25" icon="/img/icons/outbox.png">
+			<category>USER_SERVICES</category>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace de recherche *********************************************************************** -->
+		<action id="espace_recherche"
+			link="#{rechercheAvanceeActions.navigateToRechercheAvancee()}" label="Recherche"
+			icon="/img/icons/find.png" order="80">
+			<category>USER_SERVICES</category>
+			<filter id="recherche_grid">
+				<rule grant="true">
+					<group>EspaceRechercheReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="template_requete" link="/recherche/template_requete_resultats.xhtml"
+			label="Résultats de recherche" icon="/img/icons/find.png" order="80">
+			<category>VIEW_MAILBOX_ACTION_LIST</category>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace de suivi *********************************************************************** -->
+		<action id="espace_suivi" link="#{suiviActions.navigateToEspaceSuivi()}"
+			label="Suivi" order="98" icon="/img/icons/presentation_chart.png">
+			<category>USER_SERVICES</category>
+		</action>
+
+		<action id="suivi_saved_requetes" link="/suivi/tabs/suivi_saved_requete_content.xhtml"
+			label="suivi.saved.requetes" order="10">
+			<category>SUIVI_ACTION_LIST</category>
+			<category>VIEW_MAILBOX_ACTION_LIST</category>
+		</action>
+
+		<action id="suivi_alerte" link="/suivi/tabs/suivi_alert_content.xhtml"
+			label="suivi.saved.alerts" order="20">
+			<category>SUIVI_ACTION_LIST</category>
+			<category>VIEW_MAILBOX_ACTION_LIST</category>
+		</action>
+
+		<action id="publish_requete" link="#{requeteurActions.publish()}"
+			label="requeteExperte.action.publish" />
+		<action id="unpublish_requete" link="#{requeteurActions.unpublish()}"
+			label="requeteExperte.action.unpublish" />
+
+		<action id="etat_alert_isActivated" icon="/img/icons/bullet_ball_glass_green_16.png"
+			link="#{alertActions.suspend()}" label="alert.etat.isActivated"
+			order="10" />
+		<action id="etat_alert_isSuspended" icon="/img/icons/bullet_ball_glass_yellow_16.png"
+			link="#{alertActions.activate()}" label="alert.etat.isSupended"
+			order="20" />
+
+		<!-- *********************************************************************** 
+			Espace utilisateur *********************************************************************** -->
+		<action id="espace_utilisateur" link="#{utilisateurActions.navigateToEspaceUtilisateur}"
+			label="Utilisateurs" icon="/img/icons/espace_administration.png"
+			order="110">
+			<category>USER_SERVICES</category>
+			<filter id="espace_utilisateur_reader_grid">
+				<rule grant="false">
+					<group>EspaceAdministrationReader</group>
+				</rule>
+				<rule grant="false">
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace d'administration *********************************************************************** -->
+		<action id="espace_administration"
+			link="#{administrationActions.navigateToEspaceAdministration}" label="command.espaceAdministration"
+			icon="/img/icons/espace_administration.png" order="110">
+			<category>USER_SERVICES</category>
+			<filter id="espace_administration_reader_grid">
+				<rule grant="true">
+					<group>EspaceAdministrationReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace d'administration / Batchs *********************************************************************** -->
+		<action id="admin_batch_suivi" label="command.admin.batch.suivi"
+			order="2">
+			<category>ADMIN_MENU</category>
+		</action>
+
+		<action id="admin_batch_viewSuivi" link="#{administrationActions.navigateToViewBatchSuivi}"
+			label="command.admin.batch.viewsuivi" order="5">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_batch_grid">
+				<rule grant="true">
+					<group>BatchSuiviReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_batch_viewSuiviPlanification"
+			link="#{administrationActions.navigateToViewBatchSuiviPlanification}"
+			label="command.admin.batch.viewsuivi.planification" order="6">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_batch_grid">
+				<rule grant="true">
+					<group>BatchSuiviReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_batch_viewSuiviNotification"
+			link="#{administrationActions.navigateToViewBatchSuiviNotification}"
+			label="command.admin.batch.viewsuivi.notification" order="7">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_batch_grid">
+				<rule grant="true">
+					<group>BatchSuiviReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace d'administration / Utilisateurs *********************************************************************** -->
+		<action id="admin_utilisateur" label="command.admin.utilisateur"
+			order="10">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_utilisateur_grid">
+				<rule grant="true">
+					<group>OrganigrammeReader</group>
+					<group>UtilisateurReader</group>
+					<group>ProfilReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_utilisateur_organigramme" link="#{administrationActions.navigateToOrganigramme}"
+			label="command.admin.utilisateur.organigramme" order="20">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_utilisateur_organigramme_grid">
+				<rule grant="true">
+					<group>OrganigrammeReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_utilisateur_organigramme_viewlogs"
+			link="#{administrationActions.navigateToViewUpdateTimbre}" label="command.admin.utilisateur.organigramme.viewupdatetimbre"
+			order="21">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_utilisateur_organigramme_grid">
+				<rule grant="true">
+					<group>OrganigrammeReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+			<filter-id>AllowUpdateOrganigramme</filter-id>
+		</action>
+
+		<action id="admin_utilisateur_utilisateur" link="#{administrationActions.navigateToUtilisateur}"
+			label="command.admin.utilisateur.utilisateur" order="30">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_utilisateur_utilisateur_grid">
+				<rule grant="true">
+					<group>UtilisateurReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_utilisateur_profil" link="#{profileManagerActions.viewProfiles}"
+			label="command.admin.utilisateur.profil" order="40">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_utilisateur_profil_grid">
+				<rule grant="true">
+					<group>ProfilReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_utilisateur_recherche"
+			link="#{administrationActions.navigateToRechercheUtilisateur}" label="command.admin.utilisateur.recherche"
+			order="40">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_utilisateur_recherche_grid">
+				<rule grant="true">
+					<group>ProfilReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_utilisateur_delegation" link="#{administrationActions.navigateToDelegation}"
+			label="command.admin.utilisateur.delegation" order="45">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_utilisateur_delegation_grid">
+				<rule grant="true">
+					<group>UtilisateurDelegator</group>
+					<group>administrators</group>
+					<condition>#{userManagerActions.currentUserPermanent}</condition>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_utilisateur_supervision" link="#{administrationActions.navigateToSupervision}"
+			label="command.admin.utilisateur.supervision" order="46">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_utilisateur_supervision_grid">
+				<rule grant="true">
+					<group>EspaceSupervisionReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace d'administration / Journal *********************************************************************** -->
+		<action id="admin_journal" label="command.admin.journal" order="50">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_journal_grid">
+				<rule grant="true">
+					<group>AdministrationJournalReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_journal_journal" link="#{administrationActions.navigateToJournal}"
+			label="command.admin.journal.journal" order="55">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_journal_journal_grid">
+				<rule grant="true">
+					<group>AdministrationJournalReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace d'administration / Feuilles de route *********************************************************************** -->
+		<action id="admin_feuille_route" label="command.admin.feuilleRoute"
+			order="60">
+			<category>ADMIN_MENU</category>
+		</action>
+
+		<action id="admin_feuille_route_modele"
+			link="#{administrationActions.navigateToModeleFeuilleRouteFolder}"
+			label="command.admin.feuilleRoute.modeleFDR" order="70">
+			<category>ADMIN_MENU</category>
+		</action>
+
+		<action id="admin_feuille_route_modele_search"
+			link="#{administrationActions.navigateToModeleFeuilleRouteSearch}"
+			label="command.admin.feuilleRoute.modeleFDR.search" order="71">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_search_fdr">
+				<rule grant="true">
+					<group>RechercheModeleFDR</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace d'administration / Mon compte *********************************************************************** -->
+
+		<action id="admin_mon_compte_menu" label="command.admin.monCompte"
+			order="72">
+			<category>ADMIN_MENU</category>
+		</action>
+
+		<action id="admin_mon_compte" link="#{administrationActions.navigateToMonCompte}"
+			label="command.admin.monCompte" order="75">
+			<category>ADMIN_MENU</category>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace d'administration / Paramétrage *********************************************************************** -->
+
+		<action id="admin_param" label="command.admin.param" order="80">
+			<category>ADMIN_MENU</category>
+		</action>
+
+		<action id="admin_param_reference"
+			link="#{administrationActions.navigateToEspaceAdministration}" label="command.admin.param.reference"
+			order="90">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_table_reference">
+				<rule grant="true">
+					<group>ParamReferenceReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_param_param" link="#{administrationActions.navigateToParametreFolder}"
+			label="command.admin.param.param" order="110">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_param_reference">
+				<rule grant="true">
+					<group>ParamReferenceReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="admin_param_etat_app" link="#{administrationActions.navigateToEditEtatApp}"
+			label="command.admin.param.etat.application" order="120">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_param_etat">
+				<rule grant="true">
+					<group>AdminAccessUnrescticted</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace d'administration / Archivage *********************************************************************** -->
+
+		<action id="admin_archivage" link="#{administrationActions.navigateToArchivage}"
+			label="command.admin.archivage" order="140">
+			<category>ADMIN_MENU</category>
+			<filter id="admin_archivage_grid">
+				<rule grant="true">
+					<group>ArchivageEditor</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace utilisateur *********************************************************************** -->
+		<action id="utilisateur_menu_title" label="Utilisateurs" order="5">
+			<category>UTILISATEUR_MENU</category>
+		</action>
+
+		<action id="utilisateur_organigramme" link="#{utilisateurActions.navigateToOrganigramme}"
+			label="Voir l'organigramme" order="10">
+			<category>UTILISATEUR_MENU</category>
+			<!-- <filter id="utilisateur_utilisateur_organigramme_grid"> <rule grant="true"> 
+				<group>OrganigrammeReader</group> <group>administrators</group> </rule> </filter> -->
+		</action>
+
+		<action id="utilisateur_mon_compte" link="#{utilisateurActions.navigateToMonCompte}"
+			label="command.utilisateur.monCompte" order="20">
+			<category>UTILISATEUR_MENU</category>
+		</action>
+
+		<action id="utilisateur_delegation" link="#{utilisateurActions.navigateToDelegation}"
+			label="command.utilisateur.delegation" order="30">
+			<category>UTILISATEUR_MENU</category>
+			<filter id="utilisateur_delegation_grid">
+				<rule grant="true">
+					<group>UtilisateurDelegator</group>
+					<group>administrators</group>
+					<condition>#{userManagerActions.currentUserPermanent}</condition>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="utilisateur_creation"
+			link="#{utilisateurActions.navigateToCreateUserOccasional}" label="command.utilisateur.createOccasional"
+			order="40">
+			<category>UTILISATEUR_MENU</category>
+			<filter id="utilisateur_creation_grid">
+				<rule grant="true">
+					<group>UtilisateurDelegator</group>
+					<group>administrators</group>
+					<condition>#{userManagerActions.currentUserPermanent}</condition>
+				</rule>
+			</filter>
+		</action>
+
+
+		<action id="utilisateur_utilisateur" link="#{utilisateurActions.navigateToUtilisateur}"
+			label="command.utilisateur.utilisateur" order="30">
+			<category>UTILISATEUR_MENU</category>
+			<filter id="admin_utilisateur_utilisateur_grid">
+				<rule grant="true">
+					<group>UtilisateurReader</group>
+					<group>administrators</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Espace statistiques *********************************************************************** -->
+		<action id="espace_statistiques" link="#{statistiqueActions.navigateToEspaceStatistique}"
+			label="Statistiques" order="120">
+			<category>USER_SERVICES</category>
+		</action>
+
+		<!-- Export ZIP des statistiques par ministères actifs -->
+		<action id="MASSE_EXPORT_STATS" link="#{statistiqueActions.masseExport()}"
+			order="75" label="Export ZIP" icon="/img/icons/masse/compressMasse.png">
+			<category>TOP_BAR_STATISTIQUES</category>
+			<filter-id>canExportStatistiques</filter-id>
+		</action>
+
+		<!-- Export ZIP des statistiques : lien vers archive -->
+		<action id="MASSE_EXPORT_STATS_LINK" link="#{statistiqueActions.getGeneratedExport()}"
+			order="70" label="#{statistiqueActions.getGeneratedExportName()}">
+			<category>TOP_BAR_STATISTIQUES</category>
+			<filter-id>canExportStatistiques</filter-id>
+			<filter>
+				<rule grant="true">
+					<condition>#{statistiqueActions.isExportExisting()}</condition>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- *********************************************************************** 
+			Vocabulaire *********************************************************************** -->
+		<action id="directories_manager" icon="/img/icons/book_blue.png" />
+
+		<!-- *********************************************************************** 
+			Themes manager *********************************************************************** -->
+		<action id="themes_manager" link="#{themeEditorAction.startEditor}"
+			label="command.manageThemes" order="2000">
+			<category>USER_SERVICES</category>
+			<filter-id>only_for_manager</filter-id>
+			<filter-id>not_readonly</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Requeteur *********************************************************************** -->
+		<action id="view_requeteur" link="#{suiviActions.initializeSuivi()}"
+			label="Requeteur" order="98" icon="/img/icons/presentation_chart.png">
+		</action>
+
+		<action id="saveQueryAsSmartFolder" enabled="false" />
+		<action id="saveQueryAsFolder" link="#{requeteurActions.saveQueryAsRequeteExperte()}"
+			order="20" label="command.saveSmartSearch">
+			<category>SMART_SEARCH_BUTTONS</category>
+		</action>
+		<action id="updateRequeteExperte" link="#{requeteurActions.updateRequeteExperte()}"
+			order="10" label="command.updateSmartSearch">
+			<category>SMART_SEARCH_BUTTONS</category>
+			<filter-id>isRequeteExperte</filter-id>
+		</action>
+
+		<action id="create_requeteur" link="/requeteExperte/requeteur_form.xhtml"
+			label="Requeteur Form" order="98">
+			<category>SUIVI_SUBCONTAINER_ACTIONS</category>
+		</action>
+
+		<action id="rename_requeteur" link="/requeteExperte/requeteur_rename_form.xhtml"
+			label="Requeteur Rename Form" order="98">
+			<category>SUIVI_SUBCONTAINER_ACTIONS</category>
+		</action>
+
+		<action id="CREATE_ALERT_FROM_REQUETE"
+			link="#{alertActions.newAlertFromRequeteExperte(requete)}" label="requeteExperte.command.createAlertFromRequete"
+			icon="">
+		</action>
+
+		<!-- *********************************************************************** 
+			Alertes *********************************************************************** -->
+		<action id="new_alert" link="/alerte/alert_form.xhtml" label="alert.alert_form.title"
+			order="10">
+			<category>SUIVI_SUBCONTAINER_ACTIONS</category>
+		</action>
+
+		<action id="alert_activate" link="#{alertActions.activate()}"
+			label="alert.command.activate" order="10">
+			<category>ALERTE_ACTION_LIST</category>
+			<filter-id>alert_is_suspended</filter-id>
+			<filter-id>isAlert</filter-id>
+		</action>
+		<action id="alert_suspend" link="#{alertActions.suspend()}"
+			label="alert.command.suspend" order="20">
+			<category>ALERTE_ACTION_LIST</category>
+			<filter-id>alert_is_activated</filter-id>
+			<filter-id>isAlert</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Recherche Simple *********************************************************************** -->
+		<action id="view_recherche_bandeau_service" link="/recherche_simple/view_recherche_simple.xhtml">
+		</action>
+
+		<!-- *********************************************************************** 
+			Recherche avancée (administrateur technique uniquement) *********************************************************************** -->
+		<action id="advanced_search" order="100">
+			<filter-id>isAdministrator</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Archivage *********************************************************************** -->
+		<action id="ELIMINATION_EDITER_BORDEREAU" link="#{archiveActions.editerBordereau(currentDocument)}"
+			label="Edition du bordereau"
+			confirm="if(confirm('Etes-vous sûr de vouloir éditer un bordereau ?')) showPDF(); else return false;">
+			<category>LISTE_ELIMINATION_SELECTION_LIST</category>
+		</action>
+
+		<action id="CURRENT_SELECTION_RETIRER_DOSSIER" link="#{archiveActions.retirerDossierListeElimination()}"
+			label="Retrait de la liste d'élimination"
+			confirm="return confirm('Etes-vous sûr de vouloir retirer ces dossiers de la liste d\'élimination ?');">
+			<category>LISTE_ELIMINATION_SELECTION_LIST</category>
+			<filter-id>isListeEliminationEnCours</filter-id>
+			<filter-id>isListeEliminationSelectionNotEmpty</filter-id>
+		</action>
+
+		<action id="VIDER_LISTE_ELIMINATION"
+			link="#{archiveActions.viderListeElimination(currentDocument)}"
+			label="Vider la liste d'élimination"
+			confirm="return confirm('Etes-vous sûr de vouloir vider cette liste d\'élimination ?');">
+			<category>LISTE_ELIMINATION_SELECTION_LIST</category>
+			<filter-id>isListeEliminationEnCours</filter-id>
+		</action>
+
+		<action id="ELIMINER_LISTE" link="#{archiveActions.eliminerListe(currentDocument)}"
+			label="Elimination des données de la liste"
+			confirm="return confirm('Etes-vous sûr de vouloir supprimer les dossiers de cette liste d\'élimination ?');">
+			<category>LISTE_ELIMINATION_SELECTION_LIST</category>
+			<filter-id>isNotListeEliminationEnCours</filter-id>
+		</action>
+
+		<action id="ABANDON_LISTE_ELIMINATION"
+			link="#{archiveActions.abandonListeElimination(currentDocument)}"
+			label="Abandon de la liste d'élimination"
+			confirm="return confirm('Etes-vous sûr de vouloir abandonner cette liste d\'élimination ?');">
+			<category>LISTE_ELIMINATION_SELECTION_LIST</category>
+			<filter-id>isNotListeEliminationEnCours</filter-id>
+		</action>
+
+		<!-- *********************************************************************** 
+			Actions pour les résultats de recherche *********************************************************************** -->
+		<action id="05_PREPARE_CURRENT_SELECTION_FAVORITE_ADD" link="#{favorisDossierActions.newRepertoire()}"
+			label="command.favorite.add" icon="">
+			<category>RECHERCHE_SELECTION_LIST</category>
+			<filter-id>isRechercheListeNotEmpty</filter-id>
+		</action>
+
+		<action id="06_CURRENT_SELECTION_FAVORITE_ADD" link="#{favorisDossierActions.addSelectionList}"
+			label="command.favorite.add" icon="">
+		</action>
+
+		<action id="07_CURRENT_SELECTION_FAVORITE_DELETE" link="#{favorisDossierActions.deleteSelectionList}"
+			label="command.favorite.delete" icon="">
+			<category>FAVORIS_SELECTION_LIST</category>
+		</action>
+
+		<action id="01_CURRENT_SELECTION_ALLOTISSEMENT" link="#{allotissementsActions.navigate()}"
+			label="command.allotissement.create" icon="">
+			<category>RECHERCHE_SELECTION_LIST</category>
+			<filter-id>canUpdateAllotissement</filter-id>
+			<filter-id>isRechercheListeNotEmpty</filter-id>
+		</action>
+
+		<action id="02_CURRENT_SELECTION_ARCHIVAGE" link="#{archiveActions.demanderElimination}"
+			label="command.archivage.demandeElimination" icon="">
+			<category>RECHERCHE_SELECTION_LIST</category>
+			<filter-id>isRechercheListeNotEmpty</filter-id>
+			<filter id="admin_archivage_grid">
+				<rule grant="true">
+					<group>ArchivageEditor</group>
+				</rule>
+			</filter>
+		</action>
+
+		<!-- Actions pour la naviguation de la recherche avancée -->
+		<action id="BACK_TO_RECHERCHE_AVANCE" link="#{rechercheAvanceeActions.editRechercheAvancee()}"
+			label="command.rechercheAvancee.back" icon="" order="1">
+			<category>RECHERCHE_AVANCEE_NAVIGATION_ACTIONS_LIST</category>
+		</action>
+
+		<action id="RESET_AND_BACK_TO_RECHERCHE_AVANCE" link="#{rechercheAvanceeActions.navigateToNewSearch()}"
+			label="command.rechercheAvancee.newSearch" icon="" order="2">
+			<category>RECHERCHE_AVANCEE_NAVIGATION_ACTIONS_LIST</category>
+		</action>
+
+		<!-- <action id="EXPORT_RECHERCHE_AVANCE" -->
+		<!-- link="#{rechercheAvanceeActions.launchExport()}" -->
+		<!-- label="command.rechercheAvancee.export" icon="" order="3"> -->
+		<!-- <category>RECHERCHE_AVANCEE_NAVIGATION_ACTIONS_LIST</category> -->
+		<!-- </action> -->
+
+
+		<action id="CURRENT_SELECTION_ADDTOFAVORIS" link="#{favorisDossierActions.newRepertoire()}"
+			label="command.favorite.add" icon="">
+			<category>CURRENT_SELECTION_LIST</category>
+			<filter-id>isInEspaceTravail</filter-id>
+			<filter-id>isCorbeilleListeNotEmpty</filter-id>
+		</action>
+
+		<!-- Modification du bean appelé par nuxeo pour la creation de note -->
+		<action id="newComment" link="#{commentManagerActions.addComment}"
+			enabled="true" label="command.add">
+			<category>CASE_MANAGEMENT_COMMENT_ACTIONS</category>
+		</action>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.actions.ActionService"
+		point="filters">
+		<!-- *********************************************************************** 
+			Filtres sur les utilisateurs / groupes *********************************************************************** -->
+		<filter id="isAdministrator">
+			<rule grant="true">
+				<group>administrators</group>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si l'utilisateur peut redémarrer une instance de feuille 
+			de route -->
+		<filter id="isFDRInstanceRestarter">
+			<rule grant="true">
+				<group>FDRInstanceRestarter</group>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si l'utilisateur peut reorienter un dossier -->
+		<filter id="isReorientationReader">
+			<rule grant="true">
+				<group>ReorientationReader</group>
+			</rule>
+			<rule grant="true">
+				<group>ReorientationRedacteurReader</group>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si l'utilisateur peut réattribuer une feuille de route -->
+		<filter id="isReattributionReader">
+			<rule grant="true">
+				<group>ReattributionReader</group>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si l'utilisateur peut réattribuer directement une feuille 
+			de route -->
+		<filter id="isReattributionDirecteReader">
+			<rule grant="true">
+				<group>ReattributionDirecteReader</group>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si l'utilisateur peut réaffecter un dossier -->
+		<filter id="isReaffectationReader">
+			<rule grant="true">
+				<group>ReaffectationReader</group>
+			</rule>
+		</filter>
+
+		<filter id="isMinistereRattachementUpdater">
+			<rule grant="true">
+				<group>MinistereRattachementUpdater</group>
+			</rule>
+		</filter>
+
+		<filter id="isDirectionPiloteUpdater">
+			<rule grant="true">
+				<group>DirectionPiloteUpdater</group>
+			</rule>
+		</filter>
+
+
+		<!-- Retourne vrai si l'utilisateur peut faire un arbitrage SGG -->
+		<filter id="isArbitrageSGGReader">
+			<rule grant="true">
+				<group>ArbitrageSGGReader</group>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si l'utilisateur peut ajouter une feuille de route -->
+		<filter id="isFeuilleRouteSetter">
+			<rule grant="true">
+				<group>FeuilleRouteSetter</group>
+			</rule>
+		</filter>
+
+
+		<!-- *********************************************************************** 
+			Filtres sur les documents *********************************************************************** -->
+		<!-- Conserve uniquement les documents à l'état done -->
+		<filter id="isDone">
+			<rule grant="true">
+				<condition>document.getCurrentLifeCycleState().equals("done")</condition>
+			</rule>
+		</filter>
+
+		<!-- Conserve uniquement les documents qui ne sont pas à l'état done -->
+		<filter id="isNotDone">
+			<rule grant="false">
+				<condition>document.getCurrentLifeCycleState().equals("done")</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si le document n'est pas verrouillé (par n'importe quel utilisateur) -->
+		<filter id="isDossierUnlocked">
+			<rule grant="false">
+				<condition>#{stLockActions.isCurrentDocumentLocked()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si le document n'est pas verrouillé ou que le verrou est actionnable 
+			par l'utilisateur -->
+		<filter id="currentDocIsLockActionnableByCurrentUser">
+			<rule grant="true">
+				<condition>#{stLockActions.currentDocIsLockActionnableByCurrentUser()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si le document est verrouillé et que le verrou est n'est pas 
+			actionnable par l'utilisateur -->
+		<filter id="currentDocIsNotLockActionnableByCurrentUser">
+			<rule grant="false">
+				<condition>#{stLockActions.currentDocIsLockActionnableByCurrentUser()}</condition>
+			</rule>
+		</filter>
+
+		<!-- *********************************************************************** 
+			Filtres sur les dossiers *********************************************************************** -->
+		<!-- Vrai si le document courant est un dossier -->
+		<filter id="isDossier">
+			<rule grant="true">
+				<type>Dossier</type>
+			</rule>
+		</filter>
+
+		<!-- Vrai si le document courant n'est pas un dossier -->
+		<filter id="isNotDossier">
+			<rule grant="false">
+				<type>Dossier</type>
+			</rule>
+		</filter>
+
+		<!-- Vrai si le document courant n'est pas un dossier -->
+		<filter id="isNotDossierHasFeuilleRoute">
+			<rule grant="true">
+				<condition>#{dossierActions.hasFeuilleRoute() ne true}</condition>
+			</rule>
+		</filter>
+
+		<filter id="dossierIsLocked">
+			<rule grant="true">
+				<condition>#{dossierLockActions.getCanLockCurrentDossier() ne true}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isAtLastVersionReponse">
+			<rule grant="true">
+				<condition>#{reponseActions.isReponseAtLastVersion()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si l'utilisateur peut verrouiller le dossier courant -->
+		<filter id="isDossierLockable">
+			<rule grant="true">
+				<condition>#{dossierLockActions.getCanLockCurrentDossier()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si l'utilisateur peut lever le verrou sur le dossier -->
+		<filter id="isDossierAdminUnlockable">
+			<rule grant="true">
+				<group>DossierAdminUnlocker</group>
+			</rule>
+		</filter>
+
+		<!-- Vrai si l'onglet en cours est le bordereau -->
+		<filter id="isInBordereau">
+			<rule grant="true">
+				<condition>#{webActions.currentTabAction == 'TAB_DOSSIER_BORDEREAU'}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si l'onglet en cours est le parapheur -->
+		<filter id="isInParapheur">
+			<rule grant="true">
+				<condition>#{webActions.currentTabAction == 'TAB_DOSSIER_PARAPHEUR'}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si l'onglet en cours n'est pas le parapheur -->
+		<filter id="isNotParapheur">
+			<rule grant="true">
+				<condition>#{webActions.currentTabAction != 'TAB_DOSSIER_PARAPHEUR'}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si l'onglet en cours est le fond de dossier -->
+		<filter id="isZippable">
+			<rule grant="true">
+				<condition>#{webActions.currentTabAction == 'TAB_DOSSIER_FDD'}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si l'onglet en cours est le journal -->
+		<filter id="isJournal">
+			<rule grant="true">
+				<condition>#{webActions.currentTabAction == 'TAB_DOSSIER_JOURNAL'}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si l'onglet en cours n'est pas le journal -->
+		<filter id="isNotJournal">
+			<rule grant="true">
+				<condition>#{webActions.currentTabAction != 'TAB_DOSSIER_JOURNAL'}</condition>
+			</rule>
+		</filter>
+
+		<filter id="hasSignalement">
+			<rule grant="true">
+				<condition>#{dossierActions.hasSignalement()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isUrgent">
+			<rule grant="true">
+				<condition>#{dossierActions.hasSignalement()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isCSVExportable">
+			<rule grant="true">
+				<condition>#{webActions.currentTabAction == 'TAB_DOSSIER_FDD'}</condition>
+			</rule>
+			<rule grant="true">
+				<condition>#{webActions.currentTabAction == 'TAB_DOSSIER_JOURNAL'}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isRequeteExperte">
+			<rule grant="true">
+				<type>SmartFolder</type>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si le dossier est présent dans une Mailbox de l'utilisateur 
+			et chargé en session -->
+		<filter id="isDossierLoadedInCorbeille">
+			<rule grant="true">
+				<condition>#{corbeilleActions.isDossierLoadedInCorbeille()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si l'utilisateur peut agir sur le dossier -->
+		<filter id="isDossierLoadedOrUpdater">
+			<!-- Possibilité de modifier un dossier distribué dans sa corbeille -->
+			<rule grant="true">
+				<condition>#{corbeilleActions.isDossierLoadedInCorbeille()}</condition>
+			</rule>
+
+			<!-- Possibilité de modifier un dossier en cours pour un administrateur -->
+			<rule grant="true">
+				<condition>document.getCurrentLifeCycleState().equals("running")</condition>
+				<group>DossierRechercheUpdater</group>
+			</rule>
+
+			<!-- Possibilité de modifier un dossier en cours pour un administrateur 
+				ministériel -->
+			<rule grant="true">
+				<condition>document.getCurrentLifeCycleState().equals("running")</condition>
+				<condition>#{dossierActions.isCurrentDossierInUserMinistere()}</condition>
+				<group>DossierRechercheMinUpdater</group>
+			</rule>
+
+			<!-- Possibilité de modifier un dossier terminé et de relancer sa feuille 
+				de route -->
+			<rule grant="true">
+				<condition>document.getCurrentLifeCycleState().equals("done")</condition>
+				<group>FDRInstanceRestarter</group>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si l'utilisateur peut éditer les données du parapheur -->
+		<filter id="isDossierParapheurEditable">
+			<filter>
+				<!-- Possibilité de modifier un dossier distribué dans sa corbeille -->
+				<rule grant="true">
+					<condition>#{corbeilleActions.isDossierLoadedInCorbeille()}</condition>
+				</rule>
+
+				<!-- Possibilité de modifier un dossier en cours pour un administrateur -->
+				<rule grant="true">
+					<condition>document.getCurrentLifeCycleState().equals("running")</condition>
+					<group>DossierRechercheUpdater</group>
+				</rule>
+			</filter>
+		</filter>
+
+		<filter id="isNextStepReorientationOrReattributionOrArbitrage">
+			<rule grant="true">
+				<condition>#{routingActions.isNextStepReorientationOrReattributionOrArbitrage()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isNotNextStepReorientationOrReattributionOrArbitrage">
+			<rule grant="false">
+				<condition>#{routingActions.isNextStepReorientationOrReattributionOrArbitrage()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isStepSignature">
+			<rule grant="true">
+				<condition>#{routingActions.isStepSignature()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isNotStepSignature">
+			<rule grant="false">
+				<condition>#{routingActions.isStepSignature()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isNotStepReattribution">
+			<rule grant="false">
+				<condition>#{routingActions.isStepPourReattribution()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isStepReattribution">
+			<rule grant="true">
+				<condition>#{routingActions.isStepPourReattribution()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isStepPourArbitrage">
+			<rule grant="true">
+				<condition>#{routingActions.isStepPourArbitrage()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isNotStepPourArbitrage">
+			<rule grant="false">
+				<condition>#{routingActions.isStepPourArbitrage()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isNotReponseSignee">
+			<rule grant="false">
+				<condition>#{dossierActions.isReponseSignee()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isNotFirstStepInBranchOrParallel">
+			<rule grant="false">
+				<condition>#{routingActions.isFirstStepInBranchOrParallel()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isRootStep">
+			<rule grant="true">
+				<condition>#{routingActions.isRootStep()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai uniquement si l'utilisateur a chargé un DossierLink (en tant 
+			que destinataire de l'étape ou administrateur) -->
+		<filter id="isDossierLinkLoaded">
+			<rule grant="true">
+				<condition>#{dossierDistributionActions.isDossierLinkLoaded()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai uniquement si le dossier a été arbitré par le passé -->
+		<filter id="isDossierArbitrated">
+			<rule grant="true">
+				<condition>#{dossierActions.isDossierArbitrated()}</condition>
+			</rule>
+		</filter>
+
+		<!-- faux uniquement si le dossier n'a pas été arbitré par le passé -->
+		<filter id="isNotDossierArbitrated">
+			<rule grant="false">
+				<condition>#{dossierActions.isDossierArbitrated()}</condition>
+			</rule>
+		</filter>
+
+		<!-- *********************************************************************** 
+			Filtres sur les feuilles de route *********************************************************************** -->
+		<!-- Vrai si le document est une feuille de route -->
+		<filter id="isRoute">
+			<rule grant="true">
+				<type>FeuilleRoute</type>
+			</rule>
+		</filter>
+
+		<!-- Vrai si le document n'est pas une feuille de route -->
+		<filter id="isNotRoute">
+			<rule grant="false">
+				<type>FeuilleRoute</type>
+			</rule>
+		</filter>
+
+		<!-- Surcharge des filtres de CMF afin de traiter notre type FeuilleRoute 
+			comme le type DocumentRoute -->
+		<filter id="create" append="true">
+			<rule grant="true">
+				<permission>AddChildren</permission>
+				<facet>Folderish</facet>
+				<type>FeuilleRoute</type>
+				<type>StepFolder</type>
+			</rule>
+		</filter>
+
+		<!-- Conserve uniquement les modèles de feuille de route à l'état draft -->
+		<filter id="isDraftRouteModel">
+			<rule grant="true">
+				<condition>
+					document.getCurrentLifeCycleState().equals("draft")
+				</condition>
+				<type>FeuilleRoute</type>
+			</rule>
+		</filter>
+
+		<!-- Retourne vrai si un modèle ou une instance de feuille de route est 
+			éditable -->
+		<filter id="isEditableRoute">
+			<rule grant="true">
+				<condition>
+					document.getCurrentLifeCycleState().equals("draft")
+				</condition>
+				<type>FeuilleRoute</type>
+				<type>RouteStep</type>
+				<type>StepFolder</type>
+			</rule>
+			<rule grant="true">
+				<condition>#{routingActions.isFeuilleRouteUpdatable()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si l'utilisateur a le droit d'éditer l'étape obligatoire (ou 
+			si l'étape n'est pas obligatoire) -->
+		<filter id="isEditableEtapeObligatoire">
+			<rule grant="true">
+				<condition>#{routingActions.isEditableEtapeObligatoire(document)}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai si on a copié précédemment des étapes de feuille de route -->
+		<filter id="isPastableRouteStep">
+			<rule grant="true">
+				<condition>#{routingActions.isPastableRouteStepIntoFeuilleRoute()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Conserve uniquement les feuilles de routes à l'état validated -->
+		<filter id="isValidatedRouteModel">
+			<rule grant="true">
+				<condition>document.getCurrentLifeCycleState().equals("validated")</condition>
+				<facet>Routable</facet>
+			</rule>
+		</filter>
+
+		<!-- Vrai uniquement si l'instance de feuille de route peut être redémarrée -->
+		<filter id="isFeuilleRouteRestartable">
+			<rule grant="true">
+				<condition>#{routingActions.isFeuilleRouteRestartable()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai uniquement si le document est un conteneur parallèle -->
+		<filter id="isParallelStepFolder">
+			<rule grant="true">
+				<type>StepFolder</type>
+				<condition>document.getProperty("step_folder",
+					"execution").equals("parallel")</condition>
+			</rule>
+		</filter>
+
+		<!-- Vrai uniquement si le document n'est pas un conteneur série -->
+		<filter id="isNotSerialStepFolder">
+			<rule grant="false">
+				<type>StepFolder</type>
+				<condition>document.getProperty("step_folder",
+					"execution").equals("serial")</condition>
+			</rule>
+		</filter>
+
+		<!-- *********************************************************************** 
+			Filtres sur les listes d'élimination *********************************************************************** -->
+		<filter id="isListeEliminationEnCours">
+			<rule grant="true">
+				<condition>#{archiveActions.isCurrentListeEliminationEnCours()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isNotListeEliminationEnCours">
+			<rule grant="false">
+				<condition>#{archiveActions.isCurrentListeEliminationEnCours()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isListeEliminationSelectionNotEmpty">
+			<rule grant="true">
+				<condition>#{dossierListingActions.isShownMassAction('LISTE_ELIMINATION_SELECTION')}</condition>
+			</rule>
+		</filter>
+
+		<!-- *********************************************************************** 
+			Filtres sur la navigation *********************************************************************** -->
+		<!-- Vrai si l'utilisateur est dans l'espace de travail -->
+		<filter id="isInEspaceTravail">
+			<rule grant="true">
+				<condition>#{corbeilleActions.getCurrentView() == 'mailbox_view'}</condition>
+			</rule>
+		</filter>
+
+		<!-- Dans l'espace recherche ou dans l'espace des résultats de recherche -->
+		<filter id="isInRecherche">
+			<rule grant="true">
+				<condition>#{corbeilleActions.getCurrentView() == 'edit_recherche'
+					or corbeilleActions.getCurrentView() == 'view_requete_results'}</condition>
+			</rule>
+		</filter>
+
+		<!-- Dans l'espace de suivi ou dans l'espace des résultats de l'espace 
+			de suivi -->
+		<filter id="isInSuivi">
+			<rule grant="true">
+				<condition>#{corbeilleActions.getCurrentView() == 'suivi' or
+					corbeilleActions.getCurrentView() == 'view_requeteur_results'}</condition>
+			</rule>
+		</filter>
+
+		<!-- Dans l'espace plan de classement -->
+		<filter id="isInPlanClassement">
+			<rule grant="true">
+				<condition>#{corbeilleActions.getCurrentView() ==
+					'view_plan_classement'}</condition>
+			</rule>
+		</filter>
+
+		<filter id="canDisplayFavoris">
+			<rule grant="true">
+				<condition>#{corbeilleActions.getCurrentView() == 'edit_recherche'}</condition>
+			</rule>
+			<rule grant="true">
+				<condition>#{corbeilleActions.getCurrentView() ==
+					'view_requete_results'}</condition>
+			</rule>
+			<rule grant="true">
+				<condition>#{corbeilleActions.getCurrentView() ==
+					'prepare_add_favoris'}</condition>
+			</rule>
+		</filter>
+
+		<filter id="canReadDossierConnexe">
+			<rule grant="true">
+				<condition>#{dossierDistributionActions.canReadDossierConnexe()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="canReadAllotissement">
+			<rule grant="true">
+				<condition>#{dossierDistributionActions.canReadAllotissement()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="canUpdateAllotissement">
+			<rule grant="true">
+				<condition>#{dossierDistributionActions.canUpdateAllotissement()}</condition>
+			</rule>
+		</filter>
+
+		<!-- Les filtres des alertes -->
+
+		<filter id="alert_is_activated">
+			<rule grant="true">
+				<condition>#{alertActions.isActivated()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="alert_is_suspended">
+			<rule grant="true">
+				<condition>#{alertActions.isSuspended()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isAlert">
+			<rule grant="true">
+				<type>Alert</type>
+			</rule>
+		</filter>
+
+		<filter id="isDossierContainsMinistere">
+			<rule grant="true">
+				<condition>#{dossierActions.isDossierContainsMinistere()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isFeuilleRouteVisible">
+			<rule grant="true">
+				<condition>#{routingActions.isFeuilleRouteVisible()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isStepInMinistere">
+			<rule grant="true">
+				<condition>#{routingActions.isStepInMinistere()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isCorbeilleListeNotEmpty">
+			<rule grant="true">
+				<condition>#{dossierListingActions.isShownMassAction('CORBEILLE_SELECTION')}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isRechercheListeNotEmpty">
+			<rule grant="true">
+				<condition>#{dossierListingActions.isShownMassAction('CURRENT_SELECTION')}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isDossierConnexeListeNotEmpty">
+			<rule grant="true">
+				<condition>#{dossierListingActions.isShownMassAction('DOSSIER_CONNEXE_SELECTION')}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isDossierConnexeCurrentIndex">
+			<rule grant="true">
+				<condition>#{dossierConnexeActions.isCurrentIndex()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="isDossierConnexeNotCurrentQuestion">
+			<rule grant="false">
+				<condition>#{dossierConnexeActions.isCurrentQuestion()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="existLot">
+			<rule grant="true">
+				<condition>#{allotissementsActions.existLot()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="notExistLot">
+			<rule grant="false">
+				<condition>#{allotissementsActions.existLot()}</condition>
+			</rule>
+		</filter>
+
+		<filter id="AllowUpdateOrganigramme">
+			<rule grant="true">
+				<condition>#{organigrammeManagerActions.allowUpdateOrganigramme(null)}</condition>
+			</rule>
+		</filter>
+
+		<filter id="canExportStatistiques">
+			<rule grant="true">
+				<group>DroitExportMasseStats</group>
+			</rule>
+		</filter>
+
+		<!-- Vrai uniquement si l'étape en cours n'est pas en cours de validation -->
+		<filter id="isNotEtapeEnCoursValidation">
+			<rule grant="true">
+				<condition>#{dossierDistributionActions.isNotEtapeEnCoursValidation()}</condition>
+			</rule>
+		</filter>
+		
+		<!-- Vrai uniquement si l'étape en cours est en cours de validation -->
+		<filter id="isEtapeEnCoursValidation">
+			<rule grant="true">
+				<condition>#{dossierDistributionActions.isEtapeEnCoursValidation()}</condition>
+			</rule>
+		</filter>
+		
+		<filter id="canCreateSharedNote">
+			<rule grant="true">
+				<condition>#{clipboardActions.canCreateSharedNote}</condition>
+			</rule>
+		</filter>
+	</extension>
+</component>

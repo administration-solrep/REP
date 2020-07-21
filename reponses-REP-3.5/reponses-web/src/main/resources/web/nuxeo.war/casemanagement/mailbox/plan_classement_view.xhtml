@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+	<ui:define name="page title">
+		<h:outputText value="#{nuxeoApplicationName} - Plan de classement" />
+	</ui:define>
+
+	<ui:define name="bookmark">
+		<link rel="bookmark"
+			href="#{navigationContext.currentDocumentFullUrl}" />
+	</ui:define>
+
+	<ui:define name="content_view_actions">
+		<ui:include src="/incl/masse_mail_dossier_panel.xhtml" />
+		<ui:include src="/incl/dossier_listing_action.xhtml">
+			<ui:param name="resultLayout" value="requete_listing_dto_csv" />
+			<ui:param name="actionsList" value="PLAN_CLASSEMENT_UPPER_LIST" />
+		</ui:include>
+	</ui:define>
+
+	<ui:define name="body">
+		<ui:include src="/select_document_type.xhtml" />
+		<ui:include src="/incl/message_banner.xhtml" />
+
+		<div id="upperContentView">
+			<div class="mailboxContent">
+				<ui:include
+					src="/casemanagement/mailbox/tabs/plan_classement_content.xhtml" />
+			</div>
+		</div>
+		<ui:include src="/incl/upper_panel_toggle.xhtml" />
+	</ui:define>
+
+	<ui:define name="subbody">
+		<ui:include
+			src="/casemanagement/mailbox/mailbox_subbody_dossier_view.xhtml">
+			<ui:param name="dossier_view" value="view_plan_classement" />
+		</ui:include>
+	</ui:define>
+</nxthemes:composition>

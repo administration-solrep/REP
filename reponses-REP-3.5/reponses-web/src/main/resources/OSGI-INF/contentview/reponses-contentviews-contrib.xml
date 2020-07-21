@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant permet de contribuer les content view de l'application 
+	Réponses. -->
+<component name="fr.dila.reponses.web.contentviews.contrib">
+
+	<extension target="org.nuxeo.ecm.platform.ui.web.ContentViewService"
+		point="contentViews">
+
+		<contentView name="corbeille_content">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.CorbeillePageProvider">
+				<property name="sortFieldNotInColumn">cslk:date</property>
+				<property name="coreSession">#{documentManager}</property>
+				<property name="totalCount">#{corbeilleTree.getContextFolderCount()}</property>
+				<property name="userColumn">#{profilUtilisateurActions.getUserColumnId()}</property> <!-- Colonnes à afficher a l'utilisateur -->
+				<pattern quoteParameters="false" escapeParameters="false">
+					ufnxql: SELECT dl.ecm:uuid as id FROM DossierLink as dl WHERE dl.ecm:currentLifeCycleState = 'todo' AND	dl.drl:idMinistereAttributaire = '?' AND dl.drl:routingTaskType='?' AND dl.ecm:parentId IN ?
+				</pattern>
+				<parameter>#{corbeilleTree.getCurrentIdMinistere()}</parameter>
+				<parameter>#{corbeilleTree.getCurrentIdFeuilleRoute()}</parameter>
+				<parameter>#{corbeilleTree.getMailboxConditionQuery()}</parameter>
+				<!-- Tri par date d'arrivée dans la corbeille -->
+				<sort column="dl.cslk:date" ascending="false" />
+				<pageSize>10</pageSize>
+			</genericPageProvider>
+
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>corbeille_content</cacheKey>
+			<cacheSize>10</cacheSize>
+
+			<resultLayouts>
+				<layout name="cm_inbox_caselink" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>CORBEILLE_SELECTION</selectionList>
+			<actions category="CORBEILLE_SELECTION_LIST" />
+		</contentView>
+
+		<contentView name="plan_classement_content">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.RechercheResultPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="resourcesAccessor">#{resourcesAccessor}</property>
+				<property name="userColumn">#{profilUtilisateurActions.getUserColumnId()}</property> <!-- Colonnes à afficher a l'utilisateur -->
+				<pattern quoteParameters="false" escapeParameters="false">
+					ufnxql:SELECT distinct q.ecm:uuid AS id FROM Question AS q WHERE
+					(?)
+				</pattern>
+				<parameter>#{planClassementTree.getFNXQLPart()}</parameter>
+				<sort column="q.qu:numeroQuestion" ascending="true" />
+				<pageSize>10</pageSize>
+			</genericPageProvider>
+
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>plan_classement_content</cacheKey>
+			<cacheSize>1</cacheSize>
+
+			<resultLayouts>
+				<layout name="dossier_listing_dto" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>PLAN_CLASSEMENT_SELECTION</selectionList>
+		</contentView>
+
+		<contentView name="delegation_destinataire_content">
+			<genericPageProvider
+				class="fr.dila.st.web.contentview.PaginatedPageDocumentProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<pattern quoteParameters="false" escapeParameters="false">
+					SELECT * FROM Delegation where del:destinataireId = '?'
+				</pattern>
+				<parameter>#{documentManager.principal.name}</parameter>
+				<sort column="del:dateDebut" ascending="true" />
+				<pageSize>10</pageSize>
+			</genericPageProvider>
+
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>delegation_destinataire_content</cacheKey>
+			<cacheSize>5</cacheSize>
+
+			<resultLayouts>
+				<layout name="delegation_destinataire_listing" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>CURRENT_SELECTION</selectionList>
+		</contentView>
+
+		<contentView name="dossier_connexe_content">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.DossierConnexePageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="dossierConnexeActions">#{dossierConnexeActions}</property>
+			</genericPageProvider>
+			<useGlobalPageSize>false</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>dossier_connexe_content</cacheKey>
+			<cacheSize>10</cacheSize>
+
+			<resultLayouts>
+				<layout name="dossier_connexe_layout" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>DOSSIER_CONNEXE_SELECTION</selectionList>
+			<actions category="DOSSIER_CONNEXE_SELECTION_LIST" />
+		</contentView>
+
+	</extension>
+</component>
+
+
+

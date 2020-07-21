@@ -1,0 +1,13 @@
+dn: cn=AllowAddPosteAllMinistere,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+changetype: add
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: cn=emptyRef
+cn: AllowAddPosteAllMinistere
+description: Autorise la sélection d'un poste d'un autre ministère
+
+
+dn: cn=Administrateur fonctionnel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add:uniqueMember
+uniqueMember: cn=AllowAddPosteAllMinistere,ou=fonctions,ou=Reponses,dc=dila,dc=fr

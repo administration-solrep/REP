@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.reponses.web.contentviews.archivage">
+
+	<extension target="org.nuxeo.ecm.platform.ui.web.ContentViewService"
+		point="contentViews">
+
+		<contentView name="admin_liste_elimination">
+			<coreQueryPageProvider>
+				<property name="coreSession">#{documentManager}</property>
+				<pattern quoteParameters="true" escapeParameters="true">
+					SELECT * FROM Dossier WHERE dos:listeElimination = ?
+				</pattern>
+				<parameter>#{currentDocument.id}</parameter>
+			</coreQueryPageProvider>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>admin_liste_elimination_cache</cacheKey>
+			<cacheSize>1</cacheSize>
+
+			<resultLayouts>
+				<layout name="liste_elimination_listing" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>LISTE_ELIMINATION_SELECTION</selectionList>
+			<actions category="LISTE_ELIMINATION_SELECTION_LIST" />
+		</contentView>
+
+		<contentView name="admin_listes_elimination">
+			<coreQueryPageProvider>
+				<property name="coreSession">#{documentManager}</property>
+				<pattern quoteParameters="true" escapeParameters="true">
+					SELECT * FROM ListeElimination
+				</pattern>
+			</coreQueryPageProvider>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>admin_listes_elimination_cache</cacheKey>
+			<cacheSize>1</cacheSize>
+
+			<resultLayouts>
+				<layout name="listes_elimination_listing" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>LISTES_ELIMINATION_SELECTION</selectionList>
+			<actions category="LISTES_ELIMINATION_SELECTION_LIST" />
+		</contentView>
+
+	</extension>
+
+</component>

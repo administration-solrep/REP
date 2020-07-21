@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Socle SOLREP Web
+Bundle-SymbolicName: fr.dila.ss.web;singleton:=true
+Bundle-Version: 1.0.0
+Nuxeo-Component: OSGI-INF/contentview/journal-contentviews-contrib.xml,
+ OSGI-INF/layout/journal-layout-contrib.xml,
+ OSGI-INF/layout/journal-widgets-contrib.xml

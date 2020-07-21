@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes">
+
+	<ui:define name="page title">
+		<h:outputText
+			value="#{nuxeoApplicationName} - #{messages['title.search.results']}" />
+	</ui:define>
+
+	<ui:define name="content_view_actions">
+		<ui:include src="/incl/message_banner.xhtml" />
+		<ui:include src="/incl/dossier_listing_action.xhtml">
+			<ui:param name="resultLayout" value="requete_listing_dto_csv" />
+			<ui:param name="actionsList" value="RECHERCHE_UPPER_LIST" />
+		</ui:include>
+	</ui:define>
+
+	<ui:define name="body">
+		<div id="content">
+			<div id="upperContentView">
+				<div>
+					<h:form id="smartSearchResultsActions">
+						<c:if test="#{requeteurActions.canEditCurrentDoc()}">
+							<h:commandButton value="#{messages['command.editSmartSearch']}"
+								action="#{requeteurActions.editCurrentRequete()}"
+								immediate="true" styleClass="button" />
+						</c:if>
+					</h:form>
+				</div>
+			</div>
+			<ui:include src="#{specialRequeteActions.getResultsView()}" />
+		</div>
+	</ui:define>
+	<ui:define name="subbody">
+		<ui:include
+			src="/casemanagement/mailbox/mailbox_subbody_dossier_view.xhtml">
+			<ui:param name="dossier_view" value="view_saved_requete_results" />
+		</ui:include>
+	</ui:define>
+</nxthemes:composition>

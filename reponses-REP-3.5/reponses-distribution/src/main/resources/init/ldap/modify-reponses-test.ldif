@@ -1,0 +1,29 @@
+# -----------------------------
+# Ajout des utilisateurs de tests aux postes
+# -----------------------------
+
+#dn: cn=50002615,ou=poste,ou=SolonEpg,dc=dila,dc=fr
+#changetype: modify
+#add: uniqueMember
+#uniqueMember: uid=adminsgg,ou=people,ou=SolonEpg,dc=dila,dc=fr
+
+#dn: cn=50001815,ou=poste,ou=SolonEpg,dc=dila,dc=fr
+#changetype: modify
+#add: uniqueMember
+#uniqueMember: uid=bdc,ou=people,ou=SolonEpg,dc=dila,dc=fr
+
+#dn: cn=50001454,ou=poste,ou=SolonEpg,dc=dila,dc=fr
+#changetype: modify
+#add: uniqueMember
+#uniqueMember: uid=agriculture_bdc,ou=people,ou=SolonEpg,dc=dila,dc=fr
+
+#dn: cn=50001764,ou=poste,ou=SolonEpg,dc=dila,dc=fr
+#changetype: modify
+#add: uniqueMember
+#uniqueMember: uid=finance_bdc,ou=people,ou=SolonEpg,dc=dila,dc=fr
+
+#dn: cn=50000652,ou=poste,ou=SolonEpg,dc=dila,dc=fr
+#changetype: modify
+#add: uniqueMember
+#uniqueMember: uid=ecologie_bdc,ou=people,ou=SolonEpg,dc=dila,dc=fr
+

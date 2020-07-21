@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://nuxeo.org/schemas/dossier_reponses_link/"
+	xmlns:drl="http://nuxeo.org/schemas/dossier_reponses_link/">
+
+	<!-- Numéro de la question -->
+	<xs:element name="numeroQuestion" type="xs:int" />
+
+	<!-- Champ permettant de trier les dossiers et dossiersLink par numero de 
+		dossier -->
+	<xs:element name="sortField" type="xs:string" />
+
+	<!-- Type de la question : orale ou écrite -->
+	<xs:element name="typeQuestion" type="xs:string" />
+
+	<!-- Ajout du nom complet pour la recherche : mise en posttraitement -->
+	<xs:element name="nomCompletAuteur" type="xs:string" />
+
+	<!-- Date de publication au J.O. -->
+	<xs:element name="datePublicationJO" type="xs:date" />
+
+	<!-- Identifiant technique du ministère attributaire -->
+	<xs:element name="idMinistereAttributaire" type="xs:string" />
+
+	<!-- Intitulé du ministère attributaire -->
+	<xs:element name="intituleMinistere" type="xs:string" />
+
+	<!-- source numero question field (AN-9536) -->
+	<xs:element name="sourceNumeroQuestion" type="xs:string" />
+
+	<!-- Identifiant technique de l'étape en cours de la feuille de route -->
+	<xs:element name="routingTaskId" type="xs:string" />
+
+	<!-- Type de l'étape en cours de la feuille de route (champ dénormalisé) -->
+	<xs:element name="routingTaskType" type="xs:string" />
+
+	<!-- Intitulé de l'étape en cours de feuille de route (champ dénormalisé) -->
+	<xs:element name="routingTaskLabel" type="xs:string" />
+
+	<!-- Intitulé de la mailbox de distribution de l'étape en cours (champ dénormalisé) -->
+	<xs:element name="routingTaskMailboxLabel" type="xs:string" />
+
+	<!-- Indique si l'étape de feuille de route a été validée automatiquement -->
+	<xs:element name="automaticValidated" type="xs:boolean"
+		default="false" />
+
+	<!-- Indique si un mail a été envoyé suite à la validation automatique -->
+	<xs:element name="isMailSend" type="xs:boolean" default="false" />
+
+	<!-- Dénormalisation -->
+	<!-- Colonne mots-clés (indexation de la question) -->
+	<xs:element name="motscles" type="xs:string" />
+
+	<!-- Colonne état (états de la question) -->
+	<xs:element name="etatsQuestion" type="xs:string" />
+
+	<!-- etatQuestion : signalee, renouvelee, caduque ... -->
+	<xs:element name="etatQuestion" type="xs:string" />
+
+	<!-- Date de signalement -->
+	<xs:element name="dateSignalementQuestion" type="xs:date" />
+
+</xs:schema>

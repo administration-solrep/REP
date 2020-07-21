@@ -1,0 +1,22 @@
+#############
+# Création
+#############
+    
+#  FEV360 : Supervision des connexions utilisateurs
+dn: cn=EspaceSupervisionReader,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+changetype: add
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: EspaceSupervisionReader
+uniqueMember: cn=emptyRef
+description: Administration : Supervision des connexions utilisateurs
+
+##########
+# Ajout
+##########
+
+dn: cn=Administrateur fonctionnel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: cn=EspaceSupervisionReader,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+

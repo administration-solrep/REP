@@ -1,0 +1,35 @@
+<f:subview id="#{widget.id}" xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+	<c:if test="#{widget.mode == 'csv'}">
+
+		<h:outputText
+			value="#{messages['label.listing.widget.signalement.rappele']},"
+			escape="false" rendered="#{field_0}" />
+		<h:outputText
+			value="#{messages['label.listing.widget.signalement.signale']},"
+			escape="false" rendered="#{field_1}" />
+		<h:outputText
+			value="#{messages['label.listing.widget.signalement.renouvelle']}"
+			escape="false" rendered="#{field_2}" />
+
+	</c:if>
+	<c:if test="#{widget.mode != 'csv'}">
+
+		<h:graphicImage value="/img/icons/folder_red_24.png"
+			alt="#{messages['label.listing.widget.signalement.rappele']}"
+			title="#{messages['label.listing.widget.signalement.rappele']}"
+			rendered="#{field_0}" />
+		<h:graphicImage value="/img/icons/folder_warning_24.png"
+			alt="#{messages['label.listing.widget.signalement.signale']}"
+			title="#{messages['label.listing.widget.signalement.signale']}"
+			rendered="#{field_1}" />
+		<h:graphicImage value="/img/icons/folder_time_24.png"
+			alt="#{messages['label.listing.widget.signalement.renouvelle']}"
+			title="#{messages['label.listing.widget.signalement.renouvelle']}"
+			rendered="#{field_2}" />
+
+	</c:if>
+</f:subview>

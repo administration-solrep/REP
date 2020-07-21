@@ -1,0 +1,29 @@
+# Pour lancer ce script :
+# 1 - copier ce fichier dans /tmp/
+# 2 - Aller dans le répertoire contenant nxshell.sh
+# 3 - Taper la commande sh nxshell.sh -f 03_Mantis150720_Clean_Migaration_Questions_Closes.nxshell
+
+# connect to http://localhost:8180/reponses (obligatoire sinon Unknown command...) 
+connect -u Administrator -p 4ju7Ix662Eo1d77u http://localhost:8180/reponses/site/automation
+
+
+# go to logs folder
+cd /case-management/logs-root/
+
+#Clean migrations
+
+cd 1409913437389/
+setp -xpath  replog:closePrevisionalCount 
+setp -xpath  replog:closeEndCount 
+
+cd ../1409334017028/
+setp -xpath  replog:closePrevisionalCount 
+setp -xpath  replog:closeEndCount
+
+cd ../1401894005659/
+setp -xpath  replog:closePrevisionalCount 
+setp -xpath  replog:closeEndCount
+
+cd ../1416832358038/
+setp -xpath  replog:closePrevisionalCount 
+setp -xpath  replog:closeEndCount

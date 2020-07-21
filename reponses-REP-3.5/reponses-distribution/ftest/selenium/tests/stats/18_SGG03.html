@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-test.lyon-dev2.local:8180/" />
+<title>18_SGG03</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">18_SGG03</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>moasword</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/statistiques/view_report.faces?conversationId=0NXMAIN</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=SGG03. Variations mensuelles du nombre de réponses
+					publiées et du taux de réponse par ministère</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Ministère
+					chargé du
+					budget')]/../../td[1]/div[contains(.,'55')]/../../td[3]/div[contains(.,'13')]/../../td[5]/div[contains(.,'24')]/../../td[7]/div[contains(.,'41')]/../../td[9]/div[contains(.,'188')]/../../td[11]/div[contains(.,'95')]/../../td[13]/div[contains(.,'4')]/../../td[15]/div[contains(.,'1')]/../../td[17]/div[contains(.,'38')]/../../td[19]/div[contains(.,'0')]/../../td[21]/div[contains(.,'0')]/../../td[23]/div[contains(.,'0')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Premier
+					ministre')]/../../td[1]/div[contains(.,'3')]/../../td[3]/div[contains(.,'7')]/../../td[5]/div[contains(.,'54')]/../../td[7]/div[contains(.,'9')]/../../td[9]/div[contains(.,'26')]/../../td[11]/div[contains(.,'9')]/../../td[13]/div[contains(.,'25')]/../../td[15]/div[contains(.,'9')]/../../td[17]/div[contains(.,'12')]/../../td[19]/div[contains(.,'1')]/../../td[21]/div[contains(.,'1')]/../../td[23]/div[contains(.,'2')]</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue le service de recherche de l'application Réponses. -->
+<component name="fr.dila.reponses.core.service.RechercheService">
+	<implementation class="fr.dila.reponses.core.service.RechercheServiceImpl" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.RechercheService" />
+	</service>
+
+	<extension-point name="recherches">
+		<object class="fr.dila.st.core.descriptor.RechercheDescriptor" />
+	</extension-point>
+</component>

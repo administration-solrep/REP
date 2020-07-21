@@ -1,0 +1,31 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:s="http://jboss.com/products/seam/taglib">
+	<div class="menu">
+		<div class="userMailboxes">
+			<div class="userMailboxesContent">
+				<h4>
+					<h:outputText value="#{messages['favoris.recherche.title']}" />
+				</h4>
+				<h:form id="favorisDossierLinks">
+					<nxu:dataList layout="unorderedList" var="repertoire"
+						value="#{favorisDossierActions.repertoires}">
+						<a4j:commandLink
+							action="#{favorisDossierActions.goToRepertoire(repertoire)}">
+							<h:outputText id="repertoireTitle" value="#{repertoire.title}"
+								style="white-space: nowrap;" />
+						</a4j:commandLink>
+					</nxu:dataList>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</div>

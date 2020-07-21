@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<envoyerQuestionsRequest
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:qn="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns:repco="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ar="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar"
+	xmlns:rep="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion  D:/Dev/basile_SOLON/basile/Interoperabilite/xsd/reponses/WSquestion.xsd ">
+	<questionReponse>
+		<qn:question>
+			<qn:id_question>
+				<repco:numero_question>{query_number}</repco:numero_question>
+				<repco:type>QE</repco:type>
+				<repco:source>SENAT</repco:source>
+				<repco:legislature>13</repco:legislature>
+			</qn:id_question>
+			<qn:date_publication_jo>{publish_date}</qn:date_publication_jo>
+			<qn:page_jo>1649</qn:page_jo>
+			<qn:ministre_depot id="376">
+				<repco:titre_jo>Santé, jeunesse et sports</repco:titre_jo>
+				<repco:intitule_min>Santé</repco:intitule_min>
+			</qn:ministre_depot>
+			<qn:auteur id_mandat="01023">
+				<qn:civilite>M.</qn:civilite>
+				<qn:prenom>Test</qn:prenom>
+				<qn:nom>FunkLoad</qn:nom>
+				<qn:grp_pol>Non connu</qn:grp_pol>
+				<qn:circonscription>69</qn:circonscription>
+			</qn:auteur>
+			<qn:texte>{query_number} - {content}</qn:texte>
+			<qn:etat_question>EN_COURS</qn:etat_question>
+			<qn:titre_senat>Projet de mise en place d'un système de franchises
+				médicales</qn:titre_senat>
+			<qn:indexation_senat>
+				<qn:theme>Questions sociales et santé</qn:theme>
+				<qn:theme>Sécurité sociale</qn:theme>
+				<qn:rubrique>Sécurité sociale</qn:rubrique>
+				<qn:renvois>
+					<qn:renvoi>Médicaments</qn:renvoi>
+				</qn:renvois>
+			</qn:indexation_senat>
+		</qn:question>
+	</questionReponse>
+</envoyerQuestionsRequest>
+

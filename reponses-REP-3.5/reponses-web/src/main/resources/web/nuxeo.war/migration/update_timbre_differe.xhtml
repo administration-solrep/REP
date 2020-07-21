@@ -1,0 +1,66 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<style>
+.nonmigrable {
+	color: red;
+	text-align: center;
+}
+
+.migrable {
+	color: green;
+	text-align: center;
+}
+</style>
+
+	<h:form id="viewTimbreForm">
+		<div name="containerTabDiv"
+			style="overflow-x: auto; overflow-y: hidden;">
+
+
+			<h:dataTable var="currentEntite"
+				value="#{migrationManagerActions.getTimbreList()}"
+				class="dataOutput" rowClasses="dataRowEven,dataRowOdd">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText
+							value="#{migrationManagerActions.getReponsesLoggingCurrentGouvernement()}" />
+					</f:facet>
+					<h:outputText value="#{currentEntite.currentGouvernementLabel}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText
+							value="#{migrationManagerActions.getReponsesLoggingNextGouvernement()}" />
+					</f:facet>
+					<h:outputText
+						value="#{organigrammeManagerActions.getMinistereLabel(currentEntite.nextGouvernementLabel)}" />
+				</h:column>
+
+			</h:dataTable>
+			<script>
+			resize();
+		</script>
+		</div>
+
+		<nxh:commandButton
+			action="#{migrationManagerActions.startUpdateTimbreDiffere}"
+			value="#{messages['Mise à jour']}" styleClass="button"
+			onclick="return confirm('Êtes-vous sûr de vouloir faire la mise à jour ?');" />
+	</h:form>
+
+	<script>
+		var j = jQuery.noConflict();
+		j(document).ready(function() {
+			window.onresize = resize;
+			resize();
+		});	
+	</script>
+
+</div>

@@ -1,0 +1,7 @@
+id,label
+"running_all","label.reponses.feuilleRoute.etape.running"
+"ready_all","label.reponses.feuilleRoute.etape.ready"
+"done_1","label.reponses.feuilleRoute.etape.valide.manuellement"
+"done_2","label.reponses.feuilleRoute.etape.valide.refusValidation"
+"done_3","label.reponses.feuilleRoute.etape.valide.automatiquement"
+"done_4","label.reponses.feuilleRoute.etape.valide.nonConcerne"

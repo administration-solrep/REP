@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-qa.lyon-dev2.local:8080/reponses/" />
+<title>005 - Administration - Admin. Minist.</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">005 - Administration - Admin.
+					Minist.</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>setSpeed</td>
+				<td>0</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Administration</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAtAndWait</td>
+				<td>link=Administration</td>
+				<td>Administration</td>
+			</tr>
+			<!--Gestions de l'organigramme-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Gestion de l'organigramme</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>//input[@value=&quot;Créer gouvernement&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>//input[@value=&quot;Mise à jour des timbres&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=viewActivElement:type:1</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=viewActivElement:type:0</td>
+				<td></td>
+			</tr>
+			<!--Gestion des utilisateurs-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Gestion des utilisateurs</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Ajouter un utilisateur</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=ACONTR</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=adminsgg</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=searchForm:searchText</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=searchForm:searchButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=bdc</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=searchForm:clearButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=ACONTR</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=adminsgg</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=searchForm:searchText</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=searchForm:searchButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=bdc</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Modifier</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Changer le mot de passe</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Retour à la liste</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Supprimer</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Retour à la liste</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=bdc</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=ACONTR</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=adminsgg</td>
+				<td></td>
+			</tr>
+			<!--Gestion des profils-->
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=Gestion des profils</td>
+				<td></td>
+			</tr>
+			<!--Recherche d'utilisateur-->
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=Recherche d'utilisateur</td>
+				<td></td>
+			</tr>
+			<!--Délégation des droits-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Délégation des droits</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Délégations reçues</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Délégations données</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>//input[@value=&quot;Créer une délégation&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Créer une délégation&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//a[@id='document_create:nxl_delegation_detail:nxw_delegation_detail_utilisateur_destinataire_findButton']/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=document_create:nxl_delegation_detail:nxw_delegation_detail_utilisateur_destinataire_tree:node:0:node:13::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>3000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=document_create:nxl_delegation_detail:nxw_delegation_detail_utilisateur_destinataire_tree:node:0:node:13:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>3000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=document_create:nxl_delegation_detail:nxw_delegation_detail_utilisateur_destinataire_tree:node:0:node:13:node:0:node:0::poste:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>3000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=document_create:nxl_delegation_detail:nxw_delegation_detail_utilisateur_destinataire_tree</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=document_create:nxl_delegation_detail:nxw_delegation_detail_utilisateur_destinataire_tree:node:0:node:13:node:0:node:0:node:2::nxw_delegation_detail_utilisateur_destinataire_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>3000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Tania LANDRY</td>
+				<td></td>
+			</tr>
+			<!--  - Date début-->
+			<tr>
+				<td>type</td>
+				<td>id=document_create:nxl_delegation_detail:nxw_delegation_detail_date_debutInputDate</td>
+				<td>01/12/2011</td>
+			</tr>
+			<!--  - Date fin-->
+			<tr>
+				<td>type</td>
+				<td>id=document_create:nxl_delegation_detail:nxw_delegation_detail_date_finInputDate</td>
+				<td>31/12/2011</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Créer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Résumé</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Modifier</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Retour à la liste</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Tania LANDRY</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Tania LANDRY</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Supprimer</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertConfirmation</td>
+				<td>Supprimer la délégation sélectionnée ?</td>
+				<td></td>
+			</tr>
+			<!--Journal Administration-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Journal Administration</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Adminsgg</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Création du dossier</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Création d'un utilisateur [vg]</td>
+				<td></td>
+			</tr>
+			<!--Gestion des modèles de feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Gestion des modèles de feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyText</td>
+				<td>css=#selection_buttons &gt; table &gt; tbody &gt; tr &gt;
+					td &gt; span</td>
+				<td>modèles</td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=FDR-Budget</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=FDR-ECOLOGIE</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Feuille de route standard</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>//input[@value=&quot;Créer un modèle&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=FDR-Budget</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=FDR-ECOLOGIE</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Feuille de route standard</td>
+				<td></td>
+			</tr>
+			<!--Gestion des tables de référence-->
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=Gestion des tables de référence</td>
+				<td></td>
+			</tr>
+			<!--Gestion des paramètres-->
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=Gestion des paramètres</td>
+				<td></td>
+			</tr>
+			<!--Archivage et suppression-->
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=Archivage et suppression</td>
+				<td></td>
+			</tr>
+			<!--Mon compte-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Mon compte</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyText</td>
+				<td>css=span.label</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Voir</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Modifier</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementPresent</td>
+				<td>link=Changer le mot de passe</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=Retour à la liste</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyElementNotPresent</td>
+				<td>link=Supprimer</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Déconnexion</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertConfirmation</td>
+				<td>Etes-vous sûr de vouloir quitter l'application ?</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

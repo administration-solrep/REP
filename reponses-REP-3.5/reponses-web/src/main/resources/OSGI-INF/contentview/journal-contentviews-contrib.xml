@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.reponses.web.contentviews.journal">
+
+	<extension target="org.nuxeo.ecm.platform.ui.web.ContentViewService"
+		point="contentViews">
+
+		<contentView name="ADMIN_JOURNAL_DOSSIER">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.JournalAdminPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<pattern>
+				</pattern>
+				<parameter>#{journalAdminActions.currentCategory}</parameter>
+				<parameter>#{journalAdminActions.currentUtilisateur}</parameter>
+				<parameter>#{journalAdminActions.currentDateDebut}</parameter>
+				<parameter>#{journalAdminActions.currentDateFin}</parameter>
+				<parameter>#{journalAdminActions.currentDossierRef}</parameter>
+				<pageSize>20</pageSize>
+				<sort column="eventDate" ascending="false" />
+			</genericPageProvider>
+
+			<useGlobalPageSize>false</useGlobalPageSize>
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="CURRENT_SELECTION_LIST" />
+
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>admin_journal_dossier_cache</cacheKey>
+			<cacheSize>10</cacheSize>
+			<resultLayouts>
+				<layout name="admin_journal_listing" title="label.document_listing.layout"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+		</contentView>
+
+	</extension>
+
+</component>

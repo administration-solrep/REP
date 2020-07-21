@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7589</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2150</ns2:page_jo>
+			<ns2:ministre_depot id="60002308">
+				<titre_jo>Égalité des territoires et logement</titre_jo>
+				<intitule_min>Ministère de l'égalité des territoires et du logement</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="98042T">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean-Léonce</ns2:prenom>
+				<ns2:nom>Dupont</ns2:nom>
+				<ns2:grp_pol>UDI-UC</ns2:grp_pol>
+				<ns2:circonscription>140 - Calvados</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean-Léonce Dupont attire l'attention de
+				Mme la ministre de l'égalité des territoires et du logement sur les
+				légitimes inquiétudes exprimées par les bailleurs sociaux face au
+				surendettement croissant de leurs locataires. En effet, il a été
+				constaté, au cours du premier trimestre 2013, une évolution très
+				importante des effacements de dettes consécutifs à des procédures de
+				rétablissements personnel (PRP). La procédure de rétablissement
+				personnel, applicable aux particuliers ayant déposé un dossier de
+				surendettement auprès de la Banque de France, a pour effet
+				d'éteindre toutes les dettes du locataire par un jugement du
+				tribunal d'instance. Ces procédures mettent en péril la santé
+				financière des bailleurs sociaux, ceux-ci n'ayant pas la possibilité
+				de s'assurer contre les loyers impayés. Par conséquent, il lui
+				demande de lui indiquer quelles mesures elle envisage de prendre
+				pour préserver la bonne gestion des bailleurs sociaux.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Inquiétudes des bailleurs sociaux</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:rubrique>Logement social</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Surendettement</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7590</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2142</ns2:page_jo>
+			<ns2:ministre_depot id="60002307">
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="08055A">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Claude</ns2:prenom>
+				<ns2:nom>Bérit-Débat</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>240 - Dordogne</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Claude Bérit-Débat attire l'attention de
+				Mme la ministre des affaires sociales et de la santé sur la
+				généralisation et l'amplification de la vente de médicaments via
+				internet, ce phénomène accompagnant par ailleurs une surconsommation
+				de médicaments.
+				Ainsi, aujourd'hui, 46 % des Français vont chercher des informations sur
+				leurs médicaments sur l'internet à travers notamment les « réseaux
+				sociaux », et l'achat en ligne de médicaments se développe.
+				Cette nouvelle pratique inquiète les professionnels de la santé, qui ne
+				sont pas en l'occurrence consultés, car elle peut conduire à des
+				prises médicamenteuses non appropriées donc inefficaces, voire
+				dangereuses pour l'état de santé de la personne.
+				Aussi, il lui demande quel est son sentiment sur cette problématique et
+				quelles mesures le Gouvernement compte prendre pour que cette
+				pratique soit encadrée.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Développement de la vente de médicaments sur
+				l'internet</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:rubrique>Médicaments</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Internet</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7591</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2155</ns2:page_jo>
+			<ns2:ministre_depot id="60003416">
+				<titre_jo>Transports, mer et pêche</titre_jo>
+				<intitule_min>Ministère chargé des transports, de la mer et de la
+					pêche</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="60003413">
+				<titre_jo>Écologie, développement durable et énergie</titre_jo>
+				<intitule_min>Ministère de l'écologie, du développement durable et
+					de l'énergie</intitule_min>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="11109J">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Maurice</ns2:prenom>
+				<ns2:nom>Antiste</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>972 - Martinique</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Maurice Antiste attire l'attention de M. le
+				ministre délégué auprès du ministre de l'écologie, du développement
+				durable et de l'énergie, chargé des transports, de la mer et de la
+				pêche sur la problématique de la prolifération du poisson-lion qui,
+				après avoir colonisé la mer des Caraïbes, s'attaque aujourd'hui aux
+				rivages et constitue une menace pour l'écosystème.
+
+				En effet, le poisson-lion est une espèce invasive, vorace et sans
+				prédateur qui a été observée pour la première fois il y a deux ans
+				en Martinique, en février 2011. Se reproduisant à une vitesse
+				impressionnante, le poisson-lion colonise maintenant tous les
+				habitats côtiers autour de l'île et ceci aux dépens des espèces
+				autochtones.
+
+				Les densités actuelles de poissons lion atteignent 300 individus par
+				hectare sur certains sites de la Martinique. Ces poissons se
+				nourrissent de deux proies par jour, ce qui correspondrait à une
+				consommation estimée à 219 000 juvéniles, dont certains appartenant
+				à des espèces d'intérêt commercial.
+				La répartition des populations de poissons-lions en Martinique n'est
+				pas homogène selon les sites. Il existe environ 55 kilomètres carrés
+				de récifs (5 500 hectares) et communautés coralliennes entre 0 et 50
+				mètres de profondeur. Si l'on prend un niveau d'invasion à 300
+				individus par habitants, pour moitié de cette surface : cela
+				représente une population d'environ 825 000 poissons-lions. La
+				consommation de juvéniles de poissons d'intérêt commercial est alors
+				: 4 500 juvéniles par an par habitant x 2 500 habitants = 12 375 000
+				juvéniles consommés chaque année.
+
+				Son inquiétude est d'autant plus grande, qu'à la suite de mesures liées
+				à la pollution par la chlordécone, 40 % de notre zone côtière est
+				règlementée et interdite à la pêche. Cela constitue ainsi une belle
+				zone paisible de sanctuarisation pour le poisson-lion.
+
+				C'est pourquoi il l'interroge sur les mesures urgentes et radicales qui
+				peuvent être mises en place contre ce fléau majeur, qui anéantit
+				tous les efforts de préservation et de conservation de notre très
+				riche biodiversité, et sur les mesures d'accompagnement envisagées
+				pour les marins-pêcheurs professionnels.
+
+				Il souhaite également savoir les actions effectives menées par la
+				direction de l'environnement, de l'aménagement et du logement (DEAL)
+				de la Martinique pour lutter contre l'essor du poisson lion et les
+				bilans à la date d'd'aujourd'hui.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Prolifération du poisson-lion</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Agriculture et pêche</ns2:theme>
+				<ns2:theme>Outre-mer</ns2:theme>
+				<ns2:rubrique>Outre-mer</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Pêche maritime</ns2:renvoi>
+					<ns2:renvoi>Animaux nuisibles</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7592</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2153</ns2:page_jo>
+			<ns2:ministre_depot id="60002318">
+				<titre_jo>Réforme de l'État, décentralisation et fonction publique</titre_jo>
+				<intitule_min>Ministère de la réforme de l'État, de la
+					décentralisation et de la fonction publique</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="98037W">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Michel</ns2:prenom>
+				<ns2:nom>Teston</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>70 - Ardèche</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Michel Teston appelle l'attention de Mme la
+				ministre de la réforme de l'État, de la décentralisation et de la
+				fonction publique sur l'interprétation des dispositions relatives à
+				la mise en disponibilité des fonctionnaires pour donner des soins à
+				un ascendant atteint d'un handicap nécessitant la présence d'une
+				tierce personne.
+				En effet, une telle possibilité est prévue à l'article 51 de la loi n°
+				84-16 du 11 janvier 1984 portant dispositions statutaires relatives
+				à la fonction publique de l'Etat (des dispositifs similaires sont
+				prévus pour la fonction publique territoriale à l'article 72 de la
+				loi n° 84-53 du 26 janvier 1984 et pour la fonction publique
+				hospitalière à l'article 62 de la loi n° 86-33 du 9 janvier 1986).
+				En outre, aux termes de l'article 47 du décret n° 85-986 du 16
+				septembre 1985 relatif au régime particulier de certaines positions
+				des fonctionnaires de l'État et à certaines modalités de cessation
+				définitive de fonctions (ou, pour la fonction publique territoriale,
+				de l'article 24 du décret n° 86-68 du 13 janvier 1986 relatif aux
+				positions de détachement, hors cadre, de disponibilité, de congé
+				parental et de congé de présence parentale des fonctionnaires
+				territoriaux, et, pour la fonction publique hospitalière, de
+				l'article 34 du décret n° 88-976 du 13 octobre 1988 relatif à
+				certaines positions des fonctionnaires hospitaliers), cette
+				disponibilité est de droit, notamment afin de donner des soins à un
+				ascendant atteint d'un handicap nécessitant la présence d'une tierce
+				personne.
+				Toutefois, le cas lui a été rapporté d'un fonctionnaire devant s'occuper du
+				père de son conjoint qui s'est vu refuser sa demande de
+				disponibilité, au motif que les articles 741 et suivants du code
+				civil ne définissent pas les beaux-parents comme des ascendants de
+				leur gendre ou de leur belle-fille.
+				Or, il lui semble que ces articles concernent les successions pour
+				lesquelles ils définissent les lignes directes ascendantes et
+				descendantes et non pas les ascendants en tant que tels.
+				Parallèlement, les articles 205 et suivants du code civil fixent les
+				obligations alimentaires des gendres et des belles-filles envers
+				leurs beaux-parents et réciproquement. En outre, à l'article R.
+				245-7 du code de l'action sociale et des familles, le gendre et la
+				belle-fille peuvent être considérés comme aidants familiaux de leur
+				beau-père ou de leur belle-mère.
+				Aussi, il estime que dans les dispositions fixant la mise en disponibilité
+				des fonctionnaires des trois fonctions publiques, la qualité
+				d'ascendant indiquée devrait être interprétée au sens de l'entraide
+				familiale plutôt qu'à celui des successions.
+				En conséquence, il lui demande de lui indiquer si elle entend préciser
+				les textes existants dans le but de permettre aux fonctionnaires de
+				pouvoir bénéficier d'une disponibilité de droit afin de donner des
+				soins à un beau-père ou une belle-mère atteint d'un handicap
+				nécessitant la présence d'une tierce personne.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Interprétation des dispositions relatives à la mise
+				en disponibilité des fonctionnaires</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Fonction publique</ns2:theme>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:rubrique>Fonction publique</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Congés</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7593</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2147</ns2:page_jo>
+			<ns2:ministre_depot id="60003413">
+				<titre_jo>Écologie, développement durable et énergie</titre_jo>
+				<intitule_min>Ministère de l'écologie, du développement durable et
+					de l'énergie</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="08016S">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Didier</ns2:prenom>
+				<ns2:nom>Guillaume</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>260 - Drôme</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Didier Guillaume appelle l'attention de M.
+				le ministre de l'écologie, du développement durable et de l'énergie
+				sur le projet d'instituer, par décret, un système de marquage des
+				consignes de tri. L'apposition d'un nouveau logo, dit logo « Triman
+				», est envisagée sur tous les emballages recyclables présents sur le
+				marché français.
+
+				L'objectif d'un tel marquage est louable, puisqu'il s'agit de mettre à
+				disposition du consommateur une information claire et, ainsi, de
+				contribuer à l'amélioration du taux de recyclage des déchets
+				ménagers.
+
+				En revanche, il semblerait que l'apposition de ce marquage sur le
+				verre, en l'absence d'harmonisation européenne, présente un risque
+				d'augmentation des coûts et une aggravation des contraintes
+				logistiques pour les entreprises concernées, notamment celles de la
+				filière viticole. En effet, à l'heure actuelle, il apparaît que le
+				dispositif en vigueur de collecte et de recyclage des emballages en
+				verre présente de bons résultats, puisque le taux de recyclage
+				atteindrait 84 %. Ainsi, le consommateur a identifié le matériau
+				verre et sait, dès à présent, le trier dans le conteneur adapté.
+
+				C'est pourquoi il l'interroge sur l'adaptation de ce projet de
+				décret pour ce qui concerne ce matériau, compte tenu des éléments
+				ci-dessus et des conséquences en terme de compétitivité pour les
+				entreprises concernées que pourrait engendrer ce marquage sur les
+				emballages de verre.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Apposition du marquage « Triman » sur les emballages
+				de verre</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Environnement</ns2:theme>
+				<ns2:rubrique>Normes, marques et labels</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Environnement</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7594</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2142</ns2:page_jo>
+			<ns2:ministre_depot id="60002307">
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="98022P">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean-Noël</ns2:prenom>
+				<ns2:nom>Guérini</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>130 - Bouches-du-Rhône</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean-Noël Guérini appelle l'attention de
+				Mme la ministre des affaires sociales et de la santé sur les
+				préoccupations que suscite le devenir de la caisse maritime
+				d'allocations familiales (CMAF).
+				La CMAF est chargée du versement des prestations familiales et
+				sociales auprès des marins qui relèvent du régime des gens de mer.
+				Elle développe une action adaptée aux spécificités du monde
+				maritime, afin d'accompagner les familles dans les moments
+				importants de la vie : naissance, éducation des enfants, logement,
+				vacances et loisirs, soutien dans les moments difficiles… Elle
+				assure également le recouvrement des cotisations qui contribuent au
+				financement des prestations familiales et sociales (allocations
+				familiales, contribution sociale généralisée et contribution au
+				remboursement de la dette sociale, assurance chômage, fonds national
+				d'aide au logement, formation professionnelle, versement transport).
+				Enfin, elle inscrit son action en coopération avec l'Établissement
+				national des invalides de la marine (ENIM) et le service social
+				maritime.
+				Or, à l'heure de la signature de la convention d'objectifs et de
+				gestion de la branche famille, l'État prévoit de transférer les
+				allocataires marins vers les caisses d'allocations familiales de
+				leur lieu de résidence. Mettre en œuvre cette disparition programmée
+				de la CMAF serait méconnaître gravement les problématiques
+				spécifiques aux familles de marins : éloignement, variation des
+				revenus en lien avec la pêche, dangerosité des métiers, incertitude
+				et fragilité économique…
+				En conséquence, afin de ne pas menacer l'ensemble de la protection
+				sociale du monde maritime, légitimement très attaché à cette caisse,
+				il lui demande s'il ne serait pas préférable de développer les
+				recherches d'optimisation de la structure, notamment en renforçant
+				le partenariat entre l'ENIM et la CMAF et en simplifiant les
+				démarches administratives.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Devenir de la caisse maritime d'allocations
+				familiales</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Sécurité sociale</ns2:theme>
+				<ns2:theme>Transports</ns2:theme>
+				<ns2:rubrique>Caisses d'allocations familiales</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Marine marchande</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7595</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2156</ns2:page_jo>
+			<ns2:ministre_depot id="60002312">
+				<titre_jo>Travail, emploi, formation professionnelle et dialogue
+					social</titre_jo>
+				<intitule_min>Ministère du travail, de l'emploi, de la formation
+					professionnelle et du dialogue social</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="86010V">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean-Michel</ns2:prenom>
+				<ns2:nom>Baylet</ns2:nom>
+				<ns2:grp_pol>RDSE</ns2:grp_pol>
+				<ns2:circonscription>820 - Tarn-et-Garonne</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean-Michel Baylet appelle l'attention de
+				M. le ministre du travail, de l'emploi, de la formation
+				professionnelle et du dialogue social sur les effets redoutés -
+				voire redoutables - pour l'emploi, que pourrait entraîner une
+				disparition de l'indemnité compensatrice forfaitaire de formation
+				dont bénéficient, depuis 1996, les entreprises accueillant des
+				jeunes apprentis.
+				A l'issue du troisième comité interministériel pour la modernisation
+				de l'action publique (CIMAP), le Gouvernement a, en effet, annoncé
+				son intention de supprimer la prime financée par l'État et versée
+				par les régions aux entreprises pour soutenir l'accès à
+				l'apprentissage des jeunes. Le montant de l'économie ainsi espéré
+				serait estimé à 550 millions d'euros, soit 20 % des aides totales
+				versée en faveur de l'apprentissage.
+				Dans la mesure où ce dispositif bénéficie majoritairement aux très
+				petites entreprises et aux petites et moyennnes entreprises
+				(TPE-PME) qui forment l'essentiel des apprentis dans notre pays, il
+				est à craindre un recul significatif des contrats d'apprentissage,
+				qui viendrait s'ajouter à la baisse déjà enregistrée des
+				inscriptions en formation pour la seule rentrée 2013.
+				Aussi, rappelant qu'il est primordial de concilier réduction des dépenses
+				publiques, développement de l'apprentissage et emploi des jeunes, il
+				l'interroge quant aux critères et aux modalités exactes qui
+				viendront entourer la mise en œuvre de la suppression de cette
+				indemnité et lui demande, eu égard à l'importance de l'enjeu,
+				d'engager la plus large concertation possible avec l'ensemble des
+				acteurs publics et privés concernés.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Indemnités compensatrices forfaitaires pour les
+				contrats d'apprentissage</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Éducation</ns2:theme>
+				<ns2:theme>Entreprises</ns2:theme>
+				<ns2:theme>PME, commerce et artisanat</ns2:theme>
+				<ns2:rubrique>Apprentissage</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Entreprises</ns2:renvoi>
+					<ns2:renvoi>Jeunes</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7596</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2154</ns2:page_jo>
+			<ns2:ministre_depot id="60002322">
+				<titre_jo>Réussite éducative</titre_jo>
+				<intitule_min>Ministère chargé de la réussite éducative</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="86010V">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean-Michel</ns2:prenom>
+				<ns2:nom>Baylet</ns2:nom>
+				<ns2:grp_pol>RDSE</ns2:grp_pol>
+				<ns2:circonscription>820 - Tarn-et-Garonne</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean-Michel Baylet attire l'attention de
+				Mme la ministre déléguée auprès du ministre de l'éducation
+				nationale, chargée de la réussite éducative, sur l'évolution du
+				cadre régissant la profession d'auxiliaire de vie scolaire (AVS).
+				Généralisés à la suite de l'adoption de la loi n° 2005-102 du 11
+				février 2005 pour l'égalité des droits et des chances, la
+				participation et la citoyenneté des personnes handicapées, les AVS
+				ont pour mission d'accompagner les enfants ou adolescents handicapés
+				au sein des établissements scolaires.
+				Cependant, s'il a permis l'inclusion scolaire de nombreux élèves atteints d'un
+				handicap, plusieurs écueils entourent le statut de ces auxiliaires.
+				Recrutés prioritairement parmi les chômeurs de longue durée ou de
+				plus de cinquante ans, ils sont dotés de contrats précaires de deux
+				ans, pour les personnes non titulaires du baccalauréat, et de six
+				ans pour les titulaires. Ces contrats sont de surcroit le plus
+				souvent à temps partiel et faiblement rémunérés.
+				En outre la formation des AVS est quant à elle largement insuffisante.
+				Enfin, le pilotage de ce dispositif et la gestion en matière de
+				ressources humaines des AVS ont démontré une certaine brutalité,
+				certains AVS changeant d'affectation en pleine année scolaire. Cette
+				instabilité nuit à l'accomplissement des missions d'accompagnement.
+				Le 25 juin 2013, le groupe de travail « Professionnaliser les
+				accompagnants pour la réussite des enfants et adolescents en
+				situation de handicap », présidé par Mme Pénélope Komites, a remis
+				son rapport. Ce dernier présente plusieurs préconisations. Outre la
+				nécessaire clarification de la notion d'accompagnement, afin de
+				l'adapter au mieux aux différentes formes de handicap, le rapport
+				recommande la création d'un nouveau diplôme d'accompagnant de jeune
+				handicapé (AJH) ou d'accompagnant de jeune en situation de handicap
+				(AJSH). Le rapport propose également la création d'un groupement
+				d'intérêt public (GIP) qui deviendrait l'employeur des AJH.
+				Il souhaiterait donc connaître les suites que le Gouvernement compte
+				donner à ces préconisations et le calendrier qu'il se fixe afin
+				d'améliorer, de pérenniser et de professionnaliser le dispositif
+				d'accompagnement des enfants et des adolescents en situation de
+				handicap.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Réforme du dispositif des auxiliaires de vie
+				scolaire</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Éducation</ns2:theme>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:rubrique>Handicapés</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Établissements scolaires</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7597</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2152</ns2:page_jo>
+			<ns2:ministre_depot id="60002309">
+				<titre_jo>Intérieur</titre_jo>
+				<intitule_min>Ministère de l'intérieur</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="04047H">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>François-Noël</ns2:prenom>
+				<ns2:nom>Buffet</ns2:nom>
+				<ns2:grp_pol>UMP</ns2:grp_pol>
+				<ns2:circonscription>690 - Rhône</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. François-Noël Buffet attire l'attention de
+				M. le ministre de l'intérieur sur les conséquences pour les
+				collectivités locales et les élus de l'assujettissement des
+				indemnités, perçues par les élus locaux, aux cotisations de sécurité
+				sociale.
+
+				Cet assujettissement intervient dès que le total des indemnités dépasse
+				50 % du plafond de la sécurité sociale (décret n° 2013-362 du 26
+				avril 2013 relatif aux conditions d'affiliation des élus locaux au
+				régime général de la sécurité sociale). Selon ce décret
+				d'application, le prélèvement est rétroactif puisqu'il s'applique à
+				compter du 1er janvier 2013.
+				Un tel mécanisme est pénalisant car le niveau des indemnités des élus
+				locaux avait été ajusté en tenant compte de l'absence de prélèvement
+				de sécurité sociale.
+				Dans la mesure où ce prélèvement vient d'être introduit, il lui demande
+				s'il ne conviendrait pas de recalculer le barème indemnitaire des
+				élus locaux, notamment celui des maires et des adjoints au maire.
+				À défaut, il lui demande s'il serait envisageable de modifier le
+				décret du 26 avril 2013 afin que le prélèvement ne s'applique qu'à
+				la partie des indemnités qui dépasse le plafond de la sécurité
+				sociale (c'est-à-dire un relèvement du seuil susvisé de 50 % à 100
+				%).]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Assujettissement des indemnités des élus locaux aux
+				cotisations de sécurité sociale</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:theme>Sécurité sociale</ns2:theme>
+				<ns2:rubrique>Élus locaux</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Sécurité sociale (cotisations)</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7598</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2150</ns2:page_jo>
+			<ns2:ministre_depot id="60002308">
+				<titre_jo>Égalité des territoires et logement</titre_jo>
+				<intitule_min>Ministère de l'égalité des territoires et du logement</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="11051H">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Claude</ns2:prenom>
+				<ns2:nom>Dilain</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>775 - Seine-Saint-Denis</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Claude Dilain attire l'attention de Mme la
+				ministre de l'égalité des territoires et du logement sur l'assurance
+				habitation des copropriétaires habitants.
+				Alors que les locataires sont soumis, à raison, à une assurance
+				obligatoire pour leur logement (alinéa g de l'article 7 de la loi n°
+				89-462 du 6 juillet 1989 tendant à améliorer les rapports locatifs
+				et portant modification de la loi n° 86-1290 du 23 décembre 1986),
+				et que les copropriétés en tant que telles sont obligées de
+				s'assurer (article 10 de la loi n° 65-557 du 10 juillet 1965 fixant
+				le statut de la copropriété des immeubles bâtis), les propriétaires
+				occupant leur logement ne sont juridiquement pas obligés d'assurer
+				leur habitat.
+				Les dommages subis par l'immeuble sont alors supportés par la
+				copropriété.
+				En raison des difficultés - notamment financières - qui pourraient
+				advenir, il est fondamental d'éviter que les propriétaires occupants
+				ne se dérobent pas à leurs obligations d'assurance en reportant
+				celles-ci sur la copropriété en son ensemble.
+				Il l'interroge donc sur les mesures qu'elle compte prendre pour éviter
+				la mise en danger de copropriétés en raison de copropriétaires
+				indélicats.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Assurance habitation des copropriétaires</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:rubrique>Copropriété</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Assurances</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7599</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2144</ns2:page_jo>
+			<ns2:ministre_depot id="60002517">
+				<titre_jo>Agriculture, agroalimentaire et forêt</titre_jo>
+				<intitule_min>Ministère de l'agriculture, de l'agroalimentaire et de
+					la forêt</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="07032N">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Louis</ns2:prenom>
+				<ns2:nom>Pinton</ns2:nom>
+				<ns2:grp_pol>UMP</ns2:grp_pol>
+				<ns2:circonscription>360 - Indre</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Louis Pinton se fait l'écho, auprès de M.
+				le ministre de l'agriculture, de l'agroalimentaire et de la forêt,
+				des inquiétudes suscitées chez les éleveurs bovins français par les
+				négociations entre les États-Unis et l'Union européenne qui viennent
+				de s'engager, à Washington, en vue de la conclusion d'un accord
+				commercial de libre-échange. Les représentants de la filière
+				redoutent, en particulier, que le volet agricole des négociations ne
+				se traduise, du fait de l'afflux de contingents massifs de viande
+				bovine américaine sur le marché européen, par une grave remise en
+				cause des mécanismes de régulation. Ils soulignent, également,
+				l'inégalité des positions de négociation qu'engendrent au départ, à
+				leurs yeux, les conditions ultra-intensives observées
+				outre-Atlantique pour la production de viande bovine : « feedlots »
+				démesurés, alimentation non maîtrisée, contraintes allégées en
+				matière sanitaire, environnementale, ou du bien être animal. Aussi
+				lui demande-t-il de quels types de garanties et d'exigences les
+				négociateurs européens entendent se doter afin que l'issue de ces
+				négociations ne soit pas, fatalement, défavorable aux producteurs de
+				viande bovine de l'Union européenne, en général, et de notre pays,
+				en particulier.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Sort de la filière bovine dans les négociations
+				commerciales entre les États-Unis et l'Union européenne
+			</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Agriculture et pêche</ns2:theme>
+				<ns2:theme>Union européenne</ns2:theme>
+				<ns2:rubrique>Produits agricoles et alimentaires</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Commerce extérieur</ns2:renvoi>
+					<ns2:renvoi>Union européenne</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7601</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2144</ns2:page_jo>
+			<ns2:ministre_depot id="60002517">
+				<titre_jo>Agriculture, agroalimentaire et forêt</titre_jo>
+				<intitule_min>Ministère de l'agriculture, de l'agroalimentaire et de
+					la forêt</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="80013X">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Roland</ns2:prenom>
+				<ns2:nom>Courteau</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>110 - Aude</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Roland Courteau expose à M. le ministre de
+				l'agriculture, de l'agroalimentaire et de la forêt que selon les
+				informations en sa possession, la Commission européenne, pourrait
+				suspendre pendant deux ans, l'utilisation de trois néonicotinoïdes
+				présents dans les pesticides et mortels pour les abeilles. Cette
+				interdiction ne concernerait que certaines cultures et certaines
+				périodes de l'année, durant lesquelles les abeilles sont actives. Il
+				lui demande de bien vouloir lui apporter plus de précisions sur
+				cette décision des instances européennes et, notamment, sur les
+				dates d'application de la mesure.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Néonicotinoïdes présents dans les pesticides et
+				mortels pour les abeilles</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Agriculture et pêche</ns2:theme>
+				<ns2:theme>Environnement</ns2:theme>
+				<ns2:rubrique>Apiculture</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Produits toxiques</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7602</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2146</ns2:page_jo>
+			<ns2:ministre_depot id="60003331">
+				<titre_jo>Budget</titre_jo>
+				<intitule_min>Ministère chargé du budget</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="60002511">
+				<titre_jo>Économie et finances</titre_jo>
+				<intitule_min>Ministère de l'économie et des finances</intitule_min>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="80013X">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Roland</ns2:prenom>
+				<ns2:nom>Courteau</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>110 - Aude</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Roland Courteau appelle l'attention de M.
+				le ministre délégué auprès du ministre de l'économie et des
+				finances, chargé du budget sur les inquiétudes des membres de
+				l 'Association des porteurs de parts de sociétés civiles de
+				placement immobilier (SCPI). En effet, dans le cadre de la
+				consultation initiée par la direction générale du trésor concernant
+				la transposition, en droit français, de la directive européenne
+				2011/61/UE du 8 juin 2011, il semblerait que ce projet, mis en
+				consultation, ne s'en tienne pas à la transposition stricte de la
+				directive. Ainsi, il ouvrirait la voie à des modifications du code
+				monétaire et financier sans lien avec la directive. C'est pourquoi,
+				il aimerait qu'il puisse lui apporter des précisions sur le champ
+				d'application de ce projet.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Porteurs de parts de sociétés civiles SCPI</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Économie et finances, fiscalité</ns2:theme>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:theme>Union européenne</ns2:theme>
+				<ns2:rubrique>Immobilier</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Directives et réglementations européennes</ns2:renvoi>
+					<ns2:renvoi>Sociétés</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7603</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2147</ns2:page_jo>
+			<ns2:ministre_depot id="60003413">
+				<titre_jo>Écologie, développement durable et énergie</titre_jo>
+				<intitule_min>Ministère de l'écologie, du développement durable et
+					de l'énergie</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="80013X">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Roland</ns2:prenom>
+				<ns2:nom>Courteau</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>110 - Aude</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Roland Courteau attire l'attention de M. le
+				ministre de l'écologie, du développement durable et de l'énergie sur
+				le projet de décret relatif à l'étiquetage des consignes de tri.
+
+				Il lui précise que ce projet vise à apposer, sur tous les emballages
+				recyclables, un nouveau logo («Triman »).
+
+				Il lui fait, toutefois, remarquer que le système particulier du
+				recyclage du verre, mis en place, depuis plusieurs décennies, a
+				largement démontré son efficacité, puisque le taux de recyclage du
+				verre est de l'ordre de 84 % en France.
+
+				Il lui demande donc de bien vouloir lui préciser, d'une part, le champ
+				d'application du nouveau système d'étiquetage des consignes de tri
+				et, d'autre part, s'il est dans ses intentions d'en exonérer les
+				emballages en verre.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Étiquetage des consignes de tri</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Entreprises</ns2:theme>
+				<ns2:theme>Environnement</ns2:theme>
+				<ns2:rubrique>Normes, marques et labels</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Environnement</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7604</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2142</ns2:page_jo>
+			<ns2:ministre_depot id="60002307">
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="60002312">
+				<titre_jo>Travail, emploi, formation professionnelle et dialogue
+					social</titre_jo>
+				<intitule_min>Ministère du travail, de l'emploi, de la formation
+					professionnelle et du dialogue social</intitule_min>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="80013X">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Roland</ns2:prenom>
+				<ns2:nom>Courteau</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>110 - Aude</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Roland Courteau interroge Mme la ministre
+				des affaires sociales et de la santé sur certaines informations
+				faisant état d'une possible mise en place d'une garantie jeunes.
+
+				Une telle mesure, consisterait en une allocation destinée aux 18-25 ans
+				en situation de précarité.
+
+				Elle ferait, par ailleurs, l'objet, dans un premier temps, d'une
+				expérimentation.
+
+				Il lui indique qu'il souhaiterait avoir plus de précisions, sur les
+				intentions du Gouvernement quant à la mise en œuvre d'un tel
+				dispositif, particulièrement nécessaire pour de nombreux jeunes.
+
+				Il souhaiterait, par ailleurs, connaître les territoires sur lesquels
+				pourrait être lancée une telle expérimentation.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Mise en place d'une garantie jeunes</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:theme>Sécurité sociale</ns2:theme>
+				<ns2:rubrique>Allocations de chômage</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Jeunes</ns2:renvoi>
+					<ns2:renvoi>Précarité</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7605</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2150</ns2:page_jo>
+			<ns2:ministre_depot id="60002308">
+				<titre_jo>Égalité des territoires et logement</titre_jo>
+				<intitule_min>Ministère de l'égalité des territoires et du logement</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="08014Q">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Yannick</ns2:prenom>
+				<ns2:nom>Botrel</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>220 - Côtes-d'Armor</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Yannick Botrel attire l'attention de Mme la
+				ministre de l'égalité des territoires et du logement sur l'annonce
+				de la fin de la mise à disposition, avant la fin 2015, des services
+				de l'État en Côtes-d'Armor, pour l'instruction des permis de
+				construire et pour l'assistance technique de solidarité et
+				d'aménagement du territoire (ATESAT) auprès des communes.
+
+				Ces services permettent, en effet, aux collectivités éligibles qui ne
+				disposent pas de moyens budgétaires suffisants de bénéficier, pour
+				un coût modeste et forfaitaire, d'un appui des services de l'État,
+				directions départementales des territoires, dans des domaines comme
+				l'aménagement de l'habitat ou la voirie.
+
+				Or, la révision générale des politiques publiques a, largement, remis
+				en cause cette assistance technique et le département des
+				Côtes-d'Armor devrait assister à sa fin programmée prochainement.
+				Or, tous les élus locaux s'accordent d'ailleurs à dire que
+				l'ingénierie privée n'est pas toujours en mesure de proposer un
+				modèle économique de substitution.
+
+				Aussi, souhaiterait-il connaître les intentions du Gouvernement concernant
+				l'avenir de l'application du droit des sols (ADS) et de l'ATESAT qui
+				s'avère indispensable dans nos territoires ruraux.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Suppression de l'assistance technique de solidarité
+				et d'aménagement du territoire </ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Aménagement du territoire</ns2:theme>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:rubrique>Communes</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Aménagement du territoire</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7606</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2142</ns2:page_jo>
+			<ns2:ministre_depot id="60002307">
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="11035H">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Michel</ns2:prenom>
+				<ns2:nom>Delebarre</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>590 - Nord</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Michel Delebarre attire l'attention de Mme
+				la ministre des affaires sociales et de la santé sur les conditions
+				de prise en charge de la nutrition entérale pour les patients
+				bénéficiant d'une hospitalisation à domicile (HAD) en établissements
+				d'hébergement pour personnes âgées dépendantes (EHPAD).
+
+				L'arrêté du 24 mars 2009, pris en vertu de l'article R. 6121-4 du code de la
+				santé publique et fixant les conditions de prise en charge des
+				résidents en EHPAD, précise que la nutrition entérale peut être
+				assurée par la structure d'hospitalisation à domicile, uniquement si
+				elle est associée en complément d'une prise en charge principale.
+
+				De fait, la prestation de nutrition entérale ne peut être assurée,
+				pour les résidents des EHPAD, que lorsqu'elle est accompagnée par
+				d'autres prestations. Or, lorsque les résidents des EHPAD ne
+				nécessitent que cette seule prestation, aucune prise en charge par
+				l'hospitalisation à domicile n'est alors possible. Dès lors, les
+				établissements ne peuvent assumer cette dépense et il se voient
+				contraints de renvoyer les résidents, souvent des personnes âgées en
+				fin de vie, afin d'éviter un déficit budgétaire important.
+
+				Aussi, souhaite-t-il savoir si le Gouvernement entend modifier les textes
+				réglementaires en vigueur, afin de mettre un terme à cette
+				incohérence et à la souffrance des personnes âgées touchées par ce
+				problème.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Nutrition entérale pour les patients bénéficiant
+				d'une hospitalisation à domicile </ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:theme>Sécurité sociale</ns2:theme>
+				<ns2:rubrique>Hospitalisation et soins à domicile</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Hôpitaux</ns2:renvoi>
+					<ns2:renvoi>Personnes âgées</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7609</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2148</ns2:page_jo>
+			<ns2:ministre_depot id="60002526">
+				<titre_jo>Économie sociale et solidaire et consommation</titre_jo>
+				<intitule_min>Ministère chargé de l'économie sociale et solidaire et
+					de la consommation</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="11088W">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Francis</ns2:prenom>
+				<ns2:nom>Delattre</ns2:nom>
+				<ns2:grp_pol>UMP</ns2:grp_pol>
+				<ns2:circonscription>828 - Val-d'Oise</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Francis Delattre attire l'attention de M.
+				le ministre délégué auprès du ministre de l'économie et des
+				finances, chargé de l'économie sociale et solidaire et de la
+				consommation, sur la question des données relatives aux accidents de
+				la vie courante. Vingt-sept associations européennes viennent en
+				effet de lancer un appel conjoint en faveur de la création d'une
+				base de données européenne sur les accidents et blessures de la vie
+				courante. Chaque année, 5,7 millions de personnes sont admises à
+				l'hôpital dans l'Union européenne suite à un accident ou à une
+				blessure et 35 millions bénéficient d'une prise en charge
+				ambulatoire. Soixante-treize pour cent de ces accidents et blessures
+				surviennent à la maison ou lors d'une activité de loisirs. En
+				France, les accidents de la vie courante sont à l'origine de 20 000
+				décès par an, soit plus de cinq fois l'équivalent de la mortalité
+				sur les routes. Ces chiffres recouvrent des souffrances personnelles
+				et des dépenses de santé très importantes qui pèsent sur l'ensemble
+				de la collectivité. Or, il n'existe aujourd'hui aucune source fiable
+				de données sur les causes des accidents de la vie courante. La
+				création d'une base paneuropéenne est pourtant la condition
+				nécessaire à l'élaboration d'une politique de prévention efficace.
+				C'est pourquoi il demande au Gouvernement s'il entend contribuer à
+				la mise en œuvre d'une telle base de données afin de mieux lutter
+				contre les accidents de la vie courante.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Création d'une base de données sur les accidents et
+				blessures de la vie courante</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:rubrique>Accidents domestiques</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Fichiers</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7611</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2152</ns2:page_jo>
+			<ns2:ministre_depot id="60002309">
+				<titre_jo>Intérieur</titre_jo>
+				<intitule_min>Ministère de l'intérieur</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="04065K">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Roland</ns2:prenom>
+				<ns2:nom>Ries</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>670 - Bas-Rhin</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Roland Ries interroge M. le ministre de
+				l'intérieur sur les règles de mise en œuvre des procédures
+				d'évolution des documents d'urbanisme dans le cadre intercommunal.
+
+				L'article 3 de l'ordonnance n° 2012-11 du 5 janvier 2012 portant
+				clarification et simplification d'élaboration, de modification et de
+				révision des documents d'urbanisme, modifiant les dispositions de
+				l'article L. 123–1 du code de l'urbanisme prévoit : « En cas de
+				modification du périmètre d'un établissement public de coopération
+				intercommunale compétent en matière de plan local d'urbanisme, les
+				dispositions du ou des plans locaux d'urbanisme applicables aux
+				territoires concernés par cette modification restent applicables.
+				Chaque établissement public de coopération intercommunale ou commune
+				intéressé révise ou modifie ces plans pour adopter un plan couvrant
+				l'intégralité du périmètre de l'établissement compétent ou du
+				territoire de la commune au plus tard lors de la prochaine révision
+				».
+
+				Cette disposition ne prévoit pas les règles applicables dans le cas de
+				figure où le périmètre d'un établissement public de coopération
+				intercommunale (EPCI) serait modifié au cours d'une procédure
+				d'élaboration du plan local d'urbanisme (PLU) intercommunal de cet
+				EPCI.
+				Sachant que les dispositions de la loi n° 2010-788 du 12 juillet 2010
+				portant engagement national pour l'environnement nécessitent pour
+				l'EPCI de mener à son terme la procédure avant le 1er janvier 2016,
+				il souhaite connaître les adaptations envisagées pour permettre à
+				l'EPCI de poursuivre la procédure engagée pour l'adoption d'un PLU
+				intercommunal, sans reprendre celle-ci au début, tout en mettant en
+				œuvre la modification de son périmètre en application du schéma
+				directeur de coopération intercommunale.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Procédures d'évolution des documents d'urbanisme
+				dans le cadre intercommunal</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:rubrique>Intercommunalité</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Plans d'urbanisme</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7612</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-25</ns2:date_publication_jo>
+			<ns2:page_jo>2143</ns2:page_jo>
+			<ns2:ministre_depot id="60002307">
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="90004C">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean-Pierre</ns2:prenom>
+				<ns2:nom>Demerliat</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>870 - Haute-Vienne</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean-Pierre Demerliat attire l'attention de
+				Mme la ministre des affaires sociales et de la santé sur la
+				situation des salariés atteints d'un cancer, exclus du droit aux
+				prestations en espèces de l'assurance maladie, du fait des
+				conditions fixées par la règlementation en vigueur. En effet,
+				l'article R. 313-3 du code de la sécurité sociale conditionne le
+				versement des indemnités journalières, en cas d'incapacité
+				temporaire pour maladie, soit à une durée minimum d'activité
+				professionnelle sur une période de référence précédant l'arrêt, soit
+				à une cotisation sur un salaire minimum au cours de cette même
+				période.
+				Pour un arrêt inférieur à six mois, la durée minimum de travail salarié
+				ou assimilé est de deux cents heures, effectuées au cours des trois
+				derniers mois. Pour un arrêt supérieur à six mois, la durée minimum
+				de travail salarié ou assimilé est de huit cents heures, effectuées
+				pendant l'année précédente, dont deux cents heures au moins au cours
+				du premier trimestre. Les salariés dont la durée de travail est
+				inférieure à un mi-temps ne répondent pas à ces conditions et sont
+				de fait exclus des droits pour lesquels pourtant ils cotisent.
+				Sauf exception, ils ne peuvent pas non plus bénéficier du régime de
+				prévoyance destiné à compléter les indemnités journalières maladie.
+				Ces travailleurs se retrouvent ainsi sans aucun revenu, aggravant
+				une situation déjà précarisée par la maladie notamment au regard des
+				dépenses de santé incompressibles et non remboursables auxquelles
+				ils doivent faire face.
+				Cette situation est aujourd'hui dénoncée par plusieurs caisses primaires
+				d'assurance maladie qui demandent légitimement que le règlement de
+				cette question - déjà évoquée depuis 1988 - soit envisagé.
+				Seule une réponse en profondeur serait de nature à améliorer la situation
+				des malades concernés. Aussi, il lui demande quelles mesures le
+				gouvernement envisage de mettre en œuvre face à ces situations
+				d'exclusion.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Salariés exclus du droit aux prestations de
+				l'assurance maladie</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Sécurité sociale</ns2:theme>
+				<ns2:theme>Travail</ns2:theme>
+				<ns2:rubrique>Sécurité sociale (prestations)</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Assurance maladie et maternité</ns2:renvoi>
+					<ns2:renvoi>Travail</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

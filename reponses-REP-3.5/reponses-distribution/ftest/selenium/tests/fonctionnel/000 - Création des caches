@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://idlv-reponses-test.lyon-dev2.local:8080/reponses/" />
+<title>000 - Création des caches</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">000 - Création des caches</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setTimeout</td>
+	<td>30000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/reponses/logout</td>
+	<td></td>
+</tr>
+<!--Connexion ADMINSGG-->
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>adminsgg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>adminsgg</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=userServicesForm:userServicesActionsTable:2:userServicesActionCommandLink</td>
+	<td></td>
+</tr>
+<!--Recherche vide-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Recherche&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Effectuer une nouvelle recherche&quot;]</td>
+	<td></td>
+</tr>
+<!--Assemblée Nationale-->
+<tr>
+	<td>click</td>
+	<td>//input[@value='AN']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Recherche&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Effectuer une nouvelle recherche&quot;]</td>
+	<td></td>
+</tr>
+<!--Sénat-->
+<tr>
+	<td>click</td>
+	<td>//input[@value='SENAT']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Recherche&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Effectuer une nouvelle recherche&quot;]</td>
+	<td></td>
+</tr>
+<!--Avec Reponse-->
+<tr>
+	<td>click</td>
+	<td>//input[@value='AvecReponse']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Recherche&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Effectuer une nouvelle recherche&quot;]</td>
+	<td></td>
+</tr>
+<!--Sans Réponse-->
+<tr>
+	<td>click</td>
+	<td>//input[@value='SansReponse']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Recherche&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Effectuer une nouvelle recherche&quot;]</td>
+	<td></td>
+</tr>
+<!--Questions Ecrites-->
+<tr>
+	<td>select</td>
+	<td>id=requete_all_form:nxl_requeteSimple:nxw_type_question_list</td>
+	<td>label=Questions Ecrites</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Recherche&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Effectuer une nouvelle recherche&quot;]</td>
+	<td></td>
+</tr>
+<!--QOSD-->
+<tr>
+	<td>select</td>
+	<td>id=requete_all_form:nxl_requeteSimple:nxw_type_question_list</td>
+	<td>label=Questions Orales Sans Débat</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Recherche&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Effectuer une nouvelle recherche&quot;]</td>
+	<td></td>
+</tr>
+<!--Adminstration-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=userServicesForm:userServicesActionsTable:4:userServicesActionCommandLink</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Gestion de l'organigramme</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Gestion des utilisateurs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Gestion des profils</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Recherche d'utilisateur</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Délégation des droits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Journal d'administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Gestion des modèles de feuilles de route</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Gestion des tables de référence</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Gestion des paramètres</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Archivage et suppression</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Mon compte</td>
+	<td></td>
+</tr>
+<!--Déconnexion-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Déconnexion</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Êtes-vous sûr de vouloir quitter l'application ?</td>
+	<td></td>
+</tr>
+<!--Connexion BDC-->
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>bdc</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>bdc</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=userServicesForm:userServicesActionsTable:2:userServicesActionCommandLink</td>
+	<td></td>
+</tr>
+<!--Recherche vide-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Recherche&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value=&quot;Effectuer une nouvelle recherche&quot;]</td>
+	<td></td>
+</tr>
+<!--Déconnexion-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Déconnexion</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Êtes-vous sûr de vouloir quitter l'application ?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setTimeout</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

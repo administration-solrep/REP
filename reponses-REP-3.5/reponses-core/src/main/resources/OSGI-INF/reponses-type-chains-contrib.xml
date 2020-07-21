@@ -1,0 +1,27 @@
+<!-- Cet composant contribue le mapping entre type de document et Operation 
+	Chains pour l'application Réponses. -->
+<component name="fr.dila.reponses.core.typeChains">
+
+	<require>fr.dila.reponses.core.service.DocumentRoutingService</require>
+
+	<extension target="fr.dila.reponses.core.service.DocumentRoutingService"
+		point="chainsToType">
+		<!-- Surcharge des chainsToType de Nuxeo -->
+		<mapping documentType="DistributionTask" chainId="DistributionTaskChain"
+			undoChainIdFromRunning="undoRunningActionable" undoChainIdFromDone="simpleUndo" />
+		<mapping documentType="GenericDistributionTask" chainId="GenericDistributionTaskChain"
+			undoChainIdFromRunning="undoRunningActionable" undoChainIdFromDone="simpleUndo" />
+		<mapping documentType="PersonalDistributionTask" chainId="PersonalDistributionTaskChain"
+			undoChainIdFromRunning="undoRunningActionable" undoChainIdFromDone="simpleUndo" />
+		<mapping documentType="DistributionStep" chainId="DistributionStepChain"
+			undoChainIdFromRunning="simpleUndo" undoChainIdFromDone="simpleUndo" />
+		<mapping documentType="DocumentRouteStep" chainId="setDone"
+			undoChainIdFromRunning="simpleUndo" undoChainIdFromDone="simpleUndo" />
+
+		<!-- Étape de distribution générique -->
+		<mapping documentType="RouteStep" chainId="RouteStepChain"
+			undoChainIdFromRunning="reponsesUndoRunningActionable"
+			undoChainIdFromDone="simpleUndo" />
+	</extension>
+
+</component>

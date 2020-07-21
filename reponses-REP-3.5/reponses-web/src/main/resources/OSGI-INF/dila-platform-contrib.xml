@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.bindings" version="1.0">
+	<!-- link interface impl to bean -->
+	<extension target="org.nuxeo.runtime.api.ServiceManagement"
+		point="services">
+
+		<!-- <service class="fr.dila.cm.service.MailboxManagementService" group="platform"> 
+			<locator>%MailboxManagementBean</locator> </service> -->
+
+		<service class="fr.dila.reponses.api.services.DossierDistributionService"
+			group="platform">
+			<locator>%DossierDistributionBean</locator>
+		</service>
+
+	</extension>
+
+</component>

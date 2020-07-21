@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://nuxeo.org/schemas/question/" xmlns:qst="http://nuxeo.org/schemas/question/">
+
+	<!-- numeroQuestion : numéro de la question -->
+	<xs:element name="numeroQuestion" type="xs:int" />
+
+	<!-- numeroQuestion : chaine de caractère pour effectuer une recherche fulltext 
+		sur le champ -->
+	<!-- source numero question field (AN-9536) -->
+	<xs:element name="sourceNumeroQuestion" type="xs:string" />
+
+	<!-- origineQuestion : origine de la question => sénat ou assemblée nationale -->
+	<xs:element name="origineQuestion" type="xs:string" />
+
+	<!-- typeQuestion : orale ou écrite -->
+	<xs:element name="typeQuestion" type="xs:string" />
+
+	<!-- legislatureQuestion : numero de legislature -->
+	<xs:element name="legislatureQuestion" type="xs:int" />
+
+	<!-- etatQuestion : signalee, renouvelee, caduque ... -->
+	<xs:element name="etatQuestion" type="xs:string" />
+	<!-- les états de la question simple pour gérer le cumul dans la recherche -->
+	<xs:element name="etatRetire" type="xs:boolean" default="false" />
+	<xs:element name="etatNonRetire" type="xs:boolean" default="true" />
+	<xs:element name="etatSignale" type="xs:boolean" default="false" />
+	<xs:element name="etatRenouvele" type="xs:boolean" default="false" />
+	<xs:element name="etatReattribue" type="xs:boolean" default="false" />
+	<xs:element name="etatRappele" type="xs:boolean" default="false" />
+	<xs:element name="connexite" type="xs:int" />
+
+	<!-- caracteristiqueQuestion : avec reponse,sans reponse ... -->
+	<xs:element name="caracteristiqueQuestion" type="xs:string" />
+
+	<!-- Dénormalisation hasReponseInitiee -->
+	<xs:element name="hasReponseInitiee" type="xs:boolean"
+		default="false" />
+
+
+	<!-- dateReceptionQuestion -->
+	<xs:element name="dateReceptionQuestion" type="xs:date" />
+
+	<!-- idMandat de l'auteur de la question -->
+	<xs:element name="idMandat" type="xs:string" />
+
+	<!-- L'identifant du groupePolitique de l'auteur de la question : UMP, PS 
+		PC, Vert sont ensuite accessible avec la table de référence... TODO delete 
+		=> à recuperer via une table de reference grace à l'idMandat l'auteur de 
+		la question -->
+	<xs:element name="groupePolitique" type="xs:string" />
+	<!-- nomAuteur -->
+	<xs:element name="nomAuteur" type="xs:string" />
+	<!-- prenomAuteur -->
+	<xs:element name="prenomAuteur" type="xs:string" />
+	<!-- civiliteAuteur : Monsieur, Madame... -->
+	<xs:element name="civiliteAuteur" type="xs:string" />
+	<!-- Ajout du nom complet pour la recherche : mise en posttraitement -->
+	<xs:element name="nomCompletAuteur" type="xs:string" />
+	<!-- Circonscription -->
+	<xs:element name="circonscriptionAuteur" type="xs:string" />
+
+	<!-- dateTransmissionAssemblees -->
+	<xs:element name="dateTransmissionAssemblees" type="xs:date" />
+
+	<!-- datePublicationJO -->
+	<xs:element name="datePublicationJO" type="xs:date" />
+
+	<!-- pageJO : page de la question dans le JO -->
+	<xs:element name="pageJO" type="xs:string" />
+
+	<!-- idMinistereInterroge -->
+	<xs:element name="idMinistereInterroge" type="xs:string" />
+	<!-- titreJOMinistere -->
+	<xs:element name="titreJOMinistere" type="xs:string" />
+	<!-- intituleMinistere -->
+	<xs:element name="intituleMinistere" type="xs:string" />
+
+	<!-- idMinistereAttributaire -->
+	<xs:element name="idMinistereAttributaire" type="xs:string" />
+	<!-- intituleMinistereAttributaire -->
+	<xs:element name="intituleMinistereAttributaire" type="xs:string" />
+
+	<!-- idMinistereRattachement -->
+	<xs:element name="idMinistereRattachement" type="xs:string" />
+	<!-- intituleMinistereRattachement -->
+	<xs:element name="intituleMinistereRattachement" type="xs:string" />
+
+	<!-- idDirectionPilote -->
+	<xs:element name="idDirectionPilote" type="xs:string" />
+	<!-- intituleDirectionPilote -->
+	<xs:element name="intituleDirectionPilote" type="xs:string" />
+
+	<!-- senatQuestionTitre -->
+	<xs:element name="senatQuestionTitre" type="xs:string" />
+
+	<!-- texteQuestion : texte de la question -->
+	<xs:element name="texteQuestion" type="xs:string" />
+
+	<!-- dateRenouvellementQuestion -->
+	<xs:element name="dateRenouvellementQuestion" type="xs:date" />
+
+	<!-- dateSignalementQuestion -->
+	<xs:element name="dateSignalementQuestion" type="xs:date" />
+
+	<!-- dateRetraitQuestion -->
+	<xs:element name="dateRetraitQuestion" type="xs:date" />
+
+	<!-- dateCaduciteQuestion -->
+	<xs:element name="dateCaduciteQuestion" type="xs:date" />
+
+	<!-- dateClotureQuestion -->
+	<xs:element name="dateClotureQuestion" type="xs:date" />
+
+	<!-- dateRappelQuestion -->
+	<xs:element name="dateRappelQuestion" type="xs:date" />
+
+	<!-- texte Joint -->
+	<xs:element name="texte_joint" type="xs:string" />
+
+	<!-- Signalement -->
+	<xs:element name="signalementsQuestion" type="qst:signalementsQuestion" />
+	<xs:complexType name="signalementsQuestion">
+		<xs:sequence>
+			<xs:element name="signalementQuestion" type="qst:signalementQuestion"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="signalementQuestion">
+		<xs:sequence>
+			<xs:element name="dateDEffet" type="xs:date" />
+			<xs:element name="dateAttendue" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Renouvellement -->
+	<xs:element name="renouvellementsQuestion" type="qst:renouvellementsQuestion" />
+	<xs:complexType name="renouvellementsQuestion">
+		<xs:sequence>
+			<xs:element name="renouvellementQuestion" type="qst:renouvellementQuestion"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="renouvellementQuestion">
+		<xs:sequence>
+			<xs:element name="dateDEffet" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Errata -->
+	<xs:element name="errata">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="erratum" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="datePublication" type="xs:date"
+								minOccurs="1" maxOccurs="1" />
+							<xs:element name="pageJO" type="xs:int" minOccurs="1"
+								maxOccurs="1" />
+							<xs:element name="texte_erratum" type="xs:string"
+								minOccurs="1" maxOccurs="1" />
+							<xs:element name="texte_consolide" type="xs:string"
+								minOccurs="1" maxOccurs="1" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Attributions -->
+	<xs:element name="attributions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="attribution" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id_ministere_attributaire" type="xs:string"
+								minOccurs="1" maxOccurs="1" />
+							<xs:element name="titreJOMinistere" type="xs:string"
+								minOccurs="1" maxOccurs="1" />
+							<xs:element name="intituleMinisere" type="xs:string"
+								minOccurs="1" maxOccurs="1" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<!-- objetQuestion => voir si redondant avec texte question <xs:element 
+		name="objetQuestion" type="xs:string" /> -->
+	<!-- élément lié à la question via caseitem : réponse, feuille de route, 
+		fond de dossier -->
+
+	<!-- élément lié au bordereau => lié à la réponse -->
+
+
+	<!-- TODO wait confirmation specifiation pour les donnees completes des 
+		questions -->
+
+	<!-- Questions connexes -->
+	<xs:element name="hashConnexiteTitre" type="xs:string" /> <!-- Hashage sur le titre pour SE -->
+	<xs:element name="hashConnexiteTexte" type="xs:string" /> <!-- Hashage sur le texte pour SE et AN -->
+	<xs:element name="hashConnexiteSE" type="xs:string" /> <!-- Hashage sur l'indxation pour SE -->
+	<xs:element name="hashConnexiteAN" type="xs:string" /> <!-- Hashage sur l'indxation pour AN -->
+
+	<!-- Dénormalisation -->
+	<!-- Colonne mots-clés (indexation) -->
+	<xs:element name="motscles" type="xs:string" />
+
+	<!-- Colonne état (états de la question) -->
+	<xs:element name="etatsQuestion" type="xs:string" />
+
+</xs:schema>

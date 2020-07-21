@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-demo.lyon-dev2.local:8080/" />
+<title>PointVisibilite</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">PointVisibilite</td>
+			</tr>
+		</thead>
+		<tbody>
+			<!--Login adminsgg-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle feuille de route-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>FDR-AGRI</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_description</td>
+				<td>Feuille de route attribuée par défaut à toute nouvelle
+					question.</td>
+			</tr>
+			<!--Selection du ministère-->
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_ministereAttributaire_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_ministereAttributaire_tree:1::gvt:handle</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Min. Agriculture et pêche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_ministereAttributaire_tree:1:13::addBtn</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Min. Agriculture et pêche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_titre_question</td>
+				<td>Titre</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle Tache Attribution BDC-->
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>Pour attribution agents BDC</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_reponses_routing_task:nxw_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>typeKeys</td>
+				<td>document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggest</td>
+				<td>Agents BDC Agriculture</td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@id='document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggestionBox:suggest']/tbody/tr[1]/td[2]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Agents BDC Agriculture</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche attribution Sous-dir Produits végétaux (DGPEEI-AGR)-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route/FDR-AGRI@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>Pour attribution Sous-dir Produits végétaux (DGPEEI-AGR)</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_reponses_routing_task:nxw_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>typeKeys</td>
+				<td>document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggest</td>
+				<td>Sous-dir Produits végétaux (DGPEEI-AGR)</td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@id='document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggestionBox:suggest']/tbody/tr[1]/td[2]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Sous-dir Produits végétaux (DGPEEI-AGR)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : Pour rédaction Sous-dir org économique (DGPEEI-AGR)-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route/FDR-AGRI@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>Pour rédaction Sous-dir org économique (DGPEEI-AGR)</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_reponses_routing_task:nxw_type</td>
+				<td>label=Pour rédaction</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>typeKeys</td>
+				<td>document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggest</td>
+				<td>Sous-dir org économique (DGPEEI-AGR)</td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@id='document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggestionBox:suggest']/tbody/tr[1]/td[2]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Sous-dir org économique (DGPEEI-AGR)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : Pour visa secretariat Agents Secrétariat général central (AGR)-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route/FDR-AGRI@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>Pour VISA Agents Secrétariat général central (AGR)</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_reponses_routing_task:nxw_type</td>
+				<td>label=Pour visa</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>typeKeys</td>
+				<td>document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggest</td>
+				<td>Agents Secrétariat général central (AGR)</td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@id='document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggestionBox:suggest']/tbody/tr[1]/td[2]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Agents Secrétariat général central (AGR)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Pour signature BDC-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route/FDR-AGRI@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>Pour signature BDC</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_reponses_routing_task:nxw_type</td>
+				<td>label=Pour signature</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>typeKeys</td>
+				<td>document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggest</td>
+				<td>Agents BDC Agriculture</td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@id='document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggestionBox:suggest']/tbody/tr[1]/td[2]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Agents BDC Agriculture</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour attribution SGG-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route/FDR-AGRI@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>Pour attribution superviseur SGG</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_reponses_routing_task:nxw_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>typeKeys</td>
+				<td>document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggest</td>
+				<td>Administrateur</td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@id='document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggestionBox:suggest']/tbody/tr[1]/td[2]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Administrateur S.O.L.O.N. (SGG)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouveau Branchement : Etape parallèle-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route/FDR-AGRI@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Branchement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Branchement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_step_folder:nxw_type</td>
+				<td>label=Parallèle</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour impression secrétariat-->
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>Pour impression secretariat</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_reponses_routing_task:nxw_type</td>
+				<td>label=Pour impression</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>typeKeys</td>
+				<td>document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggest</td>
+				<td>Secr</td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@id='document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggestionBox:suggest']/tbody/tr[1]/td[2]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Secrétariat Conseillère Aff. éco et finances PM</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : Validation PM-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route/FDR-AGRI@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Etape parallèle</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>Pour validation PM</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_reponses_routing_task:nxw_type</td>
+				<td>label=Pour validation Premier ministre</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>typeKeys</td>
+				<td>document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggest</td>
+				<td>Conse</td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@id='document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggestionBox:suggest']/tbody/tr[1]/td[2]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Conseillère Aff. éco et finances PM</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour transmission SSGG-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route/FDR-AGRI@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Nouveau document</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Types de documents disponibles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Tâche de distribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_heading:nxw_title</td>
+				<td>Pour transmission aux assemblées</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_reponses_routing_task:nxw_type</td>
+				<td>label=Pour transmission aux assemblées</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>typeKeys</td>
+				<td>document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggest</td>
+				<td>Admin</td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//table[@id='document_create:nxl_generic_mailboxes_routing_task:nxw_distribution_mailbox_mailbox_suggestionBox:suggest']/tbody/tr[1]/td[2]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>4000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Administrateur S.O.L.O.N. (SGG)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Validation feuille de route-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/nxpath/default/case-management/workspaces/admin/modele-route/FDR-AGRI@view_documents</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//form[@id='document_view']/span/div/div/input</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Déconnexion</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

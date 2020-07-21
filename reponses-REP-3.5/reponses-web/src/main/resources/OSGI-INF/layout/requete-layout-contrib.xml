@@ -1,0 +1,587 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.layout.requete">
+	<require>fr.dila.reponses.core.vocabulaire</require>
+	<require>fr.dila.reponses.web.widget.requete</require>
+	<require>org.nuxeo.ecm.platform.smart.folder.layouts</require>
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<layout name="requeteSimple">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>legislature</widget>
+					<widget>type_question_list</widget>
+				</row>
+				<row>
+					<widget>origineQuestion</widget>
+					<widget>caracteristiqueQuestion</widget>
+				</row>
+				<row>
+					<widget>etatRetire</widget>
+					<widget>etatCaduque</widget>
+					<widget>etatClotureAutre</widget>
+				</row>
+				<row>
+					<widget>etatRenouvele</widget>
+					<widget>etatSignale</widget>
+					<widget>etatRappele</widget>
+				</row>
+				<row>
+					<widget>etatReattribue</widget>
+				</row>
+				<row>
+					<widget>critereRequete</widget>
+				</row>
+				<row>
+					<widget>dateJOQuestion</widget>
+				</row>
+				<row>
+					<widget>dateJOReponse</widget>
+				</row>
+				<row>
+					<widget>dateSignalement</widget>
+				</row>
+				<row>
+					<widget>auteur</widget>
+				</row>
+				<row>
+					<widget>groupePolitique</widget>
+				</row>
+				<row>
+					<widget>ministereAttribute</widget>
+				</row>
+				<row>
+					<widget>ministereInterroge</widget>
+				</row>
+				<row>
+					<widget>ministereRattachement</widget>
+				</row>
+				<row>
+					<widget>directionPilote</widget>
+				</row>
+
+			</rows>
+		</layout>
+
+		<layout name="requeteComplexe">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+			</rows>
+		</layout>
+
+		<layout name="requeteTexteIntegral">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>appliquerRechercheExacte</widget>
+				</row>
+				<row>
+					<widget>critere_requete</widget>
+				</row>
+				<row>
+					<widget>dansTexteReponse</widget>
+					<widget>dansTexteQuestion</widget>
+					<widget>dansTitre</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="requeteIndexSenat">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>simple_indexation_senat</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="requeteIndexAN">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>simple_indexation_an</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="requeteIndexMinistere">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>simple_indexation_ministere</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="requeteFeuilleRoute">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>titreFeuilleRoute</widget>
+				</row>
+				<row>
+					<widget>typeStep</widget>
+				</row>
+				<row>
+					<widget>rangeBeginDateStep</widget>
+				</row>
+				<row>
+					<widget>rangeEndDateStep</widget>
+				</row>
+				<row>
+					<widget>statusStep</widget>
+				</row>
+				<row>
+					<widget>directionStep</widget>
+				</row>
+				<row>
+					<widget>posteStep</widget>
+				</row>
+				<row>
+					<widget>isMandatoryStep</widget>
+				</row>
+				<row>
+					<widget>automaticValidationStep</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="favorisRepertoire">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>repertoireName</widget>
+				</row>
+				<row>
+					<widget>dateExpirationFavorisDossier</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="requeteExperte">
+			<templates>
+				<template mode="any">
+					/layouts/layout_requeteur_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>requeteExperteQuery</widget>
+				</row>
+				<row>
+					<widget>requeteur</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<!-- Surcharge du layout smart folder -->
+		<layout name="nxql_incremental_smart_folder">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>requete_experte_widget</widget>
+				</row>
+			</rows>
+			<widget name="requete_experte_widget" type="textarea">
+				<labels>
+					<label mode="any">label.smart.query.build</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>sf:queryPart</field>
+				</fields>
+			</widget>
+		</layout>
+
+		<layout name="incremental_smart_query_selection">
+			<templates>
+				<template mode="any">
+					/layouts/incremental_smart_query_selection_layout_template.xhtml
+				</template>
+			</templates>
+			<properties mode="any">
+				<property name="hideNotOperator">true</property>
+			</properties>
+			<rows>
+				<row name="question_condition_date_publication">
+					<widget>question_condition_date_publication</widget>
+				</row>
+				<row name="question_condition_date_signalement">
+					<widget>question_condition_date_signalement</widget>
+				</row>
+				<row name="question_condition_date_renouvellement">
+					<widget>question_condition_date_renouvellement</widget>
+				</row>
+				<row name="question_condition_date_retrait">
+					<widget>question_condition_date_retrait</widget>
+				</row>
+				<row name="question_condition_date_caducite">
+					<widget>question_condition_date_caducite</widget>
+				</row>
+				<row name="question_condition_date_cloture">
+					<widget>question_condition_date_cloture</widget>
+				</row>
+				<row name="question_condition_date_rappel">
+					<widget>question_condition_date_rappel</widget>
+				</row>
+				<row name="question_condition_nature">
+					<widget>question_condition_nature</widget>
+				</row>
+				<row name="question_condition_auteur">
+					<widget>question_condition_auteur</widget>
+				</row>
+				<row name="question_condition_numero">
+					<widget>question_condition_numero</widget>
+				</row>
+				<row name="question_codition_etat">
+					<widget>question_condition_etat</widget>
+				</row>
+				<row name="question_condition_renouvele">
+					<widget>question_condition_renouvele</widget>
+				</row>
+				<row name="question_condition_rappele">
+					<widget>question_condition_rappele</widget>
+				</row>
+				<row name="question_condition_signale">
+					<widget>question_condition_signale</widget>
+				</row>
+				<row name="question_condition_ministere_attributaire">
+					<widget>question_condition_ministere_attributaire</widget>
+				</row>
+				<row name="question_condition_groupe_politique">
+					<widget>question_condition_groupe_politique</widget>
+				</row>
+				<row name="question_condition_texte_question">
+					<widget>question_condition_texte_question</widget>
+				</row>
+				<row name="question_condition_ministere_interroge">
+					<widget>question_condition_ministere_interroge</widget>
+				</row>
+				<row name="question_condition_ministere_rattachement">
+					<widget>question_condition_ministere_rattachement</widget>
+				</row>
+				<row name="question_condition_direction_pilote">
+					<widget>question_condition_direction_pilote</widget>
+				</row>
+
+				<row name="indexation_condition_senat_titre">
+					<widget>indexation_condition_senat_titre</widget>
+				</row>
+				<row name="indexation_condition_senat_themes">
+					<widget>indexation_condition_senat_themes</widget>
+				</row>
+				<row name="indexation_condition_senat_rubriques">
+					<widget>indexation_condition_senat_rubriques</widget>
+				</row>
+				<row name="indexation_condition_senat_renvois">
+					<widget>indexation_condition_senat_renvois</widget>
+				</row>
+				<row name="indexation_condition_an_rubriques">
+					<widget>indexation_condition_an_rubriques</widget>
+				</row>
+				<row name="indexation_condition_an_ta">
+					<widget>indexation_condition_an_ta</widget>
+				</row>
+				<row name="indexation_condition_an_analyses">
+					<widget>indexation_condition_an_analyses</widget>
+				</row>
+				<row name="reponses_condition_text_reponses">
+					<widget>reponses_condition_text_reponses</widget>
+				</row>
+				<row name="reponses_condition_date_publication">
+					<widget>reponses_condition_date_publication</widget>
+				</row>
+				<row name="fdr_condition_type_etape">
+					<widget>fdr_condition_type_etape</widget>
+				</row>
+				<row name="fdr_condition_statut_etape">
+					<widget>fdr_condition_statut_etape</widget>
+				</row>
+				<row name="fdr_condition_etat_etape">
+					<widget>fdr_condition_etat_etape</widget>
+				</row>
+				<row name="fdr_condition_poste_etape">
+					<widget>fdr_condition_poste_etape</widget>
+				</row>
+				<row name="fdr_condition_date_debut_etape">
+					<widget>fdr_condition_date_debut_etape</widget>
+				</row>
+				<row name="fdr_condition_date_fin_etape">
+					<widget>fdr_condition_date_fin_etape</widget>
+				</row>
+				<row name="fdr_condition_feuille_route_titre">
+					<widget>fdr_condition_feuille_route_titre</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<!-- Layout des critères de recherche des modèles de feuilles de route 
+			(partie feuille de route) -->
+		<layout name="recherche_modele_feuille_route_feuille_route">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>feuille_route_title</widget>
+				</row>
+				<row>
+					<widget>feuille_route_ministere</widget>
+				</row>
+				<row>
+					<widget>feuille_route_creation_utilisateur</widget>
+				</row>
+				<row>
+					<widget>feuille_route_creation_date_min</widget>
+					<widget>feuille_route_creation_date_max</widget>
+				</row>
+				<row>
+					<widget>feuille_route_validee</widget>
+				</row>
+			</rows>
+
+			<widget name="feuille_route_title" type="text">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.feuilleRoute.feuilleRouteIntitule</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>feuilleRouteTitle</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">edit</mode>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+
+			<widget name="feuille_route_ministere" type="template">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.feuilleRoute.feuilleRouteMinistere</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>feuilleRouteMinistere</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">edit</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+					<property name="organigrammeSelectionType">MIN_TYPE</property>
+					<property name="organigrammeSelectionMode">SINGLE</property>
+				</properties>
+			</widget>
+
+			<widget name="feuille_route_creation_utilisateur" type="template">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.feuilleRoute.feuilleRouteCreationUtilisateur</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>feuilleRouteCreationUtilisateur</field>
+				</fields>
+				<properties mode="any">
+					<property name="template">/widgets/single_user_suggestion_widget_template.xhtml</property>
+					<property name="userSuggestionSearchType">USER_TYPE</property>
+				</properties>
+			</widget>
+
+			<widget name="feuille_route_creation_date_min" type="datetime">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.feuilleRoute.feuilleRouteCreationDateMin</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>feuilleRouteCreationDateMin</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">edit</mode>
+				</widgetModes>
+				<properties widgetMode="edit">
+				</properties>
+			</widget>
+
+			<widget name="feuille_route_creation_date_max" type="datetime">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.feuilleRoute.feuilleRouteCreationDateMax</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>feuilleRouteCreationDateMax</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">edit</mode>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="smallWidget">true</property>
+				</properties>
+			</widget>
+
+			<widget name="feuille_route_validee" type="selectOneDirectory">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.feuilleRoute.feuilleRouteValidee</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>feuilleRouteValidee</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="notDisplayDefaultOption">false</property>
+					<property name="localize">true</property>
+					<property name="directoryName">boolean_voc</property>
+					<property name="displayEmptyValue">true</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<!-- Layout des critères de recherche des modèles de feuilles de route 
+			(partie étapes) -->
+		<layout name="recherche_modele_feuille_route_route_step">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>route_step_routing_task_type</widget>
+				</row>
+				<row>
+					<widget>route_step_distribution_mailbox_id</widget>
+				</row>
+				<row>
+					<widget>route_step_echeance_indicative</widget>
+				</row>
+				<row>
+					<widget>route_step_automatic_validation</widget>
+				</row>
+				<row>
+					<widget>route_step_obligatoire_sgg</widget>
+				</row>
+				<row>
+					<widget>route_step_obligatoire_ministere</widget>
+				</row>
+			</rows>
+
+			<widget name="route_step_routing_task_type" type="selectOneDirectory">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.routeStep.routeStepRoutingTaskType</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>routeStepRoutingTaskType</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="notDisplayDefaultOption">false</property>
+					<property name="localize">true</property>
+					<property name="directoryName">cm_routing_task_type</property>
+				</properties>
+			</widget>
+
+			<widget name="route_step_distribution_mailbox_id" type="template">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.routeStep.routeStepDistributionMailboxId</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>routeStepDistributionMailboxId</field>
+				</fields>
+				<properties mode="any">
+					<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+					<property name="organigrammeSelectionType">MAILBOX_TYPE</property>
+					<property name="organigrammeSelectionMode">SINGLE</property>
+				</properties>
+			</widget>
+
+			<widget name="route_step_echeance_indicative" type="input_number_spinner">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.routeStep.routeStepEcheanceIndicative</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>routeStepEcheanceIndicative</field>
+				</fields>
+			</widget>
+
+			<widget name="route_step_automatic_validation" type="selectOneDirectory">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.routeStep.routeStepAutomaticValidation</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>routeStepAutomaticValidation</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="notDisplayDefaultOption">false</property>
+					<property name="localize">true</property>
+					<property name="directoryName">boolean_voc</property>
+					<property name="displayEmptyValue">true</property>
+				</properties>
+			</widget>
+
+			<widget name="route_step_obligatoire_sgg" type="selectOneDirectory">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.routeStep.routeStepObligatoireSgg</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>routeStepObligatoireSgg</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="notDisplayDefaultOption">false</property>
+					<property name="localize">true</property>
+					<property name="directoryName">boolean_voc</property>
+					<property name="displayEmptyValue">true</property>
+				</properties>
+			</widget>
+
+			<widget name="route_step_obligatoire_ministere" type="selectOneDirectory">
+				<labels>
+					<label mode="any">ss.recherche.feuilleRoute.routeStep.routeStepObligatoireMinistere</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>routeStepObligatoireMinistere</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="notDisplayDefaultOption">false</property>
+					<property name="localize">true</property>
+					<property name="directoryName">boolean_voc</property>
+					<property name="displayEmptyValue">true</property>
+				</properties>
+			</widget>
+		</layout>
+
+	</extension>
+
+</component>
+
+
+

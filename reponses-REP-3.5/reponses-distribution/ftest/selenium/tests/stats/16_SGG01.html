@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-test.lyon-dev2.local:8180/" />
+<title>16_SGG01</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">16_SGG01</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>moasword</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/statistiques/view_report.faces?conversationId=0NXMAIN</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=SGG01. Questions écrites en cours de traitement dans
+					les ministères et au SGG (statistiques de l'ensemble du
+					gouvernement)</td>
+				<td></td>
+			</tr>
+			<!--Nombre de QE attribuées en cours-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Premier
+					ministre')]/../../td[2]/div[contains(.,'74')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Ministère
+					chargé du budget')]/../../td[2]/div[contains(.,'514')]</td>
+				<td></td>
+			</tr>
+			<!--Nombre de QE à traiter par le ministère-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Premier
+					ministre')]/../../td[3]/div[contains(.,'61')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Ministère
+					chargé du budget')]/../../td[3]/div[contains(.,'434')]</td>
+				<td></td>
+			</tr>
+			<!--Nombre de QE attribuées en cours au SGG-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Premier
+					ministre')]/../../td[4]/div[contains(.,'1')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Ministère
+					chargé du budget')]/../../td[4]/div[contains(.,'1')]</td>
+				<td></td>
+			</tr>
+			<!--Nombre de QE transmises au Parlement-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Premier
+					ministre')]/../../td[5]/div[contains(.,'12')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Ministère
+					chargé du budget')]/../../td[5]/div[contains(.,'79')]</td>
+				<td></td>
+			</tr>
+			<!--Total Gouvernement-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//*[@id=&quot;__bookmark_2&quot;]//div[contains(.,'Total
+					Gouvernement')]/../../td[2]/div[contains(.,'18697')]/../../td[3]/div[contains(.,'16517')]/../../td[4]/div[contains(.,'370')]/../../td[5]/div[contains(.,'1810')]</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

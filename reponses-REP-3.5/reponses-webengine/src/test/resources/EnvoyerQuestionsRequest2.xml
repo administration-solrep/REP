@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:envoyerQuestionsRequest
+	xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion ../resources/xsd/reponses/WSquestion.xsd ">
+	<p:question source="AN" type="QE">
+		<p1:date_publication_jo>2008-11-25</p1:date_publication_jo>
+		<p1:page_jo>10107</p1:page_jo>
+		<p1:numero_question>360012</p1:numero_question>
+		<p1:ministre id="17">
+			<p2:titre_jo>Éducation nationale</p2:titre_jo>
+			<p2:intitule_min>M. le ministre de l'éducation nationale</p2:intitule_min>
+		</p1:ministre>
+		<p1:auteur id_mandat="386399">
+			<p1:civilite>M.</p1:civilite>
+			<p1:prenom>Philippe Armand</p1:prenom>
+			<p1:nom>Martin</p1:nom>
+			<p1:grp_pol>Union pour un Mouvement Populaire</p1:grp_pol>
+		</p1:auteur>
+		<p1:indexation_an>
+			<p1:rubrique>enseignement secondaire : personnel</p1:rubrique>
+			<p1:rubrique_ta>professeurs documentalistes</p1:rubrique_ta>
+			<p1:analyse>Analyse sur la reproduction des meduses en Méditerranée</p1:analyse>
+		</p1:indexation_an>
+		<p1:titre_senat>p1:titre_senat</p1:titre_senat>
+		<p1:indexation_senat>
+			<p1:theme>p1:theme</p1:theme>
+			<p1:rubrique>p1:rubrique</p1:rubrique>
+		</p1:indexation_senat>
+		<p1:texte>
+			<p1:auteur_dev>M. Philippe Armand Martin</p1:auteur_dev>
+			<p1:min>M. le ministre de l'éducation nationale</p1:min>
+			<p1:content>
+				M. Philippe Armand Martin attire l'attention de
+				M. le ministre de l'éducation nationale sur la situation budgétaire
+				des professeurs documentalistes. M. le
+				Président de la République a tenu à ce que tous les Français
+				puissent, dans leurs fonctions, s'ils le souhaitent, bénéficier
+				d'heures supplémentaires dans des conditions très attractives. Les
+				personnels enseignants de l'éducation nationale, tous corps
+				confondus, peuvent accéder à cette opportunité. Or une seule
+				catégorie d'enseignants est exclue de cette possibilité : il s'agit
+				des professeurs documentalistes des lycées et collèges, recrutés par
+				voie de CAPES, et dont la gestion de carrière est la même que celle
+				des certifiés des autres disciplines. Alors que leurs collègues
+				peuvent prétendre à l'obtention d'heures supplémentaires
+				correspondant à leur mode de recrutement et au statut afférent, les
+				professeurs documentalistes n'y ont pas droit. Associés à un même
+				projet pédagogique, à l'occasion de l'accompagnement scolaire ou
+				lors
+				d'une intervention dans le cadre de la formation continue du
+				personnel enseignant, les professeurs documentalistes ne sont pas
+				rémunérés ou, quand ils le sont, à des taux très inférieurs à ceux
+				des autres certifiés. Certes, devant une telle aberration et en signe
+				de reconnaissance pour la qualité du travail réalisé par ces
+				personnels, certains chefs d'établissements ont adopté, un temps,
+				des
+				solutions de « contournement » (avec, par exemple, l'attribution
+				d'heures péri-éducatives). Dans la « lettre flash » du ministère de
+				l'éducation nationale (septembre 2008), « l'engagement a été pris
+				pour les certifiés de documentation qui participent à
+				l'accompagnement éducatif de porter dès la rentrée la rémunération à
+				hauteur de l'heure supplémentaire effective d'enseignement » ; cet
+				engagement n'est, à ce jour, pas entré en application. Mais plus que
+				de porter « à la hauteur de l'HSE effective » une rémunération qui
+				ne
+				s'appliquerait qu'aux heures d'accompagnement éducatif, il importe de
+				généraliser ce principe à l'ensemble des activités pédagogiques
+				exercées par les professeurs documentalistes en dehors de leur
+				horaire statutaire. Autrement, on le constate au quotidien, les
+				palliatifs administratifs entraînent des disparités inacceptables
+				d'une académie à l'autre, d'un établissement à l'autre. De plus, ces
+				situations d'exclusion et ces expédients sont vécus par ces
+				enseignants comme insultants, en regard de leur statut et de la
+				qualité du travail effectué. C'est pourquoi il souhaiterait
+				connaître
+				les mesures envisagées qui permettront aux professeurs
+				documentalistes d'être considérés comme leurs collègues et de
+				bénéficier des mêmes conditions de rétribution pour le travail
+				réalisé dans le cadre de leurs activités de professeur certifié.
+			</p1:content>
+		</p1:texte>
+	</p:question>
+</p:envoyerQuestionsRequest>

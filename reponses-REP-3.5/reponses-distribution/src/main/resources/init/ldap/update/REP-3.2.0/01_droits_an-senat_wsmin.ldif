@@ -1,0 +1,14 @@
+##########
+# Ajout
+##########
+
+dn: cn=Webservices Ministériels,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: cn=AnEditor,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+
+
+dn: cn=Webservices Ministériels,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: cn=SenatEditor,ou=fonctions,ou=Reponses,dc=dila,dc=fr

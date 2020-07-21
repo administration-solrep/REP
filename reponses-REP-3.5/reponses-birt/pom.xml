@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>fr.dila.reponses</groupId>
+		<artifactId>reponses-parent</artifactId>
+		<version>REP-3.5.2</version>
+	</parent>
+
+	<artifactId>reponses-birt</artifactId>
+	<name>Reponses BIRT</name>
+
+	<dependencies>
+		<!-- Dépendances au socle transverse -->
+		<dependency>
+			<groupId>fr.dila.st</groupId>
+			<artifactId>socle-transverse-api</artifactId>
+		</dependency>
+
+		<!-- Dépendances à Nuxeo -->
+		<dependency>
+			<groupId>org.nuxeo.ecm.platform</groupId>
+			<artifactId>nuxeo-platform</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.nuxeo.cm</groupId>
+			<artifactId>nuxeo-case-management-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.nuxeo.cm</groupId>
+			<artifactId>nuxeo-case-management-core</artifactId>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-qa.lyon-dev2.local:8080/reponses/" />
+<title>003 - Affichage Favoris</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">003 - Affichage Favoris</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>setSpeed</td>
+				<td>0</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<!--Espace de travail-->
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mon identifiant dans REPONSES : bdc</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Plan de classement-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:1:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>css=h4</td>
+				<td>Plan de classement</td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<!--Recherche-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:2:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//input[@value=&quot;AvecReponse&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Recherche - résultat-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Suivi-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:3:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Administration-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:4:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Statistique-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:5:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Recherche-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:2:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<!--Suivi-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:4:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Déconnexion</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertConfirmation</td>
+				<td>Etes-vous sûr de vouloir quitter l'application ?</td>
+				<td></td>
+			</tr>
+			<!--CHANGEMENT D'UTILISATEUR-->
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<!--Espace de travail-->
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mon identifiant dans REPONSES : dgefp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Plan de classement-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:1:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>css=h4</td>
+				<td>Plan de classement</td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<!--Recherche-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:2:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//input[@value=&quot;AvecReponse&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Recherche - résultat-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Suivi-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:3:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Administration-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:4:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Statistique-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:5:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Recherche-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:2:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<!--Suivi-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:4:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Déconnexion</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertConfirmation</td>
+				<td>Etes-vous sûr de vouloir quitter l'application ?</td>
+				<td></td>
+			</tr>
+			<!--CHANGEMENT D'UTILISATEUR-->
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>dlf</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>dlf</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<!--Espace de travail-->
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mon identifiant dans REPONSES : dlf</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Plan de classement-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:1:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>css=h4</td>
+				<td>Plan de classement</td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<!--Recherche-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:2:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//input[@value=&quot;AvecReponse&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Recherche - résultat-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Suivi-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:3:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Administration-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:4:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Statistique-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:5:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<!--Recherche-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:2:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<!--Suivi-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:4:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Mes favoris du plan de classement</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Déconnexion</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertConfirmation</td>
+				<td>Etes-vous sûr de vouloir quitter l'application ?</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<assembly>
+	<id>assembly</id>
+
+	<!-- Generates a zip package containing the needed files -->
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    
+    <!-- Adds dependencies to zip package under lib directory -->
+    
+    <fileSets>
+        <!--  Adds startup scripts to the root directory of zip package -->
+        <fileSet>
+            <directory>src/main/scripts</directory>
+            <outputDirectory>scripts</outputDirectory>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+</assembly>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!--
+  Ce composant contribue un service des unites structurelles et directions factice.
+-->
+<component name="fr.dila.reponses.core.mockusanddirection">
+  <implementation class="fr.dila.reponses.core.mock.MockUsAndDirectionService" />
+  <require>fr.dila.st.core.service.STUsAndDirectionService</require>
+  <service>
+    <provide interface="fr.dila.st.api.service.organigramme.STUsAndDirectionService"/>
+  </service>
+</component>

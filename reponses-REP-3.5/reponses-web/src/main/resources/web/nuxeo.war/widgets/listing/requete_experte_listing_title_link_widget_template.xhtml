@@ -1,0 +1,14 @@
+<f:subview id="#{widget.id}" xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<div class="popupTarget" docRef="#{field_0.ref}">
+		<nxh:commandLink action="#{requeteurActions.viewResults(field_0)}">
+			<h:outputText value="#{field_0.title}" />
+		</nxh:commandLink>
+	</div>
+
+</f:subview>

@@ -1,0 +1,209 @@
+<component name="fr.dila.reponses.core.models.requete">
+	<extension
+		target="org.nuxeo.ecm.core.search.api.client.querymodel.QueryModelService"
+		point="model">
+
+		<queryModel name="requeteSimple" docType="RequeteSimple">
+			<whereClause>
+				<predicate type="subClause">
+					<field schema="requeteSimple" name="critere_requete_clause" />
+				</predicate>
+			</whereClause>
+		</queryModel>
+
+		<queryModel name="requeteComplexe" docType="RequeteComplexe">
+			<whereClause escaper="fr.dila.reponses.core.recherche.ReponsesMinimalEscaper">
+				<predicate parameter="q.qu:groupePolitique" operator="=">
+					<field schema="requeteComplexe" name="groupePolitique" />
+				</predicate>
+				<predicate parameter="q.qu:datePublicationJO" operator="BETWEEN">
+					<field schema="requeteComplexe" name="dateJOQuestionDebut" />
+					<field schema="requeteComplexe" name="dateJOQuestionFin" />
+				</predicate>
+				<predicate parameter="q.qu:dateSignalementQuestion"
+					operator="BETWEEN">
+					<field schema="requeteComplexe" name="dateSignalementDebut" />
+					<field schema="requeteComplexe" name="dateSignalementFin" />
+				</predicate>
+				<predicate parameter="q.qu:numeroQuestion" operator="BETWEEN">
+					<field schema="requeteComplexe" name="numeroQuestionDebut" />
+					<field schema="requeteComplexe" name="numeroQuestionFin" />
+				</predicate>
+				<predicate parameter="r.rep:datePublicationJOReponse"
+					operator="BETWEEN">
+					<field schema="requeteComplexe" name="dateJOReponseDebut" />
+					<field schema="requeteComplexe" name="dateJOReponseFin" />
+				</predicate>
+				<predicate parameter="q.qu:origineQuestion" operator="IN">
+					<field schema="requeteComplexe" name="origineQuestion" />
+				</predicate>
+				<predicate parameter="q.qu:nomCompletAuteur" operator="LIKE">
+					<field schema="requeteComplexe" name="nomAuteur" />
+				</predicate>
+				<predicate type="subClause">
+					<field schema="requeteComplexe" name="clauseCaracteristiques" />
+				</predicate>
+				<predicate parameter="q.qu:legislatureQuestion" operator="=">
+					<field schema="requeteComplexe" name="legislature" />
+				</predicate>
+				<predicate parameter="q.ixa:AN_analyse" operator="LIKE">
+					<field schema="requeteComplexe" name="indexAssemblee" />
+				</predicate>
+				<predicate parameter="q.ixa:AN_rubrique" operator="LIKE">
+					<field schema="requeteComplexe" name="indexAssemblee" />
+				</predicate>
+				<predicate parameter="q.ixa:TA_rubrique" operator="LIKE">
+					<field schema="requeteComplexe" name="indexAssemblee" />
+				</predicate>
+				<predicate parameter="q.ixa:SE_theme" operator="LIKE">
+					<field schema="requeteComplexe" name="indexAssemblee" />
+				</predicate>
+				<predicate parameter="q.ixa:SE_rubrique" operator="LIKE">
+					<field schema="requeteComplexe" name="indexAssemblee" />
+				</predicate>
+				<predicate parameter="q.qu:idMinistereInterroge" operator="=">
+					<field schema="requeteComplexe" name="ministereInterroge" />
+				</predicate>
+				<predicate parameter="q.qu:idMinistereRattachement"
+					operator="=">
+					<field schema="requeteComplexe" name="ministereRattachement" />
+				</predicate>
+				<predicate parameter="q.qu:idDirectionPilote" operator="=">
+					<field schema="requeteComplexe" name="directionPilote" />
+				</predicate>
+				<predicate parameter="d.dos:ministereAttributaireCourant"
+					operator="=">
+					<field schema="requeteComplexe" name="ministereAttribute" />
+				</predicate>
+			</whereClause>
+		</queryModel>
+
+		<queryModel name="requeteTexteIntegral" docType="RequeteTexteIntegral">
+			<whereClause>
+				<predicate type="subClause">
+					<field schema="requeteTexteIntegral" name="subclause" />
+				</predicate>
+			</whereClause>
+		</queryModel>
+
+		<queryModel name="requeteMetadonnee" docType="RequeteMetadonnee">
+			<whereClause>
+				<predicate parameter="q.qu:typeQuestion" operator="IN">
+					<field schema="requeteMetadonnees" name="typeQuestion" />
+				</predicate>
+				<predicate parameter="q.qu:etatQuestion" operator="IN">
+					<field schema="requeteMetadonnees" name="etatQuestion" />
+				</predicate>
+				<predicate parameter="q.qu:etatRappele" operator="=">
+					<field schema="requeteMetadonnees" name="etatRappele" />
+				</predicate>
+				<predicate parameter="q.qu:etatRenouvele" operator="=">
+					<field schema="requeteMetadonnees" name="etatRenouvele" />
+				</predicate>
+				<predicate parameter="q.qu:etatSignale" operator="=">
+					<field schema="requeteMetadonnees" name="etatSignale" />
+				</predicate>
+				<predicate parameter="q.qu:etatReattribue" operator="=">
+					<field schema="requeteMetadonnees" name="etatReattribue" />
+				</predicate>
+			</whereClause>
+		</queryModel>
+
+		<queryModel name="requeteIndex" docType="RequeteIndex">
+			<whereClause>
+				<predicate parameter="q.ixa:AN_rubrique" operator="IN">
+					<field schema="indexation" name="AN_rubrique" />
+				</predicate>
+				<predicate parameter="q.ixa:AN_analyse" operator="IN">
+					<field schema="indexation" name="AN_analyse" />
+				</predicate>
+				<predicate parameter="q.ixa:TA_rubrique" operator="IN">
+					<field schema="indexation" name="TA_rubrique" />
+				</predicate>
+				<predicate parameter="q.ixa:SE_rubrique" operator="IN">
+					<field schema="indexation" name="SE_rubrique" />
+				</predicate>
+				<predicate parameter="q.ixa:SE_theme" operator="IN">
+					<field schema="indexation" name="SE_theme" />
+				</predicate>
+				<predicate parameter="q.ixa:SE_renvoi" operator="IN">
+					<field schema="indexation" name="SE_renvoi" />
+				</predicate>
+				<predicate parameter="q.ixa:motclef_ministere" operator="IN">
+					<field schema="indexation" name="motclef_ministere" />
+				</predicate>
+			</whereClause>
+		</queryModel>
+
+		<queryModel name="requeteIndexCompl" docType="RequeteIndex">
+			<whereClause>
+				<predicate parameter="q.ixacomp:AN_rubrique" operator="IN">
+					<field schema="indexation" name="AN_rubrique" />
+				</predicate>
+				<predicate parameter="q.ixacomp:AN_analyse" operator="IN">
+					<field schema="indexation" name="AN_analyse" />
+				</predicate>
+				<predicate parameter="q.ixacomp:TA_rubrique" operator="IN">
+					<field schema="indexation" name="TA_rubrique" />
+				</predicate>
+				<predicate parameter="q.ixacomp:SE_rubrique" operator="IN">
+					<field schema="indexation" name="SE_rubrique" />
+				</predicate>
+				<predicate parameter="q.ixacomp:SE_theme" operator="IN">
+					<field schema="indexation" name="SE_theme" />
+				</predicate>
+				<predicate parameter="q.ixacomp:SE_renvoi" operator="IN">
+					<field schema="indexation" name="SE_renvoi" />
+				</predicate>
+				<predicate parameter="q.ixacomp:motclef_ministere"
+					operator="IN">
+					<field schema="indexation" name="motclef_ministere" />
+				</predicate>
+			</whereClause>
+		</queryModel>
+
+		<queryModel name="requeteFdr" docType="RequeteFeuilleRoute">
+			<whereClause>
+				<predicate parameter="f.dc:title" operator="LIKE">
+					<field schema="requeteFeuilleRoute" name="titreFeuilleRoute" />
+				</predicate>
+				<predicate parameter="e2.rtsk:type" operator="=">
+					<field schema="requeteFeuilleRoute" name="typeStep" />
+				</predicate>
+				<predicate parameter="e2.rtsk:validationStatus" operator="=">
+					<field schema="requeteFeuilleRoute" name="validationStatusId" />
+				</predicate>
+				<predicate parameter="e2.ecm:currentLifeCycleState "
+					operator="=">
+					<field schema="requeteFeuilleRoute" name="currentLifeCycleState " />
+				</predicate>
+				<predicate parameter="e2.rtsk:dateDebutEtape" operator="BETWEEN">
+					<field schema="requeteFeuilleRoute" name="rangeBeginDateStepStart" />
+					<field schema="requeteFeuilleRoute" name="rangeBeginDateStepEnd" />
+				</predicate>
+				<predicate parameter="e2.rtsk:dateFinEtape" operator="BETWEEN">
+					<field schema="requeteFeuilleRoute" name="rangeEndDateStepStart" />
+					<field schema="requeteFeuilleRoute" name="rangeEndDateStepEnd" />
+				</predicate>
+				<predicate parameter="e2.rtsk:directionId"
+					operator="=">
+					<field schema="requeteFeuilleRoute" name="directionId" />
+				</predicate>
+				<predicate parameter="e2.rtsk:distributionMailboxId"
+					operator="=">
+					<field schema="requeteFeuilleRoute" name="distributionMailboxId" />
+				</predicate>
+				<predicate parameter="e2.rtsk:automaticValidation"
+					operator="=">
+					<field schema="requeteFeuilleRoute" name="hasAutomaticValidation" />
+				</predicate>
+				<predicate parameter="e2.rtsk:obligatoireMinistere"
+					operator="=">
+					<field schema="requeteFeuilleRoute" name="isMandatory" />
+				</predicate>
+			</whereClause>
+		</queryModel>
+
+	</extension>
+
+</component>

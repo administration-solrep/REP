@@ -1,0 +1,142 @@
+<div xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<input type="hidden" name="#{manager.conversationIdParameter}"
+		value="#{conversation.id}" />
+
+	<h:panelGroup rendered="#{!currentUser.anonymous}">
+		<div class="menu">
+			<div class="userMailboxes" style="overflow: auto;">
+				<div class="userMailboxesContent">
+
+					<h4>
+						<h:form id="mailboxMenuForm">
+
+							<c:choose>
+								<c:when test="#{corbeilleTree.displayCorbeilleSelection()}">
+									<h:outputText value="Corbeille sélectionnée" />
+								</c:when>
+								<c:otherwise>
+									<h:outputText value="#{messages['label.mailBoxListTitle']}" />
+								</c:otherwise>
+							</c:choose>
+
+							<h:outputText>
+								<ul class="layoutViewMode" style="float: right">
+									<li><h:commandLink
+											action="#{corbeilleTree.forceRefresh()}">
+											<h:graphicImage value="/img/refresh.png"
+												alt="#{messages['label.refresh']}"
+												title="#{messages['label.refresh']}" style="border:none" />
+										</h:commandLink></li>
+								</ul>
+							</h:outputText>
+						</h:form>
+					</h4>
+					<h:form id="mailboxTreeForm">
+						<div id="uMContent" style="overflow-x: auto; overflow-y: hidden;">
+							<div>
+								<h:panelGroup layout="block"
+									rendered="#{corbeilleTree.displayCorbeilleSelection()}">
+									<nxl:layout name="corbeille_selection_poste" mode="create"
+										value="#{corbeilleTree}" />
+
+									<div style="text-align: center;">
+										<h:commandButton class="button" value="Valider"
+											action="#{corbeilleTree.forceRefresh()}"
+											id="selectCorbeilleSubmit" />
+									</div>
+								</h:panelGroup>
+
+								<a4j:status for="corbeilleRegion">
+									<f:facet name="start">
+										<h:graphicImage value="/img/standart_waiter.gif"
+											style="position: absolute;" />
+									</f:facet>
+								</a4j:status>
+								<a4j:region id="corbeilleRegion">
+
+									<!-- ajaxSubmitSelection: juste pour ouvrir un noeud en cliquant sur son texte -->
+									<rich:tree id="corbeilleTree" style="width:100%"
+										switchType="client" iconExpanded="/icons/toggle_minus.png"
+										iconCollapsed="/icons/toggle_plus.png" ajaxSingle="true"
+										ajaxSubmitSelection="true" eventsQueue="ajax_events_queue"
+										toggleOnClick="false"
+										adviseNodeOpened="#{corbeilleTree.adviseNodeOpened}"
+										changeExpandListener="#{corbeilleTree.changeExpandListener}"
+										nodeSelectListener="#{corbeilleTree.nodeSelectListener}">
+
+										<rich:treeNodesAdaptor nodes="#{corbeilleTree.corbeille}"
+											id="ministereTNA" var="ministere">
+
+											<rich:treeNode icon="/img/icons/unite_structurelle.png"
+												iconLeaf="/img/icons/unite_structurelle.png">
+												<h:outputText id="ministereNodeLabel"
+													value="#{ministere.label}" 
+													class="#{ministere.isBold ? 'boldLabel' : ''}" />
+												<h:outputText id="ministereNodeCount"
+													value=" (#{ministere.count})"
+													rendered="#{!empty ministere.count}" 
+													class="#{ministere.isBold ? 'boldLabel' : ''}" />
+											</rich:treeNode>
+
+											<rich:treeNodesAdaptor nodes="#{ministere.etapes}"
+												id="etapeTNA" var="etape">
+												<rich:treeNode ajaxSubmitSelection="false"
+													icon="/img/icons/poste.png" iconLeaf="/img/icons/poste.png">
+													<h:panelGroup style="background: #ecf6ff; display:block;"
+														rendered="#{corbeilleTree.currentIdMinistere eq etape.ministereId and corbeilleTree.currentIdFeuilleRoute eq etape.feuilleRouteId}">
+														<a4j:commandLink eventsQueue="ajax_events_queue"
+															id="etapeNodeCmd"
+															action="#{corbeilleTree.setContext(etape)}">
+															<nxdir:directoryEntryOutput id="etapeNodeDir"
+																value="#{etape.feuilleRouteId}"
+																directoryName="cm_routing_task_type" localize="true" />
+															<h:outputText id="etapeNodeLabel"
+																value=" (#{etape.count})" />
+														</a4j:commandLink>
+													</h:panelGroup>
+													<h:panelGroup
+														rendered="#{corbeilleTree.currentIdMinistere ne etape.ministereId or corbeilleTree.currentIdFeuilleRoute ne etape.feuilleRouteId}">
+														<a4j:commandLink eventsQueue="ajax_events_queue"
+															id="etapeNodeCmd2"
+															action="#{corbeilleTree.setContext(etape)}">
+															<nxdir:directoryEntryOutput id="etapeNodeDir2"
+																value="#{etape.feuilleRouteId}"
+																directoryName="cm_routing_task_type" localize="true" /> (#{etape.count})
+                        </a4j:commandLink>
+													</h:panelGroup>
+												</rich:treeNode>
+											</rich:treeNodesAdaptor>
+										</rich:treeNodesAdaptor>
+									</rich:tree>
+								</a4j:region>
+							</div>
+						</div>
+					</h:form>
+
+					<!-- Bottom of the rounded box -->
+
+					<p class="nobottomgap"></p>
+				</div>
+			</div>
+		</div>
+		<ui:include src="/favoris/favoris_dossier_list.xhtml" />
+		<ui:include
+			src="/casemanagement/mailbox/favoris_indexation_list.xhtml" />
+
+		<div class="bottom-left"></div>
+		<div class="bottom-right"></div>
+
+	</h:panelGroup>
+
+</div>

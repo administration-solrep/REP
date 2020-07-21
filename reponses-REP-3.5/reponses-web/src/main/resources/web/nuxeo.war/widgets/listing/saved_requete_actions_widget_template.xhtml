@@ -1,0 +1,67 @@
+<f:subview id="#{widget.id}" xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxd="http://nuxeo.org/nxweb/document">
+	<c:if test="#{requeteurActions.canEdit(field_0)}">
+		<h:graphicImage styleClass="#{field_1}_popupTarget cellActionIcon"
+			value="/img/icons/list_action_16.png"
+			alt="#{messages['label.widget.requeteExperte.actions']}"
+			title="#{messages['label.widget.requeteExperte.actions']}" />
+		<div>
+			<c:set value="#{nxu:concat(field_1, '_menuPopup')}" var="popupId" />
+			<script type="text/javascript"> 
+        var options = {
+            bind: 'click',
+            useFilter: false,
+            anchor: '#popupReceiver'
+        };
+        setupContextMenu('img.#{field_1}_popupTarget','#{popupId}', options);
+    </script>
+			<div style="display: none;" class="contextMenu" id="#{popupId}">
+				<ul>
+					<li id="popup_edit_#{field_1}"><nxh:commandLink
+							action="#{requeteurActions.editRequete(field_0)}">
+							<h:graphicImage url="/img/icons/document_edit_16.png"
+								alt="#{messages['requeteExperte.action.edit']}" />
+							<h:outputText value="#{messages['requeteExperte.action.edit']}" />
+						</nxh:commandLink></li>
+					<li id="popup_rename_#{field_1}"><nxh:commandLink
+							action="#{requeteurActions.renameRequete(field_0)}">
+							<h:graphicImage url="/img/icons/document_edit_16.png"
+								alt="#{messages['requeteExperte.action.rename']}" />
+							<h:outputText value="#{messages['requeteExperte.action.rename']}" />
+						</nxh:commandLink></li>
+					<li id="popup_attach_to_alerte_#{field_1}"><nxh:commandLink
+							action="#{alertActions.newAlertFromRequeteExperte(field_0)}">
+							<h:outputText
+								value="#{messages['requeteExperte.command.createAlertFromSuivi']}" />
+						</nxh:commandLink></li>
+					<c:if test="#{requeteurActions.canPublish(field_0)}">
+						<li id="popup_publish_#{field_1}"><nxu:set var="action"
+								value="#{requeteurActions.getPublishAction(field_0)}"
+								cache="true">
+								<c:if test="#{not empty action}">
+									<nxh:commandLink action="#{action.getLink()}">
+										<h:outputText value="#{messages[action.label]}" />
+										<nxu:actionListenerMethod
+											value="#{navigationContext.navigateToDocument(field_0)}" />
+									</nxh:commandLink>
+								</c:if>
+							</nxu:set></li>
+					</c:if>
+					<c:if test="#{requeteurActions.canDelete(field_0)}">
+						<li id="popup_delete_#{field_1}"><nxh:commandLink
+								action="#{suiviActions.delete(field_0)}"
+								onclick="if (!confirmDeleteDocuments()) return false;">
+								<nxu:graphicImage value="/icons/delete.png" />
+								<h:outputText value="#{messages['command.global.delete']}" />
+							</nxh:commandLink></li>
+					</c:if>
+				</ul>
+			</div>
+		</div>
+	</c:if>
+</f:subview>

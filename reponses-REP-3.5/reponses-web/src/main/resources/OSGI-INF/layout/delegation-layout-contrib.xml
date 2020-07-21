@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les layouts des délégations. -->
+<component name="fr.dila.reponses.web.layout.delegation">
+
+	<require>com.nuxeo.cm.table.widget</require>
+	<require>com.nuxeo.document.routing.table.layout</require>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+
+		<!-- Liste des délégations -->
+		<layout name="delegation_destinataire_listing">
+			<templates>
+				<template mode="any">/layouts/layout_contentview_listing_ajax_template.xhtml</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">true</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+			<columns>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">del:sourceId</property>
+					</properties>
+					<widget>delegation_list_source</widget>
+				</column>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">del:destinataireId</property>
+					</properties>
+					<widget>delegation_list_destinataire</widget>
+				</column>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">del:dateDebut</property>
+						<property name="defaultSortAscending">false</property>
+					</properties>
+					<widget>delegation_list_date_debut</widget>
+				</column>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">del:dateFin</property>
+						<property name="defaultSortAscending">false</property>
+					</properties>
+					<widget>delegation_list_date_fin</widget>
+				</column>
+			</columns>
+
+			<!-- Widget d'affichage du destinataire de la délégation dans une liste -->
+			<widget name="delegation_list_source" type="template">
+				<labels>
+					<label mode="any">reponses.delegation.list.utilisateurSource</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>data.del.sourceId</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">plain</mode>
+					<mode value="pdf">pdf</mode>
+				</widgetModes>
+				<properties mode="any">
+					<property name="template">/widgets/single_user_widget_template.xhtml</property>
+				</properties>
+			</widget>
+
+			<!-- Widget d'affichage du destinataire de la délégation dans une liste -->
+			<widget name="delegation_list_destinataire" type="template">
+				<labels>
+					<label mode="any">reponses.delegation.list.utilisateurDestinataire</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>data</field>
+					<field>data.id</field>
+					<field>data.del.destinataireId</field>
+				</fields>
+				<properties mode="any">
+					<property name="template">/widgets/admin/delegation/delegation_destinataire_widget_template.xhtml</property>
+				</properties>
+			</widget>
+
+			<!-- Widget d'affichage de la date de début d'une délégation dans une 
+				liste -->
+			<widget name="delegation_list_date_debut" type="datetime">
+				<labels>
+					<label mode="any">reponses.delegation.list.dateDebut</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>data.del.dateDebut</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+					<property name="required">true</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="showsTime">false</property>
+					<property name="showWeeksBar">false</property>
+				</properties>
+			</widget>
+
+			<!-- Widget d'affichage de la date de fin d'une délégation dans une liste -->
+			<widget name="delegation_list_date_fin" type="datetime">
+				<labels>
+					<label mode="any">reponses.delegation.list.dateFin</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>data.del.dateFin</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+					<property name="required">true</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="showsTime">false</property>
+					<property name="showWeeksBar">false</property>
+				</properties>
+			</widget>
+		</layout>
+
+
+		<!-- Liste des délégations -->
+		<layout name="delegation_list">
+			<templates>
+				<template mode="any">/layouts/layout_listing_template.xhtml</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">true</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+			<columns>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">del:sourceId</property>
+					</properties>
+					<widget>delegation_list_source</widget>
+				</column>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">del:destinataireId</property>
+					</properties>
+					<widget>delegation_list_destinataire</widget>
+				</column>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">del:dateDebut</property>
+						<property name="defaultSortAscending">false</property>
+					</properties>
+					<widget>delegation_list_date_debut</widget>
+				</column>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">del:dateFin</property>
+						<property name="defaultSortAscending">false</property>
+					</properties>
+					<widget>delegation_list_date_fin</widget>
+				</column>
+			</columns>
+
+			<!-- Widget d'affichage du destinataire de la délégation dans une liste -->
+			<widget name="delegation_list_source" type="template">
+				<labels>
+					<label mode="any">reponses.delegation.list.utilisateurSource</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>data.del.sourceId</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">plain</mode>
+					<mode value="pdf">pdf</mode>
+				</widgetModes>
+				<properties mode="any">
+					<property name="template">/widgets/single_user_widget_template.xhtml</property>
+				</properties>
+			</widget>
+
+			<!-- Widget d'affichage du destinataire de la délégation dans une liste -->
+			<widget name="delegation_list_destinataire" type="template">
+				<labels>
+					<label mode="any">reponses.delegation.list.utilisateurDestinataire</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>data</field>
+					<field>data.id</field>
+					<field>data.del.destinataireId</field>
+				</fields>
+				<properties mode="any">
+					<property name="template">/widgets/admin/delegation/delegation_destinataire_widget_template.xhtml</property>
+				</properties>
+			</widget>
+
+			<!-- Widget d'affichage de la date de début d'une délégation dans une 
+				liste -->
+			<widget name="delegation_list_date_debut" type="datetime">
+				<labels>
+					<label mode="any">reponses.delegation.list.dateDebut</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>data.del.dateDebut</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+					<property name="required">true</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="showsTime">false</property>
+					<property name="showWeeksBar">false</property>
+				</properties>
+			</widget>
+
+			<!-- Widget d'affichage de la date de fin d'une délégation dans une liste -->
+			<widget name="delegation_list_date_fin" type="datetime">
+				<labels>
+					<label mode="any">reponses.delegation.list.dateFin</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>data.del.dateFin</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+					<property name="required">true</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="showsTime">false</property>
+					<property name="showWeeksBar">false</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<!-- Détail d'une délégation -->
+		<layout name="delegation_detail">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>delegation_detail_utilisateur_source</widget>
+				</row>
+				<row>
+					<widget>delegation_detail_utilisateur_destinataire</widget>
+				</row>
+				<row>
+					<widget>delegation_detail_date_debut</widget>
+				</row>
+				<row>
+					<widget>delegation_detail_date_fin</widget>
+				</row>
+				<row>
+					<widget>delegation_detail_profil_list</widget>
+				</row>
+			</rows>
+
+			<widget name="delegation_detail_utilisateur_source" type="template">
+				<labels>
+					<label mode="any">reponses.delegation.detail.utilisateurSource</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>del:sourceId</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="template">/widgets/single_user_widget_template.xhtml</property>
+				</properties>
+				<widgetModes>
+					<mode value="any">plain</mode>
+				</widgetModes>
+			</widget>
+
+			<widget name="delegation_detail_utilisateur_destinataire"
+				type="template">
+				<labels>
+					<label mode="any">reponses.delegation.detail.utilisateurDestinataire</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>del:destinataireId</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+					<property name="organigrammeSelectionType">USER_TYPE</property>
+					<property name="organigrammeSelectionMode">SINGLE</property>
+					<property name="organigrammePermanentUserOnly">true</property>
+					<property name="required">true</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="required">false</property>
+				</properties>
+				<properties widgetMode="view">
+					<property name="required">false</property>
+				</properties>
+				<widgetModes>
+					<mode value="create">create</mode>
+					<mode value="edit">view</mode>
+					<mode value="view">view</mode>
+				</widgetModes>
+			</widget>
+
+			<!-- Widget de date de début d'une délégation -->
+			<widget name="delegation_detail_date_debut" type="datetime">
+				<labels>
+					<label mode="any">reponses.delegation.detail.dateDebut</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>del:dateDebut</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+					<property name="required">true</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="showsTime">false</property>
+					<property name="showWeeksBar">false</property>
+				</properties>
+			</widget>
+
+			<!-- Widget de date de fin d'une délégation -->
+			<widget name="delegation_detail_date_fin" type="datetime">
+				<labels>
+					<label mode="any">reponses.delegation.detail.dateFin</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>del:dateFin</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+					<property name="required">true</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="showsTime">false</property>
+					<property name="showWeeksBar">false</property>
+				</properties>
+			</widget>
+
+			<!-- Liste des profils -->
+			<widget name="delegation_detail_profil_list" type="template">
+				<labels>
+					<label mode="any">reponses.delegation.detail.profilList</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>del:profilList</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="template">/widgets/admin/delegation/select_profile_many_widget_template.xhtml</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<!-- Détail d'une délégation (partie statique) -->
+		<layout name="delegation_detail_static">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>delegation_detail_poste_list</widget>
+				</row>
+			</rows>
+
+			<!-- Liste des postes -->
+			<widget name="delegation_detail_poste_list" type="template">
+				<labels>
+					<label mode="any">reponses.delegation.detail.posteList</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>sourceUser.user.postes</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">view</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				</properties>
+			</widget>
+		</layout>
+	</extension>
+
+</component>
+
+
+
+
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxd="http://nuxeo.org/nxweb/document">
+
+	<ui:define name="page title">
+		<h:outputText
+			value="#{nuxeoApplicationName} - #{nxd:titleOrId(currentDocument)}" />
+	</ui:define>
+	
+	<ui:define name="body">
+			<div>
+				<h3>Critères de sélection des étapes à supprimer</h3>
+				
+				<h:dataTable
+				  class="dataInput" var="field"
+				  value="#{documentActions.changeableDocumentType.layout}"
+				  columnClasses="labelColumn, fieldColumn">
+				  
+				</h:dataTable>  
+				<a4j:outputPanel id="genericMassActionRegion" ajaxRendered="false">			
+					<h:form id="form_button">
+						<div>	
+							<table>
+								<tr>
+									<td>
+										<nxl:layout name="corbeille_selection_type_etape_delete_etape_fdr" mode="create"
+											value="#{modeleFeuilleRouteActions}" />
+									</td>	
+								</tr>
+								<tr>
+									<td>		
+										<nxl:layout name="corbeille_selection_poste_delete_etape_fdr" mode="create"
+											value="#{modeleFeuilleRouteActions}" />
+									</td>		
+								</tr>
+								<tr>
+									<td>
+										<a4j:outputPanel id="genericMassActionRegion" ajaxRendered="false">																
+											<h:commandButton class="button" 
+												value="#{messages['command.confirm.suppression.etapes']}" 
+												action="#{modeleFeuilleRouteActions.deleteMultipleStepsFromRoute()}" /> 										
+											<!-- <a4j:commandButton styleClass="button" value="#{messages['command.confirm.suppression.etapes']}"
+														id="confirmeDeleteButton"
+														onclick="javascript:confirmMassAction();return false;"
+														ajaxSingle="true" reRender="genericMassActionRegion" /> -->	
+											</a4j:outputPanel> 								
+											<h:commandButton class="button" id="cancelDeleteButton"
+												value="#{messages['command.cancel']}"
+												action="#{modeleFeuilleRouteActions.retourGestionModeleFeuilleDeRouteSansSuppression()}"
+												immediate="true" />
+													
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div id="progressbar"></div>
+									</td>
+								</tr>							
+							</table>
+						</div>
+					</h:form>
+					<script>				
+		            <h:outputText value="var currentConversationId='#{nxu:htmlEscape(org.jboss.seam.core.manager.currentConversationId)}';"/>
+		            Seam.Remoting.getContext().setConversationId(currentConversationId);
+		            Seam.Remoting.contextPath = '#{contextPath}';
+			            var index = 0;
+			            var j = jQuery.noConflict();
+			            
+			            function confirmMassAction() {
+			            	//disableButtons();
+			            	percent = Seam.Component.getInstance('modeleFeuilleRouteActions').getProgressPercent(refreshProgressCallBack);
+			            	//Là on va à l'étape suivante
+			            	
+			            }
+			            function disableButtons() {
+			            	// On cache les 2 boutons pour éviter un clic supplémentaire : A décommenter quand ça marchera
+			            	//j("#form_button\\:confirmeDeleteButton").hide();
+			            	//j("#form_button\\:cancelDeleteButton").hide();
+			            	return true;
+			            } 
+			             function refreshProgressCallBack(percent) {
+			              j("#progressbar").reportprogress(percent);
+			              Seam.Component.getInstance('modeleFeuilleRouteActions').deleteStepsFromSingleRoute(index, confirmMassActionCallBack);
+			            }
+			            
+			            function confirmMassActionCallBack() {
+			              Seam.Component.getInstance('modeleFeuilleRouteActions').hasNext(hasNextCallBack);
+			            }		             
+	
+			            function hasNextCallBack(value) {
+			          	  if(value){
+			                  index = index + 1;
+			                  confirmMassAction();
+			              } else {
+			                  // done - retour page précédente
+			                  j("#form_button\\:cancelDeleteButton").click();
+			              }
+			            }
+					</script>   
+				</a4j:outputPanel>                              									
+			</div>	
+	</ui:define>
+</nxthemes:composition>

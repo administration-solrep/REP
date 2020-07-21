@@ -1,0 +1,17 @@
+# Pour lancer ce script :
+# 1 - copier ce fichier dans /tmp/
+# 2 - Aller dans le répertoire contenant nxshell.sh
+# 3 - Taper la commande sh nxshell.sh -f /tmp/01_init_ministere_reattribution.nxshell
+
+
+# connect to http://localhost:8180/reponses (obligatoire sinon Unknown command...) 
+connect -u Administrator -p 4ju7Ix662Eo1d77u http://localhost:8180/reponses/site/automation
+
+cd "/case-management/case-root/2014/07/11/Dossier 60297"
+setp -xpath "dos:ministereReattribution" -value "20000119"
+
+cd "/case-management/case-root/2014/11/24/Dossier 70094"
+setp -xpath "dos:ministereReattribution" -value 60004834
+
+cd "/case-management/case-root/2016/04/28/Dossier 21526"
+setp -xpath "dos:ministereReattribution" -value "20000111"

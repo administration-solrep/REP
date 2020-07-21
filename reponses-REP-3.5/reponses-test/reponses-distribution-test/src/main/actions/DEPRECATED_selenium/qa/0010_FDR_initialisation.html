@@ -1,0 +1,2364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Init</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">Init</td>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!--Connexion adminsgg-->
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Administration</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Gestion des modèles de feuilles de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Créer un modèle&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_intitule</td>
+				<td>Feuille de route standard</td>
+			</tr>
+			<!--Selection du ministère-->
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Sélection du Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_tree:node:0:node:6::nxw_feuille_route_ministere_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_titre_question</td>
+				<td>Titre</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle Tache Attribution BDC-->
+
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_direction_pilote_bordereau_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Sélection du Min. Economie, industrie et emploi -->
+
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_direction_pilote_bordereau_tree:node:0:node:0::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_direction_pilote_bordereau_tree:node:0:node:0:node:0::nxw_feuille_route_direction_pilote_bordereau_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter la première étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Ajouter la première étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement du Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement du Bureau des Cabinets (Economie) dans Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection du poste Agents BDC (Economie) dans Min. Economie, industrie et emploi/Bureau des Cabinets (Economie) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:0:node:0::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche attribution DGEFP-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement du Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement du DGEFP (Economie) dans Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:13::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection du poste Agents DGEFP dans Min. Economie, industrie et emploi/DGEFP (Economie) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:13:node:1::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : Pour rédaction DLF-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour rédaction</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement du Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement de DGI-DLF (Economie) dans Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:14::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection du poste DLF dans Min. Economie, industrie et emploi/DGI-DLF (Economie) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:14:node:0::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : Pour visa secretariat-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour visa</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement du Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement du Secrétariat général (Economie) dans Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:23::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection du poste Agents sec. général (Economie) dans Min. Economie, industrie et emploi/Secrétariat général (Economie) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:23:node:0::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Pour signature BDC-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour signature</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement du Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement du Bureau des Cabinets (Economie) dans Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection du poste Agents BDC (Economie) dans Min. Economie, industrie et emploi/Bureau des Cabinets (Economie) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:0:node:0::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour attribution SGG-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Secrétariat général du Gouvernement dans Premier Ministre  -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Administrateur S.O.L.O.N. (SGG) dans Premier Ministre/Secrétariat général du Gouvernement -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5:node:5::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouveau conteneur : Etape parallèle-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Créer des branches</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour impression secrétariat-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()-1]//a[@class='ADD_STEP_BETWEEN']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour impression</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Cabinet du Premier Ministre dans Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection Secrétariat Conseillère Aff. éco et finances PM dans Premier Ministre/Cabinet du Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0:node:49::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : Validation PM-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_BETWEEN']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour validation Premier ministre</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Cabinet du Premier Ministre dans Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Conseillère Aff. éco et finances PM dans Premier Ministre/Cabinet du Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0:node:36::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour transmission SSGG-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()-1]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour transmission aux assemblées</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Assemblées Parlementaires -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:17::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Utilisateur Webservices (Parlementaire) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:17:node:0::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Validation feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value='Valider le modèle']</td>
+				<td></td>
+			</tr>
+			<!--FEUILLE DE ROUTE 2-->
+			<!--_________________________-->
+			<!--Nouvelle feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Gestion des modèles de feuilles de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Créer un modèle&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_intitule</td>
+				<td>Réattribution</td>
+			</tr>
+			<!--Selection du ministère-->
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Sélection Min. Travail, rel soc, fam, solida, vil. -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_tree:node:0:node:15::nxw_feuille_route_ministere_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_titre_question</td>
+				<td>Titre</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour attribution SGG-->
+			<tr>
+				<td>click</td>
+				<td>link=Ajouter la première étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Secrétariat général du Gouvernement dans Premier Ministre  -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Administrateur S.O.L.O.N. (SGG) dans Premier Ministre/Secrétariat général du Gouvernement -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5:node:5::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle branche : 1 conteneur parallèle et 2 conteneurs séries -->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Créer des branches</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour impression secrétariat-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()-1]//a[@class='ADD_STEP_BETWEEN']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour impression</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Cabinet du Premier Ministre dans Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection Secrétariat Conseillère Aff. éco et finances PM dans Premier Ministre/Cabinet du Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0:node:49::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : Validation PM-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_BETWEEN']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour validation Premier ministre</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Cabinet du Premier Ministre dans Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Conseillère Aff. éco et finances PM dans Premier Ministre/Cabinet du Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0:node:36::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour transmission SSGG-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()-1]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour transmission aux assemblées</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Secrétariat général du Gouvernement dans Premier Ministre  -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Administrateur S.O.L.O.N. (SGG) dans Premier Ministre/Secrétariat général du Gouvernement -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5:node:5::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Validation feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value='Valider le modèle']</td>
+				<td></td>
+			</tr>
+			<!--FEUILLE DE ROUTE 4-->
+			<!--_________________________-->
+			<!--Nouvelle feuille de route pour tester la substitution-->
+			<!--FEUILLE DE ROUTE 2-->
+			<!--_________________________-->
+			<!--Nouvelle feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Gestion des modèles de feuilles de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Créer un modèle&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_intitule</td>
+				<td>Feuille pour substitution</td>
+			</tr>
+			<!--Selection du ministère-->
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Sélection Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_tree:node:0:node:6::nxw_feuille_route_ministere_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_titre_question</td>
+				<td>Titre</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour attribution SGG-->
+			<tr>
+				<td>click</td>
+				<td>link=Ajouter la première étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Secrétariat général du Gouvernement dans Premier Ministre  -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Administrateur S.O.L.O.N. (SGG) dans Premier Ministre/Secrétariat général du Gouvernement -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5:node:5::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle branche : 1 conteneur parallèle et 2 conteneurs série-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Créer des branches</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour impression secrétariat-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()-1]//a[@class='ADD_STEP_BETWEEN']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour impression</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Cabinet du Premier Ministre dans Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection Secrétariat Conseillère Aff. éco et finances PM dans Premier Ministre/Cabinet du Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0:node:49::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : Validation PM-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_BETWEEN']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour validation Premier ministre</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Cabinet du Premier Ministre dans Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Conseillère Aff. éco et finances PM dans Premier Ministre/Cabinet du Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:0:node:36::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour transmission SSGG-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()-1]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour transmission aux assemblées</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Premier Ministre -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Secrétariat général du Gouvernement dans Premier Ministre  -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Administrateur S.O.L.O.N. (SGG) dans Premier Ministre/Secrétariat général du Gouvernement -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:16:node:5:node:5::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Validation feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value='Valider le modèle']</td>
+				<td></td>
+			</tr>
+			<!--_________________________-->
+			<!--WS > FDR 1-->
+			<!--_________________________-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Administration</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Gestion des modèles de feuilles de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Créer un modèle&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_intitule</td>
+				<td>Feuille de route WS Ecologie</td>
+			</tr>
+			<!--Selection du ministère-->
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Sélection Min. Ecologie, énerg, dév d, amgt terr -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_tree:node:0:node:5::nxw_feuille_route_ministere_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_titre_question</td>
+				<td>Titre</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour rédaction interfacée-->
+			<tr>
+				<td>click</td>
+				<td>link=Ajouter la première étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour rédaction interfacée</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Min. Ecologie, énerg, dév d, amgt terr -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:5::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!--  Sélection poste Utilisateur Webservices (Ecologie) dans Min. Ecologie, énerg, dév d, amt terr -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:5:node:25::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Utilisateur Webservices (Ecologie)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Etape : pour attribution-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Min. Ecologie, énerg, dév d, amgt terr -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:5::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Bureau du Cab. (MEDAD) dans Min. Ecologie, énerg, dév d, amgt terr -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:5:node:0::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Agents BDC Ecologie MEDAD dans Min. Ecologie, énerg, dév d, amgt terr/Bureau du Cab. (MEDAD) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:5:node:0:node:1::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Agents BDC Ecologie MEDAD</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Etape : pour transmission aux assemblées-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour transmission aux assemblées</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Assemblées Parlementaires -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:17::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Utilisateur Webservices (Parlementaire) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:17:node:0::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Utilisateur Webservices (Parlementaire)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Validation feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value='Valider le modèle']</td>
+				<td></td>
+			</tr>
+			<!--_________________________-->
+			<!--WS > FDR2-->
+			<!--_________________________-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Gestion des modèles de feuilles de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Créer un modèle&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_intitule</td>
+				<td>Feuille de route WS Agriculture</td>
+			</tr>
+			<!--Selection du ministère-->
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Sélection Min. Agriculture et pêche -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_tree:node:0:node:1::nxw_feuille_route_ministere_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_titre_question</td>
+				<td>Titre</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour rédaction interfacée-->
+			<tr>
+				<td>click</td>
+				<td>link=Ajouter la première étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour rédaction interfacée</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Min. Agriculture et pêche -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:1::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection du poste Utilisateur Webservices (Agriculture) dans Min. Agriculture et pêche -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:1:node:9::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Utilisateur Webservices (Agriculture)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Etape : pour transmission aux assemblées-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour transmission aux assemblées</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Assemblées Parlementaires -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:17::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Utilisateur Webservices (Parlementaire) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:17:node:0::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Utilisateur Webservices (Parlementaire)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Validation feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value='Valider le modèle']</td>
+				<td></td>
+			</tr>
+			<!--_________________________-->
+			<!--WS > FDR3-->
+			<!--_________________________-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Gestion des modèles de feuilles de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Créer un modèle&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_intitule</td>
+				<td>Feuille de route WS Assemblées parlementaires</td>
+			</tr>
+			<!--Selection du ministère-->
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Sélection Assemblées Parlementaires -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_ministere_tree:node:0:node:17::nxw_feuille_route_ministere_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>document_create:nxl_feuille_route_detail:nxw_feuille_route_titre_question</td>
+				<td>Titre</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour transmission aux assemblées-->
+			<tr>
+				<td>click</td>
+				<td>link=Ajouter la première étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour transmission aux assemblées</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Assemblées Parlementaires -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:17::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste Utilisateur Webservices (Parlementaire) -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:17:node:0::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Utilisateur Webservices (Parlementaire)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Validation feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value='Valider le modèle']</td>
+				<td></td>
+			</tr>
+			<!--Déconnexion-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les Content View nécessaires aux recherches de 
+	dossiers. -->
+<component name="fr.dila.reponses.web.contentviews.requete">
+
+	<extension target="org.nuxeo.ecm.platform.ui.web.ContentViewService"
+		point="contentViews">
+		<!-- Content View de la recherche simple de dossiers -->
+		<contentView name="recherche_simple">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.RechercheResultPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="resourcesAccessor">#{resourcesAccessor}</property>
+				<property name="userColumn">#{profilUtilisateurActions.getUserColumnId()}</property> <!-- Colonnes à afficher a l'utilisateur -->
+				<pattern>
+					ufnxql:SELECT q.ecm:uuid AS id FROM Question AS q WHERE q.qu:numeroQuestion LIKE
+					?
+					AND q.qu:origineQuestion LIKE ? AND q.qu:legislatureQuestion = ?
+				</pattern>
+				<parameter>#{rechercheSimpleActions.getNumberToSearch()}</parameter>
+				<parameter>#{rechercheSimpleActions.getOrigineToSearch()}</parameter>
+				<parameter>#{rechercheSimpleActions.getLegislatureCourante()}</parameter>
+				<sort column="q.qu:numeroQuestion" ascending="true" />
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>#{rechercheSimpleActions.simpleSearch}</cacheKey>
+			<cacheSize>30</cacheSize>
+			<resultLayouts>
+				<layout name="dossier_listing_dto" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="RECHERCHE_SELECTION_LIST" />
+		</contentView>
+
+		<!-- Content View de la recherche avancée de dossiers -->
+		<contentView name="requeteComposite">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.RechercheResultPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="resourcesAccessor">#{resourcesAccessor}</property>
+				<property name="userColumn">#{profilUtilisateurActions.getUserColumnId()}</property> <!-- Colonnes à afficher a l'utilisateur -->
+				<pattern quoteParameters="false" escapeParameters="false">
+					?
+				</pattern>
+				<parameter>#{rechercheAvanceeActions.getCurrentRequetePattern()}</parameter>
+				<sort column="q.qu:numeroQuestion" ascending="true" />
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>only_one_cache</cacheKey>
+			<cacheSize>1</cacheSize>
+			<resultLayouts>
+				<layout name="requete_listing_dto" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="RECHERCHE_SELECTION_LIST" />
+			<actions category="RECHERCHE_AVANCEE_NAVIGATION_ACTIONS_LIST" />
+		</contentView>
+
+		<!-- Content View des résultats de recherche sur les modèles de feuille 
+			de route -->
+		<contentView name="recherche_fdr_resultats">
+			<genericPageProvider
+				class="fr.dila.st.web.contentview.UfnxqlPageDocumentProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="queryString">#{rechercheModeleFeuilleRouteActions.searchQueryString}</property>
+				<property name="parameters">#{rechercheModeleFeuilleRouteActions.searchQueryParameter}</property>
+				<sort column="r.dc:title" ascending="true" />
+				<pageSize>30</pageSize>
+			</genericPageProvider>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>"recherche_fdr_resultats"</cacheKey>
+			<cacheSize>20</cacheSize>
+
+			<resultLayouts>
+				<layout name="search_feuille_route_model_listing" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="CURRENT_SELECTION_LIST_FDR_RECHERCHE" />
+		</contentView>
+
+	</extension>
+</component>
+
+
+
+
+
+

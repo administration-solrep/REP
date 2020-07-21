@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant lance les batchs de Réponses. /!\ Attention à la syntaxe 
+	non standard de l'expression cron. Voir http://www.jarvana.com/jarvana/view/opensymphony/quartz/1.6.1/quartz-1.6.1-javadoc.jar!/org/quartz/CronExpression.html -->
+<component name="fr.dila.reponses.core.scheduler.lock">
+	<require>org.nuxeo.runtime.started</require>
+	<extension
+		target="org.nuxeo.ecm.platform.scheduler.core.service.SchedulerRegistryService"
+		point="schedule">
+
+		<!-- batch lanceur général -->
+		<schedule id="lanceurGeneralBatchEvent">
+			<username>${nuxeo.batch.user}</username>
+			<password>${nuxeo.batch.password}</password>
+			<eventId>lanceurGeneralBatchEvent</eventId>
+			<eventCategory>cmf</eventCategory>
+			<!-- Tous les jours à 22H par défaut -->
+			<cronExpression>${nuxeo.batch.lanceurGeneralEvent}</cronExpression>
+		</schedule>
+
+		<!-- batch de notification aux webservices -->
+		<schedule id="wsNotificationEvent">
+			<username>${nuxeo.batch.user}</username>
+			<password>${nuxeo.batch.password}</password>
+
+			<eventId>wsNotificationEvent</eventId>
+			<eventCategory>cmf</eventCategory>
+
+			<!-- Toutes les jours à 10 heures -->
+			<cronExpression>${nuxeo.batch.wsNotificationEvent}</cronExpression>
+		</schedule>
+
+		<schedule id="updateQuestionConnexeBatch">
+			<username>${nuxeo.batch.user}</username>
+			<password>${nuxeo.batch.password}</password>
+
+			<eventId>updateQuestionConnexeBatch</eventId>
+			<eventCategory>cmf</eventCategory>
+
+			<cronExpression>${nuxeo.batch.updateQuestionEvent}</cronExpression>
+		</schedule>
+	</extension>
+</component>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <parent>
+  	<groupId>fr.dila.ss</groupId>
+	<artifactId>socle-solrep-parent</artifactId>
+    <version>REP-3.5.2</version>
+  </parent>
+
+  <groupId>fr.dila.reponses</groupId>
+  <artifactId>reponses-parent</artifactId>
+  <name>Reponses parent</name>
+  <packaging>pom</packaging>
+
+  <properties>
+    <fr.dila.reponses.version>REP-3.5.2</fr.dila.reponses.version>
+    <fr.dila.st.version>REP-3.5.2</fr.dila.st.version>
+    <fr.dila.ss.version>REP-3.5.2</fr.dila.ss.version>
+    <org.nuxeo.birt.platform.version>SW-1.0.4</org.nuxeo.birt.platform.version>
+    <birt.version>2.6.1</birt.version>
+    <quartz.version>2.1.3</quartz.version>
+    <!-- sonar properties -->
+    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+    <sonar.surefire.reportsPath>${basedir}/target/surefire-reports</sonar.surefire.reportsPath>
+    <sonar.java.coveragePlugin>cobertura</sonar.java.coveragePlugin>
+    <sonar.cobertura.reportsPath>${basedir}/target/site/cobertura/coverage.xml</sonar.cobertura.reportsPath>
+  </properties>
+
+  <modules>
+    <module>reponses-api</module>
+    <module>reponses-core</module>
+    <module>reponses-web</module>
+    <module>reponses-webengine</module>
+    <module>reponses-distribution</module>
+    <module>reponses-init</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- Dépendances au socle transverse -->
+      <dependency>
+        <groupId>fr.dila.st</groupId>
+        <artifactId>socle-transverse-api</artifactId>
+        <version>${fr.dila.st.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.st</groupId>
+        <artifactId>socle-transverse-core</artifactId>
+        <version>${fr.dila.st.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.st</groupId>
+        <artifactId>socle-transverse-web</artifactId>
+        <version>${fr.dila.st.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.st</groupId>
+        <artifactId>socle-transverse-webengine</artifactId>
+        <version>${fr.dila.st.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.st</groupId>
+        <artifactId>socle-transverse-interoperability</artifactId>
+        <version>${fr.dila.st.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.st</groupId>
+        <artifactId>socle-transverse-test</artifactId>
+        <version>${fr.dila.st.version}</version>
+      </dependency>
+
+      <!-- Dépendances au socle SOLREP -->
+      <dependency>
+        <groupId>fr.dila.ss</groupId>
+        <artifactId>socle-solrep-api</artifactId>
+        <version>${fr.dila.ss.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.ss</groupId>
+        <artifactId>socle-solrep-core</artifactId>
+        <version>${fr.dila.ss.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.ss</groupId>
+        <artifactId>socle-solrep-web</artifactId>
+        <version>${fr.dila.ss.version}</version>
+      </dependency>
+
+      <!-- Dépendances à Réponses -->
+      <dependency>
+        <groupId>fr.dila.reponses</groupId>
+        <artifactId>reponses-api</artifactId>
+        <version>${fr.dila.reponses.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.reponses</groupId>
+        <artifactId>reponses-core</artifactId>
+        <version>${fr.dila.reponses.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.reponses</groupId>
+        <artifactId>reponses-web</artifactId>
+        <version>${fr.dila.reponses.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.dila.reponses</groupId>
+        <artifactId>reponses-webengine</artifactId>
+        <version>${fr.dila.reponses.version}</version>
+      </dependency>
+
+      <!-- Dépendances à Nuxeo -->
+
+      <!-- Dépendances à Nuxeo Platform Birt Reporting -->
+      <dependency>
+        <groupId>org.nuxeo.ecm.platform</groupId>
+        <artifactId>nuxeo-birt-reporting</artifactId>
+        <version>${org.nuxeo.birt.platform.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.birt</groupId>
+        <artifactId>report-model-api</artifactId>
+        <version>${birt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.birt</groupId>
+        <artifactId>org.mozilla.javascript</artifactId>
+        <version>1.7.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.birt</groupId>
+        <artifactId>script-api</artifactId>
+        <version>${birt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.birt</groupId>
+        <artifactId>birt-runtime-all</artifactId>
+        <version>${birt.version}</version>
+        <type>zip</type>
+      </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.birt</groupId>
+        <artifactId>core-api</artifactId>
+        <version>${birt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.birt</groupId>
+        <artifactId>report-engine-api</artifactId>
+        <version>${birt.version}</version>
+      </dependency>
+
+
+      <!-- Dépendances au plugin SMART search -->
+
+      <!-- Dépendance Quartz -->
+      <dependency>
+        <groupId>org.quartz-scheduler</groupId>
+        <artifactId>quartz-oracle</artifactId>
+        <version>${quartz.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.nuxeo.build</groupId>
+          <artifactId>nuxeo-distribution-tools</artifactId>
+          <version>1.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.5</version>
+        </plugin>
+        <!--This plugin's configuration is used to store Eclipse m2e settings 
+          only. It has no influence on the Maven build itself. -->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId></groupId>
+                    <artifactId></artifactId>
+                    <versionRange>1.0</versionRange>
+                    <goals>
+                      <goal></goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>
+                      org.apache.maven.plugins
+        						</groupId>
+                    <artifactId>
+                      maven-nuxeo-plugin
+        						</artifactId>
+                    <versionRange>[1.0.14,)</versionRange>
+                    <goals>
+                      <goal>eclipse-version</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>
+                      org.jvnet.maven.incrementalbuild
+        						</groupId>
+                    <artifactId>
+                      incremental-build-plugin
+        						</artifactId>
+                    <versionRange>[1.3,)</versionRange>
+                    <goals>
+                      <goal>incremental-build</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>
+                      org.apache.myfaces.tobago
+        						</groupId>
+                    <artifactId>
+                      maven-apt-plugin
+        						</artifactId>
+                    <versionRange>[1.0.25,)</versionRange>
+                    <goals>
+                      <goal>execute</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>        
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <!-- configuration dans plugins socle_transverse -->
+      </plugin>
+    </plugins>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <url>http://idlv-nexus-standalone.lyon-dev2.local:8081/nexus/content/repositories/releases</url>
+    </repository>
+
+    <snapshotRepository>
+      <id>snapshots</id>
+      <url>http://idlv-nexus-standalone.lyon-dev2.local:8081/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
+ 

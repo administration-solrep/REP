@@ -1,0 +1,33 @@
+<f:subview xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout">
+	<c:set var="type"
+		value="#{nxu:test(!empty widget.properties.type, widget.properties.type, 'MINISTERE_ATTRIBUTAIRE')}" />
+	<f:subview
+		rendered="#{widget.properties.type == 'MINISTERE_ATTRIBUTAIRE'}">
+		<h:selectOneMenu value="#{field}"
+			style="min-width:622px;max-width:622px;">
+			<f:selectItem itemValue=""
+				itemLabel="#{messages['label.default.choice']}" />
+			<nxu:selectItems
+				value="#{organigrammeManagerActions.sortedCurrentMinisteres}"
+				var="min" itemValue="#{min.id}" itemLabel="#{min.label}" />
+		</h:selectOneMenu>
+	</f:subview>
+	<f:subview
+		rendered="#{widget.properties.type == 'MINISTERE_INTERROGE'}">
+		<h:selectOneMenu value="#{field}"
+			style="min-width:622px;max-width:622px;">
+			<f:selectItem itemValue=""
+				itemLabel="#{messages['label.default.choice']}" />
+			<!-- On recherche sur l'id du ministère pour ne pas avoir d'erreur dans la syntaxe (apostrophes et autres) + indication sur date début et fin -->
+			<nxu:selectItems value="#{ministereInterrogeProvider.allMinistereListRecherche}"
+				var="min" itemValue="#{min['qu:idMinistereInterroge']}"
+				itemLabel="#{min['qu:intituleMinistere']}   #{min['qu:DATE_DEBUT']}  #{min['qu:DATE_FIN']}" />
+		</h:selectOneMenu>
+	</f:subview>
+</f:subview>

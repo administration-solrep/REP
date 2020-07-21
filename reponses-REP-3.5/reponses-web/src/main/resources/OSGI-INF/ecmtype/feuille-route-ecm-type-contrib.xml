@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les types ECM nécessaires à la gestion des modèles 
+	de feuille de route. -->
+<component name="fr.dila.reponses.web.ecmtype.feuilleRoute">
+	<require>com.nuxeo.case-management.types</require>
+	<require>org.nuxeo.ecm.platform.forms.layouts.webapp</require>
+
+	<extension target="org.nuxeo.ecm.platform.types.TypeService"
+		point="types">
+		<!-- Feuille de route -->
+		<type id="FeuilleRoute" coretype="FeuilleRoute">
+			<label>Feuille de route</label>
+			<icon>/icons/route.png</icon>
+			<bigIcon>/icons/route_100.png</bigIcon>
+			<category>Collaborative</category>
+			<description>Folder.description</description>
+			<create-view>create_modele_feuille_route</create-view>
+			<default-view>view_modele_feuille_route</default-view>
+			<subtypes>
+				<type>RouteStep</type>
+			</subtypes>
+			<layouts mode="any">
+				<layout>feuille_route_detail</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>feuille_route_detail</layout>
+			</layouts>
+			<layouts mode="summary">
+				<layout>summary_document_route_layout</layout>
+			</layouts>
+			<contentViews category="content">
+				<contentView>orderable_document_content</contentView>
+			</contentViews>
+			<contentViews category="trash_content">
+				<contentView>document_trash_content</contentView>
+			</contentViews>
+		</type>
+
+		<!-- Tâche de distribution générique -->
+		<type id="RouteStep" coreType="RouteStep">
+			<label>label.casemanagement.type.RouteStep</label>
+			<icon>/icons/generic_distribution_task.png</icon>
+			<bigIcon>/icons/generic_distribution_task_100.png</bigIcon>
+			<category>Collaborative</category>
+			<description>File.description</description>
+			<default-view>view_route_element</default-view>
+			<edit-view>edit_route_element</edit-view>
+			<layouts mode="any">
+				<layout>routing_task_detail</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>routing_task_detail</layout>
+			</layouts>
+			<layouts mode="view">
+				<layout>routing_task_detail</layout>
+			</layouts>
+		</type>
+
+		<!-- Conteneur d'étapes -->
+		<type id="StepFolder" coreType="StepFolder">
+			<label>StepFolder</label>
+			<icon>/icons/fork.png</icon>
+			<bigIcon>/icons/fork_100.png</bigIcon>
+			<category>Collaborative</category>
+			<description>Folder.description</description>
+			<default-view>view_documents</default-view>
+			<edit-view>edit_route_element</edit-view>
+			<subtypes>
+				<type>StepFolder</type>
+				<type>DocumentRouteStep</type>
+			</subtypes>
+			<layouts mode="any">
+				<layout>step_folder</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>heading</layout>
+				<layout>dublincore</layout>
+				<layout>step_folder</layout>
+			</layouts>
+			<contentViews category="content">
+				<contentView>orderable_document_content</contentView>
+			</contentViews>
+			<contentViews category="trash_content">
+				<contentView>document_trash_content</contentView>
+			</contentViews>
+		</type>
+
+		<!-- Espace de travail -->
+		<type id="Workspace">
+			<subtypes>
+				<type>FeuilleRoute</type>
+				<type>Folder</type>
+				<type>BirtReport</type>
+				<type>BirtReportModel</type>
+			</subtypes>
+			<deniedSubtypes>
+				<type>BlogSite</type>
+				<type>WebSite</type>
+				<type>Picture</type>
+				<type>PictureBook</type>
+				<type>OrderedFolder</type>
+				<type>MailFolder</type>
+				<type>Forum</type>
+				<type>Workspace</type>
+				<type>DocumentRoute</type>
+				<type>File</type>
+			</deniedSubtypes>
+		</type>
+
+		<!-- Racine des modèles de feuilles de route -->
+		<type id="FeuilleRouteModelFolder" coreType="FeuilleRouteModelFolder">
+			<default-view>view_modeles_feuille_route</default-view>
+			<subtypes>
+				<type>FeuilleRoute</type>
+			</subtypes>
+			<layouts mode="any">
+				<layout>heading</layout>
+			</layouts>
+			<contentViews category="content">
+				<contentView>feuille_route_model_folder_content</contentView>
+			</contentViews>
+		</type>
+
+		<!-- Dossier -->
+		<type id="Folder" coreType="Folder">
+			<subtypes>
+				<type>File</type>
+			</subtypes>
+			<deniedSubtypes>
+				<type>BlogSite</type>
+				<type>WebSite</type>
+				<type>Picture</type>
+				<type>PictureBook</type>
+				<type>OrderedFolder</type>
+				<type>MailFolder</type>
+				<type>Forum</type>
+				<type>Workspace</type>
+				<type>DocumentRoute</type>
+				<type>File</type>
+			</deniedSubtypes>
+		</type>
+
+		<!-- Branchement -->
+		<type id="StepFolder" coreType="StepFolder">
+			<subtypes>
+				<type>RouteStep</type>
+				<type>StepFolder</type>
+			</subtypes>
+			<deniedSubtypes>
+				<type>GenericDistributionTask</type>
+				<type>DocumentRouteStep</type>
+				<type>DistributionStep</type>
+				<type>DistributionTask</type>
+				<type>PersonalDistributionTask</type>
+			</deniedSubtypes>
+		</type>
+
+	</extension>
+</component>

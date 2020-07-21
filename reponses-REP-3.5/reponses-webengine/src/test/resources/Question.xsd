@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:element name="QUESTIONS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="QUESTION" />
+			</xs:sequence>
+			<xs:attribute name="Type" use="required" type="xs:NCName" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QUESTION">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DATE_PUBLICATION_JO" />
+				<xs:element ref="PAGE_JO" />
+				<xs:element ref="NUMERO_QUESTION" />
+				<xs:element ref="MINISTERE" />
+				<xs:element ref="AUTEUR" />
+				<xs:element ref="INDEXATION_AN" />
+				<xs:element ref="TEXTE" />
+			</xs:sequence>
+			<xs:attribute name="source" use="required" type="xs:NCName" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DATE_PUBLICATION_JO" type="xs:NMTOKEN" />
+	<xs:element name="PAGE_JO" type="xs:integer" />
+	<xs:element name="NUMERO_QUESTION" type="xs:integer" />
+	<xs:element name="MINISTERE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TITRE_JO" />
+				<xs:element ref="INTITULE_MIN" />
+			</xs:sequence>
+			<xs:attribute name="id" use="required" type="xs:integer" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TITRE_JO" type="xs:string" />
+	<xs:element name="INTITULE_MIN" type="xs:string" />
+	<xs:element name="AUTEUR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CIVILITE" />
+				<xs:element ref="PRENOM" />
+				<xs:element ref="NOM" />
+			</xs:sequence>
+			<xs:attribute name="ID_MANDAT" use="required" type="xs:integer" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CIVILITE" type="xs:NCName" />
+	<xs:element name="PRENOM" type="xs:string" />
+	<xs:element name="NOM" type="xs:NCName" />
+	<xs:element name="INDEXATION_AN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RUBRIQUE" />
+				<xs:element ref="ANALYSE" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RUBRIQUE">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="unbounded" ref="RUB_TA" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RUB_TA" type="xs:string" />
+	<xs:element name="ANALYSE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ANA" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ANA" type="xs:NCName" />
+	<xs:element name="TEXTE">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="AUTEUR_DEV" />
+				<xs:element ref="MIN" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AUTEUR_DEV" type="xs:string" />
+	<xs:element name="MIN" type="xs:string" />
+</xs:schema>

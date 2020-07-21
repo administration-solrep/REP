@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://nuxeo.org/schemas/favoris_dossier/" xmlns:fvd="http://nuxeo.org/schemas/favoris_dossier/">
+
+	<!-- targetDocument : le document référencé par ce favoris -->
+	<!-- id de la question -->
+	<xs:element name="targetDocument" type="xs:string" />
+</xs:schema>

@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<ui:define name="page title">
+		<h:outputText value="#{nuxeoApplicationName}" />
+	</ui:define>
+
+	<ui:define name="body">
+
+		<h1>
+			<h:outputText
+				value="#{messages['command.admin.utilisateur.organigramme.viewupdatetimbre']}" />
+		</h1>
+		<br />
+
+		<ui:include src="/incl/message_banner.xhtml" />
+
+		<a4j:region id="updateTimbreFormPoll">
+			<h:form>
+				<a4j:poll id="espaceCreationDossierContentListPoll" interval="60000"
+					timeout="30000"
+					enabled="#{migrationManagerActions.isMigrationEnCours()}"
+					reRender="updateTimbreFormPoll,updateTimbreForm" />
+			</h:form>
+		</a4j:region>
+
+
+		<h:form id="updateTimbreForm">
+			<div name="containerTabDiv"
+				style="overflow-x: auto; overflow-y: hidden;">
+				<nxu:set var="reponsesLogging"
+					value="#{migrationManagerActions.getAllReponsesLogging()}"
+					cache="true">
+					<c:choose>
+						<c:when test="#{migrationManagerActions.isUpdatingTimbre()}">
+							<h:outputText
+								value="Initialisation du changement de gouvernement en cours"
+								rendered="#{empty reponsesLogging}" />
+						#{migrationManagerActions.setUpdatingTimbre(false)}
+					</c:when>
+						<c:otherwise>
+							<h:outputText value="Aucun changement de gouvernement"
+								rendered="#{empty reponsesLogging}" />
+						</c:otherwise>
+					</c:choose>
+					<h:dataTable var="currentLog" value="#{reponsesLogging}"
+						class="dataOutput" rowClasses="dataRowEven,dataRowOdd"
+						rendered="#{!empty reponsesLogging}" cache="true">
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Message" />
+							</f:facet>
+							<nxh:commandLink
+								action="#{migrationManagerActions.setCurrentLog(currentLog.id)}">
+								<h:outputText value="#{currentLog.message}" />
+							</nxh:commandLink>
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Etat" />
+							</f:facet>
+							<h:graphicImage value="/img/icons/bullet_ball_glass_green_16.png"
+								rendered="#{currentLog.status == 'SUCCESS'}" />
+							<h:graphicImage
+								value="/img/icons/bullet_ball_glass_yellow_16.png"
+								rendered="#{currentLog.status == 'FAILURE'}" />
+							<h:graphicImage
+								value="/img/icons/bullet_ball_glass_blue_anime_16.gif"
+								rendered="#{empty currentLog.status}" />
+							<h:outputText
+								value="#{migrationManagerActions.getPourcentageAvancement(currentLog)}"
+								rendered="#{empty currentLog.status}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Date de début" />
+							</f:facet>
+							<h:outputText value="#{currentLog.startDate.time}"
+								converter="DateTimeConverter" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Date de fin" />
+							</f:facet>
+							<h:outputText value="#{currentLog.endDate.time}"
+								converter="DateTimeConverter" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Questions en cours à migrer" />
+							</f:facet>
+							<h:outputText value="#{currentLog.previsionalCount}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Questions en cours migrées" />
+							</f:facet>
+							<h:outputText value="#{currentLog.endCount}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Questions closes à migrer" />
+							</f:facet>
+							<h:outputText value="#{currentLog.closePrevisionalCount}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Questions closes migrées" />
+							</f:facet>
+							<h:outputText value="#{currentLog.closeEndCount}" />
+						</h:column>
+
+					</h:dataTable>
+				</nxu:set>
+
+				<!-- ligne -->
+				<nxu:set var="reponsesLoggingLine"
+					value="#{migrationManagerActions.getCurrentReponsesLoggingLine()}">
+					<h:commandButton class="button" value="Fermer les détails"
+						action="#{migrationManagerActions.setCurrentLog(null)}"
+						id="button_close_line" rendered="#{!empty reponsesLoggingLine}" />
+					<h:commandButton class="button" value="Migrer les questions closes"
+						action="#{migrationManagerActions.updateTimbreDiffere()}"
+						id="button_merge_differe"
+						rendered="#{migrationManagerActions.displayMigrationQuestionClose()}" />
+					<h:dataTable var="currentLog" value="#{reponsesLoggingLine}"
+						class="dataOutput" rowClasses="dataRowEven,dataRowOdd"
+						rendered="#{!empty reponsesLoggingLine}" cache="true">
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Message" />
+							</f:facet>
+							<nxh:commandLink
+								action="#{migrationManagerActions.setCurrentLogLine(currentLog.id)}">
+								<h:outputText value="#{currentLog.message}" />
+							</nxh:commandLink>
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Etat" />
+							</f:facet>
+							<h:graphicImage value="/img/icons/bullet_ball_glass_green_16.png"
+								rendered="#{currentLog.status == 'SUCCESS'}" />
+							<h:graphicImage
+								value="/img/icons/bullet_ball_glass_yellow_16.png"
+								rendered="#{currentLog.status == 'FAILURE'}" />
+							<h:graphicImage
+								value="/img/icons/bullet_ball_glass_blue_anime_16.gif"
+								rendered="#{empty currentLog.status}" />
+							<h:outputText
+								value="#{migrationManagerActions.getPourcentageAvancementLine(currentLog)}"
+								rendered="#{empty currentLog.status}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Date de début" />
+							</f:facet>
+							<h:outputText value="#{currentLog.startDate.time}" converter="DateTimeConverter" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Date de fin" />
+							</f:facet>
+							<h:outputText value="#{currentLog.endDate.time}" converter="DateTimeConverter" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Questions à migrer" />
+							</f:facet>
+							<h:outputText value="#{currentLog.previsionalCount}" converter="QuestionsUpdatedTimbreConverter" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Questions migrées" />
+							</f:facet>
+							<h:outputText value="#{currentLog.endCount}" converter="QuestionsUpdatedTimbreConverter" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Détails" />
+							</f:facet>
+							<h:outputText value="#{currentLog.fullLog}" />
+						</h:column>
+
+					</h:dataTable>
+				</nxu:set>
+
+				<!-- Details ligne -->
+				<nxu:set var="reponsesLoggingLineDetail"
+					value="#{migrationManagerActions.getCurrentReponsesLoggingDetail()}">
+					<h:commandButton class="button" value="Fermer les détails"
+						action="#{migrationManagerActions.setCurrentLogLine(null)}"
+						id="button_close_line_detail"
+						rendered="#{!empty reponsesLoggingLineDetail}" />
+					<h:dataTable var="currentLog" value="#{reponsesLoggingLineDetail}"
+						class="dataOutput" rowClasses="dataRowEven,dataRowOdd"
+						rendered="#{!empty reponsesLoggingLineDetail}">
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Message" />
+							</f:facet>
+							<h:outputText value="#{currentLog.message}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Etat" />
+							</f:facet>
+							<h:graphicImage value="/img/icons/bullet_ball_glass_green_16.png"
+								rendered="#{currentLog.status == 'SUCCESS'}" />
+							<h:graphicImage
+								value="/img/icons/bullet_ball_glass_yellow_16.png"
+								rendered="#{currentLog.status == 'FAILURE'}" />
+							<h:graphicImage
+								value="/img/icons/bullet_ball_glass_blue_anime_16.gif"
+								rendered="#{empty currentLog.status}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Détails" />
+							</f:facet>
+							<h:outputText value="#{currentLog.fullLog}" />
+						</h:column>
+
+					</h:dataTable>
+				</nxu:set>
+				<script>
+				resize();
+			</script>
+			</div>
+
+		</h:form>
+
+		<script>
+	var j = jQuery.noConflict();
+	j(document).ready(function() {
+		window.onresize = resize;
+		resize();
+	});	
+</script>
+
+	</ui:define>
+</nxthemes:composition>

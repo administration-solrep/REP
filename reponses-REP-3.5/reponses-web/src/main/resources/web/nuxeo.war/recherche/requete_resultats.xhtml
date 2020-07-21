@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:nxd="http://nuxeo.org/nxweb/document">
+
+	<ui:define name="page title">
+		<h:outputText value="Résultats de la recherche" />
+	</ui:define>
+
+	<ui:define name="content_view_actions">
+		<ui:include src="/incl/message_banner.xhtml" />
+		<ui:include src="/incl/masse_mail_dossier_panel.xhtml" />
+		<ui:include src="/incl/dossier_listing_action.xhtml">
+			<ui:param name="resultLayout" value="requete_listing_dto_csv" />
+			<ui:param name="actionsList" value="RECHERCHE_UPPER_LIST" />
+		</ui:include>
+	</ui:define>
+
+	<ui:define name="body">
+		<div id="mailboxContent">
+			<div id="upperContentView">
+				<nxu:set var="contentViewId"
+					value="#{rechercheWebActions.contentViewName}">
+					<nxu:set var="contentViewName"
+						value="#{rechercheWebActions.contentViewName}">
+						<ui:decorate template="/incl/content_view.xhtml">
+						<ui:param name="selectedResultLayoutColumns"
+								value="#{documentSearchActions.selectedLayoutColumns}" />
+							<ui:param name="contentViewSortInfos"
+								value="#{documentSearchActions.searchSortInfos}" />
+							<ui:define name="empty_folder_label">
+								<f:subview rendered="#{documents.rowCount == 0}">
+									<center>
+										<h:outputText
+											value="#{messages['label.rechercheavancee.empty']}" />
+										<br /> <br />
+										<h:commandButton class="button"
+											value="#{messages['command.rechercheavancee.back']}"
+											action="#{rechercheAvanceeActions.editRechercheAvancee()}"
+											immediate="true" />
+									</center>
+								</f:subview>
+							</ui:define>
+						</ui:decorate>
+						<h:form id="export_results">
+							<h:commandButton class="button"
+								value="#{messages['command.global.exportXls.alt']}"
+								alt="#{messages['command.global.exportXls.alt']}"
+								action="#{rechercheWebActions.createExportExcel()}" />
+						</h:form>
+						<ui:insert name="content_view_selector">
+							<ui:include src="/incl/content_view_result_layout_selector.xhtml" />
+						</ui:insert>
+					</nxu:set>
+				</nxu:set>
+			</div>
+		</div>
+
+		<ui:include src="/incl/upper_panel_toggle.xhtml" />
+	</ui:define>
+
+
+	<ui:define name="subbody">
+		<ui:include
+			src="/casemanagement/mailbox/mailbox_subbody_dossier_view.xhtml">
+			<ui:param name="dossier_view" value="view_requete_results" />
+		</ui:include>
+	</ui:define>
+</nxthemes:composition>

@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<component name="fr.dila.ss.web.journal.widgets">
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgettypes">
+
+		<widgetType name="listing_typeMessage_history_category">
+			<documentation>
+				This widget type displays a action logged by the audit.
+				<br />
+				It requires the following fields configuration:
+				<ul>
+					<li>
+						first field maps the entryId for the entryLog
+					</li>
+				</ul>
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/listing_cm_text_history_action_widget_template.xhtml
+			</property>
+		</widgetType>
+
+
+
+		<widgetType name="listing_history_login">
+			<documentation>
+				This widget type displays the action recipients logged by the audit.
+				<br />
+				It requires the following fields configuration:
+				<ul>
+					<li>
+						first field maps the logEntry
+					</li>
+				</ul>
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/listing_cm_text_history_login_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="listing_text">
+			<documentation>
+				ce widget affiche le paramètre sélectionné.
+				<br />
+				It requires the following fields configuration:
+				<ul>
+					<li>
+						texte
+					</li>
+				</ul>
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/listing_simple_text.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="listing_history_poste">
+			<documentation>
+				ce widget affiche les postes de l'utilisateur.
+				<br />
+				It requires the following fields configuration:
+				<ul>
+					<li>
+						id de l'utilisateur
+					</li>
+				</ul>
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/listing_history_poste_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="listing_history_dossier_ref">
+			<documentation>
+				ce widget affiche le numéro de question de dossier à partir de son
+				identifiant.
+				<br />
+				It requires the following fields configuration:
+				<ul>
+					<li>
+						dossierRef
+					</li>
+				</ul>
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/listing_history_dossier_ref_widget_template.xhtml
+			</property>
+		</widgetType>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+
+		<widget name="journal_history_date" type="datetime">
+			<labels>
+				<label mode="any">label.journal.date</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.eventDate</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy HH:mm:ss</property>
+				<property name="format">dd/MM/yyyy HH:mm:ss</property>
+			</properties>
+		</widget>
+
+		<widget name="journal_history_username" type="listing_text">
+			<labels>
+				<label mode="any">label.journal.userName</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.principalName</field>
+			</fields>
+		</widget>
+
+
+		<widget name="journal_history_poste" type="listing_text">
+			<labels>
+				<label mode="any">label.journal.poste</label>
+			</labels>
+			<translated>true</translated>
+			<!-- note : le profil de l'utilisateur est stockée dans cette variable -->
+			<fields>
+				<field>data.docPath</field>
+			</fields>
+		</widget>
+
+		<widget name="journal_history_category" type="listing_typeMessage_history_category">
+			<labels>
+				<label mode="any">label.journal.category</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.category</field>
+			</fields>
+		</widget>
+
+		<widget name="journal_history_comment" type="listing_typeMessage_history_category">
+			<labels>
+				<label mode="any">label.comment</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.comment</field>
+			</fields>
+		</widget>
+
+		<widget name="journal_history_dossier_ref" type="listing_history_dossier_ref">
+			<labels>
+				<label mode="any">label.journal.dossierRef</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.docUUID</field>
+			</fields>
+		</widget>
+
+
+		<widget name="journal_history_login" type="listing_history_login">
+			<labels>
+				<label mode="any">label.journal.history.login</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+		</widget>
+
+	</extension>
+
+</component>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.1.v20100902 Build &lt;2.6.1.v20100915-1750></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="NOMSUTILISATEURS_PARAM" id="10">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <text id="45">
+            <method name="onPrepare"><![CDATA[var NOMSUTILISATEURS_PARAM = params["NOMSUTILISATEURS_PARAM"] + "";
+NOMSUTILISATEURS_PARAM = (NOMSUTILISATEURS_PARAM == "null" ? "" : NOMSUTILISATEURS_PARAM);
+
+
+var USERS_OBJ  = eval ("(" + NOMSUTILISATEURS_PARAM + ")");
+vars["NewVariableElement"] = NOMSUTILISATEURS_PARAM + "\n" + (USERS_OBJ.length  - 1);
+
+
+
+	var scriptHTML =
+	"<TABLE CELLSPACING=0 BORDER=1 BORDERCOLOR=BLACK>" + 
+		"<TR>" +
+			"<TH  STYLE='BORDER:1PX SOLID BLACK'>Nom d'utilisateur</TH>" +
+			"<TH  STYLE='BORDER:1PX SOLID BLACK'>Prénom</TH>" +
+			"<TH  STYLE='BORDER:1PX SOLID BLACK'>Nom de famille</TH>" +
+			"<TH  STYLE='BORDER:1PX SOLID BLACK'>Date de connexion</TH>" +
+		"</TR>";
+	for(i = 0; i < (USERS_OBJ.length); i++)
+	{
+		var USER = USERS_OBJ[i] ;
+		var NOMSUTILISATEUR_USERNAME = USER.userName;
+		var NOMSUTILISATEUR_FIRSTNAME = USER.firstName;
+		var NOMSUTILISATEUR_LASTNAME = USER.lastName;
+		var NOMSUTILISATEUR_DATECONNEXION = USER.dateConnexion;
+		
+
+		scriptHTML = scriptHTML +
+		"<TR>" +
+			"<TD  STYLE='BORDER:1PX SOLID BLACK'>" + NOMSUTILISATEUR_USERNAME + "</TD>" +
+			"<TD  STYLE='BORDER:1PX SOLID BLACK'>" + NOMSUTILISATEUR_FIRSTNAME + "</TD>" +
+			"<TD  STYLE='BORDER:1PX SOLID BLACK'>" + NOMSUTILISATEUR_LASTNAME + "</TD>" +
+			"<TD  STYLE='BORDER:1PX SOLID BLACK'>" + NOMSUTILISATEUR_DATECONNEXION + "</TD>" +
+		"</TR>";
+		
+	}
+	
+	scriptHTML = scriptHTML +
+		"</TABLE>";
+
+
+this.content = scriptHTML;
+]]></method>
+            <property name="contentType">html</property>
+        </text>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="NewVariableElement">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="page title">
+		<h:outputText value="#{nxd:titleOrId(currentDocument)}" />
+	</ui:define>
+
+	<ui:define name="bookmark">
+		<link rel="bookmark"
+			href="#{navigationContext.currentDocumentFullUrl}" />
+	</ui:define>
+
+	<ui:define name="body">
+		<style>
+.upperCollasiblePanel {
+	width: 100%;
+	margin: 0;
+	padding-right: 5px;
+}
+
+.x-tool-collapse-north {
+	background-position: 0px -210px;
+}
+
+.x-tool-collapse-north:hover {
+	background-position: -15px -210px;
+}
+
+.x-tool-collapse-south {
+	background-position: 0px -195px;
+}
+
+.x-tool-collapse-south:hover {
+	background-position: -15px -195px;
+}
+</style>
+		<c:if test="#{navigationWebActions.upperPanelIsOpened}">
+			<style>
+#reponsesContentView {
+	display: block;
+}
+
+#openContentViewButton {
+	display: none;
+}
+
+#closeContentViewButton {
+	display: block;
+}
+</style>
+		</c:if>
+		<c:if test="#{!navigationWebActions.upperPanelIsOpened}">
+			<style>
+#reponsesContentView {
+	display: none;
+}
+
+#openContentViewButton {
+	display: block;
+}
+
+#closeContentViewButton {
+	display: none;
+}
+</style>
+		</c:if>
+		<!--[if IE]>
+      <style>
+        #openContentViewButton, #closeContentViewButton {
+          margin-bottom:-15px;
+        }
+      </style
+    <![endif]-->
+
+
+		<script>
+      function closeReponsesContentView() {
+        document.getElementById('reponsesContentView').style.display='none';
+        document.getElementById('openContentViewButton').style.display='block';
+        document.getElementById('closeContentViewButton').style.display='none';
+      }
+  
+      function openReponsesContentView() {
+        document.getElementById('reponsesContentView').style.display='block';
+        document.getElementById('openContentViewButton').style.display='none';
+        document.getElementById('closeContentViewButton').style.display='block';
+      }
+    </script>
+
+		<div id="reponsesContentView">
+			<h:form id="dossierListingAction">
+				<table class="dossierListingAction" style="float: right;">
+					<tr>
+						<nxu:methodResult name="actions"
+							value="#{webActions.getActionsList('MAILBOX_ACTION_UPPER_LIST')}">
+							<nxu:dataList layout="simple" var="action" value="#{actions}">
+								<td class="enabledButtonContainer"><nxh:commandLink
+										action="#{action.getLink()}">
+										<h:graphicImage value="#{action.icon}"
+											title="#{messages[action.label]}"
+											alt="#{messages[action.label]}" />
+									</nxh:commandLink></td>
+							</nxu:dataList>
+						</nxu:methodResult>
+					</tr>
+				</table>
+			</h:form>
+
+			<div style="clear: both"></div>
+			<c:if test="#{currentDocument.getType() != 'Dossier'}">
+				<div style="clear: both"></div>
+				<ui:include
+					src="/casemanagement/mailbox/mailbox_view_action_tabs.xhtml" />
+				<div style="clear: both"></div>
+			</c:if>
+
+			<div class="mailboxContent">
+				<c:if
+					test="#{cmMailboxTabsActionsBean.currentViewMailboxAction != null}">
+					<ui:include
+						src="#{cmMailboxTabsActionsBean.currentViewMailboxAction.link}" />
+				</c:if>
+			</div>
+		</div>
+
+		<h:form id="toggleContentViewForm">
+			<div id="openContentViewButton" class="upperCollasiblePanel">
+				<h:commandLink id="openContentViewButtonId"
+					styleClass="x-tool x-tool-toggle x-tool-collapse-south"
+					onclick="openReponsesContentView()">
+					<a4j:actionparam name="upperPanelIsOpened" value="true"
+						assignTo="#{navigationWebActions.upperPanelIsOpened}" />
+				</h:commandLink>
+			</div>
+			<div id="closeContentViewButton" class="upperCollasiblePanel">
+				<h:commandLink id="closeContentViewButtonId"
+					styleClass="x-tool x-tool-toggle x-tool-collapse-north"
+					onclick="closeReponsesContentView()">
+					<a4j:actionparam name="upperPanelIsOpened" value="false"
+						assignTo="#{navigationWebActions.upperPanelIsOpened}" />
+				</h:commandLink>
+			</div>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="subbody">
+		<c:if test="#{currentDocument.getType() == 'Dossier'}">
+			<div class="subbodyContainer">
+				<h:panelGroup rendered="#{!currentDocument.version}">
+					<h1>
+						<h:outputText value="#{nxd:titleOrId(currentDocument)}" />
+					</h1>
+				</h:panelGroup>
+
+				<ui:include src="/reponses_toolbar.xhtml" />
+
+				<ui:decorate
+					template="/casemanagement/caseitem/view_cm_case_template.xhtml">
+					<ui:define name="case_body">
+						<h:panelGroup id="case_content">
+							<ui:insert name="case_content">
+								<div class="tabsBar">
+									<h:form>
+										<nxu:dataList layout="unorderedList" var="tab"
+											value="#{tabsActionsList}"
+											itemStyleClass="#{nxu:test(webActions.currentTabAction == tab, 'selected', '')}">
+											<nxd:restDocumentLink document="#{currentDocument}"
+												tab="#{tab.id}" view="mailbox_view">
+												<h:outputText value="#{messages[tab.label]}" />
+											</nxd:restDocumentLink>
+										</nxu:dataList>
+									</h:form>
+								</div>
+								<div style="clear: both" />
+								<div class="tabsContent">
+									<ui:include src="#{webActions.currentTabAction.link}" />
+								</div>
+							</ui:insert>
+						</h:panelGroup>
+					</ui:define>
+				</ui:decorate>
+			</div>
+		</c:if>
+	</ui:define>
+
+</nxthemes:composition>

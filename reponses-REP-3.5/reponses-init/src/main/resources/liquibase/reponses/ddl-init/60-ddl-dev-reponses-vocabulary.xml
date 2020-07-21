@@ -1,0 +1,207 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"
+	logicalFilePath="ddl-dev-reponses-vocabulary">
+
+	<!-- Suppression des tables de vocabulaires pour laisser Nuxeo les gérer -->
+	<includeAll path="liquibase/common/ddl-common-vocabulary/" />
+
+	<changeSet id="VOC_AN_ANALYSE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_AN_ANALYSE" />
+		</preConditions>
+		<dropTable tableName="VOC_AN_ANALYSE" />
+	</changeSet>
+
+	<changeSet id="VOC_TA_RUBRIQUE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_TA_RUBRIQUE" />
+		</preConditions>
+		<dropTable tableName="VOC_TA_RUBRIQUE" />
+	</changeSet>
+
+	<changeSet id="VOC_AN_RUBRIQUE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_AN_RUBRIQUE" />
+		</preConditions>
+		<dropTable tableName="VOC_AN_RUBRIQUE" />
+	</changeSet>
+
+	<changeSet id="VOC_SE_RUBRIQUE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_SE_RUBRIQUE" />
+		</preConditions>
+		<dropTable tableName="VOC_SE_RUBRIQUE" />
+	</changeSet>
+
+	<changeSet id="VOC_SE_RENVOI" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_SE_RENVOI" />
+		</preConditions>
+		<dropTable tableName="VOC_SE_RENVOI" />
+	</changeSet>
+
+	<changeSet id="VOC_SE_THEME" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_SE_THEME" />
+		</preConditions>
+		<dropTable tableName="VOC_SE_THEME" />
+	</changeSet>
+
+	<changeSet id="VOC_GROUPE_POLITIQUE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_GROUPE_POLITIQUE" />
+		</preConditions>
+		<dropTable tableName="VOC_GROUPE_POLITIQUE" />
+	</changeSet>
+
+	<changeSet id="VOC_TYPE_QUESTION_AN" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_TYPE_QUESTION_AN" />
+		</preConditions>
+		<dropTable tableName="VOC_TYPE_QUESTION_AN" />
+	</changeSet>
+
+	<changeSet id="VOC_TYPE_QUESTION_RECHERCHE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_TYPE_QUESTION_RECHERCHE" />
+		</preConditions>
+		<dropTable tableName="VOC_TYPE_QUESTION_RECHERCHE" />
+	</changeSet>
+
+	<changeSet id="VOC_ETAT_QUESTION" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_ETAT_QUESTION" />
+		</preConditions>
+		<dropTable tableName="VOC_ETAT_QUESTION" />
+	</changeSet>
+
+	<changeSet id="VOC_ORIGINE_QUESTION" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_ORIGINE_QUESTION" />
+		</preConditions>
+		<dropTable tableName="VOC_ORIGINE_QUESTION" />
+	</changeSet>
+
+	<changeSet id="VOC_CARACT_QUESTION" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_CARACT_QUESTION" />
+		</preConditions>
+		<dropTable tableName="VOC_CARACT_QUESTION" />
+	</changeSet>
+
+	<changeSet id="VOC_VERROU" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_VERROU" />
+		</preConditions>
+		<dropTable tableName="VOC_VERROU" />
+	</changeSet>
+
+	<changeSet id="VOC_NIVEAU_VISIBILITE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_NIVEAU_VISIBILITE" />
+		</preConditions>
+		<dropTable tableName="VOC_NIVEAU_VISIBILITE" />
+	</changeSet>
+
+	<changeSet id="VOC_NIVEAU_PRIORITE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_NIVEAU_PRIORITE" />
+		</preConditions>
+		<dropTable tableName="VOC_NIVEAU_PRIORITE" />
+	</changeSet>
+
+	<changeSet id="VOC_LEGISLATURE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_LEGISLATURE" />
+		</preConditions>
+		<dropTable tableName="VOC_LEGISLATURE" />
+	</changeSet>
+
+	<changeSet id="VOC_MOTCLEF_MINISTERE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_MOTCLEF_MINISTERE" />
+		</preConditions>
+		<dropTable tableName="VOC_MOTCLEF_MINISTERE" />
+	</changeSet>
+
+	<changeSet id="VOC_FEUILLEROUTE_TYPE_CREATION" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_FEUILLEROUTE_TYPE_CREATION" />
+		</preConditions>
+		<dropTable tableName="VOC_FEUILLEROUTE_TYPE_CREATION" />
+	</changeSet>
+
+	<changeSet id="VOC_CM_ROUTING_TASK_TYPE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_CM_ROUTING_TASK_TYPE" />
+		</preConditions>
+		<dropTable tableName="VOC_CM_ROUTING_TASK_TYPE" />
+	</changeSet>
+
+	<changeSet id="VOC_VALIDATION_STATUT_ETAPE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_VALIDATION_STATUT_ETAPE" />
+		</preConditions>
+		<dropTable tableName="VOC_VALIDATION_STATUT_ETAPE" />
+	</changeSet>
+
+	<changeSet id="VOC_STATUT_ETAPE_RECHERCHE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_STATUT_ETAPE_RECHERCHE" />
+		</preConditions>
+		<dropTable tableName="VOC_STATUT_ETAPE_RECHERCHE" />
+	</changeSet>
+
+	<changeSet id="VOC_ETAT_ETAPE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_ETAT_ETAPE" />
+		</preConditions>
+		<dropTable tableName="VOC_ETAT_ETAPE" />
+	</changeSet>
+
+	<changeSet id="VOC_TITLE" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_TITLE" />
+		</preConditions>
+		<dropTable tableName="VOC_TITLE" />
+	</changeSet>
+
+	<changeSet id="VOC_BOOLEAN" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_BOOLEAN" />
+		</preConditions>
+		<dropTable tableName="VOC_BOOLEAN" />
+	</changeSet>
+
+	<changeSet id="VOC_BOOLEAN_REQUETEUR" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_BOOLEAN_REQUETEUR" />
+		</preConditions>
+		<dropTable tableName="VOC_BOOLEAN_REQUETEUR" />
+	</changeSet>
+
+	<changeSet id="VOC_OPERATORS" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_OPERATORS" />
+		</preConditions>
+		<dropTable tableName="VOC_OPERATORS" />
+	</changeSet>
+
+	<changeSet id="VOC_COMPARATORS" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_COMPARATORS" />
+		</preConditions>
+		<dropTable tableName="VOC_COMPARATORS" />
+	</changeSet>
+
+	<changeSet id="VOC_BORDEREAU_LABEL" author="system" context="dev or qa">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="VOC_BORDEREAU_LABEL" />
+		</preConditions>
+		<dropTable tableName="VOC_BORDEREAU_LABEL" />
+	</changeSet>
+
+</databaseChangeLog>
+

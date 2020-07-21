@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory">
+
+	<ui:define name="page title">
+		<h:outputText
+			value="#{nuxeoApplicationName} - #{messages['label.userManager.users']}" />
+	</ui:define>
+
+	<ui:define name="body">
+
+		<div class="tabsContent">
+
+			<ui:include src="/incl/message_banner.xhtml" />
+
+			<br />
+
+			<h1>
+				<h:outputText styleClass="label"
+					value="#{messages['label.recherche.utilisateur.title']}" />
+			</h1>
+
+			<div style="clear: both" />
+
+			<div class="tabsContent">
+				<!-- uniquement pour l'onglet des utilisateurs connectés -->
+				<c:if test="#{!supervisionActions.hasFilter()}">
+					<h:form id="mailForm">
+						<div class="foldableBox">
+							<h3 class="unfolded">
+								<a4j:commandLink
+									value="Envoyer un mél aux utilisateur connectés"
+									eventsQueue="ajax_events_queue"
+									oncomplete="return toggleBox(this)"
+									action="#{supervisionActions.toggleMail()}" />
+							</h3>
+							<div id="SendMailDiv" class="boxBody">
+								<table class="dataInput">
+									<tbody>
+										<tr>
+											<td><h:outputText class="required">Objet du mèl : </h:outputText></td>
+											<td><h:inputText id="mailObject"
+													value="#{supervisionActions.mailObject}" /></td>
+										</tr>
+										<tr>
+											<td><h:outputText class="required">Texte du mèl : </h:outputText></td>
+											<td><h:inputTextarea id="mailText"
+													value="#{supervisionActions.mailText}" /></td>
+										</tr>
+										<tr>
+											<td><h:commandButton id="sendButton"
+													value="#{messages['command.supervision.send']}"
+													action="#{supervisionActions.sendMailToAllConnected()}"
+													styleClass="button" /> <h:commandButton id="clearButton"
+													value="#{messages['command.supervision.clear']}"
+													action="#{supervisionActions.clearMailArea}"
+													styleClass="button" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<script type="text/javascript">
+		           if  ('#{supervisionActions.mailOpen}' == 'false'){
+		    	     Effect.toggle(document.getElementById('SendMailDiv'), 'blind', {duration:0.2});
+		           }
+		        </script>
+						</div>
+					</h:form>
+				</c:if>
+
+				<ui:insert name="statistics" />
+
+				<ui:insert name="mainContent" />
+
+			</div>
+
+		</div>
+
+	</ui:define>
+
+</nxthemes:composition>

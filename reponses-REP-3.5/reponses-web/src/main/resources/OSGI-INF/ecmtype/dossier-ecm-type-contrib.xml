@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les types ECM nécessaires au dossier Réponses. -->
+<component name="fr.dila.reponses.web.ecmtype.dossier">
+	<require>com.nuxeo.case-management.types</require>
+
+	<extension target="org.nuxeo.ecm.platform.types.TypeService"
+		point="types">
+
+		<!-- define Question used to create the Dossier -->
+		<type id="Question" coretype="Question">
+			<label>Question</label>
+			<icon>/icons/case.png</icon>
+			<bigIcon>/icons/case_100.png</bigIcon>
+			<default-view>view_cm_case</default-view>
+			<create-view>create_empty_case</create-view>
+			<category>Documents disponibles :</category>
+			<views>
+				<view id="edit_case" value="edit_case" />
+			</views>
+			<layouts mode="create">
+				<layout>question_saisie_layout</layout>
+			</layouts>
+			<layouts mode="any">
+				<layout>dublincore</layout>
+				<layout>question_saisie_layout</layout>
+			</layouts>
+			<layouts mode="summary">
+				<layout>summary_current_case_layout</layout>
+			</layouts>
+		</type>
+
+		<!-- define Dossier -->
+		<type id="Dossier" coretype="Dossier">
+			<label>Dossier</label>
+			<icon>/icons/case.png</icon>
+			<bigIcon>/icons/case_100.png</bigIcon>
+			<default-view>view_cm_case</default-view>
+			<category>Documents disponibles :</category>
+			<views>
+				<view id="edit_case" value="edit_case" />
+			</views>
+			<subtypes>
+				<type>Question</type>
+			</subtypes>
+			<layouts mode="any">
+				<layout>dublincore</layout>
+			</layouts>
+			<layouts mode="summary">
+				<layout>summary_current_case_layout</layout>
+			</layouts>
+		</type>
+
+		<!-- define DossierLink -->
+		<type id="DossierLink" coretype="DossierLink">
+			<label>DossierLink</label>
+			<icon>/icons/case.png</icon>
+			<bigIcon>/icons/case_100.png</bigIcon>
+		</type>
+
+		<type id="Reponse" coretype="Reponse">
+			<label>Reponse</label>
+			<icon>/icons/case_item.png</icon>
+			<bigIcon>/icons/case_item_100.png</bigIcon>
+			<category>Reponse</category>
+			<default-view>view_documents</default-view>
+			<views>
+				 
+				<view id="edit_case" value="edit_case" />
+				   
+			</views>
+			<layouts mode="any">
+				<layout>reponse</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>reponse</layout>
+			</layouts>
+			<layouts mode="edit_saisie_reponse">
+				<layout>saisie_reponse</layout>
+			</layouts>
+		</type>
+
+		<!-- Fond de dossier -->
+		<type id="FondDeDossier" coretype="FondDeDossier">
+			<label>FondDeDossier</label>
+			<icon>/icons/case_item.png</icon>
+			<bigIcon>/icons/case_item_100.png</bigIcon>
+			<category>Reponse</category>
+			<default-view>view_documents</default-view>
+			<!-- <create-view>create_workspace</create-view> -->
+			<subtypes>
+				<type>FondDeDossierRepertoire</type>
+			</subtypes>
+			<views>
+				<view id="edit_case" value="edit_case" />
+			</views>
+			<layouts mode="any">
+				<layout>heading</layout>
+				<layout>fondDeDossier</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>fondDeDossier</layout>
+			</layouts>
+		</type>
+
+		<!-- Fond de dossier repertoire -->
+		<type id="FondDeDossierRepertoire" coretype="FondDeDossierRepertoire">
+			<label>FondDeDossierRepertoire</label>
+			<icon>/icons/case_item.png</icon>
+			<bigIcon>/icons/case_item_100.png</bigIcon>
+		</type>
+
+		<!-- Fond de dossier fichier -->
+		<type id="FondDeDossierFichier" coretype="FondDeDossierFichier">
+			<label>FondDeDossierFichier</label>
+			<icon>/icons/case_item.png</icon>
+			<bigIcon>/icons/case_item_100.png</bigIcon>
+			<category>FondDeDossierFichier</category>
+			<views>
+				<view id="edit_case" value="edit_case" />
+			</views>
+			<layouts mode="any">
+				<layout>fondDeDossier</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>fondDeDossier</layout>
+			</layouts>
+		</type>
+
+		<!-- Mailbox : define subtypes "Question" instead of "Dossier" beacause 
+			the "Question" own the metadatas <type id="Mailbox"> <subtypes> <type>Question</type> 
+			</subtypes> <deniedSubtypes> <type>CaseItem</type> <type>Case</type> </deniedSubtypes> 
+			<contentViews category="dossier_content"> <contentView>mailbox_dossier_content</contentView> 
+			</contentViews> </type> -->
+
+		<!-- Favoris dossier -->
+		<type id="FavorisDossierRoot">
+			<subtypes>
+				<type>FavorisDossierRepertoire</type>
+			</subtypes>
+		</type>
+
+		<type id="FavorisDossierRepertoire">
+			<label>FavoriDossierRepertoire</label>
+			<subtypes>
+				<type>FavorisDossier</type>
+			</subtypes>
+			<label>FavorisDossierRepertoire</label>
+			<layouts mode="create">
+				<layout>favorisRepertoire</layout>
+			</layouts>
+			<default-view>view_favoris_repertoire</default-view>
+			<contentViews category="content">
+				<contentView>favorisdossier_repertoire_content</contentView>
+			</contentViews>
+		</type>
+
+		<type id="FavorisDossier">
+			<label>FavorisDossier</label>
+			<icon>/icons/case.png</icon>
+			<bigIcon>/icons/case_100.png</bigIcon>
+		</type>
+
+		<!-- Alert -->
+		<type id="Alert">
+			<label>Alerte</label>
+			<icon>/icons/case.png</icon>
+			<bigIcon>/icons/case_100.png</bigIcon>
+			<default-view>suivi</default-view>
+			<layouts mode="create">
+				<layout>alert</layout>
+			</layouts>
+			<layouts mode="view">
+				<layout>alert</layout>
+			</layouts>
+		</type>
+
+	</extension>
+</component>

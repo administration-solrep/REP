@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="fr.dila.statistiques.actions">
+
+	<require>org.nuxeo.ecm.platform.preview.actions</require>
+	<require>org.nuxeo.ecm.platform.comment.actions</require>
+	<require>org.nuxeo.connect.client.actions</require>
+
+	<extension target="org.nuxeo.ecm.platform.actions.ActionService"
+		point="actions">
+
+		<action id="TAB_BIRT_VIEW" link="/statistiques/tabs/birt_preview.xhtml"
+			enabled="true" order="1" label="label.document.preview">
+			<category>VIEW_ACTION_LIST</category>
+			<filter id="birt-filter">
+				<rule grant="true">
+					<type>BirtReport</type>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="TAB_BIRT_GENERATE_PDF" link="/statistiques/tabs/birt_generatePdf.xhtml"
+			enabled="true" order="2" label="Editer le PDF">
+			<category>VIEW_ACTION_LIST</category>
+			<filter id="birt-filter">
+				<rule grant="true">
+					<type>BirtReport</type>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="TAB_BIRT_GENERATE_EXCEL" link="/statistiques/tabs/birt_generateExcel.xhtml"
+			enabled="true" order="3" label="Editer le fichier Excel">
+			<category>VIEW_ACTION_LIST</category>
+			<filter id="birt-filter">
+				<rule grant="true">
+					<type>BirtReport</type>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="TAB_BIRT_GENERATE_ALL_PDF" link="#{statistiqueActions.generateAllPdf()}"
+			enabled="true" order="4" label="Editer tous les fichiers PDF">
+			<category>VIEW_ACTION_LIST</category>
+			<filter id="birt-filter">
+				<rule grant="true">
+					<type>BirtReport</type>
+				</rule>
+			</filter>
+			<filter id="birt-multi-min">
+				<rule grant="true">
+					<condition>#{statistiqueActions.isMulti()}</condition>
+				</rule>
+			</filter>
+		</action>
+
+		<action id="TAB_BIRT_GENERATE_ALL_EXCEL" link="#{statistiqueActions.generateAllExcel()}"
+			enabled="true" order="5" label="Editer tous les fichiers Excel">
+			<category>VIEW_ACTION_LIST</category>
+			<filter id="birt-filter-min">
+				<rule grant="true">
+					<type>BirtReport</type>
+				</rule>
+			</filter>
+			<filter id="birt-multi-min">
+				<rule grant="true">
+					<condition>#{statistiqueActions.isMulti()}</condition>
+				</rule>
+			</filter>
+		</action>
+
+	</extension>
+</component>

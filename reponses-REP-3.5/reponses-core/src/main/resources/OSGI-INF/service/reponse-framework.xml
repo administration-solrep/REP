@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue le service des réponses de l'application Réponses. -->
+<component name="fr.dila.reponses.core.service.ReponseService">
+	<implementation class="fr.dila.reponses.core.service.ReponseServiceImpl" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.ReponseService" />
+	</service>
+</component>

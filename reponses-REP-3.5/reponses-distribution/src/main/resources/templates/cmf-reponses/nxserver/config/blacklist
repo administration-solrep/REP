@@ -1,0 +1,4 @@
+org.nuxeo.ecm.platform.jbpm.defaultContribs
+org.nuxeo.ecm.platform.comment.workflow.services.CommentsModerationService
+org.nuxeo.ecm.platform.comment.workflow.jbpm.contrib
+org.nuxeo.ecm.platform.forum.jbpm.contrib

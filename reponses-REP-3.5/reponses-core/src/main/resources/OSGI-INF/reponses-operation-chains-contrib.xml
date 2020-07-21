@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant permet de contribuer les chaines d'opérations de l'application 
+	Réponses. -->
+<component name="fr.dila.reponses.core.operationChain">
+	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
+		point="chains">
+
+		<!-- Chaine d'opérations exécutée après le passage d'une étape à l'état 
+			"running" -->
+		<chain id="RouteStepChain">
+			<operation id="ST.Distribution.CreateCaseLink" />
+			<operation id="ST.Distribution.StepToCaseLinkMapping">
+				<param name="actionnable" type="boolean">true</param>
+				<param name="mappingProperties" type="Properties">
+					dc:title=Case:dc:title
+					acslk:dueDate=Step:rtsk:dueDate
+					acslk:automaticValidation=Step:rtsk:automaticValidation
+				</param>
+				<param name="leavingChainsProperties" type="Properties">
+					validate=reponsesValidateAndRemoveLink
+					refuse=reponsesRefuseAndRemoveLink
+				</param>
+			</operation>
+			<operation id="Case.Management.Distribution" />
+			<operation id="Reponses.Distribution.CaseLinkCreated" />
+			<operation id="Reponses.Distribution.UpdateDossierState" />
+			<operation id="ST.Distribution.ValidationAutomatique" />
+			<operation id="ST.Distribution.MailNotification" />
+		</chain>
+
+		<!-- Chaine d'opérations exécutée pendant l'exécution de la chaîne RouteStepChain 
+			: supprime l'ancien CaseLink -->
+		<chain id="reponsesValidateAndRemoveLink">
+			<operation id="Reponses.Distribution.RemoveCaseLink" />
+			<operation id="Document.Routing.Resume.Step" />
+		</chain>
+
+		<!-- Chaine d'opérations exécutée pendant l'exécution de la chaîne RouteStepChain 
+			: supprime l'ancien CaseLink -->
+		<chain id="reponsesRefuseAndRemoveLink">
+			<operation id="Reponses.Distribution.RemoveCaseLink" />
+			<operation id="Document.Routing.Resume.Step" />
+		</chain>
+
+		<!-- Chaine d'opérations exécutée après le passage d'une étape à l'état 
+			"canceled" -->
+		<chain id="reponsesUndoRunningActionable">
+			<operation id="Reponses.Distribution.RemoveCaseLink" />
+			<operation id="Document.Routing.BackToReady" />
+		</chain>
+
+	</extension>
+</component>

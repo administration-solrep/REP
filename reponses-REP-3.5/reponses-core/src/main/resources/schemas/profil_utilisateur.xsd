@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://dila.fr/solon/schemas/profil_utilisateur/"
+	xmlns:pru="http://dila.fr/solon/schemas/profil_utilisateur/">
+
+	<xs:include schemaLocation="base.xsd" />
+
+	<!-- Peut prendre les valeurs AUTO, JOURNALIER, AUCUN -->
+	<xs:element name="parametreMail" type="xs:string" default="AUTO" />
+
+	<!-- date de dernier changement de mot de passe -->
+	<xs:element name="dernierChangementMotDePasse" type="xs:date" />
+
+	<!-- colonnes a affiché pour l'utilisateur -->
+	<xs:element name="columns" type="pru:stringList" />
+
+</xs:schema>

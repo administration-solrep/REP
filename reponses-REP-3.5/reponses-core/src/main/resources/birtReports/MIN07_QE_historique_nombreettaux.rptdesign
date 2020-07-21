@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.1.v20100902 Build &lt;2.6.1.v20100915-1750></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nuxeo" id="2102">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@idlv-db-ora-112-4.lyon-dev2.local:1521:ORA112</property>
+            <property name="odaUser">REPONSES_INTE</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">UkVQT05TRVNfSU5URQ==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="QEEnCours" id="2103">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">IDMINISTERE</property>
+                    <text-property name="displayName">IDMINISTERE</text-property>
+                    <text-property name="heading">IDMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MINISTERE</property>
+                    <text-property name="displayName">MINISTERE</text-property>
+                    <text-property name="heading">MINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EDITION</property>
+                    <text-property name="displayName">EDITION</text-property>
+                    <text-property name="heading">EDITION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBQEATTRIBUEES</property>
+                    <text-property name="displayName">NBQEATTRIBUEES</text-property>
+                    <text-property name="heading">NBQEATTRIBUEES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBQEENCOURS</property>
+                    <text-property name="displayName">NBQEENCOURS</text-property>
+                    <text-property name="heading">NBQEENCOURS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBQETRAITEES</property>
+                    <text-property name="displayName">NBQETRAITEES</text-property>
+                    <text-property name="heading">NBQETRAITEES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBQEPUBLIEES</property>
+                    <text-property name="displayName">NBQEPUBLIEES</text-property>
+                    <text-property name="heading">NBQEPUBLIEES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TAUXQETRAITEES</property>
+                    <text-property name="displayName">TAUXQETRAITEES</text-property>
+                    <text-property name="heading">TAUXQETRAITEES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TAUXQEPUBLIEES</property>
+                    <text-property name="displayName">TAUXQEPUBLIEES</text-property>
+                    <text-property name="heading">TAUXQEPUBLIEES</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">IDMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">MINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">EDITION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">NBQEATTRIBUEES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">NBQEENCOURS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">NBQETRAITEES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">NBQEPUBLIEES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">TAUXQETRAITEES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">TAUXQEPUBLIEES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">IDMINISTERE</property>
+                    <property name="nativeName">IDMINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">MINISTERE</property>
+                    <property name="nativeName">MINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">EDITION</property>
+                    <property name="nativeName">EDITION</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">NBQEATTRIBUEES</property>
+                    <property name="nativeName">NBQEATTRIBUEES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">NBQEENCOURS</property>
+                    <property name="nativeName">NBQEENCOURS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">NBQETRAITEES</property>
+                    <property name="nativeName">NBQETRAITEES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">NBQEPUBLIEES</property>
+                    <property name="nativeName">NBQEPUBLIEES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">TAUXQETRAITEES</property>
+                    <property name="nativeName">TAUXQETRAITEES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">TAUXQEPUBLIEES</property>
+                    <property name="nativeName">TAUXQEPUBLIEES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select t.*, (NbQETraitees/NbQEAttribuees) TauxQETraitees, (NbQEPubliees/NbQEAttribuees) TauxQEPubliees from
+(SELECT s1.idministere,s1.ministere,s1.edition,
+  COUNT (DISTINCT concat(concat(origine, ' '),numero)) NbQEAttribuees,
+  (SELECT COUNT( DISTINCT concat(concat(origine, ' '),numero))
+  FROM STATISTIQUE_DATE_PARCOURS s2
+  WHERE s2.datejoreponse IS NULL
+  AND s2.idministere        = s1.idministere
+  ) NbQEEnCours,
+  (SELECT COUNT (DISTINCT concat(concat(origine, ' '),numero))
+  FROM STATISTIQUE_DATE_PARCOURS s3
+  WHERE s3.DATETRANSMISSIONMINISTERE       IS not NULL
+  AND s3.idministere        = s1.idministere
+  ) NbQETraitees,
+  (SELECT COUNT(distinct concat(concat(origine, ' '),numero))
+  FROM STATISTIQUE_DATE_PARCOURS s4
+  WHERE s4.datejoreponse IS not NULL
+  AND s4.idministere        = s1.idministere
+  ) NbQEPubliees  
+FROM STATISTIQUE_DATE_PARCOURS s1
+WHERE idministere IS NOT NULL
+GROUP BY s1.idministere,s1.ministere,s1.edition
+order by s1.idministere) t, ENTITE ENT,
+(SELECT g.ID_ORGANIGRAMME
+FROM GOUVERNEMENT g
+WHERE g.DATE_FIN IS NULL
+OR g.DATE_FIN > SYSDATE) GOUV
+where t.idministere=ENT.ID_ORGANIGRAMME AND ENT.ID_PARENT_GOUV=GOUV.ID_ORGANIGRAMME
+order by ENT.ORDRE]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DateEtat" id="2471">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">DateEtat</property>
+                    <text-property name="displayName">DateEtat</text-property>
+                    <text-property name="heading">DateEtat</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">DateEtat</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">DateEtat</property>
+                    <property name="nativeName">DateEtat</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select TO_DATE(valeur,'dd/MM/YYYY') "DateEtat" from STATISTIQUE_VALEUR
+where id=17]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>MAX(DATEETAT)</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>MAX(DATEETAT)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MAX(DATEETAT)</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <text id="2255">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <grid id="2414">
+            <column id="2415"/>
+            <row id="2416">
+                <property name="height">0.7in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="2417">
+                    <label id="2418">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">MIN07. Questions écrites traitées par les ministères depuis le début de la législature (statistiques du Gouvernement)</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <text id="1868">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <text id="2508">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <text id="2257">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <grid id="2319">
+            <property name="width">7.947916666666667in</property>
+            <column id="2320">
+                <property name="width">1.1in</property>
+            </column>
+            <column id="2321">
+                <property name="width">1.1in</property>
+            </column>
+            <column id="2322">
+                <property name="width">5.479166666666667in</property>
+            </column>
+            <row id="2323">
+                <cell id="2324">
+                    <label id="2327">
+                        <property name="fontWeight">bold</property>
+                        <property name="textUnderline">underline</property>
+                        <text-property name="text">Date de l'état :</text-property>
+                    </label>
+                </cell>
+                <cell id="2325">
+                    <data id="2472">
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">dd/MM/yyyy</property>
+                        </structure>
+                        <property name="whiteSpace">nowrap</property>
+                        <property name="dataSet">DateEtat</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">DateEtat</property>
+                                <text-property name="displayName">DateEtat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["DateEtat"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">DateEtat</property>
+                    </data>
+                </cell>
+                <cell id="2326"/>
+            </row>
+        </grid>
+        <text id="2258">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <table id="2512">
+            <property name="dataSet">QEEnCours</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">EDITION</property>
+                    <text-property name="displayName">EDITION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["EDITION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NBQEATTRIBUEES</property>
+                    <text-property name="displayName">NBQEATTRIBUEES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBQEATTRIBUEES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBQEENCOURS</property>
+                    <text-property name="displayName">NBQEENCOURS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBQEENCOURS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBQETRAITEES</property>
+                    <text-property name="displayName">NBQETRAITEES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBQETRAITEES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBQEPUBLIEES</property>
+                    <text-property name="displayName">NBQEPUBLIEES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBQEPUBLIEES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TAUXQETRAITEES</property>
+                    <text-property name="displayName">TAUXQETRAITEES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TAUXQETRAITEES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TAUXQEPUBLIEES</property>
+                    <text-property name="displayName">TAUXQEPUBLIEES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TAUXQEPUBLIEES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">AggQEAttribuees</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["NBQEATTRIBUEES"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">ColQEAttribuees</property>
+                    <expression name="expression" type="javascript">row["AggQEAttribuees"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">AggQEEnCours</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["NBQEENCOURS"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">ColQEEnCours</property>
+                    <expression name="expression" type="javascript">row["AggQEEnCours"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">AggQETraitees</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["NBQETRAITEES"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">ColQETraitees</property>
+                    <expression name="expression" type="javascript">row["AggQETraitees"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">AggQEPubliees</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["NBQEPUBLIEES"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">AggTauxQETraitees</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["TAUXQETRAITEES"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">AggTauxQEPubliees</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["TAUXQEPUBLIEES"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">ColQEPubliees</property>
+                    <expression name="expression" type="javascript">row["AggQEPubliees"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">ColTauxQETraitees</property>
+                    <expression name="expression" type="javascript">row["AggQETraitees"]/row["AggQEAttribuees"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ColTauxQEPubliees</property>
+                    <expression name="expression" type="javascript">row["AggQEPubliees"]/row["AggQEAttribuees"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="2531">
+                <property name="width">28%</property>
+            </column>
+            <column id="2532">
+                <property name="width">12%</property>
+            </column>
+            <column id="2533">
+                <property name="width">12%</property>
+            </column>
+            <column id="2535">
+                <property name="width">12%</property>
+            </column>
+            <column id="2579">
+                <property name="width">12%</property>
+            </column>
+            <column id="2583">
+                <property name="width">12%</property>
+            </column>
+            <column id="2589">
+                <property name="width">12%</property>
+            </column>
+            <header>
+                <row id="2513">
+                    <property name="height">1in</property>
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="2514">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="2536">
+                            <text-property name="text">Ministère</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2515">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="2537">
+                            <text-property name="text">Nombre total&#13;
+de QE attribuées</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2516">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="2544">
+                            <text-property name="text">Nombre de&#13;
+QE en cours</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2517">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="2584">
+                            <text-property name="text">Nombre de&#13;
+réponses publiées</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2576">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="2547">
+                            <text-property name="text">Nombre de questions traitées par le ministère</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2580">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="2590">
+                            <text-property name="text">Taux de réponses publiées</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2586">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="2585">
+                            <text-property name="text">Taux de questions traitées par le ministère</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="2519">
+                    <property name="height">0.47in</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <list-property name="highlightRules">
+                        <structure>
+                            <property name="operator">eq</property>
+                            <property name="backgroundColor">#E1F0FF</property>
+                            <expression name="testExpr" type="javascript">row[0] % 2</expression>
+                            <simple-property-list name="value1">
+                                <value type="javascript">1</value>
+                            </simple-property-list>
+                        </structure>
+                    </list-property>
+                    <cell id="2520">
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="textAlign">left</property>
+                        <text-data id="2554">
+                            <expression name="valueExpr">row["EDITION"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="2521">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2591">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">NBQEATTRIBUEES</property>
+                        </data>
+                    </cell>
+                    <cell id="2522">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2592">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">NBQEENCOURS</property>
+                        </data>
+                    </cell>
+                    <cell id="2524">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2594">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">NBQEPUBLIEES</property>
+                        </data>
+                    </cell>
+                    <cell id="2577">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <data id="2593">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">NBQETRAITEES</property>
+                        </data>
+                    </cell>
+                    <cell id="2581">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2596">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">TAUXQEPUBLIEES</property>
+                        </data>
+                    </cell>
+                    <cell id="2587">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <data id="2595">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">TAUXQETRAITEES</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="2525">
+                    <property name="height">0.45in</property>
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="2526">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="2553">
+                            <text-property name="text">Total Gouvernement</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2527">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2598">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="resultSetColumn">ColQEAttribuees</property>
+                        </data>
+                    </cell>
+                    <cell id="2528">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2599">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="resultSetColumn">ColQEEnCours</property>
+                        </data>
+                    </cell>
+                    <cell id="2530">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2601">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="resultSetColumn">ColQEPubliees</property>
+                        </data>
+                    </cell>
+                    <cell id="2578">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2600">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="resultSetColumn">ColQETraitees</property>
+                        </data>
+                    </cell>
+                    <cell id="2582">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2603">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">ColTauxQEPubliees</property>
+                        </data>
+                    </cell>
+                    <cell id="2588">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2602">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">ColTauxQETraitees</property>
+                        </data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

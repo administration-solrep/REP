@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Test > Mailbox > Pagination</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">Test > Mailbox > Pagination</td>
+			</tr>
+		</thead>
+		<tbody>
+			<!--Connexion-->
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>1/3</td>
+				<td></td>
+			</tr>
+			<!--Aller à la dernière page-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Dernière page&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314159</td>
+				<td></td>
+			</tr>
+			<!--Aller à la page précédente-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Page précédente&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>2/3</td>
+				<td></td>
+			</tr>
+			<!--Aller à la première page-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Première page&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314180</td>
+				<td></td>
+			</tr>
+			<!--Filtrer le nombre de résultat-->
+			<tr>
+				<td>selectAndWait</td>
+				<td>contentViewGlobalPageSizeFrom_0:contentViewPageSizeSelector</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314180</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314171</td>
+				<td></td>
+			</tr>
+			<!--Aller à la page suivante-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Page suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314180</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314174</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>2/5</td>
+				<td></td>
+			</tr>
+			<!--Mettre à jour (retour page initiale)-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//div[@class=&quot;mailboxContent&quot;]//img[@alt=&quot;Mettre
+					à jour&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>1/5</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

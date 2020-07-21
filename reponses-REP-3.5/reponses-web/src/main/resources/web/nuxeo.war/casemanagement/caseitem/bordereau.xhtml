@@ -1,0 +1,249 @@
+<div xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+	<h:form id="document_properties" enctype="multipart/form-data">
+		<a4j:region id="documentViewRegion">
+			<a4j:outputPanel id="documentViewPanel">
+				<div style="clear: both;"></div>
+
+				<nxu:set var="bordereauDTO"
+					value="#{dossierActions.getBordereauDTO()}" cache="true">
+					<div class="foldableBox">
+						<h3 class="folded">
+							<a href="#nologo" onclick="return toggleBox(this)"> <h:outputText
+									value="Données principales" /></a>
+						</h3>
+
+
+						<div class="boxBody">
+							<nxl:layout value="#{question}" mode="view"
+								name="bordereau_donnees_principales" />
+							<nxl:layout value="#{currentDocument}" mode="view"
+								name="bordereau_ministere" />
+							<nxl:layout value="#{question}" mode="view"
+								name="bordereau_ministere_interpelle" />
+							<c:if
+								test="#{question.getAdapter(Question).isQuestionTypeEcrite()}">
+								<c:choose>
+									<c:when
+										test="#{(bordereauDTO.hasPartEditMinistereRattachement()) and (param.theme != 'reponses/print')}">
+										<nxl:layout value="#{question}" mode="edit"
+											name="bordereau_ministere_rattachement" />
+									</c:when>
+									<c:otherwise>
+										<nxl:layout value="#{question}" mode="view"
+											name="bordereau_ministere_rattachement" />
+									</c:otherwise>
+								</c:choose>
+								<c:choose>
+									<c:when
+										test="#{(bordereauDTO.hasPartEditDirectionPilote()) and (param.theme != 'reponses/print')}">
+										<nxl:layout value="#{question}" mode="edit"
+											name="bordereau_direction_pilote" />
+									</c:when>
+									<c:otherwise>
+										<nxl:layout value="#{question}" mode="view"
+											name="bordereau_direction_pilote" />
+									</c:otherwise>
+								</c:choose>
+							</c:if>
+							<c:if test="#{bordereauDTO.hasPartMiseAJour()}">
+								<h3 class="summaryTitle">
+									<h:outputText value="Mise à jour" />
+								</h3>
+								<nxl:layout value="#{question}" mode="view" name="bordereau_maj" />
+
+								<c:if
+									test="#{question.getAdapter(Question).getRenouvellements().size() > 0}">
+									<h4>
+										<h:outputText value="Renouvellements" />
+									</h4>
+									<nxu:set var="renouvellements"
+										value="#{dossierActions.getRenouvellements()}" cache="true">
+										<table class="dataOutput">
+											<thead>
+												<tr>
+													<th>Date d'effet</th>
+												</tr>
+											</thead>
+											<tbody>
+												<c:forEach var="renouvellement" items="#{renouvellements}">
+													<tr>
+														<td><h:outputText
+																value="${renouvellement.getDateEffet()}"
+																converter="DateConverter" /></td>
+													</tr>
+												</c:forEach>
+											</tbody>
+										</table>
+									</nxu:set>
+								</c:if>
+							</c:if>
+
+							<!-- Données sur la réponse uniquement si Dossier publié -->
+							<c:if test="#{bordereauDTO.hasPartReponse()}">
+								<h3 class="summaryTitle">
+									<h:outputText value="Réponse" />
+								</h3>
+								<nxl:layout value="#{currentReponse}" mode="view"
+									name="bordereau_reponse" />
+							</c:if>
+
+							<c:if test="#{bordereauDTO.hasPartIndexation()}">
+								<h3 class="summaryTitle">
+									<h:outputText value="Indexation" />
+								</h3>
+								<c:if test="#{bordereauDTO.hasPartIndexationAN()}">
+									<nxl:layout value="#{question}" mode="view" name="bdIndexAN" />
+								</c:if>
+								<c:if test="#{bordereauDTO.hasPartIndexationSENAT()}">
+									<nxl:layout value="#{question}" mode="view" name="bdIndexSenat" />
+								</c:if>
+							</c:if>
+						</div>
+					</div>
+
+
+					<div class="foldableBox">
+						<h3 class="folded">
+							<a href="#nologo" onclick="return toggleBox(this)"><h:outputText
+									value="Indexation complémentaire" /></a>
+						</h3>
+
+						<div class="boxBody">
+							<!-- Formulaire d'indexation -->
+							<c:choose>
+								<c:when
+									test="#{(bordereauDTO.hasPartEditableIndexationComplementaire()) and (param.theme != 'reponses/print')}">
+									<nxl:layout value="#{currentIndexation}" mode="edit"
+										name="bdIndexANComp" />
+									<nxl:layout value="#{currentIndexation}" mode="edit"
+										name="bdIndexSenat" />
+									<nxl:layout value="#{currentIndexation}" mode="edit"
+										name="bdIndexMinistere" />
+								</c:when>
+								<c:otherwise>
+									<c:if
+										test="#{bordereauDTO.hasPartIndexationComplementaireAN()}">
+										<nxl:layout value="#{currentIndexation}" mode="view"
+											name="bdIndexAN" />
+									</c:if>
+									<c:if
+										test="#{bordereauDTO.hasPartIndexationComplementaireSE()}">
+										<nxl:layout value="#{currentIndexation}" mode="view"
+											name="bdIndexSenat" />
+									</c:if>
+									<c:if
+										test="#{bordereauDTO.hasPartIndexationComplementaireMotCle()}">
+										<nxl:layout value="#{currentIndexation}" mode="view"
+											name="bdIndexMinistere" />
+									</c:if>
+								</c:otherwise>
+							</c:choose>
+						</div>
+					</div>
+
+					<!-- Données sur la feuille de route (uniquement si question écrite) -->
+					<c:if test="#{bordereauDTO.hasPartFeuilleRoute()}">
+						<div class="foldableBox">
+							<h3 class="folded">
+								<a href="#nologo" onclick="return toggleBox(this)"><h:outputText
+										value="Données secondaires" /></a>
+							</h3>
+
+							<div class="boxBody">
+								<h3 class="summaryTitle">
+									<h:outputText value="Historique des attributions" />
+								</h3>
+								<table class="dataOutput">
+									<thead>
+										<tr>
+											<th></th>
+											<th>Historique des attributions</th>
+											<th>Date</th>
+											<th>Type d'attribution</th>
+										</tr>
+									</thead>
+									<tbody>
+										<nxu:set var="histoAttributions"
+											value="#{dossierActions.getHistoriqueAttributionFeuilleRoute()}"
+											cache="true">
+											<c:forEach var="histoAttribution"
+												items="#{histoAttributions}" varStatus="status">
+												<tr>
+													<td>${status.getIndex()+1}</td>
+													<td><h:outputText
+															value="#{histoAttribution.getMinAttribution()}"
+															converter="#{organigrammeManagerActions.getOrganigrammeConverter('MIN_TYPE')}" /></td>
+													<td><h:outputText
+															value="#{histoAttribution.getDateAttribution()}"
+															converter="DateConverter" /></td>
+													<td><nxdir:directoryEntryOutput
+															value="#{histoAttribution.getTypeAttribution()}"
+															directoryName="feuilleroute_type_creation"
+															localize="true" /></td>
+												</tr>
+											</c:forEach>
+										</nxu:set>
+									</tbody>
+								</table>
+								<br />
+
+								<h3 class="summaryTitle">
+									<h:outputText value="Résumé de la feuille de route" />
+								</h3>
+								<h4>Directions concernées :</h4>
+								<nxu:set var="uss"
+									value="#{dossierActions.getListingUnitesStruct()}" cache="true">
+									<table class="dataOutput">
+										<tbody>
+											<c:forEach var="us" items="#{uss}">
+												<tr>
+													<td>${us}</td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+								</nxu:set>
+								<br />
+
+								<nxu:set var="currentSteps"
+									value="#{routingActions.getCurrentSteps()}" cache="true">
+									<c:if test="#{currentSteps.size() > 0}">
+										<h4>
+											<h:outputText value="Tâche en cours" />
+										</h4>
+										<nxl:layout value="#{currentSteps.get(0)}" mode="view"
+											name="bordereau_tache_cours" />
+									</c:if>
+								</nxu:set>
+
+								<h4>
+									<h:outputText value="Tâche finale de signature" />
+								</h4>
+								<nxl:layout
+									value="#{dossierDistributionActions.getValidationPMStep()}"
+									mode="view" name="bordereau_tache_finale" />
+							</div>
+						</div>
+					</c:if>
+				</nxu:set>
+			</a4j:outputPanel>
+		</a4j:region>
+	</h:form>
+
+	<script>
+  var j = jQuery.noConflict();
+  j(document).ready(function() {
+    j('.tabsContent input').change(function() {
+      isDossierModified = true;
+    });
+  });
+  </script>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+	<h:form id="smartSearchForm">
+
+		<nxu:set var="contentView"
+			value="#{contentViewActions.getContentViewWithProvider('recherche_requeteur')}"
+			cache="true">
+
+			<div class="subbodyContainer">
+				<h3>
+					<h:outputText value="#{messages['label.requeteur.titre.boite']}" />
+				</h3>
+				<div class="boxBody">
+					<h:outputText value="#{messages['label.smart.query.build.help']}"
+						class="infoMessage" />
+					<nxl:layout name="#{contentView.searchLayout.name}" mode="edit"
+						value="#{smartNXQLQueryActions.queryPart}" />
+
+				</div>
+			</div>
+		</nxu:set>
+
+		<div>
+			<a4j:commandButton
+				value="#{messages['command.requeteur.lancer.requete']}"
+				action="view_requeteur_results" styleClass="button"
+				id="searchButton" eventsQueue="ajax_events_queue">
+			</a4j:commandButton>
+			<nxu:set var="actions"
+				value="#{webActions.getActionsList('SMART_SEARCH_BUTTONS')}"
+				cache="true">
+				<c:forEach var="action" items="#{actions}" varStatus="status">
+					<nxh:commandButton action="#{action.getLink()}"
+						value="#{messages[action.label]}"
+						id="smartSearchActionsButton_#{status.index}" styleClass="button" />
+				</c:forEach>
+			</nxu:set>
+		</div>
+
+	</h:form>
+</div>

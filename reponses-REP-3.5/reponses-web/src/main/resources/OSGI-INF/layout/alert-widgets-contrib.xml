@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.widget.alert">
+	<!-- widget pour l'écran d'affichage des alertes -->
+	<require>org.nuxeo.ecm.platform.forms.layouts.webapp.listing</require>
+	<require>fr.dila.st.web.widget</require>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+		<widget name="dateValidityBegin" type="datetime">
+			<labels>
+				<label mode="any">alert.alert_form.validity.start</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>altr:dateValidityBegin</field>
+			</fields>
+			<properties widgetMode="view">
+				<property name="pattern">#{nxu:basicDateAndTimeFormater()}
+				</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="format">#{nxu:basicDateAndTimeFormater()}
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="dateValidityEnd" type="datetime">
+			<labels>
+				<label mode="any">alert.alert_form.validity.end</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>altr:dateValidityEnd</field>
+			</fields>
+			<properties widgetMode="view">
+				<property name="pattern">#{nxu:basicDateAndTimeFormater()}
+				</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="format">#{nxu:basicDateAndTimeFormater()}
+				</property>
+			</properties>
+		</widget>
+		<widget name="recipients" type="template">
+			<labels>
+				<label mode="any">alert.alert_form.recipients</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>altr:recipients</field>
+			</fields>
+			<widgetModes>
+				<mode value="editPassword">hidden</mode>
+			</widgetModes>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/user_suggestion_widget_template.xhtml
+				</property>
+				<property name="required">true</property>
+				<property name="userSuggestionSearchType">USER_TYPE</property>
+				<property name="converter">OrganigrammeUserIdToLabelConverter</property>
+			</properties>
+		</widget>
+
+		<widget name="periodicity" type="text">
+			<labels>
+				<label mode="any">alert.alert_form.periodicity</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>altr:periodicity</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">true</property>
+			</properties>
+		</widget>
+
+		<!-- Widget pour les listes de résultats -->
+
+		<widget name="listingAlerteTitre" type="template">
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/listing/title_alert_listing_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+	</extension>
+</component>

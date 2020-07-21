@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-qa.lyon-dev2.local:8080/reponses/" />
+<title>021 - Export CSV - Espace Travail</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">021 - Export CSV - Espace Travail</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>setSpeed</td>
+				<td>0</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<!--ESPACE DE TRAVAIL-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:0:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Export CSV</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Export ZIP</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>selectAndWait</td>
+				<td>id=contentViewGlobalPageSizeFrom_0:contentViewPageSizeSelector</td>
+				<td>label=50</td>
+			</tr>
+			<tr>
+				<td>setSpeed</td>
+				<td>1500</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=corbeille_content:nxl_cm_inbox_caselink:listing_ajax_checkbox_dto_header</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>setSpeed</td>
+				<td>0</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Export CSV</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>erreur</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>contexte</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Export ZIP</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>erreur</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>contexte</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Déconnexion</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertConfirmation</td>
+				<td>Etes-vous sûr de vouloir quitter l'application ?</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

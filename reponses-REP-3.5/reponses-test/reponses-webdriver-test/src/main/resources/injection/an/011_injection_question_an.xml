@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>44263</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="645208">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean-Jacques</ns2:prenom>
+				<ns2:nom>Urvoas</ns2:nom>
+				<ns2:grp_pol>SRC</ns2:grp_pol>
+				<ns2:circonscription>Finistère 1</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean-Jacques Urvoas attire l'attention de
+				M. le ministre de l'éducation nationale sur la place des mouvements
+				pédagogiques dans les écoles supérieures du professorat et de
+				l'éducation (ESPE). Aujourd'hui, ces mouvements sont reconnus par
+				l'éducation nationale comme partenaires à part entière et ont été
+				conviés aux travaux sur la refondation de l'école. Ils siègent
+				désormais au conseil de l'innovation pour la réussite éducative.
+				Pour autant, ils n'apparaissent toujours pas ni dans les textes
+				ministériels, ni dans les maquettes des ESPE, ni dans les programmes
+				de formation destinés aux futurs professeurs des écoles. Dans le
+				cadre de la réforme des rythmes scolaires et des projets éducatifs
+				territoriaux, ils se retrouvent la plupart du temps noyés au sein du
+				secteur associatif où seule émerge l'éducation populaire avec ses
+				activités autour de l'école. Pourtant, les enseignants des
+				mouvements pédagogiques sont bien présents dans les établissements.
+				Ils forment un réseau de professionnels, de praticiens chercheurs,
+				tout disposé à nourrir les formations initiales et continues, à
+				enrichir les pratiques et à accompagner les jeunes professeurs de
+				leur expérience. En substance, l'innovation et ses expérimentations
+				pédagogiques existent depuis plus d'un siècle, mais restent
+				confinées, méconnues, voire écartées. L'évolution des pratiques
+				implique de travailler avec les enseignants qui portent l'innovation
+				au cœur de l'école. Certes, de plus en plus nombreux sont les
+				mémoires de recherche d'étudiants relatifs aux nouvelles pédagogies.
+				Mais il est paradoxalement difficile de les accompagner car il
+				n'existe pas, à de rares exceptions près, de passerelle officielle
+				ou de cadre entre ESPE et enseignants-praticiens-chercheurs des
+				mouvements pédagogiques. Aujourd'hui, force est de constater
+				l'absence de ces mouvements au sein du projet de refondation de la
+				formation. Dans la mise en place des ESPE, leur place effective est
+				quasi-inexistante. Il souhaiterait dès lors connaître les
+				dispositions envisagées en vue de déverrouiller les blocages
+				persistants à l'échelle académique de telle sorte que s'ouvre la
+				formation initiale des ESPE aux mouvements pédagogiques agréés et
+				que leur place soit ainsi légitimement et officiellement
+				reconnue.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enseignement : personnel</ns2:rubrique>
+				<ns2:rubrique_ta>enseignants</ns2:rubrique_ta>
+				<ns2:analyse>formation</ns2:analyse>
+				<ns2:analyse> écoles supérieures du professorat de l'éducation</ns2:analyse>
+				<ns2:analyse> perspectives</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

@@ -1,0 +1,71 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<c:if test="false">
+ La content view classique est modifié (allegée) pour permettre un affichage dans le menu de gauche.
+
+ Parameters:
+ - contentViewName: the content view name, mandatory
+ - contentViewId: a marker to generate unique ids
+   when iterating over a list of content views, optional
+   when only one content view is displayed in the page.
+ - contentViewDocument
+ - contentViewSortInfos
+ - selectedResultLayoutColumns: list of result layout columns selected
+</c:if>
+	<nxu:set var="contentView"
+		value="#{contentViewActions.getContentViewWithProvider(contentViewName, contentViewDocument, nxu:test(empty contentViewSortInfos, null, contentViewSortInfos), -1, -1)}"
+		cache="true">
+		<nxu:set var="selectedResultLayoutColumns"
+			value="#{nxu:test(selectedResultLayoutColumns == null, contentView.resultLayoutColumns, selectedResultLayoutColumns)}"
+			cache="true">
+
+
+
+			<c:if test="#{contentView != null}">
+				<a4j:region id="contentViewAjaxRegion_#{contentViewId}">
+
+					<nxu:set var="provider" value="#{contentView.currentPageProvider}"
+						cache="true">
+        #{provider.setSelectedEntries(documentsListsManager.getWorkingList(contentView.selectionListName))}
+
+        <ui:insert name="content_view_header_before_selector">
+						</ui:insert>
+						<ui:insert name="content_view_selector">
+						</ui:insert>
+
+						<ui:decorate
+							template="/incl/documents_layout_table_no_resize.xhtml">
+							<ui:param name="documents" value="#{provider.currentSelectPage}" />
+							<ui:param name="listName"
+								value="#{contentView.selectionListName}" />
+							<ui:param name="layoutName"
+								value="#{contentView.currentResultLayout.name}" />
+
+							<ui:define name="empty_folder_label">
+								<h:outputText styleClass="emptyStyleClass"
+									value="#{messages['label.content.emptyFolder']}"
+									rendered="#{documents.rowCount == 0 and not provider.hasError()}" />
+							</ui:define>
+
+							<ui:define name="error_message">
+								<c:if test="#{provider.hasError()}">
+              #{provider.errorMessage}
+            </c:if>
+							</ui:define>
+						</ui:decorate>
+
+					</nxu:set>
+
+				</a4j:region>
+			</c:if>
+		</nxu:set>
+	</nxu:set>
+
+</div>

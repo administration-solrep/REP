@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue le service de gestion du fond de dossier du socle 
+	SOLREP. -->
+<component name="fr.dila.ss.core.service.SSFondDeDossierService">
+	<implementation class="fr.dila.ss.core.service.SSFondDeDossierServiceImpl" />
+
+	<service>
+		<provide interface="fr.dila.ss.api.service.SSFondDeDossierService" />
+	</service>
+</component>

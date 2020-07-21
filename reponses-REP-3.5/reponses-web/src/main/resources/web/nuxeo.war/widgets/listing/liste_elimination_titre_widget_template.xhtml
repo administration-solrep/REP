@@ -1,0 +1,89 @@
+<f:subview id="#{widget.id}" xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<nxu:set var="liste" value="#{field_0.getAdapter(ListeElimination)}"
+		cache="true">
+
+		<c:choose>
+			<c:when test="#{liste.isSuppressionEnCours()}">
+				<h:outputText value="#{field_0.title} en cours de suppression" />
+			</c:when>
+			<c:when test="#{liste.isAbandonEnCours()}">
+				<h:outputText value="#{field_0.title} en cours d'abandon" />
+			</c:when>
+			<c:otherwise>
+				<h:outputLink id="titleref" class="#{field_0.name}_popupTarget"
+					value="return false;">
+					<h:outputText value="#{field_0.title}" />
+					<c:if test="#{liste.isEnCours()}">
+		        en cours
+		      </c:if>
+				</h:outputLink>
+			</c:otherwise>
+		</c:choose>
+		<c:if
+			test="#{(!liste.isSuppressionEnCours()) and (!liste.isAbandonEnCours())}">
+			<div>
+				<script type="text/javascript">
+      var options = {
+          bind: 'click',
+          useFilter: false,
+          anchor: '#popupReceiver'
+      };
+      setupContextMenu('a.#{field_0.name}_popupTarget','#{field_0.name}_menuPopup', options);
+      </script>
+
+				<div style="display: none;" class="contextMenu"
+					id="#{field_0.name}_menuPopup">
+					<ul>
+
+						<li><h:commandLink
+								action="#{archiveActions.navigateToListeElimination(field_0)}">
+								<nxu:graphicImage value="/icons/view_doc.png" />
+								<h:outputText value=" #{messages['command.global.open']}" />
+							</h:commandLink></li>
+
+						<li><h:commandLink
+								action="#{archiveActions.editerBordereau(field_0)}"
+								onclick="if(confirm('Etes-vous sûr de vouloir éditer un bordereau ?')) showPDF(); else return false;">
+								<nxu:graphicImage value="/img/icons/document_edit_16.png" />
+								<h:outputText value=" Bordereau" />
+							</h:commandLink></li>
+
+						<c:if test="#{liste.isEnCours()}">
+							<li><h:commandLink
+									action="#{archiveActions.viderListeElimination(field_0)}"
+									onclick="return confirm('Etes-vous sûr de vouloir vider cette liste d\'élimination ?');">
+									<nxu:graphicImage value="/img/icons/document_delete_16.png" />
+									<h:outputText value=" Vider" />
+								</h:commandLink></li>
+						</c:if>
+
+						<c:if test="#{!liste.isEnCours()}">
+							<li><h:commandLink
+									action="#{archiveActions.eliminerListe(field_0)}"
+									onclick="return confirm('Etes-vous sûr de vouloir supprimer les dossiers de cette liste d\'élimination ?');">
+									<nxu:graphicImage value="/img/icons/delete_16.png" />
+									<h:outputText value=" Elimination des données" />
+								</h:commandLink></li>
+
+							<li><h:commandLink
+									action="#{archiveActions.abandonListeElimination(field_0)}"
+									onclick="return confirm('Etes-vous sûr de vouloir abandonner cette liste d\'élimination ?');">
+									<nxu:graphicImage value="/img/icons/document_delete_16.png" />
+									<h:outputText value=" Abandon" />
+								</h:commandLink></li>
+						</c:if>
+
+					</ul>
+				</div>
+			</div>
+		</c:if>
+
+	</nxu:set>
+
+</f:subview>

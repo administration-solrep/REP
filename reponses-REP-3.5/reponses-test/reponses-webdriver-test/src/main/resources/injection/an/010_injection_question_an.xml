@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>44262</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="645267">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean-Philippe</ns2:prenom>
+				<ns2:nom>Nilor</ns2:nom>
+				<ns2:grp_pol>GDR</ns2:grp_pol>
+				<ns2:circonscription>Martinique 4</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean-Philippe Nilor attire l'attention de
+				M. le ministre de l'éducation nationale sur le rôle indispensable
+				d'un auxiliaire de vie scolaire individuel (AVSI) dans la
+				scolarisation des enfants en situation de handicap. La scolarisation
+				d'un enfant est primordiale. Cependant, en réalité, pour les
+				handicapés elle devient un véritable parcours du combattant. En
+				vertu de la loi du 11 février 2005 pour l'égalité des droits et des
+				chances, la participation et la citoyenneté des personnes
+				handicapées, ces enfants sont de plus en plus scolarisés dans leur
+				école de quartier ou dans une école privée. L'éducation nationale
+				met à la disposition des familles, dans le cas où l'enfant en a
+				besoin et sur avis favorable de la maison départementale des
+				personnes handicapées (MDPH), une aide à la scolarisation en la
+				personne d'un AVSI. Ce dernier participe à l'accompagnement, la
+				socialisation, la sécurité et l'aide à la scolarisation des enfants
+				en situation de handicap ou présentant un trouble de santé
+				invalidant. Paradoxalement, ce dispositif suscite chez les parents
+				espoir et désillusion. En effet, aujourd'hui, bon nombre de familles
+				s'adressent à la MDPH, se voient délivrer des notifications
+				d'attribution d'un AVSI pour l'enfant concerné, et en définitive
+				n'en disposent pas, ou peu. Privé de cet accompagnement, la
+				différence de l'enfant est plus pénalisante puisque l'enseignant
+				peine à s'occuper de tous les élèves en même temps, l'intéressé
+				nécessitant plus de temps et d'attention. L'AVSI intervient dans la
+				vie de son bénéficiaire au même titre que les aidants à domicile
+				pour lesquels les familles bénéficient de fonds pour les rémunérer.
+				Il souhaite donc savoir quelles dispositions il entend prendre pour
+				permettre la scolarisation de ces enfants dans des conditions
+				optimales.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enseignement : personnel</ns2:rubrique>
+				<ns2:rubrique_ta>auxiliaires de vie scolaire</ns2:rubrique_ta>
+				<ns2:analyse>développement</ns2:analyse>
+				<ns2:analyse> perspectives</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

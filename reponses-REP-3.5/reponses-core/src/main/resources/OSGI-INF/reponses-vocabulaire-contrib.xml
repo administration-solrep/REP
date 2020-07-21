@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Cet composant contribue les vocabulaires de l'application Réponses. -->
+<component name="fr.dila.reponses.core.vocabulaire" version="1.0.0">
+	<require>org.nuxeo.runtime.started</require>
+	<require>fr.dila.reponses.core.schema</require>
+
+	<!-- define dila vocabulary data -->
+	<extension target="org.nuxeo.ecm.directory.sql.SQLDirectoryFactory"
+		point="directories">
+		<directory name="AN_analyse">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_AN_ANALYSE</table>
+			<dataFile>data/vocabularies/AN_analyse.csv</dataFile>
+		</directory>
+		<directory name="TA_rubrique">
+			<schema>xvocabulary</schema>
+			<parentDirectory>AN_rubrique</parentDirectory>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_TA_RUBRIQUE</table>
+			<dataFile>data/vocabularies/TA_rubrique.csv</dataFile>
+		</directory>
+		<directory name="AN_rubrique">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_AN_RUBRIQUE</table>
+			<dataFile>data/vocabularies/AN_rubrique.csv</dataFile>
+		</directory>
+		<directory name="SE_rubrique">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_SE_RUBRIQUE</table>
+			<dataFile>data/vocabularies/SE_rubrique.csv</dataFile>
+		</directory>
+		<directory name="SE_renvoi">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_SE_RENVOI</table>
+			<dataFile>data/vocabularies/SE_renvoi.csv</dataFile>
+		</directory>
+		<directory name="SE_theme">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_SE_THEME</table>
+			<dataFile>data/vocabularies/SE_theme.csv</dataFile>
+		</directory>
+
+		<directory name="groupe_politique">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_GROUPE_POLITIQUE</table>
+			<dataFile>data/vocabularies/groupe_politique.csv</dataFile>
+		</directory>
+
+		<directory name="type_question">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_TYPE_QUESTION_AN</table>
+			<dataFile>data/vocabularies/type_question.csv</dataFile>
+		</directory>
+
+		<directory name="type_question_recherche">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_TYPE_QUESTION_RECHERCHE</table>
+			<dataFile>data/vocabularies/type_question_recherche.csv</dataFile>
+		</directory>
+
+
+		<directory name="etat_question">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_ETAT_QUESTION</table>
+			<dataFile>data/vocabularies/etat_question.csv</dataFile>
+		</directory>
+
+		<directory name="origine_question">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_ORIGINE_QUESTION</table>
+			<dataFile>data/vocabularies/origine_question.csv</dataFile>
+		</directory>
+
+		<directory name="caracteristique_question">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_CARACT_QUESTION</table>
+			<dataFile>data/vocabularies/caracteristique_question.csv</dataFile>
+		</directory>
+
+		<directory name="verrou">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_VERROU</table>
+			<dataFile>data/vocabularies/verrou.csv</dataFile>
+		</directory>
+
+		<directory name="niveau_visibilite">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_NIVEAU_VISIBILITE</table>
+			<dataFile>data/vocabularies/niveau_visibilite.csv</dataFile>
+		</directory>
+
+		<directory name="niveau_priorite">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_NIVEAU_PRIORITE</table>
+			<dataFile>data/vocabularies/niveau_priorite.csv</dataFile>
+		</directory>
+
+		<directory name="legislature">
+			<schema>vocabularyLegislature</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_LEGISLATURE</table>
+			<dataFile>data/vocabularies/legislature.csv</dataFile>
+		</directory>
+
+		<directory name="motclef_ministere">
+			<schema>xvocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_MOTCLEF_MINISTERE</table>
+		</directory>
+
+		<!-- Vocabulaire des types de création de feuille de route -->
+		<directory name="feuilleroute_type_creation">
+			<schema>xvocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_FEUILLEROUTE_TYPE_CREATION</table>
+			<dataFile>data/vocabularies/feuilleroute_type_creation.csv</dataFile>
+		</directory>
+
+		<!-- *********************************************************************** 
+			Vocabulaires des feuilles de route *********************************************************************** -->
+		<!-- Types de tâches de la feuille de route (surcharge de Nuxeo CM) -->
+		<directory name="cm_routing_task_type">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<table>VOC_CM_ROUTING_TASK_TYPE</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>data/vocabularies/routing_task_type.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+		<directory name="validation_statut_etape">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<table>VOC_VALIDATION_STATUT_ETAPE</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>data/vocabularies/validation_statut_etape.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+		<directory name="statut_etape_recherche">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<table>VOC_STATUT_ETAPE_RECHERCHE</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>data/vocabularies/statut_etape_recherche.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+		<directory name="etat_etape">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<table>VOC_ETAT_ETAPE</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>data/vocabularies/etat_etape.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+		<!-- *********************************************************************** 
+			Vocabulaires user *********************************************************************** -->
+		<!-- Civilité -->
+		<directory name="title">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<table>VOC_TITLE</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>data/vocabularies/title.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+		<!-- Boolean Oui / Non -->
+		<directory name="boolean_voc">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<table>VOC_BOOLEAN</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>data/vocabularies/boolean.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+		<!-- *********************************************************************** 
+			Vocabulaires du requêteur *********************************************************************** -->
+		<!-- Boolean Oui / Non -->
+		<directory name="boolean_requeteur_voc">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<table>VOC_BOOLEAN_REQUETEUR</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>data/vocabularies/boolean_requeteur.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+
+		<directory name="operators">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<table>VOC_OPERATORS</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>data/vocabularies/operators.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+		<directory name="comparators">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<table>VOC_COMPARATORS</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>data/vocabularies/comparators.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+		<!-- bordereau : label des champs du bordereau en fonction de leur nom 
+			technique -->
+		<directory name="bordereau_label">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<table>VOC_BORDEREAU_LABEL</table>
+			<dataFile>data/vocabularies/bordereau_label.csv</dataFile>
+		</directory>
+	</extension>
+
+	<!-- define UI info for vocabulary -->
+	<extension target="org.nuxeo.ecm.directory.ui.DirectoryUIManager"
+		point="directories">
+		<directory name="AN_analyse" layout="dilaVocabulary"
+			sortField="label" />
+		<directory name="SE_renvoi" layout="dilaVocabulary"
+			sortField="label" />
+		<directory name="SE_theme" layout="dilaVocabulary"
+			sortField="label" />
+		<directory name="SE_rubrique" layout="dilaVocabulary"
+			sortField="label" />
+		<directory name="niveau_visibilite" layout="dilaVocabulary"
+			sortField="id" />
+		<directory name="groupe_politique" layout="dilaVocabulary"
+			sortField="id" />
+		<directory name="AN_rubrique" layout="dilaVocabulary"
+			sortField="label">
+			<deleteConstraint
+				class="org.nuxeo.ecm.directory.api.ui.HierarchicalDirectoryUIDeleteConstraint">
+				<property name="targetDirectory">TA_rubrique</property>
+				<property name="targetDirectoryField">parent</property>
+			</deleteConstraint>
+		</directory>
+		<directory name="TA_rubrique" layout="dila_child_vocabulary"
+			sortField="parent" />
+		<directory name="legislature" layout="dilaLegislatureVocabulary"
+			sortField="label" />
+		<directory name="origine_question" layout="dilaVocabulary"
+			sortField="label" />
+	</extension>
+
+	<!-- define DILA vocabulary layout -->
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<layout name="dilaLegislatureVocabulary">
+			<templates>
+				<template mode="any">
+					/directory/directory_layout_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>vocabulary_leg_id</widget>
+				</row>
+				<row>
+					<widget>vocabulary_leg_label</widget>
+				</row>
+				<row>
+					<widget>vocabulary_leg_date_debut</widget>
+				</row>
+				<row>
+					<widget>vocabulary_leg_date_fin</widget>
+				</row>
+			</rows>
+
+			<widget name="vocabulary_leg_id" type="text">
+				<labels>
+					<label mode="any">Identifiant</label>
+				</labels>
+				<translated>false</translated>
+				<fields>
+					<field>vocabularyLegislature:id</field>
+				</fields>
+				<widgetModes>
+					<mode value="edit">view</mode>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+				</properties>
+			</widget>
+
+			<widget name="vocabulary_leg_label" type="text">
+				<labels>
+					<label mode="any">Intitulé</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>vocabularyLegislature:label</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="size">50</property>
+				</properties>
+			</widget>
+			<widget name="vocabulary_leg_date_debut" type="datetime">
+				<labels>
+					<label mode="any">Date de début</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>vocabularyLegislature:dateDebut</field>
+				</fields>
+				<properties widgetMode="view">
+					<property name="pattern">#{nxu:basicDateAndTimeFormater()}
+					</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="format">#{nxu:basicDateAndTimeFormater()}
+					</property>
+				</properties>
+			</widget>
+			<widget name="vocabulary_leg_date_fin" type="datetime">
+				<labels>
+					<label mode="any">Date de fin</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>vocabularyLegislature:dateFin</field>
+				</fields>
+				<properties widgetMode="view">
+					<property name="pattern">#{nxu:basicDateAndTimeFormater()}
+					</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="format">#{nxu:basicDateAndTimeFormater()}
+					</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<layout name="dilaVocabulary">
+			<templates>
+				<template mode="any">
+					/directory/directory_layout_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>vocabulary_id</widget>
+				</row>
+				<row>
+					<widget>vocabulary_label</widget>
+				</row>
+				<!-- <row> <widget>vocabulary_obsolete</widget> </row> <row> <widget>vocabulary_order</widget> 
+					</row> -->
+			</rows>
+		</layout>
+
+		<layout name="dila_child_vocabulary">
+			<templates>
+				<template mode="any">
+					/directory/directory_layout_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>parent</widget>
+				</row>
+				<row>
+					<widget>xvocabulary_id</widget>
+				</row>
+				<row>
+					<widget>xvocabulary_label</widget>
+				</row>
+				<!-- <row> <widget>xvocabulary_obsolete</widget> </row> <row> <widget>xvocabulary_order</widget> 
+					</row> -->
+			</rows>
+			<widget name="parent" type="selectOneDirectory">
+				<labels>
+					<label mode="any">Parent</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>xvocabulary:parent</field>
+				</fields>
+				<properties mode="any">
+					<property name="directoryName">AN_rubrique</property>
+					<property name="localize">true</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+				</properties>
+			</widget>
+		</layout>
+	</extension>
+
+</component>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-test.lyon-dev2.local:8180/" />
+<title>06_MIN06</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">06_MIN06</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>moasword</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/statistiques/view_report.faces?conversationId=0NXMAIN</td>
+				<td></td>
+			</tr>
+			<!--Premier ministre-->
+			<tr>
+				<td>click</td>
+				<td>id=birt_reports:nxl_reports_listing_5:nxw_reportTitre_5:nxw_reportTitre_5_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>pause</td>
+				<td>5000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=birt_reports:nxl_reports_listing_5:nxw_reportTitre_5:nxw_reportTitre_5_tree</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=birt_reports:nxl_reports_listing_5:nxw_reportTitre_5:nxw_reportTitre_5_tree:node:0:node:0::nxw_reportTitre_5_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Nombre de réponses dans un délai &lt;= 30
+					jours')]/../../td[2]/div[contains(.,'63')]/../../td[3]/div[contains(.,'27%')]/../../td[4]/div[contains(.,'61')]/../../td[5]/div[contains(.,'26%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Nombre de réponses dans un délai compris
+					entre 30 jours et 60
+					jours')]/../../td[2]/div[contains(.,'31')]/../../td[3]/div[contains(.,'13%')]/../../td[4]/div[contains(.,'27')]/../../td[5]/div[contains(.,'12%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Nombre de réponses dans un délai &gt; 60
+					jours')]/../../td[2]/div[contains(.,'77')]/../../td[3]/div[contains(.,'33%')]/../../td[4]/div[contains(.,'70')]/../../td[5]/div[contains(.,'30%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total du nombre de
+					réponses')]/../../td[2]/div[contains(.,'171')]/../../td[3]/div[contains(.,'74%')]/../../td[4]/div[contains(.,'158')]/../../td[5]/div[contains(.,'68%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Délai moyen de réponse
+					(jours)')]/../../td[2]/div[contains(.,'68')]/../../td[4]/div[contains(.,'70')]</td>
+				<td></td>
+			</tr>
+			<!--Ministère chargé du Budget-->
+			<tr>
+				<td>click</td>
+				<td>id=birt_reports:nxl_reports_listing_5:nxw_reportTitre_5:nxw_reportTitre_5_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>pause</td>
+				<td>5000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=birt_reports:nxl_reports_listing_5:nxw_reportTitre_5:nxw_reportTitre_5_tree</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=birt_reports:nxl_reports_listing_5:nxw_reportTitre_5:nxw_reportTitre_5_tree:node:0:node:21::nxw_reportTitre_5_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Nombre de réponses dans un délai &lt;= 30
+					jours')]/../../td[2]/div[contains(.,'30')]/../../td[3]/div[contains(.,'3%')]/../../td[4]/div[contains(.,'19')]/../../td[5]/div[contains(.,'2%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Nombre de réponses dans un délai compris
+					entre 30 jours et 60
+					jours')]/../../td[2]/div[contains(.,'56')]/../../td[3]/div[contains(.,'6%')]/../../td[4]/div[contains(.,'34')]/../../td[5]/div[contains(.,'3%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Nombre de réponses dans un délai &gt; 60
+					jours')]/../../td[2]/div[contains(.,'453')]/../../td[3]/div[contains(.,'47%')]/../../td[4]/div[contains(.,'406')]/../../td[5]/div[contains(.,'42%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total du nombre de
+					réponses')]/../../td[2]/div[contains(.,'539')]/../../td[3]/div[contains(.,'55%')]/../../td[4]/div[contains(.,'459')]/../../td[5]/div[contains(.,'47%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Délai moyen de réponse
+					(jours)')]/../../td[2]/div[contains(.,'110')]/../../td[4]/div[contains(.,'123')]</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

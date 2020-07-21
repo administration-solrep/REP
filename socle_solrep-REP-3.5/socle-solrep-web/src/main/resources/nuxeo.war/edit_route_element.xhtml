@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout">
+
+	<ui:define name="body">
+		<div id="editStep">
+			<h3>
+				<h:outputText value="#{messages['title.edit']} #{currentType.id}" />
+			</h3>
+			<ui:include src="/incl/message_banner.xhtml" />
+			<h:form id="edit_step">
+				<c:if test="#{!empty documentActions.changeableDocumentType.layout}">
+					<ui:include src="/incl/document_editor.xhtml" />
+				</c:if>
+				<c:if test="#{empty documentActions.changeableDocumentType.layout}">
+					<nxl:documentLayout mode="edit" value="#{changeableDocument}" />
+					<ui:include src="/incl/document_versioning.xhtml" />
+				</c:if>
+				<h:commandButton class="button" value="#{messages['command.save']}"
+					action="#{routingActions.updateRouteElement}" id="update_step" />
+				<h:outputText value=" " />
+				<h:commandButton class="button"
+					value="#{messages['command.cancel']}"
+					action="#{routingActions.goBackToRoute}" id="cancel_update_step"
+					immediate="true" />
+			</h:form>
+		</div>
+
+		<script>
+      var j = jQuery.noConflict();
+      var routingTaskTypeId = '[id$=routing_task_type]';
+      var validAutoCheckId = '[id$=nxw_routing_task_automatic_validation]';
+		var obligatoireSggId = '[id$=nxw_routing_task_obligatoire_sgg]';
+		var obligatoireMinistereId = '[id$=nxw_routing_task_obligatoire_ministere]';
+
+      j(document).ready(function() {
+
+			j(obligatoireSggId).click(function() {
+				if (j(this).is(':checked')) {
+					j(obligatoireMinistereId).attr('checked', false);
+				}
+			});
+
+			j(obligatoireMinistereId).click(function() {
+				if (j(this).is(':checked')) {
+					j(obligatoireSggId).attr('checked', false);
+				}
+			});
+      });
+    </script>
+	</ui:define>
+
+</nxthemes:composition>

@@ -1,0 +1,51 @@
+-- Changement de type varchar en CLOB
+ALTER TABLE "REPLOGD_FULLLOG"
+add
+   (
+   "ITEM_TEMP" CLOB
+   );   
+
+update "REPLOGD_FULLLOG" set "ITEM_TEMP" = "ITEM", "ITEM"=null;
+
+
+ALTER TABLE "REPLOGD_FULLLOG"
+drop ("ITEM");
+ALTER TABLE "REPLOGD_FULLLOG"
+add
+   (
+   "ITEM" CLOB
+   );
+
+update "REPLOGD_FULLLOG" set "ITEM"="ITEM_TEMP";
+
+ALTER TABLE "REPLOGD_FULLLOG"
+drop ("ITEM_TEMP");
+
+
+commit;
+
+
+ALTER TABLE "REPLOGL_FULLLOG"
+add
+   (
+   "ITEM_TEMP" CLOB
+   );   
+
+update "REPLOGL_FULLLOG" set "ITEM_TEMP" = "ITEM", "ITEM"=null;
+
+
+ALTER TABLE "REPLOGL_FULLLOG"
+drop ("ITEM");
+ALTER TABLE "REPLOGL_FULLLOG"
+add
+   (
+   "ITEM" CLOB
+   );
+
+update "REPLOGL_FULLLOG" set "ITEM"="ITEM_TEMP";
+
+ALTER TABLE "REPLOGL_FULLLOG"
+drop ("ITEM_TEMP");
+
+commit;
+

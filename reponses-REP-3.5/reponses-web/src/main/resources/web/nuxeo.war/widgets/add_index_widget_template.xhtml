@@ -1,0 +1,49 @@
+<div xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<!-- Constantes demandées pour ce widget : 
+    widget.properties['vocabularyId']
+ -->
+	<c:if test="#{widget.mode == 'edit'}">
+		<nxu:set var="currentVocUI"
+			value="#{vocSuggMap[widget.properties['directoryName']]}">
+			<a4j:outputPanel id="#{widget.id}_indexPanel" ajaxRendered="false">
+				<ui:include src="/incl/message_banner.xhtml" />
+				<a4j:region immediate="true">
+					<div>
+						<span id="#{widget.id}_index_suggestDiv"> <h:inputText
+								id="#{widget.id}_indexLabel" value="#{currentVocUI.indexLabel}"
+								styleClass="dataInputText"
+								onkeydown="if (event.keyCode == 13 || event.keyCode == 9) {return false;}">
+							</h:inputText>
+						</span>
+						<a4j:commandLink action="#{indexActions.addIndex(currentVocUI)}"
+							reRender="indexPanel_Senat,indexPanel_AN,indexPanel_Ministere,#{widget.id}_indexPanel">
+							<h:graphicImage value="/icons/action_add.gif" />
+						</a4j:commandLink>
+					</div>
+				</a4j:region>
+
+				<h:panelGroup id="#{widget.id}_index_suggestGroup">
+					<rich:suggestionbox id="#{widget.id}_index_suggestBox"
+						for="#{widget.id}_indexLabel" tokens=""
+						suggestionAction="#{currentVocUI.getSuggestions}" var="sugindex"
+						nothingLabel="#{messages['label.suggestion.sansresultats']}"
+						minChars="3" frequency="0" requestDelay="100">
+						<h:column>
+							<f:subview>
+								<h:graphicImage value="/icons/tag_blue.png" alt="(index)" />
+								<h:outputText value="${sugindex}" />
+							</f:subview>
+						</h:column>
+					</rich:suggestionbox>
+				</h:panelGroup>
+			</a4j:outputPanel>
+		</nxu:set>
+	</c:if>
+</div>

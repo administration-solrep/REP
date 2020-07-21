@@ -1,0 +1,150 @@
+<f:subview id="#{widget.id}" xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+	<c:if test="#{widget.mode != 'csv'}">
+		<c:choose>
+			<c:when test="#{field_1}">
+				<h:graphicImage value="/img/icons/lock_16.png"
+					alt="#{messages['label.listing.widget.renseignement.locked']}"
+					title="#{messages['label.listing.widget.renseignement.locked']}" />
+			</c:when>
+			<c:otherwise>
+				<h:graphicImage value="/img/icons/vide_16.png" />
+			</c:otherwise>
+		</c:choose>
+
+		<nxu:set var="dossierLinkList" value="#{field_5}" cache="true">
+			<c:choose>
+				<c:when test="#{fn:length(dossierLinkList) > 1}">
+					<c:choose>
+						<c:when test="#{field_2}">
+							<h:outputLink id="dossierslots" value="javascript:return false;"
+								class="#{field_0}_popupTargetlot">
+								<h:graphicImage value="/img/icons/link_16.png"
+									alt="#{messages['label.listing.widget.renseignement.hasLot']}"
+									title="#{messages['label.listing.widget.renseignement.hasLot']}" />
+							</h:outputLink>
+							<c:set var="popupIdlot"
+								value="#{nxu:concat(field_0, '_menuPopuplot')}" />
+							<script type="text/javascript"> 
+				     var options = {
+				           bind: 'click',
+				           useFilter: false,
+				           anchor: '#popupReceiver'
+				      };
+				      setupContextMenu('a.#{field_0}_popupTargetlot','#{popupIdlot}', options);
+				</script>
+							<div style="display: none" class="contextMenu" id="#{popupIdlot}">
+								<ul>
+									<c:forEach var="dossierLink" items="#{dossierLinkList}">
+										<li style="width: 300px;"><nxu:graphicImage
+												value="/icons/view_doc.png" /> <nxh:commandLink
+												action="#{dossierListingActions.navigateToDossierLink(field_0, dossierLink.getId(), 'TAB_ALLOTISSEMENT')}">
+				          #{dossierLink.getLabel()}
+				        </nxh:commandLink></li>
+									</c:forEach>
+								</ul>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<h:graphicImage value="/img/icons/vide_16.png" />
+						</c:otherwise>
+					</c:choose>
+
+					<c:choose>
+						<c:when test="#{field_3}">
+							<h:outputLink id="dossiersconnexes"
+								value="javascript:return false;"
+								class="#{field_0}_popupTargetconnexes">
+								<h:graphicImage value="/img/icons/folders_16.png"
+									alt="#{messages['label.listing.widget.renseignement.hasConnexite']}"
+									title="#{messages['label.listing.widget.renseignement.hasConnexite']}" />
+							</h:outputLink>
+							<div>
+								<c:set var="popupIdconnexes"
+									value="#{nxu:concat(field_0, '_menuPopupconnexes')}" />
+								<script type="text/javascript"> 
+				                  var options = {
+				                      bind: 'click',
+				                      useFilter: false,
+				                      anchor: '#popupReceiver'
+				                  };
+				                  setupContextMenu('a.#{field_0}_popupTargetconnexes','#{popupIdconnexes}', options);
+				  </script>
+								<div style="display: none" class="contextMenu"
+									id="#{popupIdconnexes}">
+									<ul>
+										<c:forEach var="dossierLink" items="#{dossierLinkList}">
+											<li style="width: 300px;"><nxu:graphicImage
+													value="/icons/view_doc.png" /> <nxh:commandLink
+													action="#{dossierListingActions.navigateToDossierLink(field_0, dossierLink.getId(), 'TAB_DOSSIER_CONNEXE')}">
+	                        #{dossierLink.getLabel()}
+	                      </nxh:commandLink></li>
+										</c:forEach>
+									</ul>
+								</div>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<h:graphicImage value="/img/icons/vide_16.png" />
+						</c:otherwise>
+					</c:choose>
+				</c:when>
+				<c:otherwise>
+					<c:choose>
+						<c:when test="#{field_2}">
+							<h:commandLink id="dossierslots"
+								action="#{dossierListingActions.navigateToDossier(field_0, 'TAB_ALLOTISSEMENT')}">
+								<h:graphicImage value="/img/icons/link_16.png"
+									alt="#{messages['label.listing.widget.renseignement.hasLot']}"
+									title="#{messages['label.listing.widget.renseignement.hasLot']}" />
+							</h:commandLink>
+						</c:when>
+						<c:otherwise>
+							<h:graphicImage value="/img/icons/vide_16.png" />
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="#{field_3}">
+							<h:commandLink id="dossiersconnexes"
+								action="#{dossierListingActions.navigateToDossier(field_0, 'TAB_DOSSIER_CONNEXE')}">
+								<h:graphicImage value="/img/icons/folders_16.png"
+									alt="#{messages['label.listing.widget.renseignement.hasConnexite']}"
+									title="#{messages['label.listing.widget.renseignement.hasConnexite']}" />
+							</h:commandLink>
+						</c:when>
+						<c:otherwise>
+							<h:graphicImage value="/img/icons/vide_16.png" />
+						</c:otherwise>
+					</c:choose>
+				</c:otherwise>
+			</c:choose>
+		</nxu:set>
+		<c:choose>
+			<c:when test="#{field_4}">
+				<h:graphicImage value="/img/icons/document_attachment_16.png"
+					alt="#{messages['label.listing.widget.renseignement.hasAttachments']}"
+					title="#{messages['label.listing.widget.renseignement.hasAttachments']}" />
+			</c:when>
+			<c:otherwise>
+				<h:graphicImage value="/img/icons/vide_16.png" />
+			</c:otherwise>
+		</c:choose>
+	</c:if>
+	<c:if test="#{widget.mode == 'csv'}">
+		<h:outputText
+			value="#{messages['label.listing.widget.renseignement.locked']},"
+			escape="false" rendered="#{field_1}" />
+		<h:outputText
+			value="#{messages['label.listing.widget.renseignement.hasLot']},"
+			escape="false" rendered="#{field_2}" />
+		<h:outputText
+			value="#{messages['label.listing.widget.renseignement.hasConnexite']},"
+			escape="false" rendered="#{field_3}" />
+		<h:outputText
+			value="#{messages['label.listing.widget.renseignement.hasAttachments']}"
+			escape="false" rendered="#{field_4}" />
+	</c:if>
+</f:subview>

@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.2.r262_v20110209 Build &lt;2.6.2.v20110214-1523></property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube - questions1.questions.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions1.questions.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube - questions1.questions.x">135</property>
+    <property name="Data Cube - questions1.questions.y">80</property>
+    <property name="Data Cube - questions.questions.x">106</property>
+    <property name="Data Cube - questions.questions.y">12</property>
+    <property name="Data Cube - questions.questions.width">150</property>
+    <property name="Data Cube - questions.questions.height">200</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.x">100</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.y">27</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.width">150</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.height">200</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nuxeo" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.1.3.244:1521:SOLON</property>
+            <property name="odaUser">REPONSES_INTE</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">UkVQT05TRVNfSU5URQ==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="questions_poses" id="938">
+            <structure name="cachedMetaData"/>
+            <property name="dataSource">nuxeo</property>
+            <xml-property name="queryText"><![CDATA[select to_char("dateDebut",'YYYY/MM') as datedebutTri, to_char("dateDebut",'MM/YY') as datedebutNum, 
+replace(to_char("dateDebut",'MONTH-YYYY',  'nls_date_language = FRENCH'),' ','') as dateDebutStr, 
+titreJoMinistere, count(*) as nbrQuesPose
+from question ques, voc_legislature
+where to_date(to_char(datepublicationJO,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char("dateDebut",'dd/MM/yyyy'), 'dd/MM/yyyy')
+group by to_char("dateDebut",'YYYY/MM'), to_char("dateDebut",'MM/YY'), replace(to_char("dateDebut",'MONTH-YYYY',  'nls_date_language = FRENCH'),' ',''), titreJoMinistere]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>obsolete</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>obsolete</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>obsolete</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dateFin</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>dateFin</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dateFin</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ordering</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ordering</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ordering</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>label</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>label</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>label</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dateDebut</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>dateDebut</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dateDebut</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="reponses_apportes_deux_mois" id="1376">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">TITREJOMINISTERE</property>
+                    <text-property name="displayName">TITREJOMINISTERE</text-property>
+                    <text-property name="heading">TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATEDEBUTTRI</property>
+                    <text-property name="displayName">DATEDEBUTTRI</text-property>
+                    <text-property name="heading">DATEDEBUTTRI</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATEDEBUTNUM</property>
+                    <text-property name="displayName">DATEDEBUTNUM</text-property>
+                    <text-property name="heading">DATEDEBUTNUM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBR2MOIS</property>
+                    <text-property name="displayName">NBR2MOIS</text-property>
+                    <text-property name="heading">NBR2MOIS</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">DATEDEBUTTRI</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">DATEDEBUTNUM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">NBR2MOIS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <property name="nativeName">TITREJOMINISTERE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">DATEDEBUTTRI</property>
+                    <property name="nativeName">DATEDEBUTTRI</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">DATEDEBUTNUM</property>
+                    <property name="nativeName">DATEDEBUTNUM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">NBR2MOIS</property>
+                    <property name="nativeName">NBR2MOIS</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select ques.titrejoministere as titrejoministere, to_char("dateDebut",'YYYY/MM') as datedebutTri, to_char("dateDebut",'MM/YY') as datedebutNum, count(*) as nbR2Mois
+from reponse rep, voc_legislature, question ques, dossier_reponse dossier_rep1
+where to_date(to_char(rep.datepublicationjoreponse,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char("dateDebut",'dd/MM/yyyy'), 'dd/MM/yyyy')
+and (select MONTHS_BETWEEN(to_char(rep.datepublicationjoreponse, 'dd-MONTH-yy'),
+to_char(ques.datepublicationjo, 'dd-MONTH-yy')) as months_between FROM Dual ) <='02' 
+and ques.id =  dossier_rep1.iddocumentquestion and rep.id = dossier_rep1.iddocumentreponse
+group by ques.titrejoministere, to_char("dateDebut",'YYYY/MM'), to_char("dateDebut",'MM/YY')]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>TITREJOMINISTERE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2000</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>TITREJOMINISTERE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TITREJOMINISTERE</design:label>
+            <design:formattingHints>
+              <design:displaySize>2000</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DATEDEBUTTRI</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>7</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DATEDEBUTTRI</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DATEDEBUTTRI</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DATEDEBUTNUM</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>5</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DATEDEBUTNUM</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DATEDEBUTNUM</design:label>
+            <design:formattingHints>
+              <design:displaySize>5</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>NBR2MOIS</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NBR2MOIS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NBR2MOIS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube - questions_poses" id="1113">
+            <property name="dimensions">
+                <tabular-dimension name="Group6" id="1114">
+                    <property name="defaultHierarchy">NewTabularHierarchy9</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy9" id="1115">
+                            <property name="levels">
+                                <tabular-level name="DATEDEBUTTRI" id="1116">
+                                    <property name="dataType">string</property>
+                                    <property name="levelType">dynamic</property>
+                                    <property name="columnName">DATEDEBUTTRI</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group7" id="1117">
+                    <property name="defaultHierarchy">NewTabularHierarchy10</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy10" id="1118">
+                            <property name="levels">
+                                <tabular-level name="DATEDEBUTNUM" id="1119">
+                                    <property name="dataType">string</property>
+                                    <property name="levelType">dynamic</property>
+                                    <property name="columnName">DATEDEBUTNUM</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group8" id="1120">
+                    <property name="defaultHierarchy">NewTabularHierarchy11</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy11" id="1121">
+                            <property name="levels">
+                                <tabular-level name="TITREJOMINISTERE" id="1122">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">TITREJOMINISTERE</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field3" id="1123">
+                    <property name="measures">
+                        <tabular-measure name="NBRQUESPOSE" id="1124">
+                            <property name="function">first</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["NBRQUESPOSE"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">questions_poses</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#C0C0C0</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderLeftColor">#C0C0C0</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderRightColor">#C0C0C0</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderTopColor">#C0C0C0</property>
+            <property name="borderTopStyle">solid</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="972">
+            <property name="dataSet">questions_poses</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">DATEDEBUTNUM</property>
+                    <text-property name="displayName">DATEDEBUTNUM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATEDEBUTNUM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATEDEBUTSTR</property>
+                    <text-property name="displayName">DATEDEBUTSTR</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATEDEBUTSTR"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <text-property name="displayName">TITREJOMINISTERE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NBRQUESPOSE</property>
+                    <text-property name="displayName">NBRQUESPOSE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBRQUESPOSE"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="979"/>
+            <header>
+                <row id="973">
+                    <cell id="974">
+                        <label id="980">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <text-property name="text">Nombre des questions posées depuis le début de la legislature </text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+        </table>
+        <text id="997">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[     ]]></text-property>
+        </text>
+        <extended-item extensionName="Crosstab" extensionVersion="2.5.0" id="1171">
+            <property name="cube">Data Cube - questions_poses</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="1183">
+                    <property name="measure">NBRQUESPOSE</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1184">
+                            <property name="aggregationOnRow">Group8/TITREJOMINISTERE</property>
+                            <property name="aggregationOnColumn">Group7/DATEDEBUTNUM</property>
+                            <property name="content">
+                                <data id="1185">
+                                    <property name="resultSetColumn">NBRQUESPOSE_Group8/TITREJOMINISTERE_Group7/DATEDEBUTNUM</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1186">
+                            <property name="content">
+                                <label id="1187">
+                                    <property name="backgroundColor">#808080</property>
+                                    <list-property name="visibility">
+                                        <structure>
+                                            <property name="format">all</property>
+                                            <expression name="valueExpr" type="javascript">true</expression>
+                                        </structure>
+                                    </list-property>
+                                    <text-property name="text">NBRQUESPOSE</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#808080</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="1173">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1174">
+                            <property name="dimension">Group8</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View9" id="1175">
+                                    <property name="level">Group8/TITREJOMINISTERE</property>
+                                    <property name="filter">
+                                        <filter-condition-element>
+                                            <expression name="expr" type="javascript">data["TITREJOMINISTERE"]</expression>
+                                            <property name="operator">ne</property>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">''</value>
+                                            </simple-property-list>
+                                        </filter-condition-element>
+                                    </property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1176">
+                                            <property name="content">
+                                                <data name="TITREJOMINISTERE3" id="1177">
+                                                    <property name="resultSetColumn">TITREJOMINISTERE</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" id="1178">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1288">
+                            <property name="dimension">Group6</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View11" id="1289">
+                                    <property name="level">Group6/DATEDEBUTTRI</property>
+                                    <property name="sort">
+                                        <sort-element>
+                                            <expression name="key" type="javascript">data["DATEDEBUTTRI"]</expression>
+                                            <property name="direction">desc</property>
+                                            <property name="strength">-1</property>
+                                        </sort-element>
+                                    </property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1290">
+                                            <property name="content">
+                                                <data name="DATEDEBUTNUM" id="1287">
+                                                    <property name="resultSetColumn">DATEDEBUTNUM</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="1284">
+                            <property name="dimension">Group7</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View10" id="1285">
+                                    <property name="level">Group7/DATEDEBUTNUM</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1286">
+                                            <property name="content">
+                                                <data name="DATEDEBUTTRI" id="1291">
+                                                    <list-property name="visibility">
+                                                        <structure>
+                                                            <property name="format">all</property>
+                                                            <expression name="valueExpr" type="javascript">true</expression>
+                                                        </structure>
+                                                    </list-property>
+                                                    <property name="resultSetColumn">DATEDEBUTTRI</property>
+                                                </data>
+                                            </property>
+                                            <property name="backgroundColor">#808080</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="1172"/>
+            </property>
+            <property name="emptyCellValue">0</property>
+            <property name="pageBreakAfter">always</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <expression name="expression">dimension["Group8"]["TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NBRQUESPOSE_Group8/TITREJOMINISTERE</property>
+                    <expression name="expression">measure["NBRQUESPOSE"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group8/TITREJOMINISTERE</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                </structure>
+                <structure>
+                    <property name="name">DATEDEBUTNUM</property>
+                    <expression name="expression">dimension["Group7"]["DATEDEBUTNUM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NBRQUESPOSE_Group8/TITREJOMINISTERE_Group7/DATEDEBUTNUM</property>
+                    <expression name="expression">measure["NBRQUESPOSE"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group8/TITREJOMINISTERE</value>
+                        <value>Group7/DATEDEBUTNUM</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                </structure>
+                <structure>
+                    <property name="name">DATEDEBUTTRI</property>
+                    <expression name="expression">dimension["Group6"]["DATEDEBUTTRI"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+</report>

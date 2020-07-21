@@ -1,0 +1,56 @@
+<f:subview xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout" id="#{widget.id}">
+	<a4j:outputPanel ajaxRendered="true">
+
+		<c:set
+			value="#{widget_0.fieldDefinitions[0].propertyName}/#{widget.fieldDefinitions[0].propertyName}"
+			var="propValueForTemplate" />
+		<h:panelGrid columns="6" style="width:100%">
+			<h:outputText value="#{messages['requeteExperte.label.operator']}"
+				styleClass="labelColumn" />
+			<h:outputText value="#{messages['requeteExperte.label.parens']}"
+				styleClass="labelColumn" />
+			<h:outputText value="#{messages['requeteExperte.label.field']}"
+				styleClass="labelColumn" />
+			<h:outputText value="#{messages['requeteExperte.label.comparator']}"
+				styleClass="labelColumn" />
+			<h:outputText value="#{messages['requeteExperte.label.value']}"
+				styleClass="labelColumn" />
+			<h:outputText value="#{messages['requeteExperte.label.parens']}"
+				styleClass="labelColumn" />
+		</h:panelGrid>
+		<nxu:inputList value="#{field}" id="#{widget.id}_input"
+			model="submodel"
+			template="#{nxd:propertyDefaultValue(propValueForTemplate)}"
+			required="#{widget.required}" diff="#{widget.properties['diff']}">
+			<h:panelGroup>
+				<a4j:commandLink immediate="true"
+					actionListener="#{editableListBean.performAction}"
+					id="#{widget.id}_delete" reRender="#{widget.id}_input"
+					bypassUpdates="true">
+					<h:graphicImage value="/icons/action_delete.gif" />
+					<f:param name="for" value="#{widget.id}_input" />
+					<f:param name="index" value="#{submodel.rowIndex}" />
+					<f:param name="type" value="remove" />
+				</a4j:commandLink>
+				<nxl:subWidget>
+					<nxl:widget widget="#{widget}" value="#{submodel.rowData}" />
+				</nxl:subWidget>
+			</h:panelGroup>
+		</nxu:inputList>
+		<h:message styleClass="errorMessage" for="#{widget.id}_input"
+			id="#{widget.id}_message" />
+	</a4j:outputPanel>
+	<hr />
+	<a4j:commandLink immediate="true"
+		actionListener="#{requeteurActions.addNewClause()}"
+		id="#{widget.id}_add">
+		<h:graphicImage value="/widgets/img/action_add.gif" />
+		<h:outputText value="#{messages['command.add']}" />
+	</a4j:commandLink>
+</f:subview>

@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Dossier > Feuille de route > Réattribution</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">Dossier > Feuille de route >
+					Réattribution</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<!--Réattribution-->
+			<!--Connexion avec bdc-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection dossier -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Page suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314164</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>formFdr:fdrActionsTable:1:fdrValidateButton2</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>formFdr:nxl_ministere_reattribution:nxw_reattributionMinistere_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Sélection ministère Min. Agriculture et pêche -->
+			<tr>
+				<td>click</td>
+				<td>formFdr:nxl_ministere_reattribution:nxw_reattributionMinistere_tree:node:0:node:1::nxw_reattributionMinistere_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>formFdr:okLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Pour réattribution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>formFdr:fdrActionsTable:0:fdrValidateButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314164</td>
+				<td></td>
+			</tr>
+			<!--Connexion avec agriculture_bdc-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>agriculture_bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>agriculture_bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314164</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>formFdr:fdrActionsTable:0:fdrValidateButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314164</td>
+				<td></td>
+			</tr>
+			<!--Connexion avec ws_agriculture-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>ws_agriculture</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>ws_agriculture</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseDown</td>
+				<td>//span[text()='Min. Agriculture et pêche']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseUp</td>
+				<td>//span[text()='Min. Agriculture et pêche']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour rédaction interfacée (1)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314164</td>
+				<td></td>
+			</tr>
+			<!--Arbitrage SGG-->
+			<!--Connexion avec bdc-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Page suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314167</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>formFdr:fdrActionsTable:2:fdrValidateButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Pour arbitrage</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>formFdr:fdrActionsTable:0:fdrValidateButton</td>
+				<td></td>
+			</tr>
+			<!--Connexion avec adminsgg-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseDown</td>
+				<td>//span[text()='Min. Economie, industrie et emploi']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseUp</td>
+				<td>//span[text()='Min. Economie, industrie et emploi']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour arbitrage (1)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314167</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>formFdr:fdrActionsTable:0:fdrValidateButton</td>
+				<td></td>
+			</tr>
+			<!--Connexion avec dgefp-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314167</td>
+				<td></td>
+			</tr>
+			<!--Réorientation-->
+			<!--Connexion avec bdc-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Page suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314168</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>formFdr:fdrActionsTable:0:fdrValidateButton</td>
+				<td></td>
+			</tr>
+			<!--Connexion avec dgefp-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314168</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>formFdr:fdrActionsTable:1:fdrValidateButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Pour réorientation</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>formFdr:fdrActionsTable:0:fdrValidateButton</td>
+				<td></td>
+			</tr>
+			<!--Connexion avec bdc-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour réorientation (1)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314168</td>
+				<td></td>
+			</tr>
+			<!--Vérification de la dénormalisation du ministère attributaire dans la question-->
+			<tr>
+				<td>type</td>
+				<td>userMetaServicesSearchForm:questionIdInput</td>
+				<td>AN 314164</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Profil utilisateur</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>displayedProfilUtilisateurPopup:profilUtilisateurForm:metadonneesDisponibleColumncopyAlllink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>displayedProfilUtilisateurPopup:profilUtilisateurForm:validerProfilUtilisateur</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Min. Agriculture et pêche</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

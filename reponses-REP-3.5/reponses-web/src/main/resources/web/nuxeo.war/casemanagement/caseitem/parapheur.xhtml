@@ -1,0 +1,314 @@
+<div xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<h:form id="actionToolbarForm" enctype="multipart/form-data">
+		<!-- ajout d'un style  pour cacher les boutons d'édition de la réponse. Ce style n'est pas mis dans la contribution theme-reponses car la propriété visibility n'est pas reconnu par nuxeo -->
+		<style>
+.buttonParapheur {
+	visibility: hidden;
+}
+
+#zoneSansLabel .labelColumn {
+	display: none;
+}
+</style>
+		<a4j:region id="documentViewRegion">
+			<a4j:outputPanel id="documentViewPanel">
+				<div id="zoneSansLabel">
+					<table width="100%">
+						<tr>
+							<td>
+								<h3 class="summaryTitle">
+									<h:outputText value="Question" />
+								</h3>
+
+								<div style="clear: both;"></div> <!-- view of the current dossier - show parapheur -->
+								<!-- question layout --> <nxl:layout value="#{question}"
+									mode="read" name="parapheur" /> <br /> <br /> <nxu:set
+									var="parapheurDTO"
+									value="#{parapheurActions.initAndGetParapheurDTO()}"
+									cache="true">
+									<nxu:set var="listVersion"
+										value="#{parapheurDTO.getListReponseVersion()}" cache="true">
+										<h3 class="summaryTitle">
+											<h:outputText value="Réponse" />
+											<c:if test="#{parapheurDTO.cannotUnlockCurrentDossier()}">
+												<span
+													onmouseover="tooltip.show('Pour répondre, verrouiller le dossier', 500);"
+													onmouseout="tooltip.hide();"> <h:graphicImage
+														value="/icons/lightbulb.png" />
+												</span>
+											</c:if>
+										</h3>
+										<!-- Gestion des versions -->
+										<!--  un changement de valeur de la combobox valide le formulaire situé à la fin-->
+
+										<div>
+											<c:choose>
+												<c:when test="#{parapheurDTO.isReponsePublished()}">
+													<h:outputText
+														value="#{messages['label.reponses.isPublished']}" />
+												</c:when>
+												<c:when
+													test="#{parapheurDTO.hasOneNotPublishedReponse() || !parapheurDTO.canDisplayReponse()}">
+													<c:if test="#{not parapheurDTO.reponseHasTexte()}">
+														<i><h:outputText
+																value="#{messages['label.reponses.pasDeReponseRedigee']}" /></i>
+													</c:if>
+												</c:when>
+												<c:otherwise>
+													<c:if test="#{providerBean.length(listVersion) > 1}">
+														<table id="selectorVersionAction">
+															<tr>
+																<td><h:outputText value="Versions : " /></td>
+																<td><select id="versionSelector"
+																	onchange="document.getElementById('hiddenVersionForm:versionRequestedValue').value = this.value;document.getElementById('commandButton_version').firstChild.click();"
+																	style="margin-right: 5px">
+																		<c:set var="majorVersion"
+																			value="#{reponseActions.getReponseMajorVersionNumber()}" />
+
+																		<c:forEach var="reponseVersionIterator"
+																			items="#{listVersion}">
+																			<c:set var="contributor"
+																				value="#{reponseVersionIterator.getProperty('reponse', 'idAuteurReponse')}" />
+																			<c:set var="numVersionIterator"
+																				value="#{(reponse eq reponseVersionIterator) ? majorVersion+1:reponseVersionIterator.getProperty('uid', 'major_version')}" />
+																			<c:set var="labelVersion"
+																				value="#{(reponse eq reponseVersionIterator)?'Version de travail':numVersionIterator.toString().concat(' - '.concat(contributor))}" />}
+		                                      <c:choose>
+																				<c:when
+																					test="#{(currentReponse eq reponseVersionIterator)}">
+																					<option value="#{numVersionIterator}"
+																						selected="selected">#{labelVersion}</option>
+																				</c:when>
+																				<c:otherwise>
+																					<option value="#{numVersionIterator}">#{labelVersion}</option>
+																				</c:otherwise>
+																			</c:choose>
+																		</c:forEach>
+																</select></td>
+																<td><a4j:commandLink
+																		oncomplete="Richfaces.showModalPanel('comparateurVersionPanel',{left:'400', top:'200',height:'500',width:'750'})"
+																		reRender="comparateurVersionRegion"
+																		action="#{ComparateurActions.reset}" ajaxSingle="true">
+																		<div class="enabledButtonContainer"
+																			style="height: 22px !important; width: 22px !important">
+																			<h:graphicImage value="/img/icons/comparateur.png"
+																				title="Comparer" />
+																		</div>
+																	</a4j:commandLink></td>
+															</tr>
+														</table>
+													</c:if>
+												</c:otherwise>
+											</c:choose>
+										</div>
+									</nxu:set>
+
+									<!-- Action d'editions de la réponse -->
+									<c:if
+										test="#{(parapheurDTO.canDisplayEditReponseButton()) and (param.theme != 'reponses/print')}">
+										<h:commandButton id="IdEditReponseButton"
+											value="Editer la réponse" styleClass="buttonParapheur"
+											action="#{reponseActions.editReponse()}" />
+									</c:if>
+
+									<c:if
+										test="#{(parapheurDTO.canDisplaySaveReponseButton()) and (param.theme != 'reponses/print')}">
+										<h:commandButton id="IdSaveReponseButton"
+											value="Enregister la réponse" styleClass="buttonParapheur"
+											action="#{reponseActions.saveReponse()}" />
+									</c:if>
+
+									<!-- présentation de la réponse -->
+									<!-- if current reponse is a version, the layout mode is view -->
+									<div>
+										<table>
+											<tr>
+												<c:if
+													test="#{(parapheurDTO.canDisplayBriserReponseButton()) and (param.theme != 'reponses/print')}">
+													<td><h:commandLink id="IdBreakReponseSignature"
+															action="#{reponseActions.briserReponse()}">
+															<div class="enabledButtonContainer">
+																<h:graphicImage
+																	value="/img/icons/rubberstamp_delete.png"
+																	alt="#{messages['parapheur.reponse.briser.signature']}"
+																	title="#{messages['parapheur.reponse.briser.signature']}" />
+															</div>
+														</h:commandLink></td>
+												</c:if>
+												<td><c:choose>
+														<c:when
+															test="#{(parapheurDTO.canDisplayErratum()) and (param.theme != 'reponses/print')}">
+															<nxl:layout value="#{currentReponse}" mode="edit"
+																name="saisie_reponse" />
+															<f:subview id="erratumReponse"
+																rendered="#{parapheurDTO.isReponsePublished()}">
+																<h4>
+																	<h:outputText
+																		value="#{messages['erratum.reponse.title']}" />
+																</h4>
+																<nxl:layout value="#{currentReponse}" mode="edit"
+																	name="saisie_erratum" />
+															</f:subview>
+														</c:when>
+														<c:when test="#{parapheurDTO.canDisplayReponse()}">
+															<nxl:layout value="#{currentReponse}" mode="view"
+																name="saisie_reponse" />
+															<f:subview id="erratumReponse"
+																rendered="#{parapheurDTO.isReponsePublished() and parapheurDTO.reponseHasErratum()}">
+																<br />
+																<h4>
+																	<h:outputText
+																		value="#{messages['erratum.reponse.title']}" />
+																</h4>
+																<b> <nxl:layout value="#{currentReponse}"
+																		mode="view" name="saisie_erratum" />
+																</b>
+															</f:subview>
+														</c:when>
+														<c:otherwise>
+															<br />
+														</c:otherwise>
+													</c:choose></td>
+												<c:choose>
+													<c:when
+														test="#{(parapheurDTO.canDisplaySaveCancelButton()) and (param.theme != 'reponses/print')}">
+														<td style="vertical-align: top; padding-top: 10px;">
+															<table>
+																<tr>
+																	<td>
+																		<div class="enabledButtonContainer">
+																			<nxh:commandLink
+																				action="#{reponseActions.saveReponse()}">
+																				<h:graphicImage value="/img/icons/disk_blue.png"
+																					alt="Sauvegarder" title="Sauvegarder" />
+																			</nxh:commandLink>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="enabledButtonContainer">
+																			<nxh:commandLink
+																				action="#{reponseActions.cancelReponse()}">
+																				<h:graphicImage
+																					value="/img/icons/disk_blue_error.png"
+																					alt="Annuler" title="Annuler" />
+																			</nxh:commandLink>
+																		</div>
+																	</td>
+																</tr>
+															</table>
+														</td>
+													</c:when>
+													<c:otherwise>
+													</c:otherwise>
+												</c:choose>
+											</tr>
+										</table>
+									</div>
+								</nxu:set>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<!-- Documentation Jointes -->
+								<h3 class="summaryTitle">
+									<h:outputText
+										value="#{messages['parapheur.documents.parlement']}" />
+								</h3> <nxu:set var="listeDocumentPublic"
+									value="#{listeDocumentPublicReponse}" cache="true">
+
+									<h:dataTable class="documentationJointe" var="documentJoint"
+										value="#{listeDocumentPublic}">
+										<h:column>
+											<c:choose>
+												<c:when test="${param.theme == 'reponses/print'}">
+													<nxh:graphicImage
+														value="#{nxd:fileIconPath(blobHolderGenerator.getBlobHolder(documentJoint.document).blob)}" />
+													<h:outputText value="#{documentJoint.title}" />
+												</c:when>
+												<c:otherwise>
+													<nxh:outputLink
+														value="#{nxd:fileUrl('downloadFile', documentJoint.document, 'file:content', documentJoint.filename)}">
+														<nxh:graphicImage
+															value="#{nxd:fileIconPath(blobHolderGenerator.getBlobHolder(documentJoint.document).blob)}" />
+														<h:outputText value="#{documentJoint.title}" />
+													</nxh:outputLink>
+												</c:otherwise>
+											</c:choose>
+										</h:column>
+									</h:dataTable>
+								</nxu:set>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</a4j:outputPanel>
+		</a4j:region>
+	</h:form>
+
+	<!-- Initialization et Formulaire cachés pour la gestion de version -->
+	<h:form id="hiddenVersionForm" style="display:none;">
+		<h:inputHidden id="versionRequestedValue"
+			value="#{reponseActions.currentReponseNumeroVersion}">
+			<f:convertNumber type="number" maxIntegerDigits="3" />
+		</h:inputHidden>
+		<div id="commandButton_version" style="display: none;">
+			<h:commandButton value="submit" />
+		</div>
+	</h:form>
+
+	<ui:include src="/casemanagement/caseitem/comparateur_version.xhtml" />
+	<script>
+	   var j = jQuery.noConflict();
+		  j(document).ready(function() {
+	
+		    j('.tabsContent input').change(function() {
+		    	isDossierModified = true;
+		    });
+		  });
+		  
+		  parameters2 = {width : "700",
+                  height : height,
+                  theme : "advanced",
+                  editor_selector : editorSelector,
+                  editor_deselector : "disableMCEInit",
+                  mode : "textareas",
+                  plugins : "style,layer,table,save,advhr,advlink,spellchecker,insertdatetime,preview,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,xhtmlxtras",
+                  theme_advanced_buttons1 : "cut,copy,paste,pastetext,pasteword,separator,undo,redo,separator,fullscreen",
+                  theme_advanced_buttons2 : "tablecontrols,separator,sub,sup",
+                  theme_advanced_buttons3 : "",
+                  spellchecker_languages : "+Français=fr_FR",
+                  spellchecker_rpc_url : "/reponses/site/spellchecker/jmyspell",
+                  onchange_callback : "tinyMCEOnChangeCallback",
+                  language : "fr",
+                  valid_elements : "p,ul,ol,li,table[align|bgcolor|border|cellpadding|cellspacing|class|dir|height|id|rules|style|summary|title|width],caption,thead,tbody,tr[abbr|align|bgcolor|char|charoff|class|rowspan|dir|id|lang|style|title|valign],th[abbr|align|axis|bgcolor|char|charoff|class|colspan|dir|headers|height|id|lang|nowrap|rowspan|scope|style|title|valign|width],td[style|rowspan|colspan],strong/b,em/i,b"};
+
+		  tinyMCE.init(parameters2);
+
+		      for (key in toolbarOptions) {
+		          parameters2[key] = toolbarOptions[key];
+		      }
+
+		  function changeEditorType(cbo) {
+		    var value = cbo.value;
+		    var id = cbo.id.replace("_editorselector", "_editor");
+		    if (value == "text/html") {
+		      addTinyMCE(id);
+		    } else {
+		      removeTinyMCE(id);
+		    }
+		  }
+		  
+	</script>
+</div>

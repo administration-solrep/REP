@@ -1,0 +1,30 @@
+# Pour lancer ce script :
+# 1 - copier ce fichier dans /tmp/
+# 2 - Aller dans le répertoire contenant nxshell.sh
+# 3 - Taper la commande sh nxshell.sh -f /tmp/01_FEV550_create-params.nxshell
+
+# connect to http://localhost:8180/reponses (obligatoire sinon Unknown command...) 
+connect -u Administrator -p 4ju7Ix662Eo1d77u http://localhost:8180/reponses/site/automation
+
+########## Parametre d'activation
+# go to parametre folder
+cd /case-management/workspaces/admin/parametre/
+
+# create 
+mkdir Parametre objet-mel-notification-redemarrageFdr
+cd objet-mel-notification-redemarrageFdr
+setp -xpath parametre:value -value "Redémarrage de la feuille de route d'une question"
+setp -xpath parametre:unit -value "objet"
+setp -xpath dc:description -value "« Objet » (par défaut) de la notification par mél de redémarrage d'une feuille de route"
+setp -xpath dc:title -value "Objet mél notification redémarrage feuille de route"
+
+# go to parametre folder
+cd ..
+
+# create 
+mkdir Parametre texte-mel-notification-redemarrageFdr
+cd texte-mel-notification-redemarrageFdr
+setp -xpath parametre:value -value "Bonjour, L’utilisateur ${user} a redémarré la question ${numero_question}, attribuée au ministère ${libelle_ministere}, le ${date_heure_redemarrage}. Cordialement"
+setp -xpath parametre:unit -value "texte"
+setp -xpath dc:description -value "« Texte » (par défaut) de la notification adressée par mél de redémarrage d'une feuille de route. Les balises suivantes peuvent êtres utilisées : ${user} : Utilisateur origine, ${numero_question} : numero de la question, ${libelle_ministere} : ministère, ${date_heure_redemarrage} : date et heure du redémarrage."
+setp -xpath dc:title -value "Texte mél notification redémarrage feuille de route"

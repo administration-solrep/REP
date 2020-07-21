@@ -1,0 +1,142 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<ui:composition
+		template="/admin/supervision/view_supervision_template.xhtml">
+		<ui:param name="currentUserSubTab" value="view" />
+
+		<ui:define name="statistics">
+			<c:if test="#{supervisionActions.isAccessAuthorized()}">
+				<div class="tabsBar subtabsBar">
+					<h:form>
+						<ul>
+							<c:set var="selectedStat"
+								value="#{supervisionActions.selectedStat}" />
+							<c:forEach var="stat" items="#{supervisionActions.catalogStat}">
+
+								<c:set var="cssClass" value="" />
+								<c:if test="#{stat == selectedStat}">
+									<c:set var="cssClass" value="selected" />
+								</c:if>
+
+								<li class="#{cssClass}"><h:commandLink
+										action="#{supervisionActions.viewSelectedStat}">
+										<h:outputText value="#{stat}" />
+										<f:param name="newSelectedStat" value="#{stat}" />
+									</h:commandLink></li>
+							</c:forEach>
+						</ul>
+					</h:form>
+				</div>
+				<div style="clear: both"></div>
+			</c:if>
+		</ui:define>
+
+		<ui:define name="mainContent">
+			<c:if test="#{supervisionActions.isAccessAuthorized()}">
+				<br />
+				<h:form>
+					<c:set var="userSchema" value="#{userManager.userSchemaName}" />
+					<c:if test="#{supervisionActions.hasFilter()}">
+						<!-- Parameter -->
+						<div style="padding: 10px 10px 0px 0px;">
+							<h:panelGrid columns="1">
+								<h:panelGroup id="supervisionActions_filter">
+									<!-- filtre sur la date de debut et la date de fin-->
+									<div style="padding: 0px 5px 5px 5px; float: left;"
+										rendered="false">
+										<h:panelGrid columns="2">
+											<h:panelGroup>
+												<h:outputText value="Date "
+													style="padding: 0px 5px 0px 0px;" class="required" />
+												<nxu:inputDateTime showWeeksBar="false" id="dateFilter"
+													value="#{supervisionActions.filterNotConnected}"
+													name="dateFilter" showsTime="true" format="dd/MM/yyyy" />
+											</h:panelGroup>
+										</h:panelGrid>
+									</div>
+								</h:panelGroup>
+								<h:panelGroup>
+									<div style="padding: 0px 5px 5px 5px;">
+										<h:commandButton
+											action="#{supervisionActions.viewSelectedStat()}"
+											value="Rechercher" class="button button2" />
+									</div>
+								</h:panelGroup>
+							</h:panelGrid>
+						</div>
+					</c:if>
+					<div id="actionsAndCount">
+						<table width="100%">
+							<tr>
+								<td><h:outputText
+										value="#{connectionUserList.rowCount} utilisateur(s)" /></td>
+								<td width='30' align="right"><h:commandLink target="_blank"
+										action="#{supervisionActions.generateReportExcel}"
+										immediate="true" id="genererExcel">
+										<h:graphicImage url="/icons/csv_export.png" />
+									</h:commandLink></td>
+
+								<td width='30' align="right"><h:commandLink target="_blank"
+										action="#{supervisionActions.generateReportPdf()}"
+										immediate="true" id="genererPdf">
+										<h:graphicImage url="/icons/pdf.png" />
+									</h:commandLink></td>
+							</tr>
+						</table>
+					</div>
+					<br />
+					<h:dataTable var="userModel" value="#{connectionUserList}"
+						styleClass="dataOutput"
+						rendered="#{connectionUserList.rowCount > 0}">
+						<h:column>
+							<f:facet name="header">
+								<h:commandLink action="#{supervisionActions.sortByUsername}">
+									<h:outputText value="#{messages['label.userManager.user']}" />
+								</h:commandLink>
+							</f:facet>
+							<h:commandLink value="#{userModel[userSchema].username}"
+								action="#{supervisionActions.goToUserView()}">
+								<f:param name="selectedUserView"
+									value="#{userModel[userSchema].username}" />
+							</h:commandLink>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:commandLink action="#{supervisionActions.sortByFirstName}">
+									<h:outputText
+										value="#{messages['label.userManager.firstName']}" />
+								</h:commandLink>
+							</f:facet>
+							<h:outputText value="#{userModel[userSchema].firstName}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:commandLink action="#{supervisionActions.sortByLastName}">
+									<h:outputText value="#{messages['label.userManager.lastName']}" />
+								</h:commandLink>
+							</f:facet>
+							<h:outputText value="#{userModel[userSchema].lastName}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:commandLink action="#{supervisionActions.sortByDate}">
+									<h:outputText value="Date de connexion" />
+								</h:commandLink>
+							</f:facet>
+							<h:outputText
+								value="#{supervisionActions.getDateConnexion(userModel[userSchema].username).time}"
+								converter="DateTimeConverter" />
+						</h:column>
+					</h:dataTable>
+				</h:form>
+			</c:if>
+		</ui:define>
+
+	</ui:composition>
+
+</div>

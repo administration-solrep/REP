@@ -1,0 +1,7 @@
+id,label
+"SUPERIEUR",">"
+"INFERIEUR","<"
+"EGAL","="
+"DIFFERENT","!="
+"CONTIENT","!="
+

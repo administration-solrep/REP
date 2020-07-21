@@ -1,0 +1,70 @@
+<div xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<a4j:region id="reject_task_panel_region">
+		<rich:modalPanel id="reject_task_panel" autosized="true">
+			<div>
+				<f:facet name="header">
+					<h:outputText
+						value="#{messages['label.reponses.dossier.avis.defavorable.popup.title']}" />
+				</f:facet>
+			</div>
+
+
+			<div class="popupFddDiv">
+				<h:panelGrid id="panel" columns="2">
+
+					<h:commandLink
+						action="#{dossierDistributionActions.donnerAvisDefavorableEtInsererTaches()}"
+						id="insertionLinkImg"
+						oncomplete="Richfaces.hideModalPanel('reject_task_panel')">
+						<h:graphicImage height="24" width="24" url="/img/icons/add_24.png"
+							alt="#{messages['label.reponses.dossier.avis.defavorable.popup.insertion']}" />
+					</h:commandLink>
+					<h:commandLink
+						action="#{dossierDistributionActions.donnerAvisDefavorableEtInsererTaches()}"
+						id="insertionLink"
+						oncomplete="Richfaces.hideModalPanel('reject_task_panel')">
+						<h:outputText
+							value="#{messages['label.reponses.dossier.avis.defavorable.popup.insertion']}" />
+					</h:commandLink>
+
+					<h:commandLink
+						action="#{dossierDistributionActions.donnerAvisDefavorableEtPoursuivre()}"
+						id="poursuivreLinkImg"
+						oncomplete="Richfaces.hideModalPanel('reject_task_panel')">
+						<h:graphicImage height="24" width="24"
+							url="/img/icons/nav_right_red.png"
+							alt="#{messages['label.reponses.dossier.avis.defavorable.popup.poursuivre']}" />
+					</h:commandLink>
+					<h:commandLink
+						action="#{dossierDistributionActions.donnerAvisDefavorableEtPoursuivre()}"
+						id="poursuivreLink"
+						oncomplete="Richfaces.hideModalPanel('reject_task_panel')">
+						<h:outputText
+							value="#{messages['label.reponses.dossier.avis.defavorable.popup.poursuivre']}" />
+					</h:commandLink>
+
+					<a4j:commandLink id="annulerLinkImg"
+						onclick="Richfaces.hideModalPanel('reject_task_panel')"
+						ajaxSingle="true">
+						<h:graphicImage height="24" width="24" url="/img/icons/delete.png"
+							alt="Annuler" />
+					</a4j:commandLink>
+					<a4j:commandLink id="annulerLink"
+						onclick="Richfaces.hideModalPanel('reject_task_panel')"
+						ajaxSingle="true">
+						<h:outputText value="Annuler" />
+					</a4j:commandLink>
+				</h:panelGrid>
+			</div>
+		</rich:modalPanel>
+	</a4j:region>
+</div>

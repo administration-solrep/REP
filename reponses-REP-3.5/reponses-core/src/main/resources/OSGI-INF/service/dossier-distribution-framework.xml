@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue le service de distribution des dossiers Réponses. -->
+<component name="fr.dila.reponses.core.service.DossierDistributionService">
+	<implementation
+		class="fr.dila.reponses.core.service.DossierDistributionServiceImpl" />
+
+	<service>
+		<provide interface="fr.dila.ss.api.service.DossierDistributionService" />
+		<provide interface="fr.dila.reponses.api.service.DossierDistributionService" />
+	</service>
+
+	<extension-point name="persister">
+		<object class="fr.dila.cm.core.service.PersisterDescriptor" />
+	</extension-point>
+
+	<extension target="fr.dila.reponses.core.service.DossierDistributionService"
+		point="persister">
+		<persister class="fr.dila.cm.core.persister.CaseItemInCasePersister" />
+	</extension>
+
+</component>

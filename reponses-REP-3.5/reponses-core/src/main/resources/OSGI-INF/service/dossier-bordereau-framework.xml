@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue le service de gestion du bordereau du dossier 
+	SOLON EPG. -->
+<component name="fr.dila.reponses.core.service.DossierBordereauService">
+	<implementation
+		class="fr.dila.reponses.core.service.DossierBordereauServiceImpl" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.DossierBordereauService" />
+	</service>
+
+</component>

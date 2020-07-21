@@ -1,0 +1,27 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<div style="clear: both"></div>
+	<div class="userMailboxes">
+		<div class="userMailboxesContent">
+			<h4>
+				<h:outputText value="#{messages['alert.title']}" />
+			</h4>
+		</div>
+		<nxu:set var="contentViewId" value="suivi_alert_content_left">
+			<nxu:set var="contentViewName" value="suivi_alert_content">
+				<ui:decorate template="/incl/content_view_left_panel.xhtml">
+					<ui:define name="content_view_pre_area"></ui:define>
+					<ui:define name="content_view_header_after_selector"></ui:define>
+					<ui:define name="content_view_header_before_selector"></ui:define>
+					<ui:define name="buttons"></ui:define>
+					<ui:insert name="content_view_selector"></ui:insert>
+				</ui:decorate>
+			</nxu:set>
+		</nxu:set>
+	</div>
+</div>

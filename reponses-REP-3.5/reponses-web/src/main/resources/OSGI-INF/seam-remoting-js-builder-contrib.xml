@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<component
+	name="fr.dila.reponses.web.SeamRemotingJSBuilderComponent.coreContrib">
+
+	<require>org.nuxeo.ecm.platform.ui.web.SeamRemotingJSBuilderComponent.coreContrib</require>
+
+	<extension
+		target="org.nuxeo.ecm.platform.ui.web.SeamRemotingJSBuilderComponent"
+		point="remotableSeamBeans">
+		<remotableSeamBeans>
+			<beans>
+				<bean>dossierDistributionActions</bean>
+				<bean>FileManageActions</bean>
+				<bean>domainActions</bean>
+				<bean>workspaceActions</bean>
+				<bean>documentActions</bean>
+				<bean>searchActions</bean>
+				<bean>popupHelper</bean>
+				<bean>dossierMassActions</bean>
+				<bean>modeleFeuilleRouteActions</bean>
+			</beans>
+		</remotableSeamBeans>
+	</extension>
+
+</component>

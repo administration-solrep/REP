@@ -1,0 +1,21 @@
+# Pour lancer ce script :
+# 1 - copier ce fichier dans /tmp/
+# 2 - Aller dans le répertoire contenant nxshell.sh
+# 3 - Taper la commande sh nxshell.sh -f /tmp/maj_numero_question_param.nxshell
+
+# connect to http://localhost:8180/reponses (obligatoire sinon Unknown command...) 
+connect -u Administrator -p Administrator http://localhost:8180/reponses/site/automation
+
+# go to parametre folder
+cd /case-management/workspaces/admin/parametre/
+
+# update
+cd texte-mel-notification-expiration-tache
+setp -xpath parametre:value -value "Une tâche vient d'expirer dans votre corbeille. Question : ${numero_question}."
+
+# go to parametre folder
+cd /case-management/workspaces/admin/parametre/
+
+# update
+cd texte-mel-notification-erratum-question
+setp -xpath parametre:value -value "Un nouvel erratum de question vous a été affecté. Question : ${numero_question}."

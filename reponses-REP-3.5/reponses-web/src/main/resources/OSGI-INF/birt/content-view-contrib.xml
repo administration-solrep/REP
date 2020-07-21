@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<component name="fr.dila.statistiques.contentview">
+
+	<extension target="org.nuxeo.ecm.platform.ui.web.ContentViewService"
+		point="contentViews">
+
+		<contentView name="birt_reports">
+
+			<title>label.contentview.birt_report_list</title>
+			<translateTitle>true</translateTitle>
+			<showTitle>true</showTitle>
+
+			<genericPageProvider
+				class="fr.dila.st.web.contentview.UfnxqlPageDocumentProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="queryString">#{statistiqueActions.getQuery()}</property>
+				<property name="parameters">#{statistiqueActions.getQueryParameter()}</property>
+				<sort column="d.dc:title" ascending="true" />
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+
+			<showPageSizeSelector>true</showPageSizeSelector>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentCreated</event>
+			</refresh>
+			<cacheKey>birt_reports_cache</cacheKey>
+			<cacheSize>10</cacheSize>
+
+			<resultLayouts>
+				<layout name="reports_listing" title="label.document_listing.layout"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+			<selectionList>STATISTIQUES_SELECTION</selectionList>
+		</contentView>
+	</extension>
+</component>

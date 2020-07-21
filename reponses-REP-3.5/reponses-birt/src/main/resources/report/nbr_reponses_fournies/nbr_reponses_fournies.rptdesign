@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.2.r262_v20110209 Build &lt;2.6.2.v20110214-1523></property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube - questions1.questions.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions1.questions.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube - questions1.questions.x">135</property>
+    <property name="Data Cube - questions1.questions.y">80</property>
+    <property name="Data Cube - questions.questions.x">106</property>
+    <property name="Data Cube - questions.questions.y">12</property>
+    <property name="Data Cube - questions.questions.width">150</property>
+    <property name="Data Cube - questions.questions.height">200</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.x">100</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.y">27</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.width">150</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.height">200</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="dateRef" id="36">
+            <text-property name="promptText">date de reference</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">new Date(2010,0,1)</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nuxeo" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.1.3.244:1521:SOLON</property>
+            <property name="odaUser">REPONSES_INTE</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">UkVQT05TRVNfSU5URQ==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="reponses_fournies" id="154">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dateRef</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">DATEPUBJOREPAFF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">DATEPUBJOREPNUM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">DATEPUBJOREP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">NBRREP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">DATEPUBJOREPAFF</property>
+                    <property name="nativeName">DATEPUBJOREPAFF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">DATEPUBJOREPNUM</property>
+                    <property name="nativeName">DATEPUBJOREPNUM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <property name="nativeName">TITREJOMINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">DATEPUBJOREP</property>
+                    <property name="nativeName">DATEPUBJOREP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">NBRREP</property>
+                    <property name="nativeName">NBRREP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select to_char(t1.datepublicationjoreponse,'MM/YY') as datePubJoRepAff, to_char(t1.datepublicationjoreponse,'YYYY/MM') as datePubJoRepNum,  titreJoMinistere, 
+replace(to_char(t1.datepublicationjoreponse,'MONTH-YYYY',  'nls_date_language = FRENCH'),' ','') as datePubJoRep,
+count(*) as nbrRep from question ques RIGHT JOIN
+(select dossier_rep1.iddocumentquestion as idquestion, dossier_rep1.iddocumentreponse as idreponse  ,datepublicationjo as datepublicationquestion ,datepublicationjoreponse from dossier_reponse dossier_rep1, reponse rep, question ques 
+where to_date(to_char(datepublicationjoreponse, 'dd/MM/yyyy'), 'dd/MM/yyyy') <= to_date(to_char(sysdate, 'dd/MM/yyyy'), 'dd/MM/yyyy') and
+to_date(to_char(rep.datepublicationjoreponse,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'dd/MM/yyyy'), 'dd/MM/yyyy') and
+dossier_rep1.iddocumentreponse = rep.id and ques.id = dossier_rep1.iddocumentquestion)t1 ON ques.id = t1.idquestion
+group by to_char(t1.datepublicationjoreponse,'MM/YY'), to_char(t1.datepublicationjoreponse,'YYYY/MM'), titreJoMinistere, 
+replace(to_char(t1.datepublicationjoreponse,'MONTH-YYYY',  'nls_date_language = FRENCH'),' ','')]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube - reponses_fournies" id="1292">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="1293">
+                    <property name="defaultHierarchy">NewTabularHierarchy3</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy3" id="1294">
+                            <property name="levels">
+                                <tabular-level name="DATEPUBJOREPAFF" id="1295">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">DATEPUBJOREPAFF</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group1" id="1296">
+                    <property name="defaultHierarchy">NewTabularHierarchy4</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy4" id="1297">
+                            <property name="levels">
+                                <tabular-level name="TITREJOMINISTERE" id="1298">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">TITREJOMINISTERE</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group2" id="1299">
+                    <property name="defaultHierarchy">NewTabularHierarchy5</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy5" id="1300">
+                            <property name="levels">
+                                <tabular-level name="DATEPUBJOREPNUM" id="1301">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">DATEPUBJOREPNUM</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="1302">
+                    <property name="measures">
+                        <tabular-measure name="NBRREP" id="1303">
+                            <property name="function">first</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["NBRREP"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">reponses_fournies</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#C0C0C0</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderLeftColor">#C0C0C0</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderRightColor">#C0C0C0</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderTopColor">#C0C0C0</property>
+            <property name="borderTopStyle">solid</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="139">
+            <property name="pageBreakAfter">auto</property>
+            <property name="dataSet">reponses_fournies</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">DATEPUBJOREPNUM</property>
+                    <text-property name="displayName">DATEPUBJOREPNUM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATEPUBJOREPNUM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <text-property name="displayName">TITREJOMINISTERE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATEPUBJOREP</property>
+                    <text-property name="displayName">DATEPUBJOREP</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATEPUBJOREP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NBRREP</property>
+                    <text-property name="displayName">NBRREP</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBRREP"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="146"/>
+            <header>
+                <row id="140">
+                    <cell id="141">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="textAlign">center</property>
+                        <label id="147">
+                            <property name="fontWeight">bold</property>
+                            <property name="display">inline</property>
+                            <text-property name="text">Nombre des réponses fournies entre </text-property>
+                        </label>
+                        <label id="148">
+                            <property name="display">inline</property>
+                        </label>
+                        <text-data id="149">
+                            <property name="fontWeight">bold</property>
+                            <property name="display">inline</property>
+                            <expression name="valueExpr">Formatter.format(BirtDateTime.today(), 'dd/MM/yyyy')</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                        <label id="150">
+                            <property name="display">inline</property>
+                        </label>
+                        <label id="151">
+                            <property name="fontWeight">bold</property>
+                            <property name="display">inline</property>
+                            <text-property name="text"> Et </text-property>
+                        </label>
+                        <label id="152">
+                            <property name="display">inline</property>
+                        </label>
+                        <data id="153">
+                            <property name="fontWeight">bold</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Short Date</property>
+                                <property name="pattern">Short Date</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <structure name="stringFormat">
+                                <property name="category">Custom</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="display">inline</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">dateRef</property>
+                                    <expression name="expression" type="javascript">params["dateRef"]</expression>
+                                    <property name="dataType">date</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">dateRef</property>
+                        </data>
+                    </cell>
+                </row>
+            </header>
+        </table>
+        <text id="995">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <extended-item extensionName="Crosstab" extensionVersion="2.5.0" id="1304">
+            <property name="cube">Data Cube - reponses_fournies</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="1320">
+                    <property name="measure">NBRREP</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1321">
+                            <property name="aggregationOnRow">Group1/TITREJOMINISTERE</property>
+                            <property name="aggregationOnColumn">Group/DATEPUBJOREPAFF</property>
+                            <property name="content">
+                                <data id="1322">
+                                    <property name="resultSetColumn">NBRREP_Group1/TITREJOMINISTERE_Group/DATEPUBJOREPAFF</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1323">
+                            <property name="content">
+                                <label id="1324">
+                                    <list-property name="visibility">
+                                        <structure>
+                                            <property name="format">all</property>
+                                            <expression name="valueExpr" type="javascript">true</expression>
+                                        </structure>
+                                    </list-property>
+                                    <text-property name="text">NBRREP</text-property>
+                                </label>
+                            </property>
+                            <property name="backgroundColor">#808080</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="1306">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1307">
+                            <property name="dimension">Group1</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View3" id="1308">
+                                    <property name="level">Group1/TITREJOMINISTERE</property>
+                                    <property name="filter">
+                                        <filter-condition-element>
+                                            <expression name="expr" type="javascript">data["TITREJOMINISTERE"]</expression>
+                                            <property name="operator">ne</property>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">''</value>
+                                            </simple-property-list>
+                                        </filter-condition-element>
+                                    </property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1309">
+                                            <property name="content">
+                                                <data name="TITREJOMINISTERE1" id="1310">
+                                                    <property name="resultSetColumn">TITREJOMINISTERE</property>
+                                                </data>
+                                            </property>
+                                            <property name="width">50mm</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" id="1311">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1312">
+                            <property name="dimension">Group2</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View4" id="1313">
+                                    <property name="level">Group2/DATEPUBJOREPNUM</property>
+                                    <property name="sort">
+                                        <sort-element>
+                                            <expression name="key" type="javascript">data["DATEPUBJOREPNUM"]</expression>
+                                            <property name="direction">desc</property>
+                                            <property name="strength">-1</property>
+                                        </sort-element>
+                                    </property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1314">
+                                            <property name="content">
+                                                <data name="DATEPUBJOREPAFF" id="1319">
+                                                    <property name="resultSetColumn">DATEPUBJOREPAFF</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="1316">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View5" id="1317">
+                                    <property name="level">Group/DATEPUBJOREPAFF</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1318">
+                                            <property name="content">
+                                                <data name="DATEPUBJOREPNUM" id="1315">
+                                                    <list-property name="visibility">
+                                                        <structure>
+                                                            <property name="format">all</property>
+                                                            <expression name="valueExpr" type="javascript">true</expression>
+                                                        </structure>
+                                                    </list-property>
+                                                    <property name="resultSetColumn">DATEPUBJOREPNUM</property>
+                                                </data>
+                                            </property>
+                                            <property name="backgroundColor">#808080</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="1305"/>
+            </property>
+            <property name="emptyCellValue">0</property>
+            <property name="pageBreakAfter">always</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <expression name="expression">dimension["Group1"]["TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATEPUBJOREPNUM</property>
+                    <expression name="expression">dimension["Group2"]["DATEPUBJOREPNUM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATEPUBJOREPAFF</property>
+                    <expression name="expression">dimension["Group"]["DATEPUBJOREPAFF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NBRREP_Group1/TITREJOMINISTERE_Group/DATEPUBJOREPAFF</property>
+                    <expression name="expression">measure["NBRREP"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group1/TITREJOMINISTERE</value>
+                        <value>Group/DATEPUBJOREPAFF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+</report>

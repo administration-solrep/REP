@@ -1,0 +1,83 @@
+<div xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<a4j:region renderRegionOnly="true" id="#{widget.id}_ajax_region">
+		<nxu:set var="indexationZone"
+			value="#{widget.properties['indexationZone']}">
+			<a4j:outputPanel id="#{widget.id}_indexPanel" ajaxRendered="false">
+				<!-- Champs d'entrée des données d'indexation -->
+				<c:if test="#{widget.mode == 'edit'}">
+					<c:forEach var="directoryName"
+						items="#{indexActions.getDirectoriesByZone(indexationZone)}"
+						varStatus="status">
+						<nxu:set var="currentVocUI" value="#{vocSuggMap[directoryName]}">
+							<h:inputText id="#{widget.id}_indexLabel_#{status.index}"
+								value="#{currentVocUI.indexLabel}" styleClass="dataInputText"
+								onkeydown="if (event.keyCode == 13 || event.keyCode == 9) {return false;}">
+							</h:inputText>
+							<a4j:commandLink
+								action="#{indexActions.addIndex(value, currentVocUI)}"
+								reRender="#{widget.id}_indexPanel">
+								<h:graphicImage value="/icons/action_add.gif" />
+							</a4j:commandLink>
+
+							<h:panelGroup
+								id="#{widget.id}_index_suggestGroup_#{status.index}">
+								<rich:suggestionbox
+									id="#{widget.id}_index_suggestBox_#{status.index}"
+									for="#{widget.id}_indexLabel_#{status.index}" tokens=""
+									suggestionAction="#{currentVocUI.getSuggestions}"
+									var="sugindex"
+									nothingLabel="#{messages['label.suggestion.sansresultats']}"
+									minChars="3" frequency="0" requestDelay="100">
+									<h:column>
+										<f:subview>
+											<h:graphicImage value="/icons/tag_blue.png" alt="(index)" />
+											<h:outputText value="${sugindex}" />
+										</f:subview>
+									</h:column>
+								</rich:suggestionbox>
+							</h:panelGroup>
+						</nxu:set>
+					</c:forEach>
+				</c:if>
+
+				<!-- Panneau d'affichage des données d'indexation -->
+				<nxu:dataTable
+					value="#{indexActions.getListIndexByZone(value, indexationZone)}"
+					var="item"
+					rendered="#{not empty indexActions.getListIndexByZone(value, indexationZone)}"
+					bgcolor="#F1F1F1" first="0" rules="all" columnClasses="TableColumn"
+					styleClass="TableClass" headerClass="TableHeader"
+					footerClass="TableFooter">
+					<nxu:column style="color:green; font-weight:bold">
+						<f:facet name="header">
+							<h:outputText value="Catégorie" />
+						</f:facet>
+						<h:outputText value="#{messages[item[2]]}" />
+					</nxu:column>
+					<nxu:column style="color:green; font-weight:bold">
+						<f:facet name="header">
+							<h:outputText value="Libellé" />
+						</f:facet>
+						<h:outputText value="#{item[1]}" />
+					</nxu:column>
+					<c:if test="#{widget.mode == 'edit'}">
+						<nxu:column>
+							<a4j:commandLink
+								action="#{indexActions.removeIndex(value, item)}"
+								reRender="#{widget.id}_indexPanel">
+								<h:graphicImage value="/icons/action_delete_mini.gif" />
+							</a4j:commandLink>
+						</nxu:column>
+					</c:if>
+				</nxu:dataTable>
+			</a4j:outputPanel>
+		</nxu:set>
+	</a4j:region>
+</div>

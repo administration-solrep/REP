@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>9538</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-11-28</ns2:date_publication_jo>
+			<ns2:page_jo>3423</ns2:page_jo>
+			<ns2:ministre_depot id="50000938">
+				<titre_jo>Transports, mer et pêche</titre_jo>
+				<intitule_min>Ministère chargé des transports, de la mer et de la
+					pêche</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="08058D">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Michel</ns2:prenom>
+				<ns2:nom>Boutant</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>160 - Charente</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Michel Boutant rappelle à M. le ministre
+				délégué auprès du ministre de l'écologie, du développement durable
+				et de l'énergie, chargé des transports, de la mer et de la pêche les
+				termes de sa question n°07666 posée le 01/08/2013 sous le titre : "
+				Compensation financière en faveur des communes impactées par les
+				futures lignes à grande vitesse ", qui n'a pas obtenu de réponse à
+				ce jour.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:rappel>
+				<numero_question>7666</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:rappel>
+			<ns2:titre_senat>Compensation financière en faveur des communes
+				impactées par les futures lignes à grande vitesse</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:theme>Transports</ns2:theme>
+				<ns2:rubrique>Transports ferroviaires</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Trains à grande vitesse (TGV)</ns2:renvoi>
+					<ns2:renvoi>Question de rappel</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

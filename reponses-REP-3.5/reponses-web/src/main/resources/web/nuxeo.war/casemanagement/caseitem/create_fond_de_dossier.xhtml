@@ -1,0 +1,110 @@
+<div xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<a4j:region id="createFondDeDossierRegion">
+		<rich:modalPanel id="createFondDeDossierPanel" autosized="true">
+			<style>
+.button {
+	cursor: pointer;
+	color: #454545;
+	font-size: 10px;
+	background: #CECFD1
+		url(#{facesContext.externalContext.requestContextPath}/img/theme_galaxy/buttons.png)
+		repeat-x scroll left top;
+	border: 1px solid #BFC5CB;
+	padding: 2px 5px 2px 5px;
+	margin: 5px 10px 10px 0;
+}
+</style>
+
+			<div>
+				<f:facet name="header">
+					<h:outputText value="Ajouter un document" />
+				</f:facet>
+			</div>
+			<h:form id="createFondDeDossierForm">
+				<a4j:queue requestDelay="500" sizeExceededBehavior="dropNew"
+					ignoreDupResponses="true" size="10"
+					id="inputCreateFondDeDossierQueue"
+					name="inputCreateFondDeDossierQueue" timeout="10000" />
+				<div id="createFondDossierDiv">
+					<!-- file input -->
+					<rich:fileUpload listHeight="120"
+						fileUploadListener="#{fondDeDossierManagerActions.fileUploadListener}"
+						maxFilesQuantity="#{fondDeDossierManagerActions.uploadsAvailable}"
+						id="uploadFondDeDossierFiles" doneLabel="Téléchargement effectué"
+						clearAllControlLabel="Supprimer" immediateUpload="true"
+						addControlLabel="Ajouter Fichier" clearControlLabel="Supprimer"
+						acceptedTypes="#{fondDeDossierManagerActions.acceptedTypes}"
+						allowFlash="false">
+						<a4j:support event="onuploadcomplete"
+							eventsQueue="inputCreateFondDeDossierQueue" />
+						<a4j:support event="onclear"
+							eventsQueue="inputCreateFondDeDossierQueue">
+							<a4j:actionparam name="fname" noEscape="true"
+								value="(event.memo.entry)?event.memo.entry.fileName:'' "
+								assignTo="#{fondDeDossierManagerActions.removeFileName}"
+								actionListener="#{fondDeDossierManagerActions.clearUploadData}" />
+						</a4j:support>
+					</rich:fileUpload>
+
+					<!-- radiobutton list on visibility level-->
+					<div class="popupFddDiv">
+						<h:outputLabel value="Visibilité : " style="white-space: nowrap;" />
+						<h:selectOneRadio id="radioButtonNiveauVisibilite"
+							value="#{fondDeDossierManagerActions.niveauVisibilite}"
+							valueChangeListener="#{fondDeDossierManagerActions.valueListener}"
+							layout="pageDirection">
+							<a4j:support event="onclick"
+								eventsQueue="inputCreateFondDeDossierQueue" />
+							<f:selectItems value="#{fondDeDossierManagerActions.selectItems}" />
+						</h:selectOneRadio>
+					</div>
+
+					<table>
+						<tr>
+							<td>
+								<!-- button create --> <a4j:commandButton styleClass="button"
+									action="#{fondDeDossierManagerActions.createFile()}"
+									id="createFondDeDossierButtonText"
+									eventsQueue="inputCreateFondDeDossierQueue"
+									oncomplete="if (!#{fondDeDossierManagerActions.isErrorOccurred}) {Richfaces.hideModalPanel('createFondDeDossierPanel');}"
+									reRender="fddTreePanel, errorNameCreate" ajaxSingle="true"
+									value="Valider">
+								</a4j:commandButton>
+							</td>
+							<td>
+								<!-- button close --> <a4j:commandButton styleClass="button"
+									action="#{fondDeDossierManagerActions.resetAllProperties()}"
+									id="annulerFondDeDossierFileCreationText"
+									eventsQueue="inputCreateFondDeDossierQueue"
+									oncomplete="Richfaces.hideModalPanel('createFondDeDossierPanel')"
+									reRender="fddTreePanel" ajaxSingle="true" value="Annuler">
+								</a4j:commandButton>
+							</td>
+							<td><a4j:status for="createFondDeDossierRegion">
+									<f:facet name="start">
+										<h:graphicImage value="/img/standart_waiter.gif"
+											style="position: absolute;" />
+									</f:facet>
+								</a4j:status></td>
+						</tr>
+					</table>
+
+					<!-- error message -->
+					<div class="popupFddDiv">
+						<h:outputText class="popupFddError" id="errorNameCreate"
+							value="#{fondDeDossierManagerActions.errorName}" />
+					</div>
+				</div>
+			</h:form>
+		</rich:modalPanel>
+	</a4j:region>
+</div>

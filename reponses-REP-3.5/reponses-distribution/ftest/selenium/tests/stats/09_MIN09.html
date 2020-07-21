@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-test.lyon-dev2.local:8180/" />
+<title>09_MIN09</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">09_MIN09</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>moasword</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/statistiques/view_report.faces?conversationId=0NXMAIN</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=MIN09. Taux de réponse aux QE, par ministère, depuis
+					le début de la législature - Sénat</td>
+				<td></td>
+			</tr>
+			<!--Test sur le nombre total de QE attribuées-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[1]/div[contains(.,'23')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[1]/div[contains(.,'135')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[1]/div[contains(.,'6877')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le nombre de réponses publiées-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[2]/div[contains(.,'14')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[2]/div[contains(.,'81')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[2]/div[contains(.,'3626')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le taux de réponses publiées-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[3]/div[contains(.,'61%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[3]/div[contains(.,'60%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[3]/div[contains(.,'53%')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le taux de réponses publiées dans un délai inférieur à 30 jours-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[4]/div[contains(.,'0%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[4]/div[contains(.,'4%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[4]/div[contains(.,'9%')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le taux de réponses publiées dans un délai compris entre 30 et 60 jours-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[5]/div[contains(.,'21%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[5]/div[contains(.,'6%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[5]/div[contains(.,'21%')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le taux de réponses publiées dans un délai compris entre 30 et 60 jours-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Premier
+					ministre')]/../../td[6]/div[contains(.,'79%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Ministère chargé du
+					budget')]/../../td[6]/div[contains(.,'90%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[6]/div[contains(.,'70%')]</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

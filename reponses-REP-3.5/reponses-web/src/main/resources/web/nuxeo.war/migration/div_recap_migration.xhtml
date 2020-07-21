@@ -1,0 +1,139 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<style>
+.nonmigrable {
+	color: red;
+	text-align: center;
+}
+
+.migrable {
+	color: green;
+	text-align: center;
+}
+
+input[type=checkbox] {
+	vertical-align: middle;
+	position: relative;
+	bottom: 1px;
+}
+</style>
+
+	<h:form id="updateTimbreForm">
+		<div id="containerTabDiv"
+			style="overflow-x: auto; overflow-y: hidden;">
+			<a4j:outputPanel id="migrationRecapPanel">
+				<h:dataTable var="currentEntite"
+					value="#{migrationManagerActions.currentGouvernementForUpdateTimbre}"
+					class="dataOutput" rowClasses="dataRowEven,dataRowOdd">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{organigrammeManagerActions.getLabelCurrentGouvernement()}"
+								style="white-space:pre-line;" />
+						</f:facet>
+						<h:outputText value="#{currentEntite.label}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{organigrammeManagerActions.getLabelNextGouvernement()}"
+								style="white-space:pre-line;" />
+						</f:facet>
+						<h:outputText
+							value="#{migrationManagerActions.getNewTimbreLabelForEntite(currentEntite)}" />
+						<h:outputText value="Total"
+							rendered="#{currentEntite.id == 'total'}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{messages['reponses.migration.recap.header.migrerDossiersClos']}"
+								style="white-space:pre-line;" />
+						</f:facet>
+						<h:outputText rendered="#{currentEntite.id != 'total'}"
+							value="#{messages[currentEntite.getMigratingDossiersClosLabel()]}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{messages['reponses.migration.recap.header.briserSignature']}"
+								style="white-space:pre-line;" />
+						</f:facet>
+						<h:outputText rendered="#{currentEntite.id != 'total'}"
+							value="#{messages[currentEntite.getBreakingSealLabel()]}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{messages['reponses.migration.recap.header.questionsCloses']}"
+								style="white-space:pre-line;" />
+						</f:facet>
+						<h:outputText styleClass="nonmigrable"
+							value="#{migrationManagerActions.getStringFromCount(currentEntite.countClose)}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{messages['reponses.migration.recap.header.questionsRepSignees']}"
+								style="white-space:pre-line;" />
+						</f:facet>
+						<h:outputText styleClass="migrable"
+							value="#{migrationManagerActions.getStringFromCount(currentEntite.countSigne)}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{messages['reponses.migration.recap.header.questionsAttenteRep']}"
+								style="white-space:pre-line;" />
+						</f:facet>
+						<h:outputText styleClass="migrable"
+							value="#{migrationManagerActions.getStringFromCount(currentEntite.countMigrable)}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{messages['reponses.migration.recap.header.modelesFDR']}"
+								style="white-space:pre-line;" />
+						</f:facet>
+						<h:outputText styleClass="migrable"
+							value="#{migrationManagerActions.getStringFromCount(currentEntite.countModelFDR)}" />
+					</h:column>
+
+				</h:dataTable>
+			</a4j:outputPanel>
+			<script>
+			resize();
+		</script>
+		</div>
+
+		<nxh:commandButton
+			action="#{migrationManagerActions.goToViewSelectionTimbres()}"
+			value="#{messages['reponses.migration.button.return']}"
+			styleClass="button" />
+		<nxh:commandButton action="#{migrationManagerActions.updateTimbre}"
+			value="#{messages['reponses.migration.button.launch']}"
+			styleClass="button"
+			onclick="return confirm('Êtes-vous sûr de vouloir faire la mise à jour ?');" />
+	</h:form>
+	<script>
+		var j = jQuery.noConflict();
+		j(document).ready(function() {
+			window.onresize = resize;
+			resize();
+		});	
+	</script>
+
+</div>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:nxd="http://nuxeo.org/nxweb/document">
+
+	<ui:define name="page title">
+		<h:outputText value="Statistiques" />
+	</ui:define>
+
+	<ui:define name="bookmark">
+		<link rel="bookmark"
+			href="#{navigationContext.currentDocumentFullUrl}" />
+	</ui:define>
+
+	<ui:define name="body">
+		<ui:include src="/incl/message_banner.xhtml" />
+		<div id="upperContentView">
+			<c:if test="#{statistiqueActions.hasRightToExport()}">
+				<div id="actionsButtonsStats" style="width: 85%;">
+					<table align="right">
+						<tr>
+							<h:form id="statistiquesActionsForm">
+								<td><h:commandLink id="titleExport"
+										action="#{statistiqueActions.getGeneratedExport()}"
+										style="text-decoration:none;vertical-align:middle;">
+										<h:outputText
+											value="#{statistiqueActions.getGeneratedExportName()}" />
+									</h:commandLink></td>
+								<td><h:commandLink id="exportStatButton"
+										action="#{statistiqueActions.masseExport()}"
+										style="text-decoration:none;vertical-align:middle;">
+										<h:graphicImage url="/img/icons/masse/compressMasse.png"
+											title="Export ZIP" alt="Export ZIP"
+											style="vertical-align:middle;" />
+									</h:commandLink></td>
+							</h:form>
+						</tr>
+					</table>
+				</div>
+			</c:if>
+
+			<div style="clear: both;"></div>
+			<nxu:set var="contentViewName" value="birt_reports">
+				<nxu:set var="contentViewUnitSingle" value="état statistique"
+					cache="true">
+					<nxu:set var="contentViewUnit" value="états statistiques"
+						cache="true">
+						<ui:decorate template="/incl/content_view.xhtml">
+							<ui:define name="content_view_header_after_selector" />
+							<ui:define name="content_view_header_before_selector" />
+						</ui:decorate>
+					</nxu:set>
+				</nxu:set>
+			</nxu:set>
+		</div>
+
+		<ui:include src="/incl/upper_panel_toggle.xhtml" />
+	</ui:define>
+
+
+	<ui:define name="subbody">
+		<c:if test="#{currentDocument != null}">
+			<div class="subbodyContainer">
+
+				<nxl:documentLayout documentMode="header" mode="view"
+					value="#{currentDocument}" defaultLayout="document_header"
+					includeAnyMode="false" />
+
+				<ui:include src="/incl/message_banner.xhtml" />
+
+				<div class="tabsBar">
+					<h:form>
+						<nxu:dataList layout="unorderedList" var="tab"
+							value="#{tabsActionsList}"
+							itemStyleClass="#{nxu:test(webActions.currentTabAction == tab, 'selected', '')}">
+							<nxd:restDocumentLink document="#{currentDocument}"
+								view="statistique" tab="#{tab.id}"
+								rendered="#{tab.id == 'TAB_BIRT_VIEW' or tab.id == 'TAB_BIRT_GENERATE_PDF' or tab.id == 'TAB_BIRT_GENERATE_EXCEL'}">
+								<h:outputText value="#{messages[tab.label]}" />
+							</nxd:restDocumentLink>
+						</nxu:dataList>
+					</h:form>
+					<c:if test="#{statistiqueActions.hasRightToExport()}">
+						<h:form>
+							<nxu:dataList layout="unorderedList" var="tab"
+								value="#{tabsActionsList}">
+								<nxh:commandLink
+									rendered="#{tab.id == 'TAB_BIRT_GENERATE_ALL_PDF'}"
+									value="#{tab.label}"
+									action="#{statistiqueActions.generateAllPdf()}">
+								</nxh:commandLink>
+								<nxh:commandLink
+									rendered="#{tab.id == 'TAB_BIRT_GENERATE_ALL_EXCEL'}"
+									value="#{tab.label}"
+									action="#{statistiqueActions.generateAllExcel()}">
+								</nxh:commandLink>
+							</nxu:dataList>
+						</h:form>
+					</c:if>
+				</div>
+				<div style="clear: both"></div>
+				<div class="tabsContent">
+					<ui:include src="#{webActions.currentTabAction.link}"
+						rendered="#{tab.id == 'TAB_BIRT_VIEW' or tab.id == 'TAB_BIRT_GENERATE_PDF' or tab.id == 'TAB_BIRT_GENERATE_EXCEL'}" />
+				</div>
+
+			</div>
+		</c:if>
+	</ui:define>
+
+</nxthemes:composition>

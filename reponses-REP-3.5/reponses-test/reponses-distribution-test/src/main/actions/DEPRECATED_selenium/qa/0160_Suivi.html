@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8180/" />
+<title>Suivi</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">Suivi</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:3:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>id=requeteur:smartSearchForm:nxl_nxql_incremental_smart_query:nxw_nxql_incremental_smart_query_widget:nxl_incremental_smart_query_selection:nxl_incremental_smart_query_selection_rowSelector</td>
+				<td>label=Numéro de question</td>
+			</tr>
+			<tr>
+				<td>waitForElementPresent</td>
+				<td>id=requeteur:smartSearchForm:nxl_nxql_incremental_smart_query:nxw_nxql_incremental_smart_query_widget:nxl_incremental_smart_query_selection:nxl_incremental_smart_query_selection_selectionSubview_question_condition_numero:nxw_question_condition_numero:nxw_numero_1</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=requeteur:smartSearchForm:nxl_nxql_incremental_smart_query:nxw_nxql_incremental_smart_query_widget:nxl_incremental_smart_query_selection:nxl_incremental_smart_query_selection_selectionSubview_question_condition_numero:nxw_question_condition_numero:nxw_numero_1</td>
+				<td>214165</td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=requeteur:smartSearchForm:nxl_nxql_incremental_smart_query:nxw_nxql_incremental_smart_query_widget:addToQuery</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForElementPresent</td>
+				<td>css=img[alt=&quot;Supprimer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>214165</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=requeteur:smartSearchForm:searchButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>AN 214165</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=smartSearchResultsActions:smartSearchActionsButton_0</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=document_create:nxl_heading:nxw_title</td>
+				<td>Requête test</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=document_create:nxl_heading:nxw_description</td>
+				<td>Une description de test</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=document_create:button_create_and_back_to_smart_search</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Dossier enregistré</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 214165</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

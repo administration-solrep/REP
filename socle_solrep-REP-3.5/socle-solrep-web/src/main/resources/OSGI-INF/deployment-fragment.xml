@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<fragment version="1">
+
+	<require>fr.dila.cm.web</require>
+	<require>fr.dila.st.web</require>
+ 	<require>fr.dila.ss.core</require>
+ 	<requiredBy>org.nuxeo.ecm.war</requiredBy>
+	
+	<extension target="application#MODULE">
+		<module>
+			<ejb>${bundle.fileName}</ejb>
+		</module>
+	</extension>
+	<install>
+		<unzip from="${bundle.fileName}" to="/">
+			<include> nuxeo.war/**</include>
+		</unzip>
+
+		<!-- Traductions -->
+		<delete path="${bundle.fileName}.tmp" />
+		<mkdir path="${bundle.fileName}.tmp" />
+		<unzip from="${bundle.fileName}" to="${bundle.fileName}.tmp" />
+
+		<!-- Surcharge la locale FR car on force la locale à FR dans l'application -->
+		<append from="${bundle.fileName}.tmp/l10n/messages.properties"
+			to="nuxeo.war/WEB-INF/classes/messages_fr.properties" addNewLine="true" />
+
+		<delete path="${bundle.fileName}.tmp" />
+	</install>
+</fragment>
+

@@ -1,0 +1,64 @@
+<div xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<rich:modalPanel id="unconcerned_task_panel" autosized="true">
+		<div>
+			<f:facet name="header">
+				<h:outputText
+					value="#{messages['label.reponses.dossier.non.concerne.popup.title']}" />
+			</f:facet>
+		</div>
+
+		<div class="popupFddDiv">
+
+			<h:form id="unconcerned_panel_form">
+				<nxl:layout name="ministere_reattribution" mode="edit"
+					value="#{dossierDistributionActions}" />
+
+				<h:panelGrid id="unconcerned_panel" columns="2">
+
+					<h:commandLink
+						action="#{dossierDistributionActions.nonConcerneReattribution()}"
+						id="okLinkImg"
+						onclick="Richfaces.hideModalPanel('unconcerned_task_panel')">
+						<h:graphicImage height="24" width="24" url="/img/icons/check.png"
+							alt="Valider" />
+					</h:commandLink>
+					<h:commandLink
+						action="#{dossierDistributionActions.nonConcerneReattribution()}"
+						id="okLink"
+						onclick="Richfaces.hideModalPanel('unconcerned_task_panel')"
+						ajaxSingle="true">
+						<h:outputText value="Valider" />
+					</h:commandLink>
+
+					<a4j:commandLink
+						action="#{dossierDistributionActions.resetMinSelection()}"
+						id="cancelLinkImg"
+						onclick="Richfaces.hideModalPanel('unconcerned_task_panel')"
+						ajaxSingle="true">
+						<h:graphicImage height="24" width="24" url="/img/icons/delete.png"
+							alt="Annuler" />
+					</a4j:commandLink>
+					<a4j:commandLink
+						action="#{dossierDistributionActions.resetMinSelection()}"
+						id="cancelLink"
+						onclick="Richfaces.hideModalPanel('unconcerned_task_panel')"
+						ajaxSingle="true">
+						<h:outputText value="Annuler" />
+					</a4j:commandLink>
+
+				</h:panelGrid>
+			</h:form>
+		</div>
+
+	</rich:modalPanel>
+</div>

@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-test.lyon-dev2.local:8080/reponses/" />
+<title>CréationLot-Complexe</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">CréationLot-Complexe</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:2:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=requete_all_form:nxl_requeteSimple:nxw_critereRequete</td>
+				<td>667;669</td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>id=requete_all_form:nxl_requeteSimple:nxw_type_question_list</td>
+				<td>label=Questions Ecrites</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=requeteComposite:nxl_requete_listing:nxw_listing_ajax_checkbox</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=requeteComposite:nxl_requete_listing_1:nxw_listing_ajax_checkbox_1</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=requeteComposite:clipboardActionsTable_requeteComposite_0:0:clipboardActionsButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=document_properties:questionTitreInput</td>
+				<td>AN 667</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=document_properties:button_create_lot</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:0:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Mes Corbeilles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>css=img[alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Substituer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=feuille_route_model_list_content:nxl_feuille_route_model_select_listing:selectLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>500</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Substituer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Etape à venir : Agents DGEFP</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>css=img[alt=&quot;Refus de validation et retour étape
+					précédente&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=corbeille_content:nxl_cm_inbox_caselink:nxw_listing_ajax_checkbox_dto</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>css=p &gt; a &gt; span</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>css=img[alt=&quot;Refus de validation et envoi étape
+					suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>dlf</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>dlf</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=corbeille_content:nxl_cm_inbox_caselink:nxw_listing_ajax_checkbox_dto</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=corbeille_content:nxl_cm_inbox_caselink:nxw_listing_ajax_checkbox_dto</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>secgeneco</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>secgeneco</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=corbeille_content:nxl_cm_inbox_caselink:listing_ajax_checkbox_dto_header</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextPresent</td>
+				<td>Pour signature (*)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour signature (*)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=corbeille_content:nxl_cm_inbox_caselink:listing_ajax_checkbox_dto_header</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Le texte de la réponse étant vide, les questions sont encore dans la corbeille "Pour signature"-->
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Il n'y a pas encore de réponse rédigée.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>//img[@alt=&quot;Signer et envoyer à l'étape
+					suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>//img[@alt=&quot;Refus de signature et envoi à l'étape
+					suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>css=img[alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=tinymce</td>
+				<td>Voici le texte de la réponse, commune aux questions 667 et
+					669.</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>css=img[alt=&quot;Sauvegarder&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>Il n'y a pas encore de réponse rédigée.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Voici le texte de la réponse, commune aux questions 667 et
+					669.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>css=img[alt=&quot;Étape en cours&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Il n'y a pas encore de réponse rédigée.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>//img[@alt=&quot;Signer et envoyer à l'étape
+					suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>//img[@alt=&quot;Refus de signature et envoi à l'étape
+					suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>Il n'y a pas encore de réponse rédigée.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Voici le texte de la réponse, commune aux questions 667 et
+					669.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>css=img[alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=tinymce</td>
+				<td>Voici le texte de la réponse, commune aux questions 667 et
+					669. Modification depuis la question 669.</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>css=img[alt=&quot;Sauvegarder&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>Il n'y a pas encore de réponse rédigée.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Voici le texte de la réponse, commune aux questions 667 et
+					669. Modification depuis la question 669.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>css=img[alt=&quot;Étape en cours&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>Il n'y a pas encore de réponse rédigée.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Voici le texte de la réponse, commune aux questions 667 et
+					669. Modification depuis la question 669.</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Signer et envoyer à l'étape
+					suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=userMetaServicesSearchForm:questionIdInput</td>
+				<td>667</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<!--Aucune action ne doit être disponible à partir de cette étape pour l'administrateur ministériel-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseDown</td>
+				<td>//span[text()[starts-with(.,'Min. Economie')]]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseUp</td>
+				<td>//span[text()[starts-with(.,'Min. Economie')]]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour attribution (*)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertText</td>
+				<td>css=img[alt=&quot;Étape en cours&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=userMetaServicesSearchForm:questionIdInput</td>
+				<td>667</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>css=img[alt=&quot;est alloti&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=document_properties:table_dc:_header</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=document_properties:button_remove_lot</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>sececofinance</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>sececofinance</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseDown</td>
+				<td>//span[text()[starts-with(.,'Min. Economie')]]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseUp</td>
+				<td>//span[text()[starts-with(.,'Min. Economie')]]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour impression (*)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>ecofinance</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>ecofinance</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseDown</td>
+				<td>//span[text()[starts-with(.,'Min. Economie')]]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseUp</td>
+				<td>//span[text()[starts-with(.,'Min. Economie')]]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour validation Premier ministre (*)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Envoi à l'étape suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 669</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=userMetaServicesSearchForm:questionIdInput</td>
+				<td>667</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 667</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertNotText</td>
+				<td>css=img[alt=&quot;Étape en cours&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userMetaServicesSearchForm:userServicesBottomActionsTable:0:userServicesBottomActionLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

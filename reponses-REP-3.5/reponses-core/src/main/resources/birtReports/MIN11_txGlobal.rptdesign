@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.1.v20100902 Build &lt;2.6.1.v20100915-1750></property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube - questions1.questions.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions1.questions.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube - questions1.questions.x">135</property>
+    <property name="Data Cube - questions1.questions.y">80</property>
+    <property name="Data Cube - questions.questions.x">106</property>
+    <property name="Data Cube - questions.questions.y">12</property>
+    <property name="Data Cube - questions.questions.width">150</property>
+    <property name="Data Cube - questions.questions.height">200</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.x">100</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.y">27</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.width">150</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.height">200</property>
+    <property name="units">in</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">1889</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">1889</property>
+        </structure>
+    </list-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nuxeo" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.1.15.154:1521:ORA112</property>
+            <property name="odaUser">REPONSES_STAT</property>
+	    <encrypted-property name="odaPassword" encryptionID="base64">UkVQT05TRVNfU1RBVA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="somme" id="1889">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">NBQUESTION</property>
+                    <text-property name="displayName">NBQUESTION</text-property>
+                    <text-property name="heading">NBQUESTION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBREPONDU1MOIS</property>
+                    <text-property name="displayName">NBREPONDU1MOIS</text-property>
+                    <text-property name="heading">NBREPONDU1MOIS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBREPONDU2MOIS</property>
+                    <text-property name="displayName">NBREPONDU2MOIS</text-property>
+                    <text-property name="heading">NBREPONDU2MOIS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBREPONDUSUPERIEUR</property>
+                    <text-property name="displayName">NBREPONDUSUPERIEUR</text-property>
+                    <text-property name="heading">NBREPONDUSUPERIEUR</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">NBQUESTION</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NBREPONDU1MOIS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">NBREPONDU2MOIS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">NBREPONDUSUPERIEUR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">NBQUESTION</property>
+                    <property name="nativeName">NBQUESTION</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NBREPONDU1MOIS</property>
+                    <property name="nativeName">NBREPONDU1MOIS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">NBREPONDU2MOIS</property>
+                    <property name="nativeName">NBREPONDU2MOIS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">NBREPONDUSUPERIEUR</property>
+                    <property name="nativeName">NBREPONDUSUPERIEUR</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select sum(nbQuestion) as NbQuestion, sum(nbrepondu1mois) as NbRepondu1Mois, sum(nbrepondu2mois) as nbrepondu2Mois, sum(NBREPONDUSUPERIEUR) as NBREPONDUSUPERIEUR
+from statistique_question_reponse
+where ministere='GLOBAL']]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="NbQuestion" id="1932">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">LIBELLE</property>
+                    <text-property name="displayName">LIBELLE</text-property>
+                    <text-property name="heading">LIBELLE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">VALEUR</property>
+                    <text-property name="displayName">VALEUR</text-property>
+                    <text-property name="heading">VALEUR</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">LIBELLE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">VALEUR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">LIBELLE</property>
+                    <property name="nativeName">LIBELLE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">VALEUR</property>
+                    <property name="nativeName">VALEUR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select libelle,valeur 
+from statistique_valeur 
+where idrapport='1a']]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>LIBELLE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2000</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>LIBELLE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>LIBELLE</design:label>
+            <design:formattingHints>
+              <design:displaySize>2000</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>VALEUR</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>38</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>VALEUR</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>VALEUR</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="RepartitionReponse" id="1937">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">LIBELLE</property>
+                    <text-property name="displayName">LIBELLE</text-property>
+                    <text-property name="heading">LIBELLE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">VALEUR</property>
+                    <text-property name="displayName">VALEUR</text-property>
+                    <text-property name="heading">VALEUR</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">LIBELLE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">VALEUR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">LIBELLE</property>
+                    <property name="nativeName">LIBELLE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">VALEUR</property>
+                    <property name="nativeName">VALEUR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select libelle,valeur 
+from statistique_valeur 
+where idrapport='1b']]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>LIBELLE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2000</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>LIBELLE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>LIBELLE</design:label>
+            <design:formattingHints>
+              <design:displaySize>2000</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>VALEUR</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>38</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>VALEUR</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>VALEUR</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="sommeTotal" id="2449">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">NBQUESTIONAN</property>
+                    <text-property name="displayName">NBQUESTIONAN</text-property>
+                    <text-property name="heading">NBQUESTIONAN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBREPONDU1MOISAN</property>
+                    <text-property name="displayName">NBREPONDU1MOISAN</text-property>
+                    <text-property name="heading">NBREPONDU1MOISAN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBREPONDU2MOISAN</property>
+                    <text-property name="displayName">NBREPONDU2MOISAN</text-property>
+                    <text-property name="heading">NBREPONDU2MOISAN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBREPONDUSUPERIEURAN</property>
+                    <text-property name="displayName">NBREPONDUSUPERIEURAN</text-property>
+                    <text-property name="heading">NBREPONDUSUPERIEURAN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBQUESTIONSN</property>
+                    <text-property name="displayName">NBQUESTIONSN</text-property>
+                    <text-property name="heading">NBQUESTIONSN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBREPONDU1MOISSN</property>
+                    <text-property name="displayName">NBREPONDU1MOISSN</text-property>
+                    <text-property name="heading">NBREPONDU1MOISSN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBREPONDU2MOISSN</property>
+                    <text-property name="displayName">NBREPONDU2MOISSN</text-property>
+                    <text-property name="heading">NBREPONDU2MOISSN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NBREPONDUSUPERIEURSN</property>
+                    <text-property name="displayName">NBREPONDUSUPERIEURSN</text-property>
+                    <text-property name="heading">NBREPONDUSUPERIEURSN</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">NBQUESTIONAN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NBREPONDU1MOISAN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">NBREPONDU2MOISAN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">NBREPONDUSUPERIEURAN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">NBQUESTIONSN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">NBREPONDU1MOISSN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">NBREPONDU2MOISSN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">NBREPONDUSUPERIEURSN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">NBQUESTIONAN</property>
+                    <property name="nativeName">NBQUESTIONAN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NBREPONDU1MOISAN</property>
+                    <property name="nativeName">NBREPONDU1MOISAN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">NBREPONDU2MOISAN</property>
+                    <property name="nativeName">NBREPONDU2MOISAN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">NBREPONDUSUPERIEURAN</property>
+                    <property name="nativeName">NBREPONDUSUPERIEURAN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">NBQUESTIONSN</property>
+                    <property name="nativeName">NBQUESTIONSN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">NBREPONDU1MOISSN</property>
+                    <property name="nativeName">NBREPONDU1MOISSN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">NBREPONDU2MOISSN</property>
+                    <property name="nativeName">NBREPONDU2MOISSN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">NBREPONDUSUPERIEURSN</property>
+                    <property name="nativeName">NBREPONDUSUPERIEURSN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select Req1.NbQuestionAn, Req1.NbRepondu1MoisAn, 
+Req1.nbrepondu2MoisAn, Req1.NBREPONDUSUPERIEURAN, 
+Req2.NbQuestionSN, Req2.NbRepondu1MoisSN, Req2.nbrepondu2MoisSN, 
+Req2.NBREPONDUSUPERIEURSN from 
+
+(select sum(nbQuestion) as NbQuestionAn, 
+sum(nbrepondu1mois) as NbRepondu1MoisAn, sum(nbrepondu2mois) as nbrepondu2MoisAn, 
+sum(NBREPONDUSUPERIEUR) as NBREPONDUSUPERIEURAN
+from statistique_question_reponse
+where origine='AN' and ministere='GLOBAL') Req1, 
+
+(select sum(nbQuestion) as NbQuestionSN, sum(nbrepondu1mois) as NbRepondu1MoisSN, sum(nbrepondu2mois) as nbrepondu2MoisSN, sum(NBREPONDUSUPERIEUR) as NBREPONDUSUPERIEURSN
+from statistique_question_reponse
+where origine='SENAT' and ministere='GLOBAL') Req2]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>NBQUESTION</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NBQUESTION</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NBQUESTION</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>NBREPONDU1MOIS</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NBREPONDU1MOIS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NBREPONDU1MOIS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>NBREPONDU2MOIS</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NBREPONDU2MOIS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NBREPONDU2MOIS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>NBREPONDUSUPERIEUR</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NBREPONDUSUPERIEUR</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NBREPONDUSUPERIEUR</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DateEtat" id="2471">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">DateEtat</property>
+                    <text-property name="displayName">DateEtat</text-property>
+                    <text-property name="heading">DateEtat</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">DateEtat</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">DateEtat</property>
+                    <property name="nativeName">DateEtat</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select TO_DATE(valeur,'dd/MM/YYYY') "DateEtat" from STATISTIQUE_VALEUR
+where id=17]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>MAX(DATEETAT)</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>MAX(DATEETAT)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MAX(DATEETAT)</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#C0C0C0</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderLeftColor">#C0C0C0</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderRightColor">#C0C0C0</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderTopColor">#C0C0C0</property>
+            <property name="borderTopStyle">solid</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text id="1868">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <grid id="2473">
+            <column id="2474"/>
+            <row id="2475">
+                <property name="height">0.47in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="2476">
+                    <label id="2477">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">MIN11. Taux de réponse du Gouvernement aux questions écrites, depuis le début de la législature</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <text id="1720">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <text id="2330">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <grid id="2319">
+            <column id="2320">
+                <property name="width">1.0833333333333333in</property>
+            </column>
+            <column id="2321">
+                <property name="width">1.1041666666666667in</property>
+            </column>
+            <column id="2322">
+                <property name="width">5.760416666666667in</property>
+            </column>
+            <row id="2323">
+                <cell id="2324">
+                    <label id="2327">
+                        <property name="fontWeight">bold</property>
+                        <property name="textUnderline">underline</property>
+                        <text-property name="text">Date de l'état :</text-property>
+                    </label>
+                </cell>
+                <cell id="2325">
+                    <data id="2472">
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">dd/MM/yyyy</property>
+                        </structure>
+                        <property name="whiteSpace">nowrap</property>
+                        <property name="dataSet">DateEtat</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">DateEtat</property>
+                                <text-property name="displayName">DateEtat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["DateEtat"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">DateEtat</property>
+                    </data>
+                </cell>
+                <cell id="2326"/>
+            </row>
+        </grid>
+        <text id="2332">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <table id="2377">
+            <property name="dataSet">sommeTotal</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">NBQUESTIONAN</property>
+                    <text-property name="displayName">NBQUESTIONAN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBQUESTIONAN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBREPONDU1MOISAN</property>
+                    <text-property name="displayName">NBREPONDU1MOISAN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU1MOISAN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBREPONDU2MOISAN</property>
+                    <text-property name="displayName">NBREPONDU2MOISAN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU2MOISAN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBREPONDUSUPERIEURAN</property>
+                    <text-property name="displayName">NBREPONDUSUPERIEURAN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDUSUPERIEURAN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBQUESTIONSN</property>
+                    <text-property name="displayName">NBQUESTIONSN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBQUESTIONSN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBREPONDU1MOISSN</property>
+                    <text-property name="displayName">NBREPONDU1MOISSN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU1MOISSN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBREPONDU2MOISSN</property>
+                    <text-property name="displayName">NBREPONDU2MOISSN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU2MOISSN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBREPONDUSUPERIEURSN</property>
+                    <text-property name="displayName">NBREPONDUSUPERIEURSN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDUSUPERIEURSN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBReponsesAn</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU1MOISAN"]+dataSetRow["NBREPONDU2MOISAN"]+dataSetRow["NBREPONDUSUPERIEURAN"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">NBReponsesSn</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU1MOISSN"]+dataSetRow["NBREPONDU2MOISSN"]+dataSetRow["NBREPONDUSUPERIEURSN"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">TauxGlobalAn</property>
+                    <expression name="expression" type="javascript">(dataSetRow["NBREPONDU1MOISAN"]+dataSetRow["NBREPONDU2MOISAN"]+dataSetRow["NBREPONDUSUPERIEURAN"])/dataSetRow["NBQUESTIONAN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TauxGlobalSn</property>
+                    <expression name="expression" type="javascript">(dataSetRow["NBREPONDU1MOISSN"]+dataSetRow["NBREPONDU2MOISSN"]+dataSetRow["NBREPONDUSUPERIEURSN"])/dataSetRow["NBQUESTIONSN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NBQuestionTotal</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBQUESTIONAN"]+dataSetRow["NBQUESTIONSN"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">NBReponsesTotal</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU1MOISAN"]+dataSetRow["NBREPONDU2MOISAN"]+dataSetRow["NBREPONDUSUPERIEURAN"]+dataSetRow["NBREPONDU1MOISSN"]+dataSetRow["NBREPONDU2MOISSN"]+dataSetRow["NBREPONDUSUPERIEURSN"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">TauxGlobalTotal</property>
+                    <expression name="expression" type="javascript">row["NBReponsesTotal"]/row["NBQuestionTotal"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Taux1MoisAn</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU1MOISAN"]/row["NBReponsesAn"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Taux2MoisAn</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU2MOISAN"]/row["NBReponsesAn"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TauxSup2MoisAn</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDUSUPERIEURAN"]/row["NBReponsesAn"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Taux1MoisSn</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU1MOISSN"]/row["NBReponsesSn"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Taux2MoisSn</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDU2MOISSN"]/row["NBReponsesSn"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TauxSup2MoisSn</property>
+                    <expression name="expression" type="javascript">dataSetRow["NBREPONDUSUPERIEURSN"]/row["NBReponsesSn"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Taux1MoisTotal</property>
+                    <expression name="expression" type="javascript">(row["Taux1MoisAn"]+row["Taux1MoisSn"])/2</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Taux2MoisTotal</property>
+                    <expression name="expression" type="javascript">(row["Taux2MoisAn"]+row["Taux2MoisSn"])/2</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TauxSupMoisTotal</property>
+                    <expression name="expression" type="javascript">(row["TauxSup2MoisAn"]+row["TauxSup2MoisSn"])/2</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Taux1Mois</property>
+                    <expression name="expression" type="javascript">(dataSetRow["NBREPONDU1MOISAN"]+dataSetRow["NBREPONDU1MOISSN"])/(row["NBReponsesAn"]+row["NBReponsesSn"])</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Taux2Mois</property>
+                    <expression name="expression" type="javascript">(dataSetRow["NBREPONDU2MOISAN"]+dataSetRow["NBREPONDU2MOISSN"])/(row["NBReponsesAn"]+row["NBReponsesSn"])</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TauxSupMois</property>
+                    <expression name="expression" type="javascript">(dataSetRow["NBREPONDUSUPERIEURAN"]+dataSetRow["NBREPONDUSUPERIEURSN"])/(row["NBReponsesAn"]+row["NBReponsesSn"])</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="2402"/>
+            <column id="2403"/>
+            <column id="2404"/>
+            <column id="2405"/>
+            <column id="2406"/>
+            <column id="2407"/>
+            <column id="2408"/>
+            <header>
+                <row id="2378">
+                    <property name="height">0.7in</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="2379">
+                        <property name="backgroundColor">#C0C0C0</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                    </cell>
+                    <cell id="2380">
+                        <property name="backgroundColor">#C0C0C0</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="paddingTop">3pt</property>
+                        <property name="paddingBottom">3pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2361">
+                            <text-property name="text">Nombre total&#13;
+de QE attribuées</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2381">
+                        <property name="backgroundColor">#C0C0C0</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="paddingTop">3pt</property>
+                        <property name="paddingBottom">3pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2362">
+                            <text-property name="text">Nombre de&#13;
+réponses publiées</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2382">
+                        <property name="backgroundColor">#C0C0C0</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="paddingTop">3pt</property>
+                        <property name="paddingBottom">3pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2363">
+                            <text-property name="text">Taux de réponse publiée</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2383">
+                        <property name="backgroundColor">#C0C0C0</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="paddingTop">3pt</property>
+                        <property name="paddingBottom">3pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2364">
+                            <text-property name="text">Taux de réponse publiée dans un délai inférieur à 30 jours</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2384">
+                        <property name="backgroundColor">#C0C0C0</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="paddingTop">3pt</property>
+                        <property name="paddingBottom">3pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2365">
+                            <text-property name="text">Taux de réponse publiée dans un délai compris entre 30 et 60 jours</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2385">
+                        <property name="backgroundColor">#C0C0C0</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="paddingTop">3pt</property>
+                        <property name="paddingBottom">3pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2366">
+                            <text-property name="text">Taux de réponse publiée dans un délai supérieur à 60 jours</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="2386">
+                    <property name="height">0.45in</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="2387">
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2417">
+                            <text-property name="text">Assemblée nationale</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2388">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2451">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">NBQUESTIONAN</property>
+                        </data>
+                    </cell>
+                    <cell id="2389">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2454">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="resultSetColumn">NBReponsesAn</property>
+                        </data>
+                    </cell>
+                    <cell id="2390">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2456">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">TauxGlobalAn</property>
+                        </data>
+                    </cell>
+                    <cell id="2391">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2461">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Taux1MoisAn</property>
+                        </data>
+                    </cell>
+                    <cell id="2392">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2462">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Taux2MoisAn</property>
+                        </data>
+                    </cell>
+                    <cell id="2393">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <data id="2463">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">TauxSup2MoisAn</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="2409">
+                    <property name="height">0.45in</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <list-property name="highlightRules">
+                        <structure>
+                            <property name="operator">eq</property>
+                            <property name="backgroundColor">#E1F0FF</property>
+                            <property name="fontSize">10pt</property>
+                            <expression name="testExpr" type="javascript">row[0] % 2</expression>
+                            <simple-property-list name="value1">
+                                <value type="javascript">0</value>
+                            </simple-property-list>
+                        </structure>
+                    </list-property>
+                    <cell id="2410">
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="2418">
+                            <text-property name="text">Sénat</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2411">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2452">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">NBQUESTIONSN</property>
+                        </data>
+                    </cell>
+                    <cell id="2412">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2455">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="resultSetColumn">NBReponsesSn</property>
+                        </data>
+                    </cell>
+                    <cell id="2413">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2457">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">TauxGlobalSn</property>
+                        </data>
+                    </cell>
+                    <cell id="2414">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2464">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Taux1MoisSn</property>
+                        </data>
+                    </cell>
+                    <cell id="2415">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <data id="2465">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Taux2MoisSn</property>
+                        </data>
+                    </cell>
+                    <cell id="2416">
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <data id="2466">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">TauxSup2MoisSn</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="2394">
+                    <property name="height">0.45in</property>
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="2395">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="2419">
+                            <text-property name="text">Total</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2396">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2458">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="resultSetColumn">NBQuestionTotal</property>
+                        </data>
+                    </cell>
+                    <cell id="2397">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2459">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                <property name="locale">fr</property>
+                            </structure>
+                            <property name="resultSetColumn">NBReponsesTotal</property>
+                        </data>
+                    </cell>
+                    <cell id="2398">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2460">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">TauxGlobalTotal</property>
+                        </data>
+                    </cell>
+                    <cell id="2399">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2467">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Taux1Mois</property>
+                        </data>
+                    </cell>
+                    <cell id="2400">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2468">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Taux2Mois</property>
+                        </data>
+                    </cell>
+                    <cell id="2401">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <data id="2469">
+                            <property name="numberAlign">right</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">###0%{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">TauxSupMois</property>
+                        </data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

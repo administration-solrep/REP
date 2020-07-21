@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.ss.web.contentviews.journal">
+
+	<extension target="org.nuxeo.ecm.platform.ui.web.ContentViewService"
+		point="contentViews">
+
+		<contentView name="JOURNAL_DOSSIER">
+			<genericPageProvider
+				class="fr.dila.ss.web.contentview.SSJournalPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="currentDocument">#{currentDocument}</property>
+				<pattern>
+				</pattern>
+				<parameter>#{journalActions.currentCategory}</parameter>
+				<parameter>#{journalActions.currentUtilisateur}</parameter>
+				<parameter>#{journalActions.currentDateDebut}</parameter>
+				<parameter>#{journalActions.currentDateFin}</parameter>
+				<pageSize>20</pageSize>
+				<sort column="eventDate" ascending="false" />
+			</genericPageProvider>
+
+			<useGlobalPageSize>false</useGlobalPageSize>
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="CURRENT_SELECTION_LIST" />
+
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>#{currentDocument.id}</cacheKey>
+			<cacheSize>10</cacheSize>
+			<resultLayouts>
+				<layout name="journal_listing" title="label.document_listing.layout"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+		</contentView>
+
+	</extension>
+
+</component>

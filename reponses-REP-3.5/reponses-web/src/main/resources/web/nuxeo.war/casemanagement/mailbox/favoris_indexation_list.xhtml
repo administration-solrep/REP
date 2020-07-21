@@ -1,0 +1,79 @@
+<div xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<div class="menu">
+		<div class="userMailboxes">
+			<div class="userMailboxesContent">
+				<h4>
+					<h:outputText value="#{messages['favoris.indexation.title']}" />
+				</h4>
+
+				<h:form>
+					<div style="overflow-x: auto;">
+						<a4j:region id="favorisIndexationRegion">
+							<a4j:outputPanel id="favorisIndexationPanel">
+								<rich:tree id="favTree" style="white-space: nowrap;"
+									switchType="ajax" ajaxSingle="true"
+									eventsQueue="ajax_events_queue"
+									iconExpanded="/icons/toggle_minus.png"
+									iconCollapsed="/icons/toggle_plus.png"
+									changeExpandListener="#{favorisIndexationTree.changeExpandListener}"
+									adviseNodeOpened="#{favorisIndexationTree.adviseNodeOpened}">
+
+									<rich:recursiveTreeNodesAdaptor id="node" var="item"
+										roots="#{favorisIndexationTree.favoris}"
+										nodes="#{item.children}">
+										<rich:treeNode rendered="#{item.typeIndexation == 'ROOT'}"
+											icon="/img/icons/folders_16.png"
+											iconLeaf="/img/icons/folders_16.png">
+											<h:outputText id="rootLbl" value="#{item.label}"
+												style="font-weight: bold; white-space: nowrap;" />
+										</rich:treeNode>
+
+										<rich:treeNode
+											rendered="#{item.typeIndexation == 'SE' or item.typeIndexation == 'AN'}"
+											icon="/img/icons/vide_16.png"
+											iconLeaf="/img/icons/vide_16.png">
+											<h:outputText id="niv1Lbl" value="#{item.label}"
+												style="white-space: nowrap;" />
+										</rich:treeNode>
+
+										<rich:treeNode
+											rendered="#{item.typeIndexation == 'SE_CHILD' or item.typeIndexation == 'AN_CHILD'}"
+											icon="/img/icons/vide_16.png"
+											iconLeaf="/img/icons/vide_16.png"
+											style="white-space: nowrap;">
+											<table>
+												<tr>
+													<td><a4j:commandLink
+															action="#{planClassementTree.setContext(item.parent.label, item.label)}">
+															<h:outputText id="niv2Lbl" value="#{item.label}"
+																style="white-space: nowrap;" />
+														</a4j:commandLink></td>
+													<td><a4j:commandLink
+															action="#{favorisIndexationActions.removeFavoris(item.favoris)}"
+															reRender="favTree">
+															<h:graphicImage value="/icons/action_delete_mini.gif" />
+														</a4j:commandLink></td>
+												</tr>
+
+											</table>
+										</rich:treeNode>
+									</rich:recursiveTreeNodesAdaptor>
+								</rich:tree>
+							</a4j:outputPanel>
+						</a4j:region>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</div>

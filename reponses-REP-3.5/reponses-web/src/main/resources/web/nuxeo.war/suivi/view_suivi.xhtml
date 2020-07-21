@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxd="http://nuxeo.org/nxweb/document">
+	<ui:define name="page title">
+		<h:outputText value="Espace de suivi" />
+	</ui:define>
+	<ui:define name="body">
+		<ui:include src="/incl/message_banner.xhtml" />
+		<f:subview id="requeteur">
+			<div class="subbodyContainer">
+				<div class="tabsContent">
+
+					<c:if test="#{webActions.currentTabAction eq 'TAB_VIEW'}">
+						<c:if test="#{suiviActions.isEditingAlert() eq ''}">
+							<ui:include src="/alerte/alert_form.xhtml" />
+						</c:if>
+					</c:if>
+					<c:if test="#{webActions.currentTabAction ne 'TAB_VIEW'}">
+						<ui:include src="#{webActions.currentTabAction.link}" />
+					</c:if>
+				</div>
+			</div>
+		</f:subview>
+	</ui:define>
+</nxthemes:composition>

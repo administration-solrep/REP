@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue le service des monitoring de la connection de 
+	l'utilisateur du socle solrep. -->
+<component
+	name="fr.dila.ss.core.service.SSUtilisateurConnectionMonitorService">
+	<implementation
+		class="fr.dila.ss.core.service.SSUtilisateurConnectionMonitorServiceImpl" />
+
+	<service>
+		<provide
+			interface="fr.dila.ss.api.service.SSUtilisateurConnectionMonitorService" />
+	</service>
+</component>

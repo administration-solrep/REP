@@ -1,0 +1,86 @@
+<div xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+	<a4j:region id="profilUtilisateurPopupViewRegion">
+		<a4j:outputPanel id="profilUtilisateurPopup">
+			<f:subview id="displayedProfilUtilisateurPopup"
+				rendered="#{profilUtilisateurActions.panelDisplayed}">
+				<rich:modalPanel id="profilUtilisateurPanel" autosized="true">
+					<div>
+						<f:facet name="header">
+							<h:outputText value="Profil utilisateur" />
+						</f:facet>
+					</div>
+					<h:form id="profilUtilisateurForm" enctype="multipart/form-data">
+						<!--  layout 1 : liste de choix de colonne -->
+						<p>
+							<strong> <h:outputText
+									value="Métadonnées affichées dans les listes de questions" />
+							</strong>
+						</p>
+						<div style="padding: 0 0 0 32px;">
+							<rich:listShuttle id="metadonneesDisponibleColumn"
+								sourceValue="#{profilUtilisateurActions.sourceValueColumn}"
+								targetValue="#{profilUtilisateurActions.targetValueColumn}"
+								var="items" listsHeight="90" sourceListWidth="250"
+								targetListWidth="325" sourceCaptionLabel=""
+								targetCaptionLabel="" fastMoveControlsVisible="true"
+								fastOrderControlsVisible="false" orderControlsVisible="false"
+								copyControlLabel="Ajouter" copyAllControlLabel="Ajouter tout"
+								removeControlLabel="Enlever"
+								removeAllControlLabel="Enlever tout" sourceRequired="false"
+								targetRequired="false"
+								converter="#{profilUtilisateurActions.getColumnConverter()}">
+								<rich:column>
+									<h:outputText value="#{items.label}" />
+								</rich:column>
+							</rich:listShuttle>
+						</div>
+
+						<p>
+							<strong> <h:outputText
+									value="Paramétrage de l'alerte mél" />
+							</strong>
+						</p>
+
+						<h:selectOneRadio id="parametreMail"
+							value="#{profilUtilisateurActions.parametreMail}"
+							layout="pageDirection">
+							<f:selectItem id="parametreMailAuto"
+								itemLabel="Automatique : un mél est envoyé chaque fois qu'un dossier arrive dans votre corbeille"
+								itemValue="AUTO" />
+							<f:selectItem id="parametreMailJournalier"
+								itemLabel="Journalier : un mél est envoyé une fois par jour, reprenant les activités de la veille"
+								itemValue="JOURNALIER" />
+							<f:selectItem id="parametreMailAucun"
+								itemLabel="Jamais : aucun mél n'est envoyé" itemValue="AUCUN" />
+						</h:selectOneRadio>
+
+						<!--  boutons d'actions -->
+						<p style="width: 100%; text-align: center;">
+							<h:commandButton value="Valider"
+								action="#{profilUtilisateurActions.save()}"
+								oncomplete="Richfaces.hideModalPanel('profilUtilisateurPanel')"
+								id="validerProfilUtilisateur" styleClass="button">
+							</h:commandButton>
+							<h:outputText value=" " />
+							<a4j:commandButton value="Annuler"
+								action="#{profilUtilisateurActions.cancel()}"
+								oncomplete="Richfaces.hideModalPanel('profilUtilisateurPanel')"
+								id="annulerProfilUtilisateur" reRender="profilUtilisateurPanel"
+								styleClass="button" immediate="true">
+							</a4j:commandButton>
+						</p>
+					</h:form>
+				</rich:modalPanel>
+			</f:subview>
+		</a4j:outputPanel>
+	</a4j:region>
+</div>

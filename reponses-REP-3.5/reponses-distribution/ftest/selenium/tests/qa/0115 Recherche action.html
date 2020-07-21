@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Test &gt; Recherche &gt; Actions disponibles</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">Test &gt; Recherche &gt; Actions
+					disponibles</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!-- Admin fonctionnel : peut actionner les feuilles de route de tous les dossiers -->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>userMetaServicesSearchForm:questionIdInput</td>
+				<td>314170</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!-- Admin ministériel : peut actionner les feuilles de route de son ministère -->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>userMetaServicesSearchForm:questionIdInput</td>
+				<td>314170</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!-- Admin ministériel : ne peut pas actionner les feuilles de route des autres ministères -->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>agriculture_bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>agriculture_bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>userMetaServicesSearchForm:questionIdInput</td>
+				<td>314170</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementNotPresent</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!-- Contributeur ministériel : peut actionner uniquement les étapes qui lui sont destinées -->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>finance_dgefp</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>finance_dgefp</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>userMetaServicesSearchForm:questionIdInput</td>
+				<td>314170</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<!-- Contributeur ministériel : ajout d'étapes-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle séquence : Etape parallèle-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[2]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Créer des branches</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : pour impression secrétariat-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[3]//a[@class='ADD_STEP_BETWEEN']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour impression</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6::min:handle</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:6::us:handle</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:6:node:0::addBtn</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Nouvelle tâche : Validation PM-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[4]/td[2]//a[@class='ADD_STEP_BETWEEN']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour validation Premier ministre</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6::min:handle</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:11::us:handle</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:11:node:0::addBtn</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!-- Appouve l'étape en cours -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Déverrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<!-- Admin fonctionnel : peut actionner les étapes parallèles -->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>userMetaServicesSearchForm:questionIdInput</td>
+				<td>314170</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>userMetaServicesSearchForm:rechercheNumeroSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=AN 314170</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Sélectionner l'étape Pour validation Premier ministre</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Sélectionner l'étape Pour impression Agents DAJ</td>
+				<td></td>
+			</tr>
+			<!--Charge le dossier en tant que PM-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//ul/li/a[contains(.,'Premier ministre')]</td>
+				<td></td>
+			</tr>
+			<!-- Les tests ci-dessous n'ont jamais marchés, commentés par JGZ le 27/06/2011 -->
+			<!--<tr>
+	<td>assertElementPresent</td>
+	<td>//img[@alt=&quot;Valider la tâche -Pour validation Premier ministre Conseillère Aff. éco et finances PM-&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//img[@alt=&quot;Valider la tâche -Pour impression Secrétariat Conseillère Aff. éco et finances PM-&quot;]</td>
+	<td></td>
+</tr>
+Charge le dossier en tant que secrétatiat conseillère Aff. éco et finances PM
+<tr>
+	<td>clickAndWait</td>
+	<td>//ul/li/a[contains(.,'Pour impression Secrétariat Conseillère Aff. éco et finances PM')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//img[@alt=&quot;Valider la tâche -Pour impression Secrétariat Conseillère Aff. éco et finances PM-&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//img[@alt=&quot;Valider la tâche -Pour validation Premier ministre Conseillère Aff. éco et finances PM-&quot;]</td>
+	<td></td>
+</tr>
+-->
+			<!-- Déconnexion -->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

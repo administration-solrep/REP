@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.widget.indexation">
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgettypes">
+
+		<widgetType name="indexation_widget">
+			<documentation>Ce widget affiche les données d'indexation
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/indexation_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="indexation_widget_comp">
+			<documentation>Ce widget affiche les données d'indexation complémentaire
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/indexation_comp_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="simple_indexation_widget">
+			<documentation>Ce widget affiche les données d'indexation, en
+				proposant à l'utilisateur un choix sur l'ensemble des
+				vocabulaires de la zone d'indexation (une entrée pour l'Assemblée par exemple)
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/simple_indexation_widget_template.xhtml
+			</property>
+		</widgetType>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+		<widget name="indexation_an" type="indexation_widget">
+			<labels>
+				<label mode="any">Assemblée nationale</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="any">
+				<property name="indexationZone">AN</property>
+			</properties>
+		</widget>
+
+		<widget name="indexation_an_comp" type="indexation_widget_comp">
+			<labels>
+				<label mode="any">Assemblée nationale</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="any">
+				<property name="indexationZone">AN</property>
+			</properties>
+		</widget>
+
+		<widget name="indexation_senat" type="indexation_widget">
+			<labels>
+				<label mode="any">Sénat</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="any">
+				<property name="indexationZone">Senat</property>
+			</properties>
+		</widget>
+
+		<widget name="indexation_ministere" type="simple_indexation_widget">
+			<labels>
+				<label mode="any">Ministères</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="any">
+				<property name="indexationZone">Ministere</property>
+				<property name="saisie_libre">true</property>
+				<property name="saisie_libre_vocabulary">motclef_ministere</property>
+			</properties>
+		</widget>
+
+		<!-- Les mêmes widgets que au dessus, mais un seul champ de recherche pour 
+			les rubriques, renvois, TA -->
+		<widget name="simple_indexation_an" type="simple_indexation_widget">
+			<labels>
+				<label mode="any">indexation.zone.an</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="any">
+				<property name="indexationZone">AN</property>
+			</properties>
+		</widget>
+
+		<widget name="simple_indexation_senat" type="simple_indexation_widget">
+			<labels>
+				<label mode="any">indexation.zone.se</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="any">
+				<property name="indexationZone">Senat</property>
+			</properties>
+		</widget>
+
+		<widget name="simple_indexation_ministere" type="simple_indexation_widget">
+			<labels>
+				<label mode="any">indexation.zone.min</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="any">
+				<property name="indexationZone">Ministere</property>
+				<property name="saisie_libre">true</property>
+				<property name="saisie_libre_vocabulary">motclef_ministere</property>
+
+			</properties>
+		</widget>
+	</extension>
+
+</component>

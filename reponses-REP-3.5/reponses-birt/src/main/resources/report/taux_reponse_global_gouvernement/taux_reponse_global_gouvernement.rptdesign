@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.2.r262_v20110209 Build &lt;2.6.2.v20110214-1523></property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube - questions1.questions.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions1.questions.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube - questions.questions.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube-reponses_apporte.reponses_apportes_mixte.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube - questions1.questions.x">135</property>
+    <property name="Data Cube - questions1.questions.y">80</property>
+    <property name="Data Cube - questions.questions.x">106</property>
+    <property name="Data Cube - questions.questions.y">12</property>
+    <property name="Data Cube - questions.questions.width">150</property>
+    <property name="Data Cube - questions.questions.height">200</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.x">100</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.y">27</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.width">150</property>
+    <property name="Data Cube-reponses_apporte.reponses_apportes_mixte.height">200</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nuxeo" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.1.3.244:1521:SOLON</property>
+            <property name="odaUser">REPONSES_INTE</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">UkVQT05TRVNfSU5URQ==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="taux_reponses_gouv" id="1689">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">NBRREPONSE</property>
+                    <text-property name="displayName">NBRREPONSE</text-property>
+                    <text-property name="heading">NBRREPONSE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TAUX_REPONSE_GLOBAL</property>
+                    <text-property name="displayName">TAUX_REPONSE_GLOBAL</text-property>
+                    <text-property name="heading">TAUX_REPONSE_GLOBAL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TAUX_REPONSES_DELAI2MOIS</property>
+                    <text-property name="displayName">TAUX_REPONSES_DELAI2MOIS</text-property>
+                    <text-property name="heading">TAUX_REPONSES_DELAI2MOIS</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">NBRREPONSE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TAUX_REPONSE_GLOBAL</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TAUX_REPONSES_DELAI2MOIS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">NBRREPONSE</property>
+                    <property name="nativeName">NBRREPONSE</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TAUX_REPONSE_GLOBAL</property>
+                    <property name="nativeName">TAUX_REPONSE_GLOBAL</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TAUX_REPONSES_DELAI2MOIS</property>
+                    <property name="nativeName">TAUX_REPONSES_DELAI2MOIS</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select ta1.nbrReponse, ta2.taux_reponse_global, tb1.taux_reponses_delai2Mois from 
+(
+select count(*) as nbrReponse from reponse
+)ta1,
+(
+select cast(((t1.nbrReponse/t2.nbrQues)*100) as decimal(9,2)) as taux_reponse_global from 
+(select count(*) as nbrReponse from reponse) t1, (select count(*) as nbrQues from question )t2
+)ta2,
+(
+select cast(((ta1.nbrRep/ta2.nbrQuest)*100) as decimal(9,2)) as taux_reponses_delai2Mois  from
+
+( select count(*) as nbrRep from question ques RIGHT JOIN
+(select dossier_rep1.iddocumentquestion as idquestion, dossier_rep1.iddocumentreponse as idreponse  ,datepublicationjo as datepublicationquestion ,
+datepublicationjoreponse 
+from dossier_reponse dossier_rep1, reponse rep, question ques 
+where dossier_rep1.iddocumentreponse = rep.id and ques.id = dossier_rep1.iddocumentquestion and
+(select MONTHS_BETWEEN(to_char(rep.datepublicationjoreponse, 'dd-MONTH-yy'),
+to_char(ques.datepublicationjo, 'dd-MONTH-yy')) as months_between FROM Dual ) <='02')t1 ON ques.id = t1.idquestion
+) ta1, 
+( select count(*) as nbrQuest from question) ta2
+)tb1]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>NBRREPONSE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NBRREPONSE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NBRREPONSE</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>TAUX_REPONSE_GLOBAL</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>TAUX_REPONSE_GLOBAL</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TAUX_REPONSE_GLOBAL</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>TAUX_REPONSES_DELAI2MOIS</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>TAUX_REPONSES_DELAI2MOIS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TAUX_REPONSES_DELAI2MOIS</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#C0C0C0</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderLeftColor">#C0C0C0</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderRightColor">#C0C0C0</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderTopColor">#C0C0C0</property>
+            <property name="borderTopStyle">solid</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="1698">
+            <property name="dataSet">taux_reponses_gouv</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">NBRREPONSE</property>
+                    <text-property name="displayName">NBRREPONSE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBRREPONSE"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TAUX_REPONSE_GLOBAL</property>
+                    <text-property name="displayName">TAUX_REPONSE_GLOBAL</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TAUX_REPONSE_GLOBAL"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TAUX_REPONSES_DELAI2MOIS</property>
+                    <text-property name="displayName">TAUX_REPONSES_DELAI2MOIS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TAUX_REPONSES_DELAI2MOIS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="1705"/>
+            <header>
+                <row id="1699">
+                    <cell id="1700">
+                        <label id="1706">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <text-property name="text">Taux de réponse global pour le gouvernement</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+        </table>
+        <text id="1720">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <table id="1722">
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="pageBreakAfter">always</property>
+            <property name="dataSet">taux_reponses_gouv</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">NBRREPONSE</property>
+                    <text-property name="displayName">NBRREPONSE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NBRREPONSE"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TAUX_REPONSE_GLOBAL</property>
+                    <text-property name="displayName">TAUX_REPONSE_GLOBAL</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TAUX_REPONSE_GLOBAL"] + ' %'</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TAUX_REPONSES_DELAI2MOIS</property>
+                    <text-property name="displayName">TAUX_REPONSES_DELAI2MOIS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TAUX_REPONSES_DELAI2MOIS"] + ' %'</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <structure name="toc"/>
+            <column id="1735"/>
+            <column id="1736"/>
+            <column id="1737"/>
+            <header>
+                <row id="1723">
+                    <cell id="1724">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="1738">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Nombre de réponses</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1725">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="1739">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Taux réponses global</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1726">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="1740">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Taux réponses délai 2 mois</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="1727">
+                    <cell id="1728">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="1741">
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">NBRREPONSE</property>
+                        </data>
+                    </cell>
+                    <cell id="1729">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="1742">
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">TAUX_REPONSE_GLOBAL</property>
+                        </data>
+                    </cell>
+                    <cell id="1730">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="1743">
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">TAUX_REPONSES_DELAI2MOIS</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

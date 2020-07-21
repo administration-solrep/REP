@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<ui:define name="page title">
+		<h:outputText value="#{nuxeoApplicationName} - Espace de travail" />
+	</ui:define>
+
+	<ui:define name="bookmark">
+		<link rel="bookmark"
+			href="#{navigationContext.currentDocumentFullUrl}" />
+	</ui:define>
+
+	<ui:define name="content_view_actions">
+		<ui:include src="/incl/message_banner.xhtml" />
+		<ui:include src="/incl/masse_mail_dossier_panel.xhtml" />
+		<ui:include src="/incl/dossier_listing_action.xhtml">
+			<ui:param name="resultLayout" value="cm_inbox_caselink_csv" />
+			<ui:param name="actionsList" value="MAILBOX_ACTION_UPPER_LIST" />
+		</ui:include>
+	</ui:define>
+
+	<ui:define name="body">
+
+		<div id="upperContentView">
+			<div class="mailboxContent">
+				<c:if test="#{corbeilleTree.currentIdMinistere != null}">
+					<nxu:set var="contentViewId" value="0">
+						<nxu:set var="contentViewName" value="corbeille_content">
+							<ui:decorate template="/incl/content_view.xhtml">
+								<ui:define name="content_view_header_before_selector" />
+							</ui:decorate>
+						</nxu:set>
+					</nxu:set>
+				</c:if>
+
+				<h:form>
+					<nxu:set var="actions"
+						value="#{webActions.getActionsList('ACTION_UNDER_LIST_CORBEILLE')}"
+						cache="true">
+						<f:subview rendered="#{!empty actions}">
+							<nxu:dataList layout="unorderedList" var="action"
+								value="#{actions}">
+								<nxh:commandLink action="#{action.getLink()}">
+	                #{messages[action.label]}
+	              </nxh:commandLink>
+							</nxu:dataList>
+						</f:subview>
+					</nxu:set>
+				</h:form>
+			</div>
+		</div>
+		<ui:include src="/incl/upper_panel_toggle.xhtml" />
+	</ui:define>
+
+	<ui:define name="subbody">
+
+		<ui:include
+			src="/casemanagement/mailbox/mailbox_subbody_dossier_view.xhtml">
+			<ui:param name="dossier_view" value="mailbox_view" />
+		</ui:include>
+	</ui:define>
+
+</nxthemes:composition>

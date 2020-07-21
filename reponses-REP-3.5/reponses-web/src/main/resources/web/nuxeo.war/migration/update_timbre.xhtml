@@ -1,0 +1,140 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<style>
+.nonmigrable {
+	color: red;
+	text-align: center;
+}
+
+.migrable {
+	color: green;
+	text-align: center;
+}
+
+input[type=checkbox] {
+	vertical-align: middle;
+	position: relative;
+	bottom: 1px;
+}
+</style>
+
+	<h:form id="updateTimbreForm">
+		<div id="containerTabDiv"
+			style="overflow-x: auto; overflow-y: hidden;">
+			<a4j:outputPanel id="migrationRecapPanel">
+				<div>
+					<label> <h:selectBooleanCheckbox id="briserAll"
+							value="#{migrationManagerActions.checkAllSignature}"
+							valueChangeListener="#{migrationManagerActions.checkAllBriserSignature()}">
+							<a4j:support event="onclick" ajaxSingle="true"
+								reRender="migrationRecapPanel" />
+						</h:selectBooleanCheckbox> <h:outputText
+							value="#{messages['reponses.migration.label.signature.briser.all']}"
+							for="briserAll" /> <br /> <h:selectBooleanCheckbox
+							id="migrerDossiersClosAll"
+							value="#{migrationManagerActions.checkAllClosedDossiersMigration}"
+							valueChangeListener="#{migrationManagerActions.checkAllMigrerDossiersClos()}">
+							<a4j:support event="onclick" ajaxSingle="true"
+								reRender="migrationRecapPanel" />
+						</h:selectBooleanCheckbox> <h:outputText
+							value="#{messages['reponses.migration.label.dossiers.clos.all']}"
+							for="migrerDossiersClosAll" /> <br /> <h:outputText
+							value="#{messages['reponses.migration.warning.mass.actions']}"
+							class="nonmigrable"
+							rendered="#{migrationManagerActions.checkAllSignature}" />
+					</label>
+				</div>
+				<h:dataTable var="currentEntite"
+					value="#{migrationManagerActions.currentGouvernementForUpdateTimbre}"
+					class="dataOutput" rowClasses="dataRowEven,dataRowOdd">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{organigrammeManagerActions.getLabelCurrentGouvernement()}" />
+						</f:facet>
+						<h:outputText value="#{currentEntite.label}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{organigrammeManagerActions.getLabelNextGouvernement()}" />
+						</f:facet>
+
+						<h:selectOneMenu
+							value="#{migrationManagerActions.newTimbre[currentEntite.id]}"
+							id="newTimbre" rendered="#{currentEntite.id!='total'}"
+							required="true">
+							<f:selectItems
+								value="#{migrationManagerActions.getNewTimbreList()}" />
+						</h:selectOneMenu>
+						<h:outputText value="Total"
+							rendered="#{currentEntite.id == 'total'}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Questions closes" />
+						</f:facet>
+						<h:outputText styleClass="nonmigrable"
+							value="#{migrationManagerActions.getStringFromCount(currentEntite.countClose)}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Questions ouvertes avec réponse signée" />
+						</f:facet>
+						<h:outputText styleClass="migrable"
+							value="#{migrationManagerActions.getStringFromCount(currentEntite.countSigne)}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Questions en attente de réponses" />
+						</f:facet>
+						<h:outputText styleClass="migrable"
+							value="#{migrationManagerActions.getStringFromCount(currentEntite.countMigrable)}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Modèles de feuille de route" />
+						</f:facet>
+						<h:outputText styleClass="migrable"
+							value="#{migrationManagerActions.getStringFromCount(currentEntite.countModelFDR)}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Briser la signature" />
+						</f:facet>
+						<h:selectBooleanCheckbox id="briserSignature_#{currentEntite.id}"
+							value="#{currentEntite.breakingSeal}"
+							disabled="#{migrationManagerActions.checkAllSignature}" />
+					</h:column>
+				</h:dataTable>
+			</a4j:outputPanel>
+			<script>
+			resize();
+		</script>
+		</div>
+
+		<nxh:commandButton action="#{migrationManagerActions.updateTimbre}"
+			value="#{messages['Mise à jour']}" styleClass="button"
+			onclick="return confirm('Êtes-vous sûr de vouloir faire la mise à jour ?');" />
+	</h:form>
+	<script>
+		var j = jQuery.noConflict();
+		j(document).ready(function() {
+			window.onresize = resize;
+			resize();
+		});	
+	</script>
+
+</div>

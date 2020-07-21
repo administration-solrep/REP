@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>44269</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="676798">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Avi</ns2:prenom>
+				<ns2:nom>Assouly</ns2:nom>
+				<ns2:grp_pol>SRC</ns2:grp_pol>
+				<ns2:circonscription>Bouches-du-Rhône 5</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Avi Assouly interroge M. le ministre de
+				l'éducation nationale sur l'évolution du concours de l'agrégation.
+				La diffusion involontaire d'un document interne du ministère a
+				suscité des interrogations et inquiétudes quant à une éventuelle
+				réforme de ce statut et du concours qui en permet l'obtention. Il
+				souhaite donc savoir si une telle réforme est envisagée et suivant
+				quel calendrier, et s'il est possible de connaître les objectifs et
+				attentes du ministère de l'éducation nationale quant à ce statut de
+				professeur agrégé.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enseignement secondaire : personnel</ns2:rubrique>
+				<ns2:rubrique_ta>professeurs agrégés</ns2:rubrique_ta>
+				<ns2:analyse>statut</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

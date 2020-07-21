@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>fr.dila.ss</groupId>
+		<artifactId>socle-solrep-parent</artifactId>
+		<version>REP-3.5.2</version>
+	</parent>
+
+	<artifactId>socle-solrep-core</artifactId>
+	<name>Socle SOLREP core</name>
+
+	<dependencies>
+		<!-- Dépendances au socle transverse -->
+		<dependency>
+			<groupId>fr.dila.st</groupId>
+			<artifactId>socle-transverse-core</artifactId>
+			<type>test-jar</type>
+			<scope>test</scope>
+			<version>${fr.dila.st.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>fr.dila.st</groupId>
+			<artifactId>socle-transverse-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.birt</groupId>
+			<artifactId>core-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.birt</groupId>
+			<artifactId>report-engine-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.birt</groupId>
+			<artifactId>scriptapi</artifactId>
+		</dependency>
+
+		<!-- Dépendances au socle SOLREP -->
+		<dependency>
+			<groupId>fr.dila.ss</groupId>
+			<artifactId>socle-solrep-api</artifactId>
+		</dependency>
+
+		<!-- Dépendances à Nuxeo -->
+		<dependency>
+			<groupId>org.nuxeo.ecm.platform</groupId>
+			<artifactId>nuxeo-birt-reporting</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.nuxeo.ecm.core</groupId>
+			<artifactId>nuxeo-core-storage-sql-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+      		<groupId>fr.dila.ecm.platform</groupId>
+      		<artifactId>solrep-platform-document-routing-api</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>fr.dila.ecm.platform</groupId>
+      		<artifactId>solrep-platform-document-routing-core</artifactId>
+    	</dependency>
+	</dependencies>
+
+	<!-- Install test jar -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

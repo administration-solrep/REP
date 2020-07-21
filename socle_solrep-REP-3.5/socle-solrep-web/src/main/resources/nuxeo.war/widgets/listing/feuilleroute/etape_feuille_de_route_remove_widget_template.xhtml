@@ -1,0 +1,15 @@
+<f:subview id="#{widget.id}"
+  xmlns:c="http://java.sun.com/jstl/core"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:nxu="http://nuxeo.org/nxweb/util"
+  xmlns:nxd="http://nuxeo.org/nxweb/document"
+  xmlns:nxh="http://nuxeo.org/nxweb/html"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:nxp="http://nuxeo.org/nxweb/pdf"
+  xmlns:a4j="https://ajax4jsf.dev.java.net/ajax">
+
+      <c:if test="#{routingActions.getlstEtapesSize()>1}">
+            <a4j:commandButton id="#{widget.id}_button_suppr_etape" image="/icons/action_delete.gif" type="image"
+                action="#{routingActions.removeFromLstEtapeFeuilleDeRoute(field_0)}" reRender="etapeFDRViewPanel" />
+      </c:if>
+</f:subview>

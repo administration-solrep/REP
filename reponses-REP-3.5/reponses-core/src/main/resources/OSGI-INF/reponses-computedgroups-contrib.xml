@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!-- Cet composant contribue les calculateurs de groupes et la chaîne de 
+	calcul de l'application Réponses. -->
+<component name="fr.dila.reponses.core.computedgroups.contrib">
+
+	<require>fr.dila.ss.core.computedgroups.contrib</require>
+
+	<!-- Calculateurs de groupes -->
+	<extension
+		target="org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl"
+		point="computer">
+		<!-- Calculateur des groupes spécifiques à Réponses -->
+		<groupComputer name="reponsesGroupComputer">
+			<computer>fr.dila.reponses.core.groupcomputer.ReponsesGroupComputer</computer>
+		</groupComputer>
+	</extension>
+
+	<!-- Chaîne de calcul de groupes -->
+	<extension
+		target="org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl"
+		point="computerChain">
+		<groupComputerChain>
+			<computers>
+				<computer>baseFunctionGroupComputer</computer>
+				<computer>personalMailboxGroupComputer</computer>
+				<computer>posteMailboxGroupComputer</computer>
+				<computer>ministereGroupComputer</computer>
+				<computer>reponsesGroupComputer</computer>
+			</computers>
+		</groupComputerChain>
+	</extension>
+</component>

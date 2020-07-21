@@ -1,0 +1,174 @@
+<div xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+
+	<nxu:set var="loaded"
+		value="#{corbeilleActions.isDossierLoadedInCorbeille()}">
+		<br />
+		<h:form id="dossierConnexeListingAction">
+			<table>
+				<tr>
+					<c:if test="#{dossierConnexeActions.isCurrentIndex()}">
+						<td
+							style="vertical-align: top; background-color: #F9F9F9; border: 1px solid #2F57B1; padding: 3px;">
+							<p>
+								<nxh:commandLink
+									action="#{dossierConnexeActions.retourListeMinistere()}">
+									<h:graphicImage value="/img/icons/delete_16.png"
+										title="Retour à la liste des questions connexes" alt="Retour" />
+									<h:outputText style="font-size: 11px; vertical-align:top;"
+										value="  Retour à la liste des questions connexes" />
+								</nxh:commandLink>
+							</p>
+						</td>
+					</c:if>
+					<c:if test="#{dossierConnexeActions.isCurrentQuestion()}">
+						<td
+							style="vertical-align: top; background-color: #F9F9F9; border: 1px solid #2F57B1; padding: 3px;">
+							<p>
+								<nxh:commandLink
+									action="#{dossierConnexeActions.retourListeQuestion()}">
+									<h:graphicImage value="/img/icons/delete_16.png"
+										title="Retour à la liste des questions connexes du ministère"
+										alt="Retour" />
+									<h:outputText style="font-size: 11px; vertical-align:top;"
+										value="  Retour à la liste des questions connexes du ministère" />
+								</nxh:commandLink>
+							</p>
+						</td>
+					</c:if>
+					<c:if
+						test="#{dossierConnexeActions.isCurrentQuestion() and loaded and (dossierLockActions.getCanLockCurrentDossier() or dossierLockActions.getCanUnlockCurrentDossier())}">
+						<td
+							style="vertical-align: top; background-color: #F9F9F9; border: 1px solid #2F57B1; padding: 3px;">
+							<p>
+								<nxh:commandLink
+									action="#{dossierConnexeActions.setReponseQuestion()}">
+									<h:graphicImage value="/img/icons/check_16.png"
+										title="Retour à la question avec copie du texte de réponse"
+										alt="Retour" />
+									<h:outputText style="font-size: 11px; vertical-align:top;"
+										value="  Retour à la question avec copie du texte de réponse" />
+								</nxh:commandLink>
+							</p>
+						</td>
+					</c:if>
+				</tr>
+			</table>
+		</h:form>
+		<br />
+		<!-- Liste des questions connexes par ministère -->
+		<c:if
+			test="#{ not dossierConnexeActions.isCurrentIndex() and not dossierConnexeActions.isCurrentQuestion()}">
+			<div class="foldableBox">
+				<h3 class="folded">
+					<a href="#nologo" onclick="return toggleBox(this)"> <h:outputText
+							value="Liste des questions connexes par ministère" />
+					</a>
+				</h3>
+				<div class="boxBody">
+					<h:form>
+						<h:dataTable var="object"
+							value="#{dossierConnexeActions.getMinisteres()}"
+							styleClass="dataOutput">
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="#{messages['dossier.connexe.ministere']}" />
+								</f:facet>
+								<h:commandLink value="#{object[0]}"
+									action="#{dossierConnexeActions.setQuestions(object[0])}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText
+										value="#{messages['dossier.connexe.count.question']}" />
+								</f:facet>
+								<h:commandLink value="#{object[1]}"
+									action="#{dossierConnexeActions.setQuestions(object[0])}" />
+							</h:column>
+						</h:dataTable>
+					</h:form>
+				</div>
+			</div>
+		</c:if>
+
+		<c:if
+			test="#{dossierConnexeActions.isCurrentIndex() and not dossierConnexeActions.isCurrentQuestion()}">
+			<div class="foldableBox">
+				<h3 class="folded">
+					<a href="#nologo" onclick="return toggleBox(this)"> <h:outputText
+							value="Liste des questions connexes : #{dossierConnexeActions.getCurrentIndex()}" />
+					</a>
+				</h3>
+				<div class="boxBody">
+					<nxu:set var="contentViewId" value="dossier_connexe_content">
+						<nxu:set var="contentViewName" value="dossier_connexe_content">
+							<ui:decorate
+								template="/incl/content_view_dossiers_connexes.xhtml">
+								<ui:define name="content_view_header_before_selector" />
+							</ui:decorate>
+						</nxu:set>
+					</nxu:set>
+				</div>
+			</div>
+		</c:if>
+
+		<c:if test="#{dossierConnexeActions.isCurrentQuestion()}">
+			<nxu:set var="question"
+				value="#{dossierConnexeActions.getQuestion()}" cache="false">
+				<div class="foldableBox">
+					<h3 class="folded">
+						<a href="#nologo" onclick="return toggleBox(this)"> <h:outputText
+								value="Question : #{question[0]}" />
+						</a>
+					</h3>
+					<div class="boxBody">
+						<h3 class="summaryTitle">
+							<h:outputText value="Question" />
+						</h3>
+						<br />
+						<p>
+							<h:outputText value="#{question[1]}" />
+						</p>
+						<br />
+						<h3 class="summaryTitle">
+							<h:outputText value="Réponse" />
+						</h3>
+						<br />
+						<p>
+							<h:outputText value="#{question[2]}" escape="false" />
+						</p>
+						<br />
+					</div>
+				</div>
+			</nxu:set>
+		</c:if>
+		<c:if test="#{loaded}">
+			<nxu:methodResult name="actions"
+				value="#{webActions.getActionsList('DOSSIER_CONNEXE_ALLOTISSEMENT')}">
+				<f:subview rendered="#{!empty actions}">
+					<nxu:dataList layout="unorderedList" var="action"
+						value="#{actions}">
+						<nxh:commandButton styleClass="button" id="button_lot"
+							value="#{messages[action.getLabel()]}"
+							action="#{action.getLink()}" />
+					</nxu:dataList>
+				</f:subview>
+			</nxu:methodResult>
+		</c:if>
+	</nxu:set>
+	<c:if test="#{param.theme == 'reponses/print'}">
+		<script>
+        		var j = jQuery.noConflict();
+        	  	j(document).ready(function() {
+        	    	j('a').removeAttr("href").removeAttr("onclick");
+        	  	});
+        	</script>
+	</c:if>
+</div>

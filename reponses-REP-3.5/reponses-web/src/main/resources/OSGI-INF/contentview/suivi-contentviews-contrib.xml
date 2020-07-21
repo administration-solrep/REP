@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.reponses.web.contentviews.suivi">
+	<require>fr.dila.reponses.web.layout.suivi.listing</require>
+	<require>fr.dila.reponses.web.layout.requete</require>
+	<extension target="org.nuxeo.ecm.platform.ui.web.ContentViewService"
+		point="contentViews">
+
+		<contentView name="suivi_saved_requete_content">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.SQLCoreQueryPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<pattern quoteParameters="false" escapeParameters="false">
+					SELECT h."ID", r.acl_id FROM HIERARCHY h, MISC m, SMART_FOLDER s,
+					hierarchy_read_acl r
+					WHERE h."ID" = m."ID"
+					AND h."ID" = s."ID"
+					AND h."ID" = r.id
+					AND h.PRIMARYTYPE ='SmartFolder' AND (m.LIFECYCLESTATE != 'deleted'
+					AND h.PARENTID = '?')
+				</pattern>
+				<parameter>#{requeteurActions.getUserBibliothequeId()}</parameter>
+				<pageSize>200</pageSize>
+			</genericPageProvider>
+			<useGlobalPageSize>false</useGlobalPageSize>
+			<cacheKey>requetes_personnelles</cacheKey>
+			<cacheSize>30</cacheSize>
+			<resultLayouts>
+				<layout name="suivi_listing" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+		</contentView>
+
+		<contentView name="suivi_general_requete_content">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.SQLCoreQueryPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<pattern quoteParameters="false" escapeParameters="false">
+					SELECT h."ID", r.acl_id FROM HIERARCHY h, MISC m, SMART_FOLDER s,
+					hierarchy_read_acl r
+					WHERE h."ID" = m."ID"
+					AND h."ID" = s."ID"
+					AND h."ID" = r.id
+					AND h.PRIMARYTYPE ='SmartFolder' AND (m.LIFECYCLESTATE = 'approved' OR
+					(m.LIFECYCLESTATE != 'deleted'
+					AND h.PARENTID = '?'))
+				</pattern>
+				<parameter>#{requeteurActions.getBibliothequeStandardId()}</parameter>
+				<sort column="s.pos" ascending="true" />
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+
+			<useGlobalPageSize>false</useGlobalPageSize>
+			<cacheKey>requetes_preparametres</cacheKey>
+			<cacheSize>30</cacheSize>
+			<resultLayouts>
+				<layout name="suivi_listing" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+		</contentView>
+
+		<contentView name="suivi_alert_content">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.SQLCoreQueryPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<pattern quoteParameters="false" escapeParameters="false">
+					SELECT a."ID", r.acl_id FROM ALERT a, MISC m, hierarchy_read_acl r
+					WHERE a."ID" = m."ID" AND a."ID" = r.id AND m."LIFECYCLESTATE" !=
+					'deleted'
+				</pattern>
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+
+			<useGlobalPageSize>false</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>mes_alertes</cacheKey>
+			<cacheSize>20</cacheSize>
+			<resultLayouts>
+				<layout name="alert_listing" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+		</contentView>
+
+		<!-- Une content view pour le résultat du requêteur en UFNXQL -->
+		<contentView name="recherche_requeteur">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.RechercheResultPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="resourcesAccessor">#{resourcesAccessor}</property>
+				<property name="userColumn">#{profilUtilisateurActions.getUserColumnId()}</property> <!-- Colonnes à afficher a l'utilisateur -->
+				<pattern quoteParameters="false" escapeParameters="false">
+					?
+				</pattern>
+				<parameter>#{smartNXQLQueryActions.fullQuery}</parameter>
+				<sort column="q.qu:numeroQuestion" ascending="true" />
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>only_one_cache</cacheKey>
+			<cacheSize>1</cacheSize>
+			<searchLayout name="nxql_incremental_smart_query" />
+			<resultLayouts>
+				<layout name="dossier_listing_dto" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="RECHERCHE_SELECTION_LIST" />
+		</contentView>
+
+		<contentView name="recherche_requeteur_sauvegarde">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.RechercheResultPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="resourcesAccessor">#{resourcesAccessor}</property>
+				<property name="userColumn">#{profilUtilisateurActions.getUserColumnId()}</property> <!-- Colonnes à afficher a l'utilisateur -->
+				<pattern quoteParameters="false" escapeParameters="false">
+					?
+				</pattern>
+				<parameter>#{requeteurActions.getFullQuery()}</parameter>
+				<sort column="q.qu:numeroQuestion" ascending="true" />
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+			<useGlobalPageSize>false</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>only_one_cache</cacheKey>
+			<cacheSize>1</cacheSize>
+			<resultLayouts>
+				<layout name="dossier_listing_dto" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="RECHERCHE_SELECTION_LIST" />
+		</contentView>
+
+		<contentView name="recherche_requeteur_historique">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.RequeteHistoriqueResultPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="resourcesAccessor">#{resourcesAccessor}</property>
+				<property name="userColumn">#{profilUtilisateurActions.getUserColumnId()}</property> <!-- Colonnes à afficher a l'utilisateur -->
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>only_one_cache</cacheKey>
+			<cacheSize>1</cacheSize>
+			<resultLayouts>
+				<layout name="dossier_listing_dto" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="RECHERCHE_SELECTION_LIST" />
+		</contentView>
+
+	</extension>
+
+</component>
+
+
+
+
+
+

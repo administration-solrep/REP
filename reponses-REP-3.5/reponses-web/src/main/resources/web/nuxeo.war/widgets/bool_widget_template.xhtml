@@ -1,0 +1,18 @@
+<div xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout">
+	<c:if test="#{widget.mode != 'create' and widget.mode != 'edit'}">
+
+		<c:if test="#{field == 'true'}">
+			<h:outputText value="Oui" />
+		</c:if>
+
+		<c:if test="#{field == 'false'}">
+			<h:outputText value="Non" />
+		</c:if>
+	</c:if>
+</div>

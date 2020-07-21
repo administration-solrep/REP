@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue le service de ControleService de l'application 
+	Reponses -->
+<component name="fr.dila.reponses.api.service.ControleService">
+	<implementation class="fr.dila.reponses.core.service.ControleServiceImpl" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.ControleService" />
+	</service>
+</component>

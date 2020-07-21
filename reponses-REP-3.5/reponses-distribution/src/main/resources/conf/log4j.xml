@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false" threshold="null">
+
+	<!-- ============================== -->
+	<!-- console appender -->
+	<!-- ============================== -->
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} [%-5p] [%c{1}] %m%n" />
+		</layout>
+	</appender>
+
+	<!-- ================================= -->
+	<!-- main file appender : server.log -->
+	<!-- ================================= -->
+
+	<appender name="MAIN-FILE" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/server.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<!-- clé de conversion : userName pathDoc, uidDoc, codeLog, typeDoc, titleDoc, 
+			parentDoc, infoCompl -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{ISO8601} %-5p (%t) %X{codeLog}%X{uidDoc}[%c]%X{userName}%X{titleDoc}%X{typeDoc}%X{infoCompl} %m%n" />
+		</layout>
+	</appender>
+	<appender name="MESSAGES" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/messages.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<!-- clé de conversion : userName pathDoc, uidDoc, codeLog, typeDoc, titleDoc, 
+			parentDoc, infoCompl -->
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern"
+				value="%d{ISO8601} %-5p (%t) %X{codeLog}%X{uidDoc}[%c]%X{userName}%X{titleDoc}%X{typeDoc}%X{infoCompl} %m%n%throwable{0}" />
+		</layout>
+	</appender>
+
+	<appender name="NOTIFICATION-FILE" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/reponses-notifications.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+
+
+	<appender name="SYSLOG" class="org.apache.log4j.net.SyslogAppender">
+		<param name="Facility" value="LOCAL1" />
+		<param name="Header" value="true" />
+		<param name="FacilityPrinting" value="true" />
+		<param name="SyslogHost" value="localhost" />
+		<param name="Threshold" value="WARN" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="REPONSES INST %-5p %m%n" />
+		</layout>
+	</appender>
+
+	<!-- ================================= -->
+	<!-- error file appender : reponses-error.log -->
+	<!-- ================================= -->
+
+	<appender name="ERROR-FILE" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/reponses-error.log" />
+		<param name="Append" value="false" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+
+
+	<!-- ================================= -->
+	<!-- file appender : ws-client.log -->
+	<!-- ================================= -->
+
+	<appender name="FILE-WS-CLIENT" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/ws-client.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="FILE-WS-D2S-CLIENT" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/ws-d2s-client.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="FILE-WS-DVS-CLIENT" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/ws-dvs-client.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="FILE-WS-SERVER-WSNOTIFICATION" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/ws-notification.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="FILE-WS-SERVER-WSATTRIBUTION" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/ws-attribution.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="FILE-WS-SERVER-WSCONTROLE" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/ws-controle.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="FILE-WS-SERVER-WSQUESTION" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/ws-question.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="FILE-WS-SERVER-WSREPONSE" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/ws-reponse.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="FILE-MIGRATION-REPONSES" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="File" value="${nuxeo.log.dir}/reponse-migration.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{ISO8601} %-5p (%t) %X{codeLog}%X{uidDoc}[%c]%X{userName}%X{titleDoc}%X{typeDoc}%X{infoCompl} %m%n" />
+		</layout>
+	</appender>
+
+	<!-- ================ -->
+	<!-- Nuxeo Loggers -->
+	<!-- ================ -->
+
+	<logger name="org.nuxeo">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="org.nuxeo.runtime.osgi.OSGiRuntimeService">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="org.nuxeo.osgi.application.loader.FrameworkLoader">
+		<level value="INFO" />
+	</logger>
+
+	<!-- remove "Could not retrieve base url correctly" en attente réponse nuxeo 
+		SUPNXP-6893 -->
+	<logger name="org.nuxeo.ecm.platform.web.common.vh.VirtualHostHelper">
+		<level value="OFF" />
+	</logger>
+
+	<logger name="nuxeo-error-log">
+		<level value="TRACE" />
+		<appender-ref ref="ERROR-FILE" />
+	</logger>
+
+
+	<!-- ================ -->
+	<!-- Custom Loggers -->
+	<!-- ================ -->
+
+	<logger name="fr.dila">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="fr.dila.reponses.server.logger" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="NOTIFICATION-FILE" />
+	</logger>
+
+
+	<!-- ================ -->
+	<!-- Web services client -->
+	<!-- ================ -->
+
+	<logger name="fr.dila.st.rest.client.AbstractWsProxy"
+		additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="FILE-WS-CLIENT" />
+	</logger>
+
+	<logger name="fr.dila.dictao.d2s.proxy.D2SServiceCaller"
+		additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="FILE-WS-D2S-CLIENT" />
+	</logger>
+
+	<logger name="fr.dila.dictao.dvs.proxy.DVSServiceCaller"
+		additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="FILE-WS-DVS-CLIENT" />
+	</logger>
+
+
+	<!-- ================ -->
+	<!-- Web services -->
+	<!-- ================ -->
+
+	<logger name="fr.dila.st.rest.api.WSNotification" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="FILE-WS-SERVER-WSNOTIFICATION" />
+	</logger>
+
+	<logger name="fr.dila.reponses.rest.api.WSAttribution"
+		additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="FILE-WS-SERVER-WSATTRIBUTION" />
+	</logger>
+
+	<logger name="fr.dila.reponses.rest.api.WSControle" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="FILE-WS-SERVER-WSCONTROLE" />
+	</logger>
+
+	<logger name="fr.dila.reponses.rest.api.WSQuestion" additivity="true">
+		<level value="INFO" />
+		<appender-ref ref="FILE-WS-SERVER-WSQUESTION" />
+	</logger>
+
+	<logger name="fr.dila.reponses.rest.api.WSReponse" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="FILE-WS-SERVER-WSREPONSE" />
+	</logger>
+
+	<!-- Comparaison des textes des reponses -->
+	<logger name="fr.dila.reponses.core.service.ControleServiceImpl">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="fr.dila.st.migration.logger">
+		<level value="INFO" />
+		<appender-ref ref="FILE-MIGRATION-REPONSES" />
+	</logger>
+
+	<logger name="org.nuxeo.ecm.core.storage.sql.jdbc.JDBCLogger">
+		<level value="ERROR" />
+	</logger>
+	
+	<logger name="org.hibernate.dialect.resolver.StandardDialectResolver">
+		<level value="OFF" />
+	</logger>
+
+	<!-- ======================= -->
+	<!-- Setup the Root category -->
+	<!-- ======================= -->
+	<root>
+		<level value="WARN" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="MAIN-FILE" />
+		<appender-ref ref="MESSAGES" />
+		<appender-ref ref="SYSLOG" />
+	</root>
+
+</log4j:configuration>

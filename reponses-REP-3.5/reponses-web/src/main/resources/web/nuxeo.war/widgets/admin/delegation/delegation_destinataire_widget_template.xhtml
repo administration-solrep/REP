@@ -1,0 +1,39 @@
+<f:subview id="#{widget.id}" xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:outputLink id="titleref" class="#{field_1}_popupTarget_1"
+		value="return false;">
+		<h:outputText value="#{nxu:userFullName(field_2)}" />
+	</h:outputLink>
+
+	<div>
+		<c:set value="#{nxu:concat(field_1, '_menuPopup')}" var="popupId" />
+		<script type="text/javascript"> 
+        var options = {
+            bind: 'click',
+            useFilter: false,
+            anchor: '#popupReceiver'
+        };
+        setupContextMenu('a.#{field_1}_popupTarget_1','#{popupId}', options);
+    </script>
+
+		<div style="display: none;" class="contextMenu" id="#{popupId}">
+			<ul>
+				<li><h:commandLink
+						action="#{navigationContext.navigateToDocument(field_0)}">
+						<h:graphicImage value="/icons/view_doc.png" />
+						<h:outputText value=" #{messages['command.global.open']}" />
+					</h:commandLink></li>
+				<li><h:commandLink
+						action="#{navigationWebActions.deleteDocument(field_0)}"
+						onclick="if (!confirm('#{messages['reponses.delegation.confirm.delete']}')) return false;">
+						<h:graphicImage value="/icons/delete.png" />
+						<h:outputText value=" #{messages['command.global.delete']}" />
+					</h:commandLink></li>
+			</ul>
+		</div>
+	</div>
+
+</f:subview>

@@ -1,0 +1,14 @@
+#version: 1
+
+dn: cn=40000001,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: add
+objectClass: top
+objectClass: poste
+objectClass: groupOfUniqueNames
+cn: 40000001
+dateDebut: 20061201000000Z
+deleted: FALSE
+label:: IA==
+uniqueMember: uid=Administrator,ou=people,ou=Reponses,dc=dila,dc=fr
+dateFin: 99991231000000Z
+

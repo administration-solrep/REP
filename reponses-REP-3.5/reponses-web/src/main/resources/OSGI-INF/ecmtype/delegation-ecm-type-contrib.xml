@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les types ECM nécessaires à la gestion des délégations. -->
+<component name="fr.dila.reponses.web.ecmtype.delegation">
+	<require>com.nuxeo.case-management.types</require>
+
+	<extension target="org.nuxeo.ecm.platform.types.TypeService"
+		point="types">
+		<!-- Racine des délégations -->
+		<type id="DelegationRoot" coreType="DelegationFolder">
+			<default-view>view_delegations</default-view>
+			<subtypes>
+				<type>Delegation</type>
+			</subtypes>
+			<layouts mode="any">
+				<layout>delegation_list</layout>
+			</layouts>
+		</type>
+
+		<!-- Délégation -->
+		<type id="Delegation" coretype="Delegation">
+			<default-view>view_delegation</default-view>
+			<layouts mode="any">
+				<layout>delegation_detail</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>delegation_detail</layout>
+			</layouts>
+			<layouts mode="summary">
+				<layout>delegation_detail</layout>
+			</layouts>
+		</type>
+
+	</extension>
+</component>

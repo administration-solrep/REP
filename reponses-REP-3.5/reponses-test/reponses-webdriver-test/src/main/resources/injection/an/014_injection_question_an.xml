@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>44266</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="645106">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Pascal</ns2:prenom>
+				<ns2:nom>Popelin</ns2:nom>
+				<ns2:grp_pol>SRC</ns2:grp_pol>
+				<ns2:circonscription>Seine-Saint-Denis 12</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Pascal Popelin attire l'attention de M. le
+				ministre de l'éducation nationale sur les revendications exprimées
+				de longue date par les directeurs d'écoles primaires, s'agissant de
+				l'évolution de leurs statuts, de la clarification de leurs missions
+				et de leurs besoins de formation. L'exercice de la responsabilité de
+				directeur d'école et le poids des tâches qui y sont associées
+				varient énormément d'un établissement à l'autre, en fonction
+				notamment du nombre d'élèves accueillis. L'ensemble de ces
+				professionnels pointent toutefois de manière unanime les difficultés
+				croissantes auxquelles ils sont confrontés pour assurer une mission
+				qui demande de plus en plus de technicité et de qualifications. Les
+				tâches qui leur sont assignées se sont en effet nettement
+				diversifiées et complexifiées. Elles requièrent davantage de temps
+				et d'investissement que par le passé. Cette forme de «
+				professionnalisation » de la fonction -que les directeurs sont dans
+				certains cas contraints de cumuler avec la prise en charge d'une
+				classe- n'a toutefois jamais été assortie d'une redéfinition claire
+				de leurs prérogatives, de leurs statuts et des aptitudes
+				nécessaires. Compte tenu du rôle stratégique que ces professionnels
+				ont vocation à occuper dans le cadre de la refondation de l'école de
+				la République souhaitée par le Gouvernement et la majorité
+				parlementaire, il souhaiterait avoir connaissance des mesures que le
+				Gouvernement envisage de prendre pour revaloriser cette fonction et
+				mieux accompagner ceux qui l'exercent.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enseignement maternel et primaire : personnel</ns2:rubrique>
+				<ns2:rubrique_ta>directeurs d'école</ns2:rubrique_ta>
+				<ns2:analyse>exercice de la profession</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

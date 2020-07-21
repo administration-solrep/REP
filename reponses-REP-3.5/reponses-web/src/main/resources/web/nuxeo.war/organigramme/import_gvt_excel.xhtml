@@ -1,0 +1,95 @@
+<div xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<a4j:region id="importGvtRegion">
+		<rich:modalPanel id="importGvtPanel" autosized="true">
+			<style>
+.button {
+	cursor: pointer;
+	color: #454545;
+	font-size: 10px;
+	background: #CECFD1
+		url(#{facesContext.externalContext.requestContextPath}/img/theme_galaxy/buttons.png)
+		repeat-x scroll left top;
+	border: 1px solid #BFC5CB;
+	padding: 2px 5px 2px 5px;
+	margin: 5px 10px 10px 0;
+}
+</style>
+
+			<div>
+				<f:facet name="header">
+					<h:outputText value="Sélectionner le fichier excel à importer" />
+				</f:facet>
+			</div>
+			<h:form id="importGvtForm">
+				<a4j:queue requestDelay="500" sizeExceededBehavior="dropNew"
+					ignoreDupResponses="true" size="10" id="inputImportGvtQueue"
+					name="inputImportGvtQueue" timeout="10000" />
+				<div id="importGvtDiv">
+					<!-- file input -->
+					<rich:fileUpload listHeight="120"
+						fileUploadListener="#{organigrammeInjectionActions.fileUploadListener}"
+						maxFilesQuantity="1" id="uploadImportGvtExcel"
+						doneLabel="Téléchargement effectué"
+						clearAllControlLabel="Supprimer" immediateUpload="true"
+						addControlLabel="Ajouter Fichier" clearControlLabel="Supprimer"
+						acceptedTypes="xls" allowFlash="false">
+						<a4j:support event="onuploadcomplete"
+							eventsQueue="inputImportGvtQueue" reRender="info" />
+						<a4j:support event="onclear" eventsQueue="inputImportGvtQueue"
+							reRender="info">
+							<a4j:actionparam name="fname" noEscape="true"
+								value="(event.memo.entry)?event.memo.entry.fileName:'' "
+								assignTo="#{organigrammeInjectionActions.removeFileName}"
+								actionListener="#{organigrammeInjectionActions.clearUploadData}" />
+						</a4j:support>
+					</rich:fileUpload>
+
+					<table>
+						<tr>
+							<td>
+								<!-- button create --> <a4j:commandButton styleClass="button"
+									action="#{organigrammeInjectionActions.preparerInjection()}"
+									id="importGvtButtonText" eventsQueue="inputImportGvtQueue"
+									oncomplete="if (#{organigrammeInjectionActions.noPageError}) { Richfaces.hideModalPanel('importGvtPanel') }"
+									reRender="importGvtPanel, errorNameCreate" ajaxSingle="true"
+									value="#{messages['command.global.validate']}">
+								</a4j:commandButton>
+							</td>
+							<td>
+								<!-- button close --> <a4j:commandButton styleClass="button"
+									action="#{organigrammeInjectionActions.resetProperties()}"
+									id="annulerFondDeDossierFileCreationText"
+									eventsQueue="inputImportGvtQueue"
+									oncomplete="Richfaces.hideModalPanel('importGvtPanel')"
+									reRender="importGvtPanel" ajaxSingle="true"
+									value="#{messages['command.global.cancel']}">
+								</a4j:commandButton>
+							</td>
+							<td><a4j:status for="importGvtRegion">
+									<f:facet name="start">
+										<h:graphicImage value="/img/standart_waiter.gif"
+											style="position: absolute;" />
+									</f:facet>
+								</a4j:status></td>
+						</tr>
+					</table>
+
+					<!-- error message -->
+					<div class="popupFddDiv">
+						<h:outputText class="popupFddError" id="errorNameCreate"
+							value="#{messages[fddErrorName]}" />
+					</div>
+				</div>
+			</h:form>
+		</rich:modalPanel>
+	</a4j:region>
+</div>

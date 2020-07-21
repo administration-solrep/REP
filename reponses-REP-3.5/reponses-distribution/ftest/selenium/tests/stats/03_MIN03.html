@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-test.lyon-dev2.local:8180/" />
+<title>03_MIN03</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">03_MIN03</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>moasword</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/statistiques/view_report.faces?conversationId=0NXMAIN</td>
+				<td></td>
+			</tr>
+			<!--Premier ministre-->
+			<tr>
+				<td>click</td>
+				<td>link=MIN03. Questions écrites signalées par l'Assemblée
+					nationale en cours de traitement (suivi par date)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>pause</td>
+				<td>5000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=birt_reports:nxl_reports_listing_2:nxw_reportTitre_2:nxw_reportTitre_2_tree:node:0:node:0::nxw_reportTitre_2_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementNotPresent</td>
+				<td>//div[contains(.,'AN')]</td>
+				<td></td>
+			</tr>
+			<!--Ministère chargé du Budget-->
+			<tr>
+				<td>click</td>
+				<td>link=MIN03. Questions écrites signalées par l'Assemblée
+					nationale en cours de traitement (suivi par date)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>pause</td>
+				<td>5000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=birt_reports:nxl_reports_listing_2:nxw_reportTitre_2:nxw_reportTitre_2_tree:node:0:node:21::nxw_reportTitre_2_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'4983')]/../../td[3]/div[contains(.,'18/09/2012')]/../../td[4]/div[contains(.,'26/03/2013')]/../../td[5]/div[contains(.,'10/04/2013')]/../../td[6]/div[contains(.,'11/04/2013')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'10616')]/../../td[3]/div[contains(.,'20/11/2012')]/../../td[4]/div[contains(.,'12/03/2013')]/../../td[5]/div[contains(.,'10/04/2013')]/../../td[6]/div[contains(.,'11/04/2013')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'16015')]/../../td[3]/div[contains(.,'22/01/2013')]/../../td[4]/div[contains(.,'26/03/2013')]/../../td[5]/div[contains(.,'12/04/2013')]/../../td[6]/div[contains(.,'12/04/2013')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'18062')]/../../td[3]/div[contains(.,'12/02/2013')]/../../td[4]/div[contains(.,'28/05/2013')]/../../td[5]/div[contains(.,'')]/../../td[6]/div[contains(.,'')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'23836')]/../../td[3]/div[contains(.,'09/04/2013')]/../../td[4]/div[contains(.,'11/06/2013')]/../../td[5]/div[contains(.,'')]/../../td[6]/div[contains(.,'')]</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

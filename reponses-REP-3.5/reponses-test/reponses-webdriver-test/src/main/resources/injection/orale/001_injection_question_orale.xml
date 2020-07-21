@@ -1,0 +1,1682 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>449</numero_question>
+				<type>QOSD</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-04-25</ns2:date_publication_jo>
+			<ns2:page_jo>1292</ns2:page_jo>
+			<ns2:ministre_depot id="50000976">
+				<titre_jo>Écologie, développement durable et énergie</titre_jo>
+				<intitule_min>Ministère de l'écologie, du développement durable et
+					de l'énergie</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50001886">
+				<titre_jo>Égalité des territoires et logement</titre_jo>
+				<intitule_min>Ministère de l'égalité des territoires et du logement</intitule_min>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="95037J">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Claude</ns2:prenom>
+				<ns2:nom>Haut</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>840 - Vaucluse</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Claude Haut attire l'attention de Mme la
+				ministre de l'écologie, du développement durable et de l'énergie sur
+				l'article L. 122-2 du code de l'urbanisme qui a été édicté pour
+				combattre l'étalement urbain dans la périphérie des agglomérations
+				de plus de 50 000 habitants, en limitant l'ouverture à
+				l'urbanisation des zones naturelles dans les communes situées à la
+				périphérie desdites agglomérations.
+
+				Cet article a été modifié par la loi n° 2010-788 du 12 juillet 2010
+				portant engagement national pour l'environnement, dans les termes
+				suivants :« Dans les communes qui ne sont pas couvertes par un
+				schéma de cohérence territoriale applicable, le plan local
+				d'urbanisme ne peut être modifié ou révisé en vue d'ouvrir à
+				l'urbanisation une zone à urbaniser délimitée après le 1er juillet
+				2002 ou une zone naturelle. Jusqu'au 31 décembre 2012, le premier
+				alinéa s'applique dans les communes situées à moins de quinze
+				kilomètres du rivage de la mer ou à moins de quinze kilomètres de la
+				périphérie d'une agglomération de plus de 50 000 habitants, au sens
+				du recensement général de la population. À compter du 1er janvier
+				2013 et jusqu'au 31 décembre 2016, il s'applique dans les communes
+				situées à moins de quinze kilomètres du rivage de la mer ou à moins
+				de quinze kilomètres de la périphérie d'une agglomération de plus de
+				15 000 habitants ».
+
+				Cette modification, issue de la loi portant engagement national pour
+				l'environnement précitée, généralise le principe de constructibilité
+				limitée à toutes les communes selon un calendrier progressif :
+				jusqu'au 31 décembre 2012, il ne s'applique qu'aux communes situées
+				à moins de quinze kilomètres du rivage de la mer, ou de la
+				périphérie d'une agglomération de 5 000 habitants.
+
+				D'autre part, la même loi du 12 juillet 2010, dont est issue la nouvelle
+				rédaction de l'article L. 122-2, édictait, dans son article 19, des
+				dispositions transitoires applicables aux plans locaux d'urbanisme
+				en cours d'élaboration.
+
+				Ces mesures résultent du V dudit article qui dispose:
+
+				« V – Le présent article entre en vigueur six mois après la
+				publication de la présente loi ». Toutefois, les dispositions
+				antérieurement applicables continuent de s'appliquer lorsqu'un plan
+				local d'urbanisme est en cours d'élaboration ou de révision et que
+				le projet de plan a été arrêté par l'organe délibérant de
+				l'établissement public de coopération intercommunale ou le conseil
+				municipal avant la date prévue au premier alinéa.
+
+				Dans son ancienne rédaction, le principe de constructibilité limitée de
+				l'article L. 122-2 et l'interdiction d'ouverture à l'urbanisation
+				d'une zone naturelle, s'appliquait aux seules communes situées à la
+				périphérie des agglomérations de 50 000 habitants, ce, afin d'éviter
+				l'étalement urbain :
+
+				« Dans les communes qui sont situées à moins de 15 km de la
+				périphérie d'une agglomération de plus de 50 000 habitants au sens
+				du recensement général de la population (… ) et qui ne sont pas
+				couvertes par un schéma de cohérence territoriale applicable, le
+				plan local d'urbanisme ne peut être modifié ou révisé en vue
+				d'ouvrir à l'urbanisation ou une zone à urbaniser délimitée après le
+				1er juillet 2002 ».
+
+				À titre d'exemple, la commune de Saumane de Vaucluse, qui est incluse
+				dans le périmètre de l'agglomération d'Avignon, établi par
+				l'Institut national de la statistique et des études économiques
+				(INSEE), selon les critères de continuité du bâti applicables audit
+				zonage, a décidé d'opter pour les mesures transitoires prévues à la
+				loi portant engagement national pour l'environnement et d'approuver
+				son plan local d'urbanisme arrêté avant la date prévue au premier
+				alinéa dudit article.
+
+				Il lui demande, en conséquence, de lui préciser si la règle des quinze
+				kilomètres fixée par l'article L. 122-2 du code de l'urbanisme
+				s'applique aux communes qui sont incluses dans le périmètre des
+				agglomérations de 50 000 habitants qui ont opté pour les mesures
+				transitoires prévues au V de l'article 19 de la loi portant
+				engagement national pour l'environnement.]]&gt;</ns2:texte>
+			<ns2:etat_question>REPONDU</ns2:etat_question>
+			<ns2:titre_senat>Lutte contre l'étalement urbain</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Environnement</ns2:theme>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:rubrique>Villes</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Environnement</ns2:renvoi>
+					<ns2:renvoi>Urbanisme</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+		<ns2:reponse>
+			<ns3:ministre_reponse id="50000938">
+				<titre_jo>Agroalimentaire</titre_jo>
+				<intitule_min>Ministère chargé de l'agroalimentaire</intitule_min>
+			</ns3:ministre_reponse>
+			<ns3:texte_reponse>&lt;![CDATA[M. Claude Haut. Madame la présidente,
+				monsieur le ministre, ma question est très technique.
+				L&amp;#39;article L. 122-2 du code de l&amp;#39;urbanisme a été
+				édicté pour combattre l&amp;#39;étalement urbain dans la périphérie
+				des agglomérations de plus de 50 000 habitants en limitant
+				l&amp;#39;ouverture à l&amp;#39;urbanisation des zones naturelles
+				dans les communes situées à cette périphérie. &lt;p&gt;Cet article a
+				été modifié par la loi du 12 juillet 2010 portant engagement
+				national pour l&amp;#39;environnement, dite loi ENE, dans les termes
+				suivants : « dans les communes qui ne sont pas couvertes par un
+				schéma de cohérence territoriale applicable, le plan local
+				d&amp;#39;urbanisme ne peut être modifié ou révisé en vue
+				d&amp;#39;ouvrir à l&amp;#39;urbanisation une zone à urbaniser
+				délimitée après le 1&lt;sup&gt;er&lt;/sup&gt; juillet 2002 ou une
+				zone naturelle. &lt;/p&gt;&lt;p&gt;« Jusqu&amp;#39;au 31 décembre
+				2012, le premier alinéa s&amp;#39;applique dans les communes situées
+				à moins de quinze kilomètres [...] de la périphérie d&amp;#39;une
+				agglomération de plus de 50 000 habitants [...]
+				».&lt;/p&gt;&lt;p&gt;D&amp;#39;autre part, la même loi du 12 juillet
+				2010, dont est issue la nouvelle rédaction de l&amp;#39;article L.
+				122-2, édicte, dans son article 19, des dispositions transitoires
+				applicables aux plans locaux d&amp;#39;urbanisme en cours
+				d&amp;#39;élaboration. Ces mesures résultent du paragraphe V, selon
+				lequel : « Le présent article entre en vigueur six mois après la
+				publication de la présente loi.[...] » Toutefois, les dispositions
+				antérieurement applicables continuent de s&amp;#39;appliquer
+				lorsqu&amp;#39;un plan local d&amp;#39;urbanisme est en cours
+				d&amp;#39;élaboration ou de révision et que le projet de plan a été
+				arrêté par l&amp;#39;organe délibérant de l&amp;#39;établissement
+				public de coopération intercommunale ou le conseil municipal avant
+				la date prévue au premier alinéa.&lt;/p&gt;&lt;p&gt;« Dans les
+				communes qui sont situées à moins de quinze kilomètres de la
+				périphérie d&amp;#39;une agglomération de plus de 50 000 habitants
+				[...] et qui ne sont pas couvertes par un schéma de cohérence
+				territoriale applicable, le plan local d&amp;#39;urbanisme ne peut
+				être modifié ou révisé en vue d&amp;#39;ouvrir à
+				l&amp;#39;urbanisation une zone à urbaniser délimitée après le
+				1&lt;sup&gt;er&lt;/sup&gt; juillet 2002 ou une zone naturelle ».
+				Vous conviendrez, monsieur le ministre, que ce texte est très
+				technique.&lt;/p&gt;&lt;p&gt;La commune de Saumane-de-Vaucluse, dans
+				mon département, qui est incluse dans le périmètre de
+				l&amp;#39;agglomération d&amp;#39;Avignon selon les critères de
+				continuité du bâti applicables audit zonage, a décidé
+				d&amp;#39;opter pour les mesures transitoires que je viens de
+				rappeler prévues par la loi ENE et d&amp;#39;approuver son PLU
+				arrêté avant la date prévue au premier alinéa dudit
+				article.&lt;/p&gt;&lt;p&gt;Monsieur le ministre, pouvez-vous nous
+				préciser si la règle des quinze kilomètres de l&amp;#39;article L.
+				122-2 s&amp;#39;applique aux communes qui sont incluses dans le
+				périmètre des agglomérations de 50 000 habitants et qui ont opté
+				pour les mesures transitoires prévues au V de l&amp;#39;article 19
+				de la loi ENE ? &lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est
+				à M. le ministre délégué.&lt;/p&gt;&lt;p&gt;M. Guillaume Garot,
+				ministre délégué auprès du ministre de l&amp;#39;agriculture, de
+				l&amp;#39;agroalimentaire et de la forêt, chargé de
+				l&amp;#39;agroalimentaire. Monsieur le sénateur, comme vous
+				l&amp;#39;indiquez, la commune de Saumane-de-Vaucluse a opté pour
+				les dispositions antérieures à la loi portant engagement national
+				pour l&amp;#39;environnement, dite loi ENE, et a achevé la procédure
+				d&amp;#39;élaboration de son plan local d&amp;#39;urbanisme,
+				conformément à l&amp;#39;article 19 de ladite
+				loi.&lt;/p&gt;&lt;p&gt;La possibilité d&amp;#39;opter pour les
+				dispositions antérieures à la loi ENE n&amp;#39;est applicable que
+				pour les règles de procédure en cours, le périmètre
+				d&amp;#39;approbation du document et le contenu même du PLU. Une
+				fois le PLU approuvé ou révisé selon les dispositions antérieures,
+				il est soumis aux autres dispositions du code de l&amp;#39;urbanisme
+				modifiées par la loi ENE, telles que l&amp;#39;article L. 122-2 du
+				code de l&amp;#39;urbanisme modifié par l&amp;#39;article 17 de la
+				loi ENE. L&amp;#39;article L. 122-2 n&amp;#39;est pas une
+				disposition relative au périmètre ni au contenu du PLU, et doit donc
+				être appliqué, dans sa rédaction actuelle, à la commune de
+				Saumane-de-Vaucluse.&lt;/p&gt;&lt;p&gt;La population de
+				l&amp;#39;agglomération d&amp;#39;Avignon s&amp;#39;établissant à
+				plus de 440 000 habitants, cette commune était déjà concernée par
+				l&amp;#39;application de l&amp;#39;article L. 122-2 avant même
+				l&amp;#39;entrée en vigueur de la loi ENE. &lt;/p&gt;&lt;p&gt;Plus
+				généralement, je vous confirme que les communes comprises à
+				l&amp;#39;intérieur de la zone bâtie continue des agglomérations de
+				plus de 15 000 habitants sont également soumises à l&amp;#39;article
+				L. 122-2, l&amp;#39;objectif étant, comme vous le savez, monsieur le
+				sénateur, d&amp;#39;inciter les collectivités locales à se doter
+				d&amp;#39;un schéma de cohérence territoriale, ou
+				SCOT.&lt;/p&gt;&lt;p&gt;L&amp;#39;article L. 122-2 ne gèle pas toute
+				possibilité d&amp;#39;urbanisation des communes non couvertes par un
+				SCOT, mais il conduit ces communes à solliciter une dérogation, afin
+				d&amp;#39;éviter que certaines ne prennent seules des décisions qui
+				auraient des conséquences sur l&amp;#39;ensemble de
+				l&amp;#39;agglomération dont elles font partie.&lt;/p&gt;&lt;p&gt;Il
+				s&amp;#39;agit là, monsieur le sénateur, de la position constante de
+				l&amp;#39;administration centrale du ministère en charge de
+				l&amp;#39;urbanisme depuis la publication de la loi du 13 décembre
+				2000 relative à la solidarité et au renouvellement urbains, dite loi
+				SRU.&lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est à M. Claude
+				Haut.&lt;/p&gt;&lt;p&gt;M. Claude Haut. J&amp;#39;ai obtenu la
+				réponse que je souhaitais, à savoir qu&amp;#39;une possibilité de
+				dérogation est prévue dans ce cas précis. Je transmettrai bien
+				entendu votre réponse à la commune de Saumane-de-Vaucluse, monsieur
+				le ministre, afin qu&amp;#39;elle puisse en tirer les
+				conséquences.&lt;/p&gt;]]&gt;</ns3:texte_reponse>
+			<ns3:date_jo>2013-11-20</ns3:date_jo>
+			<ns3:page_jo>11568</ns3:page_jo>
+		</ns2:reponse>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>466</numero_question>
+				<type>QOSD</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-05-09</ns2:date_publication_jo>
+			<ns2:page_jo>1467</ns2:page_jo>
+			<ns2:ministre_depot id="50000975">
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01043Q">
+				<ns2:civilite>Mme</ns2:civilite>
+				<ns2:prenom>Valérie</ns2:prenom>
+				<ns2:nom>Létard</ns2:nom>
+				<ns2:grp_pol>UDI-UC</ns2:grp_pol>
+				<ns2:circonscription>590 - Nord</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[Mme Valérie Létard attire l'attention de Mme
+				la ministre des affaires sociales et de la santé sur l'inquiétude de
+				plus en plus grande qui a saisi les associations d'usagers
+				représentant les personnes autistes et leurs familles devant le
+				retard pris dans l'annonce définitive du troisième plan autisme pour
+				la période 2013-2015.
+
+				Le 2 avril 2013, date de la Journée mondiale de sensibilisation à
+				l'autisme, la ministre déléguée aux personnes handicapées et à la
+				lutte contre l'exclusion, membre de votre pôle ministériel,
+				annonçait à l'Assemblée nationale que « le troisième plan autisme
+				était prêt ». Elle ajoutait qu'il serait présenté devant le Conseil
+				national de l'autisme, le groupe d'études consacré à l'autisme de
+				l'Assemblée et la commission des affaires sociales. Et l'on pouvait
+				penser qu'il en serait de même devant la commission des affaires
+				sociales du Sénat. Or, près d'un mois plus tard, il semble que les
+				arbitrages budgétaires ne soient toujours pas définitivement arrêtés
+				et que les contours exacts du plan ne soient pas encore connus.
+
+				Dans le même temps, le manque de lisibilité sur les mesures-phares du
+				plan, hormis quelques grandes orientations très générales, ne permet
+				pas aux familles de savoir si le volontarisme porté par la ministre
+				déléguée se traduira par un plan ambitieux ou si, contraintes
+				budgétaires obligeant, le plan sera d'un format beaucoup plus
+				modeste. Cette incertitude est difficile à supporter par des
+				familles qui ont longtemps attendu et surtout beaucoup espéré une
+				nouvelle impulsion pour conforter les avancées du deuxième plan.
+
+				Elle lui demande si son ministère continue à faire de l'autisme une
+				priorité et si cela se traduira dans les moyens qui seront affectés
+				au troisième plan et dans une gouvernance volontariste, qui sache
+				associer usagers et professionnels.]]&gt;</ns2:texte>
+			<ns2:etat_question>REPONDU</ns2:etat_question>
+			<ns2:titre_senat>Mise en œuvre du troisième plan autisme</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:rubrique>Handicapés</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Handicapés (prestations et ressources)</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+		<ns2:reponse>
+			<ns3:ministre_reponse id="50000975">
+				<titre_jo>Personnes handicapées et lutte contre l'exclusion</titre_jo>
+				<intitule_min>Ministère chargé des personnes handicapées et de la
+					lutte contre l'exclusion</intitule_min>
+			</ns3:ministre_reponse>
+			<ns3:texte_reponse>&lt;![CDATA[Mme Valérie Létard. Madame la ministre
+				déléguée aux personnes handicapées et à la lutte contre
+				l&amp;#39;exclusion, permettez-moi de recentrer ma question initiale
+				sur la place des centres de ressources autisme, les CRA, dans le
+				troisième plan Autisme. &lt;p&gt;Créés en 2005 par le premier plan
+				Autisme, les CRA constituent un dispositif déterminant de la
+				politique de prise en charge de l&amp;#39;autisme. Lors du travail
+				d&amp;#39;évaluation que j&amp;#39;avais mené en 2011,
+				j&amp;#39;avais constaté une « grande inégalité dans leurs résultats
+				et leur capacité à assurer toutes leurs missions ». Ces difficultés
+				résultaient notamment de leur statut, leur rattachement à des
+				établissements hospitaliers ne leur assurant pas toujours les moyens
+				de leur autonomie. Selon des données communiquées par la Caisse
+				nationale de solidarité pour l&amp;#39;autonomie des personnes âgées
+				et des personnes handicapées, la CNSA, pour l&amp;#39;année 2009,
+				les CRA relevaient de six formes différentes d&amp;#39;organisation,
+				et dix-huit CRA sur vingt-cinq étaient placés sous gestion
+				d&amp;#39;une structure hospitalière. Afin de conforter leur action,
+				les recommandations n&lt;sup&gt;os&lt;/sup&gt; 9, 10 et 11 de mon
+				rapport préconisaient de « favoriser les accords de coopération
+				entre CRA proches géographiquement sur une ou plusieurs de leurs
+				missions », d&amp;#39;évaluer leur fonctionnement par un audit
+				externe et, suivant une grille d&amp;#39;évaluation à construire, de
+				leur assurer le « choix du statut juridique le plus approprié » en
+				garantissant leur « indépendance par rapport à l&amp;#39;hôpital de
+				support » et leur « ouverture à l&amp;#39;ensemble des partenaires
+				régionaux ». Ce travail d&amp;#39;évaluation devait permettre de
+				déboucher sur une réorganisation des CRA, visant à mieux mutualiser
+				leurs moyens et leurs compétences.&lt;/p&gt;&lt;p&gt;Le troisième
+				plan Autisme que vous avez lancé, madame la ministre,
+				s&amp;#39;inscrit bien dans cette logique d&amp;#39;harmonisation
+				des pratiques, grâce à la création d&amp;#39;un groupement de
+				coopération et au renforcement du pilotage national, par
+				l&amp;#39;intermédiaire de l&amp;#39;Association nationale des
+				centres de ressources autisme, l&amp;#39;ANCRA. Toutefois, votre
+				démarche suscite quelques interrogations, ainsi que
+				l&amp;#39;inquiétude du monde associatif. Permettez-moi de
+				m&amp;#39;en faire la
+				porte-parole.&lt;/p&gt;&lt;p&gt;L&amp;#39;absence
+				d&amp;#39;évaluation &lt;em&gt;a priori&lt;/em&gt; des CRA fait
+				craindre aux associations que l&amp;#39;hétérogénéité des pratiques
+				qui les a caractérisés jusqu&amp;#39;à présent ne perdure. Ayant
+				moi-même insisté sur la nécessité d&amp;#39;y remédier, je
+				m&amp;#39;interroge également sur la manière de conforter les CRA
+				sans avoir établi un état des lieux préalable. Comment comptez-vous
+				apaiser ces craintes, très légitimes au regard du fonctionnement
+				passé de certains CRA ?&lt;/p&gt;&lt;p&gt;Les travaux préparatoires
+				à la publication du décret simple définissant les missions des CRA
+				peuvent donner le sentiment que les choix sont faits sans que les
+				associations de familles aient été consultées en amont.
+				Envisagez-vous de le faire avant la rédaction définitive du décret
+				?&lt;/p&gt;&lt;p&gt;Les CRA eux-mêmes, s&amp;#39;ils sont satisfaits
+				de voir réaffirmée leur expertise pour les diagnostics complexes,
+				s&amp;#39;interrogent sur la possibilité de mettre en place un
+				diagnostic primaire de qualité, en particulier à travers le
+				renforcement annoncé des centres d&amp;#39;action médico-sociale
+				précoce, les CAMSP. Quelles garanties pouvez-vous leur apporter que
+				les moyens budgétaires supplémentaires seront bien fléchés vers le
+				diagnostic de l&amp;#39;autisme ? Vous le savez mieux que personne,
+				madame la ministre, plus le diagnostic est précoce, plus la prise en
+				charge des enfants autistes sera de qualité et plus les progrès
+				seront importants. Le diagnostic est donc vraiment au cœur du
+				dispositif.&lt;/p&gt;&lt;p&gt;Rappelant le statut
+				d&amp;#39;établissement médico-social de ces structures, vous avez
+				annoncé votre intention d&amp;#39;adjoindre à chaque CRA un comité
+				consultatif d&amp;#39;usagers. Pourriez-vous me préciser quels
+				seront sa composition et son rôle ?&lt;/p&gt;&lt;p&gt;Enfin, le plan
+				prévoit que les CRA soient la cheville ouvrière du programme
+				d&amp;#39;actions en matière de formation, pour les professionnels
+				mais aussi pour les aidants familiaux. Pour ces derniers, un cahier
+				des charges a été établi et des appels à projets lancés. Comment
+				envisagez-vous la montée en puissance de ce dispositif
+				?&lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est à Mme la
+				ministre déléguée.&lt;/p&gt;&lt;p&gt;Mme Marie-Arlette Carlotti,
+				ministre déléguée auprès de la ministre des affaires sociales et de
+				la santé, chargée des personnes handicapées et de la lutte contre
+				l&amp;#39;exclusion. Madame la sénatrice, je vous remercie de votre
+				question, qui témoigne de votre profonde connaissance de la
+				problématique du handicap, et particulièrement de
+				l&amp;#39;autisme.&lt;/p&gt;&lt;p&gt;Vous le savez, les centres de
+				ressources autisme sont placés au cœur du troisième plan Autisme :
+				j&amp;#39;y tenais particulièrement.&lt;/p&gt;&lt;p&gt;Ainsi, le
+				repérage et l&amp;#39;intervention précoces, qui constituent le
+				premier axe du plan, s&amp;#39;appuieront à l&amp;#39;échelon
+				régional sur les CRA, associés à au moins une équipe hospitalière
+				experte en centre hospitalier universitaire.&lt;/p&gt;&lt;p&gt;Pour
+				la mise en œuvre des deuxième et troisième axes du plan, à savoir
+				l&amp;#39;accompagnement tout au long de la vie et le soutien aux
+				familles, les CRA se verront renforcés dans leur fonction
+				d&amp;#39;accueil et de conseil. Pour ce faire, les familles seront
+				associées au fonctionnement des CRA au sein d&amp;#39;un comité des
+				usagers. Cela ne va pas de soi : il est compliqué de faire évoluer
+				les choses en la matière, mais nous allons y parvenir
+				!&lt;/p&gt;&lt;p&gt;Les CRA sont en outre parties prenantes,
+				&lt;em&gt;via&lt;/em&gt; l&amp;#39;ANCRA, à la formation des aidants
+				familiaux, qui débutera prochainement, en lien étroit avec les
+				associations de familles. L&amp;#39;ANCRA sera renforcée afin de
+				permettre l&amp;#39;harmonisation des pratiques entre les différents
+				CRA sur l&amp;#39;ensemble du territoire, ainsi qu&amp;#39;une
+				meilleure diffusion des recommandations de la Haute Autorité de
+				santé, la HAS, et de l&amp;#39;Agence nationale de
+				l&amp;#39;évaluation et de la qualité des établissements et services
+				sociaux et médico-sociaux, l&amp;#39;ANESM.
+				&lt;/p&gt;&lt;p&gt;Prochainement, les CRA vont connaître deux
+				grandes évolutions.&lt;/p&gt;&lt;p&gt;En premier lieu, un décret
+				permettra d&amp;#39;inscrire dans la réglementation les missions des
+				centres, à ce jour fixées uniquement par voie de circulaire. Cela
+				doit permettre d&amp;#39;asseoir leur légitimité et de rendre leurs
+				missions opposables à leurs gestionnaires - le plus souvent des
+				centres hospitaliers -, notamment le diagnostic des adultes
+				autistes, que je compte développer au plus vite. Ce décret va
+				également consacrer l&amp;#39;entrée des usagers, et donc des
+				familles, dans la gouvernance des CRA.&lt;/p&gt;&lt;p&gt;Il
+				s&amp;#39;agit donc de renforcer la visibilité des missions des CRA,
+				d&amp;#39;homogénéiser leurs pratiques et de rendre un meilleur
+				service aux familles et aux professionnels. Le décret sera publié en
+				début d&amp;#39;année 2014, après les phases indispensables de
+				concertation avec les associations et les
+				familles.&lt;/p&gt;&lt;p&gt;En second lieu, un groupement de
+				coopération national des CRA sera constitué, pour leur permettre de
+				mettre en œuvre certaines actions d&amp;#39;envergure nationale : la
+				création d&amp;#39;un site &lt;em&gt;web&lt;/em&gt; grand public sur
+				l&amp;#39;autisme, la centralisation des travaux de recherche
+				appuyés par les CRA en région, la mutualisation des ressources
+				documentaires, la démarche qualité visant, là encore, à homogénéiser
+				les pratiques des CRA, enfin la formation, avec notamment la
+				coordination des formations au bénéfice des aidants familiaux.
+				&lt;/p&gt;&lt;p&gt;Ce groupement doit voir le jour au premier
+				semestre de 2014. Les crédits nécessaires sont déjà pris en compte
+				dans l&amp;#39;ONDAM médico-social pour 2014.
+				&lt;/p&gt;&lt;p&gt;Madame la sénatrice, je reste à votre entière
+				disposition pour examiner avec vous la mise en œuvre du processus
+				d&amp;#39;homogénéisation et de l&amp;#39;implication des personnes,
+				des familles et des associations dans l&amp;#39;évolution des CRA.
+				&lt;/p&gt;&lt;p&gt;M. Roland Courteau. Très bien
+				!&lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est à Mme Valérie
+				Létard.&lt;/p&gt;&lt;p&gt;Mme Valérie Létard. Je remercie Mme la
+				ministre de sa réponse. Les CRA sont la pierre angulaire du
+				dispositif ; leur bon fonctionnement conditionne la mise en place
+				des nouvelles pratiques et l&amp;#39;évolution de la prise en charge
+				de l&amp;#39;autisme. Il est nécessaire d&amp;#39;instituer une
+				structure juridique qui permette d&amp;#39;assurer, au sein des CRA,
+				un équilibre entre les différents acteurs.
+				&lt;/p&gt;&lt;p&gt;Surtout, madame la ministre, il importe de
+				sanctuariser et de flécher les financements, afin de garantir que
+				nous pourrons disposer de moyens suffisants, sur le terrain, pour
+				réaliser les diagnostics au sein des CAMSP. Il est indispensable de
+				répondre sans délai aux attentes des familles concernées.
+				&lt;/p&gt;]]&gt;</ns3:texte_reponse>
+			<ns3:date_jo>2013-11-20</ns3:date_jo>
+			<ns3:page_jo>11571</ns3:page_jo>
+		</ns2:reponse>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>513</numero_question>
+				<type>QOSD</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-06-27</ns2:date_publication_jo>
+			<ns2:page_jo>1900</ns2:page_jo>
+			<ns2:ministre_depot id="60002312">
+				<titre_jo>Travail, emploi, formation professionnelle et dialogue
+					social</titre_jo>
+				<intitule_min>Ministère du travail, de l'emploi, de la formation
+					professionnelle et du dialogue social</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000969">
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="04045F">
+				<ns2:civilite>Mme</ns2:civilite>
+				<ns2:prenom>Patricia</ns2:prenom>
+				<ns2:nom>Schillinger</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>680 - Haut-Rhin</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[Mme Patricia Schillinger attire l'attention de
+				M. le ministre du travail, de l'emploi, de la formation
+				professionnelle et du dialogue social sur les redressements
+				conséquents, instruits par les inspecteurs des unions de
+				recouvrement des cotisations de sécurité sociale et d'allocations
+				familiales (URSSAF), au titre de leur délégation de service public,
+				que connaissent les entreprises de services informatiques et de
+				conseil en technologie. En effet, ces entreprises, dont de nombreux
+				salariés opèrent chez leurs clients, pour des périodes variables, se
+				voient redressées sur la prise en charge des repas et des frais de
+				transports de ces salariés, au motif que le lieu de travail habituel
+				de ces derniers serait l'entreprise cliente et non les locaux de
+				leur employeur, contrairement aux stipulations écrites de leurs
+				contrats de travail. Elle lui demande, d'une part, de lui préciser
+				quel est le fondement juridique de la requalification opérée par les
+				URSSAF de la situation de travail de ces salariés dans les locaux de
+				leur clientèle, alors que leur lieu de travail habituel est leur
+				entreprise employeur, et à partir de quelle durée en poste à
+				l'extérieur des locaux de l'employeur cette requalification devrait
+				s'appliquer, s'il y avait lieu. Elle lui demande, d'autre part, sans
+				que soit remise en cause l'autonomie de contrôle des inspecteurs,
+				pour quelles raisons les entreprises concernées ne se voient pas
+				appliquer une règle unique unifiant la pratique de ces inspections.
+				L'activité de ce secteur s'en trouve aujourd'hui fragilisée, ces
+				entreprises ne semblant pas être traitées sur un pied d'égalité, ce
+				qui crée une forte distinction de concurrence entre elles. En outre,
+				elles sont traitées différemment d'autres secteurs ayant les mêmes
+				pratiques professionnelles fondées sur l'envoi en mission, tel
+				l'intérim.]]&gt;</ns2:texte>
+			<ns2:etat_question>REPONDU</ns2:etat_question>
+			<ns2:titre_senat>Entreprises de services informatiques et de conseil
+				en technologie</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Entreprises</ns2:theme>
+				<ns2:theme>PME, commerce et artisanat</ns2:theme>
+				<ns2:theme>Recherche, sciences et techniques</ns2:theme>
+				<ns2:theme>Sécurité sociale</ns2:theme>
+				<ns2:rubrique>Nouvelles technologies</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Sécurité sociale (cotisations)</ns2:renvoi>
+					<ns2:renvoi>Entreprises</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+		<ns2:reponse>
+			<ns3:ministre_reponse id="50000975">
+				<titre_jo>Personnes handicapées et lutte contre l'exclusion</titre_jo>
+				<intitule_min>Ministère chargé des personnes handicapées et de la
+					lutte contre l'exclusion</intitule_min>
+			</ns3:ministre_reponse>
+			<ns3:texte_reponse>&lt;![CDATA[Mme Patricia Schillinger. Ma question,
+				adressée initialement à M. le ministre chargé de l&amp;#39;économie
+				sociale et solidaire et de la consommation, concerne les problèmes
+				rencontrés par les entreprises de services informatiques et de
+				conseil en technologie, qui subissent depuis plusieurs années des
+				redressements importants instruits par les inspecteurs des unions de
+				recouvrement des cotisations de sécurité sociale et
+				d&amp;#39;allocations familiales, les URSSAF. &lt;p&gt;En effet, ces
+				entreprises, dont de nombreux salariés opèrent chez les clients,
+				pour des périodes variables, se voient redressées sur la prise en
+				charge des repas et des frais de transports de ces salariés, au
+				motif allégué que le lieu de travail habituel de ces derniers serait
+				l&amp;#39;entreprise cliente, et non les locaux de leur employeur,
+				contrairement, en particulier, aux stipulations écrites de leur
+				contrat de travail. &lt;/p&gt;&lt;p&gt;Comme vous le savez, les
+				entreprises d&amp;#39;informatique proposent des services
+				numériques. Si ces services doivent être installés sur place,
+				c&amp;#39;est-à-dire chez le client, ce qui prend du temps pour que
+				les choses soient bien faites, ces entreprises ne produisent
+				toutefois rien sur le lieu d&amp;#39;installation.
+				&lt;/p&gt;&lt;p&gt;Véritable support de l&amp;#39;économie et de la
+				société, le secteur du numérique représente 25 % de la croissance
+				nette et de la création d&amp;#39;emplois en France. C&amp;#39;est
+				un secteur créateur d&amp;#39;emplois et de richesse, mais aussi
+				porteur de modernité et d&amp;#39;avenir. &lt;/p&gt;&lt;p&gt;Or,
+				aujourd&amp;#39;hui, les URSSAF soumettent ces entreprises à des
+				redressements très importants, les mettant en difficulté.
+				L&amp;#39;activité du secteur s&amp;#39;en trouve fragilisée. De
+				plus, les règles appliquées par les différentes URSSAF
+				n&amp;#39;étant pas les mêmes, les entreprises ne sont pas traitées
+				sur un pied d&amp;#39;égalité, ce qui crée une forte distorsion de
+				concurrence entre elles. &lt;/p&gt;&lt;p&gt;C&amp;#39;est la raison
+				pour laquelle je vous demande aujourd&amp;#39;hui, madame la
+				ministre, de me préciser le fondement juridique de la
+				requalification par les URSSAF de la situation de travail de ces
+				salariés dans les locaux de leur clientèle. Sans que soit remise en
+				cause l&amp;#39;autonomie de contrôle des inspecteurs, s&amp;#39;il
+				y avait lieu à requalification, je vous demande de me préciser à
+				partir de quelle durée définie uniformément sur l&amp;#39;ensemble
+				du territoire national une telle requalification devrait
+				s&amp;#39;appliquer.&lt;/p&gt;&lt;p&gt;Mme la présidente. La parole
+				est à Mme la ministre déléguée.&lt;/p&gt;&lt;p&gt;Mme Marie-Arlette
+				Carlotti, ministre déléguée auprès de la ministre des affaires
+				sociales et de la santé, chargée des personnes handicapées et de la
+				lutte contre l&amp;#39;exclusion. Lorsqu&amp;#39;un travailleur
+				salarié ou assimilé effectue un déplacement professionnel et se
+				trouve empêché de regagner sa résidence habituelle, son employeur
+				peut lui verser des indemnités forfaitaires, appelées « indemnités
+				de grand déplacement » et destinées à couvrir ses dépenses de
+				restauration et d&amp;#39;hébergement.&lt;/p&gt;&lt;p&gt;Le « grand
+				déplacement » est admis lorsque le salarié ne peut pas regagner son
+				domicile à l&amp;#39;issue de sa journée de travail, ce qui suppose
+				que la distance entre le domicile et le lieu de travail soit
+				supérieure ou égale à 50 kilomètres ou que les transports en commun
+				ne permettent pas de parcourir cette distance dans un temps
+				inférieur à une heure trente.&lt;/p&gt;&lt;p&gt;Si ces conditions de
+				distance ou de durée du trajet ne sont pas réunies,
+				l&amp;#39;employeur doit démontrer que le salarié est effectivement
+				empêché de regagner son domicile du fait de circonstances telles que
+				l&amp;#39;horaire de travail ou une impossibilité liée aux
+				transports.&lt;/p&gt;&lt;p&gt;Par ailleurs, lorsque le salarié est
+				en déplacement professionnel et qu&amp;#39;il est contraint de
+				prendre ses repas hors des locaux de l&amp;#39;entreprise qui
+				l&amp;#39;emploie, sans que ce déplacement nécessite qu&amp;#39;il
+				soit hébergé hors de son domicile à l&amp;#39;issue de sa journée de
+				travail, des indemnités forfaitaires dites « de petit déplacement »
+				peuvent être versées afin de couvrir les dépenses supplémentaires de
+				nourriture exposées. Ces indemnités sont également exclues de
+				l&amp;#39;assiette des prélèvements sociaux.&lt;/p&gt;&lt;p&gt;En ce
+				qui concerne le cas particulier des consultants et des intérimaires
+				envoyés en mission dans une entreprise cliente, qui peuvent selon
+				les cas relever du grand ou du petit déplacement, une circulaire de
+				la direction de la sécurité sociale du 19 août 2005 précise que les
+				frais de restauration qui leur sont versés sont réputés être des
+				frais professionnels et sont donc exclus de l&amp;#39;assiette des
+				prélèvements sociaux, dans la limite d&amp;#39;un forfait de 17,70
+				euros par repas en 2013, pendant la durée de la
+				mission.&lt;/p&gt;&lt;p&gt;Toutefois, lorsque la durée de la mission
+				est telle qu&amp;#39;il n&amp;#39;est plus possible de considérer
+				que le consultant est en déplacement professionnel et que divers
+				éléments attestent que son lieu de travail effectif est devenu celui
+				de l&amp;#39;entreprise cliente, le salarié est considéré, en
+				matière sociale, comme étant sédentaire. L&amp;#39;entreprise
+				cliente devient alors le lieu habituel de travail et les indemnités
+				forfaitaires qui continueraient à être versées au salarié à raison
+				de son déplacement entre l&amp;#39;entreprise qui l&amp;#39;emploie
+				et l&amp;#39;entreprise cliente sont réintégrées dans
+				l&amp;#39;assiette des cotisations. Une telle réintégration est
+				justifiée s&amp;#39;agissant de sommes qui, en fait comme en droit,
+				constituent alors un complément de
+				rémunération.&lt;/p&gt;&lt;p&gt;Ainsi, dans le cas de déplacements
+				d&amp;#39;une durée supérieure à trois mois conduisant les salariés
+				concernés à se sédentariser auprès de l&amp;#39;entreprise cliente,
+				des URSSAF ont pu considérer que le lieu de travail effectif est
+				bien l&amp;#39;entreprise cliente. Toutefois, des échanges ont
+				d&amp;#39;ores et déjà été engagés avec le secteur pour apprécier
+				l&amp;#39;opportunité de préciser les dispositions de la circulaire
+				de 2005.&lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est à Mme
+				Patricia Schillinger.&lt;/p&gt;&lt;p&gt;Mme Patricia Schillinger. Je
+				remercie Mme la ministre de ces précisions sur un sujet très
+				technique. Il faut améliorer l&amp;#39;information au plan national,
+				ainsi que la formation des inspecteurs des URSSAF sur cette
+				question. Pour l&amp;#39;heure, les entreprises concernées ont du
+				mal à s&amp;#39;y retrouver. &lt;/p&gt;]]&gt;</ns3:texte_reponse>
+			<ns3:date_jo>2013-11-20</ns3:date_jo>
+			<ns3:page_jo>11574</ns3:page_jo>
+		</ns2:reponse>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>520</numero_question>
+				<type>QOSD</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-07-11</ns2:date_publication_jo>
+			<ns2:page_jo>2027</ns2:page_jo>
+			<ns2:ministre_depot id="50000968">
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="08009T">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Hervé</ns2:prenom>
+				<ns2:nom>Maurey</ns2:nom>
+				<ns2:grp_pol>UDI-UC</ns2:grp_pol>
+				<ns2:circonscription>270 - Eure</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Hervé Maurey attire l'attention de M. le
+				ministre de l'éducation nationale sur la mise en place de la réforme
+				des rythmes scolaires.
+
+				Si le principe de cette réforme n'est pas remis en cause sur le fond
+				car elle peut permettre une meilleure adaptation du temps scolaire
+				au temps de l'enfant, sa mise en place pose de graves problèmes :
+				absence de concertation, précipitation, manque de moyens et absence
+				de réalisme.
+
+				Manque de concertation, d'abord, puisqu'elle a été décidée de manière
+				unilatérale dans un réflexe jacobin qui conduit l'État, sans aucune
+				concertation préalable avec les acteurs concernés (communes,
+				enseignants, parents d'élèves...), à appliquer le principe qui ne
+				devrait plus avoir cours : « je décide, vous payez ».
+
+				Précipitation, car pour la rentrée 2013, les communes devaient s'engager à
+				appliquer la réforme sans avoir aucune précision sur les modalités
+				d'application. Dans ce contexte, il n'est d'ailleurs pas étonnant
+				que seule une vingtaine de communes du département de l'Eure sur 675
+				se soient engagées dans cette voie. Au niveau national, à peine 20 %
+				des élèves sont concernés à la rentrée 2013 alors que le
+				Gouvernement en espérait plus de 50 %.
+
+				Pour autant, la rentrée 2014 ne s'annonce pas plus aisée.
+
+				D'un point de vue pratique, le recrutement de personnels compétents pour
+				les activités périscolaires pour seulement trois quarts d'heure par
+				jour risque de poser de grandes difficultés dans les territoires
+				ruraux et de limiter la valeur ajoutée de ce temps périscolaire.
+
+				Aux difficultés de recrutement s'ajoutera également celle du
+				financement, car si un fonds en faveur des communes et des
+				établissements publics de coopération intercommunale (EPCI) à
+				compétence scolaire a été mis en place pour soutenir le
+				développement d'une offre d'activités périscolaires, la plupart des
+				communes ne seront plus éligibles en 2014.
+
+				Or le coût annuel de cette réforme a été évalué par l'Association des
+				maires de France à 600 millions d'euros. Les incertitudes pesant sur
+				la capacité du Gouvernement à tenir sa promesse d'un assouplissement
+				des taux d'encadrement devraient augmenter encore le coût de cette
+				réforme pour les communes et leurs groupements dans un contexte
+				budgétaire déjà très tendu.
+
+				Face aux difficultés rencontrées par un très grand nombre d'élus, il lui
+				demande si le Gouvernement envisage d'assouplir le dispositif - et
+				de quelle manière - et quels moyens financiers et humains il entend
+				proposer aux communes et aux EPCI pour permettre la mise en place de
+				cette réforme, alors que les aides aux collectivités locales vont
+				diminuer.]]&gt;</ns2:texte>
+			<ns2:etat_question>REPONDU</ns2:etat_question>
+			<ns2:titre_senat>Mise en place de la réforme des rythmes scolaires</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:theme>Éducation</ns2:theme>
+				<ns2:rubrique>Rythmes scolaires</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Communes</ns2:renvoi>
+					<ns2:renvoi>Zones rurales</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+		<ns2:reponse>
+			<ns3:ministre_reponse id="50000968">
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+			</ns3:ministre_reponse>
+			<ns3:texte_reponse>&lt;![CDATA[M. Hervé Maurey. Ma question
+				s&amp;#39;adresse effectivement à M. le ministre de
+				l&amp;#39;éducation nationale, que je remercie de sa présence.
+				&lt;p&gt;Je voudrais revenir sur la réforme des rythmes scolaires,
+				au terme d&amp;#39;une semaine marquée par les grèves et les
+				manifestations contre sa mise en place et alors que plusieurs
+				sondages révèlent que plus de la moitié des Français la
+				rejettent.&lt;/p&gt;&lt;p&gt;Dans le département de l&amp;#39;Eure,
+				nous étions près de 600 élus devant la préfecture pour exprimer nos
+				inquiétudes quant à cette réforme, alors que nous n&amp;#39;avions
+				envoyé qu&amp;#39;un simple &lt;em&gt;mail&lt;/em&gt; pour informer
+				les élus de cette initiative. C&amp;#39;est dire à quel point la
+				mobilisation a été forte ! Ce rassemblement faisait écho à la motion
+				adoptée, sur ma proposition, à l&amp;#39;unanimité moins neuf
+				abstentions, par les maires de l&amp;#39;Eure, réunis en assemblée
+				générale le 5 octobre dernier.&lt;/p&gt;&lt;p&gt;Malgré ce rejet des
+				élus, des enseignants et des parents d&amp;#39;élèves, qui porte
+				essentiellement sur les conditions de mise en œuvre de cette réforme
+				imposée sans aucune concertation, vous semblez, monsieur le
+				ministre, ne pas vouloir entendre la réalité du terrain. Je vais
+				donc tenter de vous la rappeler à nouveau ce
+				matin.&lt;/p&gt;&lt;p&gt;Dans cette affaire, monsieur le ministre,
+				vous vous êtes comporté en parfait jacobin, puisque, sans aucune
+				concertation préalable avec les acteurs concernés - communes,
+				enseignants, parents d&amp;#39;élèves -, vous avez appliqué un
+				principe bien connu qui ne devrait pourtant plus avoir cours : « je
+				décide, vous payez ».&lt;/p&gt;&lt;p&gt;Ce principe, s&amp;#39;il
+				est ancien, est devenu insupportable dès lors que, dans le même
+				temps, les communes voient, pour la première fois de leur histoire,
+				diminuer leur dotation.&lt;/p&gt;&lt;p&gt;Comment financer, avec des
+				ressources moindres, la mise en place des nouveaux rythmes
+				scolaires, qui coûtera de l&amp;#39;ordre de 200 euros par enfant,
+				ce qui est énorme pour une commune ?&lt;/p&gt;&lt;p&gt;Certes, sous
+				la pression des mécontentements, vous avez accepté de prolonger en
+				2014 l&amp;#39;aide de 50 euros par enfant prévue pour 2013, alors
+				même que vous aviez refusé cette prolongation lorsque je vous
+				l&amp;#39;avais demandée ici même en juin dernier, lors de
+				l&amp;#39;examen du projet de loi d&amp;#39;orientation et de
+				programmation pour la refondation de l&amp;#39;école de la
+				République.&lt;/p&gt;&lt;p&gt;Pour autant, le compte n&amp;#39;y est
+				pas ! Au-delà de la question financière, des questions matérielles
+				se posent pour les communes, notamment pour les plus petites
+				d&amp;#39;entre elles. Comment organiser les activités périscolaires
+				quand on ne dispose que des salles de classe ? Comment recruter des
+				personnels compétents pour animer des activités périscolaires
+				seulement trois quarts d&amp;#39;heure par jour, surtout si
+				l&amp;#39;on veut mettre en place autre chose que de la garderie,
+				pour ne pas dire du gardiennage ? Comment, par ailleurs, ne pas
+				évoquer la problématique des maternelles, alors que les conséquences
+				de cette réforme se font particulièrement sentir chez les
+				tout-petits ? Tout cela montre à quel point cette réforme
+				n&amp;#39;a pas été réfléchie.&lt;/p&gt;&lt;p&gt;Par ailleurs - nous
+				le vivons très clairement dans le département de l&amp;#39;Eure -,
+				les services déconcentrés de votre ministère, sans doute par excès
+				de zèle, font peser sur les communes, en matière de calendrier, une
+				pression d&amp;#39;autant plus intolérable qu&amp;#39;elle est en
+				totale contradiction avec les engagements que vous aviez pris devant
+				la Haute Assemblée, le 3 octobre dernier. Vous aviez alors indiqué
+				avoir « donné instruction aux DASEN de ne pas fixer de délai limite
+				pour les communes qui doivent remettre leurs projets de territoire
+				». &lt;/p&gt;&lt;p&gt;Au point où nous en sommes, monsieur le
+				ministre, je crois qu&amp;#39;il faut retirer cette réforme. Laissez
+				à votre successeur, puisque vous souhaitez vous retirer au Parlement
+				européen, le soin de remettre à plat ce chantier. Il le fera, je
+				l&amp;#39;espère et j&amp;#39;en suis même certain, en montrant un
+				plus grand souci de la concertation que vous.&lt;/p&gt;&lt;p&gt;Mme
+				la présidente. La parole est à M. le ministre.&lt;/p&gt;&lt;p&gt;M.
+				Vincent Peillon, ministre de l&amp;#39;éducation nationale. Monsieur
+				le sénateur, je vous remercie tout d&amp;#39;abord d&amp;#39;avoir
+				rappelé que vous soutenez cette réforme, parce qu&amp;#39;elle est
+				dans l&amp;#39;intérêt des élèves.&lt;/p&gt;&lt;p&gt;Comme tous
+				ceux, je le crois, qui ont participé aux diverses concertations
+				ayant été organisées depuis trois ans, par mon prédécesseur puis par
+				moi, vous avez compris que, pour apprendre aux enfants à lire, à
+				écrire et à compter, il vaut mieux disposer de cinq demi-journées le
+				matin : leur vigilance est alors maximale. &lt;/p&gt;&lt;p&gt;Il
+				faut rompre avec une mauvaise exception française : nous sommes le
+				seul pays avancé au monde qui ne propose que quatre matinées de
+				classe à ses enfants ; cette situation est d&amp;#39;ailleurs assez
+				récente, puisqu&amp;#39;elle date de 2008.&lt;/p&gt;&lt;p&gt;Vous
+				m&amp;#39;adressez un premier reproche, celui d&amp;#39;agir en
+				jacobin. En réalité, les enseignants me font le reproche inverse...
+				En effet, pour la première fois dans l&amp;#39;histoire de notre
+				République, j&amp;#39;ai permis aux élus locaux, au travers des
+				projets éducatifs de territoire, de travailler avec les services de
+				l&amp;#39;éducation nationale pour définir l&amp;#39;organisation
+				des temps scolaires et des temps éducatifs.&lt;/p&gt;&lt;p&gt;Cette
+				décision est intervenue à la suite de plusieurs semaines de
+				discussions avec l&amp;#39;ensemble des organisations
+				représentatives des élus, qui ont précisément demandé que la réforme
+				ne soit pas appliquée uniformément sur tout le territoire, en ce qui
+				concerne l&amp;#39;organisation non pas du temps scolaire, qui
+				relève de l&amp;#39;éducation nationale, mais du temps
+				périscolaire.&lt;/p&gt;&lt;p&gt;C&amp;#39;est la raison pour
+				laquelle on peut choisir, aujourd&amp;#39;hui, d&amp;#39;organiser
+				ce temps périscolaire pendant une pause méridienne plus ou moins
+				longue, pouvant durer trois quarts d&amp;#39;heure, comme vous
+				l&amp;#39;avez dit, ou une heure et demie, comme l&amp;#39;ont
+				décidé beaucoup de communes. Les élus doivent s&amp;#39;associer aux
+				parents et aux conseils d&amp;#39;école pour définir la meilleure
+				organisation du temps périéducatif.&lt;/p&gt;&lt;p&gt;Reprocher une
+				absence de concertation n&amp;#39;est donc pas juste.
+				D&amp;#39;ailleurs, quand les collectivités locales, par la voix de
+				leurs représentants, nous ont demandé d&amp;#39;aller plus loin pour
+				faciliter la mise en œuvre du temps périscolaire, qui relève de leur
+				responsabilité, en assouplissant, par exemple, les taux
+				d&amp;#39;encadrement ou en finançant, pour la première fois, des
+				activités périscolaires par un fonds d&amp;#39;État ou par des
+				dotations spécifiques pérennes des caisses d&amp;#39;allocations
+				familiales, nous l&amp;#39;avons fait.&lt;/p&gt;&lt;p&gt;Je conçois,
+				bien entendu, que cette réforme, importante, oblige à changer un
+				certain nombre d&amp;#39;habitudes. Elle donne la priorité à nos
+				enfants. L&amp;#39;organisation du temps scolaire obligatoire, dont
+				la durée n&amp;#39;a pas varié, mais qui est désormais mieux réparti
+				sur cinq matinées, incombe à l&amp;#39;éducation nationale.
+				Concernant le temps périscolaire, cette réforme crée certes une
+				obligation pour les élus, mais celle-ci reste morale : il
+				n&amp;#39;y a pas de contrainte. Pour permettre au plus grand nombre
+				d&amp;#39;enfants de bénéficier de ces activités, nous avons mis en
+				place des moyens matériels, en concertation permanente avec les
+				associations d&amp;#39;élus.&lt;/p&gt;&lt;p&gt;Je souhaite que les
+				esprits s&amp;#39;apaisent et que les réalités du dossier soient
+				connues de tous, afin que nous puissions, ensemble, servir
+				l&amp;#39;intérêt des enfants. Je ne doute pas que la très grande
+				majorité des élus, avec le temps, l&amp;#39;aide de l&amp;#39;État
+				et celle des services de l&amp;#39;éducation nationale, voudront
+				servir cette grande cause, qui est celle de notre
+				jeunesse.&lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est à M.
+				Hervé Maurey.&lt;/p&gt;&lt;p&gt;M. Hervé Maurey. Je souhaite tout
+				d&amp;#39;abord remercier M. le ministre de sa réponse, et surtout
+				d&amp;#39;une courtoisie qui n&amp;#39;est pas toujours de règle de
+				la part des membres du Gouvernement... Je tiens à lui en donner
+				acte.&lt;/p&gt;&lt;p&gt;Vous avez affirmé que je soutenais votre
+				réforme : vous n&amp;#39;avez pas dû bien me comprendre, monsieur le
+				ministre, ou alors je me suis mal exprimé, car telle n&amp;#39;est
+				pas du tout ma position.&lt;/p&gt;&lt;p&gt;Sur le fond, je
+				n&amp;#39;ai pas d&amp;#39;avis sur cette réforme. En effet, je ne
+				m&amp;#39;estime pas compétent pour apprécier si elle est bonne ou
+				non pour les enfants, même si les premiers retours qui me
+				parviennent du terrain ne sont pas forcément
+				positifs.&lt;/p&gt;&lt;p&gt;Ce que je conteste, c&amp;#39;est la
+				méthode employée. À plusieurs reprises, nous avons été un certain
+				nombre à demander que la mise en œuvre de cette réforme pendant
+				l&amp;#39;année scolaire 2013-2014 serve d&amp;#39;expérimentation
+				et que l&amp;#39;on en tire toutes les conséquences pour adapter
+				ensuite le dispositif. On pourrait imaginer une mise en place
+				généralisée à la rentrée de 2015, et non pas dès 2014 : nous aurions
+				tous à y gagner. Vous ne voulez pas l&amp;#39;entendre, et je le
+				regrette. Vous refusez d&amp;#39;écouter les élus et les familles.
+				J&amp;#39;ai réuni tous les parents d&amp;#39;élèves de ma commune
+				la semaine dernière : je peux vous assurer qu&amp;#39;ils ne sont
+				pas enthousiasmés par votre réforme !&lt;/p&gt;&lt;p&gt;Je comprends
+				que vous préfériez vous rendre au congrès de l&amp;#39;Association
+				des maires de France jeudi, quand il n&amp;#39;y aura plus
+				grand-monde pour vous houspiller ! Je vous le dis, la colère des
+				élus est grande. En adoptant la politique de l&amp;#39;autruche, en
+				se voilant la face, le Gouvernement va au-devant de nombreux ennuis.
+				Il aurait intérêt à être davantage à l&amp;#39;écoute des élus et
+				des citoyens.&lt;/p&gt;&lt;p&gt;Monsieur le ministre, il y a quelque
+				temps, vous avez déclaré, en substance, que les élus devaient
+				respecter les règles de droit. Vous avez raison mais, de leur côté,
+				les membres du Gouvernement doivent respecter les élus
+				!&lt;/p&gt;]]&gt;</ns3:texte_reponse>
+			<ns3:date_jo>2013-11-20</ns3:date_jo>
+			<ns3:page_jo>11581</ns3:page_jo>
+		</ns2:reponse>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>533</numero_question>
+				<type>QOSD</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-01</ns2:date_publication_jo>
+			<ns2:page_jo>2228</ns2:page_jo>
+			<ns2:ministre_depot id="60003416">
+				<titre_jo>Transports, mer et pêche</titre_jo>
+				<intitule_min>Ministère chargé des transports, de la mer et de la
+					pêche</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="04043D">
+				<ns2:civilite>Mme</ns2:civilite>
+				<ns2:prenom>Catherine</ns2:prenom>
+				<ns2:nom>Procaccia</ns2:nom>
+				<ns2:grp_pol>UMP</ns2:grp_pol>
+				<ns2:circonscription>824 - Val-de-Marne</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[Mme Catherine Procaccia attire l'attention de
+				M. le ministre délégué auprès du ministre de l'écologie, du
+				développement durable et de l'énergie, chargé des transports, de la
+				mer et de la pêche sur certains dysfonctionnements du site internet
+				Synoptique du trafic de l'Île-de-France (SYTADIN).
+
+				La direction des routes d'Île-de-France (DIRIF) permet aux usagers du
+				réseau routier d'Île-de-France d'anticiper leurs déplacements et de
+				choisir l'itinéraire le plus adapté grâce au site internet SYTADIN
+				qui offre une information, en temps réel, des conditions de
+				circulation et d'exploitation du réseau routier francilien. À
+				l'origine, ce système a permis une petite révolution dans les
+				transports en Île-de-France. Il a, par la suite, été mis en place
+				dans d'autres grandes villes qui bénéficient, désormais, d'un
+				système encore plus performant.
+
+				Le plan interactif du réseau présente, en permanence et depuis des
+				années, des zones grisées correspondant aux parties du réseau
+				non-renseignées. Ces zones sont particulièrement nombreuses, souvent
+				stratégiques, et remettent en cause l'intérêt du système. Certes,
+				cette défaillance résulte de problèmes techniques ou d'actes de
+				vandalisme (vol de câbles) mais elle ne comprend pas pourquoi des
+				systèmes de navigation gratuits comme Google map, ou d'autres, sont,
+				eux, capables de donner des informations plutôt fiables.
+				L'Île-de-France lui paraît mériter de disposer d'un système qui la
+				couvre dans son intégralité et, ainsi, redevenir la région pilote
+				dans ce domaine.
+
+				Aussi lui demande-t-elle de bien vouloir lui indiquer quand le réseau
+				sera de nouveau opérationnel et quelles évolutions celui-ci va
+				connaître. Enfin, elle souhaiterait savoir si, à l'image de la RATP,
+				qui a su s'adapter à l'avènement des réseaux sociaux en y publiant
+				des informations relatives à l'état du trafic, la DIRIF envisage
+				d'améliorer la diffusion par ces nouveaux modes de communication
+				pour organiser les trajets avant de prendre la route.]]&gt;</ns2:texte>
+			<ns2:etat_question>REPONDU</ns2:etat_question>
+			<ns2:titre_senat>Dysfonctionnements du site internet Sytadin</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Transports</ns2:theme>
+				<ns2:rubrique>Transports routiers</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Région parisienne</ns2:renvoi>
+					<ns2:renvoi>Internet</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+		<ns2:reponse>
+			<ns3:ministre_reponse id="50000975">
+				<titre_jo>Personnes handicapées et lutte contre l'exclusion</titre_jo>
+				<intitule_min>Ministère chargé des personnes handicapées et de la
+					lutte contre l'exclusion</intitule_min>
+			</ns3:ministre_reponse>
+			<ns3:texte_reponse>&lt;![CDATA[Mme Catherine Procaccia. Je remercie
+				par avance Mme la ministre de me répondre sur un sujet assez éloigné
+				de son champ de compétence ministérielle et de sa région...
+				&lt;p&gt;Ma question concerne en effet les dysfonctionnements du
+				site internet synoptique du trafic de l&amp;#39;Île-de-France,
+				SYTADIN.&lt;/p&gt;&lt;p&gt;La direction des routes
+				d&amp;#39;Île-de-France, la DIRIF, permet aux usagers du réseau
+				routier d&amp;#39;Île-de-France d&amp;#39;anticiper leurs
+				déplacements et de choisir l&amp;#39;itinéraire le plus adapté grâce
+				à SYTADIN, dont la mise en place constitua une révolution. Il permet
+				en principe une information en temps réel sur les conditions de
+				circulation et d&amp;#39;exploitation du réseau routier francilien,
+				mais je devrais plutôt parler au passé...&lt;/p&gt;&lt;p&gt;À
+				l&amp;#39;origine, ce site était si performant qu&amp;#39;il a été
+				copié et mis en place dans d&amp;#39;autres grandes villes, qui
+				bénéficient aujourd&amp;#39;hui d&amp;#39;un système qui fonctionne,
+				ce qui n&amp;#39;est plus le cas de
+				l&amp;#39;Île-de-France.&lt;/p&gt;&lt;p&gt;Le plan interactif du
+				réseau présente, depuis de nombreuses années et en permanence, des
+				zones grisées correspondant aux parties du réseau non renseignées.
+				Ces zones sont particulièrement nombreuses, souvent stratégiques ;
+				leur existence remet en cause l&amp;#39;intérêt du système. Ce
+				matin, la carte présente beaucoup de lacunes (Mme Catherine
+				Procaccia brandit un document.), en particulier dans des zones
+				stratégiques incluant des sections des autoroutes A1 et A3 menant à
+				l&amp;#39;aéroport de Roissy-Charles-de-Gaulle, ainsi que de la
+				Francilienne, voie très empruntée. C&amp;#39;est tout de même très
+				ennuyeux !&lt;/p&gt;&lt;p&gt;Ces défaillances résultent de problèmes
+				techniques ou d&amp;#39;actes de vandalisme, comme des vols de
+				câbles, mais je ne comprends pas pourquoi des systèmes de navigation
+				gratuits, tel &lt;em&gt;Google Maps&lt;/em&gt;, sont en mesure, eux,
+				de donner des informations plutôt fiables.
+				&lt;/p&gt;&lt;p&gt;L&amp;#39;Île-de-France me paraît mériter un
+				système qui la couvre dans son intégralité. J&amp;#39;aimerais que
+				notre région redevienne pilote en ce domaine. Il faut souligner que
+				l&amp;#39;est parisien est particulièrement mal couvert.
+				&lt;/p&gt;&lt;p&gt;Pouvez-vous m&amp;#39;indiquer, madame la
+				ministre, quand SYTADIN sera de nouveau opérationnel ? Par ailleurs,
+				alors que je m&amp;#39;étais interrogée sur son absence des réseaux
+				sociaux, j&amp;#39;ai constaté, il y a moins de deux semaines, que
+				SYTADIN est dorénavant sur &lt;em&gt;Twitter&lt;/em&gt;. Je
+				m&amp;#39;en réjouis, toutefois aucune information n&amp;#39;a été
+				faite à ce sujet, comme en témoigne le nombre d&amp;#39;abonnés :
+				moins de cent... &lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est
+				à Mme la ministre déléguée.&lt;/p&gt;&lt;p&gt;Mme Marie-Arlette
+				Carlotti, ministre déléguée auprès de la ministre des affaires
+				sociales et de la santé, chargée des personnes handicapées et de la
+				lutte contre l&amp;#39;exclusion. Madame la sénatrice, vous avez
+				bien voulu appeler l&amp;#39;attention de Frédéric Cuvillier,
+				ministre chargé des transports, de la mer et de la pêche, sur les
+				dysfonctionnements du site internet SYTADIN, créé en 1996, qui vise
+				à informer en temps réel les usagers de l&amp;#39;état du trafic
+				routier francilien. &lt;/p&gt;&lt;p&gt;Faire fonctionner un tel
+				système est un défi quotidien, car la collecte de ces informations
+				demande la collaboration étroite des différents exploitants des
+				réseaux routiers, des forces de police et du centre régional
+				d&amp;#39;information et de coordination routière
+				d&amp;#39;Île-de-France. &lt;/p&gt;&lt;p&gt;Le système est composé
+				de 2 500 points de comptage, de plus de 6 000 boucles de comptage
+				implantées dans les chaussées, de plus de 30 000 équipements
+				électroniques et d&amp;#39;environ 3 000 kilomètres de câbles.
+				Certaines zones ne disposent d&amp;#39;ailleurs pas encore de
+				matériels de collecte de données.&lt;/p&gt;&lt;p&gt;La complexité du
+				système est en outre accrue par le fait que la plupart de ces
+				équipements sont exposés à un milieu extrêmement agressif -
+				variations de température, présence d&amp;#39;eau -, en particulier
+				au bord des routes, ce qui accélère le vieillissement du réseau. Les
+				pannes qui s&amp;#39;ensuivent sont traitées en temps réel, autant
+				que le permet la complexité d&amp;#39;intervention sur un réseau
+				routier supportant un très haut niveau de
+				trafic.&lt;/p&gt;&lt;p&gt;Les câbles d&amp;#39;alimentation
+				électrique et de transmission des données en cuivre font
+				l&amp;#39;objet de vols et de dégradations volontaires de plus en
+				plus réguliers. Le préjudice est tel qu&amp;#39;il n&amp;#39;est
+				plus possible d&amp;#39;effectuer les réparations rapidement à
+				l&amp;#39;identique. Le coût s&amp;#39;élève à des centaines de
+				milliers d&amp;#39;euros. &lt;/p&gt;&lt;p&gt;Des opérations de
+				réparation sont en cours, lorsqu&amp;#39;elles sont techniquement
+				possibles : sécurisation des câbles et des installations, en
+				repensant profondément le système. De nouveaux équipements devraient
+				être installés sur les autoroutes du Nord-Est à l&amp;#39;été
+				prochain, par exemple.&lt;/p&gt;&lt;p&gt;Ces raisons expliquent
+				l&amp;#39;existence de zones grisées sur le site SYTADIN. Grâce aux
+				évolutions scientifiques et techniques, les équipements de bord de
+				route ne sont plus aujourd&amp;#39;hui les seules sources
+				d&amp;#39;information pour estimer l&amp;#39;état du trafic, mais je
+				tiens à souligner que la présence d&amp;#39;opérateurs pour la
+				surveillance continue du réseau routier fait réellement de SYTADIN
+				une source fiable d&amp;#39;information pour les
+				usagers.&lt;/p&gt;&lt;p&gt;Afin d&amp;#39;améliorer la diffusion des
+				informations, des projets sont en cours d&amp;#39;étude. La dernière
+				version du site internet date d&amp;#39;octobre 2012 et celle du
+				site mobile d&amp;#39;avril 2013. Les échanges se poursuivent avec
+				les sociétés concessionnaires d&amp;#39;autoroutes, les conseils
+				généraux et la ville de Paris pour élargir la diffusion des
+				informations, ainsi que le périmètre de la voirie concernée. En
+				outre, nous réfléchissons aux moyens de mieux utiliser
+				&lt;em&gt;Twitter&lt;/em&gt;.&lt;/p&gt;&lt;p&gt;Mme la présidente.
+				La parole est à Mme Catherine Procaccia.&lt;/p&gt;&lt;p&gt;Mme
+				Catherine Procaccia. Madame la ministre, vous parlez de fiabilité :
+				ce matin, SYTADIN évaluait à vingt-deux minutes le temps de parcours
+				entre une commune de l&amp;#39;est parisien et l&amp;#39;aéroport de
+				Roissy, en annonçant un taux de fiabilité de 34 %... Peut-on parler
+				de fiabilité dans ces conditions ? Le site &lt;em&gt;Google
+				Maps&lt;/em&gt; prévoyait, quant à lui, quarante-deux minutes de
+				temps de trajet, ce qui me semble beaucoup plus réaliste.
+				&lt;/p&gt;&lt;p&gt;Le ministre envisage l&amp;#39;extension du
+				système SYTADIN : ne vaudrait-il pas mieux assurer le bon
+				fonctionnement de ce qui existe déjà ? Depuis deux ou trois ans que
+				je soulève la question, on me répond que les dysfonctionnements sont
+				dus à des vols de câbles. Le recours à un réseau de câbles
+				n&amp;#39;est donc peut-être pas la solution, d&amp;#39;autant
+				qu&amp;#39;il existe maintenant des systèmes plus modernes : je
+				pense en particulier aux satellites. En attendant de mettre en place
+				un autre système, pourquoi SYTADIN ne reprendrait-il pas les
+				informations données par &lt;em&gt;Google Maps&lt;/em&gt; ou
+				d&amp;#39;autres sites pour couvrir les zones grisées ?
+				&lt;/p&gt;&lt;p&gt;Par ailleurs, depuis le temps qu&amp;#39;ils ont
+				été volés, je puis vous assurer que les câbles auraient pu être
+				remplacés trois fois ! Vous me répondez que cela coûte très cher,
+				mais la DIRIF ne pourrait-elle pas concevoir un système plus
+				efficace, pour le bien non seulement des habitants de la région
+				parisienne, mais aussi de tous les usagers qui transitent par
+				l&amp;#39;Île-de-France ? Plutôt que de connaître l&amp;#39;état du
+				trafic dans certaines petites rues de Paris, il serait préférable de
+				pouvoir disposer d&amp;#39;informations fiables sur la situation sur
+				les grands axes.&lt;/p&gt;]]&gt;</ns3:texte_reponse>
+			<ns3:date_jo>2013-11-20</ns3:date_jo>
+			<ns3:page_jo>11575</ns3:page_jo>
+		</ns2:reponse>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>536</numero_question>
+				<type>QOSD</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-01</ns2:date_publication_jo>
+			<ns2:page_jo>2228</ns2:page_jo>
+			<ns2:ministre_depot id="60002307">
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="10006L">
+				<ns2:civilite>Mme</ns2:civilite>
+				<ns2:prenom>Catherine</ns2:prenom>
+				<ns2:nom>Deroche</ns2:nom>
+				<ns2:grp_pol>UMP</ns2:grp_pol>
+				<ns2:circonscription>490 - Maine-et-Loire</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[Mme Catherine Deroche attire l'attention de
+				Mme la ministre des affaires sociales et de la santé sur les
+				conditions d'accès aux indemnités journalières qui, avec l'évolution
+				du marché du travail, sont devenues inadaptées et discriminantes
+				pour les salariés travaillant moins d'un mi-temps.
+				L'article R. 313-3 du code de la sécurité sociale conditionne le versement
+				des indemnités journalières en cas d'incapacité temporaire pour
+				maladie, soit à une durée minimum d'activité professionnelle sur une
+				période de référence précédant l'arrêt, soit à une cotisation sur un
+				salaire minimum au cours de cette même période. Pour un arrêt
+				inférieur à six mois, la durée minimum de travail salarié est de 200
+				heures, effectuée au cours des trois derniers mois. Pour un arrêt
+				supérieur à six mois, la durée minimum de travail salarié est de 800
+				heures effectuées sur l'année précédente dont au moins 200 heures au
+				cours du premier trimestre. Or, ces deux conditions excluent une
+				partie des salariés, notamment ceux travaillant à temps partiel.
+				Ainsi, les salariés dont la durée du travail est inférieure à un
+				mi-temps sont exclus des droits pour lesquels ils cotisent
+				cependant. En effet, ces salariés cotisent à fonds perdus sans
+				pouvoir prétendre à un quelconque revenu de remplacement lorsque la
+				maladie les empêche de travailler. Ainsi, selon la Cour des comptes,
+				20 % à 30 % de la population salariée ne serait pas couverte.
+				La ligue contre le cancer chiffre à 15 000 le nombre de personnes
+				atteintes du cancer concernées par cette absence de revenus de
+				remplacement. Sur ces 15 000 personnes malades, 13 000 femmes
+				travaillent à temps partiel, soit un temps inférieur à un mi-temps.
+				Ces salariés se retrouvent sans aucun revenu, aggravant ainsi une
+				situation précarisée par la maladie. Les personnes atteintes d'un
+				cancer n'ont, souvent, pas d'autre alternative que de s'arrêter
+				professionnellement pour suivre des traitements généralement longs.
+				De surcroît, ces personnes doivent supporter des dépenses de santé
+				non remboursées.
+				C'est pourquoi, elle souhaiterait connaître les mesures que compte
+				prendre le Gouvernement pour qu'un revenu de remplacement puisse
+				être accordé en contrepartie des cotisations versées par ces
+				salariés.]]&gt;</ns2:texte>
+			<ns2:etat_question>REPONDU</ns2:etat_question>
+			<ns2:titre_senat>Conditions d'accès aux indemnités journalières</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Sécurité sociale</ns2:theme>
+				<ns2:theme>Travail</ns2:theme>
+				<ns2:rubrique>Sécurité sociale (prestations)</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Assurance maladie et maternité</ns2:renvoi>
+					<ns2:renvoi>Travail (durée du)</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+		<ns2:reponse>
+			<ns3:ministre_reponse id="50000975">
+				<titre_jo>Personnes handicapées et lutte contre l'exclusion</titre_jo>
+				<intitule_min>Ministère chargé des personnes handicapées et de la
+					lutte contre l'exclusion</intitule_min>
+			</ns3:ministre_reponse>
+			<ns3:texte_reponse>&lt;![CDATA[Mme Catherine Deroche. Madame la
+				ministre, je souhaitais vous interroger sur les conditions
+				d&amp;#39;accès aux indemnités journalières, qui, avec
+				l&amp;#39;évolution du marché du travail, sont devenues inadaptées
+				et discriminantes pour les salariés travaillant moins d&amp;#39;un
+				mi-temps. &lt;p&gt;En effet, l&amp;#39;article R. 313-3 du code de
+				la sécurité sociale conditionne le versement des indemnités
+				journalières en cas d&amp;#39;incapacité temporaire pour maladie
+				soit à une durée minimale d&amp;#39;activité professionnelle sur une
+				période de référence précédant l&amp;#39;arrêt, soit à une
+				cotisation sur un salaire minimum au cours de cette même période.
+				&lt;/p&gt;&lt;p&gt;Ainsi, pour un arrêt inférieur à six mois, la
+				durée minimale de travail salarié requise est de 200 heures,
+				effectuée au cours des trois derniers mois. Pour un arrêt supérieur
+				à six mois, la durée minimale de travail salarié est de 800 heures
+				effectuées l&amp;#39;année précédente, dont au moins 200 heures au
+				cours du premier trimestre. &lt;/p&gt;&lt;p&gt;Or ces deux
+				conditions excluent une partie des salariés, notamment ceux
+				travaillant à temps partiel. Ainsi, les salariés dont la durée du
+				travail est inférieure à un mi-temps sont exclus des droits pour
+				lesquels ils cotisent cependant. En effet, ces salariés cotisent à
+				fonds perdus, sans pouvoir prétendre à un quelconque revenu de
+				remplacement lorsque la maladie les empêche de travailler : selon la
+				Cour des comptes, de 20 % à 30 % de la population salariée ne serait
+				pas couverte.&lt;/p&gt;&lt;p&gt;La Ligue contre le cancer a attiré
+				mon attention sur cette discrimination. Elle évalue à 15 000 le
+				nombre de personnes atteintes du cancer concernées par cette absence
+				de revenu de remplacement. Sur ces 15 000 personnes malades, 13 000
+				sont des femmes qui travaillent à temps partiel, moins d&amp;#39;un
+				mi-temps. Ces salariés se retrouvent sans aucun revenu, ce qui
+				aggrave leur situation, déjà précarisée par la maladie. Les
+				personnes atteintes d&amp;#39;un cancer n&amp;#39;ont souvent pas
+				d&amp;#39;autre solution que d&amp;#39;interrompre leur activité
+				professionnelle pour suivre des traitements généralement longs. De
+				surcroît, ces personnes doivent supporter des dépenses de santé non
+				remboursées.&lt;/p&gt;&lt;p&gt;Malgré l&amp;#39;accord national
+				interprofessionnel de janvier, qui s&amp;#39;est traduit dans la loi
+				du 14 juin 2013 et fixe à vingt-quatre heures par semaine le temps
+				partiel minimal, des dérogations seront possibles, notamment pour
+				raisons personnelles. Les problèmes de santé seront
+				vraisemblablement au cœur de ces dérogations ; la question que
+				j&amp;#39;ai soulevée demeurera donc. &lt;/p&gt;&lt;p&gt;Madame la
+				ministre, quelles mesures comptez-vous prendre pour qu&amp;#39;un
+				revenu de remplacement puisse être accordé en contrepartie des
+				cotisations versées par ces salariés ?&lt;/p&gt;&lt;p&gt;Mme la
+				présidente. La parole est à Mme la ministre
+				déléguée.&lt;/p&gt;&lt;p&gt;Mme Marie-Arlette Carlotti, ministre
+				déléguée auprès de la ministre des affaires sociales et de la santé,
+				chargée des personnes handicapées et de la lutte contre
+				l&amp;#39;exclusion. Madame la sénatrice, je vous prie
+				d&amp;#39;excuser Marisol Touraine, qui m&amp;#39;a chargée de
+				répondre à votre question.&lt;/p&gt;&lt;p&gt;Pour pouvoir bénéficier
+				des indemnités journalières de l&amp;#39;assurance maladie,
+				l&amp;#39;assuré doit justifier d&amp;#39;un montant de cotisations
+				ou d&amp;#39;une durée minimale d&amp;#39;activité au cours
+				d&amp;#39;une période de référence donnée. Pour les arrêts de
+				travail de moins de six mois, la durée minimale d&amp;#39;activité
+				est de 200 heures au cours des trois derniers mois, soit 15 heures
+				par semaine. Pour les arrêts de travail de plus de six mois, elle
+				est de 800 heures au cours des douze derniers mois, dont 200 heures
+				au cours du premier trimestre.&lt;/p&gt;&lt;p&gt;Les indemnités
+				journalières sont un droit contributif, qui permet le versement de
+				prestations pour une durée d&amp;#39;au moins six mois, pouvant
+				atteindre trois ans. Dans ce contexte, le principe d&amp;#39;une
+				durée minimale de travail pour obtenir l&amp;#39;ouverture des
+				droits n&amp;#39;apparaît pas
+				illégitime.&lt;/p&gt;&lt;p&gt;Plusieurs évolutions sont
+				d&amp;#39;ores et déjà intervenues pour tenir compte des difficultés
+				rencontrées par les salariés précaires ou travaillant à temps très
+				partiel.&lt;/p&gt;&lt;p&gt;Ainsi, pour les salariés exerçant une
+				profession à caractère saisonnier ou discontinu et pour les
+				personnes rémunérées par chèque emploi-service universel, le respect
+				des conditions est examiné sur une période de douze mois. En outre,
+				en cas de changement de régime d&amp;#39;affiliation, les périodes
+				travaillées dans le cadre d&amp;#39;un autre régime sont également
+				prises en compte. &lt;/p&gt;&lt;p&gt;Enfin, le projet de loi de
+				financement de la sécurité sociale pour 2013 a permis
+				d&amp;#39;améliorer les droits des chômeurs non indemnisés qui
+				reprennent un emploi : un maintien de droits de trois mois leur est
+				désormais garanti lors de leur reprise d&amp;#39;emploi, afin de
+				pouvoir de nouveau remplir les conditions
+				d&amp;#39;activité.&lt;/p&gt;&lt;p&gt;Toutefois, madame la
+				sénatrice, la question d&amp;#39;une nouvelle adaptation de ces
+				règles se pose aujourd&amp;#39;hui devant la précarisation du marché
+				du travail. D&amp;#39;après une enquête réalisée par l&amp;#39;INSEE
+				en 2011, environ 3 % des salariés ne rempliraient pas la condition
+				des 200 heures de travail sur le trimestre. &lt;/p&gt;&lt;p&gt;La
+				question se pose notamment s&amp;#39;agissant des arrêts de longue
+				durée : le cumul de règles prive de droits des salariés qui
+				remplissent la condition des 800 heures travaillées sur
+				l&amp;#39;année. Un décret ne conservant plus que cette condition
+				est en préparation ; il est prévu qu&amp;#39;il s&amp;#39;applique
+				dès 2014.&lt;/p&gt;&lt;p&gt;Au-delà, le rapport demandé par
+				l&amp;#39;Assemblée nationale dans le cadre de l&amp;#39;examen du
+				projet de loi de financement de la sécurité sociale pour 2014
+				permettra d&amp;#39;approfondir l&amp;#39;évaluation et
+				d&amp;#39;éclairer le Parlement sur ce sujet sensible pour
+				l&amp;#39;ensemble des salariés.&lt;/p&gt;&lt;p&gt;Mme la
+				présidente. La parole est à Mme Catherine
+				Deroche.&lt;/p&gt;&lt;p&gt;Mme Catherine Deroche. Madame la
+				ministre, il s&amp;#39;agit en effet d&amp;#39;un sujet majeur.
+				Comme vous l&amp;#39;avez dit, on assiste à une précarisation du
+				travail. Nous parlementaires avons été alertés sur les difficultés
+				financières que rencontrent certains salariés en cas de maladie. Je
+				vous remercie de ces explications, en espérant que des évolutions
+				prendront rapidement forme afin de résoudre le problème.
+				&lt;/p&gt;]]&gt;</ns3:texte_reponse>
+			<ns3:date_jo>2013-11-20</ns3:date_jo>
+			<ns3:page_jo>11572</ns3:page_jo>
+		</ns2:reponse>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>556</numero_question>
+				<type>QOSD</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-09-12</ns2:date_publication_jo>
+			<ns2:page_jo>2606</ns2:page_jo>
+			<ns2:ministre_depot id="50000976">
+				<titre_jo>Écologie, développement durable et énergie</titre_jo>
+				<intitule_min>Ministère de l'écologie, du développement durable et
+					de l'énergie</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="08014Q">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Yannick</ns2:prenom>
+				<ns2:nom>Botrel</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>220 - Côtes-d'Armor</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Yannick Botrel attire l'attention de M. le
+				ministre de l'écologie, du développement durable et de l'énergie sur
+				les conséquences du dispositif des certificats d'économies d'énergie
+				(CEE).
+				Conformément aux articles 14 à 17 de la loi n° 2005-781 du 13 juillet 2005 de
+				programme fixant les orientations de la politique énergétique, la
+				maitrise et la demande d'énergie s'est affichée comme un axe fort
+				avec, notamment, la création du dispositif des certificats
+				d'économies d'énergie.
+				Le dispositif des CEE impose aux fournisseurs d'énergie dont les
+				ventes annuelles sont supérieures à un seuil, les obligés, un quota
+				d'économies d'énergie à faire réaliser à leurs clients, en ayant
+				envers eux un rôle actif et incitatif dans la réalisation
+				d'opérations.
+				Sur la base d'un référentiel, des travaux éligibles réalisés par les
+				collectivités sur les bâtiments de leur patrimoine permettent de
+				valoriser des économies d'énergies qui peuvent être mesurées et
+				rétribuées.
+				Les collectivités sont très fréquemment sollicitées par des sociétés
+				ayant des contrats avec les obligés pour leur faire bénéficier de
+				primes. En réalité, il semble s'agir, de manière détournée, de
+				collecter les CEE de la collectivité. Or, ces CEE collectés sont,
+				généralement, valorisés entre 15 et 40 % de leur valeur du marché.
+				Ce défaut d'information et de transparence est préjudiciable aux
+				collectivités, en réduisant de 60 % à 85 % la capacité
+				d'investissement de la valorisation des CEE dans leur engagement.
+				Il lui demande donc quelles mesures il souhaite mettre en œuvre pour
+				corriger ce déficit d'information aux collectivités en faisant
+				évoluer les obligations réglementaires du dispositif.]]&gt;</ns2:texte>
+			<ns2:etat_question>REPONDU</ns2:etat_question>
+			<ns2:titre_senat>Dispositif des certificats d'économies d'énergie</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Énergie</ns2:theme>
+				<ns2:rubrique>Économies d'énergie</ns2:rubrique>
+			</ns2:indexation_senat>
+		</ns2:question>
+		<ns2:reponse>
+			<ns3:ministre_reponse id="50000976">
+				<titre_jo>Écologie, développement durable et énergie</titre_jo>
+				<intitule_min>Ministère de l'écologie, du développement durable et
+					de l'énergie</intitule_min>
+			</ns3:ministre_reponse>
+			<ns3:texte_reponse>&lt;![CDATA[M. Yannick Botrel. Madame la
+				présidente, monsieur le ministre, mes chers collègues, je souhaite
+				attirer l&amp;#39;attention du Gouvernement sur les conséquences de
+				l&amp;#39;application du dispositif des certificats
+				d&amp;#39;économies d&amp;#39;énergie, les CEE. &lt;p&gt;Depuis la
+				loi de programme de juillet 2005 fixant les orientations de la
+				politique énergétique, la maîtrise de l&amp;#39;énergie est affichée
+				comme une priorité, avec notamment la création du dispositif des
+				certificats d&amp;#39;économie d&amp;#39;énergie. La Cour des
+				comptes, dans son récent rapport, souligne d&amp;#39;ailleurs
+				l&amp;#39;efficacité de ce
+				dispositif.&lt;/p&gt;&lt;p&gt;Concrètement, les CEE imposent aux
+				fournisseurs d&amp;#39;énergie dont les ventes annuelles sont
+				supérieures à un seuil déterminé, autrement nommés les « obligés »,
+				un quota d&amp;#39;économies d&amp;#39;énergie à faire réaliser à
+				leurs clients.&lt;/p&gt;&lt;p&gt;En retour, sur la base d&amp;#39;un
+				référentiel, les travaux éligibles réalisés par les collectivités
+				sur les bâtiments de leur patrimoine permettent à celles-ci de
+				valoriser les économies d&amp;#39;énergie, qui sont rétribuées au
+				travers des CEE.&lt;/p&gt;&lt;p&gt;Toutefois, ces collectivités sont
+				très fréquemment démarchées par des sociétés commerciales qui, ayant
+				des contrats avec les obligés, leur proposent de les faire
+				bénéficier de la « prime énergie » par la signature d&amp;#39;un
+				contrat. En réalité, il s&amp;#39;agit de collecter de manière
+				détournée les CEE des collectivités, lesquelles, ne recevant
+				qu&amp;#39;une information sélective des démarcheurs, pensent
+				réaliser une opération équilibrée. Tel n&amp;#39;est pas le cas, car
+				les CEE collectés des collectivités sont généralement valorisés
+				entre 15 % et 40 % de leur valeur du marché, loin de ce à quoi elles
+				pourraient prétendre.&lt;/p&gt;&lt;p&gt;Face à ce constat de déficit
+				d&amp;#39;information, il faudrait envisager de faire évoluer les
+				obligations réglementaires du dispositif. Les structures qui
+				collectent les certificats devraient être soumises à des contraintes
+				de transparence et d&amp;#39;information.&lt;/p&gt;&lt;p&gt;Par
+				ailleurs, pour faciliter les comparaisons, le volume de CEE, le prix
+				de cotation unitaire de la plateforme publique EMMY à la date de
+				signature du contrat et le prix de rachat effectif devraient faire
+				l&amp;#39;objet d&amp;#39;une communication précise au
+				client.&lt;/p&gt;&lt;p&gt;Au regard du chiffre global
+				d&amp;#39;économies d&amp;#39;énergie réalisées de 432
+				térawattheures, seuls 10 térawattheures émanent des collectivités
+				territoriales. Cette part minime pourrait être confortée en
+				imaginant des formes de collectage groupé au profit des
+				collectivités. Certaines font la proposition de regrouper entre
+				elles les CEE, car plus la quantité de kilowattheures est
+				importante, plus cela donne de poids pour en négocier la
+				vente.&lt;/p&gt;&lt;p&gt;Enfin, une obligation de transparence et
+				d&amp;#39;information des maîtres d&amp;#39;œuvre à l&amp;#39;égard
+				de leurs clients, au travers des cahiers des clauses techniques
+				particulières, serait pertinente et efficace.&lt;/p&gt;&lt;p&gt;Face
+				au constat de la situation actuelle, encourageant en termes
+				d&amp;#39;économie d&amp;#39;énergie, mais limité dans les faits
+				pour les maîtres d&amp;#39;ouvrage sans un retour logique sur
+				investissement, je souhaite connaître les mesures
+				d&amp;#39;amélioration de la transparence et du cadre réglementaire
+				du dispositif des CEE que le Gouvernement pourrait envisager de
+				proposer.&lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est à M. le
+				ministre.&lt;/p&gt;&lt;p&gt;M. Philippe Martin, ministre de
+				l&amp;#39;écologie, du développement durable et de
+				l&amp;#39;énergie. Monsieur le sénateur, vous avez raison de dire
+				que l&amp;#39;amélioration de l&amp;#39;efficacité énergétique est
+				un enjeu national considérable.&lt;/p&gt;&lt;p&gt;Vous le savez, les
+				collectivités locales sont éligibles au dispositif des certificats
+				d&amp;#39;économies d&amp;#39;énergie. Elles peuvent, si elles le
+				souhaitent, les obtenir directement en présentant un dossier
+				administratif, puis les vendre à un
+				obligé.&lt;/p&gt;&lt;p&gt;Certaines collectivités préfèrent ne pas
+				valoriser directement leurs CEE, compte tenu de la charge de gestion
+				que cela peut représenter. Elles peuvent alors nouer un partenariat
+				avec un obligé avant la réalisation des travaux. L&amp;#39;obligé
+				doit alors prouver à l&amp;#39;administration qu&amp;#39;il a
+				contribué activement à leur déclenchement.&lt;/p&gt;&lt;p&gt;Ce
+				partenariat peut être réalisé avec un établissement public de
+				coopération intercommunale ou une société d&amp;#39;économie mixte
+				proposant le système du tiers-financement et dont l&amp;#39;objet
+				est l&amp;#39;efficacité énergétique. Cette option a été adoptée,
+				sur l&amp;#39;initiative du Gouvernement, dans le cadre de la loi du
+				16 juillet 2013.&lt;/p&gt;&lt;p&gt;Comme vous l&amp;#39;avez
+				souligné à juste titre, ces collectivités peuvent enfin faire appel
+				à un organisme privé.&lt;/p&gt;&lt;p&gt;Dans ce cas, un indicateur
+				du prix des échanges de certificats est rendu public sur le site du
+				registre des certificats d&amp;#39;économies d&amp;#39;énergie. Il
+				s&amp;#39;agit d&amp;#39;une moyenne, le niveau de chaque
+				transaction pouvant s&amp;#39;en écarter. Les collectivités ont donc
+				connaissance de cet indicateur et sont libres de discuter la
+				contrepartie à leurs certificats, que ce soit sous forme
+				d&amp;#39;actions d&amp;#39;accompagnement ou de contribution
+				financière.&lt;/p&gt;&lt;p&gt;Au regard de l&amp;#39;importance de
+				ces certificats pour la politique française d&amp;#39;efficacité
+				énergétique, le Gouvernement a entamé la phase de préparation de la
+				troisième période des CEE, durant laquelle l&amp;#39;ensemble des
+				réflexions seront prises en compte pour améliorer le fonctionnement
+				du dispositif. &lt;/p&gt;&lt;p&gt;Durant cette période, qui
+				s&amp;#39;étalera de 2015 à 2017, l&amp;#39;objectif affiché sera
+				plus ambitieux, en ligne avec les engagements de la France en termes
+				d&amp;#39;efficacité et de sobriété énergétiques. Il faudra
+				également améliorer le système existant des CEE, notamment pour le
+				rendre plus efficace et plus simple, comme le recommande la Cour des
+				comptes.&lt;/p&gt;&lt;p&gt;La nécessité de mieux informer les
+				collectivités fera l&amp;#39;objet d&amp;#39;une attention
+				particulière.&lt;/p&gt;&lt;p&gt;Monsieur le sénateur, au moment où
+				s&amp;#39;ouvre le congrès des maires, je voulais prendre
+				l&amp;#39;engagement devant vous que toute contribution des
+				représentants des collectivités locales sera naturellement prise en
+				compte et étudiée avec une attention particulière, afin
+				d&amp;#39;améliorer, comme vous le souhaitez, le dispositif des
+				CEE.&lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est à M. Yannick
+				Botrel.&lt;/p&gt;&lt;p&gt;M. Yannick Botrel. Monsieur le ministre,
+				les exemples que j&amp;#39;ai cités montrent la nécessité de réguler
+				davantage le dispositif des CEE. Dans le principe, ce dispositif est
+				bon, mais on assiste en pratique à un dévoiement de la
+				loi.&lt;/p&gt;&lt;p&gt;On détecte facilement les failles du système
+				tel qu&amp;#39;il est actuellement conçu. C&amp;#39;est bien sur
+				l&amp;#39;information du client que la réflexion et l&amp;#39;action
+				doivent porter.&lt;/p&gt;&lt;p&gt;J&amp;#39;aimerais prendre un
+				exemple que je n&amp;#39;ai pas cité dans mon intervention liminaire
+				: aujourd&amp;#39;hui, certaines entreprises intègrent la
+				possibilité de tirer parti du dispositif des CEE dès leur réponse
+				aux appels d&amp;#39;offres, en minorant leur offre.
+				&lt;/p&gt;&lt;p&gt;Je le répète, il y a des failles, mais des
+				améliorations sont envisageables, et, à mon avis, facilement
+				réalisables. L&amp;#39;enjeu de la réflexion qui va
+				s&amp;#39;engager, dont vous avez indiqué le calendrier, est de
+				faire en sorte que chacune des parties, et singulièrement les
+				porteurs de projets, puisse se retrouver dans ce
+				dispositif.&lt;/p&gt;]]&gt;</ns3:texte_reponse>
+			<ns3:date_jo>2013-11-20</ns3:date_jo>
+			<ns3:page_jo>11561</ns3:page_jo>
+		</ns2:reponse>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>563</numero_question>
+				<type>QOSD</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-09-19</ns2:date_publication_jo>
+			<ns2:page_jo>2671</ns2:page_jo>
+			<ns2:ministre_depot id="50000938">
+				<titre_jo>Agriculture, agroalimentaire et forêt</titre_jo>
+				<intitule_min>Ministère de l'agriculture, de l'agroalimentaire et de
+					la forêt</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="04095R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jacques</ns2:prenom>
+				<ns2:nom>Gillot</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>971 - Guadeloupe</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jacques Gillot attire l'attention de M. le
+				ministre de l'agriculture, de l'agroalimentaire et de la forêt sur
+				l'avenir des régions ultra-périphériques (RUP) dans le cadre de la
+				réforme de la politique agricole commune (PAC). Le traité de
+				Lisbonne, dans son article 349, reconnaît la spécificité des RUP
+				dans l'Union européenne et justifie des mesures dérogatoires au
+				marché unique. Depuis 2008, la Commission européenne a entamé un
+				changement de point de vue à leur égard. Au lieu de panser les
+				plaies par des subventions publiques, elle a souhaité orienter les
+				fonds européens vers l'innovation et la compétitivité de ces
+				territoires.
+
+				La rencontre, au mois de mai 2013, organisée entre des élus européens,
+				nationaux et locaux ultramarins et le commissaire européen Dacian
+				Ciolos sur le programme d'options spécifiques à l'éloignement et à
+				l'insularité (POSEI), principal instrument de soutien de l'Europe à
+				l'égard de nos régions éloignées, a permis de lever certaines
+				incertitudes sur le devenir des RUP. Le commissaire Ciolos a précisé
+				alors qu'il ne s'agissait pas d'une intégration du POSEI dans la
+				PAC, mais bien d'une adaptation de cet instrument, en cohérence avec
+				la réforme de la PAC en cours.
+				En outre, il a confirmé que le budget du POSEI ne serait pas touché.
+
+				Le nouveau rôle désormais attribué aux gouvernements nationaux dans
+				la mise en œuvre du cadre agricole européen nouvellement réformé,
+				interroge sur la capacité d'adaptation de l'agriculture ultramarine
+				au principe de verdissement encouragé par la réforme.
+
+				De même, l'orientation écologique souhaitée par la Commission pose la
+				question, délicate, dans les Antilles françaises, du problème
+				phytosanitaire du chlordécone et de l'épandage aérien.
+				Si cet encouragement d'un tiers des aides directes vers la mise en
+				œuvre de bonnes pratiques environnementales est louable, en plus de
+				se heurter à la problématique des pesticides, il implique une
+				augmentation des normes environnementales pour l'agriculteur et le
+				pêcheur antillais, déjà confronté à des distorsions de concurrences
+				avec ses voisins régionaux.
+				C'est notamment le cas avec les pays d'Afrique, des Caraïbes et du
+				Pacifique (ACP), dispensés du même niveau d'exigences sanitaires, et
+				pourtant partenaires commerciaux avec l'Union européenne depuis mai
+				2010.
+
+				Il lui demande ainsi quelles solutions sont envisageables pour
+				résoudre ces contradictions écologiques et économiques.]]&gt;</ns2:texte>
+			<ns2:etat_question>REPONDU</ns2:etat_question>
+			<ns2:titre_senat>Avenir des régions ultra-périphériques </ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Agriculture et pêche</ns2:theme>
+				<ns2:theme>Outre-mer</ns2:theme>
+				<ns2:theme>Union européenne</ns2:theme>
+				<ns2:rubrique>Outre-mer</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Politique agricole commune (PAC)</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+		<ns2:reponse>
+			<ns3:ministre_reponse id="50000938">
+				<titre_jo>Agroalimentaire</titre_jo>
+				<intitule_min>Ministère chargé de l'agroalimentaire</intitule_min>
+			</ns3:ministre_reponse>
+			<ns3:texte_reponse>&lt;![CDATA[M. Jacques Gillot. Monsieur le
+				ministre, ma question porte sur l&amp;#39;avenir des régions
+				ultra-périphériques, les RUP, dans le cadre de la réforme de la PAC.
+				&lt;p&gt;L&amp;#39;article 349 du traité de Lisbonne reconnaît la
+				spécificité des RUP dans l&amp;#39;Union européenne et justifie des
+				mesures dérogatoires au marché unique.&lt;/p&gt;&lt;p&gt;Depuis
+				2008, la Commission européenne a amorcé un changement de paradigme à
+				leur égard. Elle a souhaité orienter les fonds européens vers
+				l&amp;#39;innovation et la compétitivité de ces territoires, même
+				si, selon nos collègues députés européens MM. Tirolien et Omarjee,
+				ainsi que selon M. Letchimy dans son récent rapport, le fléchage des
+				fonds doit être amélioré.&lt;/p&gt;&lt;p&gt;Au mois de mai dernier,
+				nous avons été rassurés par des propos tenus lors de la rencontre
+				organisée entre des élus ultramarins européens, nationaux et locaux,
+				et le commissaire européen Dacian Ciolos sur le POSEI, ou programme
+				d&amp;#39;options spécifiques à l&amp;#39;éloignement et à
+				l&amp;#39;insularité, principal instrument de soutien de
+				l&amp;#39;Europe pour nos régions.&lt;/p&gt;&lt;p&gt;Cette rencontre
+				a permis de lever certaines incertitudes sur le devenir des RUP qui
+				faisaient suite à la circulation de différents scénarios visant à
+				mettre en phase le POSEI avec la politique agricole commune. Le
+				commissaire Ciolos a alors précisé qu&amp;#39;il ne
+				s&amp;#39;agissait pas d&amp;#39;une intégration du POSEI dans la
+				PAC, mais bien d&amp;#39;une adaptation de cet instrument, en
+				cohérence avec la réforme de la PAC en cours. Nous demandons que le
+				POSEI demeure un règlement particulier pour les RUP, avec le
+				maintien de l&amp;#39;article 349 du traité de Lisbonne comme
+				fondement de cette dérogation.&lt;/p&gt;&lt;p&gt;En outre, le
+				commissaire a confirmé que le budget du POSEI ne serait pas
+				touché.&lt;/p&gt;&lt;p&gt;Le rôle désormais attribué aux
+				gouvernements nationaux dans la mise en œuvre du cadre agricole
+				européen nouvellement réformé me conduit à vous interroger, monsieur
+				le ministre, sur la capacité d&amp;#39;adaptation de
+				l&amp;#39;agriculture ultramarine au principe de verdissement
+				encouragé par la réforme.&lt;/p&gt;&lt;p&gt;Cette orientation
+				écologique souhaitée par la Commission européenne pose la question
+				délicate, dans les Antilles françaises, du problème phytosanitaire
+				du chlordécone et de l&amp;#39;épandage aérien, pour lequel le
+				quotidien &lt;em&gt;Le Monde&lt;/em&gt; titrait en avril dernier : «
+				La Guadeloupe : monstre chimique »...&lt;/p&gt;&lt;p&gt;Si cet
+				encouragement de consacrer un tiers des aides directes à la mise en
+				œuvre de bonnes pratiques environnementales est louable, il se
+				heurte à la problématique des pesticides et implique un renforcement
+				des normes environnementales pour l&amp;#39;agriculteur et le
+				pêcheur antillais, déjà confrontés à des distorsions de concurrences
+				avec nos voisins.&lt;/p&gt;&lt;p&gt;C&amp;#39;est notamment le cas
+				avec les pays d&amp;#39;Afrique, des Caraïbes et du Pacifique, qui
+				ne sont pas soumis au même niveau d&amp;#39;exigences sanitaires et
+				sont pourtant partenaires commerciaux de l&amp;#39;Union européenne
+				depuis mai 2010.&lt;/p&gt;&lt;p&gt;Quelles solutions proposez-vous,
+				monsieur le ministre, pour résoudre ces contradictions écologiques
+				et économiques ?&lt;/p&gt;&lt;p&gt;M. le président. La parole est à
+				M. le ministre délégué.&lt;/p&gt;&lt;p&gt;M. Guillaume Garot,
+				ministre délégué auprès du ministre de l&amp;#39;agriculture, de
+				l&amp;#39;agroalimentaire et de la forêt, chargé de
+				l&amp;#39;agroalimentaire. Monsieur le sénateur, je souhaite
+				préalablement excuser Stéphane Le Foll, qui est retenu en ce moment
+				même à l&amp;#39;Assemblée nationale.&lt;/p&gt;&lt;p&gt;Avant de
+				répondre à votre question, monsieur le sénateur, je voudrais
+				rappeler ici l&amp;#39;attachement de la France au programme POSEI
+				qui est, à nos yeux, un outil efficace et essentiel au service de
+				l&amp;#39;agriculture des DOM.&lt;/p&gt;&lt;p&gt;Sur la question de
+				la prise en compte de nouvelles contraintes environnementales,
+				l&amp;#39;objectif central déjà affiché dans le programme POSEI en
+				France est la promotion d&amp;#39;une agriculture durable dans les
+				outre-mer.&lt;/p&gt;&lt;p&gt;D&amp;#39;une part, dans le cadre de la
+				révision du POSEI lancée par la Commission européenne, comme nous
+				l&amp;#39;avons déjà indiqué, nous sommes favorables à
+				l&amp;#39;introduction d&amp;#39;un paiement vert optionnel, sans
+				remettre en cause l&amp;#39;éligibilité des demandeurs aux aides du
+				POSEI.&lt;/p&gt;&lt;p&gt;D&amp;#39;autre part, le Gouvernement a
+				également rappelé à la Commission les contraintes sanitaires
+				importantes auxquelles les DOM doivent aujourd&amp;#39;hui faire
+				face en raison notamment du manque de produits phytosanitaires
+				autorisés et adaptés.&lt;/p&gt;&lt;p&gt;Les traitements aériens sont
+				interdits sauf lorsqu&amp;#39;ils sont absolument impératifs en
+				raison de l&amp;#39;absence d&amp;#39;alternative. Je vous rappelle
+				que l&amp;#39;arrêté de 2011 prévoit des mesures de gestion pour
+				protéger les lieux où se trouvent les riverains ainsi que les
+				espaces sensibles. Dans le même temps, dans le cadre du plan
+				Écophyto, des actions ont pour objectif de développer ces solutions
+				alternatives au traitement aérien.&lt;/p&gt;&lt;p&gt;Une première
+				étude a été engagée sur les bananeraies pour élaborer un prototype
+				terrestre adapté aux topographies locales, qui fait actuellement
+				l&amp;#39;objet de tests sur le terrain. Parallèlement, sur un autre
+				aspect du même problème, le Centre de coopération internationale en
+				recherche agronomique pour le développement, ou CIRAD, mène des
+				recherches pour sélectionner des variétés qui présenteraient des
+				résistances génétiques aux champignons
+				concernés.&lt;/p&gt;&lt;p&gt;J&amp;#39;évoquerai, enfin, le
+				chlordécone. Cette molécule, vous le savez, a été utilisée
+				jusqu&amp;#39;en 1993 pour lutter contre le charançon du bananier.
+				Elle est interdite depuis, mais la persistance du chlordécone est un
+				vrai enjeu à la fois sanitaire, environnemental, agricole,
+				économique et social pour l&amp;#39;ensemble des
+				Antilles.&lt;/p&gt;&lt;p&gt;La pollution par le chlordécone a fait
+				l&amp;#39;objet d&amp;#39;un premier plan interministériel
+				2008-2010, qui a mobilisé plus de 33 millions d&amp;#39;euros et
+				permis d&amp;#39;obtenir de premières avancées.&lt;/p&gt;&lt;p&gt;Un
+				deuxième plan d&amp;#39;action 2011-2013 contre cette pollution en
+				Guadeloupe et en Martinique, dans la continuité du premier, a fixé
+				quatre objectifs que je rappelle brièvement : approfondir les
+				connaissances et expérimenter de nouvelles techniques, consolider le
+				dispositif de surveillance de l&amp;#39;état de santé des
+				populations, poursuivre la réduction de l&amp;#39;exposition des
+				populations, enfin, gérer les milieux contaminés et assurer en
+				permanence une bonne information de la population.
+				&lt;/p&gt;&lt;p&gt;Nous travaillons aujourd&amp;#39;hui à un
+				troisième plan sur le chlordécone, monsieur le sénateur, destiné à
+				prendre la suite des deux précédents plans à partir de
+				2014.&lt;/p&gt;&lt;p&gt;Mme la présidente. La parole est à M.
+				Jacques Gillot.&lt;/p&gt;&lt;p&gt;M. Jacques Gillot. Monsieur le
+				ministre, je vous remercie de ces précisions. Il convient de porter
+				ces informations à la connaissance de la population, au sein de
+				laquelle règne une certaine inquiétude sur ces sujets. Je me réjouis
+				donc que l&amp;#39;information arrive jusqu&amp;#39;à
+				nous.&lt;/p&gt;]]&gt;</ns3:texte_reponse>
+			<ns3:date_jo>2013-11-20</ns3:date_jo>
+			<ns3:page_jo>11567</ns3:page_jo>
+		</ns2:reponse>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>
+

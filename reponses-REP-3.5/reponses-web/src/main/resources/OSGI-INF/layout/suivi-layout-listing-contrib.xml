@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.layout.suivi.listing">
+	<require>fr.dila.reponses.web.suivi.widget.listing</require>
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+		<layout name="suivi_listing">
+			<templates>
+				<template mode="any">
+					/layouts/layout_listing_template.xhtml
+				</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">false</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+			<properties mode="edit_sort_infos">
+				<property name="newSortInfoTemplate">
+					#{documentSearchActions.newSortInfo}
+				</property>
+				<property name="sortInfoSelectionRequired">false</property>
+			</properties>
+			<columns>
+				<column name="requeteExperteTitre" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">dc:title</property>
+					</properties>
+					<properties mode="edit_sort_infos">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<widget>requeteExperteTitre</widget>
+				</column>
+				<!-- <column name="requeteExperteTitre" alwaysSelected="true"> <properties 
+					mode="any"> <property name="useFirstWidgetLabelAsColumnHeader">true</property> 
+					</properties> <widget>requeteExperteDescription</widget> </column> <column 
+					name="editRequeteExperteLink" alwaysSelected="true"> <properties mode="any"> 
+					<property name="useFirstWidgetLabelAsColumnHeader">true</property> </properties> 
+					<widget>editRequeteExperte</widget> </column> <column name="publishRequete" 
+					alwaysSelected="true"> <properties mode="any"> <property name="useFirstWidgetLabelAsColumnHeader">true</property> 
+					</properties> <widget>publishRequeteLink</widget> </column> <column name="requeteExperteAlertLink" 
+					alwaysSelected="true"> <properties mode="any"> <property name="useFirstWidgetLabelAsColumnHeader">true</property> 
+					</properties> <widget>requeteExperteAlertLink</widget> </column> <column 
+					name="deleteRequete" alwaysSelected="true"> <properties mode="any"> <property 
+					name="useFirstWidgetLabelAsColumnHeader">true</property> </properties> <widget>deleteRequete</widget> 
+					</column> -->
+				<column name="actionsRequeteLink" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>actionsRequeteLink</widget>
+				</column>
+			</columns>
+		</layout>
+	</extension>
+</component>

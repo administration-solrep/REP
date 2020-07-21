@@ -1,0 +1,13 @@
+# Pour lancer ce script :
+# 1 - copier ce fichier dans /tmp/
+# 2 - Aller dans le répertoire contenant nxshell.sh
+# 3 - Taper la commande sh nxshell.sh -f /tmp/change_nom_param_mail_admin.nxshell
+
+# connect to http://localhost:8180/reponses (obligatoire sinon Unknown command...) 
+connect -u Administrator -p Administrator http://localhost:8180/reponses/site/automation
+
+# go to parametre folder
+cd /case-management/workspaces/admin/
+
+# changement du nom du parametre
+cp -name adresse-mail-administrateur-application parametre/adresse-mail-admin-sgg/ parametre

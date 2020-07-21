@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:composition template="/recherche_fdr/recherche_fdr_template.xhtml">
+
+		<ui:define name="mainContent">
+			<h:form id="searchModeleFeuilleRouteForm">
+				<h4>
+					<h:outputText styleClass="label"
+						value="#{messages['ss.recherche.feuilleRoute.feuilleRoute.title']}" />
+				</h4>
+				<nxl:layout name="recherche_modele_feuille_route_feuille_route"
+					mode="edit" value="#{rechercheModeleFeuilleRouteActions}" />
+
+				<h4>
+					<h:outputText styleClass="label"
+						value="#{messages['ss.recherche.feuilleRoute.routeStep.title']}" />
+				</h4>
+				<nxl:layout name="recherche_modele_feuille_route_route_step"
+					mode="edit" value="#{rechercheModeleFeuilleRouteActions}" />
+
+				<table>
+					<tr>
+						<td><nxh:commandButton id="search"
+								value="#{messages['requete.widget.admin.button.recherche']}"
+								action="#{rechercheModeleFeuilleRouteActions.search()}"
+								styleClass="button" /></td>
+						<td><a4j:commandButton id="resetSearch"
+								value="#{messages['requete.widget.admin.button.reset']}"
+								action="#{rechercheModeleFeuilleRouteActions.reset()}"
+								styleClass="button" /></td>
+					</tr>
+				</table>
+			</h:form>
+			<script>
+    	var j = jQuery.noConflict();
+            j(document).ready(function() {
+              j('#searchModeleFeuilleRouteForm input').keypress(function (e) {
+                  if ((e.which &amp;&amp; e.which == 13) || (e.keyCode &amp;&amp; e.keyCode == 13)) {
+                      j("[id='searchModeleFeuilleRouteForm:search']").click();
+                      return false;
+                  } else {
+                      return true;
+                  }
+              });
+            });
+       </script>
+		</ui:define>
+	</ui:composition>
+</nxthemes:composition>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Cet composant contribue les schémas de l'application Réponses. -->
+<component name="fr.dila.reponses.core.schema">
+	<require>org.nuxeo.ecm.core.CoreExtensions</require>
+	<require>org.nuxeo.ecm.directory.types</require>
+	<require>fr.dila.cm.schemas</require>
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="schema">
+
+		<!-- *********************************************************************** 
+			Schémas de l'organigramme *********************************************************************** -->
+		<!-- Surcharge du schema "group" de Nuxeo -->
+		<schema name="group" src="schemas/group.xsd" override="true" />
+
+		<!-- Fonctions unitaires -->
+		<schema name="base_function" src="schemas/base_function.xsd" />
+
+		<!-- *********************************************************************** 
+			Vocabulaires *********************************************************************** -->
+		<schema name="vocabularyLegislature" src="schemas/vocabularyLegislature.xsd" />
+
+		<!-- *********************************************************************** 
+			Préférences utilisateur *********************************************************************** -->
+		<schema name="delegation" src="schemas/delegation.xsd" prefix="del" />
+		<schema name="profil_utilisateur" src="schemas/profil_utilisateur.xsd"
+			prefix="pru" />
+
+		<!-- *********************************************************************** 
+			Feuille de route *********************************************************************** -->
+		<schema name="feuille_route" src="schemas/feuille_route_reponses.xsd"
+			prefix="fdr" />
+
+		<!-- Réutilisation du schema "routing_task" de Nuxeo afin de limiter le 
+			nombre de tables -->
+		<schema name="routing_task" src="schemas/routing_task.xsd"
+			prefix="rtsk" override="true" />
+
+		<!-- *********************************************************************** 
+			Dossier Réponses *********************************************************************** -->
+		<schema name="question" src="schemas/question.xsd" prefix="qu" />
+		<schema name="reponse" src="schemas/reponse.xsd" prefix="rep" />
+		<schema name="fondDossier" src="schemas/fondDossier.xsd"
+			prefix="fdd" />
+		<schema name="elementFondDossier" src="schemas/elementFondDossier.xsd"
+			prefix="efd" />
+		<schema name="dossier_reponse" src="schemas/dossier_reponse.xsd"
+			prefix="dos" />
+		<schema name="indexation" src="schemas/indexation.xsd" prefix="ixa" />
+		<schema name="indexation_comp" src="schemas/indexation_comp.xsd"
+			prefix="ixacomp" />
+		<schema name="question_connexe" src="schemas/question_connexe.xsd"
+			prefix="qce" />
+		<schema name="allotissement" src="schemas/allotissement.xsd"
+			prefix="allot" />
+
+		<!-- *********************************************************************** 
+			Mailbox *********************************************************************** -->
+		<schema name="reponsesMailbox" src="schemas/reponsesMailbox.xsd"
+			prefix="rmlbx" />
+		<schema name="dossier_reponses_link" src="schemas/dossier_reponses_link.xsd"
+			prefix="drl" />
+
+		<!-- *********************************************************************** 
+			Favoris dossier ******************************************************************** -->
+		<schema name="favorisDossier" src="schemas/favoris_dossier.xsd"
+			prefix="fvd" />
+		<schema name="favorisIndexation" src="schemas/favoris_indexation.xsd"
+			prefix="fvi" />
+
+		<!-- Surcharge du schéma des modèles de rapport Birt, pour l'ajout du paramètre 
+			de ministère/direction/poste -->
+		<schema name="birtreportmodel" src="schemas/birtreportmodel.xsd"
+			prefix="birtmodel" override="true" />
+
+		<!-- Liaison jeton / notification -->
+		<schema name="jeton_doc" src="schemas/jeton_doc.xsd" prefix="jtd"
+			override="true" />
+
+		<!-- Archivage -->
+		<schema name="listeElimination" src="schemas/liste_elimination.xsd"
+			prefix="lel" />
+
+		<!-- Nofifications webservice -->
+		<schema name="wsNotification" src="schemas/ws_notification.xsd"
+			prefix="wsn" />
+
+		<!-- Logging en bdd -->
+		<schema name="reponses_logging" src="schemas/reponses_logging.xsd"
+			prefix="replog" />
+		<schema name="reponses_logging_line" src="schemas/reponses_logging_line.xsd"
+			prefix="replogl" />
+		<schema name="reponses_logging_detail" src="schemas/reponses_logging_detail.xsd"
+			prefix="replogd" />
+
+		<!-- Schema pour les information de la connection des utilisateurs' -->
+		<schema name="info_utilisateur_connection" src="schemas/info_utilisateur_connection.xsd"
+			prefix="infouc" />
+
+		<schema name="historiqueAttribution" src="schemas/historique_attribution.xsd"
+			prefix="his" />
+		
+		<schema name="etatQuestion" src="schemas/etat_question.xsd"
+			prefix="etatq" />
+
+
+	</extension>
+</component>

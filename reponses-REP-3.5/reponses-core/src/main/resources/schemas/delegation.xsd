@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://dila.fr/solon/schemas/delegation/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:del="http://dila.fr/solon/schemas/delegation/">
+
+	<xs:include schemaLocation="base.xsd" />
+
+	<!-- Date de début de la délégation -->
+	<xs:element name="dateDebut" type="xs:date" />
+
+	<!-- Date de fin de la délégation -->
+	<xs:element name="dateFin" type="xs:date" />
+
+	<!-- Agent qui délégue ses droits -->
+	<xs:element name="sourceId" type="xs:string" />
+
+	<!-- Agent qui reçoit la délégation des droits -->
+	<xs:element name="destinataireId" type="xs:string" />
+
+	<!-- Agent qui reçoit la délégation des droits -->
+	<xs:element name="profilList" type="del:stringList" />
+</xs:schema>

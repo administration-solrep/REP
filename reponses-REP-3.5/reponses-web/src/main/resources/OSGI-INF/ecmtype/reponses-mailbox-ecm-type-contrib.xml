@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les types ECM nécessaires ax Mailbox de l'application 
+	Réponses. -->
+<component name="fr.dila.reponses.web.ecmtype.reponsesMailbox">
+	<require>com.nuxeo.case-management.types</require>
+	<require>fr.dila.reponses.web.ecmtype.dossier</require>
+
+	<extension target="org.nuxeo.ecm.platform.types.TypeService"
+		point="types">
+
+		<!-- Répertoire racine des Mailbox -->
+		<type id="MailboxRoot">
+			<subtypes>
+				<type>ReponsesMailbox</type>
+			</subtypes>
+		</type>
+
+		<!-- Mailbox Réponses -->
+		<type id="ReponsesMailbox">
+			<label>label.casemanagement.type.CaseManagementMailbox</label>
+			<icon>/icons/case-management_mailbox.png</icon>
+			<default-view>mailbox_view</default-view>
+			<create-view>mailbox_create</create-view>
+			<layouts mode="any">
+				<layout>cm_mailbox</layout>
+				<layout>cm_mailbox_managers</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>cm_mailbox</layout>
+				<layout>cm_mailbox_managers</layout>
+			</layouts>
+			<subtypes>
+				<type>Question</type>
+			</subtypes>
+			<deniedSubtypes>
+				<type>Case</type>
+			</deniedSubtypes>
+			<contentViews category="corbeille_content">
+				<contentView>corbeille_content</contentView>
+			</contentViews>
+			<contentViews category="inbox">
+				<contentView>mailbox_inbox_content</contentView>
+			</contentViews>
+			<contentViews category="draft_content">
+				<contentView>mailbox_draft_content</contentView>
+			</contentViews>
+			<contentViews category="sent">
+				<contentView>mailbox_sent_content</contentView>
+			</contentViews>
+			<contentViews category="service">
+				<contentView>mailbox_service_content</contentView>
+			</contentViews>
+			<contentViews category="plans">
+				<contentView>mailbox_plans_content</contentView>
+			</contentViews>
+			<contentViews category="content">
+				<contentView>document_content</contentView>
+			</contentViews>
+			<contentViews category="trash_content">
+				<contentView>document_trash_content</contentView>
+			</contentViews>
+			<contentViews category="suivi_saved_requete_content">
+				<contentView>suivi_saved_requete_content</contentView>
+			</contentViews>
+			<contentViews category="suivi_alert_content">
+				<contentView>suivi_alert_content</contentView>
+			</contentViews>
+		</type>
+	</extension>
+</component>

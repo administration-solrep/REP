@@ -1,0 +1,2 @@
+DELETE FROM VOC_AN_ANALYSE WHERE "VOC_AN_ANALYSE"."label" IS null;
+commit;

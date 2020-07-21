@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.core.tests.requetepreparam">
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="doctype">
+		<doctype name="SmartFolder" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<schema name="smart_folder" />
+		</doctype>
+	</extension>
+
+	<extension
+		target="org.nuxeo.ecm.platform.content.template.service.ContentTemplateService"
+		point="factoryBinding">
+
+		<!-- Racine des espaces de travail collaboratifs -->
+		<factoryBinding name="DomainFactory" factoryName="SimpleTemplateFactory"
+			targetType="Domain">
+			<template>
+				<templateItem typeName="BibliothequeRequetesRoot" id="biblio-requetes-root"
+					title="Bibliothêque de requêtes générales" />
+			</template>
+		</factoryBinding>
+
+		<!-- Racine des requêtes de la bibliothèque standard -->
+		<factoryBinding name="BibliothequeRequetesRootFactory"
+			factoryName="SimpleTemplateFactory" targetType="BibliothequeRequetesRoot">
+			<template>
+				<templateItem typeName="SmartFolder" id="historique"
+					title="Historique des validations">
+					<properties>
+						<property xpath="sf:queryPart" value="" />
+						<property xpath="sf:pos" value="1" />
+						<property xpath="dc:description" value="Historique des validations" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="SmartFolder"
+					id="r2-questions-etape-redaction-15joursapres-date-publication"
+					title="Liste des questions pas encore à l'étape de rédaction 15 jours après publication">
+					<properties>
+						<property xpath="sf:queryPart"
+							value="d.dos:etapeRedactionAtteinte = 0 AND q.qu:datePublicationJO &lt; ufnxql_date:(NOW-15J)" />
+						<property xpath="sf:pos" value="2" />
+						<property xpath="dc:description"
+							value="Suivi par étape, à échéance identification des questions qui 15 jours après leur publication n’ont pas atteint l’étape de rédaction" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="SmartFolder"
+					id="r3-questions-etape-redaction-30joursapres-date-publication"
+					title="Liste des questions pas encore à l'étape de rédaction 30 jours après publication">
+					<properties>
+						<property xpath="sf:queryPart"
+							value="d.dos:etapeRedactionAtteinte = 0 AND q.qu:datePublicationJO &lt; ufnxql_date:(NOW-30J)" />
+						<property xpath="sf:pos" value="3" />
+						<property xpath="dc:description"
+							value="Suivi par étape, à échéance identification des questions qui 30 jours après leur publication n’ont pas atteint l’étape de rédaction" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="SmartFolder"
+					id="r4-questions-etape-signature-25joursapres-date-publication"
+					title="Liste des questions pas encore à l'étape de signature 25 jours après publication">
+					<properties>
+						<property xpath="sf:queryPart"
+							value="d.dos:etapeSignatureAtteinte = 0 AND q.qu:datePublicationJO &lt; ufnxql_date:(NOW-25J)" />
+						<property xpath="sf:pos" value="4" />
+						<property xpath="dc:description"
+							value="Suivi par étape, à échéance identification des questions qui 25 jours après leur publication n’ont pas atteint l’étape de signature" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="SmartFolder"
+					id="r5-questions-etape-signature-45joursapres-date-publication"
+					title="Liste des questions pas encore à l'étape de signature 45 jours après publication">
+					<properties>
+						<property xpath="sf:queryPart"
+							value="d.dos:etapeSignatureAtteinte = 0 AND q.qu:datePublicationJO &lt; ufnxql_date:(NOW-45J)" />
+						<property xpath="sf:pos" value="5" />
+						<property xpath="dc:description"
+							value="Suivi par étape, à échéance identification des questions qui 45 jours après leur publication n’ont pas atteint l’étape de signature" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="SmartFolder"
+					id="r6-questions-deposees-moins-un-moi-plus-de-deux-reaffectations"
+					title="Liste des questions publiées depuis moins d'un mois et ayant fait l'objet de plus de 2 changements d'affectation">
+					<properties>
+						<property xpath="sf:queryPart"
+							value="d.dos:reaffectationCount &gt; 2 AND q.qu:datePublicationJO &gt; ufnxql_date:(NOW-1M)" />
+						<property xpath="sf:pos" value="6" />
+						<property xpath="dc:description"
+							value="Liste des questions déposées depuis moins d’un mois et ayant fait l’objet de plus de deux changements d’affectations ministérielles" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="SmartFolder"
+					id="r7-reponses-etape-arbitrage-sgg" title="Liste des demandes d’arbitrages">
+					<properties>
+						<property xpath="sf:queryPart"
+							value="etape.rtsk:type = '12' AND q.qu:typeQuestion = 'QE'" />
+						<property xpath="sf:pos" value="7" />
+						<property xpath="dc:description"
+							value="Liste des demandes d’arbitrages soumises au SGG pour la réattribution de questions" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="SmartFolder"
+					id="r11-questions-sans-reponse-plus-un-mois" title="Liste des questions sans réponse depuis plus d'un mois">
+					<properties>
+						<property xpath="sf:queryPart"
+							value="q.qu:etatQuestion != 'repondu' AND q.qu:datePublicationJO &lt; ufnxql_date:(NOW-1M)" />
+						<property xpath="sf:pos" value="11" />
+						<property xpath="dc:description"
+							value="Liste des questions qui sont sans réponse publiées depuis plus d'un mois" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="SmartFolder"
+					id="r12-questions-signalées-sans-reponse"
+					title="Liste des questions signalées n'ayant pas encore obtenu de réponse">
+					<properties>
+						<property xpath="sf:queryPart"
+							value="q.qu:etatQuestion != 'repondu' AND q.qu:etatSignale = 1" />
+						<property xpath="sf:pos" value="12" />
+						<property xpath="dc:description"
+							value="Liste des questions signalées n'ayant pas encore obtenu de réponse" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="SmartFolder"
+					id="r15-questions-etape-validation-pm"
+					title="Liste des questions transmises à la validation du Premier Ministre">
+					<properties>
+						<property xpath="sf:queryPart"
+							value="etape.rtsk:type IN ('7') AND q.qu:typeQuestion = 'QE'" />
+						<property xpath="sf:pos" value="15" />
+						<property xpath="dc:description"
+							value="Liste des questions transmises à la validation du Premier Ministre" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+				</templateItem>
+			</template>
+			<acl>
+				<ace principal="Everyone" permission="Read" granted="true" />
+				<ace principal="Everyone" permission="Write" granted="false" />
+			</acl>
+		</factoryBinding>
+	</extension>
+
+</component>

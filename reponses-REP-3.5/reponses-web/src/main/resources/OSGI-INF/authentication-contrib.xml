@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant permet de désactiver l'authentification basic pour le point 
+	de visiblité. Permet d'exposer l'application en Extranet avec une authentification 
+	HTTP Basic sur le frontal Apache. TODO à paramétrer selon le profil -->
+<component name="fr.dila.reponses.web.auth.defaultConfig">
+
+	<require>org.nuxeo.ecm.platform.ui.web.auth.defaultConfig</require>
+
+	<extension
+		target="org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService"
+		point="chain">
+
+		<authenticationChain>
+			<plugins>
+				<plugin>FORM_AUTH</plugin>
+				<plugin>ANONYMOUS_AUTH</plugin>
+				<plugin>WEBSERVICES_AUTH</plugin>
+				<plugin>DILA_BASIC_AUTH</plugin>
+			</plugins>
+		</authenticationChain>
+	</extension>
+
+	<!-- Specific chain for WebService Reponse -->
+	<extension
+		target="org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService"
+		point="specificChains">
+		<specificAuthenticationChain name="WebServiceReponse">
+			<urlPatterns>
+				<url>(.*)/site/reponses/.*</url>
+				<url>(.*)/site/spellchecker/.*</url>
+			</urlPatterns>
+
+			<allowedPlugins>
+				<plugin>DILA_BASIC_AUTH</plugin>
+			</allowedPlugins>
+		</specificAuthenticationChain>
+		<!-- WSS -->
+		<specificAuthenticationChain name="WSS">
+			<urlPatterns>
+				<url>(.*)/_vti_.*</url>
+			</urlPatterns>
+			<headers>
+				<header name="User-Agent">MSFrontPage.*</header>
+			</headers>
+
+			<allowedPlugins>
+				<plugin>DILA_BASIC_AUTH</plugin>
+				<plugin>NTLM_AUTH</plugin>
+			</allowedPlugins>
+		</specificAuthenticationChain>
+
+	</extension>
+
+	<!-- Specific Authenticator for WebService Reponse -->
+	<extension
+		target="org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService"
+		point="authenticators">
+
+		<authenticationPlugin name="DILA_BASIC_AUTH"
+			enabled="true"
+			class="org.nuxeo.ecm.platform.ui.web.auth.plugins.BasicAuthenticator">
+			<needStartingURLSaving>false</needStartingURLSaving>
+			<stateful>false</stateful>
+			<parameters>
+				<parameter name="RealmName">Dila Reponse Nuxeo 5 EP</parameter>
+				<parameter name="AutoPrompt">true</parameter>
+				<parameter name="ForcePromptURL_WSS">_vti_bin</parameter>
+			</parameters>
+		</authenticationPlugin>
+	</extension>
+
+</component>

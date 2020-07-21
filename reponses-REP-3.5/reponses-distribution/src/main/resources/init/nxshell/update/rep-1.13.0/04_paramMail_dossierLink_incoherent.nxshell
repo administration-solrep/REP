@@ -1,0 +1,29 @@
+# Pour lancer ce script :
+# 1 - copier ce fichier dans /tmp/
+# 2 - Aller dans le répertoire contenant nxshell.sh
+# 3 - Taper la commande sh nxshell.sh -f /tmp/param_mail_notification.nxshell
+
+# connect to http://localhost:8180/reponses (obligatoire sinon Unknown command...) 
+connect -u Administrator -p Administrator http://localhost:8180/reponses/site/automation
+
+# go to parametre folder
+cd /case-management/workspaces/admin/parametre/
+
+# create 
+mkdir Parametre objet-mel-dossiers-link-incoherent
+cd objet-mel-dossiers-link-incoherent
+setp -xpath parametre:value -value "Résultat du batch dossiers link incohérents"
+setp -xpath parametre:unit -value Objet
+setp -xpath dc:description -value "« Objet » (par défaut) de la notification par mél des résultats du batch de recherche des dossiers link incohérents."
+setp -xpath dc:title -value "Objet mél notification batch dossiers link incohérents"
+
+# go to parametre folder
+cd /case-management/workspaces/admin/parametre/
+
+# create 
+mkdir Parametre texte-mel-dossiers-link-incoherent
+cd texte-mel-dossiers-link-incoherent
+setp -xpath parametre:value -value "Bonjour, le batch de recherche d'incohérence entre les étapes en cours et les dossiers link a retourné ${nb_resultats} dossier(s) à vérifier."
+setp -xpath parametre:unit -value texte
+setp -xpath dc:description -value "« Texte du message » (par défaut) de la notification par mél des résultats du batch de recherche des dossiers link incohérents."
+setp -xpath dc:title -value "Texte mél notification batch dossiers link incohérents"

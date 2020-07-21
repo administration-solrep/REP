@@ -1,0 +1,2 @@
+INSERT INTO VOC_GROUPE_POLITIQUE VALUES ('Groupe CRC1', '0', '10000000', 'Groupe CRC1');
+commit;

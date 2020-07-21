@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue le service de migration de l'application Réponses. -->
+<component name="fr.dila.reponses.core.service.ReponsesMigrationService">
+
+	<implementation
+		class="fr.dila.reponses.core.service.ReponsesMigrationServiceImpl" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.ReponsesMigrationService" />
+	</service>
+</component>

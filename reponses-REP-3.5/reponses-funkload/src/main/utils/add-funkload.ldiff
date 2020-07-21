@@ -1,0 +1,18 @@
+dn: uid=bdc_INDEX,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc INDEX
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_INDEX
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+

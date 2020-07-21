@@ -1,0 +1,235 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:composition template="/view_recherche_utilisateur_template.xhtml">
+		<ui:param name="currentUserSubTab" value="view" />
+
+		<a4j:queue requestDelay="0" sizeExceededBehavior="dropNew" size="50"
+			id="userSearchViewQueue" name="userSearchViewQueue" timeout="60000" />
+
+		<ui:define name="mainContent">
+			<h:form id="searchUserForm">
+				<nxl:layout name="recherche_utilisateur" mode="edit"
+					value="#{rechercheUtilisateurActions}" />
+				<table class="dataInput">
+					<tbody>
+						<tr>
+							<td><h:commandButton
+									value="#{messages['requete.widget.admin.button.recherche']}"
+									id="validate"
+									action="#{rechercheUtilisateurActions.searchUser()}"
+									styleClass="button" /></td>
+							<td><h:commandButton
+									value="#{messages['requete.widget.admin.button.reset']}"
+									id="cancel"
+									action="#{rechercheUtilisateurActions.resetSearch()}"
+									styleClass="button" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</h:form>
+			<br />
+			<a4j:region id="dcViewRegion">
+				<h:form id="document_properties">
+					<c:set var="userSchema" value="#{userManager.userSchemaName}" />
+
+
+					<h:outputText value="#{userList.rowCount} utilisateur(s)" />
+					<br />
+					<h:dataTable var="userModel" value="#{userList}" id="table_dc"
+						styleClass="dataOutput" rendered="#{userList.rowCount > 0}">
+
+						<!-- INSERT COLUMN FOR SELECT HERE -->
+						<h:column>
+
+							<f:facet name="header">
+								<h:selectBooleanCheckbox
+									id="#{userModel[userSchema].username}_header"
+									title="#{messages['tooltip.content.select.all']}">
+									<a4j:support event="onchange" eventsQueue="userSearchViewQueue"
+										action="#{rechercheUtilisateurActions.checkAllBox()}"
+										onchange="javascript:handleAllCheckBoxes('document_properties:table_dc', this.checked)"
+										reRender="dcViewRegion" render="false" />
+
+								</h:selectBooleanCheckbox>
+
+							</f:facet>
+							<h:selectBooleanCheckbox
+								id="check_#{userModel[userSchema].username}">
+								<a4j:support id="checka4j_#{userModel[userSchema].username}"
+									event="onchange" eventsQueue="userSearchViewQueue"
+									action="#{rechercheUtilisateurActions.checkBox(userModel)}"
+									reRender="dcViewRegion" />
+							</h:selectBooleanCheckbox>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:commandLink
+									action="#{rechercheUtilisateurActions.sortByUsername}">
+									<h:outputText value="#{messages['label.userManager.user']}" />
+								</h:commandLink>
+							</f:facet>
+							<h:commandLink value="#{userModel[userSchema].username}"
+								action="#{userManagerActions.viewUserFromRecherche}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:commandLink
+									action="#{rechercheUtilisateurActions.sortByFirstName}">
+									<h:outputText
+										value="#{messages['label.userManager.firstName']}" />
+								</h:commandLink>
+							</f:facet>
+							<h:outputText value="#{userModel[userSchema].firstName}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:commandLink
+									action="#{rechercheUtilisateurActions.sortByLastName}">
+									<h:outputText value="#{messages['label.userManager.lastName']}" />
+								</h:commandLink>
+							</f:facet>
+							<h:outputText value="#{userModel[userSchema].lastName}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:commandLink
+									action="#{rechercheUtilisateurActions.sortByMail}">
+									<h:outputText value="#{messages['label.userManager.mail']}" />
+								</h:commandLink>
+							</f:facet>
+							<h:outputText value="#{userModel[userSchema].email}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:commandLink
+									action="#{rechercheUtilisateurActions.sortByDate}">
+									<h:outputText
+										value="#{messages['label.userManager.dateDebut']}" />
+								</h:commandLink>
+							</f:facet>
+							<h:outputText value="#{userModel[userSchema].dateDebut}" />
+						</h:column>
+					</h:dataTable>
+					<a4j:commandButton value="#{messages['command.admin.utilisateur.recherche.supprimer']}" id="deleteUser"
+						onclick="Richfaces.showModalPanel('deletePanel')"
+						styleClass="button" />
+					<a4j:commandButton value="#{messages['command.admin.utilisateur.recherche.courriel']}" id="envoyerCourriel"
+						onclick="Richfaces.showModalPanel('mailPanel')"
+						styleClass="button" />
+					<h:commandButton
+						value="#{messages['command.rechercheAvancee.export']}"
+						id="exportExcel"
+						action="#{rechercheUtilisateurActions.createExportExcel()}"
+						styleClass="button" />
+
+				</h:form>
+			</a4j:region>
+
+			<a4j:region id="mailRegion">
+				<rich:modalPanel id="mailPanel" autosized="true">
+					<div>
+						<f:facet name="header">
+							<h:outputText value="#{messages['label.admin.utilisateur.recherche.popupcourriel']}" />
+						</f:facet>
+					</div>
+					<h:form id="mailForm">
+						<table style="width: 550px;">
+							<tr>
+								<td style="width: 150px; text-align: right;">Objet :</td>
+								<td><h:inputText id="objet_mail"
+										value="#{rechercheUtilisateurActions.formObjetMail}"
+										style="width:400px" /></td>
+							</tr>
+							<tr>
+								<td style="width: 150px; text-align: right;">Texte :</td>
+								<td><h:inputTextarea id="texte_mail"
+										value="#{rechercheUtilisateurActions.formTexteMail}"
+										style="width: 400px; height: 200px;" /></td>
+							</tr>
+						</table>
+
+						<!-- button create -->
+						<table>
+							<tr>
+								<td>
+									<div class="popupFddDiv">
+										<a4j:commandLink
+											action="#{rechercheUtilisateurActions.envoyerMail()}"
+											id="envoyerMailButton"
+											oncomplete="Richfaces.hideModalPanel('mailPanel')">
+											<h:graphicImage height="24" width="24"
+												url="/img/icons/check.png" alt="Créer" />
+											<h:outputText value="Valider" />
+										</a4j:commandLink>
+									</div>
+								</td>
+								<td>
+									<!-- button close -->
+									<div class="popupFddDiv">
+										<a4j:commandLink
+											action="#{rechercheUtilisateurActions.annulerMail()}"
+											id="annulerMail"
+											oncomplete="Richfaces.hideModalPanel('mailPanel')"
+											ajaxSingle="true">
+											<h:graphicImage height="24" width="24"
+												url="/img/icons/delete.png" alt="Annuler" />
+											<h:outputText value="Annuler" />
+										</a4j:commandLink>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</h:form>
+				</rich:modalPanel>
+			</a4j:region>
+			
+			<a4j:region id="deleteRegion">
+				<rich:modalPanel id="deletePanel" autosized="true">
+					<div>
+						<f:facet name="header">
+							<h:outputText value="Suppression utilisateur" />
+						</f:facet>
+					</div>
+					<h:form id="deleteForm">
+						<!-- button create -->
+						<center>
+							<div> Voulez vous réellement supprimer le(s) utilisateur(s) séléctionné(s)?</div>
+						</center>
+						<center>
+							<div class="popupFddDiv">
+								<h:commandLink
+									action="#{rechercheUtilisateurActions.deleteSelectedUsers()}"
+									id="envoyerDeleteButton"
+									oncomplete="Richfaces.hideModalPanel('deletePanel')">
+									<h:graphicImage height="24" width="24"
+										url="/img/icons/check.png" alt="Créer" />
+									<h:outputText value="Valider" />
+								</h:commandLink>
+							</div>
+							<!-- button close -->
+							<div class="popupFddDiv">
+								<a4j:commandLink
+									oncomplete="Richfaces.hideModalPanel('deletePanel')"
+									ajaxSingle="true">
+									<h:graphicImage height="24" width="24"
+										url="/img/icons/delete.png" alt="Annuler" />
+									<h:outputText value="Annuler" />
+								</a4j:commandLink>
+							</div>
+						</center>
+					</h:form>
+				</rich:modalPanel>
+			</a4j:region>
+
+		</ui:define>
+	</ui:composition>
+</div>

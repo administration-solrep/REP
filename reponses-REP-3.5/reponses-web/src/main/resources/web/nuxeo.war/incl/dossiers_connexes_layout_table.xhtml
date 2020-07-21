@@ -1,0 +1,39 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jstl/fmt"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout">
+
+	<c:if test="#{documents != null}">
+
+		<h:form id="#{documents.name}">
+			<ui:insert name="error_message" />
+			<ui:insert name="empty_folder_label">
+				<h:outputText value="#{emptyFolderLabel}"
+					rendered="#{documents.rowCount == 0 and not empty emptyFolderLabel}" />
+				<h:outputText value="#{messages['label.content.emptyFolder']}"
+					rendered="#{documents.rowCount == 0 and empty emptyFolderLabel}}" />
+			</ui:insert>
+
+			<table class="dataOutput">
+				<c:forEach var="row" items="#{documents.rows}"
+					varStatus="layoutListingStatus">
+					<c:set var="showListingHeader"
+						value="#{layoutListingStatus.index == 0}" />
+					<nxl:layout name="#{layoutName}" value="#{row}" mode="view"
+						selectedColumns="#{selectedResultLayoutColumns}" />
+				</c:forEach>
+			</table>
+
+			<ui:insert name="buttons" />
+		</h:form>
+
+
+	</c:if>
+
+</div>

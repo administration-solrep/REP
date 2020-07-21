@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Reponse WebEngine
+Bundle-SymbolicName: fr.dila.reponses.webengine;singleton:=true
+Bundle-Version: 1.0.0
+Nuxeo-WebModule: fr.dila.reponses.rest.jaxb.CustomWebengineModule
+Nuxeo-Component: OSGI-INF/webengine-framework.xml

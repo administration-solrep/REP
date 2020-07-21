@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.reponses.organigramme">
+	<implementation class="org.nuxeo.ecm.directory.ldap.LDAPDirectoryDescriptor" />
+	<implementation class="org.nuxeo.ecm.directory.ldap.LDAPServerDescriptor" />
+
+	<require>org.nuxeo.ecm.directory.ldap.LDAPDirectoryFactory</require>
+	<require>org.nuxeo.ecm.directory.ldap.storage.users</require>
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="schema">
+		<schema name="organigramme-poste" src="schemas/organigramme-poste.xsd" />
+		<schema name="organigramme-unite-structurelle" src="schemas/organigramme-unite-structurelle.xsd" />
+		<schema name="organigramme-gouvernement" src="schemas/organigramme-gouvernement.xsd" />
+	</extension>
+
+	<extension target="org.nuxeo.ecm.directory.ldap.LDAPDirectoryFactory"
+		point="directories">
+
+		<directory name="gouvernementDirectory">
+
+			<!-- Reuse the default server configuration defined for userDirectory -->
+			<server>default</server>
+
+			<schema>organigramme-gouvernement</schema>
+
+			<idField>groupName</idField>
+
+			<searchBaseDn>ou=gouvernement,ou=Reponses</searchBaseDn>
+			<searchFilter>(|(objectClass=poste)(objectClass=groupOfURLs))</searchFilter>
+			<searchScope>subtree</searchScope>
+
+			<readOnly>false</readOnly>
+
+			<!-- comment <cache* /> tags to disable the cache -->
+			<!-- cache timeout in seconds -->
+			<cacheTimeout>3600</cacheTimeout>
+
+			<!-- maximum number of cached entries before global invalidation -->
+			<cacheMaxSize>1000</cacheMaxSize>
+
+			<creationBaseDn>ou=gouvernement,ou=Reponses</creationBaseDn>
+			<creationClass>top</creationClass>
+			<creationClass>groupOfUniqueNames</creationClass>
+			<creationClass>gouvernement</creationClass>
+
+			<rdnAttribute>cn</rdnAttribute>
+			<fieldMapping name="groupName">cn</fieldMapping>
+			<fieldMapping name="fullPath">dn</fieldMapping>
+			<fieldMapping name="dateDebut">dateDebut</fieldMapping>
+			<fieldMapping name="dateFin">dateFin</fieldMapping>
+			<fieldMapping name="lockDate">lockDate</fieldMapping>
+			<fieldMapping name="lockUserName">lockUserName</fieldMapping>
+
+			<references>
+
+				<!-- LDAP reference resolve DNs embedded in uniqueMember attributes If 
+					the target directory has no specific filtering policy, it is most of the 
+					time not necessary to enable the 'forceDnConsistencyCheck' policy. Enabling 
+					this option will fetch each reference entry to ensure its existence in the 
+					target directory. -->
+
+				<ldapReference field="subUnitesStructurelles"
+					directory="uniteStructurelleDirectory" forceDnConsistencyCheck="false"
+					staticAttributeId="uniqueMember" />
+
+			</references>
+		</directory>
+
+
+		<directory name="uniteStructurelleDirectory">
+
+			<!-- Reuse the default server configuration defined for userDirectory -->
+			<server>default</server>
+
+			<schema>organigramme-unite-structurelle</schema>
+
+			<idField>groupName</idField>
+
+			<searchBaseDn>ou=uniteStructurelle,ou=Reponses</searchBaseDn>
+			<searchFilter>(|(objectClass=uniteStructurelle)(objectClass=groupOfURLs))</searchFilter>
+			<searchScope>subtree</searchScope>
+
+			<readOnly>false</readOnly>
+
+			<!-- comment <cache* /> tags to disable the cache -->
+			<!-- cache timeout in seconds -->
+			<cacheTimeout>3600</cacheTimeout>
+
+			<!-- maximum number of cached entries before global invalidation -->
+			<cacheMaxSize>1000</cacheMaxSize>
+
+			<creationBaseDn>ou=uniteStructurelle,ou=Reponses</creationBaseDn>
+			<creationClass>top</creationClass>
+			<creationClass>groupOfUniqueNames</creationClass>
+			<creationClass>uniteStructurelle</creationClass>
+
+			<rdnAttribute>cn</rdnAttribute>
+			<fieldMapping name="groupName">cn</fieldMapping>
+			<fieldMapping name="fullPath">dn</fieldMapping>
+			<fieldMapping name="dateDebut">dateDebut</fieldMapping>
+			<fieldMapping name="dateFin">dateFin</fieldMapping>
+			<fieldMapping name="type">type</fieldMapping>
+			<fieldMapping name="lockDate">lockDate</fieldMapping>
+			<fieldMapping name="lockUserName">lockUserName</fieldMapping>
+
+			<references>
+
+
+				<!-- LDAP reference resolve DNs embedded in uniqueMember attributes If 
+					the target directory has no specific filtering policy, it is most of the 
+					time not necessary to enable the 'forceDnConsistencyCheck' policy. Enabling 
+					this option will fetch each reference entry to ensure its existence in the 
+					target directory. -->
+
+				<ldapReference field="subUnitesStructurelles"
+					directory="uniteStructurelleDirectory" forceDnConsistencyCheck="false"
+					staticAttributeId="uniqueMember" />
+
+				<ldapReference field="subPostes" directory="posteDirectory"
+					forceDnConsistencyCheck="false" staticAttributeId="uniqueMember" />
+
+				<inverseReference field="parentUnitesStructurelles"
+					directory="uniteStructurelleDirectory" dualReferenceField="subUnitesStructurelles" />
+
+				<inverseReference field="parentGouvernement"
+					directory="gouvernementDirectory" dualReferenceField="subUnitesStructurelles" />
+
+
+				<!-- LDAP tree reference resolves children following the ldap tree structure. 
+					Available scopes are "onelevel" (default), "subtree". Children with same 
+					id than parent will be filtered. Enabling this option will fetch each reference 
+					entry to ensure its existence in the target directory. WARNING: Edit is NOT 
+					IMPLEMENTED: modifications to this field will be ignored when saving the 
+					entry. -->
+
+
+			</references>
+		</directory>
+
+
+		<directory name="posteDirectory">
+
+			<!-- Reuse the default server configuration defined for userDirectory -->
+			<server>default</server>
+
+			<schema>organigramme-poste</schema>
+
+			<idField>groupName</idField>
+
+			<searchBaseDn>ou=poste,ou=Reponses</searchBaseDn>
+			<searchFilter>(|(objectClass=poste)(objectClass=groupOfURLs))</searchFilter>
+			<searchScope>subtree</searchScope>
+
+			<readOnly>false</readOnly>
+
+			<!-- comment <cache* /> tags to disable the cache -->
+			<!-- cache timeout in seconds -->
+			<cacheTimeout>3600</cacheTimeout>
+
+			<!-- maximum number of cached entries before global invalidation -->
+			<cacheMaxSize>1000</cacheMaxSize>
+
+			<creationBaseDn>ou=poste,ou=Reponses</creationBaseDn>
+			<creationClass>top</creationClass>
+			<creationClass>groupOfUniqueNames</creationClass>
+			<creationClass>poste</creationClass>
+
+			<rdnAttribute>cn</rdnAttribute>
+			<fieldMapping name="groupName">cn</fieldMapping>
+			<fieldMapping name="fullPath">dn</fieldMapping>
+			<fieldMapping name="dateDebut">dateDebut</fieldMapping>
+			<fieldMapping name="dateFin">dateFin</fieldMapping>
+			<fieldMapping name="lockDate">lockDate</fieldMapping>
+			<fieldMapping name="lockUserName">lockUserName</fieldMapping>
+
+			<references>
+
+
+				<!-- LDAP reference resolve DNs embedded in uniqueMember attributes If 
+					the target directory has no specific filtering policy, it is most of the 
+					time not necessary to enable the 'forceDnConsistencyCheck' policy. Enabling 
+					this option will fetch each reference entry to ensure its existence in the 
+					target directory. -->
+
+				<ldapReference field="members" directory="userLdapDirectory"
+					forceDnConsistencyCheck="false" staticAttributeId="uniqueMember" />
+
+				<inverseReference field="parentUnitesStructurelles"
+					directory="uniteStructurelleDirectory" dualReferenceField="subPostes" />
+
+			</references>
+		</directory>
+
+
+	</extension>
+</component>

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.suivi.widget.listing">
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgettypes">
+		<widgetType name="requete_experte_listing_title_link">
+			<documentation>
+				This widget type displays a link to navigate to a dossier object from a
+				question object
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/requete_experte_listing_title_link_widget_template.xhtml
+			</property>
+		</widgetType>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+		<widget name="requeteExperteTitre" type="requete_experte_listing_title_link">
+			<labels>
+				<label mode="any">label.suivi.listing.requeteExperteTitre</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+		</widget>
+		<widget name="requeteExperteDescription" type="text">
+			<labels>
+				<label mode="any">label.suivi.listing.requeteExperteDescription</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.dublincore.description</field>
+			</fields>
+		</widget>
+		<widget name="requeteExperteAlertLink" type="template">
+			<labels>
+				<label mode="any">label.suivi.listing.requeteExperteAlertLink</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="template">
+					/widgets/listing/requete_experte_listing_alert_link_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+		<widget name="deleteRequete" type="template">
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="template">
+					/widgets/listing/delete_requete_listing_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="editRequeteExperte" type="template">
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="template">
+					/widgets/listing/edit_requete_listing_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+		<widget name="publishRequeteLink" type="template">
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties mode="any">
+				<property name="template">
+					/widgets/listing/publish_requete_listing_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="actionsRequeteLink" type="template">
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+				<field>data.id</field>
+			</fields>
+			<properties mode="any">
+				<property name="template">
+					/widgets/listing/saved_requete_actions_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+	</extension>
+</component>

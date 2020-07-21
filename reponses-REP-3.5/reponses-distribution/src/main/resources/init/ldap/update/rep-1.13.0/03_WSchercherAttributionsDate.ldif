@@ -1,0 +1,17 @@
+dn: cn=WsChercherAttributionsDate,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+changetype: add
+objectClass: top
+objectClass: groupOfUniqueNames
+description: Webservice - chercherAttributionsDate 
+uniqueMember: cn=emptyRef
+cn: WsChercherAttributionsDate
+
+dn: cn=Webservices Parlementaires,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: cn=WsChercherAttributionsDate,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Webservices Ministériels,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: cn=WsChercherAttributionsDate,ou=fonctions,ou=Reponses,dc=dila,dc=fr

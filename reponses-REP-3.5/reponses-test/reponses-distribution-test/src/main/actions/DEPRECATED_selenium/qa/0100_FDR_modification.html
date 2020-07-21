@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>New Test</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">New Test</td>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!--1 - -Pour attribution agents BDC-->
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection dossier -->
+			<tr>
+				<td>assertTextPresent</td>
+				<td>bdc</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour attribution (17)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Page suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314162</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>//form[@id='related_route_elements']/div/table[@class=&quot;dataOutput&quot;]/tbody/tr[2]/td[2]/a/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Déplacer vers le bas</td>
+				<td></td>
+			</tr>
+			<!--Vérification des actions possibles-->
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Ajouter après</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Ajouter avant</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Supprimer</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Déplacer vers le bas</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Déplacer vers le haut</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Modifier</td>
+				<td></td>
+			</tr>
+			<!--Suppression 2 eme étape-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Supprimer</td>
+				<td></td>
+			</tr>
+			<!--Suppression 2 eme étape-->
+			<tr>
+				<td>click</td>
+				<td>//form[@id='related_route_elements']/div/table[@class=&quot;dataOutput&quot;]/tbody/tr[2]/td[2]/a/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Supprimer</td>
+				<td></td>
+			</tr>
+			<!--Vérification suppression-->
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>Pour attribution Agents DGEFP</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>Pour rédaction DLF</td>
+				<td></td>
+			</tr>
+			<!--Insertion nouvelle étape-->
+			<tr>
+				<td>click</td>
+				<td>//form[@id='related_route_elements']/div/table[@class=&quot;dataOutput&quot;]/tbody/tr[2]/td[2]/a/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter avant</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Ajouter avant</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>document_create:nxl_routing_task_detail:routing_task_type</td>
+				<td>label=Pour attribution</td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_findButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- Déploiement Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6::min:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Déploiement DGI-DLF dans Min. Economie, industrie et emploi -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:14::us:handle:img:collapsed</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<!-- Sélection poste DLF dans Min. Economie, industrie et emploi/DGI-DLF -->
+			<tr>
+				<td>click</td>
+				<td>document_create:nxl_routing_task_detail:nxw_routing_task_distribution_mailbox_tree:node:0:node:6:node:14:node:0::nxw_routing_task_distribution_mailbox_add_min</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForA4jRequest</td>
+				<td>30000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>document_create:button_create</td>
+				<td></td>
+			</tr>
+			<!--Vérification insertion-->
+			<!--Vérification description-->
+			<!--Déplacement 2ème étape vers le bas-->
+			<tr>
+				<td>click</td>
+				<td>//form[@id='related_route_elements']/div/table[@class=&quot;dataOutput&quot;]/tbody/tr[2]/td[2]/a/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter avant</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Déplacer vers le bas</td>
+				<td></td>
+			</tr>
+			<!--Vérification déplacement-->
+			<!--Test navigation : Annulation de la création d'une étape-->
+			<tr>
+				<td>click</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='ADD_STEP_AFTER']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Ajouter une étape</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Annuler&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>QE N°</td>
+				<td></td>
+			</tr>
+			<!--Test navigation : Modification d'une étape-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='UPDATE_STEP']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Modifier</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Enregistrer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>QE N°</td>
+				<td></td>
+			</tr>
+			<!--Test navigation : Annulation de la modification d'une étape-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//table[@class='dataOutput']/tbody/tr[last()]//a[@class='UPDATE_STEP']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Modifier</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Annuler&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>QE N°</td>
+				<td></td>
+			</tr>
+			<!--Déverrouille la feuille de route-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Déverrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

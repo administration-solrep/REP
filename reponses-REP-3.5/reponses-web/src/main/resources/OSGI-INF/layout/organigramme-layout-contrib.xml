@@ -1,0 +1,872 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les layouts + widgets nécessaires à la gestion 
+	de l'organigramme. -->
+
+<component name="fr.dila.solonepg.web.layout.organigramme">
+	<require>org.nuxeo.ecm.platform.forms.layouts.webapp.base</require>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<!-- Administration des gouvernements -->
+		<layout name="gouvernement">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>label</widget>
+				</row>
+				<row>
+					<widget>startDate</widget>
+				</row>
+				<row>
+					<widget>endDate</widget>
+				</row>
+			</rows>
+			<widget name="label" type="text">
+				<labels>
+					<label mode="any">organigramme.gvt.libelle</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>label</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="startDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.startDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateDebut</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="required">true</property>
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+					<property name="validator">#{organigrammeManagerActions.validateStartDate}</property>
+				</properties>
+			</widget>
+			<widget name="endDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.endDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateFin</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+				</properties>
+			</widget>
+		</layout>
+
+
+		<!-- Administration des entités -->
+		<layout name="entite">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>id</widget>
+				</row>
+				<row>
+					<widget>label</widget>
+				</row>
+				<row>
+					<widget>edition</widget>
+				</row>
+				<row>
+					<widget>startDate</widget>
+				</row>
+				<row>
+					<widget>endDate</widget>
+				</row>
+				<row>
+					<widget>gouvernement</widget>
+				</row>
+				<row>
+					<widget>ordre_protocolaire</widget>
+				</row>
+				<row>
+					<widget>formule_entete</widget>
+				</row>
+				<row>
+					<widget>membre_gouvernement_civilite</widget>
+				</row>
+				<row>
+					<widget>membre_gouvernement_prenom</widget>
+				</row>
+				<row>
+					<widget>membre_gouvernement_nom</widget>
+				</row>
+			</rows>
+			<widget name="id" type="text">
+				<labels>
+					<label mode="any">organigramme.identifiant</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>id</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="styleClass">dataInputText</property>
+					<property name="disabled">true</property>
+				</properties>
+			</widget>
+			<widget name="label" type="text">
+				<labels>
+					<label mode="any">organigramme.appellation</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>label</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="edition" type="text">
+				<labels>
+					<label mode="any">organigramme.edition</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>edition</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="startDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.startDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateDebut</field>
+				</fields>
+				<!-- <widgetModes> -->
+				<!-- <mode value="any">view</mode> -->
+				<!-- </widgetModes> -->
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+				</properties>
+
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+
+			</widget>
+			<widget name="endDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.endDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateFin</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">view</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+				</properties>
+			</widget>
+			<widget name="gouvernement" type="template">
+				<labels>
+					<label mode="any">organigramme.gouvernement</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>parentId</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">view</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="template">
+						/widgets/organigramme_select_node_widget.xhtml
+					</property>
+					<property name="organigrammeSelectionMode">
+						LIST
+					</property>
+					<property name="organigrammeSelectionType">
+						GVT_TYPE
+					</property>
+				</properties>
+			</widget>
+			<widget name="ordre_protocolaire" type="int">
+				<labels>
+					<label mode="any">organigramme.ordre</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>ordre</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+				</properties>
+			</widget>
+			<widget name="formule_entete" type="textarea">
+				<labels>
+					<label mode="any">organigramme.formule</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>formule</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+				</properties>
+			</widget>
+			<widget name="membre_gouvernement_civilite" type="selectOneRadio">
+				<labels>
+					<label mode="any">organigramme.membreGouvernement.civilite</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>membreGouvernementCivilite</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+				</properties>
+				<properties widgetMode="any">
+					<property name="directoryName">title</property>
+				</properties>
+			</widget>
+
+			<widget name="membre_gouvernement_prenom" type="text">
+				<labels>
+					<label mode="any">organigramme.membreGouvernement.prenom</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>membreGouvernementPrenom</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="styleClass">dataInputText</property>
+					<property name="required">true</property>
+				</properties>
+			</widget>
+			<widget name="membre_gouvernement_nom" type="text">
+				<labels>
+					<label mode="any">organigramme.membreGouvernement.nom</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>membreGouvernementNom</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="styleClass">dataInputText</property>
+					<property name="required">true</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<!-- Administration des postes -->
+		<layout name="poste">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>label</widget>
+				</row>
+				<row>
+					<widget>superviseur_sgg</widget>
+				</row>
+				<row>
+					<widget>charge_mission_sgg</widget>
+				</row>
+				<row>
+					<widget>poste_bdc</widget>
+				</row>
+				<row>
+					<widget>startDate</widget>
+				</row>
+				<row>
+					<widget>endDate</widget>
+				</row>
+				<row>
+					<widget>unites_structurelles_parentes</widget>
+				</row>
+			</rows>
+			<widget name="label" type="text">
+				<labels>
+					<label mode="any">organigramme.poste.libelle</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>label</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="superviseur_sgg" type="selectOneRadio">
+				<labels>
+					<label mode="any">organigramme.poste.superviseurSGG</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>superviseurSGG</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="directoryName">boolean_voc</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+				<widgetModes>
+					<mode value="any">#{nxu:test(documentManager.principal.isMemberOf("SuperviseurSGGUpdater"),'edit','hidden')}</mode>
+				</widgetModes>
+			</widget>
+			<widget name="charge_mission_sgg" type="selectOneRadio">
+				<labels>
+					<label mode="any">organigramme.poste.chargeMissionSGG</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>chargeMissionSGG</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="directoryName">boolean_voc</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="poste_bdc" type="selectOneRadio">
+				<labels>
+					<label mode="any">organigramme.poste.posteBdc</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>posteBdc</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="directoryName">boolean_voc</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="startDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.startDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateDebut</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">view</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+				</properties>
+			</widget>
+			<widget name="endDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.endDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateFin</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">view</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+				</properties>
+			</widget>
+			<widget name="unites_structurelles_parentes" type="template">
+				<labels>
+					<label mode="any">organigramme.poste.unitesStructurellesParentes</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>parentUnitIds</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="template">
+						/widgets/organigramme_select_node_widget.xhtml
+					</property>
+					<property name="organigrammeSelectionMode">
+						LIST
+					</property>
+					<property name="organigrammeSelectionType">
+						DIR_AND_UST_TYPE
+					</property>
+					<property name="required">true</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<!-- Administration des postes webservice -->
+		<layout name="postews">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>label</widget>
+				</row>
+				<row>
+					<widget>wsUrl</widget>
+				</row>
+				<row>
+					<widget>wsUser</widget>
+				</row>
+				<row>
+					<widget>wsPassword</widget>
+				</row>
+				<row>
+					<widget>wsKeyAlias</widget>
+				</row>
+				<row>
+					<widget>startDate</widget>
+				</row>
+				<row>
+					<widget>endDate</widget>
+				</row>
+				<row>
+					<widget>entites_parentes</widget>
+				</row>
+			</rows>
+			<widget name="label" type="text">
+				<labels>
+					<label mode="any">organigramme.poste.libelle</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>label</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="wsUrl" type="text">
+				<labels>
+					<label mode="any">organigramme.postews.url</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>wsUrl</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="wsUser" type="text">
+				<labels>
+					<label mode="any">organigramme.postews.user</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>wsUser</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="wsPassword" type="text">
+				<labels>
+					<label mode="any">organigramme.postews.password</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>wsPassword</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="wsKeyAlias" type="text">
+				<labels>
+					<label mode="any">organigramme.postews.keyAlias</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>wsKeyAlias</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="startDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.startDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateDebut</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">view</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+				</properties>
+			</widget>
+			<widget name="endDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.endDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateFin</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">view</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+				</properties>
+			</widget>
+			<widget name="entites_parentes" type="template">
+				<labels>
+					<label mode="any">organigramme.ust.entitesParentes</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>parentEntiteIds</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+					<property name="organigrammeSelectionMode">LIST</property>
+					<property name="organigrammeSelectionType">MIN_TYPE</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<!-- Administration des unités structurelles -->
+		<layout name="unite_structurelle">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>type</widget>
+				</row>
+				<row>
+					<widget>label</widget>
+				</row>
+				<row>
+					<widget>startDate</widget>
+				</row>
+				<row>
+					<widget>endDate</widget>
+				</row>
+				<row>
+					<widget>entites_parentes</widget>
+				</row>
+				<row>
+					<widget>unites_structurelles_parentes</widget>
+				</row>
+			</rows>
+			<widget name="type" type="selectOneRadio">
+				<labels>
+					<label mode="any">organigramme.ust.type</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>typeValue</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="directoryName">type_unite_structurelle</property>
+					<property name="required">true</property>
+				</properties>
+			</widget>
+			<widget name="label" type="text">
+				<labels>
+					<label mode="any">organigramme.ust.libelle</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>label</field>
+				</fields>
+				<widgetModes>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="required">true</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+			<widget name="startDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.startDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateDebut</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">view</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+				</properties>
+			</widget>
+			<widget name="endDate" type="datetime">
+				<labels>
+					<label mode="any">organigramme.endDate</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dateFin</field>
+				</fields>
+				<widgetModes>
+					<mode value="any">view</mode>
+				</widgetModes>
+				<properties widgetMode="any">
+					<property name="pattern">dd/MM/yyyy</property>
+					<property name="format">dd/MM/yyyy</property>
+				</properties>
+			</widget>
+			<widget name="unites_structurelles_parentes" type="template">
+				<labels>
+					<label mode="any">organigramme.ust.unitesStructurellesParentes</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>parentUnitIds</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="template">
+						/widgets/organigramme_select_node_widget.xhtml
+					</property>
+					<property name="organigrammeSelectionMode">
+						LIST
+					</property>
+					<property name="organigrammeSelectionType">
+						DIR_AND_UST_TYPE
+					</property>
+				</properties>
+			</widget>
+			<widget name="entites_parentes" type="template">
+				<labels>
+					<label mode="any">organigramme.ust.entitesParentes</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>parentEntiteIds</field>
+				</fields>
+				<properties widgetMode="any">
+					<property name="template">
+						/widgets/organigramme_select_node_widget.xhtml
+					</property>
+					<property name="organigrammeSelectionMode">
+						LIST
+					</property>
+					<property name="organigrammeSelectionType">
+						MIN_TYPE
+					</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<layout name="ministere_rattachement">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>rattachementMinistere</widget>
+				</row>
+			</rows>
+
+			<widget name="rattachementMinistere" type="template">
+				<labels>
+					<label mode="any">label.ministere.rattachement</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>selectedMinForRattachement</field>
+				</fields>
+
+				<properties widgetMode="any">
+					<property name="template">
+						/widgets/organigramme_select_node_widget.xhtml
+					</property>
+					<property name="organigrammeSelectionType">MIN_TYPE</property>
+					<property name="organigrammeSelectionMode">SINGLE</property>
+				</properties>
+			</widget>
+		</layout>
+
+
+		<layout name="direction_pilote">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>directionPilote</widget>
+				</row>
+			</rows>
+
+			<widget name="directionPilote" type="template">
+				<labels>
+					<label mode="any">label.direction.pilote</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>selectedDirectionPilote</field>
+				</fields>
+
+				<properties widgetMode="any">
+					<property name="template">
+						/widgets/organigramme_select_node_widget.xhtml
+					</property>
+					<property name="organigrammeSelectionType">DIR_TYPE</property>
+					<property name="organigrammeSelectionMode">SINGLE</property>
+				</properties>
+			</widget>
+		</layout>
+
+
+		<layout name="ministere_reattribution">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>reattributionMinistere</widget>
+				</row>
+			</rows>
+
+			<widget name="reattributionMinistere" type="template">
+				<labels>
+					<label mode="any">label.ministere.reattribution</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>selectedMinForReattribution</field>
+				</fields>
+
+				<properties widgetMode="any">
+					<property name="template">
+						/widgets/organigramme_select_node_widget.xhtml
+					</property>
+					<property name="organigrammeSelectionType">MIN_TYPE</property>
+					<property name="organigrammeSelectionMode">SINGLE</property>
+				</properties>
+			</widget>
+		</layout>
+
+
+
+		<layout name="reattribution_layout">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>reattribution_ministere</widget>
+				</row>
+				<row>
+					<widget>reattribution_observations</widget>
+				</row>
+			</rows>
+
+			<widget name="reattribution_ministere" type="template">
+				<labels>
+					<label mode="any">label.ministere.reattribution</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>reattributionMinistere</field>
+				</fields>
+
+				<properties widgetMode="any">
+					<property name="template">
+						/widgets/organigramme_select_node_widget.xhtml
+					</property>
+					<property name="organigrammeSelectionType">MIN_TYPE</property>
+					<property name="organigrammeSelectionMode">SINGLE</property>
+				</properties>
+			</widget>
+
+			<widget name="reattribution_observations" type="textarea">
+				<labels>
+					<label mode="any">label.observations.arbitrage</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>reattributionObservations</field>
+				</fields>
+			</widget>
+		</layout>
+
+
+		<layout name="choose_poste">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>selectPoste</widget>
+				</row>
+			</rows>
+
+			<widget name="selectPoste" type="template">
+				<labels>
+					<label mode="any">user.postes</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>selectedPoste</field>
+				</fields>
+
+				<properties widgetMode="any">
+					<property name="template">
+						/widgets/organigramme_select_node_widget.xhtml
+					</property>
+					<property name="organigrammeSelectionType">MAILBOX_TYPE</property>
+					<property name="organigrammeSelectionMode">SINGLE</property>
+					<property name="organigrammeActivatePosteFilter">true</property>
+				</properties>
+			</widget>
+		</layout>
+
+	</extension>
+</component>
+      

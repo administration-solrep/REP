@@ -1,0 +1,166 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<c:if test="false">
+   Template rendering a content view defined on a document
+  
+   Parameters:
+   - contentViewName: the content view name, mandatory
+   - contentViewId: a marker to generate unique ids
+     when iterating over a list of content views, optional
+     when only one content view is displayed in the page.
+   - contentViewDocument
+   - contentViewSortInfos
+   - selectedResultLayoutColumns: list of result layout columns selected
+   - contentViewUnit : unité à utiliser pour afficher le compte d'éléments (dossier par défaut)
+  </c:if>
+
+	<nxu:set var="contentViewUnitSingle"
+		value="#{nxu:test(contentViewUnitSingle == null, 'dossier', contentViewUnitSingle)}"
+		cache="true">
+		<nxu:set var="contentViewUnit"
+			value="#{nxu:test(contentViewUnit == null, 'dossiers', contentViewUnit)}"
+			cache="true">
+			<nxu:set var="contentView"
+				value="#{contentViewActions.getContentViewWithProvider(contentViewName, contentViewDocument, nxu:test(empty contentViewSortInfos, null, contentViewSortInfos), -1, -1)}"
+				cache="true">
+				<nxu:set var="selectedResultLayoutColumns"
+					value="#{nxu:test(selectedResultLayoutColumns == null, contentView.resultLayoutColumns, selectedResultLayoutColumns)}"
+					cache="true">
+					<c:if test="#{contentView != null}">
+						<a4j:region id="contentViewAjaxRegion_#{contentViewId}">
+							<ui:insert name="content_view_header_before_selector">
+								<c:if test="#{!empty title}">
+									<div class="action_bar">
+										<h3>
+											<c:if test="#{!empty contentView.iconPath}">
+												<nxu:graphicImage value="#{contentView.iconPath}"
+													title="#{title}" />
+											</c:if>
+											#{title}
+										</h3>
+									</div>
+								</c:if>
+							</ui:insert>
+							<ui:insert name="content_view_selector">
+								<div style="width: 100%; height: 15px;">
+									<ui:include
+										src="/incl/content_view_result_layout_selector.xhtml" />
+									<div style="clear: both;" />
+								</div>
+							</ui:insert>
+
+							<ui:insert name="content_view_pre_area" />
+
+							<nxu:set var="provider"
+								value="#{contentView.currentPageProvider}" cache="true">
+            #{provider.setSelectedEntries(documentsListsManager.getWorkingList(contentView.selectionListName))}
+            
+            <!-- Barre d'actions en haut de la content view -->
+								<ui:insert name="content_view_actions" />
+
+								<c:set var="title"
+									value="#{nxu:test(contentView.translateTitle, messages[contentView.title], contentView.title)}" />
+
+
+								<ui:decorate template="/incl/documents_layout_table.xhtml">
+									<ui:param name="documents"
+										value="#{provider.currentSelectPage}" />
+									<ui:param name="listName"
+										value="#{contentView.selectionListName}" />
+									<ui:param name="layoutName"
+										value="#{contentView.currentResultLayout.name}" />
+
+									<ui:define name="error_message">
+										<c:if test="#{provider.hasError()}">
+											<h:outputText value="#{messages['error.provider.for.user']}" />
+										</c:if>
+									</ui:define>
+									<ui:define name="buttons">
+										<c:if test="#{(documents.rowCount != 0)}">
+											<a4j:outputPanel id="ajax_selection_buttons"
+												ajaxRendered="false">
+												<div id="selection_buttons">
+													<table style="width: 100%">
+														<tbody>
+															<tr>
+																<td><span
+																	style="color: #757575; font-size: 13px; font-weight: bold;">
+																</span></td>
+																<td><c:forEach var="actionCategory"
+																		items="#{contentView.actionsCategories}"
+																		varStatus="status">
+																		<nxu:set var="actions"
+																			value="#{webActions.getUnfiltredActionsList(actionCategory)}"
+																			cache="true">
+																			<nxu:dataList var="sel_action" value="#{actions}"
+																				id="clipboardActionsTable_#{contentViewId}_#{status.index}">
+																				<span id="#{sel_action.id}"> <nxh:commandButton
+																						styleClass="button"
+																						action="#{sel_action.getLink()}"
+																						value="#{messages[sel_action.label]}"
+																						onclick="#{sel_action.confirm}"
+																						disabled="#{!sel_action.available}"
+																						id="clipboardActionsButton"
+																						rendered="#{sel_action.available}" />
+																				</span>
+																			</nxu:dataList>
+																		</nxu:set>
+																		<br />
+																	</c:forEach></td>
+																<td align="right" width="20%"><ui:include
+																		src="/pagination/pageNavigationControls.xhtml" /></td>
+																<td rowSpan="#{contentView.actionsCategories.size}"
+																	valign="middle"><a4j:status>
+																		<f:facet name="start">
+																			<h:graphicImage value="/img/standart_waiter.gif" />
+																		</f:facet>
+																	</a4j:status></td>
+															</tr>
+														</tbody>
+													</table>
+
+												</div>
+											</a4j:outputPanel>
+										</c:if>
+									</ui:define>
+								</ui:decorate>
+								<ui:insert name="content_view_header_before_selector">
+									<c:if test="#{!empty title}">
+										<div class="action_bar">
+											<h3>
+												<c:if test="#{!empty contentView.iconPath}">
+													<nxu:graphicImage value="#{contentView.iconPath}"
+														title="#{title}" />
+												</c:if>
+												#{title}
+											</h3>
+										</div>
+									</c:if>
+								</ui:insert>
+
+								<ui:insert name="content_view_header_after_selector">
+									<c:if test="#{!empty title}">
+										<h3>
+											<c:if test="#{!empty contentView.iconPath}">
+												<nxu:graphicImage value="#{contentView.iconPath}"
+													title="#{title}" />
+											</c:if>
+											#{title}
+										</h3>
+									</c:if>
+								</ui:insert>
+							</nxu:set>
+						</a4j:region>
+					</c:if>
+				</nxu:set>
+			</nxu:set>
+		</nxu:set>
+	</nxu:set>
+</div>

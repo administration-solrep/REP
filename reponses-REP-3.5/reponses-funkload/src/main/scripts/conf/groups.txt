@@ -1,0 +1,33 @@
+# $Id: groups.txt 52528 2008-01-29 11:21:00Z bdelbosc $
+#
+
+# The nuxeo admin group
+admin:adminsgg
+
+wsinject:ws_dila
+# members group
+
+# agent-bdc-eco:bdc,CPAROLINI,FISAIA,JCHIFFRE,MDALLARD,MQPA, PETCHEVERRY
+# agent-dir-gen-entr-eco:CBISSERIER, DCITRON, ELEDEVEDEC, JBARDOLLET
+# agent-dpaep-eco:CCOURIO, MVILLAIN, SPEIDRO
+
+agent-bdc-agriculture:agriculture_bdc, CKUNTZ, FMIKEL, GCOLMETDAAGE
+agent-sous-dir-org-eco-agriculture:NCOGNARD, VTOUREILLE
+
+agent-dir-budget-budcp:AGIRARDIN, FHUYNH, MBAKER, RCHUA
+
+# groupe-tous:bdc, CPAROLINI, FISAIA, JCHIFFRE, MDALLARD, MQPA, PETCHEVERRY, CBISSERIER, DCITRON, ELEDEVEDEC, JBARDOLLET, CCOURIO, MVILLAIN, SPEIDRO, agriculture_bdc, CKUNTZ, FMIKEL, GCOLMETDAAGE, NCOGNARD, VTOUREILLE, AGIRARDIN, FHUYNH, MBAKER, RCHUA
+
+groupe-tous:agriculture_bdc, dgefp, dlf, ADELETANG, AHEURTIER, ABELLEGUIC, AKURKDJIAN, ASAFFAR, AVANDERVORST, AARNAULT, ADESOUCHES, AKOUTCHOUK, AAMSON, ABASSET, AMBOUCHARD, AMDEBAUW, AMDUFOUR, AGOGNEAU, ANMOREAU, ADESBROSSES, AGODEFRAINT, AGOSSET, ABARTHELEMY, ABEAUMARD, ADELOFFRE, AGIRARDIN, ALAUGA
+
+groupe-bdc:bdc_001,bdc_002,bdc_003,bdc_004,bdc_005,bdc_006,bdc_007,bdc_008,bdc_009,bdc_010,bdc_011,bdc_012,bdc_013,bdc_014,bdc_015,bdc_016,bdc_017,bdc_018,bdc_019,bdc_020,bdc_021,bdc_022,bdc_023,bdc_024,bdc_025,bdc_026,bdc_027,bdc_028,bdc_029,bdc_030,bdc_031,bdc_032,bdc_033,bdc_034,bdc_035,bdc_036,bdc_037,bdc_038,bdc_039,bdc_040,bdc_041,bdc_042,bdc_043,bdc_044,bdc_045,bdc_046,bdc_047,bdc_048,bdc_049,bdc_050,bdc_051,bdc_052,bdc_053,bdc_054,bdc_055,bdc_056,bdc_057,bdc_058,bdc_059,bdc_060,bdc_061,bdc_062,bdc_063,bdc_064,bdc_065,bdc_066,bdc_067,bdc_068,bdc_069,bdc_070,bdc_071,bdc_072,bdc_073,bdc_074,bdc_075,bdc_076,bdc_077,bdc_078,bdc_079,bdc_080,bdc_081,bdc_082,bdc_083,bdc_084,bdc_085,bdc_086,bdc_087,bdc_088,bdc_089,bdc_090,bdc_091,bdc_092,bdc_093,bdc_094,bdc_095,bdc_096,bdc_097,bdc_098,bdc_099,bdc_100,bdc_101,bdc_102,bdc_103,bdc_104,bdc_105,bdc_106,bdc_107,bdc_108,bdc_109,bdc_110,bdc_111,bdc_112,bdc_113,bdc_114,bdc_115,bdc_116,bdc_117,bdc_118,bdc_119,bdc_120,bdc_121,bdc_122,bdc_123,bdc_124,bdc_125,bdc_126,bdc_127,bdc_128,bdc_129,bdc_130,bdc_131,bdc_132,bdc_133,bdc_134,bdc_135,bdc_136,bdc_137,bdc_138,bdc_139,bdc_140,bdc_141,bdc_142,bdc_143,bdc_144,bdc_145,bdc_146,bdc_147,bdc_148,bdc_149,bdc_150,bdc_151,bdc_152,bdc_153,bdc_154,bdc_155,bdc_156,bdc_157,bdc_158,bdc_159,bdc_160,bdc_161,bdc_162,bdc_163,bdc_164,bdc_165,bdc_166,bdc_167,bdc_168,bdc_169,bdc_170,bdc_171,bdc_172,bdc_173,bdc_174,bdc_175,bdc_176,bdc_177,bdc_178,bdc_179,bdc_180,bdc_181,bdc_182,bdc_183,bdc_184,bdc_185,bdc_186,bdc_187,bdc_188,bdc_189,bdc_190,bdc_191,bdc_192,bdc_193,bdc_194,bdc_195,bdc_196,bdc_197,bdc_198,bdc_199
+
+#agent-bdc-eco:bdc
+#agent-dgefp:dgefp
+#agent-dlf:dlf
+#agent-sec-gen-eco:secgeneco
+#poste5:toto
+
+groupe-agri:EDUMOND
+
+#groupe-agri:agriculture_bdc000,agriculture_bdc001,agriculture_bdc002,agriculture_bdc003,agriculture_bdc004,agriculture_bdc005,agriculture_bdc006,agriculture_bdc007,agriculture_bdc008,agriculture_bdc009,agriculture_bdc010,agriculture_bdc011,agriculture_bdc012,agriculture_bdc013,agriculture_bdc014,agriculture_bdc015,agriculture_bdc016,agriculture_bdc017,agriculture_bdc018,agriculture_bdc019,agriculture_bdc020,agriculture_bdc021,agriculture_bdc022,agriculture_bdc023,agriculture_bdc024,agriculture_bdc025,agriculture_bdc026,agriculture_bdc027,agriculture_bdc028,agriculture_bdc029,agriculture_bdc030,agriculture_bdc031,agriculture_bdc032,agriculture_bdc033,agriculture_bdc034,agriculture_bdc035,agriculture_bdc036,agriculture_bdc037,agriculture_bdc038,agriculture_bdc039,agriculture_bdc040,agriculture_bdc041,agriculture_bdc042,agriculture_bdc043,agriculture_bdc044,agriculture_bdc045,agriculture_bdc046,agriculture_bdc047,agriculture_bdc048,agriculture_bdc049,agriculture_bdc050,agriculture_bdc051,agriculture_bdc052,agriculture_bdc053,agriculture_bdc054,agriculture_bdc055,agriculture_bdc056,agriculture_bdc057,agriculture_bdc058,agriculture_bdc059,agriculture_bdc060,agriculture_bdc061,agriculture_bdc062,agriculture_bdc063,agriculture_bdc064,agriculture_bdc065,agriculture_bdc066,agriculture_bdc067,agriculture_bdc068,agriculture_bdc069,agriculture_bdc070,agriculture_bdc071,agriculture_bdc072,agriculture_bdc073,agriculture_bdc074,agriculture_bdc075,agriculture_bdc076,agriculture_bdc077,agriculture_bdc078,agriculture_bdc079,agriculture_bdc080,agriculture_bdc081,agriculture_bdc082,agriculture_bdc083,agriculture_bdc084,agriculture_bdc085,agriculture_bdc086,agriculture_bdc087,agriculture_bdc088,agriculture_bdc089,agriculture_bdc090,agriculture_bdc091,agriculture_bdc092,agriculture_bdc093,agriculture_bdc094,agriculture_bdc095,agriculture_bdc096,agriculture_bdc097,agriculture_bdc098,agriculture_bdc099,agriculture_bdc100,agriculture_bdc101,agriculture_bdc102,agriculture_bdc103,agriculture_bdc104,agriculture_bdc105,agriculture_bdc106,agriculture_bdc107,agriculture_bdc108,agriculture_bdc109,agriculture_bdc110,agriculture_bdc111,agriculture_bdc112,agriculture_bdc113,agriculture_bdc114,agriculture_bdc115,agriculture_bdc116,agriculture_bdc117,agriculture_bdc118,agriculture_bdc119,agriculture_bdc120,agriculture_bdc121,agriculture_bdc122,agriculture_bdc123,agriculture_bdc124,agriculture_bdc125,agriculture_bdc126,agriculture_bdc127,agriculture_bdc128,agriculture_bdc129,agriculture_bdc130,agriculture_bdc131,agriculture_bdc132,agriculture_bdc133,agriculture_bdc134,agriculture_bdc135,agriculture_bdc136,agriculture_bdc137,agriculture_bdc138,agriculture_bdc139,agriculture_bdc140,agriculture_bdc141,agriculture_bdc142,agriculture_bdc143,agriculture_bdc144,agriculture_bdc145,agriculture_bdc146,agriculture_bdc147,agriculture_bdc148,agriculture_bdc149,agriculture_bdc150,agriculture_bdc151,agriculture_bdc152,agriculture_bdc153,agriculture_bdc154,agriculture_bdc155,agriculture_bdc156,agriculture_bdc157,agriculture_bdc158,agriculture_bdc159,agriculture_bdc160,agriculture_bdc161,agriculture_bdc162,agriculture_bdc163,agriculture_bdc164,agriculture_bdc165,agriculture_bdc166,agriculture_bdc167,agriculture_bdc168,agriculture_bdc169,agriculture_bdc170,agriculture_bdc171,agriculture_bdc172,agriculture_bdc173,agriculture_bdc174,agriculture_bdc175,agriculture_bdc176,agriculture_bdc177,agriculture_bdc178,agriculture_bdc179,agriculture_bdc180,agriculture_bdc181,agriculture_bdc182,agriculture_bdc183,agriculture_bdc184,agriculture_bdc185,agriculture_bdc186,agriculture_bdc187,agriculture_bdc188,agriculture_bdc189,agriculture_bdc190,agriculture_bdc191,agriculture_bdc192,agriculture_bdc193,agriculture_bdc194,agriculture_bdc195,agriculture_bdc196,agriculture_bdc197,agriculture_bdc198,agriculture_bdc199,

@@ -1,0 +1,3600 @@
+dn: uid=bdc_000,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 000
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_000
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_001,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 001
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_001
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_002,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 002
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_002
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_003,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 003
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_003
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_004,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 004
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_004
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_005,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 005
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_005
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_006,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 006
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_006
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_007,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 007
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_007
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_008,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 008
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_008
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_009,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 009
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_009
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_010,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 010
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_010
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_011,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 011
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_011
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_012,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 012
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_012
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_013,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 013
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_013
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_014,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 014
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_014
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_015,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 015
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_015
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_016,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 016
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_016
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_017,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 017
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_017
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_018,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 018
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_018
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_019,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 019
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_019
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_020,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 020
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_020
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_021,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 021
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_021
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_022,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 022
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_022
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_023,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 023
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_023
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_024,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 024
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_024
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_025,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 025
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_025
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_026,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 026
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_026
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_027,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 027
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_027
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_028,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 028
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_028
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_029,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 029
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_029
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_030,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 030
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_030
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_031,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 031
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_031
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_032,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 032
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_032
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_033,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 033
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_033
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_034,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 034
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_034
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_035,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 035
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_035
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_036,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 036
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_036
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_037,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 037
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_037
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_038,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 038
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_038
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_039,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 039
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_039
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_040,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 040
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_040
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_041,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 041
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_041
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_042,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 042
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_042
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_043,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 043
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_043
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_044,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 044
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_044
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_045,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 045
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_045
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_046,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 046
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_046
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_047,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 047
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_047
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_048,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 048
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_048
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_049,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 049
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_049
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_050,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 050
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_050
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_051,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 051
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_051
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_052,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 052
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_052
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_053,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 053
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_053
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_054,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 054
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_054
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_055,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 055
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_055
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_056,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 056
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_056
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_057,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 057
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_057
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_058,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 058
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_058
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_059,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 059
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_059
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_060,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 060
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_060
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_061,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 061
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_061
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_062,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 062
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_062
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_063,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 063
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_063
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_064,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 064
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_064
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_065,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 065
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_065
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_066,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 066
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_066
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_067,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 067
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_067
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_068,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 068
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_068
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_069,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 069
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_069
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_070,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 070
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_070
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_071,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 071
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_071
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_072,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 072
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_072
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_073,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 073
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_073
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_074,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 074
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_074
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_075,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 075
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_075
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_076,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 076
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_076
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_077,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 077
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_077
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_078,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 078
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_078
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_079,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 079
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_079
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_080,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 080
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_080
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_081,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 081
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_081
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_082,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 082
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_082
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_083,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 083
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_083
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_084,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 084
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_084
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_085,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 085
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_085
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_086,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 086
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_086
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_087,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 087
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_087
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_088,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 088
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_088
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_089,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 089
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_089
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_090,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 090
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_090
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_091,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 091
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_091
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_092,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 092
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_092
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_093,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 093
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_093
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_094,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 094
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_094
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_095,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 095
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_095
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_096,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 096
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_096
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_097,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 097
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_097
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_098,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 098
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_098
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_099,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 099
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_099
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_100,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 100
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_100
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_101,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 101
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_101
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_102,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 102
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_102
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_103,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 103
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_103
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_104,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 104
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_104
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_105,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 105
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_105
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_106,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 106
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_106
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_107,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 107
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_107
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_108,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 108
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_108
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_109,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 109
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_109
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_110,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 110
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_110
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_111,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 111
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_111
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_112,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 112
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_112
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_113,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 113
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_113
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_114,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 114
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_114
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_115,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 115
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_115
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_116,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 116
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_116
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_117,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 117
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_117
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_118,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 118
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_118
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_119,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 119
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_119
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_120,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 120
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_120
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_121,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 121
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_121
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_122,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 122
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_122
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_123,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 123
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_123
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_124,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 124
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_124
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_125,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 125
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_125
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_126,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 126
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_126
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_127,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 127
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_127
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_128,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 128
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_128
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_129,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 129
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_129
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_130,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 130
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_130
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_131,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 131
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_131
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_132,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 132
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_132
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_133,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 133
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_133
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_134,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 134
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_134
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_135,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 135
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_135
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_136,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 136
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_136
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_137,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 137
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_137
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_138,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 138
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_138
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_139,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 139
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_139
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_140,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 140
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_140
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_141,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 141
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_141
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_142,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 142
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_142
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_143,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 143
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_143
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_144,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 144
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_144
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_145,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 145
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_145
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_146,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 146
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_146
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_147,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 147
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_147
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_148,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 148
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_148
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_149,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 149
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_149
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_150,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 150
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_150
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_151,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 151
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_151
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_152,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 152
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_152
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_153,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 153
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_153
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_154,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 154
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_154
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_155,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 155
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_155
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_156,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 156
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_156
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_157,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 157
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_157
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_158,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 158
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_158
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_159,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 159
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_159
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_160,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 160
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_160
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_161,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 161
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_161
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_162,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 162
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_162
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_163,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 163
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_163
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_164,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 164
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_164
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_165,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 165
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_165
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_166,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 166
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_166
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_167,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 167
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_167
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_168,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 168
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_168
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_169,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 169
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_169
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_170,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 170
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_170
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_171,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 171
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_171
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_172,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 172
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_172
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_173,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 173
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_173
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_174,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 174
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_174
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_175,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 175
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_175
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_176,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 176
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_176
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_177,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 177
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_177
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_178,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 178
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_178
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_179,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 179
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_179
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_180,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 180
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_180
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_181,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 181
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_181
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_182,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 182
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_182
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_183,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 183
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_183
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_184,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 184
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_184
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_185,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 185
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_185
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_186,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 186
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_186
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_187,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 187
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_187
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_188,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 188
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_188
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_189,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 189
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_189
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_190,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 190
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_190
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_191,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 191
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_191
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_192,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 192
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_192
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_193,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 193
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_193
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_194,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 194
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_194
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_195,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 195
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_195
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_196,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 196
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_196
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_197,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 197
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_197
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_198,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 198
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_198
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+
+dn: uid=bdc_199,ou=people,ou=Reponses,dc=dila,dc=fr
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: personne
+cn:: IA==
+dateDebut: 20101215230000Z
+occasional: FALSE
+sn: Bdc 199
+deleted: FALSE
+temporary: FALSE
+dateLastConnection: 20110525230000Z
+mail: bdc@dila.fr
+uid: bdc_199
+userPassword:: e1NTSEF9dUw3Vncvb0VhSXJtMnRJYmxmbjQ5dW1xbS9ldVdnNU9zLzhqQVE9P
+ Q==
+

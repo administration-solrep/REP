@@ -1,0 +1,153 @@
+<div xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<h:form id="document_properties" enctype="multipart/form-data">
+		<a4j:region id="dcViewRegion">
+			<a4j:outputPanel id="documentViewPanel">
+				<a4j:queue requestDelay="0" sizeExceededBehavior="dropNew" size="50"
+					id="allotissementViewDossierQueue"
+					name="allotissementViewDossierQueue" timeout="60000" />
+				<div class="action_bar nofloat">
+					<nxu:set var="actions"
+						value="#{webActions.getActionsList('CASE_ACTION_UPPER_LIST_HREF')}"
+						cache="true">
+						<f:subview rendered="#{!empty actions}">
+							<nxu:dataList layout="unorderedList" var="action"
+								value="#{actions}">
+								<a href="#{action.getLink()}"> <h:graphicImage
+										value="#{action.icon}" /> <h:outputText
+										value="#{messages[action.label]}" />
+								</a>
+							</nxu:dataList>
+						</f:subview>
+					</nxu:set>
+					<nxu:set var="actions"
+						value="#{webActions.getActionsList('CASE_ACTION_UPPER_LIST')}"
+						cache="true">
+						<f:subview rendered="#{!empty actions}">
+							<nxu:dataList layout="unorderedList" var="action"
+								value="#{actions}">
+								<nxh:commandLink action="#{action.getLink()}"
+									id="caseActionUpperListLink">
+									<h:outputText value="#{messages[action.label]}" />
+								</nxh:commandLink>
+							</nxu:dataList>
+						</f:subview>
+					</nxu:set>
+				</div>
+				<div style="clear: both;"></div>
+
+				<div class="foldableBox">
+					<h3 class="folded">
+						<a href="#nologo" onclick="return toggleBox(this)"> <h:outputText
+								value="Allotissement : #{allotissementsActions.getCurrentQuestion()}" />
+						</a>
+					</h3>
+					<div class="boxBody">
+						<h:dataTable id="table_dc" var="object"
+							value="#{allotissementsActions.getListQuestionsAllotis()}"
+							styleClass="dataOutput" columnClasses="iconColumn">
+							<h:column>
+								<f:facet name="header">
+									<h:selectBooleanCheckbox id="#{object[1]}_header"
+										title="#{messages['tooltip.content.select.all']}">
+										<a4j:support event="onclick"
+											eventsQueue="allotissementViewDossierQueue"
+											action="#{allotissementsActions.checkAllBox()}"
+											onclick="javascript:handleAllCheckBoxes('document_properties:table_dc', this.checked)"
+											reRender="dcViewRegion" render="false" />
+									</h:selectBooleanCheckbox>
+								</f:facet>
+								<h:selectBooleanCheckbox id="check_#{object[1]}">
+									<a4j:support id="checka4j_#{object[1]}" event="onchange"
+										eventsQueue="allotissementViewDossierQueue"
+										action="#{allotissementsActions.checkBox(object[1])}"
+										reRender="dcViewRegion" />
+								</h:selectBooleanCheckbox>
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText
+										value="#{messages['dossier.connexe.num.dossier']}" />
+								</f:facet>
+								<h:outputText value="#{object[2]}" />
+								<h:outputText value=" * "
+									rendered="#{allotissementsActions.isDossierDirecteur(object[2])}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="#{messages['dossier.connexe.auteur']}" />
+								</f:facet>
+								<h:outputText value="#{object[3]}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="#{messages['dossier.connexe.etat']}" />
+								</f:facet>
+								<h:outputText value="#{object[4]}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText
+										value="#{messages['dossier.connexe.indexation.principale']}" />
+								</f:facet>
+								<h:outputText value="#{object[5]}" />
+							</h:column>
+						</h:dataTable>
+						<c:if
+							test="#{allotissementsActions.isQuestionsAllotis() and dossierDistributionActions.canUpdateAllotissement()}">
+							<a4j:commandButton styleClass="button" id="button_remove_lot"
+								value="#{messages['command.allotissement.remove']}"
+								action="#{allotissementsActions.removeFromLot()}"
+								eventsQueue="allotissementViewDossierQueue"
+								oncomplete="Richfaces.hideModalPanel('busy')"
+								onclick="Richfaces.showModalPanel('busy')" />
+							<br />
+							<br />
+							<h:inputText value="#{allotissementsActions.questionSearch}"
+								size="20" id="questionTitreInput" />
+							<nxh:commandButton styleClass="button" id="button_add_lot"
+								value="#{messages['command.allotissement.update']}"
+								action="#{allotissementsActions.addToLot()}" />
+						</c:if>
+					</div>
+				</div>
+			</a4j:outputPanel>
+		</a4j:region>
+	</h:form>
+	<rich:modalPanel id="busy" width="200">
+		<div>
+			<f:facet name="header">
+				<h:outputText value="Désallotissement en cours" />
+			</f:facet>
+		</div>
+		<table style="height: 80px; width: 100%">
+			<tr>
+				<td><br /></td>
+			</tr>
+			<tr>
+				<td><br /></td>
+			</tr>
+			<tr>
+				<td>
+					<div>
+						<h:graphicImage value="/img/standart_waiter.gif" />
+						<h:outputText
+							value="Veuillez patienter pendant le désallotissement des questions" />
+						<br />
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><br /></td>
+			</tr>
+		</table>
+	</rich:modalPanel>
+</div>

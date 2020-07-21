@@ -1,0 +1,2601 @@
+dn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_000,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_000,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_000,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_001,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_001,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_001,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_002,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_002,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_002,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_003,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_003,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_003,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_004,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_004,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_004,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_005,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_005,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_005,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_006,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_006,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_006,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_007,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_007,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_007,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_008,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_008,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_008,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_009,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_009,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_009,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_010,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_010,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_010,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_011,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_011,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_011,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_012,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_012,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_012,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_013,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_013,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_013,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_014,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_014,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_014,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_015,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_015,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_015,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_016,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_016,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_016,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_017,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_017,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_017,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_018,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_018,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_018,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_019,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_019,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_019,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_020,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_020,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_020,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_021,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_021,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_021,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_022,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_022,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_022,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_023,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_023,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_023,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_024,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_024,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_024,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_025,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_025,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_025,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_026,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_026,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_026,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_027,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_027,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_027,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_028,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_028,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_028,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_029,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_029,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_029,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_030,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_030,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_030,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_031,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_031,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_031,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_032,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_032,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_032,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_033,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_033,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_033,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_034,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_034,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_034,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_035,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_035,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_035,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_036,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_036,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_036,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_037,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_037,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_037,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_038,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_038,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_038,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_039,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_039,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_039,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_040,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_040,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_040,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_041,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_041,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_041,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_042,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_042,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_042,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_043,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_043,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_043,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_044,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_044,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_044,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_045,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_045,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_045,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_046,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_046,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_046,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_047,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_047,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_047,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_048,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_048,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_048,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_049,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_049,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_049,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_050,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_050,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_050,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_051,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_051,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_051,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_052,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_052,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_052,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_053,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_053,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_053,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_054,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_054,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_054,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_055,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_055,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_055,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_056,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_056,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_056,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_057,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_057,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_057,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_058,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_058,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_058,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_059,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_059,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_059,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_060,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_060,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_060,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_061,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_061,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_061,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_062,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_062,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_062,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_063,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_063,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_063,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_064,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_064,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_064,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_065,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_065,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_065,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_066,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_066,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_066,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_067,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_067,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_067,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_068,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_068,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_068,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_069,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_069,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_069,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_070,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_070,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_070,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_071,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_071,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_071,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_072,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_072,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_072,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_073,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_073,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_073,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_074,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_074,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_074,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_075,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_075,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_075,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_076,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_076,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_076,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_077,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_077,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_077,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_078,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_078,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_078,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_079,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_079,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_079,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_080,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_080,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_080,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_081,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_081,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_081,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_082,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_082,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_082,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_083,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_083,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_083,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_084,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_084,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_084,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_085,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_085,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_085,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_086,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_086,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_086,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_087,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_087,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_087,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_088,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_088,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_088,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_089,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_089,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_089,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_090,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_090,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_090,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_091,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_091,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_091,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_092,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_092,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_092,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_093,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_093,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_093,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_094,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_094,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_094,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_095,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_095,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_095,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_096,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_096,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_096,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_097,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_097,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_097,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_098,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_098,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_098,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_099,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_099,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_099,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_100,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_100,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_100,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_101,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_101,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_101,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_102,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_102,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_102,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_103,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_103,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_103,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_104,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_104,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_104,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_105,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_105,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_105,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_106,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_106,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_106,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_107,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_107,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_107,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_108,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_108,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_108,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_109,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_109,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_109,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_110,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_110,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_110,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_111,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_111,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_111,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_112,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_112,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_112,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_113,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_113,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_113,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_114,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_114,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_114,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_115,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_115,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_115,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_116,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_116,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_116,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_117,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_117,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_117,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_118,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_118,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_118,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_119,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_119,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_119,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_120,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_120,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_120,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_121,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_121,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_121,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_122,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_122,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_122,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_123,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_123,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_123,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_124,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_124,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_124,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_125,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_125,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_125,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_126,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_126,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_126,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_127,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_127,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_127,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_128,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_128,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_128,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_129,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_129,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_129,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_130,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_130,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_130,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_131,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_131,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_131,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_132,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_132,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_132,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_133,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_133,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_133,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_134,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_134,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_134,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_135,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_135,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_135,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_136,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_136,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_136,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_137,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_137,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_137,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_138,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_138,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_138,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_139,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_139,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_139,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_140,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_140,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_140,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_141,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_141,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_141,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_142,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_142,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_142,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_143,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_143,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_143,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_144,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_144,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_144,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_145,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_145,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_145,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_146,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_146,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_146,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_147,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_147,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_147,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_148,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_148,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_148,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_149,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_149,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_149,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_150,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_150,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_150,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_151,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_151,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_151,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_152,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_152,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_152,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_153,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_153,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_153,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_154,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_154,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_154,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_155,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_155,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_155,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_156,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_156,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_156,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_157,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_157,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_157,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_158,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_158,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_158,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_159,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_159,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_159,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_160,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_160,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_160,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_161,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_161,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_161,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_162,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_162,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_162,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_163,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_163,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_163,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_164,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_164,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_164,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_165,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_165,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_165,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_166,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_166,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_166,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_167,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_167,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_167,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_168,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_168,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_168,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_169,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_169,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_169,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_170,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_170,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_170,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_171,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_171,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_171,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_172,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_172,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_172,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_173,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_173,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_173,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_174,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_174,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_174,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_175,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_175,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_175,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_176,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_176,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_176,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_177,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_177,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_177,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_178,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_178,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_178,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_179,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_179,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_179,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_180,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_180,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_180,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_181,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_181,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_181,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_182,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_182,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_182,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_183,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_183,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_183,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_184,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_184,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_184,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_185,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_185,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_185,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_186,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_186,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_186,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_187,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_187,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_187,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_188,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_188,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_188,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_189,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_189,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_189,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_190,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_190,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_190,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_191,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_191,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_191,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_192,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_192,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_192,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_193,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_193,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_193,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_194,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_194,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_194,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_195,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_195,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_195,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_196,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_196,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_196,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_197,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_197,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_197,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_198,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_198,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_198,ou=people,ou=Reponses,dc=dila,dc=frdn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_199,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_199,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_199,ou=people,ou=Reponses,dc=dila,dc=fr

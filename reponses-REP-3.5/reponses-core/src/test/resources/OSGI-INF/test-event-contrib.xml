@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.core.test.event">
+
+	<extension target="org.nuxeo.ecm.core.event.EventServiceComponent"
+		point="listener">
+
+		<!-- Désactive les plans de classements Nuxeo -->
+		<listener name="classificationListener" enabled="false" />
+	</extension>
+
+</component>

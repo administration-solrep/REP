@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Socle SOLREP Core
+Bundle-SymbolicName: fr.dila.ss.core;singleton:=true
+Bundle-Version: 1.0.0
+Nuxeo-Component: OSGI-INF/service/mailbox-poste-framework.xml,
+ OSGI-INF/service/birt-framework.xml,
+ OSGI-INF/service/tree-framework.xml,
+ OSGI-INF/service/fond-dossier-framework.xml,
+ OSGI-INF/service/utilisateur-connection-monitor-framework.xml,
+ OSGI-INF/ss-adapter-contrib.xml,
+ OSGI-INF/ss-computedgroups-contrib.xml,
+ OSGI-INF/ss-event-contrib.xml,
+ OSGI-INF/ss-operation-contrib.xml,
+ OSGI-INF/ss-life-cycle-contrib.xml,
+ OSGI-INF/ss-life-cycle-type-contrib.xml

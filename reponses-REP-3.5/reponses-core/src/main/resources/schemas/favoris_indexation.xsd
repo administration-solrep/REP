@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://nuxeo.org/schemas/favoris_indexation/"
+	xmlns:fvi="http://nuxeo.org/schemas/favoris_indexation/">
+
+	<!-- Type d'indexation (AN ou Senat) -->
+	<xs:element name="typeIndexation" type="xs:string" />
+
+	<xs:element name="niveau1" type="xs:string" />
+	<xs:element name="niveau2" type="xs:string" />
+</xs:schema>

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.core.type.search">
+
+	<require>fr.dila.reponses.core.type</require>
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="schema">
+		<schema name="requeteSimple" src="schemas/requeteSimple.xsd"
+			prefix="rqs" />
+		<schema name="requeteComplexe" src="schemas/requeteComplexe.xsd"
+			prefix="rqc" />
+		<schema name="requeteTexteIntegral" src="schemas/requeteTexteIntegral.xsd"
+			prefix="rqti" />
+		<schema name="requeteMetadonnees" src="schemas/requeteMetadonnees.xsd"
+			prefix="rqmet" />
+		<schema name="requeteFeuilleRoute" src="schemas/requeteFeuilleRoute.xsd"
+			prefix="rqfr" />
+
+		<schema name="smart_folder" src="schemas/smart_folder.xsd"
+			prefix="sf" override="true" />
+		<schema name="nav" src="schemas/requeteNav.xsd" prefix="nav" />
+	</extension>
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="doctype">
+		<doctype name="RequeteSimple" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<schema name="requeteSimple" />
+		</doctype>
+
+		<doctype name="RequeteComplexe" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<schema name="requeteComplexe" />
+		</doctype>
+
+		<doctype name="RequeteTexteIntegral" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<schema name="requeteTexteIntegral" />
+		</doctype>
+
+		<doctype name="RequeteIndex" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<schema name="indexation" />
+			<facet name="ReponsesIndexable" />
+		</doctype>
+
+		<doctype name="RequeteMetadonnees" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<schema name="requeteMetadonnees" />
+		</doctype>
+
+		<doctype name="RequeteFeuilleRoute" extends="Document">
+			<schema name="requeteFeuilleRoute" />
+		</doctype>
+
+		<doctype name="RequeteComposite" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<schema name="requeteSimple" />
+			<schema name="requeteComplexe" />
+			<schema name="requeteTexteIntegral" />
+			<schema name="requeteMetadonnees" />
+			<schema name="requeteFeuilleRoute" />
+			<schema name="indexation" />
+			<facet name="ReponsesIndexable" />
+		</doctype>
+
+		<doctype name="Nav" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<schema name="nav" />
+		</doctype>
+
+		<!-- *********************************************************************** 
+			Racines de la bibilothèque de requêtes standards *********************************************************************** -->
+		<doctype name="BibliothequeRequetesRoot" extends="Folder"
+			coretype="BibliothequeRequetesRoot" />
+
+		<!-- Répertoire racine des requêtes de l'utilisateur -->
+		<doctype name="RequeteRoot" extends="Folder">
+			<subtypes>
+				<type>SmartFolder</type>
+			</subtypes>
+		</doctype>
+
+	</extension>
+	<extension target="org.nuxeo.ecm.core.search.service.SearchServiceImpl"
+		point="indexableDocType">
+		<indexableDocType indexAllSchemas="true" name="Question" />
+		<indexableDocType indexAllSchemas="true" name="Dossier" />
+		<indexableDocType indexAllSchemas="true" name="Reponse" />
+	</extension>
+</component>

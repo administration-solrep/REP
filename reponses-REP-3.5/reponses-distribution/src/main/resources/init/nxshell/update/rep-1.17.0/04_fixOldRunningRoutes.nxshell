@@ -1,0 +1,13 @@
+# Pour lancer ce script :
+# 1 - copier ce fichier dans /tmp/
+# 2 - Aller dans le répertoire contenant nxshell.sh
+# 3 - Taper la commande sh nxshell.sh -f /tmp/04_fixOldRunningRoutes.nxshell
+
+# connect to http://localhost:8180/reponses (obligatoire sinon Unknown command...) 
+connect -u Administrator -p 4ju7Ix662Eo1d77u http://localhost:8180/reponses/site/automation
+
+########## Script de contrôle
+script feuille_route/fixRoutes.groovy -ctx "mode='FIX'"
+
+########## Script d'initialisation
+script feuille_route/fixOldRunningRoutes.groovy -ctx "mode='FIX'"

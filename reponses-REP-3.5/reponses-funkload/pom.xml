@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>fr.dila.reponses</groupId>
+    <artifactId>reponses-parent</artifactId>
+    <version>REP-3.5.2</version>
+  </parent>
+
+  <artifactId>reponses-funkload</artifactId>
+  <name>reponses-funkload</name>
+  <packaging>pom</packaging>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.2.1</version>
+        <configuration>
+          <descriptors>
+            <descriptor>src/main/assemble/assembly.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <executions>
+	 <execution>
+	    <phase>package</phase>
+	    <goals><goal>single</goal></goals>   
+         </execution>
+       </executions>
+     </plugin>
+    </plugins>
+  </build>
+  
+    
+
+</project>

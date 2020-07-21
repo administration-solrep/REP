@@ -1,0 +1,97 @@
+<a4j:outputPanel xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util" id="currentDossierDisplayed">
+
+	<c:if test="#{currentDocument.getType() == 'Dossier'}">
+
+		<script>
+      var j = jQuery.noConflict();
+      j(document).ready(function() {
+        j("html, body").scrollTop(j('#currentDossierDisplayed').offset().top);
+      });
+      </script>
+
+		<div class="subbodyContainer">
+			<h:panelGroup rendered="#{!currentDocument.version}">
+				<table width="100%">
+					<tbody>
+						<tr>
+							<nxu:set var="questionAdapted"
+								value="#{question.getAdapter(Question)}" cache="true">
+								<td width="85%"><h1>
+										<h:outputText
+											value="#{questionAdapted.typeQuestion} N°#{questionAdapted.numeroQuestion} de #{questionAdapted.civiliteAuteur} #{questionAdapted.prenomAuteur} #{questionAdapted.nomAuteur} - #{questionAdapted.groupePolitique}" />
+									</h1></td>
+							</nxu:set>
+							<nxu:set var="info"
+								value="#{fluxActions.getHasInfoFlux(currentDocument.getAdapter(Dossier))}"
+								cache="true">
+								<td align="right"><h:graphicImage
+										value="/img/icons/folder_red_24.png"
+										alt="#{messages['label.listing.widget.signalement.urgent']}"
+										title="#{messages['label.listing.widget.signalement.urgent']}"
+										rendered="#{info.isUrgent()}" /> <h:graphicImage
+										value="/img/icons/folder_warning_24.png"
+										alt="#{messages['label.listing.widget.signalement.signale']}"
+										title="#{messages['label.listing.widget.signalement.signale']}"
+										rendered="#{info.isSignale()}" /> <h:graphicImage
+										value="/img/icons/folder_time_24.png"
+										alt="#{messages['label.listing.widget.signalement.renouvelle']}"
+										title="#{messages['label.listing.widget.signalement.renouvelle']}"
+										rendered="#{info.isRenouvelle()}" /></td>
+								<nxu:set var="delai"
+									value="#{info.getDelaiExpirationFdr(documentManager)}"
+									cache="true">
+									<c:choose>
+										<c:when test="#{delai.contains('J')}">
+											<td align="right"><h3>
+													<h:outputText value="Délai : #{delai}" />
+												</h3></td>
+										</c:when>
+										<c:otherwise>
+											<td align="right"><h3>
+													<i><h:outputText value="#{messages[delai]}" /></i>
+												</h3></td>
+										</c:otherwise>
+									</c:choose>
+								</nxu:set>
+							</nxu:set>
+						</tr>
+					</tbody>
+				</table>
+			</h:panelGroup>
+			<ui:include src="/reponses_toolbar.xhtml" />
+			<ui:decorate
+				template="/casemanagement/caseitem/view_cm_case_template.xhtml">
+				<ui:define name="case_body">
+					<h:panelGroup id="case_content">
+						<ui:insert name="case_content">
+							<div class="tabsBar">
+								<h:form>
+									<nxu:dataList layout="unorderedList" var="tab"
+										value="#{tabsActionsList}"
+										itemStyleClass="#{nxu:test(webActions.currentTabAction == tab, 'selected', '')}">
+										<nxd:restDocumentLink document="#{currentDocument}"
+											tab="#{tab.id}" view="#{dossier_view}">
+											<h:outputText value="#{messages[tab.label]}" />
+										</nxd:restDocumentLink>
+									</nxu:dataList>
+								</h:form>
+							</div>
+							<div style="clear: both" />
+							<div class="tabsContent">
+								<ui:include src="#{webActions.currentTabAction.link}" />
+							</div>
+						</ui:insert>
+					</h:panelGroup>
+				</ui:define>
+			</ui:decorate>
+
+		</div>
+	</c:if>
+</a4j:outputPanel>

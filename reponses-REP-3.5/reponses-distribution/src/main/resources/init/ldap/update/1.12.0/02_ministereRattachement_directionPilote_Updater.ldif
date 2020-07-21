@@ -1,0 +1,43 @@
+##########
+# Création
+##########
+
+dn: cn=MinistereRattachementUpdater,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+changetype: add
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: MinistereRattachementUpdater
+uniqueMember: cn=emptyRef
+description: Dossier : modification du ministère de rattachement
+
+
+dn: cn=DirectionPiloteUpdater,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+changetype: add
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: DirectionPiloteUpdater
+uniqueMember: cn=emptyRef
+description: Dossier : modification de la direction pilote
+
+
+##########
+# Ajout
+##########
+
+dn: cn=Administrateur fonctionnel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add:uniqueMember
+uniqueMember: cn=MinistereRattachementUpdater,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add:uniqueMember
+uniqueMember: cn=MinistereRattachementUpdater,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add:uniqueMember
+uniqueMember: cn=DirectionPiloteUpdater,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout">
+
+	<ui:define name="page title">
+		<h:outputText
+			value="#{nuxeoApplicationName} - #{nxd:titleOrId(currentDocument)}" />
+	</ui:define>
+
+	<ui:define name="body">
+		<div>
+			<h:panelGroup rendered="#{! currentDocument.version}">
+				<h1>
+					<h:outputText
+						value="#{messages['document.feuilleRouteSelection.reponses.title']} " />
+					<h:outputText value="#{nxd:titleOrId(currentDocument)}" />
+				</h1>
+			</h:panelGroup>
+
+			<ui:include src="/incl/message_banner.xhtml" />
+
+			<p class="currentDocumentDescription">
+				<h:outputText value="#{currentDocument.dublincore.description}" />
+			</p>
+
+			<div style="clear: both"></div>
+
+			<div class="tabsContent">
+
+
+				<nxu:set var="contentViewName"
+					value="feuille_route_model_list_content">
+					<nxu:set var="contentViewId"
+						value="#{widget.id}_feuille_route_model_list_content">
+						<nxu:set var="regionToRenderId" value="selection_route_region">
+							<!-- needed by selection widget in the content view -->
+
+							<ui:decorate template="/incl/content_view.xhtml" />
+
+						</nxu:set>
+					</nxu:set>
+				</nxu:set>
+
+
+
+				<a4j:outputPanel ajaxRendered="true" id="selection_route_region">
+
+					<c:if
+						test="#{not empty routingActions.relatedRouteModelDocumentId}">
+						<!-- SELECTION COURANTE -->
+						<h2>
+							<h:outputText
+								value="#{messages['document.feuilleRouteSelection.substitute.label']} " />
+							<h:outputText
+								value="#{routingActions.relatedRouteModelDocumentId}"
+								converter="#{routingActions.documentModelConverter}" />
+						</h2>
+						<h3>
+							<h:outputText
+								value="#{messages['document.feuilleRouteSelection.step.details.label']} " />
+						</h3>
+						<nxu:set var="documents"
+							value="#{routingActions.computeSelectDataModelRelatedRouteElements(routingActions.relatedRouteModelDocumentId)}"
+							cache="true">
+
+							<ui:decorate template="/incl/documents_layout_table.xhtml">
+								<ui:param name="documents" value="#{documents}" />
+								<ui:param name="showCheckboxes" value="#{false}" />
+								<ui:param name="listName" value="CURRENT_SELECTION" />
+								<ui:param name="layoutName"
+									value="feuille_route_model_select_step_listing" />
+							</ui:decorate>
+						</nxu:set>
+
+					</c:if>
+
+
+					<h:form id="mfdrSelectionForm">
+						<h:commandButton type="submit" class="button"
+							value="#{messages['document.feuilleRouteSelection.return']}"
+							action="#{corbeilleActions.getCurrentView()}" />
+
+						<h:commandButton type="submit" class="button"
+							disabled="#{empty routingActions.relatedRouteModelDocumentId}"
+							value="#{messages['document.feuilleRouteSelection.substitute']}"
+							action="#{dossierDistributionActions.substituerRoute()}" />
+					</h:form>
+				</a4j:outputPanel>
+			</div>
+
+			<div style="clear: both"></div>
+		</div>
+	</ui:define>
+</nxthemes:composition>

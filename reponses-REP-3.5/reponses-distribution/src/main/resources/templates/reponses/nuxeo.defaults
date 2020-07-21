@@ -1,0 +1,17 @@
+solrep.application=reponses
+solrep.init.project=reponses-init
+
+mail.masse.limit=500
+mail.masse.delay=31
+
+# default database accesses
+solrep.db.init.user=
+solrep.db.init.password=
+solrep.db.classpath=
+solrep.db.client.jar=${nuxeo.home}/liquibase/${solrep.init.project}-jar-with-dependencies.jar
+solrep.db.log=${nuxeo.log.dir}/db-liquibase.log
+
+solrep.db.liquibase.jar=${nuxeo.home}/liquibase/${solrep.init.project}-jar-with-dependencies.jar
+solrep.db.liquibase.changelog=liquibase/reponses/liquibase-reponses.xml
+solrep.db.liquibase.contexts=
+

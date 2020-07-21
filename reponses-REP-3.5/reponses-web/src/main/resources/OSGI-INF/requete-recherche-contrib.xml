@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.reponses.requete.recherche.contrib">
+	<extension target="fr.dila.reponses.core.service.RechercheService"
+		point="recherches">
+		<recherche>
+			<rechercheName>rechercheTexteIntegral</rechercheName>
+			<mode>Recherche sur le texte intégral</mode>
+			<type>mots-clefs</type>
+			<targetResourceName>acte</targetResourceName>
+			<layoutName>requeteTexteIntegral</layoutName>
+			<contentViewName>requeteTexteIntegral</contentViewName>
+			<requeteName>RequeteTexteIntegral</requeteName>
+		</recherche>
+		<recherche>
+			<rechercheName>rechercheIndex</rechercheName>
+			<mode>Recherche sur les mots-clés</mode>
+			<type>mots-clefs</type>
+			<targetResourceName>acte</targetResourceName>
+			<layoutName>requeteIndex</layoutName>
+			<contentViewName>requeteIndex</contentViewName>
+			<requeteName>RequeteIndex</requeteName>
+		</recherche>
+		<recherche>
+			<rechercheName>rechercheFeuilleRoute</rechercheName>
+			<mode>Recherche sur les étapes de la feuille de route</mode>
+			<type>mots-clefs</type>
+			<targetResourceName>acte</targetResourceName>
+			<layoutName>requeteFeuilleRoute</layoutName>
+			<contentViewName>requeteFeuilleRoute</contentViewName>
+			<requeteName>RequeteFeuilleRoute</requeteName>
+		</recherche>
+	</extension>
+</component>
+
+
+
+
+

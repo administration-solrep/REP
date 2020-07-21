@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>44258</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="645351">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Philippe Armand</ns2:prenom>
+				<ns2:nom>Martin</ns2:nom>
+				<ns2:grp_pol>UMP</ns2:grp_pol>
+				<ns2:circonscription>Marne 3</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Philippe Armand Martin attire l'attention
+				de M. le ministre de l'éducation nationale sur le harcèlement dont
+				peuvent être victime les élèves à l'école. Les enceintes scolaires
+				peuvent donner lieu à des comportements répréhensibles tels que des
+				insultes, surnoms vexants, mises à l'écart, coups, vols, violences
+				avec arme ou même sexuelles. De surcroît ces phénomènes de violence
+				et de harcèlement sont largement amplifiés par l'utilisation des
+				réseaux sociaux et des téléphones portables. En conséquence il lui
+				demande de bien vouloir lui préciser les mesures que le Gouvernement
+				entend mettre en œuvre pour réduire toutes les formes de harcèlement
+				à l'école.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enseignement</ns2:rubrique>
+				<ns2:rubrique_ta>établissements</ns2:rubrique_ta>
+				<ns2:analyse>violences</ns2:analyse>
+				<ns2:analyse> lutte et prévention</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

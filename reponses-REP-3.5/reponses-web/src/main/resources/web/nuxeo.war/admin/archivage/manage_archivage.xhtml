@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<ui:define name="page title">
+		<h:outputText value="#{messages['archivage.manage.title']}" />
+	</ui:define>
+
+	<ui:define name="body">
+
+		<script>
+    function showPDF() {
+      var day=new Date();
+      var id=day.getTime();
+      var pdfWin = window.open('',id,"width=800,height=700,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes");
+      document.getElementById('admin_listes_elimination').target=id;
+      if (window.focus) {
+        pdfWin.focus()
+      }
+    }
+    </script>
+
+		<div class="menu">
+			<h1>
+				<h:outputText value="#{messages['archivage.manage.title']}" />
+			</h1>
+			<br />
+			<nxu:set var="contentViewName" value="admin_listes_elimination">
+				<nxu:set var="contentViewUnitSingle" value="liste d'élimination"
+					cache="true">
+					<nxu:set var="contentViewUnit" value="listes d'élimination"
+						cache="true">
+						<ui:decorate template="/incl/content_view.xhtml" />
+					</nxu:set>
+				</nxu:set>
+			</nxu:set>
+		</div>
+	</ui:define>
+
+	<ui:define name="collapsible_panel_body">
+		<ui:include src="/admin/admin_menu.xhtml" />
+	</ui:define>
+</nxthemes:composition>

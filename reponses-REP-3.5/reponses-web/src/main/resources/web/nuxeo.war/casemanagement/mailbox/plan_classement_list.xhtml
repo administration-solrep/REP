@@ -1,0 +1,198 @@
+<div xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<div class="menu">
+		<h:panelGroup>
+			<div class="userMailboxes">
+				<div class="userMailboxesContent">
+
+					<h4>Plan de classement</h4>
+
+					<div>
+						<a4j:status for="corbeilleRegion">
+							<f:facet name="start">
+								<h:graphicImage value="/img/standart_waiter.gif"
+									style="position: absolute;" />
+							</f:facet>
+						</a4j:status>
+
+						<div style="margin: 10px">
+							<h:form>
+								<h:selectOneRadio id="treeMode_radio"
+									value="#{planClassementTree.treeMode}" layout="pageDirection">
+									<f:selectItem itemLabel="Assemblée nationale" itemValue="AN" />
+									<f:selectItem itemLabel="Sénat" itemValue="Senat" />
+									<a4j:support event="onclick" reRender="pct" ajaxSingle="true"
+										eventsQueue="ajax_events_queue" />
+								</h:selectOneRadio>
+							</h:form>
+						</div>
+						<style type="text/css">
+.rich-tree-node-selected {
+	color: red;
+}
+</style>
+						<h:form>
+							<div id="uMContent" style="overflow-x: auto; overflow-y: hidden;">
+								<a4j:region id="corbeilleRegion">
+									<rich:tree id="pct" style="width:100%" switchType="ajax"
+										iconExpanded="/icons/toggle_minus.png"
+										iconCollapsed="/icons/toggle_plus.png"
+										ajaxSubmitSelection="true" ajaxSingle="true" reRender="pct"
+										eventsQueue="ajax_events_queue" toggleOnClick="false"
+										adviseNodeSelected="#{planClassementTree.adviseNodeSelected}"
+										adviseNodeOpened="#{planClassementTree.adviseNodeOpened}"
+										changeExpandListener="#{planClassementTree.changeExpandListener}"
+										nodeSelectListener="#{planClassementTree.nodeSelectListener}">
+
+										<rich:treeNodesAdaptor nodes="#{planClassementTree.corbeille}"
+											id="n1" var="niveau1">
+
+											<rich:treeNode icon="/img/icons/unite_structurelle.png"
+												iconLeaf="/img/icons/unite_structurelle.png">
+												<h:outputText id="n1Lbl"
+													value="#{niveau1.label} (#{niveau1.count})"
+													style="font-weight: bold;" />
+											</rich:treeNode>
+
+											<rich:treeNodesAdaptor nodes="#{niveau1.lettres}" id="nl"
+												var="lettre">
+												<rich:treeNode ajaxSubmitSelection="false"
+													icon="/img/icons/poste.png" iconLeaf="/img/icons/poste.png">
+	                                  #{lettre.label}
+	                                </rich:treeNode>
+
+
+												<rich:treeNodesAdaptor nodes="#{lettre.niveaux2}" id="l2"
+													var="niveau2">
+													<rich:treeNode ajaxSubmitSelection="false"
+														icon="/img/icons/poste.png"
+														iconLeaf="/img/icons/poste.png">
+														<h:panelGroup style="background: #ecf6ff; display:block;"
+															rendered="#{planClassementTree.niveau1 == niveau1.label and planClassementTree.niveau2 == niveau2.label}">
+															<h:commandLink id="l2c1"
+																action="#{planClassementTree.setContext(niveau2)}">
+	                                            #{niveau2.label} (#{niveau2.count})
+	                                  		  </h:commandLink>
+															<rich:contextMenu attached="true" attachTo="l2c1"
+																submitMode="ajax">
+																<!--  action Ajouter -->
+																<rich:menuItem icon="/icons/add.png" ajaxSingle="true"
+																	onmouseover="selectedContextMenu(this);"
+																	onmouseout="unSelectedContextMenu(this);"
+																	action="#{favorisIndexationActions.addFavoris(niveau2)}"
+																	reRender="favorisIndexationPanel">
+												   Ajouter aux favoris
+											     </rich:menuItem>
+															</rich:contextMenu>
+														</h:panelGroup>
+														<h:panelGroup
+															rendered="#{planClassementTree.niveau1 != niveau1.label or planClassementTree.niveau2 != niveau2.label}">
+															<h:commandLink id="l2c2"
+																action="#{planClassementTree.setContext(niveau2)}">
+	                                            #{niveau2.label} (#{niveau2.count})
+	                                  		  </h:commandLink>
+															<rich:contextMenu attached="true" attachTo="l2c2"
+																submitMode="ajax">
+																<!--  action Ajouter -->
+																<rich:menuItem icon="/icons/add.png" ajaxSingle="true"
+																	onmouseover="selectedContextMenu(this);"
+																	onmouseout="unSelectedContextMenu(this);"
+																	action="#{favorisIndexationActions.addFavoris(niveau2)}"
+																	reRender="favorisIndexationPanel">
+												   Ajouter aux favoris
+											     </rich:menuItem>
+															</rich:contextMenu>
+														</h:panelGroup>
+													</rich:treeNode>
+												</rich:treeNodesAdaptor>
+											</rich:treeNodesAdaptor>
+
+
+
+											<rich:treeNodesAdaptor nodes="#{niveau1.niveaux2}" id="n2"
+												var="niveau2">
+												<rich:treeNode ajaxSubmitSelection="false"
+													icon="/img/icons/poste.png" iconLeaf="/img/icons/poste.png">
+
+													<h:panelGroup style="background: #ecf6ff; display:block;"
+														rendered="#{planClassementTree.niveau1 == niveau1.label and planClassementTree.niveau2 == niveau2.label}">
+														<h:commandLink id="n2c1"
+															action="#{planClassementTree.setContext(niveau2)}">
+	                                            #{niveau2.label} (#{niveau2.count})
+	                                  		  </h:commandLink>
+														<rich:contextMenu attached="true" attachTo="n2c1"
+															submitMode="ajax">
+															<!--  action Ajouter -->
+															<rich:menuItem icon="/icons/add.png" ajaxSingle="true"
+																onmouseover="selectedContextMenu(this);"
+																onmouseout="unSelectedContextMenu(this);"
+																action="#{favorisIndexationActions.addFavoris(niveau2)}"
+																reRender="favorisIndexationPanel">
+												   Ajouter aux favoris
+											     </rich:menuItem>
+														</rich:contextMenu>
+													</h:panelGroup>
+													<h:panelGroup
+														rendered="#{planClassementTree.niveau1 != niveau1.label or planClassementTree.niveau2 != niveau2.label}">
+														<h:commandLink id="n2c2"
+															action="#{planClassementTree.setContext(niveau2)}">
+	                                            #{niveau2.label} (#{niveau2.count})
+	                                  		  </h:commandLink>
+														<rich:contextMenu attached="true" attachTo="n2c2"
+															submitMode="ajax">
+															<!--  action Ajouter -->
+															<rich:menuItem icon="/icons/add.png" ajaxSingle="true"
+																onmouseover="selectedContextMenu(this);"
+																onmouseout="unSelectedContextMenu(this);"
+																action="#{favorisIndexationActions.addFavoris(niveau2)}"
+																reRender="favorisIndexationPanel">
+												   Ajouter aux favoris
+											     </rich:menuItem>
+														</rich:contextMenu>
+													</h:panelGroup>
+												</rich:treeNode>
+											</rich:treeNodesAdaptor>
+										</rich:treeNodesAdaptor>
+									</rich:tree>
+								</a4j:region>
+							</div>
+						</h:form>
+						<script language="javascript">
+			 //on utilise ces fonctions pour faire l'effet de selection et de déselection d'action 
+			 function selectedContextMenu(element)
+			 {
+				 if(element.style)
+			     	element.style.backgroundColor = "#4E9AE1";
+			 }
+			 function unSelectedContextMenu(element)
+			 {
+				 if(element.style)
+			     	element.style.backgroundColor = "#3A3D40";
+			 }
+		 </script>
+					</div>
+
+					<!-- Bottom of the rounded box -->
+
+					<p class="nobottomgap"></p>
+				</div>
+			</div>
+
+			<div class="bottom-left"></div>
+			<div class="bottom-right"></div>
+
+		</h:panelGroup>
+	</div>
+
+	<ui:include src="/casemanagement/mailbox/favoris_indexation_list.xhtml" />
+
+</div>

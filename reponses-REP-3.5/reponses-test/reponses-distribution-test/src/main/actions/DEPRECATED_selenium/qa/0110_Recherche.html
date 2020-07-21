@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Test > Recherche > Recherches</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">Test > Recherche > Recherches</td>
+			</tr>
+		</thead>
+		<tbody>
+			<!--Connexion-->
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<!--Recherche simple-->
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_critereRequete</td>
+				<td>314160</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314161</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<!--Recherche simple avec wildcard-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_critereRequete</td>
+				<td>314*</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314161</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<!--Recherche sans résultats-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_critereRequete</td>
+				<td>XXXXXXXXXXXXXXXXXXXXXX</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<!--Recherche avancée-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_critereRequete</td>
+				<td>XXXXXXXXXXXXXXXXXXXXXX</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<!--Recherche simple nom d'auteur-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:clearSearchButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_auteur</td>
+				<td>Bataille Christian</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314160</td>
+				<td></td>
+			</tr>
+			<!--Recherche avancée groupe politique -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:clearSearchButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_groupePolitique</td>
+				<td>label=Réunion administrative des non-inscrits</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314161</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<!--Recherche simple-->
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_critereRequete</td>
+				<td>314160</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314161</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<!--Recherche simple avec wildcard-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_critereRequete</td>
+				<td>314*</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314159</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314161</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<!--Recherche sans résultats-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_critereRequete</td>
+				<td>XXXXXXXXXXXXXXXXXXXXXX</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<!--Recherche avancée-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_critereRequete</td>
+				<td>XXXXXXXXXXXXXXXXXXXXXX</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<!--Recherche simple nom d'auteur-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:clearSearchButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_auteur</td>
+				<td>Bataille Christian</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314160</td>
+				<td></td>
+			</tr>
+			<!--Recherche avancée groupe politique -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Recherche</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:clearSearchButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>watchA4jRequests</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>requete_all_form:nxl_requeteSimple:nxw_groupePolitique</td>
+				<td>label=Réunion administrative des non-inscrits</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>requete_all_form:rechercheSubmitButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314161</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>AN 314162</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

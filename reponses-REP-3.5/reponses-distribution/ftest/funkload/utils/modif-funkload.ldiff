@@ -1,0 +1,14 @@
+dn: cn=50000656,ou=poste,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_INDEX,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur ministériel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_INDEX,ou=people,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Documentaliste,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=bdc_INDEX,ou=people,ou=Reponses,dc=dila,dc=fr

@@ -1,0 +1,76 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<h:panelGroup id="massActionButtons">
+		<nxu:set var="show"
+			value="#{dossierListingActions.isShownMassAction(contentView.selectionListName)}"
+			cache="true">
+			<h:panelGroup layout="block" rendered="#{show}">
+				<c:if test="#{show}">
+					<ui:include src="/incl/generic_mass_action_panel.xhtml" />
+					<h:form id="dossierListingAction">
+						<table class="dossierListingAction" style="float: right;">
+							<tr>
+								<nxu:set var="actions"
+									value="#{webActions.getActionsList(actionsList)}">
+									<c:forEach var="action" items="#{actions}">
+										<td class="enabledButtonContainer"
+											id="tdEnabledButtonContainer"><f:subview
+												rendered="#{!fn:contains(action.getLink(), 'javascript:') and !fn:contains(action.getId(), 'MASSE_EXPORT_ZIP')}">
+												<a4j:commandLink eventsQueue="ajax_events_queue"
+													action="#{dossierMassActions.start(action.getId())}"
+													ajaxSingle="true" reRender="genericMassActionRegion"
+													oncomplete="Richfaces.showModalPanel('genericMassActionPanel')">
+													<h:graphicImage value="#{action.icon}"
+														title="#{messages[action.label]}"
+														alt="#{messages[action.label]}"
+														style="vertical-align:middle;" />
+												</a4j:commandLink>
+											</f:subview> <f:subview
+												rendered="#{fn:contains(action.getId(), 'MASSE_EXPORT_ZIP')}">
+												<nxh:commandLink action="#{action.getLink()}"
+													style="text-decoration:none;vertical-align:middle;">
+													<h:graphicImage value="#{action.icon}"
+														title="#{messages[action.label]}"
+														alt="#{messages[action.label]}"
+														style="vertical-align:middle;" />
+												</nxh:commandLink>
+											</f:subview> <f:subview
+												rendered="#{fn:contains(action.getLink(), 'javascript:')}">
+												<a href="#{action.getLink()}"
+													style="text-decoration: none; vertical-align: middle;">
+													<h:graphicImage value="#{action.icon}"
+														title="#{messages[action.label]}"
+														alt="#{messages[action.label]}"
+														style="vertical-align:middle;" />
+												</a>
+											</f:subview></td>
+									</c:forEach>
+								</nxu:set>
+								<td class="enabledButtonContainer" id="tdEnabledButtonContainer">
+									<nxh:commandLink
+										action="#{rechercheWebActions.exportResultSelection()}">
+										<h:graphicImage value="/img/icons/masse/masse_xls_32.png"
+											title="#{messages['command.global.exportXls.alt']}"
+											alt="#{messages['command.global.exportXls.alt']}"
+											style="vertical-align:middle;" />
+									</nxh:commandLink>
+								</td>
+							</tr>
+						</table>
+					</h:form>
+				</c:if>
+			</h:panelGroup>
+		</nxu:set>
+		<div style="clear: both"></div>
+	</h:panelGroup>
+</div>

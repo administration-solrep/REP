@@ -1,0 +1,70 @@
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>44253</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000975">
+				<titre_min>Mme la ministre des affaires sociales et de la santé</titre_min>
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000975">
+				<titre_min>Mme la ministre des affaires sociales et de la santé</titre_min>
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="645250">
+				<ns2:civilite>Mme</ns2:civilite>
+				<ns2:prenom>Chantal</ns2:prenom>
+				<ns2:nom>Guittet</ns2:nom>
+				<ns2:grp_pol>SRC</ns2:grp_pol>
+				<ns2:circonscription>Finistère 5</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[Mme Chantal Guittet attire l'attention de Mme
+				la ministre des affaires sociales et de la santé sur les nombreuses
+				difficultés de prises en charge rencontrées par les familles de
+				personnes atteints de troubles dys. Les altérations de fonctions
+				cognitives chez l'enfant, souvent méconnues ou jugées mineures,
+				peuvent, en l'absence de méthodes pédagogiques adaptées, avoir des
+				conséquences importantes sur les relations sociales, la scolarité,
+				et sur la vie quotidienne des personnes dys. Il est donc
+				indispensable de les reconnaître pour comprendre le processus et
+				agir en vue d'en réduire les conséquences par un accompagnement, une
+				pédagogie adaptée et des professionnels. L'activité de certains de
+				ces professionnels exerçant en libéral, comme par exemple les
+				psychologues, ergothérapeutes, et psychomotriciens dont l'efficacité
+				dans la prise en charge des personnes dys est reconnue, n'est pas
+				remboursée par la sécurité sociale. Cette situation est
+				préjudiciable pour les familles qui doivent assumer financièrement
+				des bilans et séances très couteux. La réponse pour l'accompagnement
+				des personnes dys doit être une réponse de proximité, accessible à
+				tous et qui repose sur la compétence et la coopération de tous les
+				acteurs (médicaux, associatifs, institutionnels) conformément aux
+				besoins de chaque enfant, adolescent et adulte. C'est pourquoi elle
+				souhaiterait connaître les mesures qu'elle entend mettre en œuvre
+				pour permettre la prise en charge par la sécurité sociale des soins
+				assurés par les professionnels libéraux aux personnes souffrant de
+				troubles dys.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enfants</ns2:rubrique>
+				<ns2:rubrique_ta>santé</ns2:rubrique_ta>
+				<ns2:analyse>dyslexie</ns2:analyse>
+				<ns2:analyse> prise en charge</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>
+

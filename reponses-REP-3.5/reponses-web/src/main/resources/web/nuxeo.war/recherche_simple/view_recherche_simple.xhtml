@@ -1,0 +1,17 @@
+<span xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"> <!-- Recherche sur le numéro de question, valable pour tout le monde -->
+	<h:outputText
+		value="#{messages['recherche.command.recherche_simple_before']}" /> <h:inputText
+		value="#{rechercheSimpleActions.simpleSearch}" size="15"
+		onkeydown="if (event.keyCode == 13) {Element.next(Element.next(this)).select();} else return true;"
+		id="questionIdInput" required="true"
+		requiredMessage="#{messages['feedback.search.noKeywords']}" /> <!-- Fix IE8 -->
+	<input type="hidden" /> <h:commandButton
+		action="#{rechercheSimpleActions.navigateToRechercheSimple()}"
+		value="#{messages['recherche.command.recherche_simple']}"
+		styleClass="button" id="rechercheNumeroSubmitButton">
+	</h:commandButton>
+</span>

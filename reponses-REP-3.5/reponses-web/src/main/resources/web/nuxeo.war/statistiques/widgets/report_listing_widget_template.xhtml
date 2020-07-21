@@ -1,0 +1,167 @@
+<f:subview id="#{widget.id}" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<style>
+.dr-mpnl-pnl-b {
+	padding: 0px;
+}
+
+.rich-tree-node-selected {
+	border-color: #FFFFFF;
+}
+
+.rich-tree-node-highlighted {
+	text-decoration: none;
+	color: #000000;
+}
+
+.add_icon {
+	padding-left: 3px;
+}
+</style>
+
+	<nxu:set var="reportDoc" value="#{field_0}" cache="true">
+	<nxu:set var="reportParametreOrganigramme" value="#{reportDoc.getAdapter(ReportInstance).getModel().getDoc().getProperty('birtreportmodel', 'parametreOrganigramme')}" cache="true">
+
+		<div class="popupTarget" docRef="#{reportDoc.ref}">
+
+			<c:choose>
+				<c:when
+					test="#{reportParametreOrganigramme != null}">
+
+					<a4j:outputPanel ajaxRendered="false" id="#{widget.id}_ajax_region">
+						<c:if test="#{organigrammeTree.isVisible()}">
+							<rich:modalPanel id="#{widget.id}_selectNodeOrganigrammePanel"
+								autosized="true">
+								<f:facet name="header">
+									<h:outputText value="#{messages['organigramme.name']}" />
+								</f:facet>
+								<f:facet name="controls">
+									<h:panelGroup>
+										<a4j:commandLink immediate="true"
+											actionListener="#{organigrammeTree.setVisible(false)}"
+											id="#{widget.id}_hideRouteElementsTypePanel"
+											reRender="#{widget.id}_ajax_region" bypassUpdates="true"
+											ajaxSingle="true" eventsQueue="ajax_events_queue">
+											<h:graphicImage value="/icons/action_delete_mini.gif"></h:graphicImage>
+										</a4j:commandLink>
+									</h:panelGroup>
+								</f:facet>
+								<h:panelGroup layout="block"
+									style="width: 600px; height:500px; overflow: scroll;">
+									<div style="padding: 10px;">
+										<rich:tree id="#{widget.id}_tree" style="width:300px"
+											switchType="ajax" ajaxSingle="true"
+											eventsQueue="ajax_events_queue"
+											iconExpanded="/icons/toggle_minus.png"
+											iconCollapsed="/icons/toggle_plus.png"
+											changeExpandListener="#{organigrammeTree.changeExpandListener}"
+											adviseNodeOpened="#{organigrammeTree.adviseNodeOpened}">
+
+											<rich:recursiveTreeNodesAdaptor id="node" var="item"
+												roots="#{organigrammeTree.organigramme}"
+												nodes="#{item.children}">
+
+												<rich:treeNode rendered="#{item.typeValue == 'BASE'}"
+													id="base" iconLeaf="/img/icons/base_organigramme.png"
+													icon="/img/icons/base_organigramme.png">
+													<h:outputText value="#{messages[item.id]}" />
+												</rich:treeNode>
+
+												<rich:treeNode rendered="#{item.typeValue == 'GVT'}"
+													id="gvt" iconLeaf="/img/icons/base_organigramme.png"
+													icon="/img/icons/base_organigramme.png">
+													<h:outputText value="#{item.label}" />
+												</rich:treeNode>
+
+												<rich:treeNode rendered="#{item.typeValue == 'MIN'}"
+													id="min" iconLeaf="/img/icons/unite_structurelle.png"
+													icon="/img/icons/unite_structurelle.png">
+													<h:outputText value="#{item.label}"
+														style="font-weight: bold;" />
+													<h:commandLink
+														rendered="#{statistiqueActions.isVisibleMinistere(reportParametreOrganigramme)}"
+														action="#{statistiqueActions.navigateToReport(reportDoc, item.typeValue, item.id)}">
+														<h:graphicImage id="#{widget.id}_add_min"
+															value="icons/action_add.gif" styleClass="add_icon" />
+													</h:commandLink>
+												</rich:treeNode>
+
+												<rich:treeNode rendered="#{item.typeValue == 'UST'}"
+													id="ust" iconLeaf="/img/icons/unite_structurelle.png"
+													icon="/img/icons/unite_structurelle.png">
+													<h:outputText value="#{item.label}" />
+													<h:commandLink
+														rendered="#{statistiqueActions.isVisibleDirection(reportParametreOrganigramme)}"
+														action="#{statistiqueActions.navigateToReport(reportDoc, item.typeValue, item.id)}">
+														<h:graphicImage id="#{widget.id}_add_ust"
+															value="icons/action_add.gif" styleClass="add_icon" />
+													</h:commandLink>
+												</rich:treeNode>
+
+												<rich:treeNode rendered="#{item.typeValue == 'DIR'}"
+													id="dir" iconLeaf="/img/icons/unite_structurelle.png"
+													icon="/img/icons/unite_structurelle.png">
+													<h:outputText value="#{item.label}" />
+													<h:commandLink
+														rendered="#{statistiqueActions.isVisibleDirection(reportParametreOrganigramme)}"
+														action="#{statistiqueActions.navigateToReport(reportDoc, item.typeValue, item.id)}">
+														<h:graphicImage id="#{widget.id}_add_dir"
+															value="icons/action_add.gif" styleClass="add_icon" />
+													</h:commandLink>
+												</rich:treeNode>
+
+												<rich:treeNode rendered="#{item.typeValue == 'PST'}"
+													id="poste" iconLeaf="/img/icons/poste.png"
+													icon="/img/icons/poste.png">
+													<h:outputText value="#{item.label}" />
+													<h:commandLink
+														rendered="#{statistiqueActions.isVisiblePoste(reportParametreOrganigramme)}"
+														action="#{statistiqueActions.navigateToReport(reportDoc, item.typeValue, item.id)}">
+														<h:graphicImage id="#{widget.id}_add_pst"
+															value="icons/action_add.gif" styleClass="add_icon" />
+													</h:commandLink>
+												</rich:treeNode>
+
+												<rich:treeNode rendered="#{(item.typeValue == 'USR')}"
+													id="user" iconLeaf="/img/icons/user_16.png"
+													icon="/img/icons/user_16.png">
+													<h:outputText value="#{item.label}" />
+												</rich:treeNode>
+
+											</rich:recursiveTreeNodesAdaptor>
+										</rich:tree>
+									</div>
+								</h:panelGroup>
+							</rich:modalPanel>
+						</c:if>
+					</a4j:outputPanel>
+
+					<a4j:commandLink immediate="true"
+						actionListener="#{organigrammeTree.setVisible(true)}"
+						ajaxSingle="true" eventsQueue="ajax_events_queue"
+						id="#{widget.id}_findButton" reRender="#{widget.id}_ajax_region"
+						bypassUpdates="true"
+						oncomplete="Richfaces.showModalPanel('#{widget.id}_selectNodeOrganigrammePanel'); return false;">
+						<h:outputText value="#{nxd:titleOrId(reportDoc)}" />
+					</a4j:commandLink>
+				</c:when>
+				<c:otherwise>
+					<h:commandLink
+						action="#{statistiqueActions.navigateToReport(reportDoc, null, null)}">
+						<h:outputText value="#{nxd:titleOrId(reportDoc)}" />
+					</h:commandLink>
+				</c:otherwise>
+			</c:choose>
+		</div>
+	</nxu:set>
+	</nxu:set>
+</f:subview>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://dila.fr/solon/schemas/requeteIndex/" xmlns:rqi="http://dila.fr/solon/schemas/requeteIndex/">
+
+	<!-- Attention !!! Le nom des clés doit être le nom des vocabulaires. -->
+	<xs:include schemaLocation="base.xsd" />
+	<xs:element name="indexationReference" type="xs:string" />
+
+	<xs:element name="SE_theme" type="rqi:stringList" />
+	<xs:element name="SE_rubrique" type="rqi:stringList" />
+	<xs:element name="SE_renvoi" type="rqi:stringList" />
+
+	<xs:element name="AN_rubrique" type="rqi:stringList" />
+	<xs:element name="TA_rubrique" type="rqi:stringList" />
+	<xs:element name="AN_analyse" type="rqi:stringList" />
+
+	<xs:element name="motclef_ministere" type="rqi:stringList" />
+</xs:schema>

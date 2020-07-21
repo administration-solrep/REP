@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<ui:define name="page title">
+		<h:outputText value="#{nuxeoApplicationName}" />
+	</ui:define>
+
+	<ui:define name="body">
+
+		<style>
+.nonmigrable {
+	color: red;
+	text-align: center;
+}
+
+.migrable {
+	color: green;
+	text-align: center;
+}
+
+input[type=checkbox] {
+	vertical-align: middle;
+	position: relative;
+	bottom: 1px;
+	margin: 2px;
+}
+
+.selectNewTimbre {
+	width: 90%;
+}
+</style>
+
+		<h1>
+			<h:outputText value="#{messages['label.admin.param.timbres']}" />
+		</h1>
+		<br />
+
+		<ui:include src="/incl/message_banner.xhtml" />
+
+		<c:choose>
+			<c:when test="#{migrationManagerActions.isUpdateTimbreAvailable()}">
+				<div>
+					<h:form id="updateTimbreForm">
+						<div id="containerTabDiv"
+							style="overflow-x: auto; overflow-y: hidden;">
+							<a4j:outputPanel id="migrationRecapPanel">
+								<div>
+									<label> <h:selectBooleanCheckbox id="briserAll"
+											value="#{migrationManagerActions.checkAllSignature}"
+											valueChangeListener="#{migrationManagerActions.checkAllBriserSignature()}">
+											<a4j:support event="onclick" ajaxSingle="true"
+												reRender="migrationRecapPanel" />
+										</h:selectBooleanCheckbox> <h:outputText
+											value="#{messages['reponses.migration.label.signature.briser.all']}"
+											for="briserAll" />
+									</label> <br /> <label> <h:selectBooleanCheckbox
+											id="migrerDossiersClosAll"
+											value="#{migrationManagerActions.checkAllClosedDossiersMigration}"
+											valueChangeListener="#{migrationManagerActions.checkAllClosedDossiersMigration()}">
+											<a4j:support event="onclick" ajaxSingle="true"
+												reRender="migrationRecapPanel" />
+										</h:selectBooleanCheckbox> <h:outputText
+											value="#{messages['reponses.migration.label.dossiers.clos.all']}"
+											for="migrerDossiersClosAll" /> <br /> <h:outputText
+											value="#{messages['reponses.migration.warning.mass.actions']}"
+											class="nonmigrable"
+											rendered="#{migrationManagerActions.checkAllSignature || migrationManagerActions.checkAllClosedDossiersMigration}" />
+									</label>
+								</div>
+								<h:dataTable var="currentEntite"
+									value="#{migrationManagerActions.currentGouvernementForUpdateTimbre}"
+									class="dataOutput" rowClasses="dataRowEven,dataRowOdd">
+									<h:column>
+										<f:facet name="header">
+											<h:outputText
+												value="#{organigrammeManagerActions.getLabelCurrentGouvernement()}"
+												style="white-space:pre-line;" />
+										</f:facet>
+										<h:outputText value="#{currentEntite.label}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText
+												value="#{organigrammeManagerActions.getLabelNextGouvernement()}"
+												style="white-space:pre-line;" />
+										</f:facet>
+
+										<h:selectOneMenu class="selectNewTimbre"
+											value="#{migrationManagerActions.newTimbre[currentEntite.id]}"
+											id="newTimbre" rendered="#{currentEntite.id!='total'}"
+											required="true">
+											<f:selectItems
+												value="#{migrationManagerActions.getNewTimbreList()}" />
+										</h:selectOneMenu>
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText
+												value="#{messages['reponses.migration.label.signature.briser.one']}" />
+										</f:facet>
+										<h:selectBooleanCheckbox
+											id="briserSignature_#{currentEntite.id}"
+											value="#{currentEntite.breakingSeal}"
+											rendered="#{currentEntite.id!='total'}"
+											disabled="#{migrationManagerActions.checkAllSignature}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText
+												value="#{messages['reponses.migration.label.dossiers.clos.one']}" />
+										</f:facet>
+										<h:selectBooleanCheckbox
+											id="migrerDossiersClos_#{currentEntite.id}"
+											value="#{currentEntite.migratingDossiersClos}"
+											rendered="#{currentEntite.id!='total'}"
+											disabled="#{migrationManagerActions.checkAllClosedDossiersMigration}" />
+									</h:column>
+								</h:dataTable>
+							</a4j:outputPanel>
+						</div>
+
+						<nxh:commandButton
+							action="#{administrationActions.navigateToOrganigramme()}"
+							value="#{messages['reponses.migration.button.return.orga']}"
+							styleClass="button" />
+						<nxh:commandButton
+							action="#{migrationManagerActions.goToViewRecapitulatif()}"
+							value="#{messages['reponses.migration.button.goToRecap']}"
+							styleClass="button" />
+					</h:form>
+					<script>
+					resize();
+				</script>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<h:outputText style="font-weight:bold;color:red"
+					value="#{messages['warn.organigrammeManager.migration.no.new.min']}" />
+			</c:otherwise>
+		</c:choose>
+		<script>
+		var j = jQuery.noConflict();
+		j(document).ready(function() {
+			window.onresize = resize;
+			resize();
+		});	
+	</script>
+	</ui:define>
+</nxthemes:composition>

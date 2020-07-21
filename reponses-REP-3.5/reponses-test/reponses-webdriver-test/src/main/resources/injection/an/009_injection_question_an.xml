@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>44261</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="645555">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Martial</ns2:prenom>
+				<ns2:nom>Saddier</ns2:nom>
+				<ns2:grp_pol>UMP</ns2:grp_pol>
+				<ns2:circonscription>Haute-Savoie 3</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Martial Saddier attire l'attention de M. le
+				ministre de l'éducation nationale sur la compatibilité entre le
+				futur calendrier scolaire et l'économie touristique. En effet, le
+				nouveau calendrier scolaire établi pour la période 2014-2017 risque
+				de nuire fortement au travail des professionnels du tourisme. À
+				titre d'exemple, les saisonniers pluriactifs, qui représentent 80 %
+				de l'emploi dans certains départements de montagne, subiront une
+				nouvelle précarisation de leur situation en travaillant une à deux
+				semaines de moins par an. C'est aussi l'industrie touristique
+				française qui est touchée alors même qu'elle représente 7 % du PIB
+				du pays. Il faut en effet relever que la fréquentation des stations
+				de montagne durant les vacances de printemps a chuté de 70 % en
+				trois ans. Il apparaît alors nécessaire de faire converger les
+				intérêts de tous dans le cadre d'une réelle concertation. S'il est
+				important de respecter le rythme des enfants en prévoyant sept
+				semaines de classe au plus alternant avec deux semaines de vacances,
+				il faut aussi conserver des semaines de vacances pleines, avancer
+				les départs en vacances pour les mois de février et avril et
+				expérimenter le zonage d'été. L'objectif est de trouver une solution
+				doublement adaptée à l'intérêt de l'enfant et à l'activité
+				touristique des territoires. C'est pourquoi il lui demande si le
+				Gouvernement entend mener une réelle concertation, c'est-à-dire une
+				concertation non seulement interministérielle afin que soit intégré
+				l'ensemble des dimensions éducative, économique, sociale et
+				touristique, mais aussi une concertation avec les institutions
+				représentatives des professionnels du tourisme. Il lui demande enfin
+				que soit étudié un nouveau projet de calendrier scolaire permettant
+				de satisfaire l'intérêt des régions touristiques.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enseignement</ns2:rubrique>
+				<ns2:rubrique_ta>rythmes et vacances scolaires</ns2:rubrique_ta>
+				<ns2:analyse>calendrier scolaire</ns2:analyse>
+				<ns2:analyse> zones touristiques</ns2:analyse>
+				<ns2:analyse> concertation</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

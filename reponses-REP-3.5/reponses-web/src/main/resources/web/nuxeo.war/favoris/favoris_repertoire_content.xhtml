@@ -1,0 +1,15 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<c:if
+		test="#{not empty favorisDossierActions.getCurrentFavorisRepertoire()}">
+		<nxu:set var="contentViewId" value="favorisdossier_repertoire_content">
+			<nxu:set var="contentViewName"
+				value="favorisdossier_repertoire_content">
+				<ui:include src="/incl/content_view.xhtml" />
+			</nxu:set>
+		</nxu:set>
+	</c:if>
+</div>

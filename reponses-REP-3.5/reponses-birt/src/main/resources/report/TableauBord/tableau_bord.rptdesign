@@ -1,0 +1,2320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.2.r262_v20110209 Build &lt;2.6.2.v20110214-1523></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="dateDebutStat" id="30">
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">new Date(2000,0,1)</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nuxeo" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.1.3.244:1521:SOLON</property>
+            <property name="odaUser">REPONSES_INTE</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">UkVQT05TRVNfSU5URQ==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="question" id="25">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue" type="javascript">BirtDateTime.now()</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NBR_QUES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <property name="nativeName">TITREJOMINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NBR_QUES</property>
+                    <property name="nativeName">NBR_QUES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select titreJoMinistere, count(ID) as nbr_ques from Question 
+where to_date(to_char(datepublicationjo,'DD/MM/YYYY'),'dd/MM/yyyy') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY')
+group by titreJoMinistere]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="questionApresRetrait" id="42">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NBR_QUESAPRESRETRAIT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <property name="nativeName">TITREJOMINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NBR_QUESAPRESRETRAIT</property>
+                    <property name="nativeName">NBR_QUESAPRESRETRAIT</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select t1.titrejoministere, t1.nbr_ques - nvl(t2.nbr_quesRetire,0) as nbr_quesApresRetrait 
+from (select titrejoministere, count(*) as nbr_ques from Question 
+where to_char(datepublicationjo,'DD/MM/YYYY') >= to_char(?,'DD/MM/YYYY')
+group by titrejoministere) t1,
+(select titrejoministere, count(*) as nbr_quesRetire from question
+where dateretraitquestion is not NULL 
+and to_char(datepublicationjo,'DD/MM/YYYY') >= to_char(?,'DD/MM/YYYY')
+group by titrejoministere) t2
+where t1.titrejoministere = t2.titrejoministere(+)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>COUNT(*)</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>COUNT(*)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>COUNT(*)</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>TITREJOMINISTERE</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2000</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>TITREJOMINISTERE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TITREJOMINISTERE</design:label>
+            <design:formattingHints>
+              <design:displaySize>2000</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="reponse" id="97">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NB_REPO</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <property name="nativeName">TITREJOMINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NB_REPO</property>
+                    <property name="nativeName">NB_REPO</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select ques.titreJoMinistere, count (dossier_rep.iddocumentreponse) as nb_repo from dossier_reponse dossier_rep, reponse rep, question ques
+where to_date(to_char(rep.datepublicationjoreponse,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY') and
+dossier_rep.iddocumentreponse = rep.id and dossier_rep.iddocumentquestion = ques.id
+group by ques.titreJoMinistere]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="mix_question" id="238">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">question::TITREJOMINISTERE</property>
+                    <property name="alias">question::TITREJOMINISTERE</property>
+                    <text-property name="displayName">question::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">question::NBR_QUES</property>
+                    <property name="alias">NBR_QUES</property>
+                    <text-property name="displayName">question::NBR_QUES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">questionApresRetrait::NBR_QUESAPRESRETRAIT</property>
+                    <property name="alias">NBR_QUESAPRESRETRAIT</property>
+                    <text-property name="displayName">questionApresRetrait::NBR_QUESAPRESRETRAIT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">questionApresRetrait::TITREJOMINISTERE</property>
+                    <property name="alias">questionApresRetrait::TITREJOMINISTERE</property>
+                    <text-property name="displayName">questionApresRetrait::TITREJOMINISTERE</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">question::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">BirtDateTime.now()</expression>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">questionApresRetrait::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">questionApresRetrait::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">question::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">question::NBR_QUES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">questionApresRetrait::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">questionApresRetrait::NBR_QUESAPRESRETRAIT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>question</value>
+                <value>questionApresRetrait</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">left-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">question</property>
+                    <property name="rightDataSet">questionApresRetrait</property>
+                    <expression name="leftExpression">dataSetRow["TITREJOMINISTERE"]</expression>
+                    <expression name="rightExpression">dataSetRow["TITREJOMINISTERE"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <joint-data-set name="rep_ques" id="239">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">reponse::TITREJOMINISTERE</property>
+                    <property name="alias">TITREJOMINISTERE</property>
+                    <text-property name="displayName">reponse::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">reponse::NB_REPO</property>
+                    <property name="alias">NB_REPO</property>
+                    <text-property name="displayName">reponse::NB_REPO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_question::question::NBR_QUES</property>
+                    <property name="alias">question::NBR_QUES</property>
+                    <text-property name="displayName">mix_question::question::NBR_QUES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT</property>
+                    <property name="alias">questionApresRetrait::NBR_QUESAPRESRETRAIT</property>
+                    <text-property name="displayName">mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_question::question::TITREJOMINISTERE</property>
+                    <property name="alias">question::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_question::question::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_question::questionApresRetrait::TITREJOMINISTERE</property>
+                    <property name="alias">questionApresRetrait::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_question::questionApresRetrait::TITREJOMINISTERE</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">mix_question::question::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">BirtDateTime.now()</expression>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_question::questionApresRetrait::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_question::questionApresRetrait::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">reponse::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">mix_question::question::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">mix_question::question::NBR_QUES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">mix_question::questionApresRetrait::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">reponse::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">reponse::NB_REPO</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>mix_question</value>
+                <value>reponse</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">left-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">mix_question</property>
+                    <property name="rightDataSet">reponse</property>
+                    <expression name="leftExpression">dataSetRow["question::TITREJOMINISTERE"]</expression>
+                    <expression name="rightExpression">dataSetRow["TITREJOMINISTERE"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="taux_reponses" id="240">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <property name="nativeName">TITREJOMINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TAUX_REPONSES</property>
+                    <property name="nativeName">TAUX_REPONSES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select t1.titrejoministere, nvl(cast(((t1.nb_repo/t4.nbr_quesApresRetrait)*100) as decimal(9,2)),0) as taux_reponses from
+(select titreJoMinistere, count (dossier_rep.iddocumentreponse) as nb_repo from dossier_reponse dossier_rep, reponse rep, question ques
+where to_date(to_char(rep.datepublicationjoreponse,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY') and
+dossier_rep.iddocumentreponse = rep.id and dossier_rep.iddocumentquestion = ques.id
+group by ques.titreJoMinistere) t1,
+(select t2.titrejoministere, t2.nbr_ques - nvl(t3.nbr_quesRetire,0) as nbr_quesApresRetrait 
+from (select titrejoministere, count(*) as nbr_ques from Question 
+where to_date(to_char(datepublicationjo,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY')
+group by titrejoministere) t2,
+(select titrejoministere, count(*) as nbr_quesRetire from question
+where dateretraitquestion is not NULL 
+and to_date(to_char(datepublicationjo,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY')
+group by titrejoministere) t3
+where t2.titrejoministere = t3.titrejoministere(+)) t4
+where t1.titrejoministere = t4.titrejoministere(+)
+order by taux_reponses DESC ]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="final_dataSet" id="271">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">rep_ques::reponse::TITREJOMINISTERE</property>
+                    <property name="alias">reponse::TITREJOMINISTERE</property>
+                    <text-property name="displayName">rep_ques::reponse::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rep_ques::mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT</property>
+                    <property name="alias">mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT</property>
+                    <text-property name="displayName">rep_ques::mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rep_ques::mix_question::questionApresRetrait::TITREJOMINISTERE</property>
+                    <property name="alias">mix_question::questionApresRetrait::TITREJOMINISTERE</property>
+                    <text-property name="displayName">rep_ques::mix_question::questionApresRetrait::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rep_ques::mix_question::question::TITREJOMINISTERE</property>
+                    <property name="alias">mix_question::question::TITREJOMINISTERE</property>
+                    <text-property name="displayName">rep_ques::mix_question::question::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</property>
+                    <property name="alias">mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</property>
+                    <property name="alias">mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</property>
+                    <property name="alias">mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</property>
+                    <property name="alias">mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rep_ques::mix_question::question::NBR_QUES</property>
+                    <property name="alias">mix_question::question::NBR_QUES</property>
+                    <text-property name="displayName">rep_ques::mix_question::question::NBR_QUES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_2::taux_reponses_2mois::TITREJOMINISTERE</property>
+                    <property name="alias">taux_reponses_2mois::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_2::taux_reponses_2mois::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES</property>
+                    <property name="alias">taux_reponses_2mois::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rep_ques::reponse::NB_REPO</property>
+                    <property name="alias">reponse::NB_REPO</property>
+                    <text-property name="displayName">rep_ques::reponse::NB_REPO</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">rep_ques::mix_question::question::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">BirtDateTime.now()</expression>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">rep_ques::mix_question::questionApresRetrait::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">rep_ques::mix_question::questionApresRetrait::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">rep_ques::reponse::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">7</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">8</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">9</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">10</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::taux_reponses_2mois::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">11</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::taux_reponses_2mois::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">12</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::taux_reponses_2mois::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">13</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">rep_ques::mix_question::question::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">rep_ques::mix_question::question::NBR_QUES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">rep_ques::mix_question::questionApresRetrait::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">rep_ques::mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">rep_ques::reponse::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">rep_ques::reponse::NB_REPO</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">mix_taux_reponse_2::taux_reponses_2mois::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>rep_ques</value>
+                <value>mix_taux_reponse_2</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">left-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">rep_ques</property>
+                    <property name="rightDataSet">mix_taux_reponse_2</property>
+                    <expression name="leftExpression">dataSetRow["mix_question::question::TITREJOMINISTERE"]</expression>
+                    <expression name="rightExpression">dataSetRow["mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="taux_reponses_2mois" id="292">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <property name="nativeName">TITREJOMINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TAUX_REPONSES</property>
+                    <property name="nativeName">TAUX_REPONSES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select t1.titrejoministere, nvl(cast(((t1.nb_repo/t4.nbr_quesApresRetrait)*100) as decimal(9,2)),0) as taux_reponses from
+(select titreJoMinistere, count (dossier_rep.iddocumentreponse) as nb_repo from dossier_reponse dossier_rep, reponse rep, question ques
+where to_date(to_char(rep.datepublicationjoreponse,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY') 
+and (select MONTHS_BETWEEN(to_char(rep.datepublicationjoreponse, 'dd-MONTH-yy'),
+to_char(datepublicationjo, 'dd-MONTH-yy')) as months_between FROM Dual ) <='02' 
+and dossier_rep.iddocumentreponse = rep.id and dossier_rep.iddocumentquestion = ques.id
+group by ques.titreJoMinistere) t1,
+(select t2.titrejoministere, t2.nbr_ques - nvl(t3.nbr_quesRetire,0) as nbr_quesApresRetrait 
+from (select titrejoministere, count(*) as nbr_ques from Question 
+where to_date(to_char(datepublicationjo,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY')
+group by titrejoministere) t2,
+(select titrejoministere, count(*) as nbr_quesRetire from question
+where dateretraitquestion is not NULL 
+and to_date(to_char(datepublicationjo,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY')
+group by titrejoministere) t3
+where t2.titrejoministere = t3.titrejoministere(+)) t4
+where t1.titrejoministere = t4.titrejoministere(+)
+order by taux_reponses DESC ]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="mix_taux_reponse_1" id="317">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">taux_reponses::TITREJOMINISTERE</property>
+                    <property name="alias">taux_reponses::TITREJOMINISTERE</property>
+                    <text-property name="displayName">taux_reponses::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">taux_reponses_1mois::TITREJOMINISTERE</property>
+                    <property name="alias">taux_reponses_1mois::TITREJOMINISTERE</property>
+                    <text-property name="displayName">taux_reponses_1mois::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">taux_reponses_1mois::TAUX_REPONSES</property>
+                    <property name="alias">taux_reponses_1mois::TAUX_REPONSES</property>
+                    <text-property name="displayName">taux_reponses_1mois::TAUX_REPONSES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">taux_reponses::TAUX_REPONSES</property>
+                    <property name="alias">taux_reponses::TAUX_REPONSES</property>
+                    <text-property name="displayName">taux_reponses::TAUX_REPONSES</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">taux_reponses::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses_1mois::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses_1mois::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses_1mois::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">taux_reponses::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">taux_reponses::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">taux_reponses_1mois::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">taux_reponses_1mois::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>taux_reponses</value>
+                <value>taux_reponses_1mois</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">left-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">taux_reponses</property>
+                    <property name="rightDataSet">taux_reponses_1mois</property>
+                    <expression name="leftExpression">dataSetRow["TITREJOMINISTERE"]</expression>
+                    <expression name="rightExpression">dataSetRow["TITREJOMINISTERE"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="taux_reponses_1mois" id="318">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">dateDebutStat</property>
+                    <property name="dataType">date</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nuxeo</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TITREJOMINISTERE</property>
+                    <property name="nativeName">TITREJOMINISTERE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TAUX_REPONSES</property>
+                    <property name="nativeName">TAUX_REPONSES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select t1.titrejoministere, nvl(cast(((t1.nb_repo/t4.nbr_quesApresRetrait)*100) as decimal(9,2)),0) as taux_reponses from
+(select titreJoMinistere, count (dossier_rep.iddocumentreponse) as nb_repo from dossier_reponse dossier_rep, reponse rep, question ques
+where to_date(to_char(rep.datepublicationjoreponse,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY') 
+and (select MONTHS_BETWEEN(to_char(rep.datepublicationjoreponse, 'dd-MONTH-yy'),
+to_char(datepublicationjo, 'dd-MONTH-yy')) as months_between FROM Dual ) <='01' 
+and dossier_rep.iddocumentreponse = rep.id and dossier_rep.iddocumentquestion = ques.id
+group by ques.titreJoMinistere) t1,
+(select t2.titrejoministere, t2.nbr_ques - nvl(t3.nbr_quesRetire,0) as nbr_quesApresRetrait 
+from (select titrejoministere, count(*) as nbr_ques from Question 
+where to_date(to_char(datepublicationjo,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY')
+group by titrejoministere) t2,
+(select titrejoministere, count(*) as nbr_quesRetire from question
+where dateretraitquestion is not NULL 
+and to_date(to_char(datepublicationjo,'DD/MM/YYYY'),'DD/MM/YYYY') >= to_date(to_char(?,'DD/MM/YYYY'),'DD/MM/YYYY')
+group by titrejoministere) t3
+where t2.titrejoministere = t3.titrejoministere(+)) t4
+where t1.titrejoministere = t4.titrejoministere(+)
+order by taux_reponses DESC ]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="mix_taux_reponse_2" id="319">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">taux_reponses_2mois::TITREJOMINISTERE</property>
+                    <property name="alias">TITREJOMINISTERE</property>
+                    <text-property name="displayName">taux_reponses_2mois::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">taux_reponses_2mois::TAUX_REPONSES</property>
+                    <property name="alias">TAUX_REPONSES</property>
+                    <text-property name="displayName">taux_reponses_2mois::TAUX_REPONSES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</property>
+                    <property name="alias">taux_reponses::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</property>
+                    <property name="alias">taux_reponses_1mois::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</property>
+                    <property name="alias">taux_reponses_1mois::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</property>
+                    <property name="alias">taux_reponses::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses_1mois::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses_1mois::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses_1mois::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses_2mois::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">7</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses_2mois::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">8</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses_2mois::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">9</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">taux_reponses_2mois::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">taux_reponses_2mois::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>mix_taux_reponse_1</value>
+                <value>taux_reponses_2mois</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">left-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">mix_taux_reponse_1</property>
+                    <property name="rightDataSet">taux_reponses_2mois</property>
+                    <expression name="leftExpression">dataSetRow["taux_reponses::TITREJOMINISTERE"]</expression>
+                    <expression name="rightExpression">dataSetRow["TITREJOMINISTERE"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <joint-data-set name="mix_taux_reponse" id="320">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">taux_reponses_2mois::TITREJOMINISTERE</property>
+                    <property name="alias">TITREJOMINISTERE</property>
+                    <text-property name="displayName">taux_reponses_2mois::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">taux_reponses_2mois::TAUX_REPONSES</property>
+                    <property name="alias">TAUX_REPONSES</property>
+                    <text-property name="displayName">taux_reponses_2mois::TAUX_REPONSES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</property>
+                    <property name="alias">taux_reponses::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</property>
+                    <property name="alias">taux_reponses_1mois::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</property>
+                    <property name="alias">taux_reponses_1mois::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</property>
+                    <property name="alias">taux_reponses::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses_1mois::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses_1mois::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_1::taux_reponses_1mois::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses_2mois::param_1</property>
+                    <property name="dataType">date</property>
+                    <property name="position">7</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses_2mois::param_2</property>
+                    <property name="dataType">date</property>
+                    <property name="position">8</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">taux_reponses_2mois::param_3</property>
+                    <property name="dataType">date</property>
+                    <property name="position">9</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">taux_reponses_2mois::TITREJOMINISTERE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">taux_reponses_2mois::TAUX_REPONSES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>mix_taux_reponse_1</value>
+                <value>taux_reponses_2mois</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">left-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">mix_taux_reponse_1</property>
+                    <property name="rightDataSet">taux_reponses_2mois</property>
+                    <expression name="leftExpression">dataSetRow["taux_reponses::TITREJOMINISTERE"]</expression>
+                    <expression name="rightExpression">dataSetRow["TITREJOMINISTERE"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="259">
+            <property name="fontSize">8pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <property name="width">250px</property>
+            <text-property name="text">Tableau de bord du taux de réponses par ministère au titre de la législature en cours</text-property>
+        </label>
+        <label id="258">
+            <property name="fontSize">8pt</property>
+            <property name="width">250px</property>
+        </label>
+        <data id="1875">
+            <property name="width">250px</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">date</property>
+                    <text-property name="displayName">date</text-property>
+                    <expression name="expression" type="javascript">"Date de référence : "+BirtDateTime.day(BirtDateTime.now())+"/"+BirtDateTime.month(BirtDateTime.now())+"/"+BirtDateTime.year(BirtDateTime.now())</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">date</property>
+        </data>
+        <table id="8">
+            <property name="pageBreakInside">auto</property>
+            <property name="width">250px</property>
+            <property name="dataSet">final_dataSet</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">rep_ques::mix_question::question::TITREJOMINISTERE</property>
+                    <text-property name="displayName">rep_ques::mix_question::question::TITREJOMINISTERE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rep_ques::mix_question::question::TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">rep_ques::mix_question::question::NBR_QUES</property>
+                    <text-property name="displayName">rep_ques::mix_question::question::NBR_QUES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rep_ques::mix_question::question::NBR_QUES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">rep_ques::mix_question::questionApresRetrait::TITREJOMINISTERE</property>
+                    <text-property name="displayName">rep_ques::mix_question::questionApresRetrait::TITREJOMINISTERE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rep_ques::mix_question::questionApresRetrait::TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">rep_ques::mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT</property>
+                    <text-property name="displayName">rep_ques::mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rep_ques::mix_question::questionApresRetrait::NBR_QUESAPRESRETRAIT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">rep_ques::reponse::TITREJOMINISTERE</property>
+                    <text-property name="displayName">rep_ques::reponse::TITREJOMINISTERE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rep_ques::reponse::TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">rep_ques::reponse::NB_REPO</property>
+                    <text-property name="displayName">rep_ques::reponse::NB_REPO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rep_ques::reponse::NB_REPO"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TAUX_REPONSES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TAUX_REPONSES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::taux_reponses_2mois::TITREJOMINISTERE</property>
+                    <text-property name="displayName">mix_taux_reponse_2::taux_reponses_2mois::TITREJOMINISTERE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mix_taux_reponse_2::taux_reponses_2mois::TITREJOMINISTERE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES</property>
+                    <text-property name="displayName">mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TAUX_REPONSES"</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses::TAUX_REPONSES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_1</property>
+                    <text-property name="displayName">mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mix_taux_reponse_2::mix_taux_reponse_1::taux_reponses_1mois::TAUX_REPONSES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_2</property>
+                    <text-property name="displayName">mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_3</property>
+                    <text-property name="displayName">rep_ques::reponse::NB_REPO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rep_ques::reponse::NB_REPO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <structure name="toc"/>
+            <list-property name="sort">
+                <structure>
+                    <expression name="key" type="javascript">row["mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES"]</expression>
+                    <property name="direction">desc</property>
+                    <property name="strength">-1</property>
+                </structure>
+            </list-property>
+            <column id="15"/>
+            <detail>
+                <row id="11">
+                    <cell id="12">
+                        <label id="38">
+                            <property name="fontSize">8pt</property>
+                            <property name="pageBreakAfter">avoid</property>
+                            <property name="pageBreakBefore">avoid</property>
+                            <property name="pageBreakInside">avoid</property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="22">
+                    <property name="pageBreakAfter">auto</property>
+                    <property name="pageBreakBefore">auto</property>
+                    <property name="pageBreakInside">auto</property>
+                    <cell id="23">
+                        <data id="272">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="display">inline</property>
+                            <property name="pageBreakAfter">avoid</property>
+                            <property name="pageBreakBefore">avoid</property>
+                            <property name="pageBreakInside">avoid</property>
+                            <property name="resultSetColumn">rep_ques::mix_question::question::TITREJOMINISTERE</property>
+                        </data>
+                        <label id="329">
+                            <property name="fontSize">8pt</property>
+                            <property name="display">inline</property>
+                        </label>
+                        <data id="328">
+                            <property name="fontSize">8pt</property>
+                            <property name="display">inline</property>
+                            <property name="resultSetColumn">Column Binding_3</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="322">
+                    <cell id="323">
+                        <label id="324">
+                            <property name="fontSize">8pt</property>
+                            <property name="display">inline</property>
+                            <property name="pageBreakInside">avoid</property>
+                            <text-property name="text">Taux de réponses à 2 mois :</text-property>
+                        </label>
+                        <data id="325">
+                            <property name="fontSize">8pt</property>
+                            <property name="display">inline</property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["mix_taux_reponse_2::taux_reponses_2mois::TAUX_REPONSES"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display">0</text-property>
+                                </structure>
+                            </list-property>
+                            <structure name="toc"/>
+                            <property name="resultSetColumn">Column Binding_2</property>
+                        </data>
+                        <label id="326">
+                            <property name="fontSize">8pt</property>
+                            <property name="display">inline</property>
+                        </label>
+                        <label id="327">
+                            <property name="fontSize">8pt</property>
+                            <property name="display">inline</property>
+                            <text-property name="text">%</text-property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="284">
+                    <cell id="285"/>
+                </row>
+            </detail>
+            <footer>
+                <row id="13">
+                    <cell id="14"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">goblet_gold.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAK3RFWHRDcmVhdGlvbiBUaW1lAE1vIDI3
+                IEp1biAyMDA1IDE2OjQ2OjQ0ICswMTAwic8k6gAAAAd0SU1FB9YFFw4LAgr5ICkAAAAJcEhZcwAACxEA
+                AAsRAX9kX5EAAAAEZ0FNQQAAsY8L/GEFAAAxdElEQVR42u19eZBl11nf79z7ln69b7PPaBZJM5K1y0bC
+                dmzjBeOAU1BJirUqECAQVyX/ECqpQBlccSBgCLgCMZUUNkWwYzCbQZYtjKzdWi15NNJImtFsmq1neu9+
+                /fZ378n3neXec++7r3tk9Ka7h5yZ03d9dzm/bz/fOVdgg5Yv/QT8uz6I3Oh+FBYb6PN99JfyGAgFxgo+
+                JoIG+nMFTLYDiLyPrVKCFhj0fAxDIpfzsEUAnudhTEj0qYvSDhmkbkT7EDrrdFx4dJ6EbIeYoWsF4PUA
+                l6WgM+lfo4lLQkD6HlrVOmZ8gRYdn22EuFwuY8kLsdTKo748hfp8GQ2cQfOHPx/dRa5326Zff13Lc3+C
+                4oGD2Cry2Oe1cYgafi8BNhE2CEBaEhZjVIdofZAafZCeuOjl4NM/wU0pqVnpt7pZiQLgqVUpcmqfAC3V
+                Oh8zEEiJBAyJbanPY0IJm2abWilsmXVp1oX5CW/TubKtlu1QohGEqNBzVdsSS4HEIl1udiCHmXobr1+a
+                xWGqx3/lzzB99AhaWGeCuOoEMHcYw0WBe8M23p4TuM2v4WAYYhcBPCJ89IkSQ0iFQBUFvVQg5mml0Acv
+                1weZ76elR+AP6Iv6xOAh/6AEIRhlZngPoUKW9od8AUZUGo4nsUEIh2adNvQx9Suht4O6XvI1ZI1WLfU0
+                iDhIKPD+sK7wk60GwnadCKZFtYmAYA3bpjYNgdDP+ZR2GzWSLLP0mMdp+cJSBU99/SU880u/i1ko+XN1
+                CeKqEUBtCvv9OfyqX8H3UVtsFczBRaoleohBQnpwEF6JpLc3DGZ0Ynqqo1T7qRYNqH78yNI8Pm9acBTr
+                miVVDVIYA6zERaD2SdhjgUbKipOohOpn+jdWTwiwFpDqWlDXZXoLealuITUBBm26d52kAhFLWCYCqRAR
+                LJHuqKFVa6Ndk4q+iDgkn0r0NFWu468eP4o/+tiv4RW6spU91wYBVI5gZ6GKvxR9uFdM0E1HCdTSdQL+
+                dnqASQM0A543Dc3v3kar3qDGqiMgzmJObNXrSjwEDWpcAsajGrabpOhZ2Qu9ZADaNfi+VNt6acDm6hs9
+                QRSoTrDrrPgZaM/oDLWvoPd7eX0uUy3rG1pKYZpOqCdSv5VKZ0BJBk18RAAkaaS6N6PdUMuwvULS4BKC
+                6gzo8SVt8iPj5Fk88KOfwC9NzeIY88zVwCbX6xvIh+C3aviP1E73eG/ro/a7h/Z+hOotVE9RPYHlmSW8
+                cfhlLF2YRr3MrUFilIGlhvOItTyytgoFj7ATyNMyRyDmyOTL8T7SI/kcb5O6z0k6h9bprULCL8dYEfgi
+                rwlEAasAzuul5xugzbraZiIQZhnq85TkISnkFQxR5Om6tPSKuvp6Xe1TJBoa+4BVjpZKglVHu4yg9gZd
+                bRJ5Or+9/Doacw8ILzenLrFrG977T+/FRz93Pxbp1+c0ZfW2eL2+QWUct9Fr/JS3h1goP0x7fozqO3SD
+                Ku4nE5qso+p8Fe2WVI/UVq+dRxCSnqel51OD+0VqfzIQSN8Lai3h5xVwggARaplX1xSGg+1Sg5ZT11Pr
+                iuYNh7vrwlqLBnDhNo0rKI1VaG0FoZwEwprFPrFzWKNK8j1YproE0ZyGrB5HUKFaPkK/IzVHojBs0Tm5
+                CRQnfxS5/tuQo+boK6H/I/fifQMlHITWfT0vPZcAxKA/7feLEWzhJns77SExiDegxX5FNejEnj2Y+JF9
+                pmE9sySRX2uoqnQvg0rAtJU6YKu7qXStIKBY7DOGMiBjjUSsUFKDKrsBvtTugicjrSqZw6WnwTSLBM6K
+                iQlUhTPdQ4n4hpYK/Dsl0gUfUl6ivmiLCICPN/XzKbegpdSCZFXQrtChGYihj+rLsN3BviZt5Effr9RD
+                vnRc3HID7ty/E7e+fBKv0lVX0GNboKcEMP8KRnJL+JfYw0x2M+35frBuB5bNu32DXu8wLdmaH6d1Joox
+                KINPjCHfl0O+uJW2S1rUKhvB+nouVxojThizW3lXvM/ofWGW0TlBvE8aH47dfRUkCIzl39L7mbOZDtQx
+                cw1lLLb1MqzodWX6rxhdX1aAavBb2muwpk3jLETfNlifVDAR0D0LYx9Au/IGhkqNiXvfhuuJAPjFpw3H
+                bE4C6AsI8Ry2iUkG7kMGPJiW4IZ+xQBVpvUqLS8h8vvYrVOEwQRBBmLAnsGgeeR+xB6BeQVpDGcFFLdZ
+                XblssKBa5x6aoxXYpipulcZXYxGuftfWv1egsqewbO4hFIEItHX8wL6OpQ0bUzBVOI6F2lV7kQjgu0nD
+                +ER/UhuLRMxSFIkI3o36/EPio+/Coc/eh91gA2mzEgC/ey3AD4Fd8+I+2nOzaQJjeeMMtCToM49hnX6q
+                smDAHjVEMGBAL5ngQA6xFLCtjxh4NqCZoCSBJyuG2PicllmSmlA6u22ADnV0h/cpqdA0kaC2kQSB4mbh
+                vJw1BWyowBb7RGpddspv2ZolepolAhjR78AuJC+JyHL9N1J9Cof21O4cH8G++SXlGi0DvVMDPTMCKxfI
+                16/gHjHCGu8e2OCMBo/EuTyllwrwolm3/j6/N3M+N9J4XNmHVOuTuopxXflcMWb2TZpz7W/GNPGQ4QWv
+                pJeKkJgyWdUUjWtXjNftcwlDkDBGpAu+WZddoBFd9in933pDu5YqruBFZ0tSc/nB/egvYexdt2IvNAf4
+                6GHpGQEEl3En2V87xDiD+XbE4to3jXkamuuLySqt2LfATsRV7Z8w7TJu1idiQhCj+pgCf8SAz8tBfe2w
+                z7lXwal5A3w+9gaEDUFar4B8fwcLN3ws0ksgwbMCSEqPBr27tCrMEAAbs3SsMHoThxzE99ytVMAOwPRj
+                9Kj0TAXQy3w3EXkB/XvMezTM7YQRy0sGcEsEFgwiGEHuomTgmHjYdWTxzyCWEHOnpV0dNFJimy11y7mh
+                79zPPlULsQrSgR+hfAShRb2A0e/QkUKr2IWMl21rzXUpqX4Gc8nkKW2y7URL2QEcCrQkIslg8Pt2IVfq
+                FzddV91XzGF3o61euoIeqYGeEAAHf1aquJUYlt7sDnMbG+bmxr9gloVklf2aABh0MWDWhwz4tC36zblO
+                SFgVtvQNAQTsD+ac4ybcq0K6Ne3GCdeLsBG9OLwbsXCk4HVoma/BvUxC9QaZOA9SP3eQctcThbwEQS6r
+                VCpIE2GkTujZcoO7sWP8+M4tY9h2fkYZQLO9wKlnBHBRoH9MYr/CEHeapvBNc7BoPWMAd8EvapAZcCYE
+                JbaHY/AVIVg7Ius1chp41eqeI4eNWyeMsReBHxOQ0KEcrZ8N8No9My6kAV9VL4hjAaa4hNBRUtJA7SLj
+                MgwWSbvsMs9nn0eofobC8B5yB4+P7d2BCSKAIdN47V5g1RMboDCAIZJuO1Di3p59Zq/V/QzWrAE8JQGU
+                qLfgc+1DJP4T3J9LVc9c25wvWGqma78+3qFyHBtABZtS0UF1P1s9o1riZku4gk6J6E842+7B1pyJRpoO
+                LXMG92/kBq7jcHbptgPWELIW6FtfeiIBfLbMQrLG+nZCG2zcr2EdZfall9Hp9vV1qdZyL7hNmyoyvrOS
+                xcwsLfN7vl/brDeQFNS2hskqNLernj8VYuT9AUy40dwniLqQ04+RcA1ltiqQ7RnD88YGsRKA/YLCMHIF
+                IQ5dJ63VW0SPOod6YwOQ9U8SoM8rXo84tGuXC3RC3QDCBFBwltZCt5LC5VL7qG7s1mn1CEwraawVb1WM
+                6chR4tyLURJWTVjw0+u+Po54yZE75b6p4/q2EVllSAKZ9ajhImJJIpwTpSIKv7QF28anJ/J5jLVaqlG6
+                mhT/kNITFUDtt1N5Nf6NiN0/a33PmvcwvrV0icAC7xCC22ljxXBCLKdrmnhcP77gXDPt4+u+BqhUI7/z
+                fsLxHlQQyuuICazeKKltDiGnw4TRuiRPYBI7xrCFtOiYaYyelN6oAI98WNV+1zl7rSG4gKT+dkGwaUCW
+                YOx+C+5qLesuze+VwWeIQVhiC1KWvQ0Vt+P7iCDq+GFOl8IAHkmxZKdVx6OYdYepoxaICicBhEkLMYoc
+                0vP5xWEMDmC4L4ehZU0AJvHgrS09kQA++a8KN2+raWjTWIpr2P+3ut8NDNl128B22wpXy/muYeY5y1x8
+                H9WgruQQ8XrU7ZvPuF7OcLq9plsFXO6P9XYn8B1aCanjvAjLUHaKdj2iIJI+hSXABPoLGO4vwUavepK8
+                0xsC8LBVZWMoD8YJqKha1g0ts6x54UTITFKGKlZUWpD9LkvnXGlfz0v+Trp9/qY6BCUsEQrPEfsux9vn
+                MlXGXC5XUQPp6KDqZwhq2tSw+xxjwSMJUMijNDkSWcM9waonFxXsAfglejEW5zbfzubVNRBzXlqfu8X4
+                3W5Ax039TdgVVjq2nUZ0/X1b0xyfxekpUa84NH0dC36nBOgEE52SIOoprKLTqNXv6nkFdgX98WHF/SX0
+                qE+gFwQgSAVsEfkB2PSoyI1S7lnFcKFtaBcMk5ifEKMy6pfXrp3TL28aS++zuj1IdgFHLe4ao6sAb8AW
+                0gU5C/hkMCnTGFxFBahUc+5qtmFmt6rHJevDz4ldWxQB2P7vt7z0pi8gZFO6GG3Eb900/f72WBoIQwCR
+                gdaOI3HWYHOCJolsYPW7pokztPU6WoYYHDtCGXQ2qcQhQuGIeem4Za6HllW6eaRrtxE9JjFDwRoFrhgh
+                C8PLk6lSxK4tbRvF6glWvcsHUO8TOGYwNyODz8D0ITIKO3Sq6bcXJqOHO2msKhE24cOqE1cKmCwemKok
+                hpUarirJstwdENIG3GrbyFjPbIzUb+3rsgSIGstyv/MMZKxuHcUmJIAoN9/2dFnd3e7ecolGZAAbeims
+                i2b2R56BbTg3KcRyvV0alSGdHsFEKhm63P9K3g/duT8NePq3FuuwYqx/B3yTRsTGKCe+DpZ6awP0KhKI
+                WJy7De4kt0TndGthBrGqfXd1Wt6A57qGoXMfq/+tBLBEYFWIvW6IzrFhqZ7BbuClHxFYWxKsdtyMLEp6
+                SdKMYPLIBiiwBGBXynaCvOWlhzmBbpydiwuYPW6ASyfSRYGZmj5fiXO3DXzYfPv4ukAkdSI7wLa4VQcZ
+                xBDZD12IA+jO0WsRQbd4QKS5dBxAp5WnpAD0iCbft4MSsiJP//DSEwIQkdPr9mDyzgbiuHuaQOw+a9G3
+                jY9ejwlAuP68q1BDh9Otx2Hvbz0I1zswXcPRc4TJbekQg5QmOcTV0Q5Qa1n/3YhGrVfNwMG0CrDbnm2d
+                nqWF9UYFCNNmkQ1ggVpxwrCOta90e86Ib2sr5Mx+OKClw7EZLSvTnN12lm7o180UDjuqTEgImSJaFzB0
+                BxvZjxitW28jun5MdDoxpfcj93pCAEETi15gLX57C9fFs41vOFTY/a7lLhxxmA7apHR2R+Nbbre2hMnu
+                jdaD+N7oQhBWIkgHfBl2SoBUSeQHrKECeCSR4IGqWcQFvb/XJNATAggFWW9Bi16jFaU7aXcv54DjcqbV
+                28bIs356ZC7YPvhksMbO5JBsWelwtb2XNQzt/VrJ+0djBNo6C8hVJ9KRAi6nRtyayiBzAEbWurtNTBKK
+                JOD2Hmo8U7uJmcXe5QP2jAAI+2nZYglQMyCZt+dx+hHnOTUS/S6Hc2PkTYP7ScJw4vAJozJqprS4Ny5h
+                JAVazn1TkkBYG8QBX4Yd2yLi2i6Ap/bJTEIQJrUsNj4V15sh75w6VqupB24iNpY2PAHIpsR8X7ttAh39
+                zrOnud4ALxzwpQuo1cNuxxGQVAMwtkHasExFFJEOEjnr0TCwIFVDM4IojLYTEqGbsec6OhlGYBwbyyMe
+                ohZfOwz1fUPSpVNzSgI0nRfc8ASARgNnVX5muEBYjdu3dW7ncr3tobPcDyR79gLEWcXWEMyIxcf9rPE9
+                XHVjQbdSQDpSwRyTyCaCxDLhMaTATwcm09g74Otwf1/SC7CSQAVEA1Xnygr8Ono0VLwnBNBs4gJ5bSTB
+                ZoVXPGAa2A3aWA50xX6qpaKMHXt+uvcv3R+fNKDiDqiUGojUgVUFnZJAIsggBMdIlCESIVtkPEb6kTJV
+                g047k9LofyvxeMwg6dGg3WAJsDkJgKRYWzam8yhaHeuKbWuYOelVIgtMKwGsa+jYANLJp0vIVcd9i0bx
+                puyNtBRw4wXSTO7D4wFdAnIkgnCnGjOAuomgXYN/6QM80URo0s9dyaIkQIuFg5xdVA1V21QEsLKMS8EQ
+                VkRrZiwCIerDt5m1iMGPGsSuWODtlDFOD15HgoZtWBsQAhJdxtJ2BrlguxJA9yBKy/3WFoAhhCy14Mj3
+                jkSPVIggEdxzjusfF4jZY9vCegEcRgnJiGYmml2KQqKbhwDmBRZICsz0VafGvAnrc1uRzSHdFdMI1vWz
+                jeMGX+Lh3Mk4gBNXSHfsyLQKsMTn2gIZqiBaxlJAT+Bg5hII01LAARMZ6xn7ovCB+5hmLjs3CqmJwENQ
+                X0alhpVNSQBnLmDl9nFckM2Fg1LUTGST/5jUb5UX6IS1ZVqOusafk8GjpIAJEmXm5BkxYm0OawdEyShB
+                wuizwEtDFNIhADc2EKuHJPfbW7pZQG4coMMmSB0T/oC+b2Tgx3GAdqOM5Qrmq3X1wtVNRQBTNdTpHS7I
+                Gj87jwIaNUe4MXnEz8WYAFwHOfKtjfiPAjqpLJ4oj8AJBEUpZ25juv0C8YwfHa6gMBP7Rfo/5RpaKSCD
+                OHkzC3gH4Ezg3WPKJu6HjTRK6UgCz0fQXMFMGfOtFkxAZfPEAfCJT0D+/N+TIagynngg6DBiL2AQUR+B
+                tF27qSibsNa/7R/IxbECmWEEur5VmggiQ9CJPjrGn4wmhggi8GUmIbSzgczQ9S4xSJfG00Th9xs7Ixb/
+                0vygXVvAxWnM1FsqDrC5vAB+m3oTpwZzZOM0LniicMg0Ir/9EGKjUBpQXW51xb+dds36/+78QDbCmPIe
+                ZEoCJNxBK9pdg89O6WlCwXZmENcrMOC7qdvuXAAd6j8j8hfpfzgepCiqIeE6EBTHAdgzaNYq8vg5NYZ+
+                0RBAT0rP8gHmlvHKWBGVcOXSkD9ho3GhJoBouJWr813jz+btWwMwlySArMxcpRKcDhzXm5D2/qlOIDNh
+                lHRFvUypAjObV9ecADj7ukT+Euu2x5e431PzBLUV19vKM5y16vNotxAcP6vEPxNAo8udNy4BPHcKx/eO
+                42J7fvaQP142oFrXjjOcyoi7d232cBCfo/IB7PgBawSuFgiCGWmT4QkkspIDR8SHRvTbyaKCeJLfSBLo
+                i7v+hkiLfSAZA3BcwYjj056DN0iP6+Y26pPYCWyUZ8Ci/9SUcpN4KFWzVzj1bIqYj/0yeYMFvBIs1+m1
+                phBF9HgeFDWPj9sV6wRrlHhmm4cTQUy1Ez/BrPNx6SxRTy6j427lfQ01fauewVnP4acnh2oZW8AJDWdx
+                /irWv3tcIvs3CTcwN6JmKxORf2jtH0K7fJkl6OVLc4rzWQK00KPSy2nignINz/R5+CHU3yDvb0esBgSv
+                vxq3SsKtc0LG0qiA0ItH8EiTHNORm28zip2YekIChDGXQ4dfo3kC1cSPQcz10czg5soytQ5k9UIkud89
+                mK7cBP6wns3cBIC0CoDqIm6sLMojJ3Cy2lDgc+3J5BC9JgB5+hyemDiEIFw+n/MnTYeWatsJLc4jN88a
+                deluXicLSKZ7DNOTRcLR/Y4xaKNs1hYI7SziQdQLF80ZaI2xDMA7kU7eLgH8KipA0zs9d54H/ZoYgDlB
+                Jc1VFxC0Q/nXj+MytL+8hB65gL0mAPztYzh6+36cyy/M7fe2LJCNNqhbhufsDVkKnEUc2zeE4E7fIp2R
+                QtHQrvSQrzQ4DgEYA1M62T0yjIkisgGk7oBJg5kYtIOErOnQ+TK1ntUJFNkBOXL/vLgnUGl+WoYk5eqL
+                F1CuYP7w60r8cwP1dLrYnk4W/ekvoFxr4cFACbE3tMsDM5On4KHjJksnkaeXkS0U9R42jH2QsgFsFXaG
+                UG0PSK5q1k+uTa3zOeTLy6Bp9H6AhM/WJbybZfh1DfakXb60JMhNmDGHMSFyZlAYNNBYnsFDh/FsuYp5
+                aAnQMxeQS68niw7PzeNvh4r4qWDpZD43epPpc+cg3iiBwMkidoCk4f6I21MWfiK6YpepcwJEHKVa2oy/
+                l3bdZvlmpeCluFVkgSyTY/7dwE9HVne3gBG/GU+dw0aoUj/6+Xhq61ZlFs16O/jSg0r8n6E6hx5PGd/r
+                6eLlS2fwfKWG11szy0Tll2ATK6SajXsfYj/dHdDpBG2QJSFSnTtRj15Dc7y18m2njivmVwN/NdEvM0S/
+                Qwyu4Zfg/DT3e0V4uVEn08ikmNFZ1dkzOD+DE8fOKa4/jR5PE3s1CAA//3HMLtbwF61pavrGCT23ju1k
+                8XZRQ+QSEzfHvW6GEIS7LzXyV8QWfWxMoZMTnXR/eaXgm5IZ8VvL8MtSC/Z67A3BWv86F4D/tuqLqC4t
+                hX/2EA6T+Ge/+Tx6LP6vCgFQab9wEn9Vq+Ny8/JFkgLl2EULecDLbqfhZASmNC6bSo0yyRl6X6gmdFbL
+                QCY9v1TuZiJ5981wvgGuay9fSs9nuX0yq3KDk/gPo6RV/S58o5Wp45iax5k/f1hx/etUZ3AtfDGEm+Mz
+                f4DjsxU82pwixFqndPBDjQcgMe0fiLnGBS7FvZlLB1wp0SHer4TjbUm4e0iK/QhYdFr/CVsgZQ+kbQDh
+                D5JX22+IWnO/cnar86iXF8M//iqeW1xR3M9BknLyCXtTrgYB4KmzqJ+cxefadTTal8+R7m9qIgh57n6e
+                pXtXYlCMy8kuwB3LDDGPsDtBXJHBB3Sd9Dlh6KWAToPeYQPw9fp2RA8YSTqqK5dPs+4/86WHFOhHoefS
+                7Vn496oTAL//z34MT12o4oHahTp5X2e05mOk+Esb3oFOIK9EAjiAd3C8DZ2sIfK76XyXo9MWvwXYvXyH
+                2E/f28vT/60m08gYfrRorMyw7g9+4/N4stpQH4rir2gsJZ+qd+VqEQArtOq3nsfvNVaw2DjHKq4GmM+l
+                qGljvZ0dOjOLgxMjtVxgskdXdQffAmSLI+7T6sDV/2mRn/b7M2MBfM3CdhPOtlnAUmUirUydwAvH8Pxj
+                h1W//4vQvn/PQr/p0tOPEaSKnJ3D7D13YM+YwN358brw8ttgw8GSJ4QOLnaAcsXLrHV32wFepH7r7svU
+                +auI/LQqyjT+hAd/8GYd5ghMKNoXKF86gZnL5YVf+AyemJrFa3SFb0J/N6dnod90uWoSgMs3X0bl2eP4
+                w3IFZ2qnL1M7zJiGCyA4NOrtjhv/Cqz2N1u7cr2j8xOzxKRBtZfKAD/T5zdLr7BDzTmsjD9j+DWX51Ce
+                mQn/4H584+hJNX3qC1TZALxq3M/lakoA1aZfexxz77wL9d0j+FAut5Tzh7fCjpETHn8cagZR2ng3jrfr
+                a0kAq+exNtcnvu+TFvP2pzI+r5vuT6srKO6/yUw/rzt8ArKGF8+9htfOyqMf/1840Q7wNO3+FnTf/1XR
+                /bZcbQLgEnz7VZx+z93YP+a1bymMNkkV8ITYbBwJ/Xm49lx89ncAvgW029DqNNdnBXM6DL4M0Q6H4xMq
+                wHks0bedjL9RhEJ/QpYDYYvnjmNhvrH4b38LD1+aVz7/Y9CBn6vK/VzWgwAwz+PdCjh+x37cW2hWthcm
+                +4Tncb9AYMbL8ZeVzezo3Qggta8bp0dLhzDW4vropxkGX4fYTxmkCQLxcvD6r9cGn0puZr1/CoszS7Vf
+                +UN8hVQii/xHqbL+vyrfCk6XdSEAKiFJgcUdO3Dhxq14l99YGClMjghPpYBRS/kDEPxpNdNHLlJcbd23
+                qFM4i0hMSROGXU/36GUZe2uC75yfVb3+PRC5AR3qFgLV+QtYvjwT/OF9uP/zD2KGznmcfv48dNLHVRX9
+                tqwXAXAJH3oWF/bvxcINW/FeP1juy4+NG6BMImi4tLYdkLHPJZLEvvTpXbg+Uw2gE/CuVj/fj4D3S7u0
+                xU/gNxansTg1Jb/xLTz6a/8H51ttpfefoso9fz0P+XYr60kAXFoPPIk3bnsbGrsHg3v9drmQHxtTPWOS
+                P/vCc+pLJyDWhdOFSI0VylANXTl+Nf2/CuCuCuiIC1DxBkj0Q3+ivlmewfz5C/KxI3jiF/4HTtaa+Dad
+                wtzPgZ+e5ftdSVlvAuBSf/BhHC+NYfngeOtOv7Xcnx8fVR9+5m8HiWAeyY+qOFVkWPcypRaAuCsvbakD
+                Hbo+sc85JjPOd4khdM4RRTb8RtRDNJdnMXfugnzmVTxF4L9erqlgzyPQ/f09/SzslZSNQADco19/9ihO
+                Dg6jfNPW9jtEbblUGB1Un41Xw7/slKqpuaHSdkCWiF8LeNfVU7tW0/shuor+6KZ+if7vVg5Nc3kGC1NT
+                eP0sXv65T+HlxRW8TGc8TPUkrkJX75WUjUAAXEIeA/fcczhRmsD0wS3tO7GyPFgY6RdecQiCvALBM2ql
+                LHlVutkEaWBcoN+k4WdHna/pDvIEr/171RczmuVLWLw4LY+9gSM//d/wwtyysvQZ/OPQFv+6GH3pslEI
+                gAtLgtqjz+HU7DJOHtoZ7ivUFrbn+vJkT41DtrmjLExwcda6zCCMrJ66tYigIxCUxf1hkgC80k4gX0Jj
+                /hzmpxbDp17G0//mUzg6v6y6dx+hegw9/Arod1I2EgFw4Yapv3QC586Q5NwxiaEJv3yjn/O83BAZh+3l
+                TiDtr9KSIMu4S2+nzssU/2F8r1WNv8KI0vuVmbMoz1XDrzyFb/ynz+DkcgUvQXM+S4ANBT6XjUYAXBQR
+                nLqIS88cwavbJ+Hv6q/e6uU8PzcyoANEWaI9gxhkijAyQ7WrEYAFP0SHHZAgCK8AolDy8S9gZbHd+Nx9
+                +Cq5eheqDRXf50APR/uq2GDgc9mIBGBLa7GC+SdfxtHrdyG/s1S/VUiRLw7loAdzIjNG0CEVUvu69eit
+                tezm+7M9wt/HWJ5exvyinPv4/8Z9n/sapk18n12909AG34YDn8tGJgAu7WodZfIQXp2cRHv/WOtu2Zb5
+                wkAyPRtZoK+yndmf303/dxH5lqiCgOT6YoCLMzj3sd/G1x/+tgrvMvAc5GE/f91dvdXKRicALsFKDeUn
+                X8Dx3TtQ2zsq7wyqKBaGzYSaQCYBqM01CGDNcG83FWAfjATR0gLkibN49V/9Or752hsK8Eege/Y4wreu
+                QZ4rKZuBALiEjTZWvvokjvUPYObAdtzsVTHK36XyPXRY+Wu6fGHqvG7AZ0gB24HEmWzLBP5rZ3Dkp8jN
+                IwnAev4h6KweHtWzbuHdN1M2CwFwYViqjx/GSfKpzxAR7OiX2OV5EPn+bEOwGxG8KdFv4wB2mzbbTeL8
+                RcjnXsUzP/ubeHl2SVn4DD4ndPZ0MOdbXTYTAXDhhq0fPYVzLx4nu2AMctsQDqKJPBOBcKYL6hoIWoUQ
+                sryAdJJps6HAb//NY3jwP/xP5ebZ6B77+j0dyNmLstkIgItyEy/NY5pAOFqu4PyBrdjlNzCZ89WX1tZM
+                2064fyFWtwPMHdnYqxK88wtY/vSf4r7f/jNcbjSVrmc37wQ2qJu3VtmMBGALG1jL3z6Ok4dJGgwNQuwY
+                wvWyRdLAfGk3S9dfsdtnCYOAr1eItVcQ0L0O/+Lv49GvPIXLdIwTOJ+A7tTZsG7eWmUzEwAXNrQqF+cw
+                9cRLeLXVwsy+bbjOa2KMjEURTUDWDWwuYTbnqykohLLyMTOHy7/yWXzlt76AM2cvq3Aup3Ax93MK94a3
+                9Fcrm50AuDBkzXoD808fxYnzMzj9PXfgnwwMYGBoRJ8Qhuhq5Ll8yx5FIU81p9OlW2Ts1Yj7P3s//u6P
+                7selVlv59ww+EwEncG4KS3+1ci0QgC3Bp38RrX/3z/GfhwbwjrHtEJ6v0u81qL5e5mmZI4DzBQ10X8HU
+                ol7mzfzUDRLq/M2LgNZv2489c0t47OhpZeydwibV91nlWiIAfPHj+NfE7b8wuXfUL5TMnD9ceFr23CRR
+                RInEepOIIlSEwRzviVQmkdQpCI2GJgChv11VOHQdJp56Cd8mF5Szdzd0dO/NlGuGABa/gbGFZXx2ZPvu
+                LYO73ymQu55YfQdQvB0Y+n5g8AeA/vcBpXfo1+avmSi9kBqDAA06zynBRBDoGWREqYDxSgOzT76sAj6c
+                xLlpfP3VSq+niLlqpbaCg8TGu0pj24WeXo4Qze8mAiDAS3fQm+7VrN2epv20XjtIlsM5QniZbHjy4lpT
+                iZhBoWBWpRYknofc/u24wfdxAxEFj95dWu93fivKVR0a1ssSSuzxJPryRZ6K1kSE/DECfrsG3Kf9/iCt
+                76FKksHjadrYSBglyfAOTSxc+HfCmb7XFFoPnz+OBQKff1hY7/d9q8o1QwAnpvFaK8Rsee58/Fo8xyBb
+                gjz1rDDhPB6hK+zs4yK2E/K74ovRqfV6stu3UsPi3z+njD9OTdrUrp9brhkC+Mmfw4mpGr5cvnRWhu26
+                sd5qJPIJr3Au7ixikR+Q9A6rTq8Pq4bFiPvZ+Gs2Y/HPM9K89gaOkYvJ4LP4X5dRPL0o144RSLDuHMEb
+                B3cH3+/Lymj/qJ6KLfruEI8vCIgQmmeIvY/T8nW9j79NEJBB2DgKPScRcXvFuICBXlJtfuy38cjskvL/
+                eSTPVR/E2atyzRAAl8dfxNK9t6C8bXDlI6X8637OZ05f1hNEt+cJdFIPzROaAPjbxkwA9VeIn1/U08YT
+                +LVaDD5XkgTyS4/ga3/xsBq3z0EgjvtfM27gNeMFmNJ88HHcf/M+/Ez/LO7Z3n+R9lBdeZxIfURN0a6V
+                uqdzC9sLUYYH7261klFDXg/aaP/xV9X4fZ66xeb2XTPlWiMA+c/eh+W+Ahlp6Q+tttlrW8pOIUtfxOkr
+                IM8x985bIU9eUAEgnsLtmvD/bbmmVACXz3zixh8VzfmPTV5/h5/jPH0xyMN09QeaRIEH7Tmfa0uG8nOG
+                Hazut0Gg26/H9kszOHL8/LUnAa4pAqg8hR0Ll+Y/P7hl18Tw9psJbPLxc9vIDiRCKOyjeoDqdbS9n5bX
+                U93NMzgoj0AYzy5HNmFfnyYGtgdYLRTzGDywB5PfPIyXlqpqAserMoXb1SjXjBvIpbKIDwvf2zu66xCi
+                +Yc5+lckYhj+iK59d/MQHv0DlgrFG4HB9xLi43qfEf1MBDt26IggSQKxZyvetncXvpsO8Zw21wzjXFM2
+                QDvAoXyhD7lCv5kpnJz64i3AwHtoSUTB9N6+oIGvfFN7Adyj6+W1hGBPwRbuLKLdxSIp/mXVkzgwUMJ2
+                OrIFOg9g03cFc9nUBPDMX6P/OoGdzRAH2hI3ElDv7S81yKML4Hks3Ih9c7s0uPyNPtXVt4e2aV99mIhk
+                1rmag6cZZsy5AEtLqh9A2QI/+G4cev+d+L5tExgqSBz/5rcw/ft/F7mEmzIuIP7hl7i6ZeohTKKMd9GT
+                f5h09NtJ0h8QAqNeDvnc0ITI941gYvsu+AXOBiFRP/RBEvEf1DF/NZCflHrlCUL2a8Txs2b4eVtLBI4Q
+                mhaprACXL+seQbYDhob0ftqWtF0hgpslN/EkXfLISg1PnriIZ3/2N6Jp3jYNMWx4AmDOO/EFTI6N4wNh
+                gB+p1vEuat2J/MCwXxzbK/omD6I4vg/5EgHOGaH8m5VjEFP3EegTuht46MMky2/Sr9u6oKxFrDwJ9SWR
+                9iVi9SM6WGQKRwLn5nQ4mLOAR8aAnTu0a8ieAfcTMGFUq2pdttrkNLSxSFd/8sIM/vzpY3j0v3xOBY7M
+                xxE3btmwBPDJT8H7uZtx83IVP5nz8C/8vNhfHNuP/p1vR9+WQyI3tEN39KhPvLlTh0vd0dMk7j79uwQw
+                ITVIBDBA9htPO9Mid77yPB0/rXV+mPTqGODpac31XMcI/JERExiScIYjadXAt67UIGskMcorimjCWhMn
+                y2X8xeuX8OVPfhFHL5zfOPMBpMuGJIDKk9ixNI1fbLbxE7l8bmv/ge8RQ/vfj9zAdnMGu2xuZqfzuTk1
+                dIcIoE1ovPartKyYU/r0MlhlYg76eb2muZ+BZeCLxWS3cObPRJQ5pCTCEhmNRACSv5EwO4+vPP4qPvPr
+                f6wGj/TsC6DfadlQBCBPInfpNfxgq4Hf9PL+/sED7/OGbvwwGen88WljscfdenBG6SGeW9bMtbj4EnDq
+                y4n5ga6kNZgAZkl4DA5qF9ACm9VqWY1niYE8ErkwD7m4qCTE+SMn8d9//3786ZFX1bCxqz4hZLeyYfzZ
+                qS9jy+xF/CZJ9P/af92tW7a8+2dEafstJM0ZeO6FtV9Rd5fM3SumcpSWw73cUUcsXKDfzZ2ipg6vjMwN
+                obB+5wAQg2is/+RAE6BzNJFTojkCBcTAAAQbj7Q9PDGAD+zbgpGTZ/HK9LJ68A3hRm4IAlh6DONkeH2O
+                9PyPj9/5kfzI2z5IwKuUf0Sfi4X7CdkqYgLgJQPPRMKpesxgpMQFGeRjLf0b++U5W7p8b5LBrxqTwIaF
+                0+B3EAPWIASPiGBQX3K4H3du34rBp1/CUbITmGrXnQjWnQDOfB3DjQX8Sa5U+ujW9/yw17ftAGLgzXcA
+                I+BtdQnAcj7PL8xRWv4yGQd7qHp0nLUHJ3GxF8ihAHYU7IfIjXgPdbevMgC5eBnx0Y6ZxNAJvOzSsUTS
+                RPT3K6Lyx/pw++RWyKe+hVfbWnSta+fSuhKAJEt/eQy/TOLypyff+QNeYYw/Ks1t0kASfEsMFnzm9pTI
+                Vz22PNM4Z/9UtcnufoOSiwU+Z9althk9Z8y/1eHq+VYB+ErW3X2KCEoQHKOa7MfBs0s4e+Kc+jLounoI
+                6xoJnLkLt4syfn741ru84gTPGM6gWsTs16Oazj4mAiPWo8oEsaJ9ehF2fFQq+gxhkHFp+6liT3O91fm2
+                CJEaVYSYQKxx6BKL6GJr2Otw5dckd3Hi++7Ghx96Gi83A/XS65Zitr6h4CZ+0C8VJ4dvvB6am83n1BTI
+                adCbplrJ4H46XsaWvgXfOgqpT8h1eARCBwN9+31q95BIgsclCjVkEIEtaxCDGB2BvOMA7pkYw21Ts2qk
+                0boNLl03ApCPwT85g7eP7BgRGlQG1wJvvxXcdPY3EXG9tOd3AT5co6YIwH683Oti2avTUqniLiG82UL2
+                gCCDcPu2UVxHBMAWygzWyTVcVwkQ8Oey1XuzTm8gBt6tFmxjF0gbBEJ2zfruYHqfKwWcyYeFiKecMRZ8
+                VLKmhne3u0mDdHFUiJ/PgXsY2Ez18Y+NAMR7EZ79G5xvLi5Ts3EY3eV8XjrAS2sHyE4AV/vMXPoTc10C
+                OulZqG0MwIwIUiUNeMbAkez3dAJJdp1dzWoD86cuRhisW0BuPRNC5Pl57+9btXareo77TWwwx1r3S3pd
+                sqvXMq2ObLCzwM86B0CWDZAAXsQGIVdLDO5SiOTxxEvJ7tUeX1yEfPgFPDtfVi/N4m/d4gHrmhH09eeC
+                x5br4tmFl2akDLgdbFSvrAd1uBNCdgO9G7d3E/vdTC3rEYikpe8CLlLE4RLEWoRguZ/7GeaWMPPZBzBF
+                22wArpv+57KucYBHnkPjne/2p3cNBB8Nyo1i/25j8FmrXrUkOtdXUwGrVdtnFGZcx4rp1DOmgc3avlK9
+                v7AAzC+i+cnP4yvPv6ayjHmamTNYx6Fm6x0JDP/66/Li3XegtjUn39mak4WB3dot6/j0q7u+Vg3fxDEu
+                iW/Dr66Q1wI8i0CYnrmDaX4BtU9/Cfd9+QnF9Qw+zym4rqOM15sAuLQffBavj23Byr4R3NG6iIHCOFlG
+                A8jm0isBHm/yd13UxJsBOr3fEgr3L8zMQE4vYvaTX8D99xH4dPkn6RSeS3gG/5hDwabIZhP1p4/g5HwN
+                Z27ciX3yPLYFFYjiuP6M4FsiAdb6feaTrf7gaSJw7QROJpmfVzmF4ZET+Na//z08+W0S+1LPLPYM9Cdi
+                171beCMQABfOs6u+eAxnH3gWL46MojqZw9bGKQy3lyH8PpPtZeL3V8K9XZdrSQlTRAb4WeLduomW49nF
+                Y10/O4fg7BRO/M5f4uuf+iLOLpbV0LJHqB7GOht+iXdY7wdIFW5O7rPbc/tNuOfHvxfv+cBdeP94CfuL
+                oxDDe+jgdqMebIx/NbdvraBQkLHf/Sw926KpsYJZ3cIs5stlNZcgr7fOXMaxLz6EIw88Tbtqajg5fzSC
+                ZxRlz7+GDTS8bKMRgC08ppvTevcc3IfbP/RduOvHPoR3bRvBXb4Hv0hH+rdClCaBPo6lsRyz4NmcXBdg
+                IPa00/0Dssu28xsLtiUA7jpmTufkUVrKelMBP/foi3j2/z6ISycuoFZrKLA5DYy/EcTrtqdrQ5WNSgD2
+                2XgqFg6VbqN6/U378bYPvgP7v/e7cMOOMdwwlMdEroBSYYDsBTqrwGlcJfXZHjWow7fimZduNllW7CDV
+                e6jAbutZwTkDuEKA10y2ULOBsN5Aeb6Kyy8cw/EHnsHM88fQIkLgfunT0FPJsZvHop4DGyZ+vfHKRiYA
+                9xlZIrBqYKnAxLB72zj23rAX22/dh/HvugU7twxh284J7BksYoyaOuf5ZDvk9KAfJgYV2/fjWL/6Ih30
+                zN92ohCeGJJ1PyeGtDT4SvJXG6gtlDE9PY/pc9OYfvwI5l87i8bUHGqNlkpIYA7nbwUw6EwEDDr3XP3/
+                tPAePC9LBSYGtgRYOnAiwZb+PmwbG8bEcD+Gdu/A4A27yVyYQGmsH/2lIvJ9Bap55PJ5+ANF9OeEygNR
+                OcTlKipLKzpjN2gjnF5CdX4J9ZMXUT16Gk061q7U0SSxvtIOVOjWph9NQ+egsXi3aUwbHvR0g27Wws9u
+                ZoBCn6k86pMJY9DUIbPNx3Km+s7vbCjcTUKw5qVNQWLAOVizgjglyU1TaqGzk3nTlM1MAFnvYnr2I7AZ
+                ZAu45xyHs22LayXYba42GcGaj9ac3JSAp8v/A3u8zDBfhaqXAAAAAElFTkSuQmCC
+            </property>
+        </structure>
+        <structure>
+            <property name="name">goblet_silver.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAK3RFWHRDcmVhdGlvbiBUaW1lAE1vIDI3
+                IEp1biAyMDA1IDE2OjQ1OjUzICswMTAwa/Wh+QAAAAd0SU1FB9YFFw4LAgr5ICkAAAAJcEhZcwAACxEA
+                AAsRAX9kX5EAAAAEZ0FNQQAAsY8L/GEFAAAvPUlEQVR42u19eYwdx5lf9bvvuWc4Q1LkUBRFyZJMy7Zs
+                ax3tyut4swsHNuDACRIDWWwQBAH8j4EkQBws4j8CGIrXkbFZ2IZ3o9iSJW8kr3YhW5ZESzYPiRRJkeJN
+                zXAODmeGc7y53n13p35VXa+quvsNJdtvDiYFFPru16++33fWV1UG2aLlK1/5iv8P//AzgVjs7pDPtxhp
+                NBqxQCAW9/mCXcGgv6dSqcb8fl9vo0GMYNDXX6uZQb8/mDAMkqKPB3w+f59lWT6fz+gyDCtimoTQa6Re
+                x9stto9zlkXsfYv9LvYty8AxLWaa1oZpGlajUVug5/GEWavV5umzlmEYtXq9nvb5CD3VWKrXawvlcikT
+                CAQyplkqLy0VypFIrjI5eaP69NPPmPZfsza7bdVibPYHPPvss+GdOwf7q1XfXkqee2kj72k0zJ5qtdbX
+                aNR7DMNPCWgkabslKDXjjYYVCQQo6X1+kIoR0e/38z9j+EAUtk+JAOIafn+AXUc1QTULBLaaW058g+7z
+                a2gSCjZWKXGb91IAMGDgmJ8XYMExv5++v06/vULfVaC1SL81Q6+vNRrGUigUTNfr1evZ7Nr5lZW10V/9
+                6m8XL1y4WCObDIgNB8Dhw4dT4XD4E42G76P08MFisXiAcuhO2rgdlHiRIGVnQnyUgH5C923iBRhBabVw
+                HApFDAoGQrmbca7fbzDi4DmcE4QEwSWnW5RIJmtvShC6NenWYs9b7AGDXecEN+z7xL7zPBU7hni/eK5u
+                A6HOAALAVKt1+7jG3lUul016rURxslSrkVHDMM+VSvmTV6+ePfXcc3+zRF/e2GhAbBgALl++PLy2lv2v
+                hULhjyin9oN/QqEQKolGoyQSidJtxAoGQ7RNfaxhQUxU8alSXPMzliW2nHs5oQ2b063meU58wfWkSXTT
+                bDDux1Y9T+lr32s2z/NzVvO8Chj+bQJIpLllX21Y9D+I725QXVEixWKJlEplCoiKRUFDa3WuUqm9ODZ2
+                6X//9V9/6yp9rLpRQAhsxI+cPHlyaGZm7rlwOPSJ3t4+Eo/HSSwWZ8SnwpwRGVvKyQYaGv+d6nRCG4Vx
+                UbXKTtLjKmtInOPFZEQQQEEVnOk8B0JwgsjzAAu/zgHG7/Pb9/jZeWwBHn7NaF6r100mSQCOWq3OfrNc
+                bjDi47vxXZWKyaQCtQ/otbotrcKESkCSTOL3G0alUiG5XG4on899dWBg5/6Ojt6vZzJLI/SDSncEAI4e
+                PeLP5Qr/KRDwPbJnz14jGo1TTg8y8Y6GgbhcXs6Tq1dnyeJihuTzZVv/cvEdCHBwQDOEQthync73/fQ6
+                P+/zBdg+fa2tNnzsGOpBgIwT0McqCI7zOIctCgciCOyzQeJj6oefDzC1hGf5+3wMCO+nQGIADIVCmYyP
+                L1OCV9g7E4kA3c9TIzbEQEElwmMPPfSxzx8//uoafWyacJWwvQFQrwcetKzqn/b07PCFQmHK+WGmz3nD
+                W8wqL5drJJstsUbiBpfFGphySLPBuU0QaO4LIoDY/B6DiVoAgW99GiE5N/s0TlYrACFAIothG4o+9k7h
+                PXDNqWtPcDekTL3OJU2lUmcqqVyukkymxP7j8nIRMGMMEIkESGdniHR3x8n8/Ap7PhqNxR5++BO/f+rU
+                sdPVanGZ3pzb9gCgtP4zny/S0dHRxQgIIpi2Eue62iQ7d3aRPXt6be4UlrXJGo16A7bu58SBSOUqgotb
+                lWgAjHD3+LusJuFVvSyIJ+wGbhQKm0LocmHYWcoz/L5qlX83noN6wu1CDfDvIuw8/5scGAAo3rl3bzcV
+                /xHFlrDIjh2dDADZbMoYGBg+NDCw44Hp6Ylr9GKetNkWaCsAjh071kEt338GvR+JwNiLKISwqDFUtvW6
+                oXCsEMsQ8wEqGoNNvc2tcBQfa0xuWPlsY026dsKYk+eIck41Ak22767cQwDxocv5fUR53my+V3Un8Z/g
+                kWIf6gmE55KBX8O3culm2B4Jdz9xH0CwupqDfdQzPHzwbgoAaiiTRVor7aSRr60v9wX/hHLiQDKZogAI
+                Nw0x1hyMa2pNgnFjqc44HkYU1YcMHDjGeXAWt9bRcFwK8IY3m5zOt5b9O2o1tWs+n9W0znk1bD3Pj7nd
+                YFAiGhSAfBsMWsy+CIX4lqpstuXneKXSjtksqD67ZQFeIWlQ1taKRJUm/Do/Hhrqpe8JG4cOfepeemIX
+                rZF20gelnRKAWvS1L1LjxojHY0z8q1KY+8ym1hBSH5Om7uZ6XkoG7hYKy12IbUMJ8AhCc67lET6DOCUp
+                CCSeFQCCS4iiPoN3gKC1mjzmaopo38AJLO5R1YYKeoOBGqotFPJr7YH/lkpFaU2QwcHdhxKJ5F7qGSTp
+                pSxpoxpomwQ4c+Z0f7FYeQTuHnX/FALzPwvOVv+8uIbCXUK/YvD57XMSEKJyS3/9Krnc53APVe9Afpuw
+                RaR9IeMR0ghsklUhMGmqKasFyQCyUqmixTeEsQmp09vbScER7dq//0N76IVONEe7aNRWABQKlUO0sQaT
+                ySRz+aT+5luIdel7qw0trXcQXhCcE9rPdKsEiA4Oveqg8bL8VeJLgBAFIBIE4ptuFzuTEUNpI6j/G+/M
+                56sK2EizQor093fim437738YKmCQtFkNtE0FUPH+SdpoIYh/IFuKRdI0tNQGQNHFvt8l/lViyUZVI3Hi
+                d4Te58aiMBp1w43fK3S17j2YTaLD5uDqQgSDdPEuo5F6BFCVAE5pwINC7jbD84lEjNa40d9/117qLu+q
+                1+tReqlA2qQG2iIBjh076i8WCw/AoIlEIsTJNTDoZBE6XYpaEaBxim2pApzBGrd4VyOMMhagi3spAYj2
+                rK4WWlVvAqtc7wYEfwj2D3dn9SLUS3d3inR1dQ8lk50D9ES8HTRqKwBu3boVo400jOgWRLZqtHFfvkak
+                +CdNcai6gTpxVQJy7lVFJz9WRTm34mWfgm8dApOmuFftAF0FEOW6TnyF9C1AoNoFomfRZLEELqEEMAy7
+                t9EkfX2dVOWFunp7d/TQCzAE22YHtAUAg4ND9KP9g+D+QCDY7DARf5hb/6LoLpFsdF9TKoh9udV/z00g
+                KU2kDvfS/8TF1V4RQu/Iofr9bsKLY+99g7m6zufFa7u6Umi36K5dd3fjkNZge8jfJhugWKz3UF+7MxoN
+                M/3ZaEo7GYCRhHQTQCe6yoGt1KAEEGIEgkDcvTPs3jjdHxcNjmtS/8vKI3gGixlICWN5AMC7qBJAPSfc
+                R4SKvdQ62geSE+7zwMBuEB9SIEza1DnUFglA/WZqvRqRcDjS9K1FEdE2mwQaN0tiCeLJ862L0yXT1Y2T
+                k9fX705pIr/RfY/uEeiEtrRvc4ahATjYQb4WrY//3tGRIJ2dXT1+fxAgCDv+6O+stAUAtZo5RPWuD/38
+                TpSLLBu1QfifFo2nN6ykvfP/e7tkXsR36ncvN1C9JkEkt+o7pdHqLjInoLVxiEfR3Q0guEFgMKaBN5BM
+                9vSFQk0AtKW0BQD0D+4SGT2qm8ezZ7yIr3sC6jMf8Heb75P7bjAIKSOv3w4wuhRSn9VdQUl8UbztAp5W
+                JqSBWvh1k8TjEaiBlN8fghEYbhet2qQCAruQWAEQOH1lxPNVPaoTWvj0ug6Vsf0mCbTf03W3fl4/dht2
+                3lJE/zZnvMJbAujH3nEBGTtAb6caG1HbAOeTyThloHAqih607aYCkPLFEyncrxc9aWoD643Gu0jlsdHM
+                3lV9aflb6rvdQRdv/S6fbS0hvEW92wsRB7cPAgk3EM9ABSAWIFWf/t2geygUisZiKQAg0i5ateelPqOT
+                h2ydIs7yjIA5G0vt2JEJmV75du5ndZtBFdve3O8EhJBA6rvWt0Pc3y6+c70oodqt7PUOO/PJn0ikwP0w
+                ptoSC2gHAJCx20etVyX+L3vQZP+4d1H78AXhef+9aERL2RLtvKputA8y3PuS8Hrvon6fDiDlatN4Wy/k
+                u951njQicgLcbQA3mKpSo6urFwCIkW0EAAR6/DwDRvW/Rbze1HS82qgyiYOrAQEY0SjchRT7hDiTPnQu
+                dFNDt+zdv6/e4yaKTiBVklmOm9Vvcj8rvsVghqBTionryE2AEd3Z2QvuBwDaErNpy0tFJgyKacoBMTy9
+                2mp25ohUL6co5WlauI+HS9VOG+/fc4piqyUIblesD/6I9pwTDELyuW0Bq+kKymv66CQwUSrVuf0AIJIj
+                5OgZsbU8DT+1h01IAB6d8ym9e0QTu7petlzvVLcKOcjvEhROkLntANWWcQOBZz6rak0aviL9PBiMtNUG
+                aFN3sJoHJxtD6HIRZnU2nGoRC5GPBuKA8DXv4c86M330iKBOBHl+vW92A8dbtOv3EE9x3woc6j4fWOI+
+                j+5oSEkYgqlUF+IAIbK9AKAOvDQUzhcunmppC0K606wECESjwGQRbpp+PweCkDZ6gzq5T7cZdJUhiuFx
+                n0xm9bL0VQKqxR0iVsW81bSRvN7JO8/YwEcRCPrNRNg6pU0AkApb2ACW5XP8OZnI0UoaqEagABAfD6h3
+                y6qqxosAbq9Bu8PDXbNaEt4r6ieBZjneo/4nd5SQ2wBqRrPr68VO27qD22UEWs7oHThYDQML3S9G3KoB
+                FZWYhp0qJXrtcF7vMDJc97uzdaQb6a5ehLccRHODpFXX7/r2gn6sRxd1AAlDkEvN9pW2AKBWa6xh/J4Y
+                rMm9Ap0o+h/lDeAViHFzt6V0okj1ovrtXuLaa6xAKyC0UhXeQHKqE++gjxcIZHyDeABRtXO2GQDohxe5
+                6BdGnORW0Tg617ozaYWOdBZhAMpL8thLDehEcxKeuM4Ji1yGn70B4iX6xe85/4vzWPwOvAA1WKa+FzkU
+                yJzO5dbalg+I0hYA1OuNxWq1aut/n0IwaRuoYt8rvMtPuSOJIvnTmTPgVXROdo4K8lIFXoR3jzjykiYq
+                kVsZfs5v4/eZGvj4Nfw/NuEEBUEFQ8WrpE26oB0AsKh7s4KPB8Ixckb4tfgPMqijWu5S3EnxrjeayNoR
+                192qxCBeEsPNxSqXexHT8gSLGo5WXVpv9eH+BhUQ4lhMcOGURHyQqcmGwWcyywUFAL9zSdAWCUBRexM9
+                gejtQpewRLhPIYIq9nWfnhPZ3cvGi6H1JzhFv9sV1A05nYulp6ESWYwo0kPO2JrKNadxqIt+1Yh0fouQ
+                SjxxVUxPo3sQOIf2K5XyIH6ZtGmoeJuMwOpsMBiyKpWKgcGdgjC6eNfdKHUsnVvHOxtTN/6EjeGM4Xup
+                AF2UEweRdYmgSgh9gKjlIL7XVgeeHt/g+xxMpvK9Qg3wwaPoK1hbW95+AKhWS7ORSKxOjZigmLEDcQCd
+                MLyR5Fg7w24USVhR1X4A3aDUkzZacVwr0S73naOETRcQVECoz+sGpLdrqBNXFoR4vL0Ag+UM1mp1K5fL
+                IH24tK0AUCxW5xMJM18ul7skp5g2oWRwR+8EkuJRGI6iOLN2VR9aqgCny+TluzuNPfcQcaeEWO+a+zeI
+                8h/U6+4AEbeFDMe3yfuRNUylQD2fX6tvOwDkcrXV7u56ulgsd3GimE0ulyLe0kS/TmRTsQEUklpeqsQZ
+                TNHv59vbG3ii8vkAvOYMIM1ZxXQJ0Jr7vWwRsS/6NNzeCL+WzxepJC3n8/lMWwHQlnyAmzcv5qkBM0sl
+                gNLggliG9mf1BjU1DnUSwHtSh1YEcxJ0/fucXC6fMT3ucQJM537dE3CGhHnBezDvkdON5CD3sckzyuXi
+                CjWooQKK7QJAWyRAX19/GYYgxsLDnbHncbQtXx9FtgCDKhLFuABhzOmDR9X8PWe3stqhpDe2V1RPn+XD
+                a2YQCR4nkEziVCV6LMAdEHISXiU4n+BSuqWq6sAQcsr9K41GDcSHBGhLHKAtEuAb3/iGFYnEKQDK9iwg
+                IrHTZH3czlQvlfvUyRt1biSeHC3vMRUimhox5ZafE+/gx+I+04Pgln1/a8NvPbHvbQvICmaQ09vooMpk
+                CtQDWErX6zXEAbaXF4B/R1XABBVfZrlc9YVCQSJ6/VRp4Az3ymCPpXG/nPWDOKx/zvlOG8Ar8OLV8XM7
+                teFWH+5QsDf3e4NC3cf/wPR2MlVOEh9h4Fwuby0uTmforWs2ANpS2pYPkMutXg0Gewu5XC7Z2Rln08EB
+                7VzsSUNQbSi3uHdb+7zx1C5kt0ehEl8HAXFJHil1TOK2G9wSaT3DT/ll4vYALO08JrzgYDcdwCQkm4UB
+                WGssLEwXbQBUCGlPf0DbZgiZmpofNc36rbW1LBGzf1qW0PO6IagSRje6VFFuurhUt9hN5X7TIeatpuh3
+                i39p6KniXt33Fv9uL8MJNgkQJ1is5hxBbhfQICsrWQSBCktL87CWVgkPBbeltA0ATzzx9ZVwOHwVogzT
+                wUiONezwMPFoULd17ya+6eBQCRJJNFPT71LvmwoQ1Pta2wn6FHRuFSD6M5wEVrcqdwuPCABQr6ku4NLS
+                KikUMgvZ7DI4HxKgdtsG32oAoKVRKBRO1WoVNkWq6h7BJlBjAbpYdc/ZJzlyPTFtugiqnlfv8wKHs+ph
+                Yjnj+PoRP7dacwOCVwDAHVq2mNG8spKzbt2aGKc21JoNgDppU2nnNHHW7OytN++++55GNpsNdHTEmn+S
+                z7mrz7AtG03YByKAJHoNDWVfBJXcHUX8Hc6OGR1srYNAbu9ETxBxZgK53T6121r+tnhe2DIGmwBT9wD4
+                /WtrBar/q9a77x5foIe3aM2QNqYFtXWiyCtXzlyh4n96dXWtOeO2MObUeQPd6kCKXpU4urhej5Mtxzl5
+                zGf5Nptb9T69l9Bp9OnfKgnv7uVzG36qLcADQDACdeOSAxzzBlcqxZWZmesQ/zdJm6eLbSsAfvzjZ3PU
+                mHk9ny+w+fFVSxhTx7qJ7qVr3Uai1OHOc17VslcAaXVNBnjcHUDO31f/XWuatAKIeHc4HFCygWVXM7p/
+                FxeXyXvvvXu6XC6tEC4B2uYCorR7smhzZWXpJWoM/unqajYYi0Vsv1dO6a7OluX0p3VOQjE8rtlXlIQQ
+                pwWuEtDZH8A+UusdJJ5g1BepcBt3qooQ36xLAPm+RCLiiipCKlLdT/L5UuPcuV9D/N+gFTOGt3XK+LZK
+                APzvxcWJs+Vy+fry8irr4uRz8PERMSJXwO1SOQmin28dvHEacjq3e8X03w/xVY72ymlwSwNv0Y8K+yca
+                DbjsC4B7amqOZDLpsfn5aXD9JGnzNLEbAQDyzW8+sUR12k/X1lbNQqFkNzTP7YcoVMcJOl0sZwDGq1tW
+                tRnUeQTk/URTFWpHkwRUK+J79+p5EV/14533qFIkHg8271e7lnO5IllYWDbPnTtynrbXHL1lhrRZ/G8I
+                AGipj41Nvkh12sLCwmJT3/F+AYNNCa+LbN3H9goYeSdquDt23Dl/rTN+vInv9FC8OV5XA6aybxFdNVhs
+                rQC1HwPn0A5jY9MUBCs3zp49Aq6/TmuabMCKIRsBAOv5558apUbg0aWlZQvdnKKB0AgwBtU+AW/PQFcD
+                znw+Jxjc6VzOHPzWCZ0q+Dz/jObn66Le6S6Ke8R9ADusf+Fuim+D65dOr5pvv334TKmUB/djsYhcy4/Y
+                ZgCgum2qvLSUfqparVUWFgBsufgDkkfRMHoji4b0AoAzpu+Vo6cCRAeOdzavt7h3E1696BzLILldHKvE
+                x8bJ/eLeiYlpsrqaptz/KxD9Cq2zpI3hX7VsCADQAn/+5187WSoVX52fX7CQ7SIby6RGkZQCKvFl47eO
+                sTsB4mxgZygXxSsVWye8F5dbGrHlXEY6McUzTjUCjycWCxA5QooHtJaXs9T1W20cPvyTE9VqBQtFYdm4
+                DNkA7kfZKACgFC9efOd/UlWwNjNzi4jgBxpE2AKycUVDKiRxqYb1ObjVNS/iq0Va+W4XTv8+Z1RQPiPf
+                K5+H8SdSwNVeyNHRKTI9PXZ2dPQ8+v0vEO77ty306yxtXYzAUaj+zy3t33/fbr8/8HAq1WlEIiJPgK8S
+                hvlzW4WG9XNe/r5XxM6pn93FORGUO3rX/FVt383xuvhXjUAQvrc3QYhiH0AiwPCbm5tfffHF772ZySy9
+                R294i9Z50u4RoUrZSAlALl26VJiamvibYrF4Y2JiyuKLRoiBIL5mXEBv/NZqQd9aHs+6Ywx60fW1Kur1
+                Z1oZfvpz6jnVA0gkQs0ucNboPoj+DOX8efPEiV+8MTs7jmVjz9EKA3DDuB9lIyUAa58zZ04sHzz4ULmj
+                I/VZw/AHOjtTzQbE3IIYECnW7PEiqjcI3JzuRWz3pJROqWG1FOnOYzW8q57TgcT/R19fQlM9GDd58eI4
+                mZ+/eeXv//4HY6bZeJve+A7hff8bovtF2WgAoDRu3rw+efDgg8N+f/BDsVjSgCvIJ33gkkAuDetFcKuF
+                OOcn3XP7yTmI3C6cWqSq8erc0fW+nuPnfcxrMhkmQtUJEF65MklWVtJrP/nJt3+dza7C5z9GeOBnQ7kf
+                ZTMAQLLZbDUYDIzu2jX8iUqluqOrq8sQYwj5mnq8A+d2xiDfeot1Jyevbxt4W/LOcK7O5YQ49b6zbx8+
+                f1eX6AY37IDPDBX9c6VXX/3hz69fvwyRf5RW6P8NWSvYWTYFALSYY2Ojazt2DM12d/c/WipVOnp7uwyx
+                oARPHa83G04SxG7q5q469BzFaEls+Zx3PmIr7ncHd3TR7wSGChwsA4dub2EIzswsksnJmcZbb73y8qlT
+                h9P03uP04lnCkz42VPSLslkAQDHPnz8zOzR012pPT+9j1aoZ6e7usC/x8QFi1XCvufZQWvW3q8/I+7yf
+                0XW5836nNPEW/W7Dj7BOn46OKNsH8RcX18j16zetkZF3j7722tMzVMJB75+kFT1/bQ/5tiqbCQCU2rlz
+                b08dOHBfJRpNfqJWa4S6ujpZQ4quYpGeJYq36+fOBPLmfi+/njhEOr9P5X6d8CrBvQw//lxvb9ye5csi
+                q6t5cu3auDU2dunNF174q/FarfouvQDuR+Cnbfl+76dsNgBQyidPHh1NJDqyqVT3ISr6Yz09nU1fWaoC
+                +YBMG1PPEUJcLhzR7nODwmnsqftuPe/meHGfHo5OJMJ20gdhGb5Xr163JibeO/l3f/dX1yuVEoI9Rwjv
+                72/rusDvp2wFAKAFy7SBxikIcj09Ax8rFEpRuIdwCyE+RbxAX5XTy9hrHRRyc7XznJPY7gCPm+P1e1Ax
+                SzpEP757eTlHRkYmydzczOXnnvv25WIxf5k+8mtax8kGdPW+n7IVAIBi1mq14qVLZ8dSqdQiNQwP5XKl
+                RCqVYC4iEkl4D5p8oFU0UO47r1vvc9+L2E710Mr4M6jVH2XAXVrKktHRm9bc3I2Lzzzz388VCllY+iD+
+                KOEW/6YYfc6yVQCAggYpXb787gTllPHe3sG9xWJ1BwWAkUwmmiuN68SVut9pJLbW//r++9X/7l5Hd7JK
+                KhVhVv+tW8tkfPymOTFx+e1nn/2LK8ViDt27R2gdIW1cBfQ3KVsJAChMHUxNjU8vLy9e7+7uTlpW8J5Q
+                KODDqto8QCSzaMUj6wWLdFdOPdc6uNP6uJXoxwofQdarOTU1T0X+onnp0sk3Xnzx++PlcvES4ZwPCbCl
+                iI+y1QCAwkCwsHBr/tq1q9f6+rr9oVDqAZ/P58dSatwotG/0CAGL897egr6/nuh3egxON08P+PhZP8b4
+                +CxJp5cqJ068/Itf/OLHs9VqBfF9BHoQ7SuSLUZ8lK0IAFFqpVJ+5erVa1d27NgRDIXiD1CuDyYS8ebK
+                o95ZRG7d723sqftehh8hbmKr50ztd6emZhHeXf7Zz5762YkTry7a8X24epOEG3xbjvgoWxkAKPVarZyb
+                nHzvWjLZWU+leh6u1xvBWCzGLrbuFibN6+7992f5q8+00v18MqcaWVhYohb//PSzzz55eGTkPMK7IDyC
+                PPDzN93VW69sdQCgNEqlUm5k5MJoT8+OUirVdahcroaxxLpzSjlvSdA6W0flcPW5VoaeUz2gv4Lqe+vW
+                relrP/zhN9+an78Jgh8hvGcPEb5NDfK8n7IdAIBi1uv1/Pnzb49Eo7F0b2//feVyrTMSibHeQ2f/u7v3
+                jr/Eree9AGF5AsgpHdCly4l/4+KPfvTEuUxmCXr+V4Rn9WBUz6aFdz9I2S4AQIHiL7733sXxQiF/g0qD
+                QUqLndTnNrBELRakRPEitjh2SwhnJrA+WYMXSCB0kNm8uLhkTU5eO/XMM9+6XChkYOGD+EjobOtgzt91
+                2U4AQEHDlqenJ6dv3Lh+LZXqtKLRxIFajdsFMrFUjwF4+fetRD8/dnO8+HkM4FhaWqlfuHD89RdeYG6e
+                iO7B12/rQM52lO0GABTmJmYyK4tnz755hRJgpru7f2e1Wuv1+QJGKBQmevetVxSvteiX19R4g8UylZDG
+                tbKylH399Z/+7PDh5xfq9Sp0Pdy8MbJF3bzble0IAFFgYGWpJBi/eXPsGpUARiSSvJvaCkGAgK9T4LQN
+                nEEgL1WgJ3mgRzKbzVPirzVu3Bg5/8IL3zt66dLJBXoPEjjfJLxTZ8u6ebcr2xkAKFD8hdXV5blr165c
+                M81qurt74K5qtd4Vi3UYYsUxd6eQDgwvix/ZO/W6j+r6NOX65YWXXnrq54cP/58bKysLCOcihQvcjxTu
+                LW/pr1e2OwBQQL5qvV5ZGRu7Oraykp68994HPx2NxuOpVC+/wTUTh1P8i8UrMWQ9RI08P8lkLKrvyxQE
+                BfLWWy+/9tZbr843GnX49yA+QIAEzm1h6a9X7gQAiNL48pf/Y+2P//jz/zkSSXysv3/IwBL2WMPYMMJ0
+                G2b7ILDPhxohgUCYbf3+KKuBQJRdq9ctsrZWZL2Q6OTZtWvv7nw+e2xubhLG3gTZpvreq2zouIB2l8cf
+                //RXKFG/sHv3HmYMitE3SCxBt3IkAqJjGBoAgFy9ANsCKChCOqBjR+TxU5MC4En8wR/80y/29+/aR/ga
+                fndMuWMkwA9+8EZXsZj5X0NDg3379t1lYBIGZOWkUmHS358gO3YkSE9PjHR2RhlxsWYfCCwGj6IItcCX
+                vbcI5jNAtI9KBCMeD3dXKpWliYnLCPggiXPb+PrrlXZPEbNhpVpdOUCJtrOnp8dAUAhEBSeD4BiVG48H
+                mK5Hb2IsFqLHJaxrwMR8Pl8lpZK05UD8WEwyOmY5DYV8gcHB/v0UHrQ2MHo3s9n/+XdR7hgAUG2228J0
+                A2yQCU8WQXpWOOxnAzOhBvhcxQapVBpspi4cBwIB0tXFw8nFohiXwYEiBnHa8xKb4+Nj1PBrdBG+lu8d
+                Ue4YG2BpaeU9yrtLcNt8yhozYqyBOlMpVIA6wTTAgmQOdmTbAfl8iQjXMBBoUNCU1q5efQfGH8bwb2vX
+                Ty13DAC+8Y1/O1YqFf9hdnbBqtWqjODIG0BCabWqDslusPEGzhxDMRwNz5XLdXt2Uz6sLBhsILdvZG0t
+                DeJD/G/KKJ52lDvGCKSlkUh0T/X3D/4JJXwntQUogRtNzgcAQPhisUa5G4sx1JqJJbADstkKAwSAsLCQ
+                Yf38sCX8fkzUUa8+99x3jhQKGfj/GMmz4YM421XuJACQ0dELmb17D+bC4eQ/sSxqAFATB9Y+uB3Eh6EH
+                gy+XqzBfH7OJgPCrq2UGECzUlKZMzolv2QAoW2fOHHnl/PkjGLePIBDi/ls6yeODlDvICGSlevXq6Zd3
+                7973b1ZW0o9EInEqymvUPiiwvD0M1hTxfr4yp9mcLBLn19ZKRC53jy3yDxv106dfxfh9TN0icvvumHKn
+                AcD6yEceywaD4RoWXSRELkUPCVAuNxxzEdkPWZbHrKGoMJF8geHh+6x0ehbDtzGF2x3h/4tyR6kAlK9+
+                9ev/olyu/fuDBw/443GEdw3mAvLK98XklOqYQzgO8XiIRQUBHqiBBlvpwjT27Ll7RyazdHFxceaOkwB3
+                FAC+973Dg5nM6o/7+vp79uwZstO1A2yChlgsaAeAxH6YBYoACD6VLGEcj/uTyRjdhljyB2IGkUgg0dMz
+                1DsxceES9TQwz92GTOG2EeWOcQNRTLP8OfqX9uzdu7sZ4oUXgFk6EAoeHEyRzs6YvV4BX7cH8/f09cXt
+                FTxkdzAmth4e3kXQp1AqEaO7u+/+7u7BT9Kb+skdxDh3lA1ADbh7EQlEjiDEOIiPkboYqg1Cg+jw8aEC
+                lpeLytBzH5MIlUrBfhNP+cZgDwChWMxCisTD4egOeqGP8DyAbd8VjLKtAfC1r/2P2L59O4fKZd8+06zf
+                k81mH4tEokx/IwIIQqNTCCIfXI8SjRpMFWQyZeYJiKKnfvNIYSbDMoFsm8EyHnjg0/ceOPDRP0omu5OG
+                YY0uLr6z+MorrwmXcFvGBYzf/hUbW77znRd7TdN41O9vfK5crnyU+vj7qMvWGQqFgp2dCSOVilOOH2J6
+                H4tU9vfH2SxdYiJKuHeLiwUyP59lXgGaAK5fOl1g+l6sV4hx/TMzCwRRxUajRoaG4gwk+XwZkUYqKqwl
+                +tvjdHuxUimemJ2dPP3ii38ppnnbNmDYBgCwjO9//9ley+r4TK1W/+eU6I/Scz0dHXH/wEA3tdD7qX7v
+                IalUjC1GxadjyZF3351nBh50PypXAQYLBi0tFVlsAAGiUqlOVldL9pIx/BfX1vIUIGmWCFqpVMg99/SR
+                hx7a3Qwt53Iltrbf6mqObssWvadOwbFGXcgTq6tLL9y4MXL09defQuAICNvSYNiyAHjyyb/whUJ776Ne
+                178ul/1f8vtDw4ODPWT//p3krrsGjN7eFOGTQhEW8lXTvSGyC4UqOXp0ikX3BgbipLs7ztxAhIJXVoos
+                IgiOR6RQPAfORyj45s15gnWPIS0OHOijv9fdXHDC2amEaGEmU7AgMRYXMxRQRZM+O16tFn6aTs//w/PP
+                /+QKITNbZj4AZ9mSAHj66dcGaYP+B0qMf0Vdtf4Pf3i/QSuBeFeLe4o4MTkUn1XklVdGm6OJIQ1Q+LxD
+                +upe8jUG5e4CmZtLs6P77hskHR0Rj/EB+u9JMEBFFK35+WUs/kQlQ3mhUln9+cjIte++8caPMHikbSuA
+                /qZlSwHgySe/FQiFPvSFSiX7BBXnw4cO3eP7+McP2usMfrAyM5Mhx49PNgnvHgjiPgZ3AwDQ/fv29ZOe
+                ngSzD/TJJ/Um02cfFZNdIqO4as3MpK3p6UUsAz8zNzfx7RMnXv7b2dlrGDa24RNCtipbxp/97ndf6qvX
+                E080GqX/dvDgcN+XvvT7xvDwkL3W8AcvsPQnJlaYiHcuKOWeUELmCyANDNPZw4CMxaJ2t7GhLCujrmOk
+                V/E+SAL6vNHVlTT6+rqoFLJSfn/kM11dfR3p9M2rhUIW/uaWcCO3BACefvp4dza7/FQgEPiXn/3sR4OP
+                Pvpg0237TQu4cM+eLkb4UknmAPBiKJk+xM4TMBnhsXIX/P/Ozg4mPcQqZ3o1WhJf7Iu1DjF2sa+vE25p
+                oNEIHUql+hPj45eumGYVw8g2HQSbDoAnn/xlqlyefyYWi33+y19+3Ld379Bv/U4RAUTa19BQkuzd20kN
+                uSRzCeNxniYWiyHsC9uAr2KGwBHux3xEiQSmdkeIWPYZtCK8Cgr+2+55CiBfOjqSAJa/Xvc/1NMzaI2O
+                nhFjCTe1c2lTAUB1vi8QiP4X2kB/9sUvPuajbt1v/U5hsHGXrcGMQTHNXDBI2KodqRQA4GdBoXDYsrdB
+                NsGTmi6min2dy411uV+fzq75jIFZz6hKokZJ6ECxmLmZTk9jZdBN9RA2tS8gHL7vIepr/zsq8n1DQ72/
+                1btEl65cK7BhLxHbYPscDKKazaVixZrEfr/FaiiEDGDDrryXEARE7zIqPAh9aVp+ToCF76urkYvzFktC
+                ueuuIQq4eM++fQ9/jto3+8kmjzPY1FCwZVW/kEzGej/2sYO/4fPu4dxyuTi5aCRCvvDX1fWBRQHxwfXo
+                NlYXqRQWPXICVSKLeAG39vl16SUYzWvCzeTjE+X3UqIbg4MDVja775F4vOvBbHYJI402bXDppkmAt946
+                5kcod2Cg5wO7os75+STBvdcI5tf0peR44cTnAIA9QNgWYMA2GDTsfXkdReV2XQLINQxVqaB6D/iOVCpl
+                hMPxHfF45130dUgz3zRVvKkSgHKlXy60+P6Kc+oW93qBgtimUsWqofogUeHXcxfQYAQWhJQLSBg2l/Ot
+                SlxVGuiVf6OQCHyfV977CND5/NTrSdIDhDQBgE2JDWyaBPi933vMjEQiM3NzK7cVfc75eAVRnesByzWC
+                ndfNJmc6I3qcMIatCrhYB8djyzOIiJ1VJLaGLSWkfaByul6di1dy4zGfzyM4tLK8jF5lxoSbFpDbTCPQ
+                yuXWfpnLlWojI1Otb1I43rk0LF+CzYvTndedq3nI90u9zbcgMCc+sQGhEx/7csur0PdeIl9dl1hIp7m5
+                BWti4tzpUikHNxBjDTYtHrCpXsB77717zDBqp48cOW+JHH1RdI53rwfsVYWI53q/9drATntLEJ/bA0Tj
+                fg4EleASBOJ+ARYnEIRrKIaqIUdhenqGrK2tps+efW2Ofg8MQHQ8bFpoeFPjABcunKl88pOfWvT5Yp9P
+                p9fCBw/uYedvN1unqvOddoDXYtHqUu1OO0Bfxl16AHyfb9U+AH0xKhlCNjyEuAwz8+fn5ubJ/Pxs9c03
+                n/351NQ1ZBljmpkbZBOHmm12JNA8duyXtx588FCpVPJ/6tatdOjAgd0s/i+mdvFalkUSUl082r1auE54
+                q4VU8JobSIviafsQmtJ4VEHgDQRcQyxiZmaKLCzcKp069fzPzp8/Dq4H8TGn4KaOMt5sAKDUL106c72/
+                vz8fCiU/PDIyGx8a6iHJZNzF9W5jULiC5jpcr54X93pPBaerBzdLO7nf3TMoFsQW8QUfNfhyVOxPWCsr
+                6aUjR557+dKlN0H8E7RiLmHs/78bCraLVa1Wy6Ojl8YbjcqN7u6BvRcvzgysruYNhIaRlOlNeJ34XgTX
+                iUxaAkqdRaz5UUp8X5cC/Ni5rxqS6EmsVMqU62+QxcU5c2Zm7J2XXvrLE9PTTOxjZrFThC8Ru+ndwlsB
+                ACgWVgwZHx+5efnyOxe6ujqK1aq//9y58dTiYtYACOLxsDYtrE5Ysi7xUfRl46VL6J4gUmQVObuOnRKB
+                qwM++sjHvg1gzOVyzNCjIr+xtHRr7Pjxnx4+evS5m9Tix9CyI7SeJ5ts+Dn/xVYqaFFMBb57374Dj3zq
+                U//4Hx04cOhxvz8y3NfXadx//16yf/8Q6eiIs8YWkzjxEK9JdD1vetoHIjIo7zFbnLeIjPhZTase8XyR
+                HwDC4zkMIEmnV9hEksVioba6ujBy4cIbF69dO52vVosYTo5FIzCjKBx/dP5smeFlWw0AoiAFCIsI7t61
+                666HPvShRz7y8Y8//mgk0vERRNAGBjrJnj0Dxu7dfaS7O8VmAuGJG7xbV3TUcOI3PAJCJtFdSjfxJZgM
+                e99nu5iYK7hCVlby1J3LoVrFImYUqy1PTp4/fe7c6/Pp9GypVquA2EgDwxpB2Me4wi3B9WrZqgAQ34Zp
+                OxAqHaD17t27h++///6Hhw8e/Oj+eLx7v88X7AkEQtGuroTR14dRP0laMQgkwtLA+aqdfD1i0REk4gSC
+                wILzxYhhgAjneAJJgw0kyWZLJJNBJnCBTR9XLpfNarWeK5czC7OzY6MjI6fSN2+O1Or16jLhC0TAv4e+
+                h6hHsAdu3pbKBVQbeasXfCMkAlQDpALAsKurq3vPwMDuHUNDw93Dw/cNRaOpgWSye3cwGOmiRAxQcBiQ
+                DBgfIMYEYDUvnAMtRN9/qVS1I3SE7aOA+EgHr9XqDCfVaq1UKGQWC4XVxbW1hcXx8csr6fTNSiazVKrX
+                a5gsAhyOtQJAdIAAREcP3/9PC2/D90IqAAxIEYZ06KG1LxSKDCQSqZ5oNJbs7R1I7NixO5ZKdUdDoXiM
+                giJINQfmEKbACPiDwXDMMFi2qEHBYlUqxQIV4xVKbYtyvVkorBVLpWyZGnHFW7cmq8Vivk6t+ioV63mq
+                UhC6BZHB3YuErw0A8Y48v21BdGeDbtfC53bl0iFi1yjhwEjYNWkf41rArn7lOREKh1EGMV2390FEpHDD
+                YAPBEazJ28cYHl62a8V+jg8u2IZlOwPA678I30wQG0QWBPcp14lyLIrgXEs5RgWBq/a+AAch25TgzvJ/
+                AfRKb+wXuZxxAAAAAElFTkSuQmCC
+            </property>
+        </structure>
+        <structure>
+            <property name="name">goblet_bronze.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAK3RFWHRDcmVhdGlvbiBUaW1lAE1vIDI3
+                IEp1biAyMDA1IDE2OjQ3OjM3ICswMTAwXSBcUAAAAAd0SU1FB9YFFw4LAZPwcZMAAAAJcEhZcwAACxEA
+                AAsRAX9kX5EAAAAEZ0FNQQAAsY8L/GEFAAA0cklEQVR42u19ebBk11nf79zbe/fbZ3vzZqTRvowtSzbG
+                xoCDcRKgqIRsRZYqKib5I5WCkASKJSRFERIqpFJFAikqK2RxQhEgEBsbHGQZI9mSJUvWMhqNlhlJs779
+                db/u1+tdTr7vLPeevq/fzMhWv2XCmTnv7rfvvd/vW893zhHYp+VnAe+Dn0Buxkd+toRiUEGpEKMWC0x7
+                wKFBhGpJ4FAo4AuJGd9DmS4r5uhYJOHROYcFkBMCEx5VKfV9ZfJneJ1LRFXEVHm3BxkG2ISHDm/3I6zL
+                CAO6sezHWPIlIrp33ImwjBhRHGO1E2A18lD3+tjsAD26VfeV1zG49wPof/9/orOcn90vRez1A/zmD8J/
+                3wJmisAJEeHenMCdgcR8U2DO72OOTpn1JKboQSdonYlZpA+f93KefnairCCqeL7Pq/DyeSmk4CW9nBCe
+                n0MuXyRE+LDnI5ZqKWOLBEGbsVlKtR4Q9aMopHNidUkURmo/XxHSuiDUxbG+Hd1Q7aPtkHYN6LQ2gbAT
+                xdik7XpE4Kn6WAslzi/38OJKC6/973NY/r/n0TefYc9AsesA+O0fR/5byzhNqx+iD/VQc4AHiJtOEcfO
+                0r5qruT5wiPC5YlwuTy8Qh5+sYhcoQS/VIHIVaRfqol8oUj0ItgQi0LkaVGgSvwvc/qHmOBEAU1jAkdM
+                /M0Ui5hqkWJvxLyM9DKWyTmSmTUO1TbthR8xcUO1X0TM7oECBgkAulSqc8MwpPWAKq3T+WGgARTQ/aMo
+                UsAaDAZ8WZeAsE4S7A167+fbAb5yvoFnfvj3scjY2m0w7BoA5C+jsLSKn+gH+Ku0eS/RLe8XfBRqZZGf
+                nEBxehaFqUPIVWaAPElzr0p0q1GtaAIrwvpMAgjFxEwsoTlZsSh/t1gTkWU5H2eOZeJJQ3giFC9lbIjP
+                hOF15m4intpmcKjzpFoqrie+jul8JriM9LqUGiAKTAY8Sloo0ERKyjBgPCMhWF7FLCIIKL1eD0EwwCAI
+                6HYxX1IfhHjsa0v4pX/4h3ieLujtFhB2BQCv/DJyxWv46ZyPn6kuzHjlw7MoHr5deJUjpLXniKuniegs
+                4ZmLhebcXhdxv4d40CPxy5xFnNTvIw5CRQTmQo8ePyJOI4lB1VeqQJB+UNzp8dvxHyIcqQePj6nzSD3w
+                0mcFAXXM5yVjScGL/0q9g/QRnU2/QfcgICglztea342pMnGjdl/RSyo88nYbUaeLYKuFuEvvMRggUsu+
+                foZcDn6uQPeUCKJAdnt99Ol9r9TjJ37y8/ip1+t4iW7Y3g3a5HbjRw6v4jvaEj8288BJf+KB90OWHwIq
+                9yru87pXEHZ7qJ95Cp2Vq+hvbiCkDzfoto3+1R9cAYMkgKfUQoF0fJFUQ0np+hypA7WfPqpXyJl1u6Rr
+                6DqiNN2FiE1AkWQxiryn1qHWab9CAVRlq1L9HpuSVHO+p1UKb9t1YY7nzDrZGuqY72vg8bHYSCWpARPR
+                ezW+8gzar14hgUYqrliFaK8RFtdRoGc9EjQ+/LE78H0EgDW68C1olXCwAUCiv/LWVfxUZa4yMXHHMcSl
+                90JWTitO5Q9JwlGJ3TgiLhn0FJewzvRzRVrGisst8QV/ZM83xC3RdyYu8vNEUDL4fL2u9+lzeZ8mmr5O
+                eJo4LCn4fppgngIHjE3JMpusSEVTVXjJ56ttqXeweuHreZNViycUmEVM79MfKMCydAi2thC1Wgg6bcRb
+                HfQuXSRwx8hVp5Ar10j9kdlz9A70rr0GufIWivlc4aO3hx/7zbN4qt7HKt29ceABsLSC76Rv/tGpe+cF
+                OXXKekb3PH0/Evk+6fq4i3x1Ake/6eP6Q8PTH5m5n8Q9i3xlWPGHJZHJSzbIWPdHg0CLdpHTRJBaBzO4
+                FAiUHyA10ZESle8jyBKj26rjkny/iP0/pcepBoHW/6Zqj4FV0ECtxySy1XnKzoBaD0nES6u66MYxqSu2
+                K9S1SnlINkVRuP0RUn+n9PuRHcF2QWn+PnYzUCSgnJwMT989i4e+uogzdFEL2qI5uAAgev6NUq2ULx2a
+                hqw9oolBRCelSM71BrD5NfK5SRQyIDyy6nPEFflJtY+NP6Ur8yWQd0DbORQkDEik5kCpdb6irvqo0lj6
+                2keLY7NuLfyIvycRNmRDz1j37O6xAUhSiL0DtWRLn3S33jfQ50ht6CljUhl7sboHCXgSHGQ/8D4Gkk/r
+                5ZwOJrC7GEkFSvYKvHigpFNMS2lMML5P4fi9KDZWCARXq99yG+4kAMzTIfYMugcWAM1/hLn1AN81fZSM
+                vMrtmuv548GI1P6KJkxE9k7QMfuXFOHJ1afvR1XmNYezmParSsTzY0u1FAoUgl9DCnN9zhBfi2pfyoRL
+                lU5WXK2X+jxeErfKQFcGh2DjjqSLIJUk6JggolHlZ42UoRjpiBFztwcFutjTnK7jCCbcoLwUI2WkVh9R
+                /Qpw7AFjdVogs9TyUDv5ALY2lvHRE+F7fvlpnKSDrx5oAHRz+FYvwnTl6BwZfvcaI8uY3EyQ3qIyzLRs
+                5kfJawKy2wdDWPbteZ8iMhORCMGWPRNQGHWRvIYBgSG61tcw23wtDMFlsmSuFiyKmfBEdCF4nZZUYy9W
+                LqdUOh6Ku5nTFdasADL/1HlC2MiQfpqhTS0F4kEHcWcDXmWWPM1A20L0Huxj+BNzKJErfKSzdN+xKk4t
+                tUF+MDYwRpdwvCpA4Dty1YIoHF4gQ21KE10ZT/TSQUMTU2j/Xj+KIbZwiG4BwRLAnitMteuK870M0fVH
+                11E/XvUN1XgZm9+M1LWx4w0rPjUcnLCyL/WzK1WS3Hx7cYgvdySZQNhaJQPwEIGYgMXPzUYnPxIZqeXZ
+                eeSWl6qnD2OeADBDe6+BxdGYytgA8Pz3obg1wIdnTkwKlE8ZQppPzC89WDNGmecQ2k+4PyV8FhBssedN
+                tRLC14RX4Erkr7YFjKhWxFOGXqwBoH4rhBsKEcojQQoe1usmNKw8CV56+r5ZbpcZimuTJIsCqX4u2lon
+                1WLcSSkTqci/U5w5Tj/1ovjobfGJx97GUbro/IEEwJFHcKLfxl2lwwTiwoJ5SROPZ0NwsOJwv5/hcFcS
+                ONzPet9nQ7GgDUbPgEEdh7EDoCOEcWTsi4iD9wYMRncLc8yCxroHij45TUxF7Jzex8ajZ4jvmWuVdX99
+                2SwMUc3D2b3kIbQIe2wEWhVmKgub2hRKtQlx39zmvdU8TrYDkDWsgkJjUQNjAwCp1gfonaYLs4cgOdIX
+                xelB5sLB5nbiWynA+zzD8Z4lPhGcvAHkihoEftE5ZtRAov8dCcC+nkeVY/8MBCVrjSegPnxoiA5jE8Qq
+                FqCVvqkcQyAfX3rmuZTkiN/J1xjeDAaIgi69Uk2DVjiVnqY4M4+Z5c15sgMWLjRUI9jqwQMA8DDRKu9P
+                HKd3ZC4dGCLx6rr5sIUMCIwtkBDfgIKJze0DOQOAnJECVkUkALASwACAa2gA4LG9EWggwH5wc400lxvw
+                aAmgRb6KRipVExkQGNHNUsCoATn6/Xf+NmzA9oipi5NIJQD0kp69NDePkvdq7XgNMwQAMp7YOk5aDvc/
+                AB79Afi9Ph6uzRVI/99OelRzp7QoD+tO0MdLxbji/Iyxx9E8Jn6+YgjPQKDz/ZJRAVZNAEl0LpEAoRHb
+                gxRc/Hsh/26YEl9qWZCIfisJZC4R+Zr7U0mgjDdHCkgLHJfQIyxBhRm2A7pNeNMnoNS7woCnpBMDrjR5
+                hF+xcMcMpp64gukDB4B75lDsxTieqxLBigvQitRXDSqKSIMtDHG+dd+E51j1hriK6CXN8VYK+HmtDoQL
+                ABNbUDaeAQAf8yMTm7cAEMaFs3qfN/LKlYMlurL2fW0reBYEjvgXOqysg0o3X6x2Up5Hf9NEIUVqu8BI
+                JV8gXyyJBw73DtFOzokojINOYwMAfZeKKOBIrkr2S27SiGMYfUdfINwwALBEd4lvQGENPJYAzPEKAEVD
+                fFqKgl5X5/g6qKIAYIIrVv9zlea38iJNCEmoYimTU36+iuSZ35cWBEK3IUjbAOR5yfaNvIGRhQk/2Cm+
+                I5V7WJyYw5HK1WOVPOY6AYoYtiT3OQDKmCA7atqvTmlRHZnmbdU6S5Is7BhCeykQEjvAS+0B31j9alky
+                XoCzZGAoFZIzety37bpa9Cv7INCvKYyUce0DRXyH6xko0nC7lRpxSnBNdP5kgdm2oVwMRX1kyupmewSZ
+                g545oJush44RCPPkDRwuX52fyGOWAFA+UACgbzPth6jmJo/qj6n3agkQ9kw42IDalQBJTEAY8Z3T3K24
+                PG90f84s8+m50gaC/FSf8rfKsQQQidumrHsCk+TAjhcmxE/0fWy43Yh8ocLCjqSCbTJ2nvsmy7BkIMkR
+                9U1K2ghvIpIoVCdQ9jFZzKloYNl8nHfieuwdAKgco+9WyFVndZjU6lshdCNQ4rM7+h+GoxKDyHgAniG4
+                DfiopfEehPXj/eF7SOf3FCcHWiLkYp05xMAI84bgNigUGSPP0wae+p1gmNgWpEL/NsfvkwadHbwB+xgy
+                yUA1UmLQ19LQz1mEmKX+Cb9UZY1VmiigZADAL/mu5wfcPITfQSG1W1H3zk+bZ3YSYsO2DtQ4fm/illki
+                Wm/Ay4R8E2ngZ853VAisUWjsBz+X5guaKiywPFflZOwRhVG77biN7nMnSQNp2eYJYFgFpOucj9iFG4m0
+                V7BEypGRy/msR6sJAMZCq7HcNO9jRjEQZ7xEURqKZc6Me+adHeK7EbFtwHB0sLTBHsd2SI47bQqWoNKG
+                jzMGpjDZPcL49fZ8z8TmnTiBxDBIpU1QuQ4IMohAVnVrE0GQALCpf9I51xROG/M9cUQDoGJe7mAAgOyo
+                klK5bMDZaBrMksXekOh3U2/c6uxLrHYXHEilgLRE89J9yW84EUZrJG4T6ebe0hv+DeH8pkNoaRqdLFjk
+                8IGRMQFbkqQUz9hDQyJCg0FpJcGZT0XyBBT3czg4Pw5ajQUAsbTNPnnT7Gpa0ljPKo/AfkzpfBWHsNKs
+                e4aYNl0LXpKVNUxkCyS7neU621AkHLXicrBI91kuHwlOJDaGdJ8fo83zGwWGokHHwVV6x5ibnX2PNFgB
+                8xMqFFzFQZIAJL2mlUT2dL6fNNE11TDDRqClz3XjpSbVW1oVIlNrPnI5xhSR9ZKceH6CN8+4f7aBBslS
+                mpa6oesxchdc4MpRh6/7WlZKeMoVjB2XMXEfYy1BpEpQVTRiNXBwAEDPXfZUbx2rAiIjCawKyHy1UV/R
+                +Rg6p9+mdpn72dRt91eTVWkyguT1K7Y/ysitkY68iSdg+H6jRP9olUD7wr4JWxiw2o8h9Lk+GbEzReUG
+                2kaTdz2NfyxuoGl510SPrQqA3hsHo99DZnZbjk8CNwYMpjOGXhrPIMng8IaJI02wJwGQ8UjMMa3KHXE0
+                Aowp02fUlrO2jbRy+znbChOeG6aSVkg5DHrOhyYbI6/SohQAxiOtx3FTeoceBzliTuv2rf4XhhADp2k8
+                SdNNLkySRqTJ22PAROzS8dK18ANtySs5aULBnvmyFjDq41rABPr3wyjtJmYyfNKPb7qFJT69TfqC7u2T
+                IEIMP7/z4ttAsINE0EsbjHJBqNPSVX8CkVw7FvE/NgAMQtT9QHetUmFOGRvaSi0FkqQ6I/aUSo5TTpZG
+                DCYteqEinI7LB6n/bsV8nDPnG3cwRioFTDcwcIp2NND3s+ldiYfiPIsDhiFVIYeBYu+vsoRT8o0ktLud
+                3o69gL65Kv0tadLYVPDsXY/77RIAyAhUjy6SF7MSYKAJoSSadAjufPxkHzShWEwqovfTcKyK6QsTAzJt
+                DMLkG3KcPtH/sTE8OQ9gkC7j0OT0x4k6kdKxM6wUSEASZcCgu5BtA80ooifEz34l2xvZ5BzI2Pk9kkMi
+                GjJxMQb9PzYA9PtosP0XD9rwOBqoPq5IPyQcbhcWIC4YjNhmgisQ2PZ8G8wx3KFi+rFeCtOQY1sEhySA
+                yQgK+um2UgO6+7eVBAkonH3DkiJOwKLraGNyGAHWABy2GHSXt3g7iIbu+a63/ewOAEgdd5Q6Dfsi4aAk
+                SONY50qv5pGIYJvAiVTE6oaZUIMAVuwb4quOGXnN5Ul7gJMKziW0ur+vJICMjGEaO/EJmz9o12UavUyT
+                RGzOf8qlyT6H2Hohr9s2kNoHrqcSJ2Dh1kBh1KRMGxzHgoaxAIC+9VrMXfu6zVx+UibiVdsB/rDuhQFH
+                ss+mjtuMHSMFEKTEZQMvZxI+PZvsKUzEz0gHy8VKBZiePIbwdqnzBQJtjMWpbaCfN0zAYEW0NiwNoawh
+                aQg/MvI3okl4qF0AZqyCIXBpQHD3dx5jYLWtuoeNTRSMRwIIbFEN4n47p4hj3UDr6g0R21mPI5O5E5l2
+                eJPDrwiUZs4m7qBnDETV+CNSwxBIRgFBQjzrDRjCJ1IgTA3DOAWCTLwHVypoqSESoEQZIo+mU9oSmC2e
+                I1Ece0kxilDNxdwTnk4cYEwm4Xi8AIFNevBu1N4sp1xjv4Q11IxOhU23ssaXNeYipxuZycSJHRHP92X1
+                oFK0Bk4+gY0FOF/ffuAoTEGgBngItGGojMLQcHsKBGmDTtIZ/CGOTR/BNDV8JyNQZvT/cKug1ClyShDa
+                uERsehkR95uE1uZA5QIG5mO965JgLADYrKNXO4R21GnNcl87LcJtHMMQEA7BPaPP7Xme7bDhaWKo4TVE
+                mhKhhAF/dNPZRJjrxA0AYMV2HJhRQIIhdSATSRA54j9MQSGt4Wg9B5mCwCk7NwbJzDGZGJ6uF6J4hp4t
+                igdY7ai+gYNxEH9sANgKVEeGjaBdP6n3pPF3qQZqMF6BsL11nFTt2LbQ2aZekRLdqhBhrH97vY2SJm6i
+                SD6XzABAZkS9lgCBs8+CwsYOzFhB2ZoEcHBDT2DH01TMImNoxsbF5K7mgwirXSUBuAVtLINFjAUAV5ro
+                3XMUi8Hm5vvUx7U2AEzXL2v9wkoGz4h+k65tE0Zc4ifZQk6sIAGAbe8f7mWTfPWMBEiMvkhHCFPPIBgy
+                FKWNFySASLk/S9Us18tkn97Kin9V/FzSWJZcrwxAIj55PVEk5UpHif8OxjROwFgA8A8+h/7ZB3FpsNUh
+                6dwBd/GG6R7N6VxSBVJcohtRb11Fz+YBiCGaJsQXMuV8YZI/EWE7AMSwH291uvUIIkffOy6itNtxBHeg
+                CBmnKiBx9bYlgDp2QQIFd2nPi1PvZ1vcgUMWPR5zbrDcVpzfwUGSAFzo274ZdiOJXkOgcCg1+rw87PfR
+                9nqkXT1LeGmyZJM0rFEAsB08025eaSKIK/4x5GfLjFUvbaDIiHotDQI9SISxEVyPgfcJy/3XCwJtMwTt
+                6cNSgoe0iZ2wdBINFNx1ookO2YCNniJ8GwdJAvB7k/p6u0BeTNTZyHn5WaMGhE7zTuL9QDJIQ5KY4en2
+                /ky/SUVVzzaXxikIEvGP9GTrCloLfKh10KoCJzYQhalRaLwCRI4BaA1EHgfQMf7sb4yO+cvrmgaKzmqk
+                sFiJ/OGIJPnQvS5afWz0I6X/uSfNwZIA5L5cKpXQ6ddXJyvTd8OOxKkjfybKlTT+GfGtRL7pKuXmbHiG
+                86MM9wtHhWC7BEi7eSPt0Tuk16XjEYQJ8RP30FQ1XIwdWzBD/CGiYpugzyyHXUORzyeAkknMQqoeQ4P2
+                FtYGWOuHSvz3cJDiAFzW27gyV0Qr2GpNqqZbazXbnsBxkHwaRec42p4O6FkCWsLnHO7Pun5OgmlCiWwL
+                nhX/cWrMDUkAaxxaoju2gRojKBX9I9O9RtkDO4h/fjY10pnD/Yk3QO/AALjaVMPLNg8kABYvYP2uOVzt
+                rK4tTMV97bMragvd1TtMxzxQu22wKMkRAJLGImEbkCwIJLalkasbuXmFGFYBboNOJNNmYscYlJHNP7D6
+                f5CGi+N4pOgfZfnDWW4DiX0sTk/3fRXylSa0LE1zcNTvIAxl/Nq6In7dAGAsZWwA+JGvoHvmgzjTbTQ/
+                SBaNSPoIql4PnOjaNAYfUovdhn2T9D6r7wsZEGS5P5NWHqdc5wJA6gjLcIw/dkPBeshY22gkI+sNbM8N
+                2EZcZ//I9K/MMR7DUOE1TBNCbGyh19xEL0Ln1XUVBOKOlDZx4OAAgEsnwDP5bvi3gsYa8ocmTbIDfeh8
+                jQ4uI9HP0r6dMD2Igwy32xByPgXAEPGt7ne4H/a+jgRw2wVsihhnBCWGnzX0jAQIw+Fm3xFcnxB1RAg4
+                Ff3uudoF9Itl7QDZGIDpr8jp4t3NBuo9LF9pKc5fx5i6ho8bAPJSC0+dLqG/tXKtNDN3Sus7NRZrSffM
+                iaKUWs5Cp+nZxM8s52e6gmW53zpLiQHoEs8M4uy6g9YbiKz/n9oEaXj2BjH/IaJfLwScXiDyRXqUzG+o
+                gakl2s1NudjGRXIDeRgVHjZ2bGMEjSXR0JYf/Z84H/t4tbu2qnoE2YYO9QV4FHBrrGUSItP06NjRxUES
+                udPZPU7lbZXwMUhdueS4GfiR12M7CORAd85U1QwGaa7Rx8PhIM8Ohl8CBFe3J/tHED4pJOkKFdMYlDYF
+                cwi4T8Zf2BvgyatqkMgVKF05vtFCx6oCLpPx0u3hc6WN1sNxp0G235x+UU6F4uFR+k0kCR6ZrFzLccIm
+                kCgjmF1hRwJIx/VL9L8wAUBLGJm047sNLkk83zUCbbdxR+ePsu5tiTOiPkvw7aLfHPNz8FkCRNGwCqDn
+                7jY2OP2x88Rl5f7xEHFjGyAKGLME4Adf28Lj/U4Ydpav6ixXNdAiD+FuRvpIzrRfCYkkSHVu7IjswGT3
+                9HWGsSsFArvsq3Ok3c/n2vPkIJUgfE4YpHMFxPE2rk/AmBByVAjY1f+O8TlSApD7VyibHkY23d00BdMz
+                dDc38UYDL652VfCHeGi8I4WOGwA4X8cZsmgvNq9ehoiMMRtpW0DkqsMAsCsZlZByohPPH3LV0ipdYlsQ
+                qPF++4rwMsiM/2va+LeJ+psQ/ynB0/XR+514AL2PV67qMYqd8C+bOP12C912T/7u67hAl12BVgGDAw2A
+                //ppLNcl/nBzsSF5iFRhE0SY4/ITeqhULtu69I0Age0yFUvjwjmGXGRGADM6P4nkhXoAaGsbJER37Ywd
+                uH7nEK9r8LmcLp2XkEMgSPaTle+XaqnYt20S9P7N5RWsdPDmM4uK6xkEDWB84n9XAPAckWCxjt8eBNhs
+                XroIaccLkDr9S/rlpJ0n/dJuzUqEeGhdg8FVFdrCF25ih+XyTJUZXT9K/CPzWCkYsu6eC5LUCBw+l16Z
+                iM+unrT63/Sk5dj/1kYz/swFPNccKAPwTYxZ/O8KAPj9f+s5eqkQz25cW5IiaJvRumOdrZuvpsGR697F
+                EgZpvl+iFjI2Q6znccvq623cexOW/k73yMABLtcPPa5zrhr4oTyhjL80LqFjFa2VFW4/WXnsonL9Xqe6
+                hDG6f7sJAHz6dbQaXfx6t9GJW8vXlLsjTbq4GvbdKyRh0OsCwZUIsdwmHbJcLB0ulztx+fWa7OAKotT/
+                H47xZ7k+awuk5ws13U0RUqYGJxt/Yb+P5vqG/KOL+MpSW/n9bwDjzQa2ZVcAQCX+t4/hM4TwMxsX3iKz
+                pqNBYFLFZGEy8dgssRK14NadqXNdfY4bEP1GXD8y+COHuX579G97OwHrfuU6RsbwMx1VN5eW0OjKpV97
+                WcX9X4M2AMcW/XPLbgEAj15F/VoT/6G13g63li7roFAUp506eHKIWCZAsBJhxz5Rcqf1jBjPuGzC2T90
+                u4zxt3PN4iqLzGH3z1Y2dhkAwjT+WPsl6HbQqjfkb5zD41uB0v08VcxY5whwy64BgEr4e8/jU+s9PL34
+                +ptS8sQJNvzJhM9XkuCPtfThcBOgJ2UYMhhdySBlJn9EDu1LKOaSKuPnj4rpD5+vzx4FiNECJr1eRf54
+                kqxIE9/meK9dW5SXG3j1sxeUyGfis+8/VtfPLWPrdjyqvLiG3kdOoX0kH31PIR8XKjNzalRM/YU8k6Eb
+                6W5RDpGz2+p0M/jcO+01mdUqOxmI23V+ytk7BX52tA/A0yDNKYlmwc3PvEmG3/pqc+sXnsZjF5vK7XsC
+                Ovo31omi3LKrAAC3CDSx/N7b8ECu27p/cm5aeMWyToXmr8SqgKN41tpHlvhiu13g0GOIgBi9b6cY/06i
+                PtuqN7x/J59/WBp4xQqJ/7Ju6Ir1cwTdLlavXJPE+Y/+n/OK6Ez8V6ATQHet7DYA8GYL/eMVXLh7Rn4P
+                BltTk0cP65k6eOIWHpbNTPIgXEazUgBZwgtnbImM4TXCELse0bNEG3bfXPdup2uGff5EItC/wsSMGlFM
+                WtFPts/qpStYbUVXf+5JvNQL8TXa/RXolr9dGBUgLbsOAH7/Jy+j/sgCtg75/e/M+3G+PDVrBlqQupk4
+                GAxJgaTByG6bT2RBkhXXWULtvB9DRNseydshn98+RjxKWgz/Hrf7C5IAyu0T+p3q1xaxWe+0f+bL+AMS
+                /RfptC9SfRu74Pdny14AgEt04SouPriAuXK/+XClVvDy1UnYUVj0nAIBknQAIOF4LiLZRgYAowy19Ee3
+                i/jtumQnUT9Kvzt3dq53jhPX8yyhwiCVNf/W+jrWlxrBf38Fn/38JRXseZzqWejM310vewUArA/QI/vv
+                jbumcdrr1E9Nzc4IP18wwy56Km4vkhG9DeGz1r+qHlyCq8M3xfU7Efz6RL+xe5h6Fqz3eZ7jONLv0dva
+                wtrVVfnFy3jsP76IRXIInqLTnsEeiH5b9gwA/I1eXUWr2cErDx6WH0Rr/djk3Bw87i6lBoZggzActv6H
+                jL50IIiUmNsJu906l5lz5HUIe3NEHwUgdvlylclkCIGg1yOjb0meXZXP/tMncb4fcTMJvkz1KnZhkuid
+                yl4CgEv8Rh3rUwW8fdtk9MGotTE7MT0jeEZwafsPRuEIomMIGNttgFFgGA2QYQKPNgS3RfXkDSo9Z75S
+                M5NUS4SDgSL+q6vRCz/5x3i5HeBlpHp/VyJ+O5W9BgCX6KvXsEif6q0TtfC0bK4fnpydFT5P/swjcUa6
+                sScr/q1XkBX127nf1dk683g0Z+9kE6QPupPhOAwW6OntCyV1Cx7lY+XyonxzNTz3jx/Hcxs9NR3sH0HH
+                +8fe2nejsh8AwCV4YQnXun2cv3smeihqrR6u1GqiUOQRUoWRAjLD9WZ1hK7faV3P4beTjr++d7CT/2/v
+                Z4nPXJ8rV5QUCPs9rFxZlNfq0Vs/9kd4crmjgj1fgJ4TeKypXjdb9gsAuAzOrWGpRRxyrBIveFurt/v5
+                nCjXJjXBo2gIAOLrAoC+eGdRf73I3s72gf4NE/Qhw4/1f7/TxurVFfnWWnzOEJ/b95n457BLLX03U/YT
+                ALgMXlvH0qUWXj9aQbUWNO6LgoFXm551EjiQ2AMu4YajcaMCN1lCb/fZd3YHt9sIdlrY9Lhu7s0Vi+g2
+                W1hbWpevrMnn/8kTeM7hfHb3mtgnxOey3wDAJbjaxOpXruDs8QlEh7z26XDQLkzMzOmU8dh2MsVNc767
+                PtozyB7PhoG3b6f3NNts9ZdKaNc3sbZaly+v4Ks/TQYf6XzmeNb5vNxXxOeyHwHAJewEqD/6Js6ROq2f
+                LPVOy167NjEzm/YbALYR1O5Lj40m+DCHX89LGNUOMEIFkLHKht/m2gY21lvB5y/hsZ/7Mi6Qtc+te0x8
+                1vlb2GfE57JfAcCF44KtM5dxoVxF4/Zy//1hv12dmJzRDSrb3D0gS1i1Z4R+H60eRp0LjLYDHOnC6oAk
+                UrPeRKPZ7f63l/GZX30Bi8bP/yK0td/BPiQ+l/0MAC6c79t++hIulPK4ekd18IFBr1WbmJgS7CLqIMt2
+                rnat8+sFhLbbA8M2xE7iP1UtAhGBsdFoynprsPHzT+LTn30Tq6GO8HHr3tvQPXv3JfG57HcAcOGP13v2
+                mvqYFxeq4d1xv3GkVpsUnmfDwMP6PisZtrfe7RwmHqVCRtsADMAY9UZLLjbDSz/+BTz6/IrK6OHYPrfs
+                cYRvT4M8N1MOAgC4KBC8sIzL621cmK/GR/Jh445CPi/y+dIIgvKa2Ob3u8fTc3Zq+99JQmjOD8OIOH8L
+                S5vhZTL2vvhGXWXyPAaVCa+me9/1lr2vpxwUAHBRILhQx9JLS3hlsiq9Ga91XxQOchMTNZElYBrxG+Z8
+                vT4qMHQTlr4ChEAQBJrzN6O3/t7n8fgl3aTLxt4L0Pl8u5bR842WgwQAWwbkWq09cQFnA4HV48X+qajX
+                nK3VKvC8HKJI5xWMsgtGBW52chWHm5KlafsnBPYGaNRb8dlV+dyPfgHPrnYTH/8lqpzTvyetel9vOYgA
+                4MLzh2y+sIjzyy1cOD4RHxa95omcL71qtcoDLGYI6waNtquCYY7PqgKh1qMoQqu1ha12N/r0eXzuX34F
+                5zcHKoWLOZ8DPJvYx8beTuWgAoALi9n2m5u4cmYFZ8s59OZy3bv6/XapVq0ITi+LE3cxHkHgLBBGSwau
+                nW4Hjc0tubEVLf3K8/jsJ1/GsnHz/hi6F8++9PFvphxkAHBRdsFGF2t/fBHnXlvFG/PVaEJ0NxfK5Zxf
+                LJYS0X29SN+o+AGXQsHH+nodq5v9jU+dx6M/+wTOnFnFRTrjSTrMrh7r/i4OKPG5HHQA2MIJFc0rLVy6
+                2MAbHz6Jh4siOHbixDF1cJQfvz2IxCPSCyK6pyYhi6IeBoMutrYGeGoRT/6rp3CFuP5paJHP+p4HOdq1
+                /P1xlVsFAFxYJXQ+9f34RMXHX5o/ftSrVMpETIFi0aeaQyHvI0+VOZtrqZRXy0olR+s5kNSg7ZyamqDT
+                6RAA9Cjtx8pYIJ/uaVI1j0KHdQ+csbdTuZUAgPM/hD/VDvDvFhaOFY4cO2KGYIGeRr44oZI0cjkPnojh
+                E7fneF5WqhxV9NQ0t1oi8Hqv11Punk7ohH/PJE6eb+DFq1t4C/sgkePdKrcMAP4FSfCjD+PflAqlB+84
+                fZ/gueuIwhATRyDm7oQ/eyfE1AJEZVaPzhLqQauQcQFtYRBsbelEXboV9+Os0tHWE1eU0cdDtx0YX/96
+                ZayDRO1m+e4fxgzR66Ej87MqRByGIQQPRDV9AmKSauWI7n7WrSPmdK080bSzoVLOYuJ02espMFgQFItF
+                BYLY9OEnEHh3z+ChqSIe2OyrsPTYZvHYzbKbnUPHWjp1HCUunSpXKmlidr6sQOAT8f2Zu+DP3QPU5iFL
+                UxC5mu5fyL12OYevVEruxftY/+ugkhl+kPj9rS2stPqYo12VvX7fd6vcMgB4dRGXexFeXltekboLhjvq
+                tDCDVOtE03QiaF2U3s/lhrbZCLRTFnCrYxAi+PwFLMa6afdAxPlvptwyAPjbX0B7sYlf3Wo048bqhk7s
+                UqOCtRH36oialxE1LiLurkMOWtoGkJbDRTIHsG5mjpURyEWHf8Fz91x8cUUZf9zosy8SOt+NcssYgVTk
+                hSVc+dBJfCDobN55+Ohh4Ukz/y7P9cdA6K5BtlchW0uQnVU9eBQf5jGFul0l53lsoc3NTaUCOIhE5gF6
+                pA1+4Rn8wVt1pfu5qZe7dP2JG7jfynIfwZEpvH17Lf6uQhxO1MpFMvA63Bebli0NgM4aGX+reqxAvqjf
+                V8TnrGMesIItf63/dUdF5v4XG/jqf34Ol2jHl6C7cN8ybuAt4wWYEv6vp/Ds+47hd2or6z909OiciDmY
+                09ni8TkJ7sLMWKsHaFJxgiidsaPPYHC21ayzdOrvnFGuH6d178vEzm+k3DI2gC33fC/683k7u7tp7zdT
+                zcpBoEYKZbePa9Jxz5RsqjiHhDkq+LGTmILO8OGBG28J/9+WW0oFcPn97649HAWDX1g4dbwyMTsrpJ12
+                lqqw69a8l8OMnM/nle/PUoCjgCrhl/4fK+NEJ8K5c+tK/B/Ylr9R5ZYCwMpPIH9lffCrtWrlodvuv1M1
+                CXvMxkRYnqBJFIrk/+dUVb4/7VNsbjqdaK73US6XUaDjQZBM1JG/p4Y7Ljdx7vLWwcj1u9lyS6mApVXc
+                40l8fP6OE6TuPS3K+UBpGrlDp+HNvx/ekfdAlKfNsANCAcOvVgkcBXUPZRsQGEqlEo4cOUpgKIH+i4ky
+                brtzBh+hU3g63MJev+u7VW4pIzA3UX1QNtp+qVJM4/qFSXizd8GboVqY0HGBQg3Bysvk3zU195toYNxP
+                GZtBwOqAJUG3y2Fiwk5NHKWVE9B5ALeEFDjoABDnfhizm03cFXl4YHGj8z15Hna900exzKFdGw6eIhZe
+                oHpc+f+yUyeOJzD0Nne+sQkHt9vtxFa8c1Ke+pFH8G3zEwobLz37RSz9VhoVPJB2wYEDwIU/g1L9JE6T
+                cfbniMk/slrH/bScJXqVJqo+MXlBCF/qwSdtQFhKZ6bwSM3UqXabe3JKMY/Xa61/Jj67hGtra3ofXVqZ
+                LuKRGe/D9011PxiG6IcCzbv/Mt78gQjPbAX40tlNPP3bX8LqaweskeidjLG4Z+XsD6Ha7uIRIfEXuiG+
+                NydwT66c86uHypg4XsPMbZMoTpeQrxXUePyyGaJ7to+4R69XJRUwdzf8mTtJGlTIFewi3nwL4dp5Evmb
+                ytEPOx3EYZioDQ4DM/G58JyX03dP4+6/+B7eQtQaoHltE5vX2qhf3MLWckd2CQFhgPrAx1OtHn73zVU8
+                /rPPqsDRvgfDvgbAc38HMyLAXyEX7K+LGB8uz5bKc3dOy6mTU6gdqQi/bASY8vORDhpgYvvdl7oI6wGz
+                L7xpUt25kooAxs1FxJ11xEGog0Fx2j+Adf/KyopqTmaP/9B7DuP4h44nk5fZzqA8nS35GIgGETaXOnKD
+                wLD25iZaq724H+JiN8Lvnd3Cb/za43jp2j7OG9yXAPja96Hoz+OvbfXxo/TRH5w5MZE7/vAxTB6f0jPF
+                23mj5Q7flHfTeZ0zHQSNwBDNZvzoWcRlPDoRhLl/ZWWVBInA/CPHMH1qxsx7LUeSUJgZzj0SSzwOcGej
+                L6+9uoGlVzZlZxCvr4X47AuL+KVfeUGlko1tAsivt+w3AIhzfxcfaHTxi/Rg3zpzatq7/ZsXUJyt6LTP
+                OM3g2Xm0cF1lINF8oaknF9uhL2B2mysbfivLq5g6NolD9x1WEoJn+ODKnG9nrB2a6sbs1xOgk1zIeaRS
+                Ylx6aU1ee6WBTjdaebOOX/wfr+KTX1tT3cb2bFSwbNk3gaDX/jRyP/hx/M12D79WPVx58K6PnhILj5xA
+                jtvpQ6mrHWLbLu26rVFaVbNuJyY9n4Z7ZUZiZLf5Go4Ctskm4PmFC8WCEvEMpjggyUGVCcvbPMEjrzPX
+                y9DsD/V5fA0/z9Sxijh8xwSiXlQt9gYfvW0K880eXrvcVu0J+6I1cV8AQH4C/qtz+Om4j38+f/rw7H3f
+                cTeZ9EVtQln9/g6IryqZ6flqXrf1G2KN/G1HEjD3b2xsqGtKZbYXpKoJcXlp9iV11D57XcCxBCHmTtRQ
+                KPm+t9l570INJ8lUeHm9p9oV9lwS7DkAWDt/6Zvx93MRfv7U+xdKJz9Axlok0mFjXaK7SxcUEYaBEJoa
+                8ByNPoqVIor5Igr5ggr1csyfJQsvOfdPt/xFygDkMDB3L1MShDl+YIgf7UxoVWO9VPMBRxq0al+o9omJ
+                uaKoTBaEXG/fe4Scl2dXcbYfjXdW0Jspew6AP/8j+Hjcw78/9b6F0vx7jju6HsN1FPGzEsCVBAYEIhBK
+                kvC4gh6P40NEZ8JzhI9r3mwzMBgUvLRFSQ/pSAFD7IS4TnX36ZbI4X18fWWqIHwWCZu9U40+ll9vqCbm
+                Pc0u2lMAXPoEyvU+fmVytnL/nR+5U2giytEEf6fEdyXBdT6vDfzEzixjXKyRJ4QweYQ6PGy5/YYgsC6j
+                2aeuJylSmymiudwtlBEXvryEV4Job3sY7WkksFnC+2QP33LyoRNCi/04JZblfHd9VB0FDtcWuAFvWS5n
+                zndBYAnPqsGu8+wmKlZA3ByFPP2t0NVzltZjYE/BE4mbqL0IKDd2/q4JNBobDx8u4n3tgUo22TMpsKcA
+                6EU4TSq6MnGoRpwa70z07Pb17AJXGtzkJ+XAvgUAV1cNcEkAYCRFIjGsSjDE9nxvmPiJ+5iCgQFVreZF
+                sSAmj1flibdbOASdY7gnUmBPAUAMX1D6MtR9Nq4LgBg3z/0x3hE/uWJfdxGT21zEUecn8QMj9qM4jRkI
+                0+UsAYSwgIDqjMJYqeTAkydPU+VZtP//A0AjxKUqh+IbnXxttpbqf/V18c5FvwXAOyyWu5n4LgBsP8Hs
+                uUNSwA0kWXtA8JR4I9SBr6e4aW8G6A1k/9WGslCYBnsWkNvThJBrDbwYeuLtpTeW9Te4kbE3yt+39esk
+                vi1ZENhq97FayB4bVa3BaD0HN0BkXcrlK2283cTLyx0VGmZXcM/iAXsKgB/8FJb60v+t1cv1uLXS0vl6
+                1yN+1v//Bjk/W1xdnyWq6kLmgGCnc+z+LBA4ksnNzmuLHWxshq3/cg4vEybsFPF71tNor+MAUuTiC/fP
+                +d/eXW/MHzrG08bkdCDoZkS/C4JvsFi3b9TYgu5xdz27L3EZs+eZBsT1tR4WF3vhr1/AZx+/hGWpZww5
+                jz3sZ7DXAMBLi+jMTPmvn6rGH6lfWZudnKqJYrU4zOk3AsC7WLJjDmeLS3xrH7iEzwLBuoHLyz0srfSD
+                z1/Bo588q/oYcg+jZ7GL08SOKnsOACrxM5fi1VI1f2GhKu9rXl05lvd9MTFVM6nbYmfCj/GzXc8LcLl8
+                p/28yqOTdDohrpDOX6kHzU++hs/8+jk1WRQTnrmfJ4zc0/aA/QAALsFzl6PFKx3v3MKR/KSob9y1vrLh
+                VStlUayUdROwqxbGTHxbRrUWZtddvW8DSEz4fl/i6tUWri2147cb8bl/9gwee+oalmM9uBQPMsX6f8/H
+                GNovAOAyuFSPlz93Njrj14orh/zgcGNxbW6r3vRKxQKKVFUX7zES3xJzlP4fJRFSEOgBpviUdntAer6F
+                i5eacqUZXf2N1/C5f/08Lqx11ajhPKwcDy/HYwrvOfHVs+/1A4x4Hs65P3b3Yf/933u3+Ni3HY8/fqQc
+                31+rlb2jR+cwOzONcrWkI0c2XVe+e4iwaWHZ6u5PA0dQg1J2u5xAuoV6vUsiP4iJ2Bcfu4znfv9tNNZ7
+                KtZ/xlTmeg777pvuZfsNALawZJqgenxhAu/95gXvA3/2Djx832z8LXSgUioXxezMpJiensTMzAT8Qt5I
+                BamDSa6OfifgcMYJiDl7OE6JrgeK0OKn3w+J03vY2CCiNzqyvRVwrkiXfPsXf/c8Ljy3gs5WoAj/mqmc
+                IGrb//8kJewdPBuHSMkaxFGqt89Xcf+HTvp3ffsJecftk/H9Ez6O5nxUS8W8mJgog8cLrlRKKJeLpqnX
+                h+4e5um78af3RAoWFZeN9U+pGeV0XJ8lSxhw/8BQEXur3cFWi8cM7KPV6qHTC2Q/oM1IrLxRxxuPX8Hy
+                C6uy3xyofoPM5eza8WhiDAIO9Ozb7OD9DAD3GVki8Lg8k1R5jJ6FyQJO3TMrFu6bw+FvmvcWpkvy6FwZ
+                CxU/niU7gYGDfE6IXI4TQApKRzMYGBRMC9/PgY9xJ1A9FhB3BNEMGoYxET5QQ8KHkeQe5FEvxMZyV1xZ
+                6mL56Wty9Y0Geotb6PUi1KEbc3jkELbqeQQx7nHCvn2AfUp49+MepMLPy7Fzcg1UQwp322ZAHKnkMV8r
+                iJmJAiZnSqJ816FcZaGG6mQuLs1VRbXiy7JyIuhPyZMkM2RepQ7Sdj8S3QBCuWOkwgcrW9jqhgiWu+i9
+                vi57K2052Bwgon3dgSY4E3nFVF5nLmfdzuPK7HuiZz/oQS1WMjC3F6FBwbViKqsOtiOqZj/3FSsgGTVK
+                Acl6QUwwlYtkKq8zMTlWz5zMBOa5/rZM7TjHmeDvoPF5f5WDDIBR72KSthVhc6bmzbaP4bYPL/P+roOZ
+                zSxgHW7zi9z45IEv/w++kv1k9MYo6QAAAABJRU5ErkJggg==
+            </property>
+        </structure>
+    </list-property>
+</report>

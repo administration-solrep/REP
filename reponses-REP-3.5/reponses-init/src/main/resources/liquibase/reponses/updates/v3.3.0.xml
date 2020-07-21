@@ -1,0 +1,23 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"
+	logicalFilePath="v3.3.0">
+
+	<changeSet id="01_FEV541_question-hash-connexite.sql" author="system" context="oracle">
+		<sqlFile path="liquibase/reponses/sql/REP-3.3.0/01_FEV541_question-hash-connexite.sql" />
+	</changeSet>
+
+ 	<changeSet id="02_REPRISE_updateacls_struct.sql" author="system" context="oracle">
+		<sqlFile path="liquibase/reponses/sql/REP-3.3.0/02_REPRISE_updateacls_struct.sql" />
+	</changeSet>
+
+	<changeSet id="03_REPRISE_updateacls_init.sql" author="system" context="oracle">
+		<sqlFile stripComments="false" endDelimiter="\n/\s*\n" path="liquibase/reponses/sql/REP-3.3.0/03_REPRISE_updateacls_init.sql" />
+	</changeSet>
+	
+	<changeSet id="03_BIS_split.sql" author="system" context="oracle">
+		<sqlFile stripComments="false" endDelimiter="\n/\s*\n" path="liquibase/reponses/sql/REP-3.3.0/03_BIS_split.sql" />
+	</changeSet>
+
+</databaseChangeLog>

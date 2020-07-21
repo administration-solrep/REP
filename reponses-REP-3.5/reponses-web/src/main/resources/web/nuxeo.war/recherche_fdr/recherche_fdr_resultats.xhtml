@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax">
+
+	<ui:define name="page title">
+		<h:outputText
+			value="#{nuxeoApplicationName} - #{messages['title.search.results']}" />
+	</ui:define>
+
+	<ui:define name="body">
+		<ui:include src="/incl/message_banner.xhtml" />
+
+		<div id="content">
+			<div id="upperContentView">
+				<nxu:set var="contentViewName" value="recherche_fdr_resultats">
+					<nxu:set var="contentView"
+						value="#{contentViewActions.getContentViewWithProvider('recherche_fdr_resultats')}"
+						cache="true">
+						<h:form id="smartSearchResultsActions">
+							<h:commandButton id="edit_search"
+								value="#{messages['command.editSmartSearch']}"
+								action="recherche_fdr" immediate="true" styleClass="button" />
+						</h:form>
+						<nxu:set var="contentViewUnitSingle"
+							value="modèle de feuille de route" cache="true">
+							<nxu:set var="contentViewUnit"
+								value="modèles de feuilles de route" cache="true">
+								<ui:decorate template="/incl/content_view.xhtml">
+									<ui:define name="content_view_header_before_selector" />
+								</ui:decorate>
+							</nxu:set>
+						</nxu:set>
+					</nxu:set>
+				</nxu:set>
+			</div>
+		</div>
+	</ui:define>
+
+	<ui:define name="subbody">
+		<c:if
+			test="#{currentDocument != null and currentDocument.getType() == 'FeuilleRoute'}">
+			<div class="subbodyContainer">
+				<h:panelGroup>
+					<h1>
+						<h:outputText value="#{nxd:titleOrId(currentDocument)}" />
+					</h1>
+				</h:panelGroup>
+
+				<div style="clear: both"></div>
+
+				<ui:include src="/feuilleroute/view_modele_feuille_route_body.xhtml" />
+			</div>
+		</c:if>
+	</ui:define>
+</nxthemes:composition>

@@ -1,0 +1,17 @@
+dn: cn=AllCorbeilleReader,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+changetype: add
+objectClass: top
+objectClass: groupOfUniqueNames
+description: Corbeille : outil de sélection d'un poste ou d'un utilisateur 
+uniqueMember: cn=emptyRef
+cn: AllCorbeilleReader
+
+dn: cn=Administrateur fonctionnel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: cn=AllCorbeilleReader,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur fonctionnel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+delete: uniqueMember
+uniqueMember: cn=CorbeilleSGGReader,ou=fonctions,ou=Reponses,dc=dila,dc=fr

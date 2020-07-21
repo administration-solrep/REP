@@ -1,0 +1,22 @@
+#############
+# Création
+#############
+    
+#  FEV349 : droit d'export des statistiques
+dn: cn=DroitExportMasseStats,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+changetype: add
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: DroitExportMasseStats
+uniqueMember: cn=emptyRef
+description: Statistique : téléchargement des statistiques
+
+##########
+# Ajout
+##########
+
+dn: cn=Administrateur fonctionnel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add: uniqueMember
+uniqueMember: cn=DroitExportMasseStats,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+

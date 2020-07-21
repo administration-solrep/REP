@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<ui:define name="page title">
+		<h:outputText value="#{nuxeoApplicationName}" />
+	</ui:define>
+
+	<ui:define name="body">
+
+		<h1>
+			<h:outputText
+				value="#{messages['ss.organigramme.injection.apercu.title']}" />
+		</h1>
+		<br />
+
+		<style>
+.nouveau {
+	color: red;
+	text-align: center;
+}
+</style>
+		<ui:include src="/incl/message_banner.xhtml" />
+		<div>
+			<h2>
+				<h:outputText
+					value="#{messages['ss.organigramme.injection.apercu.title.ajout']}" />
+			</h2>
+		</div>
+		<h:form id="viewInjectionForm">
+			<div id="containerTabDiv"
+				style="overflow-x: auto; overflow-y: hidden;">
+
+				<h:dataTable var="currentGouv"
+					value="#{organigrammeInjectionActions.getNewGovernment()}"
+					class="dataOutput" rowClasses="dataRowEven,dataRowOdd">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Nom du nouveau Gouvernement" />
+						</f:facet>
+						<h:outputText value="#{currentGouv.libelleLong}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Date de début du gouvernement" />
+						</f:facet>
+						<h:outputText value="#{currentGouv.dateDeDebut}"
+							converter="DateConverter" />
+					</h:column>
+				</h:dataTable>
+				<br /> <br />
+				<span
+					onmouseover="tooltip.show('Les éléments sont présentés selon le modèle ci-dessous :&lt;br /&gt;&lt;br /&gt;Libellé court (Ordre protocolaire)&lt;br /&gt;Libellé long&lt;br /&gt;Formules entête&lt;br /&gt;Civilité Prénom Nom&lt;br /&gt;Date de début - Date de fin', 300);"
+					onmouseout="tooltip.hide();"> <h:graphicImage
+						value="/icons/lightbulb.png" />
+				</span>
+				<h:dataTable var="currentEntite"
+					value="#{organigrammeInjectionActions.getAllNewEntities()}"
+					class="dataOutput" rowClasses="dataRowEven,dataRowOdd">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{messages['ss.organigramme.injection.organigramme.actuel']}" />
+						</f:facet>
+						<ui:fragment  rendered="#{currentEntite.aModifierReponses}">
+							<h:outputText
+								value="#{currentEntite.libelleCourt} (#{currentEntite.oldOrdreProtocolaireReponses})"/>
+							<br />
+							<h:outputText value="#{currentEntite.libelleLong}" />
+							<br />
+							<h:outputText value="#{currentEntite.formule}" />
+							<br />
+							<h:outputText
+								value="#{currentEntite.civilite} #{currentEntite.prenom} #{currentEntite.nom}" />
+							<br />
+							<h:outputText value="#{currentEntite.dateDeDebut}"
+								converter="DateConverter" />
+							<h:outputText value=" - " />
+							<h:outputText value="#{currentEntite.dateDeFin}"
+								converter="DateConverter" />
+							<br />
+						</ui:fragment>
+
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{messages['ss.organigramme.injection.organigramme.type']}" />
+						</f:facet>
+						<h:outputText styleClass="nouveau" value="#{currentEntite.typeModification}"/>
+						
+						<br />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText
+								value="#{messages['ss.organigramme.injection.organigramme.modifie']}" />
+						</f:facet>
+						<h:outputText
+							value="#{currentEntite.libelleCourt} (#{currentEntite.ordreProtocolaireReponses})" />
+						<br />
+						<h:outputText value="#{currentEntite.libelleLong}" />
+						<br />
+						<h:outputText value="#{currentEntite.formule}" />
+						<br />
+						<h:outputText
+							value="#{currentEntite.civilite} #{currentEntite.prenom} #{currentEntite.nom}" />
+						<br />
+						<h:outputText value="#{currentEntite.dateDeDebut}"
+							converter="DateConverter" />
+						<h:outputText value=" - " />
+						<h:outputText value="#{currentEntite.dateDeFin}"
+							converter="DateConverter" />
+						<br />
+					</h:column>
+				</h:dataTable>
+				<script>
+			resize();
+		</script>
+			</div>
+
+			<nxh:commandButton
+				action="#{organigrammeInjectionActions.executeInjection}"
+				value="#{messages['command.global.validate']}" styleClass="button"
+				onclick="return confirm('Êtes-vous sûr de vouloir faire les ajouts ?');" />
+			<nxh:commandButton
+				action="#{organigrammeInjectionActions.cancelInjection}"
+				value="#{messages['command.global.cancel']}" styleClass="button" />
+		</h:form>
+
+		<script>
+	var j = jQuery.noConflict();
+	j(document).ready(function() {
+		window.onresize = resize;
+		resize();
+	});	
+</script>
+
+	</ui:define>
+</nxthemes:composition>

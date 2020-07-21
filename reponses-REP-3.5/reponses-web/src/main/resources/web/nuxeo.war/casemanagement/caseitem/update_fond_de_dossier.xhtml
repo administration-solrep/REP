@@ -1,0 +1,128 @@
+<div xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<a4j:region id="updateFondDeDossierRegion">
+		<rich:modalPanel id="updateFondDeDossierPanel" autosized="true">
+			<!-- onmaskclick="Richfaces.hideModalPanel('updateFondDeDossierPanel')" -->
+			<div>
+				<f:facet name="header">
+					<h:outputText value="Modifier le document " />
+				</f:facet>
+			</div>
+			<h:form id="updateFondDeDossierForm">
+				<a4j:queue requestDelay="500" sizeExceededBehavior="dropNew"
+					ignoreDupResponses="true" size="10"
+					id="inputUpdateFondDeDossierQueue"
+					name="inputUpdateFondDeDossierQueue" timeout="10000" />
+				<div id="updateFondDossierDiv">
+					<!-- old file -->
+					<div class="popupFddTabbedDiv">
+						<table>
+							<tr>
+								<td>
+									<div class="divlabel">
+										<h:outputLabel for="selectedNodeName"
+											value="Nom du fichier : " style="white-space: nowrap;" />
+									</div>
+								</td>
+								<td><h:inputText id="selectedNodeName"
+										value="#{fondDeDossierManagerActions.selectedNodeName}"
+										disabled="true" /></td>
+							</tr>
+						</table>
+					</div>
+					<!-- version -->
+					<div class="popupFddTabbedDiv">
+						<table>
+							<tr>
+								<td>
+									<div class="divlabel">
+										<h:outputLabel for="numeroVersion" value="Version : "
+											style="white-space: nowrap;" />
+									</div>
+								</td>
+								<td><h:inputText id="numeroVersion"
+										value="#{fondDeDossierManagerActions.numeroVersion}"
+										disabled="true" /></td>
+							</tr>
+						</table>
+						<br />
+						<h:outputLabel value=" Nouvelle Version : "
+							style="white-space: nowrap; font-weight:bold;" />
+
+					</div>
+
+					<!-- file input -->
+					<rich:fileUpload listHeight="60"
+						fileUploadListener="#{fondDeDossierManagerActions.fileUploadListener}"
+						maxFilesQuantity="#{fondDeDossierManagerActions.uploadsAvailable}"
+						id="uploadFondDeDossierFilesNewVersion"
+						doneLabel="Téléchargement effectué"
+						clearAllControlLabel="Supprimer" immediateUpload="true"
+						addControlLabel="Ajouter Fichier" clearControlLabel="Supprimer"
+						acceptedTypes="#{fondDeDossierManagerActions.acceptedTypes}"
+						allowFlash="false" style="width : 200px;height:100px">
+						<a4j:support event="onuploadcomplete"
+							eventsQueue="inputUpdateFondDeDossierQueue" reRender="info" />
+					</rich:fileUpload>
+
+					<!-- radiobutton list on visibility level-->
+					<div class="popupFddDiv">
+						<h:outputLabel value="Visibilité : " style="white-space: nowrap;" />
+						<h:selectOneRadio id="radioButtonNiveauVisibiliteNewVersion"
+							value="#{fondDeDossierManagerActions.niveauVisibilite}"
+							valueChangeListener="#{fondDeDossierManagerActions.valueListener}"
+							layout="pageDirection">
+							<a4j:support event="onclick"
+								eventsQueue="inputUpdateFondDeDossierQueue" />
+							<f:selectItems value="#{fondDeDossierManagerActions.selectItems}" />
+						</h:selectOneRadio>
+					</div>
+
+					<table>
+						<tr>
+							<td>
+								<!-- button update --> <a4j:commandButton styleClass="button"
+									action="#{fondDeDossierManagerActions.updateNode()}"
+									id="updateFondDeDossierButtonText"
+									eventsQueue="inputUpdateFondDeDossierQueue"
+									oncomplete="if (!#{fondDeDossierManagerActions.isErrorOccurred}) {Richfaces.hideModalPanel('updateFondDeDossierPanel');}"
+									reRender="fddTreePanel, errorNameUpdate" ajaxSingle="true"
+									value="Valider">
+								</a4j:commandButton>
+							</td>
+							<td>
+								<!-- button close --> <a4j:commandButton styleClass="button"
+									action="#{fondDeDossierManagerActions.resetAllProperties()}"
+									id="annulerFondDeDossierFileModificationText"
+									eventsQueue="inputUpdateFondDeDossierQueue"
+									oncomplete="Richfaces.hideModalPanel('updateFondDeDossierPanel')"
+									reRender="fddTreePanel" ajaxSingle="true" value="Annuler">
+								</a4j:commandButton>
+							</td>
+							<td><a4j:status for="updateFondDeDossierRegion">
+									<f:facet name="start">
+										<h:graphicImage value="/img/standart_waiter.gif"
+											style="position: absolute;" />
+									</f:facet>
+								</a4j:status></td>
+						</tr>
+					</table>
+
+					<!-- error message -->
+					<div class="popupFddDiv">
+						<h:outputText class="popupFddError" id="errorNameUpdate"
+							value="#{fondDeDossierManagerActions.errorName}" />
+					</div>
+				</div>
+			</h:form>
+		</rich:modalPanel>
+	</a4j:region>
+</div>

@@ -1,0 +1,12 @@
+<h:selectBooleanCheckbox xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax" id="#{widget.id}"
+	value="#{field_0}">
+	<nxu:set var="dossierRef"
+		value="#{dossierListingActions.getDossierRefFromQuestionRef(field_1)}">
+		<a4j:support id="#{widget.id}_ajax_onclick" event="onclick"
+			eventsQueue="ajax_events_queue"
+			action="#{documentListingActions.processSelectRow(dossierRef, contentView.name, contentView.selectionListName, field_0)}"
+			reRender="ajax_selection_buttons" />
+	</nxu:set>
+</h:selectBooleanCheckbox>

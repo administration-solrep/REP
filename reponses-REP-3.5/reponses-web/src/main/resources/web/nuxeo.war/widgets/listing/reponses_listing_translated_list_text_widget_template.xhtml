@@ -1,0 +1,15 @@
+<f:subview id="#{widget.id}" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<nxu:set var="textes" value="#{providerBean.split(field_0, ',')}">
+		<c:forEach var="texte" items="#{textes}" varStatus="status">
+			<h:outputText value="#{messages[texte]}" />
+			<c:if test="#{!status.last}">
+				<h:outputText value=", " />
+			</c:if>
+		</c:forEach>
+	</nxu:set>
+
+</f:subview>

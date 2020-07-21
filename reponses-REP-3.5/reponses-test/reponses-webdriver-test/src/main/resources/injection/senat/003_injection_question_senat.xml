@@ -1,0 +1,1242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7783</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2308</ns2:page_jo>
+			<ns2:ministre_depot id="60002308">
+				<titre_jo>Égalité des territoires et logement</titre_jo>
+				<intitule_min>Ministère de l'égalité des territoires et du logement</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="11084S">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Philippe</ns2:prenom>
+				<ns2:nom>Kaltenbach</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>335 - Hauts-de-Seine</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Philippe Kaltenbach attire l'attention de
+				Mme la ministre de l'égalité des territoires et du logement sur les
+				difficultés financières rencontrées par un grand nombre de
+				locataires d'un logement social dans les Hauts-de-Seine, du fait de
+				l'instauration, en 2009, des suppléments de loyer de solidarité
+				(SLS).
+
+				Depuis l'entrée en vigueur, au 1er janvier 2009, d'un décret d'application
+				de la loi n° 2006-872 du 13 juillet 2006 portant engagement national
+				pour le logement, les SLS s'appliquent, obligatoirement, à tous les
+				locataires dont les revenus dépassent de plus de 20 % les plafonds
+				d'accès, contre 40 % auparavant. Les modalités de calcul ont aussi
+				été durcies, de manière à accroître le surloyer. La loi n° 2009-323
+				du 25 mars 2009 de mobilisation pour le logement et la lutte contre
+				l'exclusion a, en outre, abaissé de 10 % les plafonds de ressources
+				pour accéder à un logement social. Les locataires au-dessus des
+				seuils sont, ainsi, plus nombreux tout comme ceux susceptibles
+				d'être assujettis au SLS.
+
+				Il observe qu'en raison de la hausse très importante des loyers
+				observée ces dix dernières années en zone tendue et, tout
+				particulièrement, en Île-de-France, les locataires d'un logement
+				social dépassant les plafonds d'accès sont, bien souvent, dans
+				l'incapacité d'accéder à un logement dans le secteur privé.
+				L'objectif de rotation au sein du parc social poursuivi par les SLS
+				n'est donc pas satisfait, la plupart du temps.
+
+				Il lui demande donc si elle envisage une réforme des SLS, afin de ne
+				pas pénaliser, outre mesure, les locataires de logements sociaux
+				situés dans les zones les plus tendues.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Supplément de loyer de solidarité</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:rubrique>Loyers</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Logement social</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7784</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2304</ns2:page_jo>
+			<ns2:ministre_depot id="60003413">
+				<titre_jo>Écologie, développement durable et énergie</titre_jo>
+				<intitule_min>Ministère de l'écologie, du développement durable et
+					de l'énergie</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="11084S">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Philippe</ns2:prenom>
+				<ns2:nom>Kaltenbach</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>335 - Hauts-de-Seine</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Philippe Kaltenbach attire l'attention de
+				M. le ministre de l'écologie, du développement durable et de
+				l'énergie sur les difficultés croissantes rencontrées par Airparif,
+				dans son évaluation de la qualité de l'air en Île-de-France, et,
+				tout particulièrement, dans les Hauts-de-Seine. En 2012, le seuil
+				d'alerte d'émissions nocives de particules a, pourtant, été dépassé
+				144 jours sur 365 aux abords du périphérique ouest. Il s'agit, en
+				effet, du secteur le plus exposé de la capitale. La fréquence de ces
+				dépassements est, de plus, préoccupante pour la santé des
+				Franciliens et des Alto-séquanais.
+				Dans le même temps, le conseil général des Hauts-de-Seine a supprimé la
+				subvention de 80 000 euros qu'il allouait, chaque année, à
+				l'association Airparif. La ville d'Issy-les-Moulineaux a, quant à
+				elle, contraint l'association de retirer le capteur dont elle
+				disposait dans cette commune. À Boulogne-Billancourt, ville où le
+				trafic routier est particulièrement dense, aucune station n'a pu, en
+				outre, être installée.
+				Il souhaiterait donc savoir si le Gouvernement envisage de rappeler
+				aux collectivités leur nécessaire concours à l'action entreprise par
+				Airparif pour évaluer la qualité de l'air en Île-de-France.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Difficultés d'action d'Airparif</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:theme>Environnement</ns2:theme>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:rubrique>Pollution et nuisances</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Ile-de-France</ns2:renvoi>
+					<ns2:renvoi>Collectivités locales</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7785</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2313</ns2:page_jo>
+			<ns2:ministre_depot id="60002312">
+				<titre_jo>Travail, emploi, formation professionnelle et dialogue
+					social</titre_jo>
+				<intitule_min>Ministère du travail, de l'emploi, de la formation
+					professionnelle et du dialogue social</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="11084S">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Philippe</ns2:prenom>
+				<ns2:nom>Kaltenbach</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>335 - Hauts-de-Seine</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Philippe Kaltenbach attire l'attention de
+				M. le ministre du travail, de l'emploi, de la formation
+				professionnelle et du dialogue social sur les crédits d'aide à
+				l'accompagnement socio-professionnel des salariés en insertion, au
+				titre de l'insertion par l'activité économique accordés par la
+				DIRECCTE pour les chantiers d'insertion. Ceux-ci sont actuellement
+				plafonnés à 45 000 euros an et par structure. Ce montant correspond,
+				règlementairement, à l'accompagnement de 36 salariés en insertion.
+				Or, il a été interpellé par une association du département des
+				Hauts-de-Seine qui accueille, actuellement, 119 salariés au sein de
+				douze chantiers. L'important travail d'insertion réalisé par
+				celle-ci est pénalisé par la faiblesse du niveau du plafond des
+				crédits d'aide. Le ministère, sensible à cette difficulté, a
+				entrepris de fixer de nouveaux plafonds plus élevés. Il lui demande
+				si ce relèvement des plafonds sera bien prochainement mis en
+				œuvre.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Déplafonnement des crédits d'accompagnement
+				socio-professionnel </ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Travail</ns2:theme>
+				<ns2:rubrique>Insertion</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Aides publiques</ns2:renvoi>
+					<ns2:renvoi>Formation professionnelle</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7786</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2306</ns2:page_jo>
+			<ns2:ministre_depot id="60002511">
+				<titre_jo>Économie et finances</titre_jo>
+				<intitule_min>Ministère de l'économie et des finances</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="80013X">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Roland</ns2:prenom>
+				<ns2:nom>Courteau</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>110 - Aude</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Roland Courteau expose à M. le ministre de
+				l'économie et des finances que, parmi les mesures annoncées par le
+				Gouvernement pour simplifier la vie des entreprises et des
+				particuliers, figure la dématérialisation des titres restaurant,
+				progressivement remplacés par des cartes rechargeables ou des
+				applications sur téléphone mobile.
+
+				Ce changement concernera les 120 000 entreprises qui distribuent des
+				tickets, les 3,5 millions de salariés qui en bénéficient et les 180
+				000 restaurateurs qui les acceptent.
+
+				Il lui indique que l'enjeu est de taille puisque les opérateurs
+				émettent 720 millions de titres par an, pour un chiffre d'affaires
+				de 5,3 milliards d'euros.
+
+				Il lui fait cependant remarquer que les modalités d'application
+				restent à préciser et lui demande dans quel délai le décret sera
+				publié.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Dématérialisation des titres restaurant </ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Économie et finances, fiscalité</ns2:theme>
+				<ns2:theme>Entreprises</ns2:theme>
+				<ns2:theme>Travail</ns2:theme>
+				<ns2:rubrique>Avantages sociaux</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Restaurants</ns2:renvoi>
+					<ns2:renvoi>Décrets et arrêtés</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7787</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2304</ns2:page_jo>
+			<ns2:ministre_depot id="60003413">
+				<titre_jo>Écologie, développement durable et énergie</titre_jo>
+				<intitule_min>Ministère de l'écologie, du développement durable et
+					de l'énergie</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="80013X">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Roland</ns2:prenom>
+				<ns2:nom>Courteau</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>110 - Aude</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Roland Courteau expose à M. le ministre de
+				l'écologie, du développement durable et de l'énergie qu'il y a
+				quelques décennies, les dauphins communs abondaient non loin des
+				côtes de la mer Méditerranée.
+
+				Or, force serait de constater qu'aujourd'hui, les populations de
+				dauphins communs seraient en rapide déclin et apparaîtraient comme
+				particulièrement menacées.
+
+				La cause principale de cette situation pourrait être la pollution :
+				plastiques, pollutions chimiques, etc. La Méditerranée est en
+				danger.
+
+				Il lui demande de bien vouloir lui faire connaître son sentiment sur
+				cette question et les initiatives qu'il compte prendre, notamment
+				sur le plan international, face à une telle situation.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Dauphins communs </ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Environnement</ns2:theme>
+				<ns2:rubrique>Mer et littoral</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Pollution et nuisances</ns2:renvoi>
+					<ns2:renvoi>Animaux</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7788</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2300</ns2:page_jo>
+			<ns2:ministre_depot id="60002307">
+				<titre_jo>Affaires sociales et santé</titre_jo>
+				<intitule_min>Ministère des affaires sociales et de la santé</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="96007G">
+				<ns2:civilite>Mme</ns2:civilite>
+				<ns2:prenom>Gisèle</ns2:prenom>
+				<ns2:nom>Printz</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[Mme Gisèle Printz attire l'attention de Mme la
+				ministre des affaires sociales et de la santé sur le projet de
+				décret portant diverses dispositions relatives aux procédures de
+				contrôle de l'insuffisance professionnelle et aux règles de
+				suspension temporaire par les instances ordinales des infirmiers.
+				Lors de sa création, en décembre 2006, l'ordre national des
+				infirmiers s'est vu confier des missions de service public,
+				singulièrement celle de préserver la santé publique et la sécurité
+				des patients. Les instances ordinales contribuent à l'amélioration
+				des soins et à la garantie des bonnes pratiques professionnelles
+				pour les patients, dans le cadre imposé par la loi n° 2009-879 du 21
+				juillet 2009 portant réforme de l'hôpital et relative aux patients,
+				à la santé et aux territoires. Cependant, le 5 juillet 2013, lors de
+				sa présentation au Haut conseil des professions paramédicales, il
+				est apparu que l'ordre national des infirmiers n'était plus concerné
+				par le projet de décret. En conséquence, elle lui demande les
+				mesures qu'elle entend prendre afin de garantir la place de l'ordre
+				national des infirmiers dans ses prérogatives de contrôle du respect
+				du développement professionnel continu (DPC) aux trois niveaux
+				d'intervention : l'inscription, la suspension d'exercer et la
+				procédure disciplinaire.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Insuffisance professionnelle et règles de suspension
+				temporaire par les instances de l'ordre national des infirmiers</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Questions sociales et santé</ns2:theme>
+				<ns2:rubrique>Ordres professionnels</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Infirmiers et infirmières</ns2:renvoi>
+					<ns2:renvoi>Décrets et arrêtés</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7789</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2309</ns2:page_jo>
+			<ns2:ministre_depot id="60002309">
+				<titre_jo>Intérieur</titre_jo>
+				<intitule_min>Ministère de l'intérieur</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01024M">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Yves</ns2:prenom>
+				<ns2:nom>Détraigne</ns2:nom>
+				<ns2:grp_pol>UDI-UC</ns2:grp_pol>
+				<ns2:circonscription>510 - Marne</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Yves Détraigne attire l'attention de M. le
+				ministre de l'intérieur sur le décret n° 2013-180 du 28 février 2013
+				modifiant l'article R. 233-1 du code de la route qui est venu
+				supprimer définitivement, au 1er mars 2013, la sanction pour défaut
+				de possession d'un éthylotest par le conducteur d'un véhicule
+				terrestre à moteur.
+
+				S'il comprend l'idée qui présidait au report de cette sanction (décret
+				n° 2012-1197 du 29 octobre 2012 modifiant le décret n° 2012-284 du
+				28 février 2012 relatif à la possession obligatoire d'un éthylotest
+				par le conducteur d'un véhicule), il s'interroge sur la mise en
+				application effective de cette disposition. Désormais, tout
+				automobiliste est tenu de posséder un éthylotest à bord de son
+				véhicule. Mais, tout en maintenant cette obligation (décret n°
+				2012-284 du 28 février 2012 relatif à la possession obligatoire d'un
+				éthylotest par le conducteur d'un véhicule terrestre à moteur), le
+				nouveau texte règlementaire de février 2013 supprime la sanction qui
+				devait s'appliquer, à compter du 1er mars 2013, en cas de défaut de
+				possession de l'éthylotest. Des différents épisodes règlementaires,
+				il resterait donc l'obligation, sans la sanction en cas de
+				manquement.
+
+				Alors que la menace d'une amende en cas de non-présentation d'un
+				éthylotest était une manière de sensibiliser les conducteurs sur les
+				conséquences de l'alcool au volant, il lui demande de l'éclairer sur
+				la politique de sécurité routière qu'il entend, désormais, mener
+				contre l'alcool au volant, l'alcoolémie positive représentant
+				toujours plus de 30 % des tués sur la route.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Politique de lutte contre l'alcool au volant</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Police et sécurité</ns2:theme>
+				<ns2:theme>Transports</ns2:theme>
+				<ns2:rubrique>Alcootest</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Sécurité routière</ns2:renvoi>
+					<ns2:renvoi>Décrets et arrêtés</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7790</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2309</ns2:page_jo>
+			<ns2:ministre_depot id="60002309">
+				<titre_jo>Intérieur</titre_jo>
+				<intitule_min>Ministère de l'intérieur</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01059Y">
+				<ns2:civilite>Mme</ns2:civilite>
+				<ns2:prenom>Annie</ns2:prenom>
+				<ns2:nom>David</ns2:nom>
+				<ns2:grp_pol>CRC</ns2:grp_pol>
+				<ns2:circonscription>380 - Isère</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[Mme Annie David attire l'attention de M. le
+				ministre de l'intérieur sur les interrogations que suscite la loi n°
+				2013-403 du 17 mai 2013 relative à l'élection des conseillers
+				départementaux, des conseillers municipaux et des conseillers
+				communautaires et modifiant le calendrier électoral auprès des
+				maires des communes rurales et des communes de montagne.
+
+				Cette loi prévoit la réduction de moitié du nombre de cantons et impose,
+				pour ce faire, un nouveau découpage des cantons. La majorité des
+				cantons sera formée par regroupement de plusieurs cantons actuels.
+				Dans l'Isère il sera nécessaire, en zone montagne particulièrement,
+				de réunir jusqu'à sept cantons pour atteindre la moyenne
+				démographique définie pour former un canton.
+				Lors des rencontres qu'elle a organisées avec les maires du département
+				afin de recueillir leurs avis et propositions pour ce redécoupage,
+				ceux-ci ont exprimé de vives interrogations quant aux modalités de
+				définition des chefs–lieux de cantons et leurs inquiétudes quant au
+				devenir de la dotation de solidarité rurale (DSR) dont bénéficient
+				les chefs-lieux de cantons au titre de la fraction bourg-centre.
+
+				Aucun article de la loi ne prévoit effectivement de disposition en
+				la matière, ni en termes de critères de désignation de chef-lieu, ni
+				en termes d'attribution de la DSR, de redistribution ou de
+				compensation pour les communes qui perdront la qualité de chef-lieu
+				de canton et le bénéfice d'une ressource qui leur permettait de
+				maintenir une vie sociale en milieu rural.
+
+				En conséquence, elle demande quelles seront les modalités qu'il a
+				prévues de mettre en place.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Découpage des cantons et chefs-lieux de canton</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Budget</ns2:theme>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:rubrique>Cantons</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Dotation de solidarité rurale (DSR)</ns2:renvoi>
+					<ns2:renvoi>Loi (application de la)</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7791</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2308</ns2:page_jo>
+			<ns2:ministre_depot id="60002308">
+				<titre_jo>Égalité des territoires et logement</titre_jo>
+				<intitule_min>Ministère de l'égalité des territoires et du logement</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="11098Y">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Michel</ns2:prenom>
+				<ns2:nom>Le Scouarnec</ns2:nom>
+				<ns2:grp_pol>CRC</ns2:grp_pol>
+				<ns2:circonscription>560 - Morbihan</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Michel Le Scouarnec attire l'attention de
+				Mme la ministre de l'égalité des territoires et du logement sur
+				l'augmentation des charges locatives consécutives à la mise en place
+				de réseau de chaleur urbain.
+
+				Depuis sa promulgation, la loi n° 2010-1488 du 7 décembre 2010 portant
+				nouvelle organisation du marché de l'électricité modifie le régime
+				des charges récupérables en matière de chauffage, sur le locataire,
+				lorsque l'immeuble est raccordé à un réseau de chaleur urbain.
+
+				Cette évolution réglementaire, définie à l'article 27 du texte, concerne
+				aussi bien les propriétaires bailleurs sociaux que privés.
+
+				Ainsi, les charges découlant de l'ensemble des services inclus dans un
+				contrat d'achat d'électricité, d'énergie calorifique ou de gaz
+				naturel combustible, distribués par réseaux, deviennent-elles
+				récupérables sur le locataire.
+
+				La facture des locataires se répartit, désormais, de la manière
+				suivante : la première partie correspond à la part variable liée à
+				la consommation d'énergie de l'occupant (R1) ; et la deuxième prend
+				en compte l'investissement et l'amortissement des installations du
+				réseau de chauffage urbain (R2). Il lui demande s'il ne conviendrait
+				pas d'imputer cette part d'abonnement au propriétaire privé ou au
+				bailleur social.
+
+				Le montant de la facture d'énergie étant aussi fonction des
+				caractéristiques du logement (surface, nombre de pièces), un nombre
+				significatif de locataires se trouve en difficulté pour honorer
+				leurs factures de chauffage. Pour preuve : dans le Morbihan, les
+				locataires de bailleurs sociaux, ont vu augmenter, dans de nombreux
+				cas, les charges inhérentes au chauffage et à l'utilisation d'eau
+				chaude sanitaire, de plus de 100 %. Ce mode de fonctionnement est
+				désastreux pour les familles les plus modestes qui se voient
+				doublement pénalisées.
+
+				À l'heure où des millions de Français ont de graves difficultés à
+				régler l'ensemble des charges liées à leur habitation, il y a
+				urgence à garantir des tarifs de l'énergie qui soient accessibles à
+				tous.
+
+				C'est pourquoi il lui demande les mesures qu'elle envisage de prendre,
+				afin de soulager la facture énergétique des locataires de bailleurs
+				sociaux raccordés à un réseau de chaleur urbain.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Modification du régime des charges récupérables
+				après la mise en place d'un réseau de chaleur urbain</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Énergie</ns2:theme>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:rubrique>Charges</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Énergie</ns2:renvoi>
+					<ns2:renvoi>Chauffage</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7792</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2310</ns2:page_jo>
+			<ns2:ministre_depot id="60002309">
+				<titre_jo>Intérieur</titre_jo>
+				<intitule_min>Ministère de l'intérieur</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01060R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean Louis</ns2:prenom>
+				<ns2:nom>Masson</ns2:nom>
+				<ns2:grp_pol>NI</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean Louis Masson expose à M. le ministre
+				de l'intérieur le cas d'une commune souhaitant se doter d'un cinéma,
+				la gestion de cet équipement s'effectuant sous la forme d'une
+				délégation de service public. Il lui demande si, la saisine de la
+				commission départementale d'aménagement commercial (CDAC) préalable
+				nécessaire à cette création, soit être fait par la commune ou par le
+				délégataire.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Création d'un cinéma dans une commune</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:theme>Culture</ns2:theme>
+				<ns2:theme>PME, commerce et artisanat</ns2:theme>
+				<ns2:rubrique>Commerce et artisanat</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Cinéma et théâtre</ns2:renvoi>
+					<ns2:renvoi>Communes</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7793</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2312</ns2:page_jo>
+			<ns2:ministre_depot id="60002305">
+				<titre_jo>Justice</titre_jo>
+				<intitule_min>Ministère de la justice</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01060R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean Louis</ns2:prenom>
+				<ns2:nom>Masson</ns2:nom>
+				<ns2:grp_pol>NI</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean Louis Masson expose à Mme la garde des
+				sceaux, ministre de la justice, le fait que certains services
+				d'État, débiteurs de condamnations pécuniaires, prononcées par les
+				juridictions administratives ou civiles, exigent, pour le règlement
+				des sommes arbitrées par les juridictions, que les avocats
+				intervenants produisent un mandat spécial de leur client autorisant
+				la perception, sur leur comptes à la Caisse des règlements
+				pécuniaires des avocats (CARPA), de ces sommes. Il lui demande s'il
+				ne serait pas judicieux de rappeler aux services d'État concernés
+				que les avocats ont un mandat de représentation « ad litem », c'est
+				à dire en vue du procès, prévu à l'article 1999 du code civil et
+				suivant lequel, il n'est pas nécessaire de justifier d'un mandat
+				spécial pour percevoir, pour le compte des clients, les
+				condamnations prononcées.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Sommes dues par l'État perçues par les avocats</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Justice</ns2:theme>
+				<ns2:rubrique>Dette publique</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Justice</ns2:renvoi>
+					<ns2:renvoi>Avocats</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7794</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2310</ns2:page_jo>
+			<ns2:ministre_depot id="60002309">
+				<titre_jo>Intérieur</titre_jo>
+				<intitule_min>Ministère de l'intérieur</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01060R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean Louis</ns2:prenom>
+				<ns2:nom>Masson</ns2:nom>
+				<ns2:grp_pol>NI</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean Louis Masson expose à M. le ministre
+				de l'intérieur le cas d'une commune souhaitant céder plusieurs
+				emprises foncières de gré à gré. À cet effet, elle entend donner
+				mandat à une agence immobilière dont le coût financier de
+				l'intervention serait supporté par les acquéreurs potentiels. Il lui
+				demande si le mandat ainsi donné à une agence immobilière relève des
+				règles de la commande publique.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Cession d'emprises foncières de gré à gré</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:rubrique>Foncier</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Communes</ns2:renvoi>
+					<ns2:renvoi>Marchés publics</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7795</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2310</ns2:page_jo>
+			<ns2:ministre_depot id="60002309">
+				<titre_jo>Intérieur</titre_jo>
+				<intitule_min>Ministère de l'intérieur</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01060R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean Louis</ns2:prenom>
+				<ns2:nom>Masson</ns2:nom>
+				<ns2:grp_pol>NI</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean Louis Masson demande à M. le ministre
+				de l'intérieur si une régie dotée de la personnalité morale et de
+				l'autonomie financière, exerçant plusieurs activités dirigées vers
+				le sport et les loisirs peut décider de confier tout ou partie de
+				ces activités à un délégataire intervenant sous la forme d'une
+				délégation de service public.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Délégation d'activités d'une régie</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:theme>Sports</ns2:theme>
+				<ns2:rubrique>Régie</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Services publics</ns2:renvoi>
+					<ns2:renvoi>Sports</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7796</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2310</ns2:page_jo>
+			<ns2:ministre_depot id="60002309">
+				<titre_jo>Intérieur</titre_jo>
+				<intitule_min>Ministère de l'intérieur</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="60002305">
+				<titre_jo>Justice</titre_jo>
+				<intitule_min>Ministère de la justice</intitule_min>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="01060R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean Louis</ns2:prenom>
+				<ns2:nom>Masson</ns2:nom>
+				<ns2:grp_pol>NI</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean Louis Masson expose à M. le ministre
+				de l'intérieur le fait que l'article R. 13-21 du code de
+				l'expropriation dispose qu'à défaut d'accord amiable, le juge de
+				l'expropriation peut être saisi par la partie la plus diligente.
+				Mais il est ajouté que la demande est adressée au greffe de la
+				juridiction du ressort dans lequel sont situés les biens à
+				exproprier. Il lui demande si la saisine du juge de l'expropriation
+				doit être adressée au greffe de la juridiction de l'expropriation ou
+				si la saisine du juge de l'expropriation peut être adressée, sans
+				autre précision, au juge de l'expropriation.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Modalités de saisine du juge de l'expropriation</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Justice</ns2:theme>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:rubrique>Expropriation</ns2:rubrique>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7797</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2304</ns2:page_jo>
+			<ns2:ministre_depot id="60003413">
+				<titre_jo>Écologie, développement durable et énergie</titre_jo>
+				<intitule_min>Ministère de l'écologie, du développement durable et
+					de l'énergie</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="10015M">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>André</ns2:prenom>
+				<ns2:nom>Reichardt</ns2:nom>
+				<ns2:grp_pol>UMP</ns2:grp_pol>
+				<ns2:circonscription>670 - Bas-Rhin</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. André Reichardt attire l'attention de M. le
+				ministre de l'écologie, du développement durable et de l'énergie sur
+				la nécessaire réactualisation des soutiens d'Éco-Emballages aux
+				collectivités.
+
+				L'article 46 de la loi n° 2009-967 du 3 août 2009 de programmation relative à
+				la mise en œuvre du Grenelle de l'environnement, prévoyait des
+				objectifs ambitieux pour la filière des emballages ménagers, à
+				savoir, d'une part, l'atteinte de 75 % de recyclage et d'autre part,
+				le financement à 80 % des coûts d'un service optimisé de collecte et
+				de recyclage de ces emballages ménagers.
+
+				À l'époque, l'agrément délivré à Éco-emballages/Adelphe, se fondait
+				sur des modalités de calcul du taux de prise en charge sous-estimant
+				largement le coût de la gestion des déchets d'emballages, ce qui a
+				conduit les pouvoirs publics à proposer une clause « de revoyure »,
+				dans le but de rediscuter les points ayant conduit à sous-estimer
+				les soutiens aux collectivités de près de 300 millions d'euros par
+				an.
+				Cette clause devait intervenir à la mi-2012 et permettre une
+				revalorisation du dispositif de soutien des collectivités dès le 1er
+				janvier 2013.
+
+				Or, le 18 décembre 2012, après que les parties prenantes aient
+				travaillé plusieurs mois à la recherche de méthodes de calcul
+				objectives et équitables, la commission consultative d'agrément de
+				la filière emballages s'est opposée aux deux principales
+				propositions faites par le ministère pour appliquer la clause « de
+				revoyure », qui auraient permis de revaloriser de 100 à 300 millions
+				d'euros le financement des collectivités par les éco-organismes de
+				la filière emballages. Ce vote négatif de la commission illustre un
+				rapport de forces totalement disproportionné en défaveur des
+				collectivités locales qui assurent pourtant, concrètement, la
+				collecte et le traitement des déchets.
+				À la suite de ce vote, le président de la commission a remis
+				symboliquement sa démission au ministre de l'écologie. Cet acte
+				portait l'espoir d'une remise à plat complète de la gouvernance de
+				l'éco-organisme, discrédité du fait de l'absence de contrôle et de
+				concertation, et de la commission d'agrément.
+
+				Il lui demande donc si le ministère de l'écologie peut assurer de son
+				soutien à l'application, dès l'année 2013, de la clause « de
+				revoyure », ainsi qu'au respect des engagements du Grenelle de
+				l'environnement et à son article 46, qui avaient été votés à
+				l'unanimité par le Parlement. Il lui demande, en outre, quelles
+				mesures il entend prendre pour faire respecter ces dispositions
+				législatives et, ainsi, permettre aux collectivités d'assumer
+				pleinement leurs compétences en matière de tri des emballages et de
+				collecte sélective.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Agrément éco-emballages et clause dite « de revoyure
+				»</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:theme>Environnement</ns2:theme>
+				<ns2:rubrique>Déchets</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Loi (application de la)</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7798</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2302</ns2:page_jo>
+			<ns2:ministre_depot id="60002523">
+				<titre_jo>Artisanat, commerce et tourisme</titre_jo>
+				<intitule_min>Ministère de l'artisanat, du commerce et du tourisme</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="98046X">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>François</ns2:prenom>
+				<ns2:nom>Marc</ns2:nom>
+				<ns2:grp_pol>SOC</ns2:grp_pol>
+				<ns2:circonscription>290 - Finistère</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. François Marc attire l'attention de Mme la
+				ministre de l'artisanat, du commerce et du tourisme sur les
+				inquiétudes exprimées par les chambres de métiers et de l'artisanat
+				de Bretagne, à la suite de la suppression annoncée de l'aide au
+				recrutement d'apprentis pour certaines entreprises.
+
+				Cette indemnité compensatrice de formation s'élève actuellement à 1 020
+				euros par an et par apprenti. Les chambres de métiers craignent que
+				la suppression de cette disposition freine les entreprises à former
+				des jeunes. Les entreprises de l'artisanat accueillent en Bretagne
+				environ 10 000 apprentis chaque année, sur les 18 000 apprentis de
+				la région.
+
+				Si un dispositif particulier est prévu pur les entreprises de moins de
+				dix salariés, des effets sont toutefois à prévoir sur le réseau des
+				centres de formation d'apprentis (CFA).
+
+				Étant donné que le levier consistant à sensibiliser les jeunes aux
+				filières artisanales a récemment été inscrit dans le pacte pour
+				l'artisanat et que le Gouvernement entend faire de l'emploi des
+				jeunes une priorité en France et en Europe, les élus des chambres de
+				métiers et de l'artisanat de Bretagne font part de leur
+				incompréhension suite à cette annonce.
+
+				Au regard des craintes qu'ils expriment, il souhaiterait connaître sa
+				position.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Inquiétudes des chambres de métiers et de
+				l'artisanat de Bretagne</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>PME, commerce et artisanat</ns2:theme>
+				<ns2:rubrique>Artisanat</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Chambres de métiers</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7799</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2310</ns2:page_jo>
+			<ns2:ministre_depot id="60002309">
+				<titre_jo>Intérieur</titre_jo>
+				<intitule_min>Ministère de l'intérieur</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01060R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean Louis</ns2:prenom>
+				<ns2:nom>Masson</ns2:nom>
+				<ns2:grp_pol>NI</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean Louis Masson demande à Monsieur le
+				Ministre de l'Intérieur si un syndicat intercommunal gérant des
+				ouvrages hydrauliques concourant à réguler les eaux et à en diriger
+				une partie vers des ouvrages d'irrigation gérés par une association
+				syndicale autorisée (ASA) peut déléguer à cette association
+				syndicale une partie de ses compétences.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Délégation des compétences d'un syndicat
+				intercommunal</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:rubrique>Intercommunalité</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Eau et assainissement</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7800</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2302</ns2:page_jo>
+			<ns2:ministre_depot id="60003331">
+				<titre_jo>Budget</titre_jo>
+				<intitule_min>Ministère chargé du budget</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01060R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean Louis</ns2:prenom>
+				<ns2:nom>Masson</ns2:nom>
+				<ns2:grp_pol>NI</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean Louis Masson demande à M. le ministre
+				délégué auprès du ministre de l'économie et des finances, chargé du
+				budget si une commune qui constate que la taxe de séjour due par un
+				hébergeur n'est ni déclarée ni payée, peut émettre un titre de
+				recette en vue du recouvrement des sommes dues.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Taxe de séjour</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Collectivités territoriales</ns2:theme>
+				<ns2:rubrique>Finances locales</ns2:rubrique>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7801</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2308</ns2:page_jo>
+			<ns2:ministre_depot id="60002308">
+				<titre_jo>Égalité des territoires et logement</titre_jo>
+				<intitule_min>Ministère de l'égalité des territoires et du logement</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01060R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean Louis</ns2:prenom>
+				<ns2:nom>Masson</ns2:nom>
+				<ns2:grp_pol>NI</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean Louis Masson expose à Mme la ministre
+				de l'égalité des territoires et du logement que la régularisation
+				des constructions illicites est admise par les juridictions, tant
+				répressives qu'administratives, mais que rien n'est dit quant à la
+				nature de la procédure de régularisation de ces constructions
+				illicites. Il lui demande donc de lui préciser la démarche à
+				suivre.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Régularisation des constructions illicites </ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:rubrique>Urbanisme</ns2:rubrique>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>7802</numero_question>
+				<type>QE</type>
+				<source>SENAT</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-08-08</ns2:date_publication_jo>
+			<ns2:page_jo>2308</ns2:page_jo>
+			<ns2:ministre_depot id="60002308">
+				<titre_jo>Égalité des territoires et logement</titre_jo>
+				<intitule_min>Ministère de l'égalité des territoires et du logement</intitule_min>
+			</ns2:ministre_depot>
+			<ns2:auteur id_mandat="01060R">
+				<ns2:civilite>M.</ns2:civilite>
+				<ns2:prenom>Jean Louis</ns2:prenom>
+				<ns2:nom>Masson</ns2:nom>
+				<ns2:grp_pol>NI</ns2:grp_pol>
+				<ns2:circonscription>570 - Moselle</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[M. Jean Louis Masson expose à Mme la ministre
+				de l'égalité des territoires et du logement que sont regardées comme
+				des habitations légères de loisirs les constructions démontables ou
+				transportables, destinées à une occupation temporaire ou saisonnière
+				à usage de loisir. Mais, la plupart des habitations légères de
+				loisir ont gagné en confort et constituent très souvent des
+				constructions en bois ou matériaux composites posées sur des plots
+				en béton leur conférant ainsi une nécessaire stabilité. Très
+				souvent, il est ajouté à ces habitations légères de loisir des
+				terrasses en bois. De ce fait, ces habitations légères de loisir ne
+				sont plus démontables ou transportables sans l'exécution de travaux
+				de désolidarisation. Il lui demande si, dans ces cas, ces
+				habitations légères de loisir doivent être regardées comme ayant
+				perdu leur statut de constructions démontables ou transportables,
+				destinées à une occupation temporaire ou saisonnière à usage de
+				loisir.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:titre_senat>Constructions démontables ou transportables</ns2:titre_senat>
+			<ns2:indexation_senat>
+				<ns2:theme>Logement et urbanisme</ns2:theme>
+				<ns2:rubrique>Habitat</ns2:rubrique>
+				<ns2:renvois>
+					<ns2:renvoi>Loisirs</ns2:renvoi>
+				</ns2:renvois>
+			</ns2:indexation_senat>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>
+
+--RESPONSE--
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:envoyerQuestionsResponse
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion">
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7783</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7784</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7785</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7786</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7787</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7788</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7789</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7790</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7791</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7792</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7793</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7794</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7795</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7796</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7797</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7798</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7799</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7800</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7801</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+	<ns3:resultat_traitement>
+		<ns2:id_question>
+			<numero_question>7802</numero_question>
+			<type>QE</type>
+			<source>SENAT</source>
+			<legislature>14</legislature>
+		</ns2:id_question>
+		<ns2:statut>OK</ns2:statut>
+	</ns3:resultat_traitement>
+</ns3:envoyerQuestionsResponse>

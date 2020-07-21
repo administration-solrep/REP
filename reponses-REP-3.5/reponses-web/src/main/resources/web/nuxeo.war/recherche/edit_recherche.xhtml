@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+	<ui:define name="page title">
+		<h:outputText value="Recherche" />
+	</ui:define>
+	<ui:define name="body">
+		<div class="recherche">
+			<h:form id="requete_all_form">
+				<nxl:layout mode="edit" name="requeteSimple"
+					value="#{currentRequete}" />
+				<nxu:repeat value="#{rechercheAvanceeActions.getRechercheList()}"
+					var="recherche">
+					<ui:decorate template="template_requete.xhtml">
+						<ui:param name="recherche" value="#{recherche}" />
+						<ui:param name="layoutName" value="#{recherche.getLayoutName()}" />
+						<ui:param name="requete" value="#{currentRequete}" />
+					</ui:decorate>
+				</nxu:repeat>
+				<a4j:queue id="edit_recherche_queue" size="1" requestDelay="500"
+					sizeExceededBehavior="dropNext" />
+				<h:commandButton value="#{messages['command.search']}"
+					action="#{rechercheAvanceeActions.goToResults()}" class="button"
+					id="rechercheSubmitButton" eventsQueue="edit_recherche_queue" />
+				<h:commandButton value="#{messages['command.clearSearch']}"
+					action="#{rechercheAvanceeActions.reset()}" class="button"
+					id="clearSearchButton" />
+			</h:form>
+			<script>
+            document.getElementById('requete_all_form').style.maxWidth=screen.width+"px";
+            </script>
+		</div>
+	</ui:define>
+</nxthemes:composition>

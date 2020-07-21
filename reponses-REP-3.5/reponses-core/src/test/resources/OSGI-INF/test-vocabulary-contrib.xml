@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.reponses.web.vocabulary.tests">
+
+	<!-- new vocabulary schema -->
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="schema">
+		<schema name="vocabularyLegislature" src="testVocabulaire/vocabularyLegislature.xsd" />
+	</extension>
+
+	<!-- directory -->
+	<extension target="org.nuxeo.ecm.directory.sql.SQLDirectoryFactory"
+		point="directories">
+
+		<directory name="TA_rubrique_test">
+
+			<dbDriver>org.hsqldb.jdbcDriver</dbDriver>
+			<dbUrl>jdbc:hsqldb:mem:memid</dbUrl>
+			<dbUser>sa</dbUser>
+			<dbPassword></dbPassword>
+
+			<schema>xvocabulary</schema>
+			<parentDirectory>table_AN_rubrique_test</parentDirectory>
+			<table>table_TA_rubrique_test</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>testVocabulaire/TA_rubrique_test.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+		<directory name="AN_rubrique_test">
+
+			<dbDriver>org.hsqldb.jdbcDriver</dbDriver>
+			<dbUrl>jdbc:hsqldb:mem:memid</dbUrl>
+			<dbUser>sa</dbUser>
+			<dbPassword></dbPassword>
+
+			<schema>vocabulary</schema>
+			<table>table_AN_rubrique_test</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>testVocabulaire/AN_rubrique_test.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+		<directory name="legislature">
+
+			<dbDriver>org.hsqldb.jdbcDriver</dbDriver>
+			<dbUrl>jdbc:hsqldb:mem:memid</dbUrl>
+			<dbUser>sa</dbUser>
+			<dbPassword></dbPassword>
+
+			<schema>vocabularyLegislature</schema>
+			<table>table_legislature</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>testVocabulaire/legislature.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+
+		<directory name="xvocabulary_test">
+
+			<dbDriver>org.hsqldb.jdbcDriver</dbDriver>
+			<dbUrl>jdbc:hsqldb:mem:memid</dbUrl>
+			<dbUser>sa</dbUser>
+			<dbPassword></dbPassword>
+
+			<schema>xvocabulary</schema>
+			<parentDirectory>table_xvocabulary_test</parentDirectory>
+			<table>table_xvocabulary_test</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>testVocabulaire/xvocabulary_test.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+		<directory name="vocabulary_test">
+			<dbDriver>org.hsqldb.jdbcDriver</dbDriver>
+			<dbUrl>jdbc:hsqldb:mem:memid</dbUrl>
+			<dbUser>sa</dbUser>
+			<dbPassword></dbPassword>
+
+			<schema>vocabulary</schema>
+			<parentDirectory>table_vocabulary_test</parentDirectory>
+			<table>table_vocabulary_test</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<dataFile>testVocabulaire/vocabulary_test.csv</dataFile>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+		</directory>
+
+	</extension>
+
+	<!-- directory layout -->
+	<extension target="org.nuxeo.ecm.directory.ui.DirectoryUIManager"
+		point="directories">
+
+		<directory name="AN_rubrique_test" layout="vocabulary"
+			sortField="label">
+			<deleteConstraint
+				class="org.nuxeo.ecm.directory.api.ui.HierarchicalDirectoryUIDeleteConstraint">
+				<property name="targetDirectory">TA_rubrique</property>
+				<property name="targetDirectoryField">parent</property>
+			</deleteConstraint>
+		</directory>
+		<directory name="TA_rubrique_test" layout="country_vocabulary"
+			sortField="parent" />
+		<directory name="legislature" layout="dilaLegislatureVocabulary"
+			sortField="label" />
+
+	</extension>
+
+</component>

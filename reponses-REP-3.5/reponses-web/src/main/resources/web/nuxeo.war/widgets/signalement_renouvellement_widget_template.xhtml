@@ -1,0 +1,43 @@
+<div xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxdir="http://nuxeo.org/nxdirectory"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout">
+	<c:if test="#{widget.mode != 'create' and widget.mode != 'edit'}">
+
+		<c:if test="#{widget.properties.typeSignalement == 'SIGNALEMENT'}">
+			<nxu:set var="list"
+				value="#{value.getAdapter(Question).getSignalements()}" cache="true">
+				<c:if test="#{list.size() > 0}">
+					<h:outputText value="#{list.get(0).getDateEffet()}"
+						converter="DateConverter" />
+				</c:if>
+			</nxu:set>
+		</c:if>
+
+		<c:if
+			test="#{widget.properties.typeSignalement == 'SIGNALEMENT_REPONSE'}">
+			<nxu:set var="list"
+				value="#{value.getAdapter(Question).getSignalements()}" cache="true">
+				<c:if test="#{list.size() > 0}">
+					<h:outputText value="#{list.get(0).getDateAttendue()}"
+						converter="DateConverter" />
+				</c:if>
+			</nxu:set>
+		</c:if>
+
+		<c:if test="#{widget.properties.typeSignalement == 'RENOUVELLEMENT'}">
+			<nxu:set var="list"
+				value="#{value.getAdapter(Question).getRenouvellements()}"
+				cache="true">
+				<c:if test="#{list.size() > 0}">
+					<h:outputText value="#{list.get(0).getDateEffet()}"
+						converter="DateConverter" />
+				</c:if>
+			</nxu:set>
+		</c:if>
+
+	</c:if>
+</div>

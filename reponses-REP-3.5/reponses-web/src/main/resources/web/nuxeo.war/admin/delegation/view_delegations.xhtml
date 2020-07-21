@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+	<ui:define name="page title">
+		<h:outputText
+			value="#{nuxeoApplicationName} - #{nxd:titleOrId(currentDocument)}" />
+	</ui:define>
+
+	<ui:define name="body">
+		<div>
+			<h:panelGroup rendered="#{! currentDocument.version}">
+				<h1>
+					<h:outputText value="#{nxd:titleOrId(currentDocument)}" />
+				</h1>
+			</h:panelGroup>
+
+			<ui:include src="/incl/message_banner.xhtml" />
+
+			<p class="currentDocumentDescription">
+				<h:outputText value="#{currentDocument.dublincore.description}" />
+			</p>
+
+			<div style="clear: both"></div>
+
+			<h:form id="delegationActionForm">
+				<h:commandButton type="submit" class="button"
+					action="#{delegationActions.navigateToCreateDelegation}"
+					value="#{messages['reponses.delegation.create.action']}" />
+			</h:form>
+
+			<div class="tabsContent">
+
+				<h2>
+					<h:outputText value="#{messages['reponses.delegation.recieved']}" />
+				</h2>
+				<nxu:set var="contentViewName"
+					value="delegation_destinataire_content">
+					<ui:decorate template="/incl/content_view.xhtml" />
+				</nxu:set>
+
+
+				<h2>
+					<h:outputText value="#{messages['reponses.delegation.given']}" />
+				</h2>
+
+				<nxu:set var="provider"
+					value="#{resultsProvidersCache.get('CURRENT_DOC_CHILDREN')}"
+					cache="true">
+					<nxu:set var="layoutName" value="delegation_list" cache="true">
+						<ui:decorate template="/incl/documents_layout_table.xhtml">
+							<ui:param name="documents" value="#{currentChildrenSelectModel}" />
+							<ui:param name="listName" value="CURRENT_SELECTION" />
+							<ui:param name="layoutName" value="#{layoutName}" />
+							<ui:param name="emptyFolderLabel"
+								value="#{messages['reponses.delegation.emtpy.folder']}" />
+						</ui:decorate>
+					</nxu:set>
+				</nxu:set>
+			</div>
+
+			<div style="clear: both"></div>
+		</div>
+	</ui:define>
+</nxthemes:composition>

@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!-- Fichier de conf dans : server/default/deploy/nuxeo.ear/config/default-repository-config.xml, 
+	voir pour le fichier de conf oracle -->
+<component name="default-repository-config">
+	<extension target="org.nuxeo.ecm.core.repository.RepositoryService"
+		point="repository">
+		<repository name="default"
+			factory="org.nuxeo.ecm.core.storage.sql.ra.PoolingRepositoryFactory">
+			<repository name="default">
+				<aclOptimizations enabled="true" />
+				<noDDL>false</noDDL>
+				<schema>
+					<field type="largetext">note</field>
+					<field type="largetext">webp:content</field>
+					<field type="largetext">webc:welcomeText</field>
+					<field type="largetext">comment:comment</field>
+					<field type="largetext">post</field>
+					<field type="largetext">mail:mail</field>
+					<field type="largetext">qu:texteQuestion</field>
+					<field type="largetext">qu:texte_consolide</field>
+					<field type="largetext">rep:texte_consolide</field>
+				</schema>
+				<indexing>
+					<excludedTypes>
+						<type>AdministrativeStatus</type>
+						<type>BibliothequeRequetesRoot</type>
+						<type>DelegationRoot</type>
+						<type>FondDeDossierRepertoire</type>
+						<type>AdministrativeStatusContainer</type>
+						<type>BirtReport</type>
+						<type>FavorisDossierRoot</type>
+						<type>FeuilleRouteModelFolder</type>
+						<type>QuestionsConnexesRoot</type>
+						<type>SmartFolder</type>
+						<type>Workspace</type>
+						<type>content</type>
+						<type>CaseRoot</type>
+						<type>DocumentRouteInstancesRoot</type>
+						<type>FavorisIndexation</type>
+						<type>AdminWorkspace</type>
+						<type>BirtReportModel</type>
+						<type>Domain</type>
+						<type>FondDeDossier</type>
+						<type>QuestionConnexe</type>
+						<type>QuestionConnexeAA</type>
+						<type>AllotissementsRoot</type>
+						<type>DossierLink</type>
+						<type>FeuilleRoute</type>
+						<type>Folder</type>
+						<type>ParametreFolder</type>
+						<type>HiddenFolder</type>
+						<type>ManagementRoot</type>
+						<type>WorkspaceRoot</type>
+						<type>BirtReportModelsRoot</type>
+						<type>Parametre</type>
+						<type>RouteStep</type>
+						<type>UserWorkspacesRoot</type>
+						<type>JetonMaitreFolder</type>
+						<type>Comment</type>
+						<type>ReponsesMailbox</type>
+						<type>StepFolder</type>
+						<type>etatQuestion#anonymousType</type>
+						<type>JetonDocFolder</type>
+						<type>MailboxRoot</type>
+						<type>Dossier</type>
+						<type>Root</type>
+						<type>parameter</type>
+						<type>FavorisIndexationRoot</type>
+						<type>RequeteRoot</type>
+						<type>File</type>
+						<type>JetonMaitre</type>
+						<type>Allotissement</type>
+						<type>WsNotificationRoot</type>
+						<type>EtatApplication</type>
+						<type>JetonDoc</type>
+						<type>InfoUtilisateurConnection</type>
+						<type>InfoUtilisateurConnectionRoot</type>
+						<type>ReponsesLoggingLine</type>
+						<type>ReponsesLoggingRoot</type>
+						<type>ReponsesLogging</type>
+						<type>ReponsesLoggingDetail</type>
+					</excludedTypes>
+					<fulltext analyzer="org.apache.lucene.analysis.fr.FrenchAnalyzer">
+						<index name="default">
+							<!-- all props implied -->
+						</index>
+						<index name="idQuestion">
+							<field>qu:sourceNumeroQuestion</field>
+						</index>
+						<index name="txtQuestion">
+							<field>qu:texteQuestion</field>
+						</index>
+						<index name="txtReponse">
+							<field>note</field>
+						</index>
+						<index name="senatTitre">
+							<field>qu:senatQuestionTitre</field>
+						</index>
+					</fulltext>
+				</indexing>
+				<xa-datasource>org.h2.jdbcx.JdbcDataSource</xa-datasource>
+				<property name="URL">jdbc:h2:${nuxeo.db.name}</property>
+				<property name="User">${nuxeo.db.user}</property>
+				<property name="Password">${nuxeo.db.password}</property>
+			</repository>
+		</repository>
+	</extension>
+</component>

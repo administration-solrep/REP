@@ -1,0 +1,30 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition
+		template="/admin/delegation/view_delegation_template.xhtml">
+		<ui:param name="currentParametreSubTab" value="edit" />
+
+		<ui:define name="mainContent">
+			<h:form>
+				<nxl:layout name="delegation_detail" mode="edit"
+					value="#{currentDocument}" />
+
+				<table class="dataInput">
+					<tbody>
+						<tr>
+							<td></td>
+							<td><h:commandButton value="#{messages['command.save']}"
+									action="#{delegationActions.updateDelegation}"
+									styleClass="button" /></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</h:form>
+		</ui:define>
+
+	</ui:composition>
+
+</div>

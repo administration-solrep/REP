@@ -1,0 +1,36 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+	<c:if
+		test="#{planClassementTree.niveau1 != null and planClassementTree.niveau2 != null}">
+		<nxu:set var="contentViewName" value="plan_classement_content">
+			<ui:decorate template="/incl/content_view.xhtml">
+				<ui:define name="content_view_header_before_selector" />
+			</ui:decorate>
+		</nxu:set>
+	</c:if>
+
+	<h:form>
+		<nxu:methodResult name="actions"
+			value="#{webActions.getActionsList('DRAFT_ACTION_UPPER_LIST_HREF')}"
+			rendered="#{documents.rowCount != 0}">
+			<f:subview rendered="#{!empty actions}">
+
+				<nxu:dataList layout="unorderedList" var="action" value="#{actions}">
+					<a href="#{action.getLink()}"> <h:graphicImage
+							value="#{action.icon}" rendered="#{action.icon ne null}" /> <h:outputText
+							value="#{messages[action.label]}" />
+					</a>
+				</nxu:dataList>
+
+			</f:subview>
+		</nxu:methodResult>
+	</h:form>
+
+</div>

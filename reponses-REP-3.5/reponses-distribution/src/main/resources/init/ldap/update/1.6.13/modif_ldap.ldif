@@ -1,0 +1,19 @@
+dn: cn=FDRObligatoireSGGUpdater,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+changetype: add
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: cn=emptyRef
+cn: FDRObligatoireSGGUpdater
+description: Gestion des modèles de feuilles de route : modification des étapes obligatoire SGG
+
+dn: cn=Superviseur SGG,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add:uniqueMember
+uniqueMember: cn=FDRObligatoireSGGUpdater,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+
+dn: cn=Administrateur fonctionnel,ou=groups,ou=Reponses,dc=dila,dc=fr
+changetype: modify
+add:uniqueMember
+uniqueMember: cn=FDRObligatoireSGGUpdater,ou=fonctions,ou=Reponses,dc=dila,dc=fr
+
+

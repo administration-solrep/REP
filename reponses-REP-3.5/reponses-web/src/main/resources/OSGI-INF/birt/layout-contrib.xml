@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<component name="fr.dila.statistiques.layout">
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgettypes">
+		<widgetType name="listing_report_title_link">
+			<handler-class>org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler</handler-class>
+			<property name="template">/statistiques/widgets/report_listing_widget_template.xhtml</property>
+		</widgetType>
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<layout name="reports_listing">
+			<templates>
+				<template mode="any">
+					/layouts/reports_layout_listing_ajax_template.xhtml
+				</template>
+				<template mode="edit_columns">
+					/layouts/layout_column_selection_template.xhtml
+				</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">true</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+			<properties mode="edit_columns">
+				<property name="availableElementsLabel">
+					label.selection.availableColumns
+				</property>
+				<property name="selectedElementsLabel">
+					label.selection.selectedColumns
+				</property>
+				<property name="selectedElementsHelp"></property>
+				<property name="selectSize">20</property>
+				<property name="columnSelectionRequired">false</property>
+				<property name="displayAlwaysSelectedColumns">false</property>
+			</properties>
+
+			<columns>
+				<!-- Colonne selection -->
+				<column name="selection" alwaysSelected="true">
+					<properties mode="any">
+						<property name="isListingSelectionBox">true</property>
+						<property name="useFirstWidgetLabelAsColumnHeader">false</property>
+						<property name="columnStyleClass">iconColumn</property>
+					</properties>
+					<widget>listing_ajax_selection_box</widget>
+				</column>
+				<column name="reportTitre" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">dc:title</property>
+					</properties>
+					<properties mode="edit_sort_infos">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<properties mode="edit_sort_infos_map">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<widget>reportTitre</widget>
+				</column>
+			</columns>
+		</layout>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+		<widget name="reportTitre" type="listing_report_title_link">
+			<labels>
+				<label mode="any">label.birt.reporting.report.title</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+		</widget>
+
+	</extension>
+
+</component>

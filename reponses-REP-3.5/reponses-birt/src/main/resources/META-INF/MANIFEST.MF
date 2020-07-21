@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Reponses BIRT
+Bundle-SymbolicName: fr.dila.reponses.birt;singleton:=true
+Bundle-Version: 1.0.0
+

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Script Ant permettant de déployer la distribution et de lancer les tests 
+	fonctionnels sur l'environnement d'assurance qualité. Les tâches de ce script 
+	doivent être exécutées après la construction de la distribution. Taches assurance 
+	qualité : - deploy : déploiement sur le serveur QA et lancement des tests 
+	fonctionnels. -->
+<project name="QA">
+	<property name="deploy.server.username" value="root" />
+	<property name="deploy.server.password" value="Admin123" />
+	<property name="deploy.server.hostname" value="idlv-solrep-rep-qa.lyon-dev2.local" />
+
+	<!-- ==================================================================== -->
+	<!-- ========== Déploiement de l'application sur le serveur QA ========== -->
+	<!-- ==================================================================== -->
+	<!-- Attention pour l'exécution de cette tâche, il faut ajouter le fichier 
+		jsch.jar au classpath de façon préalable à l'exécution de Ant. Il est impossible 
+		d'inclure ce fichier depuis le script! -->
+
+	<target name="deploy" description="Déploiement de l'application sur le serveur QA">
+		<echo>
+			===========================================================
+			.
+			Ajout des tests sélénium au zip de déploiement
+			===========================================================
+		</echo>
+		<!-- Déploiement de la distribution -->
+		<zip destfile="target/reponses-distribution-SNAPSHOT-server.zip"
+			update="true" excludes="ftest/selenium/result-suite.html, log.txt"
+			basedir="ftest" />
+		<echo>
+			===========================================================
+			.
+			Déploiement sur le serveur de QA
+			.
+			. Serveur de déploiement :
+			${deploy.server.username}:**PW**@${deploy.server.hostname}"
+			===========================================================
+		</echo>
+
+		<!-- Déploiement de la distribution -->
+		<sshexec host="${deploy.server.hostname}" username="${deploy.server.username}"
+			password="${deploy.server.password}" command="/opt/reponses-deploy.sh"
+			trust="true" />
+
+		<echo>Going to sleep for 100s...</echo>
+		<sleep seconds="100" />
+		<echo>Back from sleep!</echo>
+
+	</target>
+
+
+	<target name="deployJenkins"
+		description="Déploiement de l'application sur le serveur QA pour Jenkins">
+		<echo>
+			===========================================================
+			.
+			Ajout des tests sélénium au zip de déploiement
+			===========================================================
+		</echo>
+
+		<!-- Déploiement de la distribution -->
+		<zip destfile="target/reponses-distribution-SNAPSHOT-server.zip"
+			update="true" excludes="ftest/selenium/result-suite.html, log.txt"
+			basedir="ftest" />
+
+		<echo>
+			===========================================================
+			.
+			Déploiement sur le serveur de QA
+			.
+			. Serveur de déploiement :
+			${deploy.server.username}:**PW**@${deploy.server.hostname}"
+			===========================================================
+		</echo>
+
+		<sshexec host="${deploy.server.hostname}" username="${deploy.server.username}"
+			password="${deploy.server.password}" command="/opt/reponses-deploy-jenkins.sh"
+			trust="true" />
+
+		<echo>Going to sleep for 100s...</echo>
+		<sleep seconds="100" />
+		<echo>Back from sleep!</echo>
+	</target>
+
+	<target name="autodeploy" description="deploiement de l'application sur le QA">
+		<echo>
+			===========================================================
+			.
+			Déploiement sur le serveur de QA
+			.
+			. Serveur de déploiement :
+			${deploy.server.username}:**PW**@${deploy.server.hostname}"
+			===========================================================
+		</echo>
+
+		<scp file="${deploy.srcdir}/${deploy.archive}"
+			todir="${deploy.server.username}@${deploy.server.hostname}:${deploy.destdir}"
+			password="${deploy.server.password}" trust="true" />
+
+		<sshexec host="${deploy.server.hostname}" username="${deploy.server.username}"
+			password="${deploy.server.password}"
+			command="/opt/bin/solrep-auto-deploy.sh -r db,ldap,ldapdb /opt/reponses-server-SNAPSHOT ${deploy.destdir}/${deploy.archive}"
+			trust="true" />
+
+	</target>
+</project>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>44256</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000968">
+				<titre_min>M. le ministre de l'éducation nationale</titre_min>
+				<titre_jo>Éducation nationale</titre_jo>
+				<intitule_min>Ministère de l'éducation nationale</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="645414">
+				<ns2:civilite>Mme</ns2:civilite>
+				<ns2:prenom>Martine</ns2:prenom>
+				<ns2:nom>Faure</ns2:nom>
+				<ns2:grp_pol>SRC</ns2:grp_pol>
+				<ns2:circonscription>Gironde 12</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[Mme Martine Faure attire l'attention de M. le
+				ministre de l'éducation nationale sur les problèmes de violence
+				constatés en milieu scolaire et plus précisément sur le harcèlement
+				subi selon l'étude de l'Observatoire international de la vie
+				scolaire, par un élève sur dix au primaire et au collège. Permettre
+				à l'école d'être un lieu d'insertion sociale et d'apprentissage de
+				la citoyenneté comme le dispose l'article L. 111-1 du code de
+				l'éducation, est primordial et implique de mener une véritable
+				politique d'éducation et de prévention à la violence, préconisant un
+				apprentissage à la résolution non violente des conflits dès l'école
+				maternelle et la formation des enseignants et du personnel éducatif
+				à la gestion des conflits. Au travers du lancement de la nouvelle
+				campagne de sensibilisation de lutte contre le harcèlement scolaire,
+				le Gouvernement entend remédier aux conséquences dramatiques qu'il
+				peut avoir sur le développement des enfants qui en sont victime. Car
+				le harcèlement est facteur de décrochage scolaire. Mais les
+				violences peuvent également avoir des conséquences graves en termes
+				de santé mentale des enfants, avec perte de confiance, troubles
+				psychologiques, dépression voire suicide. Il peut aller du vol de
+				goûter ou des moqueries aux insultes, brimades ou menaces, jusqu'aux
+				coups, au racket ou aux violences sexuelles. Avec le développement
+				des nouvelles technologies de communication (téléphones portables,
+				réseaux sociaux numériques), le harcèlement se poursuit désormais en
+				dehors des établissements scolaires. Ce cyberharcèlement peut
+				prendre la forme d'insultes et de moqueries, mais aussi de
+				propagation de rumeurs, de piratage de comptes et d'usurpation
+				d'identité digitale, de publication de photos ou de vidéos de la
+				victime en mauvaise posture. Aussi le Gouvernement consacre un volet
+				important de la nouvelle campagne à la cyberviolence, une
+				problématique à cheval entre la vie scolaire et la vie privée. Elle
+				souhaiterait connaître les mesures concrètes que le Gouvernement va
+				mettre en œuvre pour sensibiliser les écoliers, assurer un plan de
+				formation des personnels et les moyens consacrés pour garantir des
+				ressources en ligne prodiguant des conseils aux élèves victimes, aux
+				familles et aux témoins. Elle aimerait aussi connaître l'état
+				d'avancement des travaux de la délégation ministérielle chargée de
+				la prévention et de la lutte contre les violences en milieu
+				scolaire.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enseignement</ns2:rubrique>
+				<ns2:rubrique_ta>établissements</ns2:rubrique_ta>
+				<ns2:analyse>violence</ns2:analyse>
+				<ns2:analyse> lutte et prévention</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>

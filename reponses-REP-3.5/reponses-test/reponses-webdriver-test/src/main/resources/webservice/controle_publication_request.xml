@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:controlePublicationRequest
+	xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WScontrole"
+	xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses"
+	xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/commons/commons"
+	xmlns:p5="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WScontrole ../../../../../../../xsd/reponses/WScontrole.xsd ">
+
+	<!-- Controle d'une question ecrite avec sa reponse -->
+	<p:questionReponse>
+
+		<p1:question>
+			<p1:id_question>
+				<p3:numero_question>314174</p3:numero_question>
+				<p3:type>QE</p3:type>
+				<p3:source>AN</p3:source>
+				<p3:legislature>14</p3:legislature>
+			</p1:id_question>
+
+			<p1:referencePublication>
+				<p3:page_jo>34</p3:page_jo>
+				<p3:date_publication>2011-01-01</p3:date_publication>
+				<p3:no_publication>5</p3:no_publication>
+			</p1:referencePublication>
+
+			<p1:texte_question><![CDATA[
+			M. Philippe Armand Martin attire l'attention de M. le ministre de l'éducation nationale sur la situation budgétaire des professeurs documentalistes. M. le Président de la République a tenu à ce que tous les Français puissent, dans leurs fonctions, s'ils le souhaitent, bénéficier d'heures supplémentaires dans des conditions très attractives. Les personnels enseignants de l'éducation nationale, tous corps confondus, peuvent accéder à cette opportunité. Or une seule catégorie d'enseignants est exclue de cette possibilité : il s'agit des professeurs documentalistes des lycées et collèges, recrutés par voie de CAPES, et dont la gestion de carrière est la même que celle des certifiés des autres disciplines. Alors que leurs collègues peuvent prétendre à l'obtention d'heures supplémentaires correspondant à leur mode de recrutement et au statut afférent, les professeurs documentalistes n'y ont pas droit. Associés à un même projet pédagogique, à l'occasion de l'accompagnement scolaire ou lors d'une intervention dans le cadre de la formation continue du personnel enseignant, les professeurs documentalistes ne sont pas rémunérés ou, quand ils le sont, à des taux très inférieurs à ceux des autres certifiés. Certes, devant une telle aberration et en signe de reconnaissance pour la qualité du travail réalisé par ces personnels, certains chefs d'établissements ont adopté, un temps, des solutions de « contournement » (avec, par exemple, l'attribution d'heures péri-éducatives). Dans la « lettre flash » du ministère de l'éducation nationale (septembre 2008), « l'engagement a été pris pour les certifiés de documentation qui participent à l'accompagnement éducatif de porter dès la rentrée la rémunération à hauteur de l'heure supplémentaire effective d'enseignement » ; cet engagement n'est, à ce jour, pas entré en application. Mais plus que de porter « à la hauteur de l'HSE effective » une rémunération qui ne s'appliquerait qu'aux heures d'accompagnement éducatif, il importe de généraliser ce principe à l'ensemble des activités pédagogiques exercées par les professeurs documentalistes en dehors de leur horaire statutaire. Autrement, on le constate au quotidien, les palliatifs administratifs entraînent des disparités inacceptables d'une académie à l'autre, d'un établissement à l'autre. De plus, ces situations d'exclusion et ces expédients sont vécus par ces enseignants comme insultants, en regard de leur statut et de la qualité du travail effectué. C'est pourquoi il souhaiterait connaître les mesures envisagées qui permettront aux professeurs documentalistes d'être considérés comme leurs collègues et de bénéficier des mêmes conditions de rétribution pour le travail réalisé dans le cadre de leurs activités de professeur certifié.]]></p1:texte_question>
+		</p1:question>
+
+
+		<p1:reponses>
+			<p2:referencePublication>
+				<p3:page_jo>34</p3:page_jo>
+				<p3:date_publication>2011-01-01</p3:date_publication>
+				<p3:no_publication>5</p3:no_publication>
+			</p2:referencePublication>
+
+			<p2:ministre_jo>
+				<p3:titre_jo>Logement Enseignement superieur et recherche</p3:titre_jo>
+				<p3:intitule_min>Mr le ministre de l'enseignement et de la recherche</p3:intitule_min>
+			</p2:ministre_jo>
+
+			<p2:texte_reponse><![CDATA[
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+			Ut accumsan vulputate lacus eget elementum. Nulla porta 
+			lectus in odio vehicula et consequat arcu sodales. Donec 
+			ornare tempor lectus a lobortis. Nulla consequat elementum 
+			volutpat. Curabitur sagittis interdum ligula, a pharetra nibh 
+			ultricies in. Etiam ut urna ut ante tempus ornare id sit 
+			amet sem. Nam ultrices varius porttitor. Fusce vel purus et 
+			elit adipiscing convallis sed in urna. Maecenas ac nunc 
+			et velit vehicula bibendum. Pellentesque a magna sit amet 
+			nibh tempus lobortis et quis sem. Curabitur rutru ligula 
+			leo, quis luctus odio. Nulla adipiscing sodales ipsum eget 
+			aliquet. Curabitur dictum faucibus gravida. Duis lorem urna,
+			 sollicitudin a adipiscing accumsan, elementum feugiat mi. 
+			 Cras scelerisque dolor sit amet quam placerat sed dignissim 
+			 ante iaculis. Class aptent taciti sociosqu ad litora 
+			 torquent per conubia nostra, per inceptos himenaeos.
+			 ]]></p2:texte_reponse>
+		</p1:reponses>
+
+	</p:questionReponse>
+</p:controlePublicationRequest>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://dila.fr/solon/schemas/indexation_comp/"
+	xmlns:ixacomp="http://dila.fr/solon/schemas/indexation_comp/">
+
+	<xs:include schemaLocation="base.xsd" />
+	<xs:element name="indexationReference" type="xs:string" />
+
+	<xs:element name="SE_theme" type="ixacomp:stringList" />
+	<xs:element name="SE_rubrique" type="ixacomp:stringList" />
+	<xs:element name="SE_renvoi" type="ixacomp:stringList" />
+
+	<xs:element name="AN_rubrique" type="ixacomp:stringList" />
+	<xs:element name="TA_rubrique" type="ixacomp:stringList" />
+	<xs:element name="AN_analyse" type="ixacomp:stringList" />
+
+	<xs:element name="motclef_ministere" type="ixacomp:stringList" />
+</xs:schema>

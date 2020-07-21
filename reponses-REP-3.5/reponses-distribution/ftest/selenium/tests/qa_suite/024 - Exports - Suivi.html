@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-qa.lyon-dev2.local:8080/reponses/" />
+<title>023 - Export CSV - Suivi</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">023 - Export CSV - Suivi</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>setSpeed</td>
+				<td>0</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<!--RECHERCHE-->
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=userServicesForm:userServicesActionsTable:3:userServicesActionCommandLink</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=requeteur:smartSearchForm:nxl_nxql_incremental_smart_query:nxw_nxql_incremental_smart_query_widget:nxl_incremental_smart_query_selection:nxl_incremental_smart_query_selection_rowSelector</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>setSpeed</td>
+				<td>400</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>select</td>
+				<td>id=requeteur:smartSearchForm:nxl_nxql_incremental_smart_query:nxw_nxql_incremental_smart_query_widget:nxl_incremental_smart_query_selection:nxl_incremental_smart_query_selection_rowSelector</td>
+				<td>label=Nature (QE,QC)</td>
+			</tr>
+			<tr>
+				<td>addSelection</td>
+				<td>id=requeteur:smartSearchForm:nxl_nxql_incremental_smart_query:nxw_nxql_incremental_smart_query_widget:nxl_incremental_smart_query_selection:nxl_incremental_smart_query_selection_selectionSubview_1:nxw_question_condition_nature:nxw_nature_1</td>
+				<td>label=Question Ecrite</td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=requeteur:smartSearchForm:nxl_nxql_incremental_smart_query:nxw_nxql_incremental_smart_query_widget:addToQuery</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>id=requeteur:smartSearchForm:searchButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Export CSV</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>verifyTextNotPresent</td>
+				<td>Export ZIP</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>setSpeed</td>
+				<td>1500</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>id=recherche_requeteur:nxl_requete_listing:listing_ajax_checkbox_header</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>setSpeed</td>
+				<td>0</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Export CSV</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>erreur</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>contexte</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Export ZIP</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>erreur</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>contexte</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Déconnexion</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertConfirmation</td>
+				<td>Etes-vous sûr de vouloir quitter l'application ?</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

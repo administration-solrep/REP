@@ -1,0 +1,58 @@
+<div xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxu="http://nuxeo.org/nxweb/util" class="foldableBox">
+	<c:if test="false">
+ Template rendering a requete form.
+
+ Parameters:
+ - recherche : la recherche dont on desire fournir le formulaire
+ </c:if>
+	<h3 class="unfolded">
+		<a4j:commandLink value="#{recherche.mode}"
+			eventsQueue="ajax_events_queue" oncomplete="return toggleBox(this)"
+			action="#{recherchePanneauxActions.toggle(recherche.requeteName)}" />
+	</h3>
+	<div id="#{recherche.requeteName}Div" class="boxBody">
+		<!-- Cas général -->
+		<c:if test="#{recherche.requeteName != 'RequeteIndex'}">
+			<nxl:layout mode="edit" name="#{layoutName}" value="#{requete}" />
+		</c:if>
+		<!-- Requête Index -->
+		<c:if test="#{recherche.requeteName =='RequeteIndex'}">
+			<a4j:outputPanel id="selectIndexZone" ajaxRendered="true">
+				<h:outputText value="#{messages['recherche.indexation.titre']}" />
+				<h:selectOneRadio id="currentIndexationMode"
+					value="#{rechercheAvanceeActions.currentIndexationMode}">
+					<f:selectItem itemLabel="#{messages['label.indexation.origine']}"
+						itemValue="INDEX_ORIG" />
+					<f:selectItem
+						itemLabel="#{messages['label.indexation.complementaire']}"
+						itemValue="INDEX_COMPL" />
+					<f:selectItem itemLabel="#{messages['label.indexation.tous']}"
+						itemValue="TOUS" />
+				</h:selectOneRadio>
+			</a4j:outputPanel>
+			<div id="requeteIndexSenat">
+				<nxl:layout mode="edit" name="requeteIndexSenat" value="#{requete}" />
+			</div>
+			<div id="requeteIndexAN">
+				<nxl:layout mode="edit" name="requeteIndexAN" value="#{requete}" />
+			</div>
+			<div id="requeteIndexMinistere">
+				<nxl:layout mode="edit" name="requeteIndexMinistere"
+					value="#{requete}" />
+			</div>
+		</c:if>
+	</div>
+	<script type="text/javascript">
+           if  ('#{recherchePanneauxActions.panneauxMap[recherche.requeteName]}' == 'false'){
+    	     Effect.toggle(document.getElementById('#{recherche.requeteName}Div'), 'blind', {duration:0.2});
+           }
+        </script>
+</div>

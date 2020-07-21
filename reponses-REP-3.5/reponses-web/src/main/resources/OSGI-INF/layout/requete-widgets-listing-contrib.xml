@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.widget.listing">
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgettypes">
+
+		<widgetType name="dossier_listing_title_link_dto">
+			<documentation>
+				This widget type displays a link to navigate to a dossier object from a
+				question object
+				Champ :
+				field 0 : source Numero Question
+				field 1 : question ref
+				field 2 : id dossier
+				field 3 : tableau d'objet id label contenant l'id du dossierLink
+				accompagné d'un label
+				field 4 : pour indiquer si la question ou la réponse comporte un erratum
+				field 5 : pour indiquer s'il s'agit d'un dossier directeur
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/dossier_listing_title_link_dto_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="dossier_access">
+			<documentation>
+				Ce widget affiche, sous forme d'image les droits de l'utilisateur sur
+				le dossier
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/listing_permission_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="listing_motsclef">
+			<documentation>
+				Ce widget affiche une liste de mots-clef à partir d'un document
+				ayant la facette ReponseIndexable.
+				<br />
+				Il a besoin des champs suivants :
+				<ul>
+					<li>
+						data : Un document model ayant la facette ReponseIndexable
+					</li>
+				</ul>
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/listing_motsclef_widget_template.xhtml
+			</property>
+		</widgetType>
+
+
+		<widgetType name="listing_signalement_dto">
+			<documentation>
+				Ce widget affiche un ensemble d'images en fonction des inputs.
+				<br />
+				Il a besoin des champs suivants :
+				<ul>
+					<li>
+						imageFile : le nom d'une image
+						displayIfTrue : une variable qui demande au widget d'afficher l'image s'il sa
+						valeur est vraie.
+					</li>
+				</ul>
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/listing_dossierlink_signalement_widget_template.xhtml
+			</property>
+		</widgetType>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+		<!-- widgets listing -->
+		<widget name="isDossierWritable" type="dossier_access">
+			<labels>
+				<label mode="any">label.requete.resultat.dossierDroitsAcces</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+		</widget>
+
+		<widget name="dossierTitre_dto" type="dossier_listing_title_link_dto">
+			<labels>
+				<label mode="any">label.content.header.sourceNumeroQuestion</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.sourceNumeroQuestion</field>
+				<field>data.questionId</field>
+				<field>data.dossierId</field>
+				<field>data.caseLinkIdsLabels</field>
+				<field>data.hasErrata</field>
+				<field>data.isDirecteur</field>
+				<field>data.hasRedemarre</field>
+			</fields>
+		</widget>
+		<widget name="dossierSource" type="text">
+			<labels>
+				<label mode="any">label.requete.resultat.dossierSource</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.question.origineQuestion</field>
+			</fields>
+		</widget>
+		<widget name="dossierSource_dto" type="text">
+			<labels>
+				<label mode="any">label.requete.resultat.dossierSource</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.origineQuestion</field>
+			</fields>
+		</widget>
+
+		<widget name="dossierDelais_dto" type="template">
+			<labels>
+				<label mode="any">label.content.header.delai</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.delai</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/listing/listing_delai_dto_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="dossierNature_dto" type="text">
+			<labels>
+				<label mode="any">label.requete.resultat.dossierNature</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.typeQuestion</field>
+			</fields>
+		</widget>
+
+		<widget name="dossierAuteur_dto" type="text">
+			<labels>
+				<label mode="any">label.content.header.author</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.auteur</field>
+			</fields>
+			<properties widgetMode="csv">
+				<property name="escape">false</property>
+			</properties>
+		</widget>
+
+		<widget name="dossierMotsClef_dto" type="text">
+			<labels>
+				<label mode="any">label.requete.resultat.dossierIndexationPrincipale</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.motcles</field>
+			</fields>
+		</widget>
+
+		<widget name="dossierDatePublication_dto" type="datetime">
+			<labels>
+				<label mode="any">label.content.header.datePublication</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.datePublicationJO</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+		</widget>
+
+		<widget name="dossierMinistereAttributaire_dto" type="text">
+			<labels>
+				<label mode="any">label.content.header.ministere.attributaire</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.ministereAttributaire</field>
+			</fields>
+			<properties widgetMode="csv">
+				<property name="escape">false</property>
+			</properties>
+		</widget>
+		<widget name="dossierEtapeEnCours" type="template">
+			<labels>
+				<label mode="any">label.content.header.etapes</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/listing/listing_etape_courante_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="dossierSignalement_dto" type="template">
+			<labels>
+				<label mode="any">label.requete.resultat.dossierEtat</label>
+			</labels>
+			<translated>true</translated>
+
+			<fields>
+				<field>data.isUrgent</field>
+				<field>data.isSignale</field>
+				<field>data.isRenouvelle</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/listing/listing_dossierlink_signalement_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="dossierRenseignement_dto" type="template">
+			<labels>
+				<label mode="any"></label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>data.dossierId</field>
+				<field>data.isLocked</field>
+				<field>data.hasLot</field>
+				<field>data.hasConnexite</field>
+				<field>data.hasAttachement</field>
+				<field>data.caseLinkIdsLabels</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/listing/listing_renseignements_dossier_dto_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+		<widget name="dossierPoste" type="text">
+			<labels>
+				<label mode="any">label.requete.resultat.dossierPoste</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.question.poste</field>
+			</fields>
+			<properties widgetMode="csv">
+				<property name="escape">false</property>
+			</properties>
+		</widget>
+		<widget name="recherche_listing_ajax_checkbox_dto" type="listing_ajax_checkbox_dto">
+			<labels>
+				<label mode="any"></label>
+			</labels>
+			<fields>
+				<field>selected</field>
+				<field>data.docIdForSelection</field>
+			</fields>
+		</widget>
+	</extension>
+</component>

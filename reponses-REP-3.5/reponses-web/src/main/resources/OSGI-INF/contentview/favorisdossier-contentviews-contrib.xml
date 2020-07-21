@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.reponses.web.favorisdossier.contentviews">
+
+	<extension target="org.nuxeo.ecm.platform.ui.web.ContentViewService"
+		point="contentViews">
+		<contentView name="favorisdossier_repertoire_content">
+			<genericPageProvider
+				class="fr.dila.reponses.web.contentview.FavorisDossierPageProvider">
+				<property name="coreSession">#{documentManager}</property>
+				<property name="resourcesAccessor">#{resourcesAccessor}</property>
+				<property name="userColumn">#{profilUtilisateurActions.getUserColumnId()}</property> <!-- Colonnes à afficher a l'utilisateur -->
+				<pattern>
+					ufnxql:SELECT f.ecm:uuid AS favoriId, f.fvd:targetDocument AS questionId FROM
+					FavorisDossier AS f, Question AS q
+					WHERE q.ecm:uuid = f.fvd:targetDocument AND f.ecm:parentId = ?
+				</pattern>
+				<parameter>#{favorisDossierActions.getCurrentFavorisRepertoire().getId()}</parameter>
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+			<useGlobalPageSize>true</useGlobalPageSize>
+			<refresh>
+				<event>documentChanged</event>
+				<event>documentChildrenChanged</event>
+			</refresh>
+			<cacheKey>favoriDossierRepertoir</cacheKey>
+			<cacheSize>30</cacheSize>
+			<resultLayouts>
+				<layout name="dossier_listing_dto" title="document_listing"
+					translateTitle="true" iconPath="/icons/document_listing_icon.png" />
+			</resultLayouts>
+			<selectionList>CURRENT_SELECTION</selectionList>
+			<actions category="FAVORIS_SELECTION_LIST" />
+		</contentView>
+
+	</extension>
+
+</component>
+
+
+
+
+
+

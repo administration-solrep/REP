@@ -1,0 +1,75 @@
+<f:subview id="#{widget.id}" xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:nxu="http://nuxeo.org/nxweb/util">
+	<c:if test="#{widget.mode == 'csv'}">
+
+		<h:outputText
+			value="#{messages['label.listing.widget.renseignement.locked']},"
+			escape="false" rendered="#{field_0}" />
+		<h:outputText
+			value="#{messages['label.listing.widget.renseignement.hasLot']},"
+			escape="false" rendered="#{field_1}" />
+		<h:outputText
+			value="#{messages['label.listing.widget.renseignement.hasConnexite']},"
+			escape="false" rendered="#{field_2}" />
+		<h:outputText
+			value="#{messages['label.listing.widget.renseignement.hasAttachments']}"
+			escape="false" rendered="#{field_3}" />
+
+	</c:if>
+	<c:if test="#{widget.mode != 'csv'}">
+
+		<c:choose>
+			<c:when test="#{field_0}">
+				<h:graphicImage value="/img/icons/lock_16.png"
+					alt="#{messages['label.listing.widget.renseignement.locked']}"
+					title="#{messages['label.listing.widget.renseignement.locked']}" />
+			</c:when>
+			<c:otherwise>
+				<h:graphicImage value="/img/icons/vide_16.png" />
+			</c:otherwise>
+		</c:choose>
+
+		<c:choose>
+			<c:when test="#{field_1}">
+				<h:commandLink id="dossierslots"
+					action="#{corbeilleActions.readDossierLink(field_4, field_5, field_6, 'TAB_ALLOTISSEMENT')}">
+					<h:graphicImage value="/img/icons/link_16.png"
+						alt="#{messages['label.listing.widget.renseignement.hasLot']}"
+						title="#{messages['label.listing.widget.renseignement.hasLot']}" />
+				</h:commandLink>
+			</c:when>
+			<c:otherwise>
+				<h:graphicImage value="/img/icons/vide_16.png" />
+			</c:otherwise>
+		</c:choose>
+
+		<c:choose>
+			<c:when test="#{field_2}">
+				<h:commandLink id="dossiersconnexes"
+					action="#{corbeilleActions.readDossierLink(field_4, field_5, field_6, 'TAB_DOSSIER_CONNEXE')}">
+					<h:graphicImage value="/img/icons/folders_16.png"
+						alt="#{messages['label.listing.widget.renseignement.hasConnexite']}"
+						title="#{messages['label.listing.widget.renseignement.hasConnexite']}" />
+				</h:commandLink>
+			</c:when>
+			<c:otherwise>
+				<h:graphicImage value="/img/icons/vide_16.png" />
+			</c:otherwise>
+		</c:choose>
+
+		<c:choose>
+			<c:when test="#{field_3}">
+				<h:graphicImage value="/img/icons/document_attachment_16.png"
+					alt="#{messages['label.listing.widget.renseignement.hasAttachments']}"
+					title="#{messages['label.listing.widget.renseignement.hasAttachments']}" />
+			</c:when>
+			<c:otherwise>
+				<h:graphicImage value="/img/icons/vide_16.png" />
+			</c:otherwise>
+		</c:choose>
+
+	</c:if>
+</f:subview>

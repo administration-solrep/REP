@@ -1,0 +1,346 @@
+<component name="fr.dila.reponses.web.layout.question">
+
+	<!-- DILA question layout -->
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<layout name="bordereau_donnees_principales">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<rows>
+				<row>
+					<widget>numero_question_formulaire</widget>
+				</row>
+				<row>
+					<widget>origine_question</widget>
+				</row>
+				<!-- information sur l'auteur -->
+				<row>
+					<widget>auteur_widget</widget>
+				</row>
+				<row>
+					<widget>groupe_politique</widget>
+				</row>
+				<row>
+					<widget>circonscription</widget>
+				</row>
+				<row>
+					<widget>type_question</widget>
+				</row>
+				<row>
+					<widget>date_publication_JO</widget>
+				</row>
+				<row>
+					<widget>page_JO</widget>
+				</row>
+				<row>
+					<widget>senat_question_titre</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bordereau_ministere">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<rows>
+				<row>
+					<widget>ministere_attributaire_bordereau</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bordereau_ministere_interpelle">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<rows>
+				<row>
+					<widget>ministere_interpelle_bordereau</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bordereau_ministere_rattachement">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<rows>
+				<row>
+					<widget>ministere_rattachement_bordereau</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bordereau_direction_pilote">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<rows>
+				<row>
+					<widget>direction_pilote_bordereau</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bordereau_maj">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<!-- Mise à jour -->
+			<rows>
+				<row>
+					<widget>date_signalement_question</widget>
+				</row>
+				<row>
+					<widget>date_reponse_signalement</widget>
+				</row>
+				<row>
+					<widget>date_retrait_question</widget>
+				</row>
+				<row>
+					<widget>date_caducite_question</widget>
+				</row>
+				<row>
+					<widget>date_rappel_question</widget>
+				</row>
+				<row>
+					<widget>date_transmission_assemblees</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bordereau_reponse">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<!-- Réponse -->
+			<rows>
+				<row>
+					<widget>reponse_date_publication_JO</widget>
+				</row>
+				<row>
+					<widget>reponse_page_JO</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<!-- Indexation -->
+		<layout name="bdIndexSenat">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>indexation_senat</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bdIndexAN">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>indexation_an</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bdIndexANComp">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>indexation_an_comp</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bdIndexMinistere">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>indexation_ministere</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<!-- Historique -->
+		<layout name="bordereau_historique">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<!-- <properties mode="any"> <property name="showListingHeader">true</property> 
+				<property name="showRowEvenOddClass">true</property> </properties> <columns> 
+				<column> <properties mode="any"> <property name="useFirstWidgetLabelAsColumnHeader">true</property> 
+				</properties> <widget>journal_history_date</widget> </column> </columns> -->
+		</layout>
+
+		<layout name="bordereau_fdr">
+			<templates>
+				<template mode="any">/layouts/layout_listing_template.xhtml
+				</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">true</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+			<columns>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget></widget>
+				</column>
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget></widget>
+				</column>
+			</columns>
+		</layout>
+
+		<layout name="bordereau_tache_cours">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<rows>
+				<row>
+					<widget>tache_cours_date</widget>
+				</row>
+				<row>
+					<widget>tache_cours_poste</widget>
+				</row>
+				<row>
+					<widget>tache_cours_deadline</widget>
+				</row>
+				<row>
+					<widget>tache_cours_auto</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="bordereau_tache_finale">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<rows>
+				<row>
+					<widget>tache_finale_poste</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="question_saisie_layout">
+
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+
+			<rows>
+				<row>
+					<widget>numero_question</widget>
+				</row>
+				<row>
+					<widget>legislature_question</widget>
+				</row>
+				<row>
+					<widget>origine_question</widget>
+				</row>
+				<row>
+					<widget>type_question</widget>
+				</row>
+				<row>
+					<widget>date_reception_question</widget>
+				</row>
+
+
+				<row>
+					<widget>titre_question_senat</widget>
+				</row>
+
+				<!-- Indexation -->
+				<row>
+					<widget>indexation_an</widget>
+				</row>
+				<row>
+					<widget>indexation_senat</widget>
+				</row>
+				<row>
+					<widget>indexation_ministere</widget>
+				</row>
+
+				<!-- information sur l'auteur -->
+				<row>
+					<widget>groupe_politique</widget>
+				</row>
+				<row>
+					<widget>nom_auteur</widget>
+				</row>
+				<row>
+					<widget>prenom_auteur</widget>
+				</row>
+				<row>
+					<widget>civilite_auteur</widget>
+				</row>
+				<row>
+					<widget>date_publication_JO</widget>
+				</row>
+				<row>
+					<widget>page_JO</widget>
+				</row>
+				<row>
+					<widget>ministere_interpelle</widget>
+				</row>
+				<row>
+					<widget>id_ministere_interpelle</widget>
+				</row>
+				<row>
+					<widget>objet_question</widget>
+				</row>
+
+			</rows>
+
+
+		</layout>
+
+	</extension>
+
+</component>

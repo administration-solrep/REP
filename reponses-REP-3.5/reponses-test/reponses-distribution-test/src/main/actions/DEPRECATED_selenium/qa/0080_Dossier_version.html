@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>New Test</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">New Test</td>
+			</tr>
+		</thead>
+		<tbody>
+			<!--1 - -Pour attribution agents BDC - -->
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection mailbox -->
+			<tr>
+				<td>assertTextPresent</td>
+				<td>bdc</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour attribution (17)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Dernière page&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Editer la réponse&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForElementPresent</td>
+				<td>tinymce</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>tinymce</td>
+				<td>Réponse 1</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>actionToolbarForm:IdSaveReponseButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Réponse 1</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>314160</td>
+				<td></td>
+			</tr>
+			<!--Déconnexion-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!--2 - Pour attribution agents DGEFP-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>dgefp</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection dossier -->
+			<tr>
+				<td>assertTextPresent</td>
+				<td>dgefp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Editer la réponse&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForElementPresent</td>
+				<td>tinymce</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>tinymce</td>
+				<td>Réponse 2</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>actionToolbarForm:IdSaveReponseButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Réponse 2</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>314160</td>
+				<td></td>
+			</tr>
+			<!--Déconnexion-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!--3 - Pour rédaction DLF-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>dlf</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>dlf</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection dossier -->
+			<tr>
+				<td>assertTextPresent</td>
+				<td>dlf</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>314160</td>
+				<td></td>
+			</tr>
+			<!--Déconnexion-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!--4 - Pour VISA agent sec. général éco-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>secgeneco</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>secgeneco</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection dossier -->
+			<tr>
+				<td>assertTextPresent</td>
+				<td>secgeneco</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Editer la réponse&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForElementPresent</td>
+				<td>tinymce</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>tinymce</td>
+				<td>Réponse 3</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>actionToolbarForm:IdSaveReponseButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Réponse 3</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>314160</td>
+				<td></td>
+			</tr>
+			<!--Déconnexion-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!--5 -Pour signature BDC-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection mailbox -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour signature (1)</td>
+				<td></td>
+			</tr>
+			<!--Selection dossier -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Editer la réponse&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForElementPresent</td>
+				<td>tinymce</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>tinymce</td>
+				<td>Réponse 4</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>actionToolbarForm:IdSaveReponseButton</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Réponse 4</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Version de travail</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>selectAndWait</td>
+				<td>versionSelector</td>
+				<td>label=3 - secgeneco</td>
+			</tr>
+			<tr>
+				<td>assertElementNotPresent</td>
+				<td>//input[@value=&quot;Editer la réponse&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementNotPresent</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Réponse 3</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>selectAndWait</td>
+				<td>versionSelector</td>
+				<td>label=2 - dgefp</td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Réponse 2</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>selectAndWait</td>
+				<td>versionSelector</td>
+				<td>label=1 - bdc</td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Réponse 1</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//a[@id='formFdr:fdrActionsTable:0:fdrValidateButton']/img</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertConfirmation</td>
+				<td>Confirmez-vous l'apposition du cachet serveur ?</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>314160</td>
+				<td></td>
+			</tr>
+			<!--Déconnexion-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!--On défait ce qu'on a fait -->
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>superviseursgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>superviseursgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection mailbox -->
+			<tr>
+				<td>mouseDown</td>
+				<td>//span[text()='Min. Economie, industrie et emploi']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseUp</td>
+				<td>//span[text()='Min. Economie, industrie et emploi']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Pour attribution (1)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour attribution (1)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314160</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Substituer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Feuille de route standard</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Substituer en utilisant la feuille de route : Feuille de
+					route standard</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Substituer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

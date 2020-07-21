@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxh="http://nuxeo.org/nxweb/html">
+
+	<ui:define name="page title">
+		<h:outputText value="#{nuxeoApplicationName} - Allotissement" />
+	</ui:define>
+
+	<ui:define name="bookmark">
+		<link rel="bookmark"
+			href="#{navigationContext.currentDocumentFullUrl}" />
+	</ui:define>
+	<ui:define name="body">
+		<ui:include src="/incl/message_banner.xhtml" />
+		<h:form id="document_properties" enctype="multipart/form-data">
+			<a4j:region id="dcViewRegion">
+				<script>
+			  function submitCreateLot(myfield, e) {
+			    if (e.which == 13) {
+			      document.getElementById('document_properties:button_create_lot').click();
+			      return false;
+			    } 
+			    else {
+				    if (e.keyCode == 13) {
+				      document.getElementById('document_properties:button_create_lot').click();
+				      return false;
+				    } else return true;
+			    }
+			  }
+			  </script>
+
+				<a4j:outputPanel id="documentViewPanel">
+					<div class="action_bar nofloat">
+						<nxu:methodResult name="actions"
+							value="#{webActions.getActionsList('CASE_ACTION_UPPER_LIST_HREF')}">
+							<f:subview rendered="#{!empty actions}">
+								<nxu:dataList layout="unorderedList" var="action"
+									value="#{actions}">
+									<a href="#{action.getLink()}"> <h:graphicImage
+											value="#{action.icon}" /> <h:outputText
+											value="#{messages[action.label]}" />
+									</a>
+								</nxu:dataList>
+							</f:subview>
+						</nxu:methodResult>
+						<nxu:methodResult name="actions"
+							value="#{webActions.getActionsList('CASE_ACTION_UPPER_LIST')}">
+							<f:subview rendered="#{!empty actions}">
+								<nxu:dataList layout="unorderedList" var="action"
+									value="#{actions}">
+									<nxh:commandLink action="#{action.getLink()}"
+										id="caseActionUpperListLink">
+										<h:outputText value="#{messages[action.label]}" />
+									</nxh:commandLink>
+								</nxu:dataList>
+							</f:subview>
+						</nxu:methodResult>
+					</div>
+					<div style="clear: both;"></div>
+					<div>
+
+						<div class="boxBody">
+							<a4j:commandButton styleClass="button" id="button_cancel_lot_"
+								value="#{messages['command.allotissement.cancel']}"
+								action="#{rechercheAvanceeActions.goBack()}" immediate="true" />
+							<h3 class="summaryTitle">
+								<h:outputText
+									value="#{messages['reponses.allotissement.liste']}" />
+							</h3>
+							<br />
+							<h:dataTable id="table_dc" var="object"
+								value="#{allotissementsActions.getListQuestionsAllotisSearch()}"
+								styleClass="dataOutput" columnClasses="iconColumn">
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="" />
+									</f:facet>
+									<h:outputText value="" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText
+											value="#{messages['dossier.connexe.num.dossier']}" />
+									</f:facet>
+									<h:outputText value="#{object[2]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{messages['dossier.connexe.auteur']}" />
+									</f:facet>
+									<h:outputText value="#{object[3]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{messages['dossier.connexe.etat']}" />
+									</f:facet>
+									<h:outputText value="#{object[4]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText
+											value="#{messages['dossier.connexe.indexation.principale']}" />
+									</f:facet>
+									<h:outputText value="#{object[5]}" />
+								</h:column>
+							</h:dataTable>
+							<br />
+							<h:outputText
+								value="#{messages['command.allotissement.dossier.directeur']}" />
+							<br />
+							<div style="vertical-align: middle;">
+								<h:inputText value="#{allotissementsActions.questionSearch}"
+									size="20" id="questionTitreInput"
+									onkeypress="return submitCreateLot(this, event);" />
+								<nxh:commandButton styleClass="button" id="button_create_lot"
+									value="#{messages['command.allotissement.create']}"
+									action="#{allotissementsActions.createLotSearch()}" />
+							</div>
+							<br />
+							<br />
+							<h3 class="summaryTitle">
+								<h:outputText
+									value="#{messages['reponses.allotissement.liste.avecLot']}" />
+							</h3>
+							<br />
+							<h:dataTable id="table_lot" var="object"
+								value="#{allotissementsActions.getListQuestionsAvecLotSearch()}"
+								styleClass="dataOutput" columnClasses="iconColumn">
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="" />
+									</f:facet>
+									<h:outputText value="" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText
+											value="#{messages['dossier.connexe.num.dossier']}" />
+									</f:facet>
+									<h:outputText value="#{object[2]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{messages['dossier.connexe.auteur']}" />
+									</f:facet>
+									<h:outputText value="#{object[3]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{messages['dossier.connexe.etat']}" />
+									</f:facet>
+									<h:outputText value="#{object[4]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText
+											value="#{messages['dossier.connexe.indexation.principale']}" />
+									</f:facet>
+									<h:outputText value="#{object[5]}" />
+								</h:column>
+							</h:dataTable>
+							<br /> <br />
+							<br />
+							<h3 class="summaryTitle">
+								<h:outputText
+									value="#{messages['reponses.allotissement.liste.error']}" />
+							</h3>
+							<br />
+							<h:dataTable id="table_error" var="object"
+								value="#{allotissementsActions.getListQuestionsErrorAllotisSearch()}"
+								styleClass="dataOutput" columnClasses="iconColumn">
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="" />
+									</f:facet>
+									<h:outputText value="" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText
+											value="#{messages['dossier.connexe.num.dossier']}" />
+									</f:facet>
+									<h:outputText value="#{object[2]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{messages['dossier.connexe.auteur']}" />
+									</f:facet>
+									<h:outputText value="#{object[3]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{messages['dossier.connexe.etat']}" />
+									</f:facet>
+									<h:outputText value="#{object[4]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText
+											value="#{messages['dossier.connexe.indexation.principale']}" />
+									</f:facet>
+									<h:outputText value="#{object[5]}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText
+											value="#{messages['reponses.allotissement.liste.error.raison']}" />
+									</f:facet>
+									<h:outputText value="#{messages[object[6]]}" />
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+				</a4j:outputPanel>
+			</a4j:region>
+		</h:form>
+	</ui:define>
+</nxthemes:composition>

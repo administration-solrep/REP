@@ -1,0 +1,103 @@
+<ns4:envoyerQuestionsRequest
+	xmlns:ns2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:ns4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ns3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses">
+	<ns4:questionReponse>
+		<ns2:question>
+			<ns2:id_question>
+				<numero_question>666</numero_question>
+				<type>QE</type>
+				<source>AN</source>
+				<legislature>14</legislature>
+			</ns2:id_question>
+			<ns2:date_publication_jo>2013-12-03</ns2:date_publication_jo>
+			<ns2:page_jo>0</ns2:page_jo>
+			<ns2:ministre_depot id="50000507">
+				<titre_min>M. le ministre de l'économie, industrie et emploi</titre_min>
+				<titre_jo>Min. Economie, industrie et emploi</titre_jo>
+				<intitule_min>Min. Economie, industrie et emploi</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_depot>
+			<ns2:ministre_attributaire id="50000507">
+				<titre_min>M. le ministre de l'économie, industrie et emploi</titre_min>
+				<titre_jo>Min. Economie, industrie et emploi</titre_jo>
+				<intitule_min>Min. Economie, industrie et emploi</intitule_min>
+				<ordre_proto>0</ordre_proto>
+			</ns2:ministre_attributaire>
+			<ns2:auteur id_mandat="645250">
+				<ns2:civilite>Mme</ns2:civilite>
+				<ns2:prenom>Chantal</ns2:prenom>
+				<ns2:nom>Guittet</ns2:nom>
+				<ns2:grp_pol>SRC</ns2:grp_pol>
+				<ns2:circonscription>Finistère 5</ns2:circonscription>
+			</ns2:auteur>
+			<ns2:texte>&lt;![CDATA[Mme Chantal Guittet attire l'attention de M.
+				le ministre sur les nombreuses difficultés de prises en charge
+				rencontrées par les familles de personnes atteints de troubles dys.
+				Les altérations de fonctions cognitives chez l'enfant, souvent
+				méconnues ou jugées mineures, peuvent, en l'absence de méthodes
+				pédagogiques adaptées, avoir des conséquences importantes sur les
+				relations sociales, la scolarité, et sur la vie quotidienne des
+				personnes dys. Il est donc indispensable de les reconnaître pour
+				comprendre le processus et agir en vue d'en réduire les conséquences
+				par un accompagnement, une pédagogie adaptée et des professionnels.
+				L'activité de certains de ces professionnels exerçant en libéral,
+				comme par exemple les psychologues, ergothérapeutes, et
+				psychomotriciens dont l'efficacité dans la prise en charge des
+				personnes dys est reconnue, n'est pas remboursée par la sécurité
+				sociale. Cette situation est préjudiciable pour les familles qui
+				doivent assumer financièrement des bilans et séances très couteux.
+				La réponse pour l'accompagnement des personnes dys doit être une
+				réponse de proximité, accessible à tous et qui repose sur la
+				compétence et la coopération de tous les acteurs (médicaux,
+				associatifs, institutionnels) conformément aux besoins de chaque
+				enfant, adolescent et adulte. C'est pourquoi elle souhaiterait
+				connaître les mesures qu'elle entend mettre en œuvre pour permettre
+				la prise en charge par la sécurité sociale des soins assurés par les
+				professionnels libéraux aux personnes souffrant de troubles
+				dys.]]&gt;</ns2:texte>
+			<ns2:etat_question>EN_COURS</ns2:etat_question>
+			<ns2:indexation_an>
+				<ns2:rubrique>enfants</ns2:rubrique>
+				<ns2:rubrique_ta>santé</ns2:rubrique_ta>
+				<ns2:analyse>dyslexie</ns2:analyse>
+				<ns2:analyse> prise en charge</ns2:analyse>
+			</ns2:indexation_an>
+		</ns2:question>
+		<ns2:reponse>
+			<ns3:ministre_reponse id="50000507">
+				<titre_jo>Min. Economie, industrie et emploi</titre_jo>
+				<intitule_min>M. le ministre de l'économie, industrie et emploi</intitule_min>
+			</ns3:ministre_reponse>
+			<ns3:texte_reponse>
+				M. Hervé Féron attire l'attention de Mme la ministre de l'économie,
+				des finances et de l'industrie sur les conséquences dramatiques pour
+				le pouvoir d'achat de nos concitoyens de la hausse de la TVA dans le
+				domaine de l'Internet. En effet, conformément à la volonté du
+				Gouvernement, tous les opérateurs Internet vont augmenter
+				considérablement leurs prix sous prétexte de hausse de la TVA. La
+				France va perdre ainsi le modèle original inventé par Free, qui l'a
+				propulsée parmi les champions mondiaux de l'accès Internet : le
+				forfait Internet illimité à 29,99 euros par mois, qui est en passe
+				de voler en éclats. En vue de répercuter la hausse de la TVA,
+				inscrite dans le projet de loi de finances, les opérateurs vont
+				augmenter leurs tarifs. En brisant le principe du forfait à 30
+				euros, ils vont pouvoir déployer des gammes de tarifs et ouvrir la
+				voie à un Internet à plusieurs vitesses. Cela aura deux conséquences
+				majeures pour le consommateur, qui non seulement va voir sa facture
+				augmenter dans des proportions encore inconnues, mais qui ne pourra
+				plus comparer les forfaits Internet. En effet, ceux-ci risquent
+				d'être remplacés par des offres à tiroirs illisibles, très
+				segmentées, toutes dotées d'options différentes, à l'image de ce qui
+				existe pour les abonnements au téléphone mobile. Pour de nombreux
+				observateurs, la France, qui prend déjà du retard sur la fibre, est
+				en train de détruire son modèle ADSL, où elle est première de la
+				classe et enviée par le monde entier. Il lui demande donc quelles
+				mesures envisage de prendre le Gouvernement afin de répondre à ces
+				craintes, exprimées par de très nombreux professionnels
+			</ns3:texte_reponse>
+		</ns2:reponse>
+	</ns4:questionReponse>
+</ns4:envoyerQuestionsRequest>
+

@@ -1,0 +1,13 @@
+# Pour lancer ce script :
+# 1 - copier ce fichier dans /tmp/
+# 2 - Aller dans le répertoire contenant nxshell.sh
+# 3 - Taper la commande sh nxshell.sh -f /tmp/suppr_param_mail_admin_old.nxshell
+
+# connect to http://localhost:8180/reponses (obligatoire sinon Unknown command...) 
+connect -u Administrator -p Administrator http://localhost:8180/reponses/site/automation
+
+# go to parametre folder
+cd /case-management/workspaces/admin/parametre
+
+# suppression de l'ancien parametre
+rm adresse-mail-admin-sgg

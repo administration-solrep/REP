@@ -1,0 +1,53 @@
+<div xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core" class="menu"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<!-- Surchage du style pour IE6 -->
+	<!--[if lt IE 7]>
+<style>
+	.leftMenuActions span.subMenu{
+		display : inline-block;
+	}
+</style>
+<![endif]-->
+	<h:form rendered="#{!currentUser.anonymous}" id="utilisateurMenuForm">
+		<div class="leftMenuActions">
+			<div id="uMContent" style="overflow-x: auto; overflow-y: hidden;">
+				<nxu:set var="actions"
+					value="#{webActions.getActionsList('UTILISATEUR_MENU')}"
+					cache="true">
+					<nxu:dataList layout="simple" var="action" value="#{actions}"
+						rowIndexVar="row" rowCountVar="rowCount"
+						id="utilisateurMenuBottomActionsTable">
+
+						<h:outputText rendered="#{!fn:startsWith(action.link,'#')}"
+							class="subMenu" value="#{messages[action.label]}" />
+
+						<h:panelGroup style="background: #ecf6ff; display:block;"
+							rendered="#{navigationWebActions.currentLeftMenuItemAction.id == action.id}">
+							<nxh:commandLink action="#{action.getLink()}"
+								rendered="#{fn:startsWith(action.link,'#')}"
+								id="adminMenuActionCommandLink">
+								<h:outputText value="#{messages[action.label]}" />
+							</nxh:commandLink>
+						</h:panelGroup>
+
+						<h:panelGroup
+							rendered="#{navigationWebActions.currentLeftMenuItemAction.id != action.id}">
+							<nxh:commandLink action="#{action.getLink()}"
+								rendered="#{fn:startsWith(action.link,'#')}"
+								id="adminMenuActionCommandLink2">
+								<h:outputText value="#{messages[action.label]}" />
+							</nxh:commandLink>
+						</h:panelGroup>
+					</nxu:dataList>
+				</nxu:set>
+			</div>
+		</div>
+	</h:form>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!--
+  Ce composant contribue un service des ministeres factice.
+-->
+<component name="fr.dila.reponses.core.mockministeres">
+  <implementation class="fr.dila.reponses.core.mock.MockMinisteresService" />
+  <require>fr.dila.st.core.service.STMinisteresService</require>
+  <service>
+    <provide interface="fr.dila.st.api.service.organigramme.STMinisteresService"/>
+  </service>
+</component>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.api.pathsegment.PathSegmentComponentCustom">
+	<extension target="org.nuxeo.ecm.core.api.pathsegment.PathSegmentService"
+		point="pathSegmentService ">
+		<service class="fr.dila.reponses.api.pathsegment.PathSegmentComponentCustom" />
+	</extension>
+</component>

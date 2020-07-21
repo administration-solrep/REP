@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://dila.fr/solon/schemas/allotissement/"
+	xmlns:allot="http://dila.fr/solon/schemas/allotissement/">
+
+	<xs:include schemaLocation="base.xsd" />
+
+	<xs:element name="idDossiers" type="allot:stringList" /> <!-- liste des dossiers -->
+	<xs:element name="nom" type="xs:string" /> <!-- nom -->
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<component name="fr.dila.reponses.mailbox.querymodel">
+	<require>com.nuxeo.casemanagement.querymodel</require>
+	<extension
+		target="org.nuxeo.ecm.core.search.api.client.querymodel.QueryModelService"
+		point="model">
+
+		<queryModel name="GET_MAILBOX_FROM_ID">
+			<pattern>
+				SELECT * FROM ReponsesMailbox WHERE mlbx:mailbox_id=? AND
+				ecm:isProxy = 0
+			</pattern>
+		</queryModel>
+
+		<queryModel name="GET_ALL_MAILBOX">
+			<pattern>
+				SELECT * FROM ReponsesMailbox WHERE ecm:isProxy = 0
+			</pattern>
+		</queryModel>
+	</extension>
+</component>
+    

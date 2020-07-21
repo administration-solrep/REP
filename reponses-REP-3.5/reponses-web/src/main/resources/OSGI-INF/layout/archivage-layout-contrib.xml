@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.layout.archivage">
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<layout name="listes_elimination_listing">
+			<templates>
+				<template mode="any">/layouts/layout_contentview_listing_ajax_template.xhtml</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">true</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+
+			<columns>
+
+				<column alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>liste_elimination_titre</widget>
+				</column>
+
+				<column alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>liste_elimination_date</widget>
+				</column>
+
+			</columns>
+		</layout>
+
+		<layout name="liste_elimination_listing">
+			<templates>
+				<template mode="any">/layouts/layout_contentview_listing_ajax_template.xhtml</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">true</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+
+			<columns>
+				<column name="selection" alwaysSelected="true">
+					<properties mode="any">
+						<property name="isListingSelectionBox">true</property>
+						<property name="useFirstWidgetLabelAsColumnHeader">false</property>
+						<property name="columnStyleClass">iconColumn</property>
+					</properties>
+					<widget>listing_ajax_selection_box</widget>
+				</column>
+
+				<column alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>archivage_origine</widget>
+				</column>
+
+				<column alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>archivage_numero_question</widget>
+				</column>
+
+				<column alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>archivage_nature</widget>
+				</column>
+
+				<column alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>archivage_date_publication</widget>
+				</column>
+
+				<column alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>archivage_auteur</widget>
+				</column>
+
+				<column alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>archivage_mots_cles</widget>
+				</column>
+
+				<column alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>archivage_ministere</widget>
+				</column>
+			</columns>
+		</layout>
+
+	</extension>
+</component>
+
+
+

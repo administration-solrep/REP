@@ -1,0 +1,1854 @@
+<?xml version="1.0"?>
+<component name="fr.dila.reponses.web.widget.requete">
+	<require>fr.dila.ecm.platform.routing.layouts.webapp</require>
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgettypes">
+
+		<widgetType name="date_range">
+			<documentation>
+				Widget used to search on a date range.
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">/widgets/date_range_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="int_range">
+			<documentation>
+				Widget used to search on a date range.
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">/widgets/int_range_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="suggestion">
+			<documentation>
+				Widget used to have auto-completion.
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">/widgets/suggestion_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="selectMinistere">
+			<documentation>
+				Donne une liste d'intitulés du ministère en fonction du type du widget :
+				- MINISTERE_ATTRIBUTAIRE : renvoie la liste des ministères du
+				gouvernement courant
+				- MINISTERE_INTERROGE :
+				renvoie la liste des ministères de tous les gouvernements
+			</documentation>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">/widgets/selectMinistere_widget_template.xhtml</property>
+		</widgetType>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+
+		<!-- widgets Ecran de recherche simple -->
+		<widget name="critereRequete" type="text">
+			<labels>
+				<label mode="any">requete.widget.numeroquestion</label>
+			</labels>
+			<helpLabels>
+				<label mode="any">requete.widget.numeroQuestion.help</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>rqs:critere_requete</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+				<property name="size">100</property>
+			</properties>
+		</widget>
+		<widget name="legislature" type="selectOneDirectory">
+			<labels>
+				<label mode="any">Législature :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rqc:legislature</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+				<property name="directoryName">legislature</property>
+			</properties>
+		</widget>
+
+		<widget name="dateJOQuestion" type="date_range">
+			<labels>
+				<label mode="any">Date JO Question :</label>
+			</labels>
+			<fields>
+				<field>rqc:dateJOQuestionDebut</field>
+				<field>rqc:dateJOQuestionFin</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="styleClass">dataInputTextDate</property>
+				<property name="wrapperMode">row</property>
+			</properties>
+		</widget>
+
+		<widget name="dateJOReponse" type="date_range">
+			<labels>
+				<label mode="any">Date JO Réponse :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rqc:dateJOReponseDebut</field>
+				<field>rqc:dateJOReponseFin</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+				<property name="required">false</property>
+				<property name="styleClass">dataInputTextDate</property>
+				<property name="wrapperMode">row</property>
+			</properties>
+		</widget>
+
+		<widget name="dateSignalement" type="date_range">
+			<labels>
+				<label mode="any">Date signalement :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rqc:dateSignalementDebut</field>
+				<field>rqc:dateSignalementFin</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="showsTime">false</property>
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+				<property name="required">false</property>
+				<property name="styleClass">dataInputTextDate</property>
+				<property name="wrapperMode">row</property>
+			</properties>
+		</widget>
+
+		<widget name="auteur" type="suggestion">
+			<labels>
+				<label mode="any">Auteur :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rqc:nomAuteur</field>
+			</fields>
+			<properties mode="any">
+				<property name="suggestionProviderName">NOM_AUTEUR_PROVIDER</property>
+			</properties>
+		</widget>
+
+		<widget name="groupePolitique" type="selectOneDirectory">
+			<labels>
+				<label mode="any">Groupe politique :</label>
+			</labels>
+			<translated>false</translated>
+			<fields>
+				<field>rqc:groupePolitique</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+				<property name="directoryName">groupe_politique</property>
+				<property name="cssStyle">min-width:622px;max-width:622px;</property>
+			</properties>
+		</widget>
+
+
+		<widget name="ministereInterroge" type="selectMinistere">
+			<labels>
+				<label mode="any">requete.widget.ministereInterroge</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqc:ministereInterroge</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="type">MINISTERE_INTERROGE</property>
+			</properties>
+		</widget>
+
+		<widget name="ministereRattachement" type="template">
+			<labels>
+				<label mode="any">requete.widget.ministereRattachement</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqc:ministereRattachement</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/organigramme_select_node_widget.xhtml
+				</property>
+				<property name="organigrammeSelectionType">MIN_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+			</properties>
+		</widget>
+
+		<widget name="directionPilote" type="template">
+			<labels>
+				<label mode="any">requete.widget.directionPilote</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqc:directionPilote</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/organigramme_select_node_widget.xhtml
+				</property>
+				<property name="organigrammeSelectionType">DIR_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+			</properties>
+		</widget>
+
+		<widget name="ministereAttribute" type="selectMinistere">
+			<labels>
+				<label mode="any">requete.widget.ministereAttributaire</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqc:ministereAttribute</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="type">MINISTERE_ATTRIBUTAIRE</property>
+			</properties>
+		</widget>
+
+		<widget name="caracteristiqueQuestion" type="template">
+			<fields>
+				<field>rqc:caracteristiqueQuestion</field>
+			</fields>
+			<labels>
+				<label mode="any"></label>
+			</labels>
+			<properties widgetMode="any">
+				<property name="directoryName">caracteristique_question</property>
+				<property name="template">
+					/widgets/directory_checkbox_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="origineQuestion" type="template">
+			<fields>
+				<field>rqc:origineQuestion</field>
+			</fields>
+			<labels>
+				<label mode="any"></label>
+			</labels>
+			<properties widgetMode="any">
+				<property name="directoryName">origine_question</property>
+				<property name="template">
+					/widgets/directory_checkbox_widget_template.xhtml
+				</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="notDisplayDefaultOption">true</property>
+			</properties>
+		</widget>
+
+		<widget name="critere_requete" type="textarea">
+			<translated>true</translated>
+			<labels>
+				<label mode="any">Saisir votre expression :</label>
+			</labels>
+			<fields>
+				<field>rqti:critere_requete</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="styleClass">dataInputText</property>
+			</properties>
+		</widget>
+		<widget name="dansTexteReponse" type="checkbox">
+			<labels>
+				<label mode="any">requete.texteIntegral.dansReponse</label>
+			</labels>
+			<fields>
+				<field>rqti:dansTexteReponse</field>
+			</fields>
+		</widget>
+
+		<widget name="dansTexteQuestion" type="checkbox">
+			<labels>
+				<label mode="any">requete.texteIntegral.dansQuestion</label>
+			</labels>
+			<fields>
+				<field>rqti:dansTexteQuestion</field>
+			</fields>
+		</widget>
+
+		<widget name="dansTitre" type="checkbox">
+			<labels>
+				<label mode="any">requete.texteIntegral.dansTitre</label>
+			</labels>
+			<fields>
+				<field>rqti:dansTitre</field>
+			</fields>
+		</widget>
+
+		<widget name="appliquerRechercheExacte" type="checkbox">
+			<labels>
+				<label mode="any">requete.texteIntegral.appliquerRechercheExacte</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqti:appliquerRechercheExacte</field>
+			</fields>
+		</widget>
+
+		<widget name="type_question_list" type="selectManyDirectory">
+			<fields>
+				<field>rqmet:typeQuestion</field>
+			</fields>
+			<labels>
+				<label mode="any">requete.widget.typeQuestion</label>
+			</labels>
+			<properties widgetMode="any">
+				<property name="directoryName">type_question_recherche</property>
+			</properties>
+		</widget>
+
+		<widget name="etatRetire" type="checkbox">
+			<translated>true</translated>
+			<labels>
+				<label mode="any">requete.metadadonnees.etatRetire</label>
+			</labels>
+			<fields>
+				<field>rqmet:etatRetire</field>
+			</fields>
+		</widget>
+
+		<widget name="etatRenouvele" type="checkbox">
+			<labels>
+				<label mode="any">requete.metadadonnees.etatRenouvele</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqmet:etatRenouvele</field>
+			</fields>
+		</widget>
+
+		<widget name="etatSignale" type="checkbox">
+			<labels>
+				<label mode="any">requete.metadadonnees.etatSignale</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqmet:etatSignale</field>
+			</fields>
+		</widget>
+
+		<widget name="etatRappele" type="checkbox">
+			<labels>
+				<label mode="any">requete.metadadonnees.etatRappele</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqmet:etatRappele</field>
+			</fields>
+		</widget>
+
+		<widget name="etatCaduque" type="checkbox">
+			<labels>
+				<label mode="any">requete.metadadonnees.etatCaduque</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqmet:etatCaduque</field>
+			</fields>
+		</widget>
+
+		<widget name="etatClotureAutre" type="checkbox">
+			<labels>
+				<label mode="any">requete.metadadonnees.etatClotureAutre</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqmet:etatClotureAutre</field>
+			</fields>
+		</widget>
+
+		<widget name="etatReattribue" type="checkbox">
+			<labels>
+				<label mode="any">requete.metadadonnees.etatReattribue</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqmet:etatReattribue</field>
+			</fields>
+		</widget>
+
+		<!-- Widget requête feuille de route -->
+
+		<widget name="titreFeuilleRoute" type="template">
+			<labels>
+				<label mode="any">requete.fdr.widget.titreFeuilleRoute</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqfr:titreFeuilleRoute</field>
+			</fields>
+			<properties mode="any">
+				<property name="suggestionProviderName">FEUILLE_DE_ROUTE_PROVIDER</property>
+				<property name="template">
+					/widgets/feuilleroute_suggestion_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="typeStep" type="selectOneDirectory">
+			<labels>
+				<label mode="any">requete.fdr.widget.typeStep</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqfr:typeStep</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="directoryName">cm_routing_task_type</property>
+				<property name="localize">true</property>
+				<property name="cssStyle">min-width:610px;max-width:610px;</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="notDisplayDefaultOption">false</property>
+				<property name="ordering">label</property>
+			</properties>
+		</widget>
+
+		<widget name="rangeBeginDateStep" type="date_range">
+			<labels>
+				<label mode="any">requete.fdr.widget.rangeBeginDateStep</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqfr:rangeBeginDateStepStart</field>
+				<field>rqfr:rangeBeginDateStepEnd</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+		</widget>
+
+		<widget name="rangeEndDateStep" type="date_range">
+			<labels>
+				<label mode="any">requete.fdr.widget.rangeEndDateStep</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqfr:rangeEndDateStepStart</field>
+				<field>rqfr:rangeEndDateStepEnd</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+		</widget>
+
+		<widget name="statusStep" type="selectOneDirectory">
+			<labels>
+				<label mode="any">requete.fdr.widget.statusStep</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqfr:statusStep</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="localize">true</property>
+				<property name="directoryName">statut_etape_recherche</property>
+				<property name="cssStyle">min-width:610px;max-width:610px;</property>
+			</properties>
+		</widget>
+		
+		<widget name="directionStep" type="template">
+			<labels>
+				<label mode="any">requete.fdr.widget.direction</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqfr:directionId</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				<property name="organigrammeSelectionType">DIR_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+			</properties>
+		</widget>
+
+		<widget name="posteStep" type="template">
+			<labels>
+				<label mode="any">requete.fdr.widget.poste</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqfr:posteId</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				<property name="organigrammeSelectionType">POSTE_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+			</properties>
+		</widget>
+
+		<widget name="automaticValidationStep" type="selectOneRadio">
+			<labels>
+				<label mode="any">requete.fdr.widget.automaticValidationStep</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqfr:hasAutomaticValidation</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="directoryName">boolean_voc</property>
+			</properties>
+		</widget>
+
+		<widget name="isMandatoryStep" type="selectOneRadio">
+			<labels>
+				<label mode="any">requete.fdr.widget.isMandatoryStep</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>rqfr:isMandatory</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="directoryName">boolean_voc</property>
+			</properties>
+		</widget>
+
+
+		<widget name="repertoireName" type="text">
+			<translated>true</translated>
+			<labels>
+				<label mode="any">Créer dans :</label>
+			</labels>
+			<fields>
+				<field>dc:title</field>
+			</fields>
+		</widget>
+
+		<widget name="dateExpirationFavorisDossier" type="datetime">
+			<translated>true</translated>
+			<labels>
+				<label mode="any">Jusqu'au :</label>
+			</labels>
+			<fields>
+				<field>dc:valid</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+				<property name="showWeeksBar">false</property>
+			</properties>
+		</widget>
+
+		<widget name="question_condition_date_publication" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_date_publication</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:datePublicationJO</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_date_signalement" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_date_signalement</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:dateSignalementQuestion</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_date_renouvellement" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_date_renouvellement</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:dateRenouvellementQuestion</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_date_retrait" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_date_retrait</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:dateRetraitQuestion</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_date_caducite" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_date_caducite</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:dateCaduciteQuestion</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_date_cloture" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_date_cloture</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:dateClotureQuestion</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_date_rappel" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_date_rappel</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:dateRappelQuestion</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_nature" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_nature</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:typeQuestion</property>
+				<propertyList name="availableOperators">
+					<value>IN</value>
+					<value>NOT IN</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="nature" type="selectManyDirectory">
+					<fields>
+						<field>stringArrayValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">type_question</property>
+						<property name="localize">true</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_numero" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_numero</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.ecm:fulltext_idQuestion</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="numero" type="text">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_auteur" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_auteur</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:nomCompletAuteur</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="nomCompletAuteur" type="suggestion">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="suggestionProviderName">NOM_AUTEUR_PROVIDER</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_ministere_attributaire" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_ministere_attributaire</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">d.dos:ministereAttributaireCourant</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="ministereAttributaire" type="selectMinistere">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+					<properties widgetMode="any">
+						<property name="type">MINISTERE_ATTRIBUTAIRE</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_groupe_politique" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_groupe_politique</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:groupePolitique</property>
+				<propertyList name="availableOperators">
+					<value>IN</value>
+					<value>NOT IN</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="groupePolitique" type="selectManyDirectory">
+					<fields>
+						<field>stringArrayValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">groupe_politique</property>
+						<property name="localize">true</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_etat" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_etat</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:etatQuestion</property>
+				<propertyList name="availableOperators">
+					<value>IN</value>
+					<value>NOT IN</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="etatQuestion" type="selectManyDirectory">
+					<fields>
+						<field>stringArrayValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">etat_question</property>
+						<property name="localize">true</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+
+		<widget name="question_condition_rappele" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_rappele</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:etatRappele</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="estRappele" type="selectOneDirectory">
+					<fields>
+						<field>booleanAsStringValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">boolean_requeteur_voc</property>
+						<property name="localize">true</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_signale" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_signale</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:etatSignale</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="estSignale" type="selectOneDirectory">
+					<fields>
+						<field>booleanAsStringValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">boolean_requeteur_voc</property>
+						<property name="localize">true</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_renouvele" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_renouvele</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:etatRenouvele</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="estRenouvele" type="selectOneDirectory">
+					<fields>
+						<field>booleanAsStringValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">boolean_requeteur_voc</property>
+						<property name="localize">true</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_texte_question" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_texte_question</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.ecm:fulltext_txtQuestion</property>
+				<propertyList name="availableOperators">
+					<value>LIKE</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="textQuestion" type="text">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_ministere_interroge" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_ministere_interroge</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:intituleMinistere</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="ministereInterroge" type="selectMinistere">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+					<properties widgetMode="any">
+						<property name="type">MINISTERE_INTERROGE</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="question_condition_ministere_rattachement" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_ministere_rattachement</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:intituleMinistereRattachement</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="ministereInterroge" type="selectMinistere">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+					<properties widgetMode="any">
+						<property name="type">MINISTERE_ATTRIBUTAIRE</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+
+		<widget name="question_condition_direction_pilote" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_direction_pilote</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.qu:idDirectionPilote</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="directionPilote" type="template">
+					<labels>
+						<label mode="any">requete.widget.directionPilote</label>
+					</labels>
+					<translated>true</translated>
+					<fields>
+						<field>stringValue</field>
+					</fields>
+					<properties widgetMode="any">
+						<property name="template">
+							/widgets/organigramme_select_node_widget.xhtml
+						</property>
+						<property name="organigrammeSelectionType">DIR_TYPE</property>
+						<property name="organigrammeSelectionMode">SINGLE</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+
+
+		<widget name="indexation_condition_senat_titre" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.question_condition_senat_titre</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.ecm:fulltext_senatTitre</property>
+				<propertyList name="availableOperators">
+					<value>LIKE</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="senatTitre" type="text">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="indexation_condition_senat_themes" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.indexation_condition_senat_themes</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.ixa:SE_theme</property>
+				<propertyList name="availableOperators">
+					<value>IN</value>
+					<value>NOT IN</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="senatThemes" type="selectManyDirectory">
+					<fields>
+						<field>stringArrayValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">SE_theme</property>
+						<property name="localize">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="indexation_condition_senat_rubriques" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.indexation_condition_senat_rubriques</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.ixa:SE_rubrique</property>
+				<propertyList name="availableOperators">
+					<value>IN</value>
+					<value>NOT IN</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="senatRubriques" type="selectManyDirectory">
+					<fields>
+						<field>stringArrayValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">SE_rubrique</property>
+						<property name="localize">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="indexation_condition_senat_renvois" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.indexation_condition_senat_renvois</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.ixa:SE_renvoi</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="senatRenvois" type="text">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="indexation_condition_an_rubriques" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.indexation_condition_an_rubriques</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.ixa:AN_rubrique</property>
+				<propertyList name="availableOperators">
+					<value>IN</value>
+					<value>NOT IN</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="anRubriques" type="selectManyDirectory">
+					<fields>
+						<field>stringArrayValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">AN_rubrique</property>
+						<property name="localize">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="indexation_condition_an_ta" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.indexation_condition_an_ta</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.ixa:TA_rubrique</property>
+				<propertyList name="availableOperators">
+					<value>IN</value>
+					<value>NOT IN</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="anRubriques" type="selectManyDirectory">
+					<fields>
+						<field>stringArrayValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">TA_rubrique</property>
+						<property name="localize">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="indexation_condition_an_analyses" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.indexation_condition_an_analyses</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">q.ixa:AN_analyse</property>
+				<propertyList name="availableOperators">
+					<value>IN</value>
+					<value>NOT IN</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="anRubriques" type="selectManyDirectory">
+					<fields>
+						<field>stringArrayValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">AN_analyse</property>
+						<property name="localize">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="reponses_condition_date_publication" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.reponses_condition_date_publication</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">r.rep:datePublicationJOReponse</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="reponses_condition_text_reponses" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.reponses_condition_text_reponses</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">r.ecm:fulltext_txtReponse</property>
+				<propertyList name="availableOperators">
+					<value>LIKE</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="textReponses" type="text">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="fdr_condition_type_etape" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.fdr_condition_type_etape</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">e2.rtsk:type</property>
+				<propertyList name="availableOperators">
+					<value>IN</value>
+					<value>NOT IN</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="type_etape" type="selectManyDirectory">
+					<fields>
+						<field>stringArrayValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="directoryName">cm_routing_task_type</property>
+						<property name="localize">true</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="fdr_condition_statut_etape" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.fdr_condition_statut_etape</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">e2.rtsk:validationStatus</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="statut_etape" type="selectOneDirectory">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+					<properties widgetMode="any">
+						<property name="localize">true</property>
+						<property name="directoryName">validation_statut_etape</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="fdr_condition_etat_etape" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.fdr_condition_etat_etape</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">e2.ecm:currentLifeCycleState</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="etat_etape" type="selectOneDirectory">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+					<properties widgetMode="any">
+						<property name="localize">true</property>
+						<property name="directoryName">etat_etape</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="fdr_condition_poste_etape" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.fdr_condition_poste_etape</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">e2.rtsk:distributionMailboxId</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="poste_etape" type="template">
+					<fields>
+						<field>posteValue</field>
+					</fields>
+					<properties widgetMode="any">
+						<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+						<property name="organigrammeSelectionType">POSTE_TYPE</property>
+						<property name="organigrammeSelectionMode">SINGLE</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="fdr_condition_feuille_route_titre" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.fdr_condition_feuille_route_titre</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">f.dc:title</property>
+				<propertyList name="availableOperators">
+					<value>=</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="feuille_route_titre" type="template">
+					<fields>
+						<field>stringValue</field>
+					</fields>
+					<properties mode="any">
+						<property name="template">
+							/widgets/feuilleroute_suggestion_widget_template.xhtml
+						</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="fdr_condition_date_debut_etape" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.fdr_condition_date_debut_etape</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">e2.rtsk:dateDebutEtape</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+		<widget name="fdr_condition_date_fin_etape" type="incremental_smart_query_condition">
+			<labels>
+				<label mode="any">label.requeteur.fdr_condition_date_fin_etape</label>
+			</labels>
+			<translated>true</translated>
+			<properties widgetMode="edit">
+				<property name="searchField">e2.rtsk:dateFinEtape</property>
+				<propertyList name="availableOperators">
+					<value>BETWEEN</value>
+					<value>NOT BETWEEN</value>
+					<value>&lt;</value>
+					<value>&gt;</value>
+				</propertyList>
+			</properties>
+			<subWidgets>
+				<widget name="created_before" type="datetime">
+					<fields>
+						<field>datetimeValue</field>
+					</fields>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+				<widget name="and" type="text">
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':'view'}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties mode="any">
+						<property name="value">
+							&amp;nbsp;#{messages['label.and']}&amp;nbsp;
+						</property>
+						<property name="escape">false</property>
+					</properties>
+				</widget>
+				<widget name="created_after" type="datetime">
+					<fields>
+						<field>otherDatetimeValue</field>
+					</fields>
+					<widgetModes>
+						<mode value="any">
+              <![CDATA[
+              #{not empty value.conditionalOperator
+              and value.conditionalOperator!='BETWEEN'
+              and value.conditionalOperator!='NOT BETWEEN'?'hidden':mode}
+              ]]>
+						</mode>
+					</widgetModes>
+					<properties widgetMode="edit">
+						<property name="required">true</property>
+						<property name="pattern">dd/MM/yyyy</property>
+						<property name="format">dd/MM/yyyy</property>
+						<property name="showWeeksBar">false</property>
+					</properties>
+				</widget>
+			</subWidgets>
+		</widget>
+
+	</extension>
+</component>

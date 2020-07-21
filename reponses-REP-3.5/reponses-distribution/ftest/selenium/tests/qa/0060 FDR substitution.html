@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>substitution_feuille_de_route</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">test_substitution</td>
+			</tr>
+		</thead>
+		<tbody>
+			<!--Connexion bdc -->
+			<tr>
+				<td>setTimeout</td>
+				<td>120000</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--Selection dossier -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@alt=&quot;Page suivante&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314163</td>
+				<td></td>
+			</tr>
+			<!--Selection onglet feuille de route -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<!--Verrouillage du dossier -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt='Verrouiller']</td>
+				<td></td>
+			</tr>
+			<!--Selection nouvelle feuille de route -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Substituer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Substituer la feuille de route du Dossier n°314163</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Feuille pour substitution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Feuille pour substitution</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Substituer en utilisant la feuille de route : Feuille pour
+					substitution</td>
+				<td></td>
+			</tr>
+			<!--_______________________________-->
+			<!--Première substitution-->
+			<!--_______________________________-->
+			<!--Action Substitution -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Substituer&quot;]</td>
+				<td></td>
+			</tr>
+			<!--Vérification substitution-->
+			<tr>
+				<td>waitForTextNotPresent</td>
+				<td>AN 314163</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!--Connexion adminsgg -->
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>superviseursgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>superviseursgg</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--selection mailbox superviseur -->
+			<tr>
+				<td>mouseDown</td>
+				<td>//span[text()='Min. Economie, industrie et emploi']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>mouseUp</td>
+				<td>//span[text()='Min. Economie, industrie et emploi']</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Pour attribution (1)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Pour attribution (1)</td>
+				<td></td>
+			</tr>
+			<!--selection dossier -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=AN 314163</td>
+				<td></td>
+			</tr>
+			<!--_______________________________-->
+			<!--Deuxième substitution-->
+			<!--_______________________________-->
+			<!--selection onglet feuille de route -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=Feuille de route</td>
+				<td></td>
+			</tr>
+			<!--Vérification nouvelle feuille de route-->
+			<tr>
+				<td>assertTextNotPresent</td>
+				<td>Pour attribution agents BDC</td>
+				<td></td>
+			</tr>
+			<!--Selection nouvelle feuille de route -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//img[@alt=&quot;Verrouiller&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Substituer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Substituer la feuille de route du Dossier n°314163</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertTextPresent</td>
+				<td>Feuille de route standard</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>click</td>
+				<td>link=Feuille de route standard</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>waitForTextPresent</td>
+				<td>Substituer en utilisant la feuille de route : Feuille de
+					route standard</td>
+				<td></td>
+			</tr>
+			<!--Action Substitution -->
+			<tr>
+				<td>clickAndWait</td>
+				<td>//input[@value=&quot;Substituer&quot;]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<!-- verification feuille de route présente -->
+			<!--Connexion bdc-->
+			<tr>
+				<td>type</td>
+				<td>username</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>password</td>
+				<td>bdc</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>Submit</td>
+				<td></td>
+			</tr>
+			<!--selection mailbox-->
+			<tr>
+				<td>assertTextPresent</td>
+				<td>AN 314163</td>
+				<td></td>
+			</tr>
+			<!--Déconnexion-->
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

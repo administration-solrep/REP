@@ -1,0 +1,23 @@
+-- ACL LOCAL
+CREATE TABLE "RLACL" (	
+    "HIERARCHY_ID" VARCHAR2(36 BYTE)  NOT NULL ENABLE, 
+    "ACL" VARCHAR2(4000),
+    CONSTRAINT "RLACL_ID_HIERARCHY_FK" FOREIGN KEY ("HIERARCHY_ID") REFERENCES "HIERARCHY" ("ID") ON DELETE CASCADE ENABLE
+);
+
+
+ALTER TABLE RLACL ADD CONSTRAINT RLACL_HIERARCHY_ID_PKEY PRIMARY KEY (HIERARCHY_ID);
+
+
+
+-- Initialisation du contenu de la table rlacl
+
+MERGE INTO RLACL t
+    USING (SELECT id, LISTAGG(CASE WHEN a."GRANT" = 0 THEN '-' ELSE '' END || a."USER", '|') WITHIN GROUP (ORDER BY pos) AS l
+				FROM acls a, ACLR_PERMISSION p WHERE a.permission = p.permission group by id) s
+    ON (t.hierarchy_id = s.id)
+    WHEN NOT MATCHED THEN 
+      INSERT (hierarchy_id, acl) VALUES (s.id, s.l);
+
+COMMIT;
+

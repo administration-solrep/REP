@@ -1,0 +1,778 @@
+<?xml version="1.0"?>
+
+<!-- Ce composant contribue les layouts de la corbeille. -->
+<component name="fr.dila.reponses.web.layout.corbeille">
+
+	<require>com.nuxeo.document.routing.table.widget</require>
+	<require>com.nuxeo.cm.table.layout</require>
+	<require>fr.dila.st.web.widget</require>
+	<require>fr.dila.reponses.web.reponse.widget</require>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+		<!-- Layout de la liste des dossiers (DossierLink) dans une corbeille -->
+		<layout name="cm_inbox_caselink">
+			<templates>
+				<template mode="any">
+					/layouts/layout_contentview_listing_ajax_template_dto.xhtml
+				</template>
+				<template mode="edit_columns">
+					/layouts/layout_column_selection_template.xhtml
+				</template>
+				<template mode="edit_sort_infos">
+					/layouts/layout_sort_infos_template.xhtml
+				</template>
+				<template mode="edit_sort_infos_map">
+					/layouts/layout_sort_infos_template.xhtml
+				</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">true</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+			<properties mode="edit_columns">
+				<property name="availableElementsLabel">
+					label.selection.availableColumns
+				</property>
+				<property name="selectedElementsLabel">
+					label.selection.selectedColumns
+				</property>
+				<property name="selectedElementsHelp"></property>
+				<property name="selectSize">20</property>
+				<property name="columnSelectionRequired">false</property>
+				<property name="displayAlwaysSelectedColumns">false</property>
+			</properties>
+			<properties mode="edit_sort_infos">
+				<property name="newSortInfoTemplate">
+					#{documentSearchActions.newSortInfo}
+				</property>
+				<property name="required">false</property>
+			</properties>
+			<properties mode="edit_sort_infos_map">
+				<property name="newSortInfoTemplate">
+					#{documentSearchActions.newSortInfoMap}
+				</property>
+				<property name="required">false</property>
+			</properties>
+			<columns>
+				<!-- Colonne selection -->
+				<column name="selection" alwaysSelected="true">
+					<properties mode="any">
+						<property name="isListingSelectionBox">true</property>
+						<property name="useFirstWidgetLabelAsColumnHeader">false</property>
+						<property name="columnStyleClass">iconColumn</property>
+					</properties>
+					<widget>listing_ajax_checkbox_dto</widget>
+				</column>
+				<!-- colonne question -->
+				<column name="sourceNumeroQuestion" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">dl.drl:sortField</property>
+					</properties>
+					<properties mode="edit_sort_infos">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<properties mode="edit_sort_infos_map">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<widget>reponses_listing_title_link</widget>
+				</column>
+				<!-- colonne nature -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">NATURE</property>
+					</properties>
+					<widget>reponses_listing_nature_question</widget>
+				</column>
+				<!-- Colonne date Publication de la question -->
+				<column name="datePublicationJO" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">dl.drl:datePublicationJO</property>
+					</properties>
+					<properties mode="edit_sort_infos">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<properties mode="edit_sort_infos_map">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<widget>reponses_listing_publication_date</widget>
+				</column>
+				<!-- Colonne date Publication de la reponse -->
+				<!-- <column name="datePublicationJOReponse" alwaysSelected="true"> -->
+				<!-- <properties mode="any"> -->
+				<!-- <property name="useFirstWidgetLabelAsColumnHeader">true</property> -->
+				<!-- <property name="isHidden">DATE_PUBLICATION_REPONSE_AU_JO</property> -->
+				<!-- </properties> -->
+				<!-- <widget>reponses_listing_publication_date_reponse</widget> -->
+				<!-- </column> -->
+				<!-- Colonne auteur -->
+				<column name="nomCompletAuteur" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">dl.drl:nomCompletAuteur</property>
+					</properties>
+					<properties mode="edit_sort_infos">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<properties mode="edit_sort_infos_map">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<widget>reponses_listing_author</widget>
+				</column>
+				<!-- Colonne Ministere attributaire -->
+				<column name="nomMinistereAttributaire" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<!--<property name="sortPropertyName">dl.drl:intituleMinistere</property> -->
+						<property name="isHidden">MINISTERE_ATTRIBUTAIRE</property>
+					</properties>
+					<widget>reponses_listing_ministere_attributaire</widget>
+				</column>
+				<!-- Colonne Ministere interroge -->
+				<column name="nomMinistereInterroge" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">MINISTERE_INTERROGE</property>
+					</properties>
+					<widget>reponses_listing_ministere_interroge</widget>
+				</column>
+				<!-- colonne mots-clés -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">dl.drl:motscles</property>
+					</properties>
+					<properties mode="edit_sort_infos">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<properties mode="edit_sort_infos_map">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<widget>listing_motsclef_dossierlink</widget>
+				</column>
+				<!-- colonne renseignement -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">false</property>
+					</properties>
+					<widget>dossier_link_renseignement</widget>
+				</column>
+				<!-- colonne delai -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">dl.drl:datePublicationJO</property>
+					</properties>
+					<properties mode="edit_sort_infos">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<properties mode="edit_sort_infos_map">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<widget>reponses_listing_delai</widget>
+				</column>
+				<!-- colonne Etat -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">dl.drl:etatsQuestion</property>
+					</properties>
+					<properties mode="edit_sort_infos">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<properties mode="edit_sort_infos_map">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<widget>listing_signalement_dossierlink</widget>
+				</column>
+				<!-- Colonne date de Signalement de la question -->
+				<column name="dateSignalementQuestion">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="sortPropertyName">dl.drl:dateSignalementQuestion</property>
+						<property name="isHidden">DATE_SIGNALEMENT</property>
+					</properties>
+					<properties mode="edit_sort_infos">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<properties mode="edit_sort_infos_map">
+						<property name="showInSortInfoSelection">true</property>
+					</properties>
+					<widget>reponses_listing_date_signalement</widget>
+				</column>
+				<!-- colonne etape courante -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">ETAPE_COURANTE</property>
+					</properties>
+					<widget>reponses_listing_etape</widget>
+				</column>
+				<!-- colonne legislature -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">LEGISLATURE</property>
+					</properties>
+					<widget>reponses_listing_legislature</widget>
+				</column>
+			</columns>
+		</layout>
+
+
+		<layout name="cm_inbox_caselink_csv">
+			<templates>
+				<template mode="any">/layouts/layout_listing_csv_template.xhtml</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">true</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+			<columns>
+				<!-- colonne question -->
+				<column name="sourceNumeroQuestion" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>reponses_listing_title_link</widget>
+				</column>
+				<!-- colonne nature -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">NATURE</property>
+					</properties>
+					<widget>reponses_listing_nature_question</widget>
+				</column>
+				<!-- Colonne date Publication de la question -->
+				<column name="datePublicationJO" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>reponses_listing_publication_date</widget>
+				</column>
+				<!-- Colonne date Publication de la reponse -->
+				<!-- <column name="datePublicationJOReponse" alwaysSelected="true"> -->
+				<!-- <properties mode="any"> -->
+				<!-- <property name="useFirstWidgetLabelAsColumnHeader">true</property> -->
+				<!-- <property name="isHidden">DATE_PUBLICATION_REPONSE_AU_JO</property> -->
+				<!-- </properties> -->
+				<!-- <widget>reponses_listing_publication_date_reponse</widget> -->
+				<!-- </column> -->
+				<!-- Colonne auteur -->
+				<column name="nomCompletAuteur" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>reponses_listing_author</widget>
+				</column>
+				<!-- Colonne Ministere attributaire -->
+				<column name="nomMinistereAttributaire" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">MINISTERE_ATTRIBUTAIRE</property>
+					</properties>
+					<widget>reponses_listing_ministere_attributaire</widget>
+				</column>
+				<!-- Colonne Ministere interroge -->
+				<column name="nomMinistereInterroge" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">MINISTERE_INTERROGE</property>
+					</properties>
+					<widget>reponses_listing_ministere_interroge</widget>
+				</column>
+				<!-- colonne mots-clés -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>listing_motsclef_dossierlink</widget>
+				</column>
+				<!-- colonne renseignement -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">false</property>
+					</properties>
+					<widget>dossier_link_renseignement</widget>
+				</column>
+				<!-- colonne delai -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>reponses_listing_delai</widget>
+				</column>
+				<!-- colonne Etat -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>listing_signalement_dossierlink</widget>
+				</column>
+				<!-- Colonne date de Signalement de la question -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">DATE_SIGNALEMENT</property>
+					</properties>
+					<widget>reponses_listing_date_signalement</widget>
+				</column>
+				<!-- colonne etape courante -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">ETAPE_COURANTE</property>
+					</properties>
+					<widget>reponses_listing_etape</widget>
+				</column>
+				<!-- colonne legislature -->
+				<column>
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+						<property name="isHidden">LEGISLATURE</property>
+					</properties>
+					<widget>reponses_listing_legislature</widget>
+				</column>
+			</columns>
+		</layout>
+
+
+		<layout name="dossier_connexe_layout">
+			<templates>
+				<template mode="any">
+					/layouts/layout_contentview_listing_ajax_template_dossier_connexe_dto.xhtml
+				</template>
+			</templates>
+			<properties mode="any">
+				<property name="showListingHeader">true</property>
+				<property name="showRowEvenOddClass">true</property>
+			</properties>
+			<columns>
+				<!-- Colonne selection -->
+				<column name="selection" alwaysSelected="true">
+					<properties mode="any">
+						<property name="isListingSelectionBox">true</property>
+						<property name="useFirstWidgetLabelAsColumnHeader">false</property>
+						<property name="columnStyleClass">iconColumn</property>
+					</properties>
+					<widget>listing_ajax_checkbox_dossier_connexe_dto</widget>
+				</column>
+				<!-- colonne numero question -->
+				<column name="sourceNumeroQuestion" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>dossiers_connexes_numero_link</widget>
+				</column>
+				<!-- colonne auteur -->
+				<column name="sourceNumeroQuestion" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>dossiers_connexes_auteur</widget>
+				</column>
+				<!-- colonne etat -->
+				<column name="sourceNumeroQuestion" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>dossiers_connexes_etat</widget>
+				</column>
+				<!-- colonne mots cles -->
+				<column name="sourceNumeroQuestion" alwaysSelected="true">
+					<properties mode="any">
+						<property name="useFirstWidgetLabelAsColumnHeader">true</property>
+					</properties>
+					<widget>dossiers_connexes_mots_cles</widget>
+				</column>
+
+			</columns>
+		</layout>
+
+		<!-- Layout pour afficher l'outil de selection d'un poste dans les corbeilles -->
+		<layout name="corbeille_selection_poste">
+			<templates>
+				<template mode="any">/layouts/corbeille_selection_poste_layout.xhtml
+				</template>
+			</templates>
+
+			<rows>
+				<row>
+					<widget>corbeille_selection_poste_single</widget>
+				</row>
+				<row>
+					<widget>corbeille_selection_poste_user</widget>
+				</row>
+			</rows>
+		</layout>
+
+	</extension>
+
+	<!-- *********************************************************************** 
+		Types de widgets *********************************************************************** -->
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgettypes">
+		<widgetType name="reponses_listing_inbox_title_link">
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/reponses_listing_cm_inbox_title_link_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="listing_ajax_checkbox_dossier_connexe_dto">
+			<configuration>
+				<fields>
+					<list>false</list>
+					<complex>false</complex>
+					<defaultConfiguration>
+						<field>selected</field>
+						<field>data.keyNameForSelection</field>
+						<field>data.ref</field>
+					</defaultConfiguration>
+				</fields>
+				<categories>
+					<category>hidden_listing</category>
+				</categories>
+			</configuration>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/listing_ajax_checkbox_dossier_connexe_dto_widget_template.xhtml
+			</property>
+		</widgetType>
+
+		<widgetType name="translated_list_text">
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/listing/reponses_listing_translated_list_text_widget_template.xhtml
+			</property>
+		</widgetType>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+		<!-- *********************************************************************** 
+			Widgets de la liste des CaseLink Dossier *********************************************************************** -->
+
+		<widget name="reponses_listing_title_link" type="reponses_listing_inbox_title_link">
+			<labels>
+				<label mode="any">label.content.header.sourceNumeroQuestion</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.sourceNumeroQuestion</field>
+				<field>data.caseLinkId</field>
+				<field>data.dossierId</field>
+				<field>data.isRead</field>
+				<field>data.hasErrata</field>
+				<field>data.isDirecteur</field>
+				<field>data.hasRedemarre</field>
+			</fields>
+		</widget>
+
+		<widget name="reponses_listing_nature_question" type="text">
+			<labels>
+				<label mode="any">label.content.header.nature</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.typeQuestion</field>
+			</fields>
+		</widget>
+
+		<widget name="reponses_listing_publication_date" type="datetime">
+			<labels>
+				<label mode="any">label.content.header.datePublication.question</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.datePublicationJO</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+		</widget>
+
+		<widget name="reponses_listing_publication_date_reponse" type="datetime">
+			<labels>
+				<label mode="any">label.content.header.datePublication.reponse</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.datePublicationJOReponse</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+		</widget>
+
+		<widget name="reponses_listing_author" type="text">
+			<labels>
+				<label mode="any">label.content.header.author</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.auteur</field>
+			</fields>
+			<properties widgetMode="csv">
+				<property name="escape">false</property>
+			</properties>
+		</widget>
+
+		<widget name="reponses_listing_ministere_attributaire" type="text">
+			<labels>
+				<label mode="any">label.content.header.ministere.attributaire</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.ministereAttributaire</field>
+			</fields>
+			<properties widgetMode="csv">
+				<property name="escape">false</property>
+			</properties>
+		</widget>
+		
+		<widget name="reponses_listing_direction_running_step" type="text">
+			<labels>
+				<label mode="any">label.content.header.direction.runningStep</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.directionRunningStep</field>
+			</fields>
+		</widget>
+
+		<widget name="reponses_listing_ministere_interroge" type="text">
+			<labels>
+				<label mode="any">label.content.header.ministere.interroge</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.ministereInterroge</field>
+			</fields>
+			<properties widgetMode="csv">
+				<property name="escape">false</property>
+			</properties>
+		</widget>
+
+		<widget name="reponses_listing_legislature" type="selectOneDirectory">
+			<labels>
+				<label mode="any">label.content.header.legislature</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.legislature</field>
+			</fields>
+
+			<properties mode="any">
+				<property name="directoryName">legislature</property>
+				<property name="localize">false</property>
+			</properties>
+		</widget>
+
+		<widget name="reponses_listing_delai" type="template">
+			<labels>
+				<label mode="any">label.content.header.delai</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.delai</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/listing/listing_delai_dossierlink_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="reponses_listing_etape" type="translated_list_text">
+			<labels>
+				<label mode="any">label.content.header.etapes</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.routingTaskType</field>
+			</fields>
+		</widget>
+
+		<widget name="reponses_listing_date_signalement" type="datetime">
+			<labels>
+				<label mode="any">label.content.header.dateSignalement.question</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.dateSignalementQuestion</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="pattern">dd/MM/yyyy</property>
+				<property name="format">dd/MM/yyyy</property>
+			</properties>
+		</widget>
+
+		<widget name="dossier_link_renseignement" type="template">
+			<labels>
+				<label mode="any">Renseignements</label>
+			</labels>
+			<fields>
+				<field>data.isLocked</field>
+				<field>data.hasLot</field>
+				<field>data.hasConnexite</field>
+				<field>data.hasAttachement</field>
+				<field>data.caseLinkId</field>
+				<field>data.dossierId</field>
+				<field>data.isRead</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/listing/listing_renseignements_dossierlink_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="listing_motsclef_dossierlink" type="text">
+			<labels>
+				<label mode="any">label.content.header.indexationPrincipale</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.motcles</field>
+			</fields>
+		</widget>
+
+		<widget name="listing_signalement_dossierlink" type="template">
+			<labels>
+				<label mode="any">Etat</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.isUrgent</field>
+				<field>data.isSignale</field>
+				<field>data.isRenouvelle</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/listing/listing_dossierlink_signalement_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="listing_ajax_checkbox_dto" type="listing_ajax_checkbox_dto">
+			<labels>
+				<label mode="any"></label>
+			</labels>
+			<fields>
+				<field>selected</field>
+				<field>data.caseLinkId</field>
+			</fields>
+		</widget>
+
+		<widget name="dossiers_connexes_numero_link" type="template">
+			<labels>
+				<label mode="any">dossier.connexe.num.dossier</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.numeroDossier</field>
+				<field>data.questionId</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">
+					/widgets/listing/dossiers_connexes_numero_link_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="dossiers_connexes_auteur" type="text">
+			<labels>
+				<label mode="any">dossier.connexe.auteur</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.auteur</field>
+			</fields>
+		</widget>
+
+		<widget name="dossiers_connexes_etat" type="text">
+			<labels>
+				<label mode="any">dossier.connexe.etat</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.etat</field>
+			</fields>
+		</widget>
+
+		<widget name="dossiers_connexes_mots_cles" type="text">
+			<labels>
+				<label mode="any">dossier.connexe.indexation.principale</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>data.motsCles</field>
+			</fields>
+		</widget>
+
+		<widget name="listing_ajax_checkbox_dossier_connexe_dto" type="listing_ajax_checkbox_dossier_connexe_dto">
+			<labels>
+				<label mode="any"></label>
+			</labels>
+			<fields>
+				<field>selected</field>
+				<field>data.questionId</field>
+				<field>data.checkabled</field>
+			</fields>
+		</widget>
+
+		<widget name="corbeille_selection_poste_single" type="template">
+			<labels>
+				<label mode="any">Poste</label>
+			</labels>
+			<fields>
+				<field>corbeilleSelectionPoste</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				<property name="organigrammeSelectionType">POSTE_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+				<property name="organigrammePermanentUserOnly">true</property>
+				<property name="required">true</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+		<widget name="corbeille_selection_poste_user" type="template">
+			<labels>
+				<label mode="any">Utilisateur</label>
+			</labels>
+			<fields>
+				<field>corbeilleSelectionUser</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="template">/widgets/organigramme_select_node_widget.xhtml</property>
+				<property name="organigrammeSelectionType">USER_TYPE</property>
+				<property name="organigrammeSelectionMode">SINGLE</property>
+				<property name="organigrammePermanentUserOnly">true</property>
+				<property name="required">true</property>
+			</properties>
+			<properties widgetMode="edit">
+				<property name="required">false</property>
+			</properties>
+		</widget>
+
+	</extension>
+
+</component>

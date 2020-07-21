@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base"
+	href="http://idlv-reponses-test.lyon-dev2.local:8180/" />
+<title>11_MIN11</title>
+</head>
+<body>
+	<table cellpadding="1" cellspacing="1" border="1">
+		<thead>
+			<tr>
+				<td rowspan="1" colspan="3">11_MIN11</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>open</td>
+				<td>/reponses/logout</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/login.jsp</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=username</td>
+				<td>adminsgg</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>id=password</td>
+				<td>moasword</td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>name=Submit</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>/reponses/statistiques/view_report.faces?conversationId=0NXMAIN</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>clickAndWait</td>
+				<td>link=MIN11. Taux de réponse du Gouvernement aux questions
+					écrites, depuis le début de la législature</td>
+				<td></td>
+			</tr>
+			<!--Test sur le nombre total de QE attribuées-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Assemblée
+					nationale')]/../../td[2]/div[contains(.,'29132')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Sénat')]/../../td[2]/div[contains(.,'6877')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[2]/div[contains(.,'36009')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le nombre de réponses publiées-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Assemblée
+					nationale')]/../../td[3]/div[contains(.,'13686')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Sénat')]/../../td[3]/div[contains(.,'3626')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[3]/div[contains(.,'17312')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le taux de réponses publiées-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Assemblée
+					nationale')]/../../td[4]/div[contains(.,'47%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Sénat')]/../../td[4]/div[contains(.,'53%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[4]/div[contains(.,'48%')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le taux de réponses publiées dans un délai inférieur à 30 jours-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Assemblée
+					nationale')]/../../td[5]/div[contains(.,'10%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Sénat')]/../../td[5]/div[contains(.,'9%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[5]/div[contains(.,'10%')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le taux de réponses publiées dans un délai compris entre 30 et 60 jours-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Assemblée
+					nationale')]/../../td[6]/div[contains(.,'21%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Sénat')]/../../td[6]/div[contains(.,'21%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[6]/div[contains(.,'21%')]</td>
+				<td></td>
+			</tr>
+			<!--Test sur le taux de réponses publiées dans un délai compris entre 30 et 60 jours-->
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Assemblée
+					nationale')]/../../td[7]/div[contains(.,'69%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Sénat')]/../../td[7]/div[contains(.,'70%')]</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>assertElementPresent</td>
+				<td>//div[contains(.,'Total')]/../../td[7]/div[contains(.,'69%')]</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
