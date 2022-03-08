@@ -20,7 +20,7 @@
 		<sonar.cobertura.reportsPath>${basedir}/target/site/cobertura/coverage.xml</sonar.cobertura.reportsPath>
 		<sonar.exclusions>fr/dila/st/core/query/ufnxql/parser/**/*.java,
 			fr/dila/st/test/**/*.java, fr/dila/st/webdriver/**/*.java</sonar.exclusions>
-		<poi.version>3.13</poi.version>
+		<poi.version>5.2.1</poi.version>
 		<nuxeo.cm.version>REP-3.5.2</nuxeo.cm.version>
 		<nuxeo.dr.version>REP-3.5.2</nuxeo.dr.version>
 		<nuxeo.ep.version>SW-1.0.6</nuxeo.ep.version>
