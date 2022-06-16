@@ -1,0 +1,83 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='page administration', title=#{suivi.title})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <h1 class="base-title base-title--lvl-1" th:text="#{suivi.title}">Requêtes</h1>
+
+        <div class="alert alert--info">
+            <div class="alerts--flex">
+                <span aria-hidden="true" class="icon icon--lightbulb bubble-icon alert__icon alert__icon--info"></span
+                ><span class="sr-only" th:text="#{suivi.information}">Information</span>
+                <p class="alert__content" th:text="#{label.smart.query.build.help}">
+                    Sélectionnez les critères de la requête et ajoutez-les à la requête finale
+                </p>
+            </div>
+        </div>
+
+        <h2 class="base-title base-title--lvl-2 m-t-6" th:text="#{label.requeteur.titre.boite}">
+            Paramétrer une requête
+        </h2>
+
+        <input type="hidden" id="requete-url-ajax" th:value="@{/ajax/suivi}" />
+
+        <th:block
+            th:replace="fragments/components/requete-experte/requete-experte :: requete-experte(${requeteExperteDTO})"
+        ></th:block>
+
+        <div class="flex-row-actions m-t-6">
+            <div class="flex-row-actions__left">
+                <button
+                    type="button"
+                    id="reinit-requete-button"
+                    class="base-btn base-btn--button base-btn--default base-btn--light base-btn--bordered"
+                    onclick="reinitRequete()"
+                    th:text="#{requete.experte.reinitialiser.label}"
+                >
+                    Réinitialiser
+                </button>
+            </div>
+            <div class="flex-row-actions__right">
+                <button
+                    type="button"
+                    onclick="saveRequete(this)"
+                    id="save-requete-button"
+                    class="base-btn base-btn--button base-btn--default base-btn--secondary base-btn--center"
+                    th:data-id="${id}"
+                    th:if="${id != null}"
+                    th:text="#{requete.experte.sauvegarder.label}"
+                    th:disabled="${#lists.isEmpty(requeteExperteDTO.requetes)}"
+                >
+                    Sauvegarder
+                </button>
+                <button
+                    type="button"
+                    onclick="saveRequeteAs()"
+                    id="save-as-requete-button"
+                    class="base-btn base-btn--button base-btn--default base-btn--secondary base-btn--center"
+                    th:text="#{requete.experte.sauvegarder.sous.label}"
+                    th:disabled="${#lists.isEmpty(requeteExperteDTO.requetes)}"
+                >
+                    Sauvegarder sous
+                </button>
+                <button
+                    type="button"
+                    onclick="launchRequete()"
+                    id="launch-requete-button"
+                    class="base-btn base-btn--submit base-btn--default"
+                    th:text="#{requete.experte.lancer.label}"
+                    th:disabled="${#lists.isEmpty(requeteExperteDTO.requetes)}"
+                >
+                    Lancer
+                </button>
+            </div>
+        </div>
+
+        <div class="page-reponses-search__results m-t-6" id="resultList">
+            <th:block th:replace="fragments/recherche/result-list :: resultList"></th:block>
+        </div>
+    </main>
+</html>

@@ -1,0 +1,9 @@
+{
+    "identifiant": "monIdentifiant",
+    "type": "DIR",
+    "libelle": "monLibelle",
+    "dateDebut": "01/01/2020",
+    "dateFin": "",
+    "ministeresRatachement": ["Ministere 1", "Ministere 2", "Ministere 3"],
+    "unitesStructurellesRattachement": ["Unité structurelle 1", "Unité structurelle 2", "Unité structurelle 3"]
+}

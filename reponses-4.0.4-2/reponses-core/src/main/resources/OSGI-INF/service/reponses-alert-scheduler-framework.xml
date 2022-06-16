@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service d'alerte de l'application Reponses -->
+<component name="fr.dila.reponses.core.service.ReponsesAlertService">
+	<require>fr.dila.st.core.service.STAlertService</require>
+	<implementation class="fr.dila.reponses.core.component.ReponsesAlertComponent" />
+
+	<service>
+		<provide interface="fr.dila.st.api.service.STAlertService" />
+		<provide interface="fr.dila.reponses.api.service.ReponsesAlertService" />
+	</service>
+</component>

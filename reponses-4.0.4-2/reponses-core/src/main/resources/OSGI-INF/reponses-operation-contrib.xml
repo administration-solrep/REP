@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<!-- Ce composant permet de contribuer les opérations de l'application Réponses. -->
+<component name="fr.dila.reponses.core.operation">
+
+	<extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent" point="operations">
+		<operation class="fr.dila.reponses.core.operation.distribution.CaseLinkCreatedOperation" />
+		<operation class="fr.dila.reponses.core.operation.distribution.FixSmartFolderACLOperation" />
+		<operation class="fr.dila.reponses.core.operation.distribution.RemoveCaseLinkOperation" />
+		<operation class="fr.dila.reponses.core.operation.distribution.UpdateDossierStateOperation" />
+		<operation class="fr.dila.reponses.core.operation.distribution.DossierDoneToRunningOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.ReparerDossierOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.ExtraireQuestionsOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.DenormalisationDirectionOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.DenormalisationEtapeSuivanteOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.DenormalisationDatesQuestionOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.ReparerHistoriqueAttributionOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.ReparerUserWorkspaceOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.VerifierDossierOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.DenormalisationMinistereIdOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.EliminerDossiersOperation" />
+	    <operation class="fr.dila.reponses.core.operation.nxshell.CloturerDossiersLegislatureOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.VerserDossiersPourEliminationOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.FEV541HomologationSha512Operation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.ReponsesCreateParametresOperation" />
+		<operation class="fr.dila.reponses.core.operation.nxshell.Reponses402CreateParametresOperation" />
+        <operation class="fr.dila.reponses.core.operation.nxshell.QuestionsRappeleesCreationOperation" />
+        <operation class="fr.dila.reponses.core.operation.nxshell.ModifierParametreTechniqueOperation" />
+        <operation class="fr.dila.reponses.core.operation.distribution.RemoveGhostFDRs" />
+        <operation class="fr.dila.reponses.core.operation.nxshell.UpdateMailNotificationCreationOperation" />
+	</extension>
+
+</component>

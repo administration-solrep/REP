@@ -1,0 +1,41 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout :: layout (template=~{::main},templateClass='', description='page administration', title=${titre} + ' | ' + ${sousTitre} + ' - ' + ${listeNbDossiers})}"
+>
+    <main
+        role="main"
+        id="main_content"
+        class="page-layout__content"
+        th:with="listeTitle=${#messages.msgOrNull(titre) == null ? titre : #messages.msg(titre)},
+    			 listeSubtitle=${#messages.msgOrNull(sousTitre) == null ? sousTitre : #messages.msg(sousTitre)},
+    			 listeNbDossiers=#{label.dossier.nombre(${nbDossier})},
+    			 tableCaption=${listeTitle}+' | '+${listeSubtitle}+' - '+${listeNbDossiers}"
+    >
+        <div class="page-reponses__table">
+            <div class="page-reponses__table-heading">
+                <h2
+                    class="page-reponses__table-heading__base-title base-title base-title--lvl-2"
+                    th:remove="${titre==null}?all"
+                >
+                    [[ ${listeTitle} ]] |
+                    <span class="page-reponses__subtitle base-subtitle" th:remove="${sousTitre==null}?all">
+                        [[ ${listeSubtitle} ]]
+                    </span>
+                    <span class="base-paragraph page-reponses__folders-number"> - [[${listeNbDossiers}]] </span>
+                </h2>
+            </div>
+            <input type="hidden" th:value="${idFavori}" id="idFavori" />
+            <input
+                th:unless="${urlPreviousPage ==null}"
+                type="hidden"
+                id="urlPreviousPage"
+                name="urlPreviousPage"
+                th:value="@{|${urlPreviousPage}#main_content|}"
+            />
+            <div th:replace="fragments/table/tableDossiers :: searchResults"></div>
+        </div>
+    </main>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='Consultation liste élimination de données', title=${titre})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <div class="row-actions">
+            <div class="row-actions__left">
+                <button
+                    type="button"
+                    class="base-btn base-btn--button base-btn--default base-btn--light base-btn--bordered"
+                    onclick="goPreviousPage()"
+                    th:text="#{button.label.back}"
+                >
+                    Retour
+                </button>
+            </div>
+            <div class="row-actions__right">
+                <th:block th:each="action : ${mainActions}">
+                    <button
+                        th:replace="fragments/components/label-action-button :: label-action-button(${action}, ${not #strings.isEmpty(action.properties.specificClass) && #strings.contains(action.properties.specificClass,'action-table-selection')}, ${action.type == 'secondary'?'base-btn--center base-btn--secondary':'base-btn--center'})"
+                    ></button>
+                </th:block>
+            </div>
+        </div>
+
+        <h1 class="m-t-6 m-b-6 base-title base-title--lvl-1 base-title--is-underlined" th:text="${titre}"></h1>
+
+        <input type="hidden" id="urlPreviousPage" name="urlPreviousPage" th:value="@{${urlPreviousPage}}" />
+        <input type="hidden" id="id" name="id" th:value="${idListe}" />
+
+        <div th:replace="fragments/table/tableEliminationDonneesConsultation :: searchResults"></div>
+
+        <div class="row-actions">
+            <div class="row-actions__left">
+                <button
+                    type="button"
+                    class="base-btn base-btn--button base-btn--default base-btn--light base-btn--bordered"
+                    onclick="goPreviousPage()"
+                    th:text="#{button.label.back}"
+                >
+                    Retour
+                </button>
+            </div>
+            <div class="row-actions__right">
+                <th:block th:each="action : ${mainActions}">
+                    <button
+                        th:replace="fragments/components/label-action-button :: label-action-button(${action}, ${not #strings.isEmpty(action.properties.specificClass) && #strings.contains(action.properties.specificClass,'action-table-selection')}, ${action.type == 'secondary'?'base-btn--center base-btn--secondary':'base-btn--center'})"
+                    ></button>
+                </th:block>
+            </div>
+        </div>
+    </main>
+</html>

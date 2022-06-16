@@ -1,0 +1,1788 @@
+<?xml version="1.0" ?>
+<!-- Cet composant contribue les fabriques pour créer les types de documents 
+	de l'application Réponses. -->
+<component name="fr.dila.reponses.contentTemplateService">
+	<require>fr.dila.cm.contentTemplate</require>
+	<require>fr.dila.st.core.type</require>
+	<require>fr.dila.reponses.core.type.search</require>
+
+	<extension target="org.nuxeo.ecm.platform.content.template.service.ContentTemplateService" point="factoryBinding">
+
+		<!-- Racine des espaces de travail collaboratifs -->
+		<factoryBinding name="DomainFactory" factoryName="SimpleTemplateFactory" targetType="Domain">
+			<template>
+				<templateItem typeName="CaseRoot" id="case-root" title="Case" />
+				<templateItem typeName="MailboxRoot" id="mailbox-root" title="Mailbox" />
+				<templateItem typeName="WorkspaceRoot" id="workspaces" title="Workspaces" />
+				<templateItem
+                    typeName="DocumentRouteInstancesRoot"
+                    id="document-route-instances-root"
+                    title="DocumentRouteInstancesRoot"
+                />
+				<templateItem typeName="AllotissementsRoot" id="allotissements-root" title="Allotissements" />
+				<templateItem typeName="ListeEliminationRoot" id="listes-elimination-root" title="Listes d'élimination" />
+				<templateItem
+                    typeName="InfoUtilisateurConnectionRoot"
+                    id="info-utilisateur-connection"
+                    title="InfoUtilisateurConnectionRoot"
+                />
+				<templateItem typeName="WsNotificationRoot" id="ws-notification-root" title="Liste des notifications en attente" />
+				<templateItem typeName="ReponsesLoggingRoot" id="logs-root" title="Liste des logs" />
+				<templateItem typeName="TrashRoot" id="trash-root" title="Liste documents en attente de suppression" />
+				<templateItem typeName="ActualiteRoot" id="actualite-root" title="Liste des actualites">
+					<acl>
+						<ace principal="Administrateur fonctionnel" permission="ReadWrite" granted="true" />
+                        <ace principal="Everyone" permission="Read" granted="true" />
+					</acl>
+				</templateItem>
+			</template>
+		</factoryBinding>
+
+		<!-- Racine des Mailbox -->
+		<factoryBinding name="MailboxRootFactory" factoryName="SimpleTemplateFactory" targetType="MailboxRoot">
+		</factoryBinding>
+
+		<!-- Racine des espaces collaboratifs -->
+		<factoryBinding name="WorkspaceRootFactory" factoryName="SimpleTemplateFactory" targetType="WorkspaceRoot">
+			<template>
+				<templateItem typeName="AdminWorkspace" id="admin" title="Administration" />
+			</template>
+		</factoryBinding>
+
+		<!-- Espace d'administration -->
+		<factoryBinding name="AdminWorkspaceFactory" factoryName="SimpleTemplateFactory" targetType="AdminWorkspace">
+			<template>
+				<templateItem typeName="FeuilleRouteModelFolder" id="modele-route" title="Modèles de feuilles de route" />
+				<templateItem typeName="JetonMaitreFolder" id="jeton-maitre-list" title="Liste des jetons maitres" />
+				<templateItem typeName="JetonDocFolder" id="jeton-doc-list" title="Liste des jetons de documents" />
+				<templateItem typeName="ParametreFolder" id="parametre" title="Paramètres de l'application" />
+				<templateItem
+                    typeName="BibliothequeRequetesRoot"
+                    id="biblio-requetes-root"
+                    title="Bibliothêque de requêtes générales"
+                />
+				<templateItem typeName="EtatApplication" id="etat-application" title="Etat application">
+					<properties>
+						<property xpath="etat_application:restriction_acces" value="false" />
+					</properties>
+				</templateItem>
+				<templateItem
+                    typeName="NotificationsSuiviBatchs"
+                    id="notifications-suivi-batchs"
+                    title="Notifications du suivi des Batchs"
+                >
+					<properties>
+						<property xpath="notifications_suivi_batchs:etat_notification" value="true" />
+					</properties>
+				</templateItem>
+				<templateItem typeName="LockJetonMaitreFolder" id="lock-jeton-maitre-list" title="Liste des locks de jetons maitres" />
+			</template>
+			<acl>
+				<ace principal="Everyone" permission="ReadWrite" granted="true" />
+			</acl>
+		</factoryBinding>
+
+		<!-- Espace personnel -->
+		<factoryBinding name="WorkspaceFactory" factoryName="SimpleTemplateFactory" targetType="Workspace">
+			<template>
+				<templateItem typeName="FavorisDossierRoot" id="favoris-dossier" title="Favoris de dossier" />
+				<templateItem typeName="RequeteRoot" id="mesrequetes" title="Mes requêtes" />
+				<templateItem typeName="DelegationRoot" id="delegation" title="Délégations" />
+				<templateItem typeName="FavorisIndexationRoot" id="favoris-indexation" title="Favoris d'indexation" />
+				<templateItem typeName="ExportStatRoot" id="export-stat-root" title="Export statistiques" />
+			</template>
+		</factoryBinding>
+
+		<!-- Droit du document EtatApplication -->
+		<factoryBinding name="EtatApplicationFactory" factoryName="SimpleTemplateFactory" targetType="EtatApplication">
+			<acl>
+				<ace principal="AdminAccessUnrestricted" permission="ReadWrite" granted="true" />
+				<ace principal="Everyone" permission="Read" granted="true" />
+				<ace principal="Everyone" permission="Everything" granted="false" />
+			</acl>
+		</factoryBinding>
+
+		<!-- Droit du document NotificationsSuiviBatchs -->
+		<factoryBinding
+            name="NotificationsSuiviBatchsFactory"
+            factoryName="SimpleTemplateFactory"
+            targetType="NotificationsSuiviBatchs"
+        >
+			<acl>
+				<ace principal="Everyone" permission="Everything" granted="true" />
+			</acl>
+		</factoryBinding>
+
+		<!-- Racine des requêtes de la bibliothèque standard -->
+		<factoryBinding
+            name="BibliothequeRequetesRootFactory"
+            factoryName="SimpleTemplateFactory"
+            targetType="BibliothequeRequetesRoot"
+        >
+			<template>
+				<templateItem typeName="SmartFolder" id="historique" title="Historique des validations">
+					<properties>
+						<property xpath="sf:queryPart" value="" />
+						<property xpath="sf:pos" value="1" />
+						<property xpath="dc:description" value="Historique des validations" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem
+                    typeName="SmartFolder"
+                    id="r2-questions-etape-redaction-15joursapres-date-publication"
+                    title="Liste des questions pas encore à l'étape de rédaction 15 jours après publication"
+                >
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="d.dos:etapeRedactionAtteinte = 0 AND q.qu:datePublicationJO &lt; ufnxql_date:(NOW-15J) AND q.qu:typeQuestion = 'QE' AND ufnxql_ministere:(d.dos:ministereAttributaireCourant) AND q.qu:etatQuestion != 'repondu' AND q.qu:etatQuestion != 'cloture_autre' AND q.qu:etatQuestion != 'retiree' AND q.qu:etatQuestion != 'caduque'"
+                        />
+						<property xpath="sf:pos" value="2" />
+						<property
+                            xpath="dc:description"
+                            value="Suivi par étape, à échéance identification des questions qui 15 jours après leur publication n’ont pas atteint l’étape de rédaction"
+                        />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem
+                    typeName="SmartFolder"
+                    id="r3-questions-etape-redaction-30joursapres-date-publication"
+                    title="Liste des questions pas encore à l'étape de rédaction 30 jours après publication"
+                >
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="d.dos:etapeRedactionAtteinte = 0 AND q.qu:datePublicationJO &lt; ufnxql_date:(NOW-30J) AND q.qu:typeQuestion = 'QE' AND ufnxql_ministere:(d.dos:ministereAttributaireCourant) AND q.qu:etatQuestion != 'repondu' AND q.qu:etatQuestion != 'cloture_autre' AND q.qu:etatQuestion != 'retiree' AND q.qu:etatQuestion != 'caduque'"
+                        />
+						<property xpath="sf:pos" value="3" />
+						<property
+                            xpath="dc:description"
+                            value="Suivi par étape, à échéance identification des questions qui 30 jours après leur publication n’ont pas atteint l’étape de rédaction"
+                        />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem
+                    typeName="SmartFolder"
+                    id="r4-questions-etape-signature-25joursapres-date-publication"
+                    title="Liste des questions pas encore à l'étape de signature 25 jours après publication"
+                >
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="d.dos:etapeSignatureAtteinte = 0 AND q.qu:datePublicationJO &lt; ufnxql_date:(NOW-25J) AND q.qu:typeQuestion = 'QE' AND ufnxql_ministere:(d.dos:ministereAttributaireCourant) AND q.qu:etatQuestion != 'repondu' AND q.qu:etatQuestion != 'cloture_autre' AND q.qu:etatQuestion != 'retiree' AND q.qu:etatQuestion != 'caduque'"
+                        />
+						<property xpath="sf:pos" value="4" />
+						<property
+                            xpath="dc:description"
+                            value="Suivi par étape, à échéance identification des questions qui 25 jours après leur publication n’ont pas atteint l’étape de signature"
+                        />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem
+                    typeName="SmartFolder"
+                    id="r5-questions-etape-signature-45joursapres-date-publication"
+                    title="Liste des questions pas encore à l'étape de signature 45 jours après publication"
+                >
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="d.dos:etapeSignatureAtteinte = 0 AND q.qu:datePublicationJO &lt; ufnxql_date:(NOW-45J) AND q.qu:typeQuestion = 'QE' AND ufnxql_ministere:(d.dos:ministereAttributaireCourant) AND q.qu:etatQuestion != 'repondu' AND q.qu:etatQuestion != 'cloture_autre' AND q.qu:etatQuestion != 'retiree' AND q.qu:etatQuestion != 'caduque'"
+                        />
+						<property xpath="sf:pos" value="5" />
+						<property
+                            xpath="dc:description"
+                            value="Suivi par étape, à échéance identification des questions qui 45 jours après leur publication n’ont pas atteint l’étape de signature"
+                        />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem
+                    typeName="SmartFolder"
+                    id="r6-questions-deposees-moins-un-moi-plus-de-deux-reaffectations"
+                    title="Liste des questions publiées depuis moins d'un mois et ayant fait l'objet de plus de 2 changements d'affectation"
+                >
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="d.dos:reaffectationCount &gt; 2 AND q.qu:datePublicationJO &gt; ufnxql_date:(NOW-1M) AND q.qu:typeQuestion = 'QE' AND ufnxql_ministere:(d.dos:ministereAttributaireCourant) AND q.qu:etatQuestion != 'repondu' AND q.qu:etatQuestion != 'cloture_autre' AND q.qu:etatQuestion != 'retiree' AND q.qu:etatQuestion != 'caduque'"
+                        />
+						<property xpath="sf:pos" value="6" />
+						<property
+                            xpath="dc:description"
+                            value="Liste des questions déposées depuis moins d’un mois et ayant fait l’objet de plus de deux changements d’affectations ministérielles"
+                        />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem typeName="SmartFolder" id="r7-reponses-etape-arbitrage-sgg" title="Liste des demandes d’arbitrages">
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="etape.rtsk:type = '12' AND q.qu:typeQuestion = 'QE' AND ufnxql_ministere:(d.dos:ministereAttributaireCourant) AND q.qu:etatQuestion != 'repondu' AND q.qu:etatQuestion != 'cloture_autre' AND q.qu:etatQuestion != 'retiree' AND q.qu:etatQuestion != 'caduque'"
+                        />
+						<property xpath="sf:pos" value="7" />
+						<property
+                            xpath="dc:description"
+                            value="Liste des demandes d’arbitrages soumises au SGG pour la réattribution de questions"
+                        />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem
+                    typeName="SmartFolder"
+                    id="r11-questions-sans-reponse-plus-un-mois"
+                    title="Liste des questions sans réponse depuis plus d'un mois"
+                >
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="q.qu:datePublicationJO &lt; ufnxql_date:(NOW-1M) AND q.qu:typeQuestion = 'QE' AND ufnxql_ministere:(d.dos:ministereAttributaireCourant) AND q.qu:etatQuestion != 'repondu' AND q.qu:etatQuestion != 'cloture_autre' AND q.qu:etatQuestion != 'retiree' AND q.qu:etatQuestion != 'caduque'"
+                        />
+						<property xpath="sf:pos" value="11" />
+						<property xpath="dc:description" value="Liste des questions qui sont sans réponse publiées depuis plus d'un mois" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem
+                    typeName="SmartFolder"
+                    id="r12-questions-signalées-sans-reponse"
+                    title="Liste des questions signalées n'ayant pas encore obtenu de réponse"
+                >
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="q.qu:etatSignale = 1 AND q.qu:etatQuestion != 'cloture_autre' AND q.qu:etatQuestion != 'repondu' AND q.qu:etatQuestion != 'retiree' AND q.qu:etatQuestion != 'caduque' AND q.qu:typeQuestion = 'QE' AND ufnxql_ministere:(d.dos:ministereAttributaireCourant) AND q.qu:legislatureQuestion = :legislatureCourante"
+                        />
+						<property xpath="sf:pos" value="12" />
+						<property xpath="dc:description" value="Liste des questions signalées n'ayant pas encore obtenu de réponse" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem
+                    typeName="SmartFolder"
+                    id="r15-questions-etape-validation-pm"
+                    title="Liste des questions transmises à la validation du Premier Ministre"
+                >
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="etape.rtsk:type IN ('7') AND q.qu:typeQuestion = 'QE' AND q.qu:etatQuestion != 'cloture_autre' AND q.qu:etatQuestion != 'retiree' AND q.qu:etatQuestion != 'caduque' AND q.qu:etatQuestion != 'repondu' AND ufnxql_ministere:(d.dos:ministereAttributaireCourant)"
+                        />
+						<property xpath="sf:pos" value="15" />
+						<property xpath="dc:description" value="Liste des questions transmises à la validation du Premier Ministre" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="Everyone" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem typeName="SmartFolder" id="r16-questions-signalees" title="Liste des questions signalées">
+					<properties>
+						<property xpath="sf:queryPart" value="q.qu:etatSignale = 1 AND ufnxql_ministere:(d.dos:ministereAttributaireCourant)" />
+						<property xpath="sf:pos" value="16" />
+						<property xpath="dc:description" value="Liste des questions signalées" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="BdcRequetesPreparamReader" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem typeName="SmartFolder" id="r17-questions-renouvelees" title="Liste des questions renouvelées">
+					<properties>
+						<property
+                            xpath="sf:queryPart"
+                            value="q.qu:etatRenouvele = 1 AND ufnxql_ministere:(d.dos:ministereAttributaireCourant)"
+                        />
+						<property xpath="sf:pos" value="17" />
+						<property xpath="dc:description" value="Liste des questions renouvelées" />
+						<property xpath="dc:creator" value="system" />
+					</properties>
+					<acl>
+						<ace principal="BdcRequetesPreparamReader" permission="Read" granted="true" />
+						<ace principal="Everyone" permission="Everything" granted="false" />
+					</acl>
+				</templateItem>
+				<templateItem typeName="SmartFolder" id="r18-questions-rappelees" title="Liste des questions rappelées">
+                    <properties>
+                        <property
+                            xpath="sf:queryPart"
+                            value=" q.qu:etatRappele = 1 AND ufnxql_ministere:(d.dos:ministereAttributaireCourant)"
+                        />
+                        <property xpath="sf:pos" value="18" />
+                        <property xpath="dc:description" value="Liste des questions rappelées" />
+                        <property xpath="dc:creator" value="system" />
+                    </properties>
+                    <acl>
+                        <ace principal="BdcRequetesPreparamReader" permission="Read" granted="true" />
+                        <ace principal="Everyone" permission="Everything" granted="false" />
+                    </acl>
+                </templateItem>
+			</template>
+			<acl>
+				<ace principal="Everyone" permission="ReadWrite" granted="true" />
+			</acl>
+		</factoryBinding>
+
+		<!-- Racine des listes d'élimination -->
+		<factoryBinding name="ListesEliminationFactory" factoryName="SimpleTemplateFactory" targetType="ListeEliminationRoot">
+			<acl>
+				<ace principal="Everyone" permission="Everything" granted="true" />
+			</acl>
+		</factoryBinding>
+
+		<!-- Racine des informations de connexion des utilisateurs -->
+		<factoryBinding
+            name="InfoUtilisateurConnectionRootFactory"
+            factoryName="SimpleTemplateFactory"
+            targetType="InfoUtilisateurConnectionRoot"
+        >
+			<acl>
+				<ace principal="Everyone" permission="Everything" granted="true" />
+			</acl>
+		</factoryBinding>
+
+		<!-- Racine des Allotissements -->
+		<factoryBinding name="AllotissementsFactory" factoryName="SimpleTemplateFactory" targetType="AllotissementsRoot">
+			<acl>
+				<ace principal="Everyone" permission="Everything" granted="true" />
+			</acl>
+		</factoryBinding>
+
+		<!-- Racine des logs -->
+		<factoryBinding name="ReponsesLoggingFactory" factoryName="SimpleTemplateFactory" targetType="ReponsesLoggingRoot">
+			<acl>
+				<ace principal="Everyone" permission="Everything" granted="true" />
+			</acl>
+		</factoryBinding>
+
+		<!-- Espace d'administration / Parametre -->
+		<factoryBinding name="ParametreFactory" factoryName="SimpleTemplateFactory" targetType="ParametreFolder">
+			<template>
+				<!-- param 1 -->
+				<templateItem typeName="Parametre" id="delai-desactivation-utilisateur" title="Délai désactivation utilisateur">
+					<properties>
+						<property xpath="parametre:value" value="6" />
+						<property xpath="parametre:unit" value="Mois" />
+						<property
+                            xpath="dc:description"
+                            value="Les utilisateurs passés un délai sans connexion sont supprimés de l’application."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 2.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="delai-avertissement-utilisateur-inactif"
+                    title="Délai avertissement utilisateur inactif"
+                >
+					<properties>
+						<property xpath="parametre:value" value="2" />
+						<property xpath="parametre:unit" value="Mois" />
+						<property
+                            xpath="dc:description"
+                            value="En cas de non connexion d’un utilisateur durant plus d’un délai signalée par l’application qui vérifie le compte de l’utilisateur pour une éventuelle mise à jour en termes de gestion des droits d’accès et de l’organigramme. La liste des utilisateurs concernés est adressée à l’administrateur."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 2.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mail-notification-delai-avertissement-utilisateur-inactif"
+                    title="Objet mél Délai avertissement utilisateur inactif"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Utilisateurs inactifs" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée à l'administrateur lorsqu'au moins un utilisateur dépasse le délai de non connexion défini dans les paramètres."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 2.3 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="text-mail-notification-delai-avertissement-utilisateur-inactif"
+                    title="Texte du mél Délai avertissement utilisateur inactif"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Les utilisateurs suivants ne sont pas connectés depuis le délai d'avertissement des utilisateurs inactifs défini dans les paramètres. "
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél adressée à l'administrateur lorsqu'au moins un utilisateur dépasse le délai de non connexion défini dans les paramètres."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 3 -->
+				<templateItem typeName="Parametre" id="delai-traitement-question" title="Délai traitement question">
+					<properties>
+						<property xpath="parametre:value" value="1" />
+						<property xpath="parametre:unit" value="Mois" />
+						<property
+                            xpath="dc:description"
+                            value="Délai de traitement d’une question (à partir de la date de publication). Ce paramètre est mis en œuvre dans le calcul de l’échéance prévisionnelle pour le traitement du dossier."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 4 -->
+				<templateItem typeName="Parametre" id="delai-conservation-favoris" title="Délai conservation favoris">
+					<properties>
+						<property xpath="parametre:value" value="7" />
+						<property xpath="parametre:unit" value="Jours" />
+						<property xpath="dc:description" value="Délai de conservation des éléments présents dans les favoris." />
+					</properties>
+				</templateItem>
+
+				<!-- param 5 -->
+				<templateItem typeName="Parametre" id="delai-conservation-donnees" title="Délai conservation données">
+					<properties>
+						<property xpath="parametre:value" value="63" />
+						<property xpath="parametre:unit" value="Mois" />
+						<property
+                            xpath="dc:description"
+                            value="Délai de conservation des données dans l’application (la durée d’utilité administrative ou DUA est fixée à 5 ans et 3 mois par défaut)."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 6 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="delai-max-publication-ancien-timbre"
+                    title="Délai publication maximum sous l'ancien timbre"
+                >
+					<properties>
+						<property xpath="parametre:value" value="30" />
+						<property xpath="parametre:unit" value="Jours" />
+						<property
+                            xpath="dc:description"
+                            value="Un délai maximal de publication mis en œuvre dans les activités de la feuille de route dédiées au SGG, pour les questions signées par les ministères avant le changement / remaniement de Gouvernement et qui doivent être publiées sous leur ancien timbre. Il précise la durée au bout de laquelle les dossiers ne peuvent plus être publiés"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 7 -->
+				<templateItem typeName="Parametre" id="url-application-transmise-par-mel" title="Url application transmise par mél">
+					<properties>
+						<property xpath="parametre:value" value="http://i-solrep-apache-01/reponses" />
+						<property xpath="parametre:unit" value="url" />
+						<property
+                            xpath="dc:description"
+                            value="Adresse URL de l’application transmise systématiquement aux utilisateurs lors des notifications par mél."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 8.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-creation-utilisateur"
+                    title="Objet mél notification création utilisateur"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Création de votre compte pour l'application Réponses" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél suite à la création d’un utilisateur."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 8.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-creation-utilisateur"
+                    title="Texte du mél notification création utilisateur"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Bienvenue dans l'application Réponses" />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél suite à la création d’un utilisateur."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 9.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-creation-tache"
+                    title="Objet mél notification création tâche"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Création d'une tâche" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux membres du poste à chaque création d’une tâche."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 9.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-creation-tache"
+                    title="Texte du mél notification création tâche"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Vous avez un dossier de question à consulter." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél adressée aux membres du poste à chaque création d’une tâche."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 11.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-expiration-tache"
+                    title="Objet mél notification expiration tâche"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Expiration d'une tâche" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux membres du poste à expiration d’une tâche (dépassement de délai dans le traitement d’une tâche)."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 11.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-expiration-tache"
+                    title="Texte du mél notification expiration tâche"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Une tâche vient d'expirer dans votre corbeille. Question : ${numero_question}"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél adressée aux membres du poste à expiration d’une tâche (dépassement de délai dans le traitement d’une tâche)."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param Objet mél notification dossiers en attente d'élimination -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-attente-elimination"
+                    title="Objet mél notification dossiers en attente d'élimination"
+                >
+					<properties>
+						<property xpath="parametre:value" value="[Réponses] Dossiers en attente d'élimination" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél des dossiers en attente d'élimination."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param Texte mél notification dossiers en attente d'élimination -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-attente-elimination"
+                    title="Texte mél notification dossiers en attente d'élimination"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="${nombreDossiers} dossiers sont en attente d'élimination (fin de DUA atteinte, ${dureeDUA} mois)"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél des dossiers en attente d'élimination. Les chaines de caractères ${nombreDossiers} et ${dureeDUA} peuvent être utilisées pour indiquer respectivement le nombre de dossiers en attente et la DUA actuellement configurée."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 12.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-affectation-tache-flux-xml"
+                    title="Objet mél notification affectation tache flux xml"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Affectation d'un tache via les flux xml de modification de la question" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux membres du poste lors de l'affectation via les flux xml de modification"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 12.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-affectation-tache-flux-xml"
+                    title="Texte du mél notification affectation tache flux xml"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Une tâche vient de vous être affectée via les fluxs xml de modification de la question."
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél adressée aux membres du poste lors de l'affectation via les flux xml de modification."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 13.1 -->
+				<templateItem typeName="Parametre" id="objet-mel-dossier" title="Objet mél envoi dossier">
+					<properties>
+						<property xpath="parametre:value" value="Envoi dossier(s)" />
+						<property xpath="parametre:unit" value="objet" />
+						<property xpath="dc:description" value="« Objet » (par défaut) de l'envoi d'un dossier par mél" />
+					</properties>
+				</templateItem>
+
+				<!-- param 13.2 -->
+				<templateItem typeName="Parametre" id="texte-mel-dossier" title="Texte du mél envoi dossier">
+					<properties>
+						<property xpath="parametre:value" value="Un ou des dossier(s) vous ont étés envoyés." />
+						<property xpath="parametre:unit" value="texte" />
+						<property xpath="dc:description" value="« Texte du message » (par défaut) de l'envoi d'un dossier par mél" />
+					</properties>
+				</templateItem>
+
+				<!-- param 14.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-desaffectation-suite-reattribution"
+                    title="Objet mél notification désaffectation question suite réattribution"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Désaffectation d'un tache via une réattribution" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux membres du poste lors de la désaffectation d'une tâche via une réattribution"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 14.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-desaffectation-suite-reattribution"
+                    title="Texte mél notification désaffectation question suite réattribution"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Une tâche vient de vous être retirée suite à sa réattribution." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél adressée aux membres du poste lors de la désaffectation d'une tâche via une réattribution."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 15.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-affectation-suite-reattribution"
+                    title="Objet mél notification affectation question suite réattribution"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Affectation d'une tache via une réattribution" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux membres du poste lors de l'affectation d'une tâche via une réattribution."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 15.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-affectation-suite-reattribution"
+                    title="Texte mél notification affectation question suite réattribution"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Une tâche vient de vous être affectée suite à sa réattribution." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél adressée aux membres du poste lors de l'affectation d'une tâche via une réattribution."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 16.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-sgg-info-delai-max-atteint"
+                    title="Objet mél notification sgg tâche délai max atteint"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Delai Maximum de la tache atteint !" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux acteurs des servces du premier ministres pour lesinformer d'un délai maximal de publication."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 16.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-sgg-info-delai-max-atteint"
+                    title="Texte mél notification sgg tâche délai max atteint"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Le délai maximum prévu pour la tâche en cours est atteint !" />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification par mél adressée aux acteurs des services du premier ministre pour les informer d'un délai maximal de publication."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 17 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="delai-reponse-question-signalee"
+                    title="Délai de réponse à une question signalée"
+                >
+					<properties>
+						<property xpath="parametre:value" value="30" />
+						<property xpath="parametre:unit" value="Jours" />
+						<property xpath="dc:description" value="Délai de réponse à une question signalée" />
+					</properties>
+				</templateItem>
+
+				<!-- param 18 : temps à partir duquel on déverrouille le dossier : par 
+					défaut, quand le batch tourne, on déverrouille tous les dossiers -->
+				<templateItem typeName="Parametre" id="delai-verrou-supprime" title="Délai verrou supprimé">
+					<properties>
+						<property xpath="parametre:value" value="0" />
+						<property xpath="parametre:unit" value="Heure" />
+						<property xpath="dc:description" value="Délai au delà duquel le verrou est supprimé" />
+					</properties>
+				</templateItem>
+
+				<!-- param 19 -->
+				<templateItem typeName="Parametre" id="date-depart-statistique" title="Date départ statistique">
+					<properties>
+						<property xpath="parametre:value" value="10/10/2010" />
+						<property xpath="parametre:unit" value="date" />
+						<property xpath="dc:description" value="Date de départ pour la prise en compte des statistiques" />
+					</properties>
+				</templateItem>
+
+				<!-- param 20 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="poid-limite-piece-jointe-mail"
+                    title="Poids limite de la somme des pièces jointes dans un mél"
+                >
+					<properties>
+						<property xpath="parametre:value" value="3" />
+						<property xpath="parametre:unit" value="Mo" />
+						<property xpath="dc:description" value="Poids limite de la somme des pièces jointes dans un mél." />
+					</properties>
+				</templateItem>
+
+				<!-- param 21 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="adresse-mail-administrateur-application"
+                    title="Adresse mél de l'administrateur de l'application SGG"
+                >
+					<properties>
+						<property xpath="parametre:value" value="admin@dila.fr" />
+						<property xpath="parametre:unit" value="adresse mèl" />
+						<property xpath="dc:description" value="Adresse mél de l'administrateur de l'application SGG." />
+					</properties>
+				</templateItem>
+
+				<!-- param 22.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-dessais-question-suite-caducité"
+                    title="Objet mél notification dessaisie question suite à caducité"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Dessaisi tâche en cours suite caducité question" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux acteurs des tâches précédemment en cours pour les informer qu'ils sont dessaisis d'une question suite à sa caducité."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 22.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-dessais-question-suite-caducité"
+                    title="Texte mél notification dessaisie question suite à caducité"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Vous avez été dessaisi de la tâche en cours suite à la caducité de la question"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification par mél de la notification par mél adressée aux acteurs des tâches précédemment en cours pour les informer qu'ils sont dessaisis d'une question suite à sa caducité."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 23.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-dessais-question-suite-retrait"
+                    title="Objet mél notification dessaisie question suite à retrait"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Dessaisi tâche en cours suite retrait question" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux acteurs des tâches précédemment en cours pour les informer qu'ils sont dessaisis d'une question suite à son retrait."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 23.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-dessais-question-suite-retrait"
+                    title="Texte mél notification dessaisie question suite à retrait"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Vous avez été dessaisi de la tâche en cours suite à la retrait de la question"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification par mél adressée aux acteurs des tâches précédemment en cours pour les informer qu'ils sont dessaisis d'une question suite à son retrait."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 24 -->
+				<templateItem typeName="Parametre" id="encart-stat-page-accueil" title="Encart statistique page accueil">
+					<properties>
+						<property xpath="parametre:value" value="Statistiques" />
+						<property xpath="parametre:unit" value="texte" />
+						<property xpath="dc:description" value="Libellé de l'encart statistique apparaissant sur la page d'accueil" />
+					</properties>
+				</templateItem>
+
+				<!-- param 25 -->
+				<templateItem typeName="Parametre" id="delai-conservation-info-journal" title="Délai de conservation du journal">
+					<properties>
+						<property xpath="parametre:value" value="6" />
+						<property xpath="parametre:unit" value="Mois" />
+						<property
+                            xpath="dc:description"
+                            value="Délai de conservation des informations du Journal (journalisation des actions réalisées par les utilisateurs)"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 26.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-validation-feuille-route"
+                    title="Objet mél notification validation feuille de route"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Nouvelle feuille de route à valider" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée à l'administrateur fonctionnel pour validation des modèles de feuille de route."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 26.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-validation-feuille-route"
+                    title="Texte mél notification validation feuille de route"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Une nouvelle feuille de route est disponible et attends votre validation." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification par mél adressée à l'administrateur fonctionnel pour validation des modèles de feuille de route."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 27.1 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-erratum-question"
+                    title="Objet mél notification erratum de question"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Nouvel erratum de question" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée à l'administrateur fonctionnel pour erratum de question."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 27.2 -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-erratum-question"
+                    title="Texte mél notification erratum de question"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Un nouvel erratum de question vous a été affecté. Question : ${numero_question}."
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification adressée par mél à l'administrateur fonctionnel pour erratum de question."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 28.1 -->
+				<templateItem typeName="Parametre" id="objet-mel-notification-delegation" title="Objet mél notification de délégation">
+					<properties>
+						<property xpath="parametre:value" value="Nouvelle délégation de droits" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée à l'utilisateur destinataire d'une délégation."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 28.2 -->
+				<templateItem typeName="Parametre" id="texte-mel-notification-delegation" title="Texte mél notification de délégation">
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Vous avez reçu une nouvelle délégation de droits. Utilisateur origine : ${origine}. Postes : ${poste}. Profils : ${profil}. Date de début. : ${date_debut}. Date de fin : ${date_fin}"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification adressée par mél à l'utilisateur destinataire d'une délégation. Les balises suivantes peuvent êtres utilisées : ${origine} : Utilisateur origine, ${profil} : profil, ${poste} : postes, ${date_debut} : date de début, ${date_fin} : date de fin de la délégation."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 29 -->
+				<templateItem typeName="Parametre" id="page-renseignements" title="Page de renseignements">
+					<properties>
+						<property xpath="parametre:value" value="http://test.com/renseignement/renseignement.html" />
+						<property xpath="parametre:unit" value="page" />
+						<property
+                            xpath="dc:description"
+                            value="Page affichée par le lien « Pour tout renseignement sur les conditions d'accès à l'outil » de la page d'accueil"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 30.1 -->
+				<templateItem typeName="Parametre" id="objet-mel-alerte-controle-publi" title="Objet mél alerte contrôle publication">
+					<properties>
+						<property xpath="parametre:value" value="Alerte contrôle publication" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de l'alerte envoyé par mél à l'administrateur fonctionnel lorsque le ministère et/ou le texte de la réponse ne correspondent pas lors de l'appel au controle publication."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 30.2 -->
+				<templateItem typeName="Parametre" id="texte-mel-alerte-controle-publi" title="Texte mél alerte contrôle publication">
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Un contrôle de publication a été effectué, cependant le ministère et/ou le texte de la réponse ne correspondent pas. Question : ${numero_question}"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de l'alerte envoyé par mél à l'administrateur fonctionnel lorsque le ministère et/ou le texte de la réponse ne correspondent pas lors de l'appel au controle publication. Utiliser ${numero_question} pour insérer le numéro de la question."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 31.1 -->
+				<templateItem typeName="Parametre" id="objet-mel-daily-distribution" title="Objet mél notification de distribution">
+					<properties>
+						<property xpath="parametre:value" value="Nouveau dossier dans votre corbeille" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification journalière envoyée par mél lorsqu'un dossier est distribué dans la corbeille d'un utilisateur."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param 31.2 -->
+				<templateItem typeName="Parametre" id="texte-mel-daily-distribution" title="Texte mél notification de distribution">
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Merci de vous connecter à l’application REPONSES, car vous avez des dossiers à traiter pour le poste : ${poste}
+&lt;br/&gt;&lt;br/&gt;
+Liste des questions :&lt;br/&gt;&lt;#list liste_question as q&gt;
+&lt;span&gt;${q.corbeille}&lt;/span&gt; - &lt;span&gt;${q.question}&lt;/span&gt;
+&lt;br/&gt;
+&lt;/#list&gt;"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification journalière envoyée lorsqu'un dossier est distribué dans la corbeille d'un utilisateur"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param "Législature courante" -->
+				<templateItem typeName="Parametre" id="legislature-courante" title="Législature courante">
+					<properties>
+						<property xpath="parametre:value" value="14" />
+						<property xpath="parametre:unit" value="Integer" />
+						<property xpath="dc:description" value="Législature courante" />
+					</properties>
+				</templateItem>
+
+				<!-- param "objet du mel de creation d'utilisateur temporaire" -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-creation-utilisateur-temporaire"
+                    title="Objet mél notification création utilisateur temporaire"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Création de votre compte temporaire pour l'application Réponses" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél suite à la création d’un utilisateur."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param "texte du mel de creation d'utilisateur temporaire" -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-creation-utilisateur-temporaire"
+                    title="Texte du mél notification création utilisateur temporaire"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Bienvenue dans l'application Réponses" />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél suite à la création d’un utilisateur temporaire."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param "objet du mel de notification d'alertes" -->
+				<templateItem typeName="Parametre" id="objet-mel-notification-alerte" title="Objet mél notification alerte">
+					<properties>
+						<property xpath="parametre:value" value="Résultats de vos alertes" />
+						<property xpath="parametre:unit" value="objet" />
+						<property xpath="dc:description" value="« Objet » (par défaut) de la notification par mél des résultats d'alertes." />
+					</properties>
+				</templateItem>
+
+				<!-- param "texte du mel de notification d'alertes" -->
+				<templateItem typeName="Parametre" id="texte-mel-notification-alerte" title="Texte mél notification alerte">
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Bonjour, votre alerte a bien été déclenchée. Votre requête a renvoyé ${nb_resultats} résultat(s)."
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél des résultats des alertes."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param objet du mail d'envoi d'erreur de création de jeton -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-erreur-jeton"
+                    title="Objet mél notification erreur création jeton"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Erreur dans la création d'un jeton" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél suite à l'erreur de création d’un jeton"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param texte du mail d'envoi d'erreur de création de jeton -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-erreur-jeton"
+                    title="Texte mél notification erreur création jeton"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Une erreur est intervenue lors de la création d'un jeton pour le dossier ${numero_dossier}"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél suite à une erreur lors de la création d’un jeton pour un dossier"
+                        />
+					</properties>
+				</templateItem>
+				
+				<!-- param objet mail notification redémarrage feuille de route -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-notification-redemarrageFdr"
+                    title="Objet mél notification redémarrage feuille de route"
+                >
+					<properties>
+						<property xpath="parametre:value" value="REPONSES - Redémarrage de la feuille de route d'une question" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél de redémarrage d'une feuille de route"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- param text mail notification redémarrage feuille de route -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-notification-redemarrageFdr"
+                    title="Texte mél notification redémarrage feuille de route"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Bonjour, L’utilisateur ${user} a redémarré la question ${numero_question}, attribuée au ministère ${libelle_ministere}, le ${date_heure_redemarrage}. Cordialement"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification adressée par mél de redémarrage d'une feuille de route. Les balises suivantes peuvent êtres utilisées : ${user} : Utilisateur origine, ${numero_question} : numero de la question, ${libelle_ministere} : ministère, ${date_heure_redemarrage} : date et heure du redémarrage."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre d'objet du mél. d'alerte de dossiers bloqués -->
+				<templateItem typeName="Parametre" id="objet-mel-alerte-dossiers-bloques" title="Objet mél alerte dossiers bloqués">
+					<properties>
+						<property xpath="parametre:value" value="Dossiers bloqués" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél suite à la découverte de dossiers bloqués"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. d'alerte de dossiers bloqués -->
+				<templateItem typeName="Parametre" id="texte-mel-alerte-dossiers-bloques" title="Texte du mél alerte dossiers bloqués">
+					<properties>
+						<property xpath="parametre:value" value="Nombre de dossiers diagnostiqués bloqués : ${nb_resultats}." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél suite à la découverte de dossiers bloqués"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre d'objet du mél. d'échec de signature d'un dossier -->
+				<templateItem typeName="Parametre" id="objet-mel-echec-signature" title="Objet mél échec de signature d'un dossier">
+					<properties>
+						<property xpath="parametre:value" value="Echec de signature d'un dossier" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél suite à l'échec de la signature d'un dossier"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. d'échec de signature d'un dossier -->
+				<templateItem typeName="Parametre" id="texte-mel-echec-signature" title="Texte du mél échec de signature d'un dossier">
+					<properties>
+						<property xpath="parametre:value" value="La vérification de la signature de la question ${question} a échoué." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél suite à l'échec de la signature d'un dossier"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre d'objet du mél. lorsque aucun modèle de FDR n'est trouvé 
+					pour un dossier -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mail-aucune-route"
+                    title="Objet mél aucun modèle de feuille de route trouvé"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Impossible de trouver un modèle de feuille de route pour un dossier" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél lorsque aucun modèle de feuille de route n'est trouvé pour un dossier"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. lorsque aucun modèle de FDR n'est trouvé 
+					pour un dossier -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mail-aucune-route"
+                    title="Texte du mél aucun modèle de feuille de route trouvé"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Aucun modèle de feuille de route n'a été trouvé pour la question ${question} lors de sa création."
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél lorsque aucun modèle de feuille de route n'est trouvé pour un dossier"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre d'objet du mél. du batch de recherche d'incohérence des 
+					dossiers link -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-dossiers-link-incoherent"
+                    title="Objet mél notification batch dossiers link incohérents"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Résultat du batch dossiers link incohérents" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél des résultats du batch de recherche des dossiers link incohérents."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. du batch de recherche d'incohérence des 
+					dossiers link -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-dossiers-link-incoherent"
+                    title="Texte mél notification batch dossiers link incohérents"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Bonjour, le batch de recherche d'incohérence entre les étapes en cours et les dossiers link a retourné ${nb_resultats} dossier(s) à vérifier."
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél des résultats du batch de recherche des dossiers link incohérents."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre objet du mél. de notification des dossiers signalés -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mail-dossier-signalement"
+                    title="Objet mél notification de signalement de dossiers"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Signalement de dossier" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet du message » (par défaut) de la notification par mél de signalement de dossiers."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. de notification des dossiers signalés -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mail-dossier-signalement"
+                    title="Texte mél notification de signalement de dossiers"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Bonjour, une question est à présent signalée." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél de signalement de dossiers."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre objet du mél. de notification des dossiers renouvellés -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mail-dossier-renouvellement"
+                    title="Objet mél notification de renouvellement de dossiers"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Renouvellement de dossier" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet du message » (par défaut) de la notification par mél de renouvellement de dossiers."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. de notification des dossiers renouvellés -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mail-dossier-renouvellement"
+                    title="Texte mél notification de renouvellement de dossiers"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Bonjour, une question est à présent renouvellée." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél de renouvellement de dossiers."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre objet du mél. de notification des dossiers rappelés -->
+				<templateItem typeName="Parametre" id="objet-mail-dossier-rappel" title="Objet mél notification de rappel de dossiers">
+					<properties>
+						<property xpath="parametre:value" value="Rappel de dossier" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet du message » (par défaut) de la notification par mél de rappel de dossiers."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. de notification des dossiers rappelés -->
+				<templateItem typeName="Parametre" id="texte-mail-dossier-rappel" title="Texte mél notification de rappel de dossiers">
+					<properties>
+						<property xpath="parametre:value" value="Bonjour, une question est à présent rappelée." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél de rappel de dossiers."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre objet du mél. de notification journalière des questions 
+					retirées de type CADUQUE -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-daily-retired-caduque"
+                    title="Objet mél notification de retrait pour type CADUQUE"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Retrait de question : état CADUQUE" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification journalière envoyée par mél lorsque des questions sont retirées de type CADUQUE."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. de notification journalière des questions 
+					retirées de type CADUQUE -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-daily-retired-caduque"
+                    title="Texte mél notification de retrait pour type CADUQUE"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Merci de vous connecter à l’application REPONSES, car des questions ont fait l'objet d'un retrait (CADUQUE).
+&lt;br/&gt;&lt;br/&gt;
+Liste des questions :&lt;br/&gt;&lt;#list liste_question as q&gt;
+&lt;span&gt;${q.question}&lt;/span&gt;
+&lt;br/&gt;
+&lt;/#list&gt;"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification journalière envoyée par mél lorsque des questions sont retirées de type CADUQUE."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre objet du mél. de notification journalière des questions 
+					retirées de type RETIREE -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-daily-retired-retiree"
+                    title="Objet mél notification de retrait pour type RETIREE"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Retrait de question : état RETIREE" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification journalière envoyée par mél lorsque des questions sont retirées de type RETIREE"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. de notification journalière des questions 
+					retirées de type RETIREE -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-daily-retired-retiree"
+                    title="Texte mél notification de retrait pour type RETIREE"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Merci de vous connecter à l’application REPONSES, car des questions ont fait l'objet d'un retrait (RETIREE).
+&lt;br/&gt;&lt;br/&gt;
+Liste des questions :&lt;br/&gt;&lt;#list liste_question as q&gt;
+&lt;span&gt;${q.question}&lt;/span&gt;
+&lt;br/&gt;
+&lt;/#list&gt;"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification journalière envoyée par mél lorsque des questions sont retirées de type RETIREE."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre objet du mél. de notification journalière des questions 
+					retirées de type CLOTURE_AUTRE -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-daily-retired-cloture-autre"
+                    title="Objet mél notification de retrait pour type CLOTURE_AUTRE"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Retrait de question : état CLOTURE_AUTRE" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification journalière envoyée par mél lorsque des questions sont retirées de type CLOTURE_AUTRE"
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre texte du mél. de notification journalière des questions 
+					retirées de type CLOTURE_AUTRE -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-daily-retired-cloture-autre"
+                    title="Texte mél notification de retrait pour type CLOTURE_AUTRE"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Merci de vous connecter à l’application REPONSES, car des questions ont fait l'objet d'un retrait (CLOTURE_AUTRE).
+&lt;br/&gt;&lt;br/&gt;
+Liste des questions :&lt;br/&gt;&lt;#list liste_question as q&gt;
+&lt;span&gt;${q.question}&lt;/span&gt;
+&lt;br/&gt;
+&lt;/#list&gt;"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte » (par défaut) de la notification journalière envoyée par mél lorsque des questions sont retirées de type CLOTURE_AUTRE."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre de délai de renouvellement des mots de passe -->
+				<templateItem
+                    typeName="Parametre"
+                    id="delai-renouvellement-mots-de-passe"
+                    title="Délai de renouvellement des mots de passe"
+                >
+					<properties>
+						<property xpath="parametre:value" value="6" />
+						<property xpath="parametre:unit" value="Mois" />
+						<property xpath="dc:description" value="Délai de renouvellement des mots de passe en mois." />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre de délai de prévenance du renouvellement de mot de passe -->
+				<templateItem
+                    typeName="Parametre"
+                    id="delai-prevenance-renouvellement-mot-de-passe"
+                    title="Délai prévenance de renouvellement de mot de passe"
+                >
+					<properties>
+						<property xpath="parametre:value" value="10" />
+						<property xpath="parametre:unit" value="Jours" />
+						<property xpath="dc:description" value="Délai de prévenance par mèl de renouvellement du mot de passe en jours." />
+					</properties>
+				</templateItem>
+
+				<!-- Paramètre du répertoire d'extraction -->
+				<templateItem typeName="Parametre" id="extraction-repertoire" title="Répertoire d'extraction des questions">
+					<properties>
+						<property xpath="parametre:value" value="/REP/Extraction" />
+						<property xpath="parametre:unit" value="texte" />
+						<property xpath="dc:description" value="Répertoire d'extraction des questions." />
+					</properties>
+				</templateItem>
+
+				<!-- Objet mèl de prévenance du renouvellement de mot de passe -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-prevenance-renouvellement-mot-de-passe"
+                    title="Objet du mél de prévenance du renouvellement de mot de passe"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Expiration prochaine de votre mot de passe" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux utilisateurs dont le mot de passe va expirer (dépassement du délai de renouvellement)."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Texte mèl de prévenance du renouvellement de mot de passe -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-prevenance-renouvellement-mot-de-passe"
+                    title="Texte du mél de prévenance du renouvellement de mot de passe"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Le mot de passe pour le compte ${user_login} va expirer dans ${jours_restants} jours."
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél adressée aux utilisateurs dont le mot de passe va expirer (dépassement du délai de renouvellement)."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Objet mèl de notification de suivi des batchs -->
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-suivi-batch-notification"
+                    title="Objet du mél de notification de suivi des batchs"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Notification d'échec d'exécution d'un batch" />
+						<property xpath="parametre:unit" value="objet" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mél adressée aux administrateurs lors de l'échec de l'exécution d'un batch."
+                        />
+					</properties>
+				</templateItem>
+
+				<!-- Texte mèl de notification de suivi des batchs -->
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-suivi-batch-notification"
+                    title="Texte du mél de notification de suivi des batchs"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Le batch ${eventName} s'est terminé avec des erreurs." />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mél adressée aux administrateurs lors de l'échec de l'exécution d'un batch."
+                        />
+					</properties>
+				</templateItem>
+				<templateItem
+                    typeName="Parametre"
+                    id="texte-mel-nouveau-mdp"
+                    title="Texte du mèl notification changement de mot de passe"
+                >
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Bonjour, Vous avez fait une demande de renouvellement de mot de passe, vos nouveaux accès sont :"
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Texte du message » (par défaut) de la notification par mèl suite à la modification du mot de passe de l'utilisateur."
+                        />
+					</properties>
+				</templateItem>
+				<templateItem
+                    typeName="Parametre"
+                    id="objet-mel-nouveau-mdp"
+                    title="Objet du mèl notification changement de mot de passe"
+                >
+					<properties>
+						<property xpath="parametre:value" value="Modification de votre mot de passe REPONSES" />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="« Objet » (par défaut) de la notification par mèl suite à la modification du mot de passe de l'utilisateur."
+                        />
+					</properties>
+				</templateItem>
+				<templateItem typeName="Parametre" id="delai-traitement-etape" title="Délai pour le traitement d’une étape">
+					<properties>
+						<property xpath="parametre:value" value="7" />
+						<property xpath="parametre:unit" value="Jours" />
+						<property
+                            xpath="dc:description"
+                            value="Délai, en jours calendaires, maximal pour qu’une étape en cours d’une QE soit traitée."
+                        />
+					</properties>
+				</templateItem>
+				<templateItem typeName="Parametre" id="adresse-emission-mel" title="Adresse d'émission des mèls">
+					<properties>
+						<property xpath="parametre:value" value="ne-pas-repondre-dev1@reponses2ng.com;ne-pas-repondre-dev2@reponses2ng.com" />
+						<property xpath="parametre:unit" value="adresse mèl" />
+						<property xpath="dc:description" value="Adresses d'émission des mèls, séparées par des point-virgules." />
+					</properties>
+				</templateItem>
+				<templateItem typeName="Parametre" id="page-internet-dila" title="Page internet de la DILA">
+					<properties>
+						<property xpath="parametre:value" value="" />
+						<property xpath="parametre:unit" value="URL" />
+						<property
+                            xpath="dc:description"
+                            value="Page internet permettant d'accéder au programme d'amélioration de l'accessibilité de la DILA."
+                        />
+					</properties>
+				</templateItem>
+				<templateItem typeName="Parametre" id="message-accessibilite-login" title="Divers : Taux accessibilité (RGAA)">
+					<properties>
+						<property
+                            xpath="parametre:value"
+                            value="Cette application est partiellement accessible au sens du RGAA en vigueur (Taux d'accessibilité supérieur à 68%)."
+                        />
+						<property xpath="parametre:unit" value="texte" />
+						<property
+                            xpath="dc:description"
+                            value="Information sur le taux d'accessibilité de l'application indiquée dans la page de connexion."
+                        />
+					</properties>
+				</templateItem>
+			</template>
+		</factoryBinding>
+
+		<!-- repertoire racine des instances de feuille de route -->
+		<factoryBinding
+            name="NaiadFeuilleRouteInstancesRootFactory"
+            factoryName="SimpleTemplateFactory"
+            targetType="DocumentRouteInstancesRoot"
+        >
+			<acl>
+				<ace principal="Everyone" permission="Everything" granted="true" />
+			</acl>
+		</factoryBinding>
+
+		<factoryBinding name="TrashRootFactory" factoryName="SimpleTemplateFactory" targetType="TrashRoot">
+			<acl>
+				<ace principal="Everyone" permission="Everything" granted="true" />
+			</acl>
+		</factoryBinding>
+
+	</extension>
+</component>

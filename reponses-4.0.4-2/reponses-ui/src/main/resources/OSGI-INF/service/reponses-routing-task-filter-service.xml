@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.component.RepRoutingTaskFilterComponent">
+	<implementation class="fr.dila.reponses.ui.services.component.RepRoutingTaskFilterComponent" />
+
+	<service>
+		<provide interface="fr.dila.ss.ui.services.SSRoutingTaskFilterService" />
+	</service>
+
+</component>

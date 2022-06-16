@@ -1,0 +1,80 @@
+{
+    "assemblee": {
+        "label": "ASSEMBLEE NATIONALE ",
+        "key": "AN",
+        "completeKey": "jqkdljk",
+        "action": "",
+        "link": "",
+        "isOpen": false,
+        "isLastLevel": false,
+        "isBold": true,
+        "childs": [
+            {
+                "label": "Administration",
+                "key": "AN_ADMINISTRATION",
+                "completeKey": "",
+                "action": "",
+                "link": "",
+                "isOpen": false,
+                "isLastLevel": false,
+                "isBold": true,
+                "childs": [
+                    {
+                        "label": "Activités",
+                        "key": "AN_ACTIVITE",
+                        "completeKey": "",
+                        "action": "",
+                        "link": "/classement/liste?origine=AN&cle=généralités&cleParent=déchéances et incapacités",
+                        "isOpen": false,
+                        "isLastLevel": true,
+                        "isBold": false
+                    },
+                    {
+                        "label": "Emploi et Activité",
+                        "key": "",
+                        "completeKey": "",
+                        "action": "",
+                        "link": "/classement/liste?origine=AN&cle=curatelle&cleParent=déchéances et incapacités",
+                        "isOpen": false,
+                        "isLastLevel": true,
+                        "isBold": false
+                    }
+                ]
+            }
+        ]
+    },
+    "senat": {
+        "label": "SENAT",
+        "key": "SENAT",
+        "completeKey": "",
+        "action": "",
+        "link": "",
+        "isOpen": false,
+        "isLastLevel": false,
+        "isBold": true,
+        "childs": [
+            {
+                "label": "Thème",
+                "key": "SENA_Thème",
+                "completeKey": "",
+                "action": "",
+                "link": "",
+                "isOpen": false,
+                "isLastLevel": false,
+                "isBold": true,
+                "childs": [
+                    {
+                        "label": "Anciens Combattants",
+                        "key": "SENAT_AC",
+                        "completeKey": "/classement/liste?origine=SENAT&cle=Abattoirs&cleParent=Rubrique",
+                        "action": "",
+                        "link": "#",
+                        "isOpen": false,
+                        "isLastLevel": true,
+                        "isBold": false
+                    }
+                ]
+            }
+        ]
+    }
+}

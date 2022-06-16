@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="searchResults"
+            class="tableForm"
+            th:data-url="@{${dataUrl}}"
+            th:data-ajaxurl="@{${dataAjaxUrl}}"
+            id="listeDetailHistorique"
+            th:with="tableCaption=${tableCaption} ?: #{detailHistoriqueMajTimbres.table.caption}"
+        >
+            <div class="overlay" th:id="result_overlay" aria-live="polite">
+                <img width="29" height="29" th:src="@{/img/loader.svg}" alt="" />
+            </div>
+
+            <th:block th:if="${#lists.isEmpty(resultList.liste)}">
+                <h2
+                    class="search-result-form__subtitle base-title base-title--lvl-3"
+                    th:text="#{historique.maj.timbre.detail}"
+                >
+                    Titre
+                </h2>
+            </th:block>
+
+            <th:block th:unless="${#lists.isEmpty(resultList.liste)}">
+                <a
+                    href="#skip_link_action-table_prev"
+                    id="skip_link_action-table_next"
+                    class="skip-link"
+                    th:text="#{skip.link.table.prev(${tableCaption})}"
+                >
+                    Aller après le tableau
+                </a>
+                <div class="table-wrapper">
+                    <table class="custom-table">
+                        <caption class="sr-only" th:text="${tableCaption}">
+                            Tableau des mises à jour des timbres
+                        </caption>
+                        <thead class="table-header custom-table__header">
+                            <tr class="table-header__line">
+                                <th:block th:each="colonne : ${lstColonnes}">
+                                    <th
+                                        scope="col"
+                                        class="table-header__cell"
+                                        th:text="${colonne.label !=null? #messages.msg(colonne.label) : ''}"
+                                    >
+                                        &nbsp;
+                                    </th>
+                                </th:block>
+                            </tr>
+                        </thead>
+                        <tbody class="custom-table__body">
+                            <th:block th:unless="${#lists.isEmpty(resultList.liste)}">
+                                <tr
+                                    class="custom-table__table-line table-line table-line--with-check table-line--with-action-column table-line--complex-line"
+                                    th:each="item, nb : ${resultList.liste}"
+                                    th:data-id="${item.id}"
+                                >
+                                    <td class="table-line__cell">
+                                        <a
+                                            th:unless="${#strings.isEmpty(item.questionsAMigrer) && #strings.isEmpty(item.questionsMigrees)}"
+                                            href="#main_content"
+                                            th:attr="onclick=|chargerDetailMigrationHistorique(this);return false;|"
+                                            th:text="${item.message}"
+                                        >
+                                            Message
+                                        </a>
+                                        <th:block
+                                            th:if="${#strings.isEmpty(item.questionsAMigrer) && #strings.isEmpty(item.questionsMigrees)}"
+                                            th:text="${item.message}"
+                                        >
+                                            Message
+                                        </th:block>
+                                    </td>
+                                    <td class="table-line__cell">
+                                        <th:block th:if="${item.etat eq 'EN_COURS'}">
+                                            <div
+                                                th:data-tippy-content="#{historiqueMajTimbres.etat.enCours}"
+                                                tabindex="0"
+                                                class="base-tooltip js-tooltip detail-historique-timbres-running"
+                                            >
+                                                <span class="sr-only" th:text="#{historiqueMajTimbres.etat.enCours}"
+                                                    >En cours</span
+                                                >
+                                                <span aria-hidden="true" class="icon icon--clock icon-blue"></span>
+                                            </div>
+                                        </th:block>
+                                        <th:block th:if="${item.etat eq 'FAILED'}">
+                                            <div
+                                                th:data-tippy-content="#{historiqueMajTimbres.etat.failed}"
+                                                tabindex="0"
+                                                class="base-tooltip js-tooltip"
+                                            >
+                                                <span class="sr-only" th:text="#{historiqueMajTimbres.etat.failed}"
+                                                    >Echouée</span
+                                                >
+                                                <span
+                                                    aria-hidden="true"
+                                                    class="icon icon--times-circle icon-red"
+                                                ></span>
+                                            </div>
+                                        </th:block>
+                                        <th:block th:if="${item.etat eq 'TERMINEE'}">
+                                            <div
+                                                th:data-tippy-content="#{historiqueMajTimbres.etat.terminee}"
+                                                tabindex="0"
+                                                class="base-tooltip js-tooltip"
+                                            >
+                                                <span class="sr-only" th:text="#{historiqueMajTimbres.etat.terminee}"
+                                                    >Terminée</span
+                                                >
+                                                <span
+                                                    aria-hidden="true"
+                                                    class="icon icon--check-circle icon-green"
+                                                ></span>
+                                            </div>
+                                        </th:block>
+                                    </td>
+                                    <td
+                                        class="table-line__cell"
+                                        th:text="${#calendars.format(item.dateDebut,'dd/MM/yyyy hh:mm')}"
+                                    >
+                                        Date début
+                                    </td>
+                                    <td
+                                        class="table-line__cell"
+                                        th:text="${#calendars.format(item.dateFin,'dd/MM/yyyy hh:mm')}"
+                                    >
+                                        Date fin
+                                    </td>
+                                    <td
+                                        class="table-line__cell"
+                                        th:text="${#strings.isEmpty(item.questionsAMigrer) ? '-' : item.questionsAMigrer}"
+                                    >
+                                        Questions à migrer
+                                    </td>
+                                    <td
+                                        class="table-line__cell"
+                                        th:text="${#strings.isEmpty(item.questionsMigrees) ? '-' : item.questionsMigrees}"
+                                    >
+                                        Questions migrées
+                                    </td>
+                                    <td class="table-line__cell" th:text="${item.details}">Détails</td>
+                                </tr>
+                            </th:block>
+                            <th:block th:if="${#lists.isEmpty(resultList.liste)}">
+                                <td colspan="5" th:text="#{label.fdr.nombre(0)}">Aucun résultat</td>
+                            </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <a
+                    href="#skip_link_action-table_next"
+                    id="skip_link_action-table_prev"
+                    class="skip-link"
+                    th:text="#{skip.link.table.next(${tableCaption})}"
+                >
+                    Aller avant le tableau
+                </a>
+            </th:block>
+        </div>
+    </body>
+</html>

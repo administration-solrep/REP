@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service catalogue de modèles de feuille de 
+	route de l'application Réponses. -->
+<component name="fr.dila.reponses.core.service.FeuilleRouteModelService">
+	<implementation class="fr.dila.reponses.core.component.FeuilleRouteModelComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.FeuilleRouteModelService" />
+		<provide interface="fr.dila.ss.api.service.FeuilleRouteModelService" />
+	</service>
+</component>

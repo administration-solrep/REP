@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de gestion du dossier -->
+<component name="fr.dila.reponses.ui.services.actions.impl.ReponsesBordereauActionServiceImpl">
+    <implementation class="fr.dila.reponses.ui.services.actions.component.ReponsesBordereauActionComponent" />
+
+    <service>
+        <provide interface="fr.dila.reponses.ui.services.actions.ReponsesBordereauActionService" />
+    </service>
+
+</component>

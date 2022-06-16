@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.core.tests.rechercheContrib">
+	<extension target="fr.dila.reponses.core.service.RechercheService" point="recherches">
+		<recherche>
+			<rechercheName>recherche_simple_mots_clefs_sur_actes</rechercheName>
+			<mode>simple</mode>
+			<type>mots-clefs</type>
+			<targetResourceName>acte</targetResourceName>
+			<layoutName>recherche_simple_mots_clefs_sur_actes_layout</layoutName>
+			<contentViewName>recherche_simple_contentview</contentViewName>
+			<requeteName>RequeteSimple</requeteName>
+		</recherche>
+		<recherche>
+			<rechercheName>recherche_complexe_mots_clefs_sur_actes</rechercheName>
+			<mode>complexe</mode>
+			<type>mots-clefs</type>
+			<targetResourceName>acte</targetResourceName>
+			<layoutName>recherche_complexe_mots_clefs_sur_actes_layout</layoutName>
+			<contentViewName>recherche_complexe_contentview</contentViewName>
+			<requeteName>RequeteComplexe</requeteName>
+		</recherche>
+	</extension>
+</component>

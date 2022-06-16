@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service des titres de l'Assemblée Nationale (Smart Query) de l'application Reponses -->
+<component name="fr.dila.reponses.api.service.vocabulary.TeteAnalyseANService">
+	<implementation class="fr.dila.reponses.core.service.vocabulary.TeteAnalyseANComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.vocabulary.TeteAnalyseANService" />
+	</service>
+</component>

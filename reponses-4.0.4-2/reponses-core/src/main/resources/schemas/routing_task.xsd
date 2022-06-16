@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://cm.nuxeo.com/schemas/routing_task/"
+    xmlns:rtsk="http://cm.nuxeo.com/schemas/routing_task/"
+>
+
+	<!-- on inclut le schema contenant la definition de xs:stringList -->
+	<xs:include schemaLocation="base.xsd" />
+
+	<!-- *********************************************************************** 
+		Reprise des données de Nuxeo. *********************************************************************** -->
+	<!-- Type d'étape (pour avis, pour information, ...) -->
+	<xs:element name="type" type="xs:string" />
+
+	<!-- Mailbox du destinataire de l'étape -->
+	<xs:element name="distributionMailboxId" type="xs:string" />
+
+	<!-- Date d'échéance -->
+	<xs:element name="dueDate" type="xs:date" />
+
+	<!-- Validation automatique de l'étape -->
+	<xs:element name="automaticValidation" type="xs:boolean" default="false" />
+
+	<!-- Non utilisé -->
+	<xs:element name="actionnable" type="xs:boolean" />
+
+	<!-- *********************************************************************** 
+		Données communes au socle transverse. *********************************************************************** -->
+
+	<!-- Dénormalisation de l'UUID de la feuille de route -->
+	<xs:element name="documentRouteId" type="xs:string" />
+
+	<!-- État de validation de l'étape (avis favorable ou avis defavorable) -->
+	<xs:element name="validationStatus" type="xs:string" />
+
+	<!-- Date de début effective de l'étape -->
+	<xs:element name="dateDebutEtape" type="xs:date" />
+
+	<!-- Date de fin effective de l'étape -->
+	<xs:element name="dateFinEtape" type="xs:date" />
+
+	<!-- Indique si l'étape a déjà été dupliquée -->
+	<xs:element name="alreadyDuplicated" type="xs:boolean" default="false" />
+
+	<!-- Échéance indicative en nombre de jours -->
+	<xs:element name="deadline" type="xs:int" />
+
+	<!-- Indique si l'étape a été validée automatiquement -->
+	<xs:element name="automaticValidated" type="xs:boolean" default="false" />
+
+	<!-- Indique si un mail a été envoyé à l'utilisateur suite à la validation 
+		automatique -->
+	<xs:element name="isMailSend" type="xs:boolean" default="false" />
+
+	<!-- Étape obligatoire SGG -->
+	<xs:element name="obligatoireSGG" type="xs:boolean" default="false" />
+
+	<!-- Étape obligatoire ministère -->
+	<xs:element name="obligatoireMinistere" type="xs:boolean" default="false" />
+
+	<!-- Libellé des ministères après validation de l'étape (dénormalisation) -->
+	<xs:element name="ministereLabel" type="xs:string" />
+
+	<!-- Identifiant des ministères après validation de l'étape (dénormalisation) -->
+	<xs:element name="ministereId" type="xs:string" />
+
+	<!-- Libellé de la direction après validation de l'étape (dénormalisation) -->
+	<xs:element name="directionLabel" type="xs:string" />
+
+	<!-- Identifiant de la direction après validation de l'étape (dénormalisation) -->
+	<xs:element name="directionId" type="xs:string" />
+
+	<!-- Libellé du poste de distribution après validation de l'étape (dénormalisation) -->
+	<xs:element name="posteLabel" type="xs:string" />
+
+	<!-- Nom de l'utilisateur qui a validé l'étape après validation de l'étape 
+		(dénormalisation) -->
+	<xs:element name="validationUserLabel" type="xs:string" />
+
+	<!-- identifiant de l'utilisateur qui a validé l'étape après validation 
+		de l'étape (dénormalisation) -->
+	<xs:element name="validationUserId" type="xs:string" />
+
+	<!-- Données spécifiques à Réponses -->
+
+	<!-- Indique si l'étape de feuille de route est de type réaffectation -->
+	<xs:element name="isReaffectation" type="xs:boolean" default="false" />
+		
+	<!-- Commentaires associés -->
+	<xs:element name="comments" type="rtsk:stringList" />
+</xs:schema>

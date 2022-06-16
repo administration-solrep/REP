@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.impl.ReponsesDocumentRoutingActionServiceImpl">
+	<implementation class="fr.dila.reponses.ui.services.actions.component.ReponsesDocumentRoutingActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.ReponsesDocumentRoutingActionService" />
+        <provide interface="fr.dila.ss.ui.services.actions.SSDocumentRoutingActionService" />
+	</service>
+
+</component>

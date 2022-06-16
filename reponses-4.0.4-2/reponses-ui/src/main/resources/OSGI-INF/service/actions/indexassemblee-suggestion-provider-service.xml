@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<component
+    name="fr.dila.reponses.ui.services.actions.suggestion.indexassemblee.IndexAssembleeSuggestionProviderService"
+>    
+    <implementation
+        class="fr.dila.reponses.ui.services.actions.suggestion.indexassemblee.IndexAssembleeSuggestionProviderComponent"
+    />
+
+    <service>
+        <provide
+            interface="fr.dila.reponses.ui.services.actions.suggestion.indexassemblee.IndexAssembleeSuggestionProviderService"
+        />
+    </service>
+
+</component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://dila.fr/solon/schemas/requeteComplexe/"
+    xmlns:rqc="http://dila.fr/solon/schemas/requeteComplexe/"
+>
+
+	<xs:include schemaLocation="base.xsd" />
+
+	<xs:element name="numeroQuestionDebut" type="xs:int" />
+	<xs:element name="numeroQuestionFin" type="xs:int" />
+	<xs:element name="legislature" type="xs:string" />
+	<xs:element name="dateJOQuestionDebut" type="xs:date" />
+	<xs:element name="dateJOQuestionFin" type="xs:date" />
+	<xs:element name="dateSignalementDebut" type="xs:date" />
+	<xs:element name="dateSignalementFin" type="xs:date" />
+	<xs:element name="dateJOReponseDebut" type="xs:date" />
+	<xs:element name="dateJOReponseFin" type="xs:date" />
+	<xs:element name="nomAuteur" type="xs:string" />
+	<xs:element name="indexAssemblee" type="xs:string" />
+	<xs:element name="indexMinistere" type="xs:string" />
+	<xs:element name="ministereInterroge" type="xs:string" />
+	<xs:element name="ministereRattachement" type="xs:string" />
+	<xs:element name="directionPilote" type="xs:string" />
+	<xs:element name="ministereAttribute" type="xs:string" />
+	<xs:element name="groupePolitique" type="xs:string" />
+	<xs:element name="poste" type="xs:string" />
+	<xs:element name="origineQuestion" type="rqc:stringList" />
+	<xs:element name="caracteristiqueQuestion" type="rqc:stringList" />
+	<xs:element name="clauseCaracteristiques" type="xs:string" />
+</xs:schema>

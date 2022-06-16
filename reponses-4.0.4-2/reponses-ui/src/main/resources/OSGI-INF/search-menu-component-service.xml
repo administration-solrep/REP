@@ -1,0 +1,10 @@
+<component name="fr.dila.reponses.ui.searchmenucomponentservice">
+
+  <implementation class="fr.dila.reponses.ui.services.impl.SearchMenuComponentImpl" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.SearchMenuComponentService" />
+  </service>
+  
+
+</component>

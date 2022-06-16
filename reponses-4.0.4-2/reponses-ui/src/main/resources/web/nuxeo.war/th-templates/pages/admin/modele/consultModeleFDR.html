@@ -1,0 +1,282 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='Edition d\'un modèle de feuille de route', title=${modeleForm.intitule})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <input type="hidden" id="urlPreviousPage" name="urlPreviousPage" th:value="@{${urlPreviousPage}}" />
+        <input type="hidden" id="idModele" name="idModele" th:value="${modeleForm.id}" />
+        <input type="hidden" id="idDossier" name="idDossier" th:value="${idDossier}" />
+
+        <h1 class="base-title base-title--lvl-1 base-title--is-underlined" th:text="${modeleForm.intitule}">titre</h1>
+
+        <div class="m-t-6">
+            <th:block th:unless="${#lists.isEmpty(modeleForm.fdrDto.table.lines)}">
+                <div class="row-actions__left" th:if="${modeleLeftActions !=null && !modeleLeftActions.isEmpty()}">
+                    <th:block th:each="action : ${modeleLeftActions}">
+                        <button
+                            th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, 'base-btn--bordered base-btn--light')"
+                        ></button>
+                    </th:block>
+                </div>
+                <div class="row-actions__right" th:if="${modeleRightActions !=null && !modeleRightActions.isEmpty()}">
+                    <th:block th:each="action : ${modeleRightActions}">
+                        <button
+                            th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, ${action.type == 'secondary'?'base-btn--center base-btn--secondary':'base-btn--center'})"
+                        ></button>
+                    </th:block>
+                </div>
+            </th:block>
+        </div>
+        <th:block th:if="${#lists.isEmpty(modeleForm.fdrDto.table.lines)}">
+            <div class="m-t-6">
+                <div class="row-actions__left">
+                    <th:block th:each="action : ${modeleLeftActions}">
+                        <button
+                            th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, 'base-btn--bordered base-btn--light')"
+                        ></button>
+                    </th:block>
+                </div>
+            </div>
+        </th:block>
+
+        <div class="m-t-6">
+            <table
+                class="folder-detail__table"
+                th:unless="${modeleForm.etat == 'BROUILLON' and modeleForm.isLockByCurrentUser}"
+            >
+                <tbody>
+                    <tr class="folder-detail__table-line">
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                            th:text="#{modeleFDR.form.libelle.intitule}"
+                        >
+                            Libellé intitulé
+                        </td>
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                            th:text="${modeleForm.intitule}"
+                        >
+                            Intitulé
+                        </td>
+                    </tr>
+                    <tr class="folder-detail__table-line">
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                            th:text="#{modeleFDR.form.libelle.ministere}"
+                        >
+                            Libellé ministère
+                        </td>
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                            th:text="${modeleForm.libelleMinistere}"
+                        >
+                            Ministère
+                        </td>
+                    </tr>
+                    <tr class="folder-detail__table-line">
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                            th:text="#{modeleFDR.form.libelle.modeleParDefaut}"
+                        >
+                            Libellé modèle par défaut
+                        </td>
+                        <td class="folder-detail__table-cell folder-detail__table-cell--value">
+                            <th:block th:if="${modeleForm.modeleParDefaut}" th:text="#{ModeleFDR.label.oui}"
+                                >Oui</th:block
+                            >
+                            <th:block th:unless="${modeleForm.modeleParDefaut}" th:text="#{ModeleFDR.label.non}"
+                                >Non</th:block
+                            >
+                        </td>
+                    </tr>
+                    <tr class="folder-detail__table-line">
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                            th:text="#{modeleFDR.form.libelle.titreQuestion}"
+                        >
+                            Libellé titre question
+                        </td>
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                            th:text="${modeleForm.titreQuestion}"
+                        >
+                            Titre question
+                        </td>
+                    </tr>
+                    <tr class="folder-detail__table-line">
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                            th:text="#{modeleFDR.form.libelle.description}"
+                        >
+                            Libellé description
+                        </td>
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                            th:text="${modeleForm.description}"
+                        >
+                            Description
+                        </td>
+                    </tr>
+                    <tr class="folder-detail__table-line">
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                            th:text="#{modeleFDR.form.libelle.directionPilote}"
+                        >
+                            Libellé direction pilote
+                        </td>
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                            th:text="${modeleForm.libelleDirection}"
+                        >
+                            Direction pilote
+                        </td>
+                    </tr>
+                    <tr class="folder-detail__table-line">
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                            th:text="#{modeleFDR.form.libelle.an}"
+                        >
+                            Assemblée Nationale
+                        </td>
+                        <td>
+                            <th:block
+                                th:replace="fragments/components/indexation :: indexation('AN', #{bordereau.indexation.label} + ' - ' + #{bordereau.an.label}, ${modeleForm.indexationDto.indexationAN}, ${modeleForm.indexationDto.directoriesAN}, true, 'view')"
+                            ></th:block>
+                        </td>
+                    </tr>
+                    <tr class="folder-detail__table-line">
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                            th:text="#{modeleFDR.form.libelle.senat}"
+                        >
+                            Sénat
+                        </td>
+                        <td>
+                            <th:block
+                                th:replace="fragments/components/indexation :: indexation('SENAT', #{bordereau.indexation.label} + ' - ' + #{bordereau.an.label}, ${modeleForm.indexationDto.indexationSENAT}, ${modeleForm.indexationDto.directoriesSENAT}, true, 'view')"
+                            ></th:block>
+                        </td>
+                    </tr>
+                    <tr class="folder-detail__table-line">
+                        <td
+                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                            th:text="#{modeleFDR.form.libelle.ministere}"
+                        >
+                            Ministère
+                        </td>
+                        <td>
+                            <th:block
+                                th:replace="fragments/components/indexation :: indexation('Ministere', #{bordereau.indexation.label} + ' - ' + #{bordereau.ministeres.label}, ${modeleForm.indexationDto.indexationMinistere}, ${modeleForm.indexationDto.directoriesMinistere}, true, 'view')"
+                            ></th:block>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <th:block th:if="${#lists.isEmpty(modeleForm.fdrDto.table.lines) && modeleForm.isLockByCurrentUser}">
+            <div class="m-t-6">
+                <button
+                    type="button"
+                    id="first-step-add-button"
+                    class="js-interstitial-trigger base-btn base-btn--button base-btn--default base-btn--light base-btn--center base-btn--transparent base-btn--uppercased"
+                    th:data-tippy-content="#{__${addFirstStepAction.label}__}"
+                    th:data-controls="${addFirstStepAction.properties.dataControls}"
+                    onclick="doInitModal(this, null)"
+                    th:data-function="${addFirstStepAction.properties.function}"
+                    th:data-parameters="__${addFirstStepAction.properties.parameters}__"
+                >
+                    <span
+                        aria-hidden="true"
+                        class="base-btn__icon base-btn__icon--vertical-center base-btn__icon--left icon icon--plus"
+                    ></span>
+                    [[#{modeleFDR.action.add.first.step}]]
+                </button>
+            </div>
+        </th:block>
+
+        <div class="m-t-6">
+            <th:block th:unless="${#lists.isEmpty(modeleForm.fdrDto.table.lines)}">
+                <div class="roadmap-table tableForm">
+                    <a
+                        href="#skip_link_roadmap-table_prev"
+                        id="skip_link_roadmap-table_next"
+                        class="skip-link"
+                        th:text="#{roadmap.skip.link.before}"
+                        >Passer le tableau 'roadmap' pour arriver après</a
+                    >
+                    <div class="table-action">
+                        <div class="table-action__action-container">
+                            <div class="table-action__group">
+                                <th:block th:each="action : ${modeleForm.fdrDto.tabActions}">
+                                    <div
+                                        th:replace="fragments/components/action-button :: action-button(${action}, false, '')"
+                                    ></div>
+                                </th:block>
+                            </div>
+                        </div>
+                    </div>
+                    <table
+                        th:unless="${#lists.isEmpty(modeleForm.fdrDto.table.lines)}"
+                        th:replace="fragments/fdr/tableFdr :: tableFdr(${modeleForm.fdrDto})"
+                    ></table>
+                    <div class="table-action">
+                        <div class="table-action__action-container">
+                            <div class="table-action__group">
+                                <th:block th:each="action : ${modeleForm.fdrDto.tabActions}">
+                                    <div
+                                        th:replace="fragments/components/action-button :: action-button(${action}, false, '')"
+                                    ></div>
+                                </th:block>
+                            </div>
+                        </div>
+                    </div>
+                    <a
+                        href="#skip_link_roadmap-table_next"
+                        id="skip_link_roadmap-table_prev"
+                        class="skip-link"
+                        th:text="#{roadmap.skip.link.after}"
+                        >Passer le tableau 'roadmap' pour arriver avant</a
+                    >
+                </div>
+
+                <div class="m-t-6">
+                    <div
+                        class="flex-row-actions__left"
+                        th:if="${modeleLeftActions !=null && !modeleLeftActions.isEmpty()}"
+                    >
+                        <th:block th:each="action : ${modeleLeftActions}">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, 'base-btn--bordered base-btn--light')"
+                            ></button>
+                        </th:block>
+                    </div>
+                    <div
+                        class="flex-row-actions__right"
+                        th:if="${modeleRightActions !=null && !modeleRightActions.isEmpty()}"
+                    >
+                        <th:block th:each="action : ${modeleRightActions}">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, ${action.type == 'secondary'?'base-btn--center base-btn--secondary':'base-btn--center'})"
+                            ></button>
+                        </th:block>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+        <th:block th:if="${#lists.isEmpty(modeleForm.fdrDto.table.lines)}">
+            <div class="m-t-6">
+                <div class="flex-row-actions__left">
+                    <th:block th:each="action : ${modeleLeftActions}">
+                        <button
+                            th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, 'base-btn--bordered base-btn--light')"
+                        ></button>
+                    </th:block>
+                </div>
+            </div>
+        </th:block>
+    </main>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://dila.fr/solon/schemas/fonddossier/"
+    xmlns:up="http://dila.fr/solon/schemas/fonddossier/"
+>
+
+	<!-- id du repertoire contenant les pieces destinées au parlement -->
+	<xs:element name="repertoire_parlement" type="xs:string" />
+	<!-- id du repertoire contenant les elements reservés au ministère -->
+	<xs:element name="repertoire_ministere" type="xs:string" />
+	<!-- id du repertoire contenant les éléments du ministere attributaire et 
+		du sgg -->
+	<xs:element name="repertoire_sgg" type="xs:string" />
+
+</xs:schema>

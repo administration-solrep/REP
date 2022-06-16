@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='Page détails historique mise à jour des timbres', title=${titre})}"
+>
+    <main role="main" id="main_content" class="page-layout__content" th:with="tableCaption=${titre}">
+        <div class="row-actions">
+            <div class="row-actions__left">
+                <button
+                    type="button"
+                    class="base-btn base-btn--button base-btn--default base-btn--light base-btn--bordered base-btn--padded-lr"
+                    onclick="goPreviousPage()"
+                    th:text="#{reponses.migration.button.return}"
+                >
+                    Retour
+                </button>
+            </div>
+        </div>
+
+        <input
+            type="hidden"
+            id="urlPreviousPage"
+            name="urlPreviousPage"
+            th:value="@{|${urlPreviousPage}#main_content|}"
+        />
+
+        <div class="heading-complex m-b-6">
+            <div class="heading-complex__main">
+                <h1 class="base-title base-title--lvl-1" th:text="${titre}"></h1>
+            </div>
+        </div>
+        <input type="hidden" id="idHidden" th:value="${id}" />
+
+        <div th:replace="fragments/table/tableDetailHistoriqueMAJTimbres :: searchResults"></div>
+
+        <div class="m-t-3" id="blocDetailMigration"></div>
+    </main>
+</html>

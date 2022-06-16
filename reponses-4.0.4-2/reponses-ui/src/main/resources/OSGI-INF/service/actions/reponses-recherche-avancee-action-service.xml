@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.component.RechercheAvanceeActionComponent">
+	<implementation class="fr.dila.reponses.ui.services.actions.component.RechercheAvanceeActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.RechercheAvanceeActionService" />
+	</service>
+
+</component>

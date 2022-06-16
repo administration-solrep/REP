@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="suiviMenu">
+            <div class="accordion accordion--aside accordion--is-opened">
+                <div class="accordion__header accordion__header--action accordion__header--aside">
+                    <h2 class="accordion-title-lvl-2" th:text="#{suivi.menu.requetes.generales.label}">
+                        Requêtes générales
+                    </h2>
+                    <button
+                        type="button"
+                        aria-controls="suivi_menu_requete_generale"
+                        aria-expanded="true"
+                        id="requete_generale_menu"
+                        th:aria-label="#{suivi.menu.requetes.generales.label}"
+                        aria-selected="false"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract-without-background"
+                        data-icon-closed="add-without-background"
+                        class="js-toggle accordion__header__button"
+                    >
+                        <span
+                            aria-hidden="true"
+                            class="icon icon--substract-without-background bubble-icon bubble-icon--neutral accordion__icon accordion__icon--aside"
+                        ></span>
+                    </button>
+                </div>
+                <div
+                    role="region"
+                    aria-hidden="false"
+                    theme="aside"
+                    id="suivi_menu_requete_generale"
+                    aria-labelledby="requete_generale_menu"
+                    class="accordion__content accordion__content--is-opened"
+                >
+                    <div
+                        th:replace="fragments/leftblocks/leftListSimple :: leftListSimple(${suiviMenuActionsRequeteGenerale}, #{suivi.menu.requetes.generales.label})"
+                    ></div>
+                </div>
+            </div>
+            <div class="accordion accordion--aside accordion--is-opened">
+                <div class="accordion__header accordion__header--action accordion__header--aside">
+                    <h2 class="accordion-title-lvl-2" th:text="#{suivi.menu.requetes.personnelles.label}">
+                        Requêtes personnelles
+                    </h2>
+                    <button
+                        type="button"
+                        aria-controls="suivi_menu_requete_personnelle"
+                        aria-expanded="true"
+                        id="requete_personnelle_menu"
+                        aria-selected="false"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract-without-background"
+                        data-icon-closed="add-without-background"
+                        class="js-toggle accordion__header__button"
+                        th:aria-label="#{suivi.menu.requetes.personnelles.label}"
+                    >
+                        <span
+                            class="sr-only"
+                            th:text="#{attr.data.title.opened(#{suivi.menu.requetes.personnelles.label})}"
+                            >Requêtes personnelles</span
+                        >
+                        <span
+                            aria-hidden="true"
+                            class="icon bubble-icon bubble-icon--neutral accordion__icon accordion__icon--aside icon--substract-without-background"
+                        ></span>
+                    </button>
+                </div>
+                <div
+                    role="region"
+                    aria-hidden="false"
+                    theme="aside"
+                    id="suivi_menu_requete_personnelle"
+                    aria-labelledby="requete_personnelle_menu"
+                    class="accordion__content accordion__content--is-opened"
+                >
+                    <nav
+                        role="navigation"
+                        th:aria-label="#{suivi.menu.requetes.personnelles.label}"
+                        class="quick-access"
+                    >
+                        <ul class="quick-access__list">
+                            <li
+                                class="quick-access__item quick-access-dropdown"
+                                th:each="item: ${suiviMenuActionsRequetePersonnelle}"
+                            >
+                                <input type="hidden" name="id" th:value="${item.id}" />
+                                <a
+                                    class="quick-access__link link"
+                                    th:href="@{__${item.link}__}"
+                                    th:text="${item.label==null || #messages.msgOrNull(item.label) == null ? item.label :
+                                    #messages.msg(item.label)}"
+                                >
+                                    <span
+                                        aria-hidden="true"
+                                        class="icon icon--arrow-right link__icon link__icon--prepend link__icon--small"
+                                    >
+                                    </span>
+                                    Requete
+                                </a>
+                                <div class="left-list-dropdown">
+                                    <div
+                                        th:replace="fragments/components/dropdown-action :: dropdown-action(
+                                            ${item.link}, 
+                                            ${item.requetesPersonnellesActions}, 
+                                            'icon--ellipsis', 
+                                            false, 
+                                            null,  
+                                            'base-btn--transparent base-btn--light base-btn--md-icon base-drop-down--light',
+                                            false, 
+                                            'base-drop-down--light'
+                                            )"
+                                    ></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="accordion accordion--aside accordion--is-opened">
+                <div class="accordion__header accordion__header--action accordion__header--aside">
+                    <h2 class="accordion-title-lvl-2" th:text="#{suivi.menu.alerte.label}">Sous-titre</h2>
+                    <button
+                        type="button"
+                        aria-controls="suivi_menu_alerte"
+                        aria-expanded="true"
+                        id="alerte_menu"
+                        aria-selected="false"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract-without-background"
+                        data-icon-closed="add-without-background"
+                        class="js-toggle accordion__header__button"
+                        th:aria-label="#{suivi.menu.alerte.label}"
+                    >
+                        <span
+                            aria-hidden="true"
+                            class="icon bubble-icon bubble-icon--neutral accordion__icon accordion__icon--aside icon--substract-without-background"
+                        ></span>
+                    </button>
+                </div>
+                <div
+                    role="region"
+                    aria-hidden="false"
+                    theme="aside"
+                    id="suivi_menu_alerte"
+                    aria-labelledby="alerte_menu"
+                    class="accordion__content accordion__content--is-opened"
+                >
+                    <div
+                        th:replace="fragments/leftblocks/leftListEllipse :: leftListEllipse(${suiviMenuActionsAlerte}, null, #{suivi.menu.alerte.label})"
+                    ></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

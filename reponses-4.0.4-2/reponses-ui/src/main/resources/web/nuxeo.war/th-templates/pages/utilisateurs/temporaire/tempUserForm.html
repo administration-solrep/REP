@@ -1,0 +1,476 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='formulaire utilisateur temporaire', title=#{menu.utilisateur.create.user})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <h1 class="base-title base-title--lvl-1" th:text="#{menu.utilisateur.create.user}">
+            Créer un utilisateur temporaire
+        </h1>
+
+        <form id="user_form">
+            <input type="hidden" id="urlPreviousPage" name="urlPreviousPage" th:value="@{${urlPreviousPage}}" />
+            <div class="row-actions grid__row">
+                <div class="row-actions__left">
+                    <button
+                        type="button"
+                        onClick="goPreviousPage()"
+                        class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                        th:text="#{button.label.cancel}"
+                    >
+                        Annuler
+                    </button>
+                </div>
+                <div class="row-actions__right">
+                    <input
+                        type="button"
+                        id="submit-create-temp-user"
+                        onclick="createTempUserFormSubmit()"
+                        th:value="#{button.label.save}"
+                        class="base-btn base-btn--button base-btn--default"
+                    />
+                </div>
+            </div>
+
+            <div class="grid__row m-t-6">
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label
+                                    aria-disabled="false"
+                                    for="utilisateur"
+                                    id="utilisateur_label"
+                                    class="form-label"
+                                >
+                                    <span th:text="#{admin.user.label.identifier}">Identifiant</span>
+                                    <span class="form-label__required-text" th:text="#{form.input.required}"
+                                        >(requis)</span
+                                    >
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                        </div>
+                        <div class="form-input__container">
+                            <input
+                                type="text"
+                                name="utilisateur"
+                                id="utilisateur"
+                                class="form-input__field form-input__field--type-text"
+                                data-validation="required"
+                                autofocus
+                            />
+                        </div>
+                        <div id="utilisateur_description" class="form-input__footer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__row m-t-6">
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <fieldset class="form-optin__fieldset">
+                            <legend class="form-optin__legend">
+                                <span th:text="#{admin.user.label.civility}">Civilité</span>
+                                <span class="form-label__required-text" th:text="#{form.input.required}">(requis)</span>
+                            </legend>
+                            <div class="form-optin__optins">
+                                <div class="form-optin__container" style="background-color: white">
+                                    <input
+                                        type="radio"
+                                        id="civilite_madame"
+                                        value="Madame"
+                                        name="civilite"
+                                        class="form-optin__checkbox"
+                                        checked="checked"
+                                        autocomplete="off"
+                                    />
+                                    <label
+                                        for="civilite_madame"
+                                        id="civilite_madame_label"
+                                        class="form-optin__label"
+                                        th:text="#{civilite.madame}"
+                                    >
+                                        Madame
+                                    </label>
+                                </div>
+                                <div class="form-optin__container" style="background-color: white">
+                                    <input
+                                        type="radio"
+                                        id="civilite_monsieur"
+                                        value="Monsieur"
+                                        name="civilite"
+                                        class="form-optin__checkbox"
+                                        autocomplete="off"
+                                    />
+                                    <label
+                                        for="civilite_monsieur"
+                                        id="civilite_monsieur_label"
+                                        class="form-optin__label"
+                                        th:text="#{civilite.monsieur}"
+                                    >
+                                        Monsieur
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__row align-start m-t-6">
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label aria-disabled="false" for="nom" id="nom_label" class="form-label">
+                                    <span th:text="#{admin.user.label.name}">Nom</span>
+                                    <span class="form-label__required-text" th:text="#{form.input.required}"
+                                        >(requis)</span
+                                    >
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                        </div>
+                        <div class="form-input__container">
+                            <input
+                                type="text"
+                                name="nom"
+                                id="nom"
+                                class="form-input__field form-input__field--type-text"
+                                data-validation="required"
+                            />
+                        </div>
+                        <div id="nom_description" class="form-input__footer"></div>
+                    </div>
+                </div>
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label aria-disabled="false" for="prenom" id="prenom_label" class="form-label">
+                                    <span th:text="#{admin.user.label.surname}">Prénom</span>
+                                    <span class="form-label__required-text" th:text="#{form.input.required}"
+                                        >(requis)</span
+                                    >
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                        </div>
+                        <div class="form-input__container">
+                            <input
+                                type="text"
+                                name="prenom"
+                                id="prenom"
+                                class="form-input__field form-input__field--type-text"
+                                data-validation="required"
+                            />
+                        </div>
+                        <div id="prenom_description" class="form-input__footer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__row m-t-6">
+                <div class="grid__col grid__col--middle">
+                    <div class="form-optin form-optin--disabled">
+                        <fieldset class="form-optin__fieldset">
+                            <legend class="form-optin__legend" th:text="#{admin.user.label.temporaryUser}">
+                                Utilisateur temporaire
+                            </legend>
+                            <div class="form-optin__optins">
+                                <div class="form-optin__container" style="background-color: white">
+                                    <input
+                                        type="radio"
+                                        id="temporaire_oui"
+                                        value="oui"
+                                        name="temporaire"
+                                        class="form-optin__checkbox"
+                                        checked="checked"
+                                        disabled="disabled"
+                                        autocomplete="off"
+                                    />
+                                    <label
+                                        for="temporaire_oui"
+                                        id="temporaire_oui_label"
+                                        class="form-optin__label"
+                                        th:text="#{choix.oui}"
+                                    >
+                                        Oui
+                                    </label>
+                                </div>
+                                <div class="form-optin__container" style="background-color: white">
+                                    <input
+                                        type="radio"
+                                        id="temporaire_non"
+                                        value="non"
+                                        name="temporaire"
+                                        class="form-optin__checkbox"
+                                        disabled="disabled"
+                                        autocomplete="off"
+                                    />
+                                    <label
+                                        for="temporaire_non"
+                                        id="temporaire_non_label"
+                                        class="form-optin__label"
+                                        th:text="#{choix.non}"
+                                    >
+                                        Non
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__row align-start m-t-6">
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label
+                                    for="dateDebut"
+                                    id="dateDebut_label"
+                                    class="form-label form-label--disabled"
+                                    th:text="#{admin.user.label.beginDate}"
+                                >
+                                    Date début
+                                    <!---->
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                            <div class="form-input__header-bottom"></div>
+                        </div>
+                        <div class="form-input__container">
+                            <div
+                                th:replace="fragments/components/input-date-picker :: inputDatePicker('datepicker_description_form_input_date_debut', 'dateDebut', 'dateDebut', true, ${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}, true)"
+                            ></div>
+                        </div>
+                        <div id="dateDebut_description" class="form-input__footer">
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label
+                                    for="dateFin"
+                                    id="dateFin_label"
+                                    class="form-label"
+                                    th:text="#{admin.user.label.endDate}"
+                                >
+                                    Date fin
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                            <div class="form-input__header-bottom"></div>
+                        </div>
+                        <div class="form-input__container">
+                            <div data-monthpickermode="none" class="form-date-picker-input datepicker">
+                                <span
+                                    th:id="datepicker_description_form_input_date_fin"
+                                    th:text="#{input.datepicker.format}"
+                                ></span>
+                                <input
+                                    type="text"
+                                    th:name="dateFin"
+                                    th:id="dateFin"
+                                    placeholder="JJ/MM/AAAA"
+                                    th:aria-describedby="datepicker_description_form_input_date_fin"
+                                    aria-autocomplete="none"
+                                    class="form-date-picker-input__form-input date"
+                                    th:data-validation="'required, date_unique_format(dd/mm/yyyy), date_inferior_to(dateDebut)'"
+                                />
+                                <button
+                                    type="button"
+                                    class="form-date-picker-input__open-calendar-button base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent"
+                                    aria-haspopup="dialog"
+                                    th:aria-label="#{input.datepicker.button.label}"
+                                >
+                                    <span
+                                        aria-hidden="true"
+                                        class="form-date-picker-input__icon icon icon--calendar icon--medium"
+                                    ></span>
+                                    <span class="sr-only" th:text="#{input.datepicker.button.label}"
+                                        >Choisir une date</span
+                                    >
+                                </button>
+                                <div th:replace="fragments/components/date-picker :: datePicker"></div>
+                            </div>
+                        </div>
+                        <div id="dateFin_description" class="form-input__footer">
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__row m-t-6">
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label
+                                    aria-disabled="false"
+                                    for="adresse"
+                                    id="adresse_label"
+                                    class="form-label"
+                                    th:text="#{admin.user.label.adress}"
+                                >
+                                    Adresse
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                        </div>
+                        <div class="form-input__container">
+                            <input
+                                type="text"
+                                name="adresse"
+                                id="adresse"
+                                class="form-input__field form-input__field--type-text"
+                            />
+                        </div>
+                        <div id="adresse_description" class="form-input__footer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__row align-start m-t-6">
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label
+                                    aria-disabled="false"
+                                    for="codePostal"
+                                    id="codePostal_label"
+                                    class="form-label"
+                                    th:text="#{admin.user.label.postalCode}"
+                                >
+                                    Code postal
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                        </div>
+                        <div class="form-input__container">
+                            <input
+                                type="text"
+                                name="codePostal"
+                                id="codePostal"
+                                class="form-input__field form-input__field--type-text"
+                            />
+                        </div>
+                        <div id="codePostal_description" class="form-input__footer"></div>
+                    </div>
+                </div>
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label
+                                    aria-disabled="false"
+                                    for="ville"
+                                    id="ville_label"
+                                    class="form-label"
+                                    th:text="#{admin.user.label.city}"
+                                >
+                                    Ville
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                        </div>
+                        <div class="form-input__container">
+                            <input
+                                type="text"
+                                name="ville"
+                                id="ville"
+                                class="form-input__field form-input__field--type-text"
+                            />
+                        </div>
+                        <div id="ville_description" class="form-input__footer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__row align-start m-t-6">
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label aria-disabled="false" for="telephone" id="telephone_label" class="form-label">
+                                    <span th:text="#{admin.user.label.phone}">Téléphone</span>
+                                    <span class="form-label__required-text" th:text="#{form.input.required}"
+                                        >(requis)</span
+                                    >
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                        </div>
+                        <div class="form-input__container">
+                            <input
+                                type="text"
+                                name="telephone"
+                                id="telephone"
+                                class="form-input__field form-input__field--type-text"
+                                data-validation="required, phone_number"
+                            />
+                        </div>
+                        <div id="telephone_description" class="form-input__footer"></div>
+                    </div>
+                </div>
+                <div class="grid__col grid__col--middle">
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <div class="form-input__header-top">
+                                <label aria-disabled="false" for="mel" id="mel_label" class="form-label">
+                                    <span th:text="#{admin.user.label.mail}">Mél.</span>
+                                    <span class="form-label__required-text" th:text="#{form.input.required}"
+                                        >(requis)</span
+                                    >
+                                </label>
+                                <div class="form-input__icon-group"></div>
+                            </div>
+                        </div>
+                        <div class="form-input__container">
+                            <input
+                                type="text"
+                                name="mel"
+                                id="mel"
+                                class="form-input__field form-input__field--type-text"
+                                data-validation="required, email"
+                            />
+                        </div>
+                        <div id="mel_description" class="form-input__footer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row-actions grid__row">
+                <div class="row-actions__left">
+                    <button
+                        type="button"
+                        onClick="goPreviousPage()"
+                        class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                        th:text="#{button.label.cancel}"
+                    >
+                        Annuler
+                    </button>
+                </div>
+                <div class="row-actions__right">
+                    <input
+                        type="button"
+                        id="submit-create-temp-user"
+                        onclick="createTempUserFormSubmit()"
+                        th:value="#{button.label.save}"
+                        class="base-btn base-btn--button base-btn--default"
+                    />
+                </div>
+            </div>
+        </form>
+    </main>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div class="search-form" th:fragment="texteIntegral(form)">
+            <fieldset>
+                <legend class="sr-only">[[#{recherche.text.bloc}]]</legend>
+                <div class="grid__row grid__row--top">
+                    <div class="grid__col">
+                        <div
+                            th:replace="fragments/components/formblocks/textarea-input :: textArea('recherche.expression.label', 'expression', '', ${form.expression}, 'false', '')"
+                        ></div>
+                    </div>
+                    <div class="grid__col m-t-3">
+                        <div
+                            th:replace="fragments/components/formblocks/checkboxes :: alignedCheckboxes('requete.texteIntegral.appliquerRechercheExacte', 'rechercheExacte', ${rechercheExacte}, ${form.rechercheExacte}, '', 'false', 'false')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/checkboxes :: columnCheckboxes('recherche.dans.label', 'rechercherDans', ${rechercheDans}, ${form.rechercherDans}, '', 'false')"
+                        ></div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </body>
+</html>

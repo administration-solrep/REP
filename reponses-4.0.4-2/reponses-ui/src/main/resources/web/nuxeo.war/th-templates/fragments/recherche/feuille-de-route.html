@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div class="search-form" th:fragment="feuilleDeRoute(form, options)">
+            <fieldset>
+                <legend class="sr-only" th:text="#{recherche.fdr.bloc}">Feuille de route</legend>
+                <div class="grid__row">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/simple-select :: simpleSelect('admin.modele.recherche.critereEtape.type.etape', 'typeEtape', '', ${options.typesEtape}, ${form.typeEtape}, 'false', 'recherche.select.tous.toutes.label')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/simple-select :: simpleSelect('recherche.statut.label', 'statut', '', ${options.listStatus}, ${form.statut}, 'false', 'recherche.select.tous.toutes.label')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <th:block
+                            th:replace="fragments/components/organigrammeSelectAutocomplete ::organigrammeSelectAutocomplete(
+                                         'recherche.direction.label',
+                                         false,
+                                         'direction',
+                                         'direction-key',
+                                         'DIR_UST', 
+                                         ${form.direction},  
+                                         false,
+                                         false,
+                                         ${form.mapDirection},
+                                         false)"
+                        ></th:block>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <th:block
+                            th:replace="fragments/components/organigrammeSelectAutocomplete ::organigrammeSelectAutocomplete(
+                                        'recherche.poste.label',
+                                        false,
+                                        'poste',
+                                        'poste-key',
+                                        'PST', 
+                                        ${form.poste}, 
+                                        false,
+                                        false,
+                                        ${form.mapPoste},
+                                        false)"
+                        ></th:block>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col">
+                        <div
+                            th:replace="fragments/components/formblocks/autocomplete-select :: autocompleteSelect('recherche.intitule.modele.fdr.label', 'intituleFdr', 'intituleFdr', 'form.description.nocharlimit', ${ {} }, ${form.intituleFdr}, false, @{/ajax/recherche/suggestions?typeSelection=intituleFdr}, '0', 'input', '', '', false, false, false)"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <th:block
+                            th:replace="fragments/components/formblocks/date-picker-range :: datepickerRange('recherche.date.debut.etape.label', 'dateDebutEtape', ${#calendars.format(form.dateDebutEtapeDebut,'dd/MM/yyyy')}, ${#calendars.format(form.dateDebutEtapeFin,'dd/MM/yyyy')}, 'false', 'false')"
+                        ></th:block>
+                    </div>
+                    <div class="grid__col grid__col--middle">
+                        <th:block
+                            th:replace="fragments/components/formblocks/date-picker-range :: datepickerRange('recherche.date.fin.etape.label', 'dateFinEtape', ${#calendars.format(form.dateFinEtapeDebut,'dd/MM/yyyy')}, ${#calendars.format(form.dateFinEtapeFin,'dd/MM/yyyy')},  'false', 'false')"
+                        ></th:block>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col">
+                        <th:block
+                            th:replace="fragments/components/formblocks/input-oui-non :: ouiNon('recherche.etape.obligatoire.label', 'etapeObligatoire', ${form.etapeObligatoire}, false)"
+                        ></th:block>
+                    </div>
+                    <div class="grid__col">
+                        <th:block
+                            th:replace="fragments/components/formblocks/input-oui-non :: ouiNon('recherche.franchissement.auto.label', 'rafraichissementAuto', ${form.rafraichissementAuto}, false)"
+                        ></th:block>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </body>
+</html>

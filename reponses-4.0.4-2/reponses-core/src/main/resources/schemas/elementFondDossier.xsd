@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<xs:schema
+    targetNamespace="http://www.nuxeo.org/ecm/schemas/group"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:nxs="http://www.nuxeo.org/ecm/schemas/group"
+>
+
+	<xs:element name="type" type="xs:string" />
+	<xs:element name="niveauVisibilite" type="xs:string" />
+	<xs:element name="numeroVersion" type="xs:string" />
+	<xs:element name="userName" type="xs:string" />
+	<xs:element name="filePath" type="xs:string" />
+	<xs:element name="ministereAjoute" type="xs:string" />
+
+</xs:schema>

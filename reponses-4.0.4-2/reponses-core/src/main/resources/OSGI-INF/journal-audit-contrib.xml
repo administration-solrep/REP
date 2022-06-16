@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<component name="fr.dila.reponses.core.journal.audit">
+
+ 	<extension target="org.nuxeo.ecm.platform.audit.service.NXAuditEventsService" point="event">
+
+		<event name="afterRouteReady" />
+
+		<!-- events de validation de la feuille de route -->
+		<event name="validerNonConcerne" />
+		<event name="dossierReattribution" />
+		<event name="dossierReorientation" />
+		<event name="dossierArbitrageSgg" />
+		<event name="echecSignature" />
+		<event name="addStepSignatureTransmissionAssemblees" />
+		<event name="pourValidationRetourPM" />
+
+		<!-- events de création du dossier -->
+		<event name="dossierCreation" />
+
+		<!-- event du parapheur : reponse -->
+ 		<event name="parapheurUpdate" />
+
+		<!-- event du parapheur : casser le cachet serveur -->
+ 		<event name="briserSignatureReponse" />
+
+		<!-- event administratif utilisateurs -->
+ 		<event name="user_created" />
+		<event name="user_changed" />
+		<event name="user_deleted" />
+		<event name="user_modified" />
+
+		<!-- event administratif organigrame -->
+ 		<event name="node_created" />
+		<event name="node_changed" />
+		<event name="node_deleted" />
+		<event name="node_modified" />
+		<event name="node_activation" />
+		<event name="node_desactivation" />
+
+		<!-- Event administratif sur les webservices -->
+ 		<event name="WSChercherReponses" />
+		<event name="WSChercherErrataReponses" />
+		<event name="WSEnvoyerReponses" />
+		<event name="WSEnvoyerErrataReponses" />
+		<event name="WSChercherQuestion" />
+		<event name="WSChercherErrataQuestion" />
+		<event name="WSChangementEtatQuestion" />
+		<event name="WSEnvoyerQuestions" />
+		<event name="WSEnvoyerQuestionsErrata" />
+		<event name="WSChangerEtatQuestions" />
+		<event name="WSChercherDossier" />
+		<event name="WSControlePublication" />
+		<event name="WSChercherRetourPublication" />
+		<event name="WSChercherAttribution" />
+		<event name="WSChercherMembresGouvernement" />
+		<event name="WSChercherLegislature" />
+
+		<!-- Allotissement -->
+ 		<event name="dossierAllotissement" />
+
+		<!-- Bordereau -->
+		<event name="bordereauJoUpdate" />
+
+ 	</extension>
+
+</component>

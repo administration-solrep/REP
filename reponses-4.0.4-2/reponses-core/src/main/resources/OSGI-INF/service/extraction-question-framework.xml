@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service d'extraction des questions. -->
+<component name="fr.dila.reponses.api.service.ExtractionService">
+	<implementation class="fr.dila.reponses.core.component.ExtractionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.ExtractionService" />
+	</service>
+
+	<require>org.nuxeo.ecm.core.persistence.PersistenceComponent</require>
+
+	<extension target="org.nuxeo.ecm.core.persistence.PersistenceComponent" point="hibernate">
+		<hibernateConfiguration name="sword-provider">
+			<datasource>sword-provider</datasource>
+			<classes>
+				<class>fr.dila.reponses.api.extraction.Question</class>
+				<class>fr.dila.st.api.hibernate.Hierarchy</class>
+				<class>fr.dila.reponses.api.hibernate.DossierReponse</class>
+				<class>fr.dila.reponses.api.hibernate.Reponse</class>
+			</classes>
+		</hibernateConfiguration>
+	</extension>
+
+</component>

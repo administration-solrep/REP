@@ -1,0 +1,216 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue les adapteurs de Document vers les objets métiers 
+	de l'application Réponses. -->
+<component name="fr.dila.reponses.core.adapterContrib">
+	
+	<require>fr.dila.ss.core.adapterContrib</require>
+
+	<extension target="org.nuxeo.ecm.core.api.DocumentAdapterService" point="adapters">
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les dossiers. *********************************************************************** -->
+		<adapter class="fr.dila.st.api.dossier.STDossier" factory="fr.dila.reponses.core.adapter.DossierAdapterFactory" />
+
+		<adapter
+            class="fr.dila.reponses.api.cases.Dossier"
+            facet="Distributable"
+            factory="fr.dila.reponses.core.adapter.DossierAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.cases.FondDeDossier"
+            factory="fr.dila.reponses.core.adapter.FondDeDossierAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.fonddossier.FondDeDossierFile"
+            factory="fr.dila.reponses.core.adapter.FondDeDossierFileAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.fonddossier.FondDeDossierFolder"
+            factory="fr.dila.reponses.core.adapter.FondDeDossierFolderAdapterFactory"
+        />
+
+		<!-- Adapteur pour la reponse -->
+		<adapter class="fr.dila.reponses.api.cases.Reponse" factory="fr.dila.reponses.core.adapter.ReponseAdapterFactory" />
+
+		<!-- Adapteur pour la question -->
+		<adapter class="fr.dila.reponses.api.cases.Question" factory="fr.dila.reponses.core.adapter.QuestionAdapterFactory" />
+
+		<!-- Adapteur DossierCommon -->
+		<adapter
+            class="fr.dila.reponses.api.cases.DossierCommon"
+            factory="fr.dila.reponses.core.adapter.DossierCommonAdapterFactory"
+        />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les jetons. *********************************************************************** -->
+		<adapter class="fr.dila.st.api.jeton.JetonDoc" factory="fr.dila.reponses.core.adapter.JetonDocAdapterFactory" />
+		<adapter class="fr.dila.reponses.api.domain.JetonDoc" factory="fr.dila.reponses.core.adapter.JetonDocAdapterFactory" />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les DossierLink. *********************************************************************** -->
+		<adapter
+            class="fr.dila.st.api.caselink.STDossierLink"
+            facet="CaseLink"
+            factory="fr.dila.reponses.core.adapter.DossierLinkAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.caselink.DossierLink"
+            facet="CaseLink"
+            factory="fr.dila.reponses.core.adapter.DossierLinkAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.cm.caselink.ActionableCaseLink"
+            facet="CaseLink"
+            factory="fr.dila.reponses.core.adapter.ReponsesCaseLinkAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.caselink.ReponsesActionableCaseLink"
+            facet="CaseLink"
+            factory="fr.dila.reponses.core.adapter.ReponsesCaseLinkAdapterFactory"
+        />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les feuilles de route. *********************************************************************** -->
+		<adapter
+            class="fr.dila.ss.api.feuilleroute.SSFeuilleRoute"
+            factory="fr.dila.reponses.core.adapter.FeuilleRouteAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.feuilleroute.ReponsesFeuilleRoute"
+            factory="fr.dila.reponses.core.adapter.FeuilleRouteAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.ss.api.feuilleroute.SSRouteStep"
+            factory="fr.dila.reponses.core.adapter.FeuilleRouteAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.feuilleroute.ReponsesRouteStep"
+            factory="fr.dila.reponses.core.adapter.FeuilleRouteAdapterFactory"
+        />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les mailbox *********************************************************************** -->
+		<adapter
+            class="fr.dila.reponses.api.mailbox.ReponsesMailbox"
+            factory="fr.dila.reponses.core.adapter.ReponsesMailboxAdapterFactory"
+        />
+
+		<adapter class="fr.dila.cm.mailbox.Mailbox" factory="fr.dila.reponses.core.adapter.ReponsesMailboxAdapterFactory" />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour la recherche. *********************************************************************** -->
+		<adapter class="fr.dila.reponses.api.recherche.Requete" factory="fr.dila.reponses.core.adapter.RequeteAdapterFactory" />
+
+		<adapter
+            class="fr.dila.reponses.api.favoris.FavoriDossier"
+            factory="fr.dila.reponses.core.adapter.FavoriDossierAdapterFactory"
+        />
+
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les données utilisateur *********************************************************************** -->
+		<!-- Adaptateur des favoris d'indexation -->
+		<adapter
+            class="fr.dila.reponses.api.favoris.FavorisIndexation"
+            factory="fr.dila.reponses.core.adapter.FavorisIndexationAdapterFactory"
+        />
+
+		<!-- Adapteur du profil utilisateur -->
+		<!-- Adapteur du profil utilisateur -->
+		<adapter
+            class="fr.dila.st.api.user.STProfilUtilisateur"
+            factory="fr.dila.reponses.core.adapter.ProfilUtilisateurAdapterFactory"
+        />
+		<adapter
+            class="fr.dila.reponses.api.user.ProfilUtilisateur"
+            factory="fr.dila.reponses.core.adapter.ProfilUtilisateurAdapterFactory"
+        />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour l'indexation. *********************************************************************** -->
+		<adapter
+            class="fr.dila.reponses.api.recherche.ReponsesIndexableDocument"
+            factory="fr.dila.reponses.core.adapter.IndexationAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.recherche.ReponsesComplIndexableDocument"
+            factory="fr.dila.reponses.core.adapter.IndexationComplAdapterFactory"
+        />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les informations de flux. *********************************************************************** -->
+		<adapter
+            class="fr.dila.reponses.api.flux.HasInfoFlux"
+            factory="fr.dila.reponses.core.adapter.HasInfoFluxAdapterFactory"
+        />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les Allotissements *********************************************************************** -->
+		<adapter
+            class="fr.dila.reponses.api.cases.Allotissement"
+            factory="fr.dila.reponses.core.adapter.AllotissementAdapterFactory"
+        />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour l'archivage *********************************************************************** -->
+		<adapter
+            class="fr.dila.reponses.api.archivage.ListeElimination"
+            factory="fr.dila.reponses.core.adapter.ListeEliminationAdapterFactory"
+        />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les notifications webservice *********************************************************************** -->
+		<adapter
+            class="fr.dila.reponses.api.notification.WsNotification"
+            factory="fr.dila.reponses.core.adapter.WsNotificationAdapterFactory"
+        />
+
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les logs *********************************************************************** -->
+		<adapter
+            class="fr.dila.reponses.api.logging.ReponsesLogging"
+            factory="fr.dila.reponses.core.adapter.ReponsesLoggingAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.logging.ReponsesLoggingLine"
+            factory="fr.dila.reponses.core.adapter.ReponsesLoggingLineAdapterFactory"
+        />
+
+		<adapter
+            class="fr.dila.reponses.api.logging.ReponsesLoggingLineDetail"
+            factory="fr.dila.reponses.core.adapter.ReponsesLoggingLineDetailAdapterFactory"
+        />
+
+		<!-- *********************************************************************** 
+			Adapteurs pour les historiques attributions *********************************************************************** -->
+		<adapter
+            class="fr.dila.reponses.api.historique.HistoriqueAttribution"
+            factory="fr.dila.reponses.core.adapter.HistoriqueAttributionAdapterFactory"
+        />
+			
+		<adapter
+            class="fr.dila.reponses.api.cases.flux.QuestionStateChange"
+            factory="fr.dila.reponses.core.adapter.EtatQuestionAdapterFactory"
+        />
+
+        <!-- Adaptateur des délégation -->
+        <adapter
+            class="fr.dila.reponses.api.domain.user.Delegation"
+            factory="fr.dila.reponses.core.adapter.DelegationAdapterFactory"
+        />
+
+	</extension>
+
+</component>

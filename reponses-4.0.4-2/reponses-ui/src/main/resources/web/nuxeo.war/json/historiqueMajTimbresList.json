@@ -1,0 +1,25 @@
+{
+	"liste": [
+		{
+			"id": "1",
+			"message": "Changement de gouvernement du 18/10/2018 15:29",
+			"etat": "TERMINEE",
+			"dateDebut": "18/10/2018 15:29",
+			"dateFin": "18/10/2018 17:29"
+		},
+		{
+			"id": "2",
+			"message": "Changement de gouvernement du 05/09/2018 12:43",
+			"etat": "FAILED",
+			"dateDebut": "18/09/2018 15:29",
+			"dateFin": "18/09/2018 17:29"
+		},
+		{
+			"id": "3",
+			"message": "Changement de gouvernement du 27/11/2017 16:52",
+			"etat": "EN_COURS",
+			"dateDebut": "18/08/2018 15:29",
+			"dateFin": "18/08/2018 17:29"
+		}
+	]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service des législatures de l'application Reponses -->
+<component name="fr.dila.reponses.api.service.vocabulary.LegislatureService">
+	<implementation class="fr.dila.reponses.core.service.vocabulary.LegislatureComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.vocabulary.LegislatureService" />
+	</service>
+</component>

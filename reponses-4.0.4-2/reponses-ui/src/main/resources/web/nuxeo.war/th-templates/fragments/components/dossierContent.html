@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="dossierContent(dossier, entiteVisible, tooltip, depth)">
+            <th:block th:unless="${#lists.isEmpty(dossier.lstDocuments)}">
+                <th:block th:each="doc, status : ${dossier.lstDocuments}">
+                    <tr class="table-line table-line--with-action-column table-line--complex-line" th:id="${doc.id}">
+                        <th
+                            th:id="|fdd-table-${ssHeaderIndex}-${status.index}-left-header|"
+                            th:class="|table-line\_\_cell table-line\_\_cell--file-folder-info tab--${depth}|"
+                            th:headers="|fdd-table-ss-header-${ssHeaderIndex}-nom|"
+                        >
+                            <a
+                                class="link"
+                                th:href="@{|/dossier/${repDossierId}/telecharger?fileId=${doc.id}|}"
+                                target="_blank"
+                            >
+                                <span aria-hidden="true" class="icon icon--file link__icon link__icon--prepend"></span>
+                                [[${doc.nom}]] [[${doc.extension}]]
+                            </a>
+                        </th>
+                        <td
+                            class="table-line__cell"
+                            th:headers="|fdd-table-ss-header-${ssHeaderIndex}-nom fdd-table-${ssHeaderIndex}-${status.index}-left-header fdd-table-header-1|"
+                            th:text="${doc.auteur}"
+                        ></td>
+                        <td
+                            class="table-line__cell"
+                            th:headers="|fdd-table-ss-header-${ssHeaderIndex}-nom fdd-table-${ssHeaderIndex}-${status.index}-left-header fdd-table-header-2|"
+                            th:if="${entiteVisible}"
+                            th:text="${doc.entite}"
+                        ></td>
+                        <td
+                            class="table-line__cell"
+                            th:headers="|fdd-table-ss-header-${ssHeaderIndex}-nom fdd-table-${ssHeaderIndex}-${status.index}-left-header fdd-table-header-3|"
+                            th:text="${doc.date}"
+                        ></td>
+                        <td
+                            class="table-line__cell"
+                            th:headers="|fdd-table-ss-header-${ssHeaderIndex}-nom fdd-table-${ssHeaderIndex}-${status.index}-left-header fdd-table-header-4|"
+                            th:text="${doc.version}"
+                        ></td>
+                        <td
+                            class="table-line__cell table-line__action-column"
+                            th:headers="|fdd-table-ss-header-${ssHeaderIndex}-actions fdd-table-${ssHeaderIndex}-${status.index}-left-header fdd-table-header-5|"
+                        >
+                            <div class="table-line__action-column-container" th:with="dropdownRight=true">
+                                <div class="table-line__action-column-container">
+                                    <th:block th:if="${not #lists.isEmpty(doc.lstActions)}">
+                                        <div
+                                            th:replace="fragments/components/dropdown-action :: dropdown-action(
+	                                        'content-action',
+	                                        ${doc.lstActions}, 
+	                                        'icon--ellipsis', 
+	                                        false, 
+	                                        'fondDossier.tooltip.showOptions',
+	                                        'base-btn--transparent base-btn--light base-btn--md-icon', 
+	                                        false, 
+	                                        'base-drop-down--light'
+	                                        )"
+                                        ></div>
+                                    </th:block>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </th:block>
+            </th:block>
+        </div>
+    </body>
+</html>

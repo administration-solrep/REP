@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!-- La contribution au service Requêteur pour l'application Réponses -->
+<component name="fr.dila.reponses.requeteur.contrib">
+	<require>fr.dila.st.core.service.RequeteurService</require>
+
+	<extension target="fr.dila.st.core.service.RequeteurService" point="solvers">
+		<solver class="fr.dila.st.core.requeteur.KeywordUfnxqlDateResolver" />
+		<solver class="fr.dila.reponses.core.requeteur.KeywordMinistereAttributaireResolver" />
+	</extension>
+
+</component>

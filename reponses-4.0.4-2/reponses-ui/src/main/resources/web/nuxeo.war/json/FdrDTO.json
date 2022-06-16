@@ -1,0 +1,264 @@
+{
+    "table": {
+        "lines": [
+            {
+                "etat": {
+                    "label": "etape.etat.valide.manuel",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [
+                    {
+                        "auteur": "moi",
+                        "date": 3600000,
+                        "content": "contenu note",
+                        "actions": []
+                    }
+                ],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service",
+                "echeanceDate": 3600000,
+                "traiteDate": 3600000,
+                "isRequired": true,
+                "parent": null,
+                "actions": [],
+                "depth": 0,
+                "id": "line1"
+            },
+            {
+                "etat": {
+                    "label": "etape.etat.encours",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service",
+                "echeanceDate": 3600000,
+                "traiteDate": 3600000,
+                "isRequired": true,
+                "parent": {
+                    "parent": {
+                        "parent": {
+                            "parent": null,
+                            "level": 1,
+                            "position": 1,
+                            "nbChilds": 6,
+                            "actions": [],
+                            "depth": 4,
+                            "isParallel": true,
+                            "id": "branch0"
+                        },
+                        "level": 2,
+                        "position": 1,
+                        "nbChilds": 4,
+                        "actions": [],
+                        "depth": 3,
+                        "isParallel": false,
+                        "id": "branch1"
+                    },
+                    "level": 3,
+                    "position": 1,
+                    "nbChilds": 2,
+                    "actions": [],
+                    "depth": 2,
+                    "isParallel": true,
+                    "id": "branch2"
+                },
+                "actions": [],
+                "depth": 3,
+                "id": "line2",
+                "parentsId": ["branch0", "branch1", "branch2"]
+            },
+            {
+                "etat": {
+                    "label": "etape.etat.encours",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service",
+                "echeanceDate": 3600000,
+                "traiteDate": 3600000,
+                "isRequired": true,
+                "parent": null,
+                "actions": [],
+                "depth": 3,
+                "id": "line3",
+                "parentsId": ["branch2", "branch1", "branch0"]
+            },
+            {
+                "etat": {
+                    "label": "etape.etat.encours",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [
+                    {
+                        "auteur": "moi",
+                        "date": 3600000,
+                        "content": "contenu note",
+                        "actions": []
+                    }
+                ],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service",
+                "echeanceDate": 3600000,
+                "traiteDate": 3600000,
+                "isRequired": true,
+                "parent": null,
+                "actions": [],
+                "depth": 2,
+                "id": "line4",
+                "parentsId": ["branch1", "branch0"]
+            },
+            {
+                "etat": {
+                    "label": "etape.etat.encours",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [
+                    {
+                        "auteur": "moi",
+                        "date": 3600000,
+                        "content": "contenu note",
+                        "actions": []
+                    }
+                ],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service",
+                "echeanceDate": 3600000,
+                "traiteDate": 3600000,
+                "isRequired": true,
+                "parent": null,
+                "actions": [],
+                "depth": 1,
+                "id": "line5",
+                "parentsId": ["branch0"]
+            },
+            {
+                "etat": {
+                    "label": "etape.etat.encours",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [
+                    {
+                        "auteur": "moi",
+                        "date": 3600000,
+                        "content": "contenu note",
+                        "actions": []
+                    },
+                    {
+                        "auteur": "moi",
+                        "date": 3600000,
+                        "content": "contenu note",
+                        "actions": []
+                    }
+                ],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service est une texte très très très très très très très très très très très long ",
+                "echeanceDate": 3600000,
+                "traiteDate": 3600000,
+                "isRequired": true,
+                "parent": null,
+                "actions": [],
+                "depth": 0,
+                "id": "line6"
+            },
+            {
+                "etat": {
+                    "label": "etape.etat.encours",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service",
+                "echeanceDate": 3600000,
+                "traiteDate": 3600000,
+                "isRequired": true,
+                "parent": {
+                    "parent": {
+                        "parent": null,
+                        "level": 1,
+                        "position": 2,
+                        "nbChilds": 4,
+                        "actions": [],
+                        "depth": 3,
+                        "isParallel": true,
+                        "id": "branch3"
+                    },
+                    "level": 2,
+                    "position": 1,
+                    "nbChilds": 2,
+                    "actions": [],
+                    "depth": 2,
+                    "isParallel": false,
+                    "id": "branch4"
+                },
+                "actions": [],
+                "depth": 2,
+                "id": "line7",
+                "parentsId": ["branch4", "branch3"]
+            },
+            {
+                "etat": {
+                    "label": "etape.etat.encours",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service est une texte très très très très très très très très très très très long ",
+                "echeanceDate": 3600000,
+                "traiteDate": 3600000,
+                "isRequired": true,
+                "parent": null,
+                "actions": [],
+                "depth": 2,
+                "id": "line8",
+                "parentsId": ["branch4", "branch3"]
+            },
+            {
+                "etat": {
+                    "label": "etape.etat.encours",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service",
+                "echeanceDate": 3600000,
+                "traiteDate": 3600000,
+                "isRequired": true,
+                "parent": {
+                    "parent": null,
+                    "level": 2,
+                    "position": 2,
+                    "nbChilds": 2,
+                    "actions": [],
+                    "depth": 3,
+                    "isParallel": false,
+                    "id": "branch5"
+                },
+                "actions": [],
+                "depth": 2,
+                "id": "line9",
+                "parentsId": ["branch5", "branch3"]
+            },
+            {
+                "etat": {
+                    "label": "etape.etat.encours",
+                    "icon": "icon--arrow-triangle-right-circle"
+                },
+                "notes": [],
+                "action": "Pour rédaction",
+                "posteInMinistere": "Ministere économie - Chef de service est une texte très très très très très très très très très très très long ",
+                "echeanceDate": 3600000,
+                "traiteDate": null,
+                "isRequired": true,
+                "parent": null,
+                "actions": [],
+                "depth": 2,
+                "id": "line10",
+                "parentsId": ["branch5", "branch3"]
+            }
+        ],
+        "totalNbLevel": 3
+    },
+    "tabActions": []
+}

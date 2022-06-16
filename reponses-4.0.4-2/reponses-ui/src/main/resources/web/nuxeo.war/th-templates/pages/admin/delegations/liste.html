@@ -1,0 +1,67 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='Page des profils', title=#{menu.admin.user.delegation.title})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <div class="flex justify-end m-t-6">
+            <a class="base-btn base-btn--button base-btn--default" th:href="@{/admin/delegation/creation#main_content}">
+                <span
+                    class="base-btn__icon base-btn__icon--vertical-center base-btn__icon--left icon icon--add"
+                    aria-hidden="true"
+                ></span>
+                [[#{reponses.delegation.create.action}]]
+            </a>
+        </div>
+        <h1 class="m-t-6 m-b-6 base-title base-title--lvl-1" th:text="#{menu.admin.user.delegation.title}">
+            Délégation des droits
+        </h1>
+
+        <div class="heading-complex m-t-6 m-b-6">
+            <div class="heading-complex__main">
+                <h2 class="base-title base-title--lvl-4">[[#{reponses.delegation.recieved}]]</h2>
+                <p class="base-subtitle base-subtitle--secondary">
+                    - [[#{reponses.delegation.nombre(${nbDelegationsRecues})}]]
+                </p>
+            </div>
+            <div class="heading-complex__options"></div>
+        </div>
+        <th:block
+            th:with="tableCaption=#{reponses.delegation.recieved}+' - '+#{reponses.delegation.nombre(${nbDelegationsRecues})}"
+        >
+            <div th:replace="fragments/table/tableDelegationsRecues :: searchResults"></div>
+        </th:block>
+
+        <div class="heading-complex m-t-6 m-b-6">
+            <div class="heading-complex__main">
+                <h2 class="base-title base-title--lvl-4">[[#{reponses.delegation.given}]]</h2>
+                <p class="base-subtitle base-subtitle--secondary">
+                    - [[#{reponses.delegation.nombre(${nbDelegationsDonnees})}]]
+                </p>
+            </div>
+            <div class="heading-complex__options"></div>
+        </div>
+
+        <th:block
+            th:with="tableCaption=#{reponses.delegation.given}+' - '+#{reponses.delegation.nombre(${nbDelegationsDonnees})}"
+        >
+            <div th:replace="fragments/table/tableDelegationsDonnees :: searchResults"></div>
+        </th:block>
+
+        <div class="flex justify-end m-t-6">
+            <a
+                class="base-btn base-btn--button base-btn--default"
+                th:href="@{/admin/delegation/creation#main_content}"
+                type="button"
+            >
+                <span
+                    class="base-btn__icon base-btn__icon--vertical-center base-btn__icon--left icon icon--add"
+                    aria-hidden="true"
+                ></span>
+                [[#{reponses.delegation.create.action}]]
+            </a>
+        </div>
+    </main>
+</html>

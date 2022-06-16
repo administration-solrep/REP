@@ -1,0 +1,8 @@
+<component name="fr.dila.reponses.ui.statistiquesuiservice">
+	<implementation class="fr.dila.reponses.ui.services.component.StatistiquesUIComponent" />
+
+	<service>
+        <provide interface="fr.dila.ss.ui.services.SSStatistiquesUIService" />
+		<provide interface="fr.dila.reponses.ui.services.StatistiquesUIService" />
+	</service>
+</component>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div class="search-form" th:fragment="motsCles(form, options)">
+            <fieldset>
+                <legend class="sr-only" th:text="#{recherche.mots.bloc}">Mots-clés</legend>
+                <div class="grid__row">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/radios :: columnRadios('recherche.sur.label', 'rechercheSur', ${rechercheSur}, ${form.rechercheSur}, '', 'false')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/autocomplete-select :: autocompleteSelect('recherche.senat.label', 'indexSenat', 'indexSenat', '', ${ {} }, ${form.indexSenat}, 'false', 
+                            @{/ajax/recherche/suggestions?typeSelection=Senat},
+                            '0',
+                            'input',
+                            '',
+                            '',
+                             false,
+                             true,
+                             false)"
+                        ></div>
+                        <a
+                            href="http://www.senat.fr/"
+                            class="link m-t-3"
+                            target="_blank"
+                            th:title="#{link.new.window(#{recherche.visite.site.senat.label})}"
+                        >
+                            [[#{recherche.visite.site.senat.label}]]
+                            <span
+                                aria-hidden="true"
+                                class="icon icon--external link__icon link__icon--append m-t-3"
+                            ></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/autocomplete-select :: autocompleteSelect('recherche.an.label', 'indexAn', 'indexAn', '', ${ {} }, ${form.indexAn}, 'false',
+                            @{/ajax/recherche/suggestions?typeSelection=AN},
+                            '0',
+                            'input',
+                            '',
+                            '',
+                             false,
+                             true,
+                             false)"
+                        ></div>
+                        <a
+                            href="http://www.assemblee-nationale.fr/"
+                            class="link m-t-3"
+                            target="_blank"
+                            th:title="#{link.new.window(#{recherche.visite.site.an.label})}"
+                        >
+                            [[#{recherche.visite.site.an.label}]]
+                            <span
+                                aria-hidden="true"
+                                class="icon icon--external link__icon link__icon--append m-t-3"
+                            ></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/autocomplete-select :: autocompleteSelect('recherche.ministeres.label', 'indexMinistere', 'indexMinistere', '', ${ {} }, ${form.indexMinistere}, 'false',
+                             @{/ajax/recherche/suggestions?typeSelection=Ministere},
+                            '1',
+                            'input',
+                            '',
+                            '',
+                             false,
+                             true,
+                             false)"
+                        ></div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='page allotissement', title=#{allotissement.title})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <input
+            type="hidden"
+            id="urlPreviousPage"
+            name="urlPreviousPage"
+            th:value="@{|${urlPreviousPage}#main_content|}"
+        />
+        <div class="m-t-6">
+            <button
+                type="button"
+                onclick="goPreviousPage()"
+                class="m-r-3 base-btn base-btn--button base-btn--default base-btn--light base-btn--center base-btn--transparent base-btn--bordered"
+                th:text="#{button.label.back}"
+            >
+                Retour
+            </button>
+            <h1 class="m-t-6 base-title base-title--lvl-1" th:text="#{allotissement.title}">Création de lot</h1>
+        </div>
+
+        <div class="page-reponses__table">
+            <div class="heading-complex m-t-6 m-b-6">
+                <div class="heading-complex__main">
+                    <h2
+                        class="base-title base-title--lvl-4 m-t-6"
+                        th:text="#{allotissement.titre.allotissement.possible}"
+                    >
+                        Liste des dossiers pouvant être allotis
+                    </h2>
+                </div>
+            </div>
+
+            <div
+                th:replace="fragments/table/tableAllotissement :: tableAllotissement(${lstColonnes},${listQuestionsSearch},'allotissement-possible')"
+            ></div>
+
+            <div id="dossier-directeur-input" class="grid__row m-b-6">
+                <div
+                    th:replace="fragments/components/formblocks/simple-input :: simpleInput(#{allotissement.button.create.label}, true, '', 'form_input-create-lot', 'form_input-create-lot', null, false)"
+                ></div>
+
+                <button
+                    type="button"
+                    class="base-btn base-btn--button base-btn--default"
+                    onclick="doCreateLot();"
+                    th:text="#{dossier.connexe.action.creer.lot}"
+                >
+                    Créer un lot
+                </button>
+            </div>
+        </div>
+
+        <div class="page-reponses__table">
+            <div class="heading-complex m-t-6 m-b-6">
+                <div class="heading-complex__main">
+                    <h2 class="base-title base-title--lvl-4 m-t-6" th:text="#{allotissement.titre.questions.alloties}">
+                        Liste des questions avec un lot
+                    </h2>
+                </div>
+            </div>
+
+            <div
+                th:replace="fragments/table/tableAllotissement :: tableAllotissement(${lstColonnes},${listQuestionsAvecLotSearch},'alloties')"
+            ></div>
+        </div>
+
+        <div class="page-reponses__table">
+            <div class="heading-complex m-t-6 m-b-6">
+                <div class="heading-complex__main">
+                    <h2
+                        class="base-title base-title--lvl-4 m-t-6"
+                        th:text="#{allotissement.titre.allotissement.impossible}"
+                    >
+                        Liste des dossiers ne pouvant être allotis
+                    </h2>
+                </div>
+            </div>
+
+            <div
+                th:replace="fragments/table/tableAllotissement :: tableAllotissement(${lstColonnes},${listQuestionsErrorSearch},'erreur')"
+            ></div>
+        </div>
+
+        <div class="m-t-6 m-b-6">
+            <button
+                type="button"
+                onclick="goPreviousPage()"
+                class="m-r-3 base-btn base-btn--button base-btn--default base-btn--light base-btn--center base-btn--transparent base-btn--bordered"
+                th:text="#{button.label.back}"
+            >
+                Retour
+            </button>
+        </div>
+    </main>
+</html>

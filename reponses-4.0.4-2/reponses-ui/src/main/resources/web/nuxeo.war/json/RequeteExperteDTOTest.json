@@ -1,0 +1,27 @@
+{
+    "requetes": [],
+    "champs": {
+        "dateCaducite": {
+            "label": "label.requeteur.question_condition_date_caducite",
+            "field": "q.qu:dateCaduciteQuestion",
+            "typeChamp": "DATES",
+            "parameters": {}
+        },
+        "auteur": {
+            "label": "label.requeteur.question_condition_auteur",
+            "field": "q.qu:nomCompletAuteur",
+            "typeChamp": "TEXT",
+            "parameters": {
+                "autocomplete": "auteur"
+            }
+        },
+        "etatEtape": {
+            "label": "label.requeteur.fdr_condition_etat_etape",
+            "field": "e2.ecm:currentLifeCycleState",
+            "typeChamp": "MULTIPLE_SELECT",
+            "parameters": {
+                "service": "SelectValueUIService.getStatutsEtapeRecherche()"
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <th:block th:fragment="comparatorText">
+            <div class="versioncomparison__versions_diff">
+                <div class="header"></div>
+                <div class="content" th:text="${dto.textFirst}"></div>
+            </div>
+            <div class="versioncomparison__versions_diff">
+                <div class="header"></div>
+                <div class="content" th:text="${dto.textLast}"></div>
+            </div>
+        </th:block>
+    </body>
+</html>

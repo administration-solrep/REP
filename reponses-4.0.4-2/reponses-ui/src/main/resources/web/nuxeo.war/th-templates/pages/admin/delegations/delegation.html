@@ -1,0 +1,82 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='Page de la fiche délégation', title=#{reponses.delegation.detail.title})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <div th:replace="fragments/components/edit-buttons :: edit-buttons('boutons-delegation')"></div>
+
+        <h1 class="base-title base-title--lvl-1" th:text="#{reponses.delegation.detail.title}">Délégation</h1>
+
+        <table class="folder-detail__table">
+            <tbody>
+                <tr class="folder-detail__table-line">
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--label"
+                        th:text="#{reponses.delegation.detail.utilisateurSource}"
+                    ></td>
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--value"
+                        th:text="${delegationForm.sourceName}"
+                    ></td>
+                </tr>
+                <tr class="folder-detail__table-line">
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--label"
+                        th:text="#{reponses.delegation.detail.utilisateurDestinataire}"
+                    ></td>
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--value"
+                        th:text="${delegationForm.delegueName}"
+                    ></td>
+                </tr>
+                <tr class="folder-detail__table-line">
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--label"
+                        th:text="#{reponses.delegation.detail.dateDebut}"
+                    ></td>
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--value"
+                        th:text="${delegationForm.dateDebut ? #dates.format(delegationForm.dateDebut.time, 'dd/MM/yyyy') : ''}"
+                    ></td>
+                </tr>
+                <tr class="folder-detail__table-line">
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--label"
+                        th:text="#{reponses.delegation.detail.dateFin}"
+                    ></td>
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--value"
+                        th:text="${delegationForm.dateFin ? #dates.format(delegationForm.dateFin.time, 'dd/MM/yyyy') : ''}"
+                    ></td>
+                </tr>
+
+                <tr
+                    class="folder-detail__table-line"
+                    th:if="${delegationForm.profils==null || #lists.isEmpty(delegationForm.profils)}"
+                >
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--label"
+                        th:text="#{reponses.delegation.detail.profilList}]]"
+                    ></td>
+                    <td class="folder-detail__table-cell folder-detail__table-cell--value"></td>
+                </tr>
+                <tr
+                    class="folder-detail__table-line"
+                    th:unless="${delegationForm.profils==null || #lists.isEmpty(delegationForm.profils)}"
+                    th:each="profil,iterStat: ${delegationForm.profils}"
+                >
+                    <td
+                        class="folder-detail__table-cell folder-detail__table-cell--label"
+                        th:text="${iterStat.count==1}? #{reponses.delegation.detail.profilList}"
+                    ></td>
+                    <td class="folder-detail__table-cell folder-detail__table-cell--value" th:text="${profil}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div th:replace="fragments/components/edit-buttons :: edit-buttons('boutons-delegation')"></div>
+    </main>
+</html>

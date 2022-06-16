@@ -1,0 +1,143 @@
+<?xml version="1.0" ?>
+<!-- Ce composant permet de contribuer les content view de l'application 
+	Réponses. -->
+<component name="fr.dila.reponses.ui.contentviews.contrib">
+
+	<require>org.nuxeo.ecm.platform.query.api.PageProviderService</require>
+
+    <extension target="org.nuxeo.ecm.platform.query.api.PageProviderService" point="providers">
+
+
+			<genericPageProvider class="fr.dila.reponses.ui.contentview.RechercheResultPageProvider" name="dossierPageProvider">
+				<property name="checkQueryCache">false</property>
+				<pattern quoteParameters="true" escapeParameters="true">
+					ufnxql:SELECT distinct q.ecm:uuid AS id FROM Question AS q WHERE (q.ixa:AN_rubrique="administration" OR q.ixacomp:AN_rubrique="administration") AND (q.ixa:TA_rubrique="activités" OR q.ixacomp:TA_rubrique="activités")
+				</pattern>
+				<sort column="q.qu:numeroQuestion" ascending="true" />
+				<pageSize>10</pageSize>
+			</genericPageProvider>
+
+			<genericPageProvider
+            class="fr.dila.reponses.ui.contentview.RechercheResultPageProvider"
+            name="rechercheSimplePageProvider"
+        >
+				<pattern quoteParameters="true" escapeParameters="true">
+					ufnxql:SELECT q.ecm:uuid AS id FROM Question AS q WHERE q.qu:numeroQuestion LIKE ? AND q.qu:origineQuestion LIKE ? AND q.qu:legislatureQuestion = ?
+				</pattern>
+				<sort column="q.qu:numeroQuestion" ascending="true" />
+				<pageSize>20</pageSize>
+			</genericPageProvider>
+
+      <genericPageProvider
+            class="fr.dila.reponses.ui.contentview.RechercheResultPageProvider"
+            name="requeteCompositePageProvider"
+        >
+        <pattern quoteParameters="false" escapeParameters="false">
+          ?
+        </pattern>
+        <sort column="q.qu:numeroQuestion" ascending="true" />
+        <pageSize>20</pageSize>
+      </genericPageProvider>
+
+      <genericPageProvider
+            class="fr.dila.reponses.ui.contentview.RepCorbeillePageProvider"
+            name="corbeilleMinPageProvider"
+        >
+          <pattern quoteParameters="false" escapeParameters="false">
+              ufnxql: SELECT dl.ecm:uuid as id FROM DossierLink as dl WHERE dl.ecm:currentLifeCycleState = 'todo' AND dl.drl:idMinistereAttributaire = '?' AND dl.drl:routingTaskType='?' AND dl.ecm:parentId IN ?
+          </pattern>
+          <pageSize>10</pageSize>
+      </genericPageProvider>
+
+      <genericPageProvider
+            class="fr.dila.reponses.ui.contentview.RepCorbeillePageProvider"
+            name="corbeillePostePageProvider"
+        >
+          <pattern quoteParameters="false" escapeParameters="false">
+              ufnxql: SELECT dl.ecm:uuid as id FROM DossierLink as dl WHERE dl.ecm:currentLifeCycleState = 'todo' AND dl.drl:idMinistereAttributaire = '?' AND dl.ecm:parentId='?' AND dl.ecm:parentId IN ?
+          </pattern>
+          <pageSize>10</pageSize>
+      </genericPageProvider>
+
+      <genericPageProvider
+            class="fr.dila.reponses.ui.contentview.RepCorbeillePageProvider"
+            name="corbeilleSignalPageProvider"
+        >
+          <pattern quoteParameters="false" escapeParameters="false">
+              ufnxql: SELECT dl.ecm:uuid as id FROM DossierLink as dl WHERE dl.ecm:currentLifeCycleState = 'todo' AND dl.drl:idMinistereAttributaire = '?' AND dl.drl:etatsQuestion LIKE '?' AND dl.ecm:parentId IN ?
+          </pattern>
+          <pageSize>10</pageSize>
+      </genericPageProvider>
+
+	    <coreQueryPageProvider name="requetesGeneralesPageProvider">
+		    <pattern quoteParameters="false" escapeParameters="false">
+		       SELECT * FROM SmartFolder WHERE ecm:parentId = '?' AND ecm:currentLifeCycleState != 'deleted'
+		    </pattern>
+		    <sort column="sf:pos" ascending="true" />
+		    <pageSize>20</pageSize>
+	    </coreQueryPageProvider>
+
+        <coreQueryPageProvider name="requetesPersonellesPageProvider">
+            <pattern quoteParameters="false" escapeParameters="false">
+                SELECT * FROM SmartFolder WHERE ecm:parentId = '?' AND ecm:currentLifeCycleState != 'deleted'
+            </pattern>
+            <pageSize>200</pageSize>
+        </coreQueryPageProvider>
+        
+        <genericPageProvider
+            class="fr.dila.reponses.ui.contentview.ListeEliminationPageProvider"
+            name="listeEliminationPageProvider"
+        >
+            <pattern quoteParameters="false" escapeParameters="false">
+                SELECT * FROM ListeElimination
+            </pattern>
+            <pageSize>20</pageSize>
+        </genericPageProvider>
+        
+        <genericPageProvider
+            class="fr.dila.reponses.ui.contentview.ListeEliminationDossierPageProvider"
+            name="listeEliminationDossierPageProvider"
+        >
+            <pattern quoteParameters="false" escapeParameters="false">
+                SELECT * FROM Dossier WHERE dos:listeElimination = '?'
+            </pattern>
+            <pageSize>20</pageSize>
+        </genericPageProvider>
+
+        <genericPageProvider
+            name="ADMIN_JOURNAL_DOSSIER"
+            class="fr.dila.reponses.ui.contentview.ReponsesJournalAdminPageProvider"
+        >
+            <pageSize>20</pageSize>
+            <sort column="eventDate" ascending="false" />
+        </genericPageProvider>
+
+        <genericPageProvider
+            name="ADMIN_JOURNAL_DOSSIER"
+            class="fr.dila.reponses.ui.contentview.ReponsesJournalAdminPageProvider"
+        >
+            <pageSize>20</pageSize>
+            <sort column="eventDate" ascending="false" />
+        </genericPageProvider>
+        
+        <genericPageProvider
+            name="PP_DELEGATIONS_RECUES"
+            class="fr.dila.st.ui.contentview.PaginatedPageDocumentProvider"
+        >
+            <pattern quoteParameters="false" escapeParameters="false">
+                SELECT * FROM Delegation where del:destinataireId = '?'
+            </pattern>
+            <sort column="del:dateDebut" ascending="true" />
+            <pageSize>10</pageSize>
+        </genericPageProvider>
+
+        <genericPageProvider class="fr.dila.st.ui.contentview.UfnxqlPageDocumentProvider" name="suivi_alert_content">
+            <property name="typeDocument">Alert</property>
+            <property name="queryString">
+                SELECT a.ecm:uuid as id FROM Alert as a where testAcl(a.ecm:uuid) = 1 AND a.ecm:currentLifeCycleState != 'deleted'
+            </property>
+            <pageSize>20</pageSize>
+        </genericPageProvider>
+
+	</extension>
+</component>

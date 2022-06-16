@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://dila.fr/solon/schemas/historiqueAttribution/"
+    xmlns:jta="http://dila.fr/solon/schemas/historiqueAttribution/"
+>
+
+	<xs:include schemaLocation="base.xsd" />
+
+	<xs:element name="minAttribution" type="xs:string" />
+	<xs:element name="dateAttribution" type="xs:date" />
+	<xs:element name="typeAttribution" type="xs:string" />
+
+</xs:schema>

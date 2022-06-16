@@ -1,0 +1,186 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <th:block th:fragment="lineParametrageTimbres(newMinisteresSelect)">
+            <fieldset class="line-ministere-form" th:with="historyValue=${historyForm.get(item.identifiant)}">
+                <div class="grid__row m-b-6">
+                    <div class="grid__col col-label-maj-timbres">
+                        <div tabindex="0" class="base-tooltip js-tooltip full-width">
+                            <div class="form-input">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            class="form-label"
+                                            id="formLine_0_ancien_label"
+                                            th:for="|ancien-ministere-${item.identifiant}|"
+                                            th:text="${currGouvernementName}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <label
+                                        class="label-maj-timbres"
+                                        id="formLine_0_ancien_label"
+                                        th:for="|ancien-ministere-${item.identifiant}|"
+                                        th:text="${item.appellation}"
+                                    >
+                                    </label>
+                                    <input name="oldMinistere" th:value="${item.appellation}" type="hidden" /><input
+                                        name="oldMinistereId"
+                                        th:value="${item.identifiant}"
+                                        type="hidden"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tooltip-wrapper"></div>
+                    </div>
+                    <div class="grid__col new-gouv-maj-timbres">
+                        <div class="form-select form-select--simple">
+                            <div class="form-input">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            class="form-label"
+                                            id="formLine_0_nouveau_label"
+                                            th:for="|nouveau-ministere-${item.identifiant}|"
+                                            th:text="${nextGouvernementName}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <div class="form-select__field-wrapper">
+                                        <div class="form-select-input">
+                                            <select
+                                                name="newMinistereId"
+                                                class="form-select-input__field form-select-input__field--simple"
+                                                th:id="|nouveau-ministere-${item.identifiant}|"
+                                                onchange="setValueNewMinistere(this)"
+                                            >
+                                                <th:block th:each="grp : ${newMinisteresSelect}">
+                                                    <option
+                                                        th:if="${grp.id}"
+                                                        th:value="${grp.id}"
+                                                        th:text="${grp.label}"
+                                                        th:data-display="${grp.label}"
+                                                        th:selected="${(historyValue != null and #strings.equals(historyValue.newMinistereId, grp.id)) or (historyValue == null and grp.id == 'unchanged_entity')}"
+                                                    ></option>
+                                                    <optgroup th:unless="${grp.id}" th:label="${grp.label}">
+                                                        <th:block th:each="evt : ${grp.selectValues}">
+                                                            <option
+                                                                th:value="${evt.id}"
+                                                                th:text="${evt.label}"
+                                                                th:data-display="${evt.label}"
+                                                                th:selected="${historyValue != null and #strings.equals(historyValue.newMinistereId, evt.id)}"
+                                                            ></option>
+                                                        </th:block>
+                                                    </optgroup>
+                                                </th:block>
+                                            </select>
+                                            <span
+                                                tabindex="-1"
+                                                aria-hidden="true"
+                                                class="icon icon--arrow-bottom form-select-input__arrow"
+                                            >
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="newMinistere" />
+                    </div>
+                    <div class="grid__col grid__col--auto">
+                        <div class="form-optin">
+                            <fieldset class="form-optin__fieldset">
+                                <legend
+                                    class="form-optin__legend"
+                                    th:text="#{majtimbres.optinLine.label.briserSignature}"
+                                ></legend>
+                                <div class="form-optin__optins">
+                                    <div class="form-optin__container">
+                                        <input
+                                            th:name="|briserSignature-${item.identifiant}|"
+                                            class="form-optin__checkbox"
+                                            th:id="|briserSignatureOui-${item.identifiant}|"
+                                            type="radio"
+                                            value="true"
+                                            th:checked="${(historyValue == null) or (historyValue != null and historyValue.briserSignature)}"
+                                            autocomplete="off"
+                                        /><label
+                                            class="form-optin__label"
+                                            th:for="|briserSignatureOui-${item.identifiant}|"
+                                            th:text="#{choix.oui}"
+                                        >
+                                        </label>
+                                    </div>
+                                    <div class="form-optin__container">
+                                        <input
+                                            th:name="|briserSignature-${item.identifiant}|"
+                                            class="form-optin__checkbox"
+                                            th:id="|briserSignatureNon-${item.identifiant}|"
+                                            type="radio"
+                                            value="false"
+                                            th:checked="${historyValue != null and !historyValue.briserSignature}"
+                                            autocomplete="off"
+                                        /><label
+                                            class="form-optin__label"
+                                            th:for="|briserSignatureNon-${item.identifiant}|"
+                                            th:text="#{choix.non}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="grid__col grid__col--auto">
+                        <div class="form-optin">
+                            <fieldset class="form-optin__fieldset">
+                                <legend
+                                    class="form-optin__legend"
+                                    th:text="#{majtimbres.optinLine.label.migrerDossier}"
+                                ></legend>
+                                <div class="form-optin__optins">
+                                    <div class="form-optin__container">
+                                        <input
+                                            th:name="|migrerDossiersClos-${item.identifiant}|"
+                                            class="form-optin__checkbox"
+                                            th:id="|migrerDossierOui-${item.identifiant}|"
+                                            type="radio"
+                                            value="true"
+                                            th:checked="${(historyValue == null) or (historyValue != null and historyValue.migrerDossiersClos)}"
+                                            autocomplete="off"
+                                        /><label
+                                            class="form-optin__label"
+                                            th:for="|migrerDossierOui-${item.identifiant}|"
+                                            th:text="#{choix.oui}"
+                                        >
+                                        </label>
+                                    </div>
+                                    <div class="form-optin__container">
+                                        <input
+                                            th:name="|migrerDossiersClos-${item.identifiant}|"
+                                            class="form-optin__checkbox"
+                                            th:id="|migrerDossierNon-${item.identifiant}|"
+                                            type="radio"
+                                            value="false"
+                                            th:checked="${historyValue != null and !historyValue.migrerDossiersClos}"
+                                            autocomplete="off"
+                                        /><label
+                                            class="form-optin__label"
+                                            th:for="|migrerDossierNon-${item.identifiant}|"
+                                            th:text="#{choix.non}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </th:block>
+    </body>
+</html>

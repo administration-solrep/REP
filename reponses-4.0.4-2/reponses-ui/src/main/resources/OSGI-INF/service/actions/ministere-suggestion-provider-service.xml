@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.suggestion.ministere.MinistereSuggestionProviderService">    
+    <implementation
+        class="fr.dila.reponses.ui.services.actions.suggestion.ministere.MinistereSuggestionProviderComponent"
+    />
+
+    <service>
+        <provide
+            interface="fr.dila.reponses.ui.services.actions.suggestion.ministere.MinistereSuggestionProviderService"
+        />
+    </service>
+
+</component>

@@ -1,0 +1,5 @@
+id,label
+"running","étape en cours"
+"validated","étape validée"
+"done","étape validée manuellement"
+"ready","étape à venir"

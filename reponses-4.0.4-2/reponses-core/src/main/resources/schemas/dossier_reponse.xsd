@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://nuxeo.org/schemas/dossier_reponse/"
+    xmlns:dos="http://nuxeo.org/schemas/dossier_reponse/"
+>
+
+	<!-- *********************************************************************** 
+		Données communes au socle transverse. *********************************************************************** -->
+
+	<!-- Dernière feuille de route lancée sur le dossier -->
+	<xs:element name="lastDocumentRoute" type="xs:string" />
+
+	<!-- *********************************************************************** 
+		Données sur l'état du dossier. *********************************************************************** -->
+	<!-- Vrai si le dossier a atteint une étape de rédaction (en cours ou terminée) -->
+	<xs:element name="etapeRedactionAtteinte" type="xs:boolean" default="false" />
+
+	<!-- Vrai si le dossier a atteint une étape de signature (en cours ou terminée) -->
+	<xs:element name="etapeSignatureAtteinte" type="xs:boolean" default="false" />
+
+	<!-- Nombre de réaffectations effectuées -->
+	<xs:element name="reaffectationCount" type="xs:int" default="0" />
+
+	<!-- *********************************************************************** 
+		Données de la question. *********************************************************************** -->
+	<!-- numeroQuestion : numéro de la question : utilise pour le nom du dossier 
+		dans le chemin -->
+	<xs:element name="numeroQuestion" type="xs:int" />
+
+	<!-- id du ministere attributaire precedent -->
+	<xs:element name="ministereAttributairePrecedent" type="xs:string" />
+
+	<!-- ATTENTION : on parle ici de l'id du ministère attributaire ! -->
+	<xs:element name="ministereAttributaireCourant" type="xs:string" />
+
+	<!-- Ministère à utiliser pour la réattribution -->
+	<xs:element name="ministereReattribution" type="xs:string" />
+
+	<xs:element name="listeElimination" type="xs:string" />
+
+	<!-- identifiant du Document "DossierLot" -->
+	<xs:element name="idDossierLot" type="xs:string" />
+
+	<!-- *********************************************************************** 
+		Données du parapheur *********************************************************************** -->
+	<!-- id du document question -->
+	<xs:element name="idDocumentQuestion" type="xs:string" />
+
+	<!-- id du document reponse -->
+	<xs:element name="idDocumentReponse" type="xs:string" />
+
+	<!-- id du document fond de dossier contenant les attachements -->
+	<xs:element name="idDocumentFDD" type="xs:string" />
+
+	<!-- *********************************************************************** 
+		Données de la feuille de route *********************************************************************** -->
+	<!-- id de l'étape suivante -->
+	<xs:element name="labelEtapeSuivante" type="xs:string" />
+
+	<!-- Vrai si le dossier a été traité par le batch ReparerHistoriqueAttributionOperation -->
+	<xs:element name="historiqueDossierTraite" type="xs:boolean" default="false" />
+
+	<!-- boolean d'arbitrage du dossier : vrai si le dossier a été arbitré SGG -->
+	<xs:element name="isArbitrated" type="xs:boolean" default="false" />
+	
+		<!-- boolean de présence de PJ : vrai si le dossier a des pièces jointes -->
+	<xs:element name="hasPJ" type="xs:boolean" default="false" />
+
+	<!-- isRedemarre -->
+	<xs:element name="isRedemarre" type="xs:boolean" default="false" />
+
+</xs:schema>

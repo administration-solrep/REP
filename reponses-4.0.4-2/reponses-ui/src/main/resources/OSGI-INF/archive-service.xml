@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.component.ArchiveUIComponent">
+	<implementation class="fr.dila.reponses.ui.services.component.ArchiveUIComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.ArchiveUIService" />
+	</service>
+
+</component>

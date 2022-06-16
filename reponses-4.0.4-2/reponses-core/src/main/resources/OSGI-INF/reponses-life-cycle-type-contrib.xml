@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!-- Cet composant contribue : - Les cycles de vie de l'application Réponses 
+	; - Les associations type de document / cycle de vie. -->
+<component name="fr.dila.reponses.core.lifecycle">
+
+	<required>fr.dila.ss.core.lifecycle</required>
+
+	<extension target="org.nuxeo.ecm.core.lifecycle.LifeCycleService" point="types">
+		<types>
+			<type name="ReponsesMailbox">default</type>
+			<type name="ExportStat">export</type>
+			<type name="Allotissement">minimaliste</type>
+		</types>
+	</extension>
+
+</component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://dila.fr/solon/schemas/question_connexe/"
+    xmlns:qce="http://dila.fr/solon/schemas/question_connexe/"
+>
+
+	<xs:include schemaLocation="base.xsd" />
+
+	<xs:element name="idQuestions" type="qce:stringList" />
+	<xs:element name="hashConnexite" type="xs:string" /> <!-- Hashage de connexite -->
+</xs:schema>

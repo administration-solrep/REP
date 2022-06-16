@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de recherche de dossier de l'application 
+	Réponses. -->
+<component name="fr.dila.reponses.core.service.DossierService">
+	<implementation class="fr.dila.reponses.core.component.DossierComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.DossierService" />
+	</service>
+</component>

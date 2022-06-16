@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.component.FavorisUIComponent">
+
+  <implementation class="fr.dila.reponses.ui.services.component.FavorisUIComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.FavorisUIService" />
+  </service>
+  
+
+</component>

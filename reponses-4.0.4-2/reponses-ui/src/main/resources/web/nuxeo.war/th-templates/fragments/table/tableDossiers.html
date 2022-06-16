@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="searchResults"
+            class="tableForm"
+            th:data-url="@{${dataUrl}}"
+            th:data-ajaxurl="@{${dataAjaxUrl}}"
+            id="listeDossiers"
+            th:with="tableCaption=${tableCaption}?:#{liste.dossier.table.caption}"
+        >
+            <div class="overlay" th:id="result_overlay" aria-live="polite">
+                <img width="29" height="29" th:src="@{/img/loader.svg}" alt="" />
+            </div>
+            <th:block th:each="parameter : ${otherParameter}">
+                <input
+                    th:unless="${parameter.value ==null}"
+                    th:name="${parameter.key}"
+                    th:value="${parameter.value}"
+                    type="hidden"
+                    aria-hidden="true"
+                    data-isForm="true"
+                />
+            </th:block>
+            <th:block th:unless="${resultForm.defaultSize >= resultList.nbTotal}">
+                <div
+                    th:replace="fragments/components/nombre-document-page :: documentParPage(${resultForm}, 'dossier_haut')"
+                ></div>
+            </th:block>
+            <a
+                href="#skip_link_action-table_prev"
+                id="skip_link_action-table_next"
+                class="skip-link"
+                th:text="#{skip.link.table.prev(${tableCaption})}"
+            >
+                Aller après le tableau
+            </a>
+            <div class="table-action">
+                <div class="table-action__action-container table-action__action-container--left">
+                    <div class="table-action__group">
+                        <div th:replace="fragments/dossier/toolbar :: toolbar('table_mass_action_toolbar', true)"></div>
+                    </div>
+                </div>
+                <div class="table-action__action-container table-action__action-container--right">
+                    <th:block th:unless="${resultList.liste.size == resultList.nbTotal}">
+                        <div
+                            th:replace="fragments/table/pagination :: pagination (${resultForm}, ${resultForm.page},'dossier_haut',${resultList.nbTotal})"
+                        ></div>
+                    </th:block>
+                    <th:block th:unless="${#lists.isEmpty(lstSortableColonnes)}">
+                        <div th:replace="fragments/table/multipleSortIcon :: multipleSortIcon()"></div>
+                    </th:block>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="custom-table custom-table--has-check">
+                    <caption class="sr-only" th:text="${tableCaption}">
+                        Tableau des QE
+                    </caption>
+                    <thead class="table-header custom-table__header">
+                        <tr class="table-header__line">
+                            <th scope="col" class="table-header__cell table-header__cell--check">
+                                <div class="form-choice-input">
+                                    <input
+                                        type="checkbox"
+                                        name="checkbox"
+                                        onclick="selectAllCheckBox(this);"
+                                        class="form-choice-input__input js-custom-table-header-check"
+                                        id="selectAllDossier"
+                                        autocomplete="off"
+                                    />
+                                    <label
+                                        id="selectAllDossier__label"
+                                        for="selectAllDossier"
+                                        th:data-select-label="#{liste.dossier.selectAll}"
+                                        th:data-deselect-label="#{liste.dossier.deselectAll}"
+                                        class="form-label form-choice-input__label form-choice-input__label--checkbox form-choice-input__label--hidden-label"
+                                        th:title="#{liste.dossier.selectAll}"
+                                    >
+                                        <span th:text="#{liste.dossier.selectAll}">Tout sélectionner</span>
+                                    </label>
+                                </div>
+                            </th>
+                            <th:block th:each="colonne : ${lstColonnes}">
+                                <th:block th:if="${colonne.visible && colonne.sortable}">
+                                    <th
+                                        th:aria-sort="${colonne.sortValue == 'asc' ? 'ascending' : (colonne.sortValue== 'desc' ? 'descending' : '')}"
+                                        scope="col"
+                                        class="table-header__cell table-header__cell--with-filter-action"
+                                        th:with="order=${colonne.sortOrder}"
+                                    >
+                                        <button
+                                            th:replace="fragments/table/sortableHeader :: sortableHeader (#{__${colonne.label}__},${colonne.sortValue},${colonne.sortName},${colonne.sortId},${colonne.inverseSort})"
+                                        ></button>
+                                    </th>
+                                </th:block>
+
+                                <th:block th:if="${colonne.visible && !colonne.sortable}">
+                                    <th scope="col" class="table-header__cell">
+                                        <th:block
+                                            th:if="${colonne.isLabelVisible}"
+                                            th:text="${colonne.label !=null? #messages.msg(colonne.label) : ''}"
+                                        >
+                                            &nbsp;
+                                        </th:block>
+                                        <span
+                                            th:unless="${colonne.isLabelVisible}"
+                                            class="sr-only"
+                                            th:text=" #{__${colonne.label}__} "
+                                        >
+                                            Label
+                                        </span>
+                                    </th>
+                                </th:block>
+                            </th:block>
+                        </tr>
+                    </thead>
+                    <tbody class="custom-table__body">
+                        <th:block th:if="${resultList.liste.size > 0}">
+                            <tr
+                                class="custom-table__table-line table-line table-line--with-check table-line--with-action-column table-line--complex-line"
+                                th:each="item, nb : ${resultList.liste}"
+                                th:data-id="${item.dossierId}"
+                                th:dossier-link-id="(${item.caseLinkIdsLabels!=null && #arrays.length(item.caseLinkIdsLabels) == 1 ? item.caseLinkIdsLabels[0].id : null})"
+                                th:routing-task-type="${item.routingTaskType}"
+                            >
+                                <td class="table-line__cell table-line__cell--check">
+                                    <div class="form-choice-input">
+                                        <input
+                                            th:id="|select-${item.dossierId}|"
+                                            type="checkbox"
+                                            th:name="${'checkbox-'+nb.count}"
+                                            onclick="selectTableCheckbox(this)"
+                                            class="form-choice-input__input js-custom-table-line-check"
+                                            autocomplete="off"
+                                        />
+                                        <label
+                                            th:for="|select-${item.dossierId}|"
+                                            th:title="#{liste.dossier.selectOne(${item.sourceNumeroQuestion})}"
+                                            th:data-select-label="#{liste.dossier.selectOne(${item.sourceNumeroQuestion})}"
+                                            th:data-deselect-label="#{liste.dossier.deselectOne(${item.sourceNumeroQuestion})}"
+                                            class="form-label form-choice-input__label form-choice-input__label--checkbox form-choice-input__label--hidden-label"
+                                        >
+                                            <span th:text="#{liste.dossier.selectOne(${item.sourceNumeroQuestion})}"
+                                                >Numéro question</span
+                                            >
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="table-line__cell">
+                                    <a
+                                        th:if="${item.caseLinkIdsLabels==null || #arrays.length(item.caseLinkIdsLabels) <= 1}"
+                                        th:with="curEtape=${item.caseLinkIdsLabels==null?null:item.caseLinkIdsLabels[0].id}"
+                                        th:href="@{/dossier/{dossierId}/parapheur(dossierId=${item.dossierId},dossierLinkId=${curEtape})} + '#main_content'"
+                                        class="link-copy__link link"
+                                        ><th:block
+                                            th:if="${navigationActions != null && navigationActions.isFromEspaceTravail && !item.isRead}"
+                                            ><strong
+                                                ><span
+                                                    th:id="|link-copy__link-${#strings.replace(label, ' ', '_')}_${item.dossierId}|"
+                                                    th:text="${item.getSourceNumeroQuestion()}"
+                                                    >AN 15602</span
+                                                ><th:block th:each="it : ${item.getExposantIhm()}"
+                                                    ><sup th:text="${it}"></sup></th:block></strong
+                                            ><span class="sr-only" th:text="#{dossier.non.lu}"
+                                                >Dossier non lu</span
+                                            ></th:block
+                                        >
+                                        <th:block
+                                            th:unless="${navigationActions != null && navigationActions.isFromEspaceTravail && !item.isRead}"
+                                        >
+                                            <span
+                                                th:id="|link-copy__link-${#strings.replace(item.getSourceNumeroQuestion(), ' ', '_')}_${item.dossierId}|"
+                                                th:text="${item.getSourceNumeroQuestion()}"
+                                                >AN 15602</span
+                                            >
+                                            <th:block th:each="it : ${item.getExposantIhm()}">
+                                                <sup th:text="${it}"></sup>
+                                            </th:block>
+                                        </th:block>
+                                    </a>
+                                    <th:block
+                                        th:if="${item.caseLinkIdsLabels!=null && #arrays.length(item.caseLinkIdsLabels) > 1}"
+                                        th:with="jscopyPrefix='link-copy__link-'"
+                                    >
+                                        <div
+                                            th:replace="fragments/components/textualDropDownWithComplexeLabel :: dropdown (${item})"
+                                        ></div>
+                                    </th:block>
+                                    <button
+                                        type="button"
+                                        class="js-copy link-copy__button js-tooltip base-btn base-btn--button base-btn--default base-btn--icon-action-blue base-btn--center base-btn--transparent"
+                                        th:data-copy="|link-copy__link-${#strings.replace(item.getSourceNumeroQuestion(), ' ', '_')}_${item.dossierId}|"
+                                        th:data-tippy-content="#{label.copy.num.clic}"
+                                        th:data-tippy-default-content="#{label.copy.num.clic}"
+                                        data-tippy-trigger="mouseenter focus click"
+                                    >
+                                        <span class="sr-only" th:text="#{label.copy.num}">Copier le numéro de QE</span
+                                        ><span class="link-copy__icon icon icon--copy" aria-hidden="true"></span>
+                                    </button>
+                                    <span role="status" class="link-copy__live sr-only">Copier le numéro de QE</span>
+                                </td>
+
+                                <th:block th:if="${resultForm.isNatureVisible()}">
+                                    <td class="table-line__cell" th:text="${item.typeQuestion}">Type de question</td>
+                                </th:block>
+                                <td
+                                    class="table-line__cell"
+                                    th:text="${#dates.format(item.datePublicationJO, 'dd/MM/yyyy')}"
+                                >
+                                    Date de publication au JO
+                                </td>
+                                <td class="table-line__cell" th:text="${item.auteur}">Auteur</td>
+
+                                <th:block th:if="${resultForm.isMinAttrVisible()}">
+                                    <td class="table-line__cell">
+                                        <th:block
+                                            th:replace="fragments/components/longText :: ellipser (${item.ministereAttributaire}, ${item.dossierId}+'-min-attrib')"
+                                        ></th:block>
+                                    </td>
+                                </th:block>
+
+                                <th:block th:if="${resultForm.isDirEtapeVisible()}">
+                                    <td class="table-line__cell" th:text="${item.directionRunningStep}">
+                                        Etape en cours
+                                    </td>
+                                </th:block>
+
+                                <th:block th:if="${resultForm.isMinInterVisible()}">
+                                    <td class="table-line__cell">
+                                        <th:block
+                                            th:replace="fragments/components/longText :: ellipser (${item.ministereInterroge}, ${item.dossierId}+'-min-interrog')"
+                                        ></th:block>
+                                    </td>
+                                </th:block>
+                                <td class="table-line__cell">
+                                    <th:block
+                                        th:replace="fragments/components/longText :: ellipser (${item.motcles}, ${item.dossierId}+'-mot-cle')"
+                                    ></th:block>
+                                </td>
+                                <td
+                                    class="table-line__cell"
+                                    th:classappend="${item.delai!=null && #strings.contains(item.delai, 'J+')} ? 'base-title--important' : ''"
+                                >
+                                    [[${item.delai==null || #messages.msgOrNull(item.delai) == null ? item.delai :
+                                    #messages.msg(item.delai)}]]
+                                    <span
+                                        class="sr-only"
+                                        th:if="${item.delai!=null && #strings.contains(item.delai, 'J+')}"
+                                        th:text=" #{label.dossier.delai.depasse}"
+                                    >
+                                        Délai dépassé
+                                    </span>
+                                </td>
+                                <td class="table-line__cell">
+                                    <p class="table-line__cell-content">
+                                        <span
+                                            th:data-tippy-content="#{label.dossier.renouvele}"
+                                            tabindex="0"
+                                            th:remove="${!item.isRenouvelle()}?all"
+                                            class="icon icon--folder-bubble-refresh base-btn--icon-action-blue"
+                                            style="display: inline-flex; font-size: 1.125em"
+                                        >
+                                            <span class="sr-only" th:text="#{label.dossier.renouvele}"
+                                                >Dossier renouvelé</span
+                                            >
+                                        </span>
+                                        <span
+                                            th:data-tippy-content="#{label.dossier.signale}"
+                                            tabindex="0"
+                                            th:remove="${!item.isSignale()}?all"
+                                            class="icon icon--folder-bubble-exclamation-point base-btn--icon-action-blue"
+                                            style="display: inline-flex; font-size: 1.125em"
+                                        >
+                                            <span class="sr-only" th:text="#{label.dossier.signale}"
+                                                >Dossier signalé</span
+                                            >
+                                        </span>
+
+                                        <span
+                                            th:data-tippy-content="#{label.dossier.rappele}"
+                                            tabindex="0"
+                                            th:remove="${!item.isUrgent()}?all"
+                                            aria-hidden="true"
+                                            class="icon icon--folder-bubble-arrow-left-circle base-btn--icon-action-blue"
+                                            style="display: inline-flex; font-size: 1.125em"
+                                        >
+                                            <span class="sr-only" th:text="#{label.dossier.rappele}"
+                                                >Dossier rappelé</span
+                                            >
+                                        </span>
+                                    </p>
+                                </td>
+
+                                <th:block th:if="${resultForm.isDateSignalVisible()}">
+                                    <td
+                                        class="table-line__cell"
+                                        th:text="${#dates.format(item.dateSignalementQuestion, 'dd/MM/yyyy')}"
+                                    >
+                                        Date de signalement
+                                    </td>
+                                </th:block>
+
+                                <th:block th:if="${resultForm.isEtapeVisible()}">
+                                    <td
+                                        class="table-line__cell"
+                                        th:if="${!#strings.isEmpty(item.routingTaskType)}"
+                                        th:text="${item.routingTaskType}"
+                                    >
+                                        Tâche
+                                    </td>
+                                    <td class="table-line__cell" th:if="${#strings.isEmpty(item.routingTaskType)}">
+                                        &nbsp;
+                                    </td>
+                                </th:block>
+
+                                <th:block th:if="${resultForm.isLegisVisible()}">
+                                    <td class="table-line__cell" th:text="${item.legislature}">Législature</td>
+                                </th:block>
+
+                                <th:block th:if="${resultForm.isDateEffetRenouvellementVisible()}">
+                                    <td
+                                        class="table-line__cell"
+                                        th:text="${#dates.format(item.dateEffetRenouvellement, 'dd/MM/yyyy')}"
+                                    >
+                                        Date effet renouvellement
+                                    </td>
+                                </th:block>
+
+                                <th:block th:if="${resultForm.isDateRappelVisible()}">
+                                    <td
+                                        class="table-line__cell"
+                                        th:text="${#dates.format(item.dateRappel, 'dd/MM/yyyy')}"
+                                    >
+                                        Date rappel
+                                    </td>
+                                </th:block>
+
+                                <th:block th:if="${resultForm.isQERappelVisible()}">
+                                    <td class="table-line__cell" th:text="${item.qERappel}">Rappel QE</td>
+                                </th:block>
+
+                                <td class="table-line__cell table-line__action-column">
+                                    <div class="table-line__action-column-container">
+                                        <th:block th:if="${item.isLocked()}">
+                                            <span
+                                                th:data-tippy-content="#{label.dossier.verrouille(${item.getSourceNumeroQuestion()},${item.getLockOwner()})}"
+                                                tabindex="0"
+                                                class="table-line__action-button base-btn__icon icon icon--lock base-btn--icon-action-blue"
+                                            >
+                                                <span
+                                                    class="sr-only"
+                                                    th:text="#{label.dossier.verrouille(${item.getSourceNumeroQuestion()},${item.getLockOwner()})}"
+                                                    >Est verrouillé</span
+                                                >
+                                            </span>
+                                        </th:block>
+                                        <th:block th:if="${item.hasAttachement()}">
+                                            <span
+                                                th:data-tippy-content="#{label.dossier.hasAttachment(${item.getSourceNumeroQuestion()})}"
+                                                tabindex="0"
+                                                class="table-line__action-button base-btn__icon icon icon--clip base-btn--icon-action-blue"
+                                            >
+                                                <span
+                                                    class="sr-only"
+                                                    th:text="#{label.dossier.hasAttachment(${item.getQuestionLabelIhm()})}"
+                                                >
+                                                    A des pièces jointes</span
+                                                >
+                                            </span>
+                                        </th:block>
+                                        <th:block th:if="${item.hasLot()}">
+                                            <a
+                                                th:href="@{/dossier/{dossierId}/allotissement(dossierId=${item.dossierId})}"
+                                                class="base-btn base-btn--button base-btn--default base-btn--with-icon table-line__action-button m-r-1"
+                                                th:data-tippy-content="#{label.dossier.alloti(${item.getSourceNumeroQuestion()})}"
+                                            >
+                                                <span
+                                                    class="sr-only"
+                                                    th:text="#{label.dossier.alloti(${item.getQuestionLabelIhm()})}"
+                                                    >Est alloti</span
+                                                >
+                                                <span aria-hidden="true" class="base-btn__icon icon icon--lot"></span>
+                                            </a>
+                                        </th:block>
+                                        <th:block th:if="${item.hasConnexite()}">
+                                            <a
+                                                th:href="@{/dossier/{dossierId}/connexe(dossierId=${item.dossierId})}"
+                                                class="base-btn base-btn--button base-btn--default base-btn--with-icon table-line__action-button"
+                                                th:data-tippy-content="#{label.dossier.hasConnexe(${item.getSourceNumeroQuestion()})}"
+                                            >
+                                                <span class="sr-only" th:text="#{label.dossier.consulterConnexe}">
+                                                    Consulter le dossier connexe
+                                                </span>
+                                                <span
+                                                    aria-hidden="true"
+                                                    class="base-btn__icon icon icon--folder-linked"
+                                                ></span>
+                                            </a>
+                                        </th:block>
+                                    </div>
+                                </td>
+                            </tr>
+                        </th:block>
+                        <th:block th:unless="${resultList.liste.size > 0}">
+                            <td colspan="5" th:text="#{label.dossier.nombre(0)}">Aucun résultat</td>
+                        </th:block>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-action">
+                <div class="table-action__action-container table-action__action-container--left">
+                    <div class="table-action__group">
+                        <div th:replace="fragments/dossier/toolbar :: toolbar('table_mass_action_toolbar', true)"></div>
+                    </div>
+                </div>
+                <div class="table-action__action-container table-action__action-container--right">
+                    <th:block th:unless="${resultList.liste.size == resultList.nbTotal}">
+                        <div
+                            th:replace="fragments/table/pagination :: pagination (${resultForm}, ${resultForm.page},'dossier_bas',${resultList.nbTotal})"
+                        ></div>
+                    </th:block>
+                    <th:block th:unless="${#lists.isEmpty(lstSortableColonnes)}">
+                        <div th:replace="fragments/table/multipleSortIcon :: multipleSortIcon()"></div>
+                    </th:block>
+                </div>
+            </div>
+            <a
+                href="#skip_link_action-table_next"
+                id="skip_link_action-table_prev"
+                class="skip-link"
+                th:text="#{skip.link.table.next(${tableCaption})}"
+            >
+                Aller avant le tableau
+            </a>
+
+            <!-- Modale ajout note d'étape -->
+            <div th:replace="fragments/fdr/addEditNoteEtape :: addEditNoteEtape"></div>
+            <!-- Modale tri multiple-->
+            <div
+                th:replace="fragments/table/multipleSort :: multipleSort(${lstSortedColonnes}, ${lstSortableColonnes})"
+            ></div>
+            <!-- Modal d'arbitrage de document -->
+            <div th:replace="fragments/components/modal-arbitrage-dossier :: modal-arbitrage-dossier"></div>
+            <!-- Modal de réattribution -->
+            <div th:replace="fragments/components/question-reattribution-dialog :: question-reattribution-modal"></div>
+            <!-- Modal de modification de direction pilote -->
+            <div
+                th:replace="fragments/components/question-modif-direction-dialog :: question-modif-direction-modal"
+            ></div>
+            <!-- Modal d'envoie de mail -->
+            <div
+                th:replace="fragments/dossier/modal-dossier-send-mail :: modal-dossier-send-mail('doEnvoyerListeDossierMail')"
+            ></div>
+        </div>
+    </body>
+</html>

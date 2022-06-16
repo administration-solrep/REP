@@ -1,0 +1,83 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='Critères de sélection des étapes à supprimer', title=#{modeleFDR.suppression.etape.title})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <div id="delete_step_modele_fdr_content">
+            <div class="m-t-6 m-b-6">
+                <th:block th:each="action : ${action}">
+                    <div th:if="${action.type == 'primary'}" class="flex-row-actions__right">
+                        <button
+                            th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, 'base-btn--center js-interstitial-trigger')"
+                        ></button>
+                    </div>
+                    <div th:unless="${action.type == 'primary'}" class="flex-row-actions__left">
+                        <button
+                            th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, 'base-btn--bordered base-btn--light')"
+                        ></button>
+                    </div>
+                </th:block>
+            </div>
+            <h1 class="base-title base-title--lvl-1" th:text="#{modeleFDR.suppression.etape.title}"></h1>
+
+            <br />
+
+            <th:block th:each="modele : ${idModeles}">
+                <input
+                    th:id="|modele-${modele}|"
+                    th:name="|modele-${modele}|"
+                    th:value="${modele}"
+                    type="hidden"
+                    aria-hidden="true"
+                />
+            </th:block>
+
+            <form id="deleteStepForm">
+                <div
+                    th:replace="fragments/components/formblocks/simple-select :: simpleSelect('dossier.fdr.ajout.etape.type', 'typeEtape', '', ${typeEtape}, null, 'false', 'recherche.select.tous.toutes.label')"
+                ></div>
+                <!-- Poste -->
+                <div class="form-input">
+                    <div class="m-t-6">
+                        <th:block
+                            th:replace="fragments/components/organigrammeSelectAutocomplete ::organigrammeSelectAutocomplete(
+                    'modeleFDR.suppression.etape.select.poste',
+                    true,
+                    'poste-key',
+                    'poste',
+                    'PST',
+                    '',
+                    false,
+                    false,
+                    null,
+                    false)"
+                        ></th:block>
+                    </div>
+                </div>
+
+                <div class="m-t-6">
+                    <th:block th:each="action : ${action}">
+                        <div th:if="${action.type == 'primary'}" class="flex-row-actions__right">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, 'base-btn--center js-interstitial-trigger')"
+                            ></button>
+                        </div>
+                        <div th:unless="${action.type == 'primary'}" class="flex-row-actions__left">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, 'base-btn--bordered base-btn--light')"
+                            ></button>
+                        </div>
+                    </th:block>
+                </div>
+            </form>
+
+            <!-- Modal de suppression des étapes en masse -->
+            <div
+                th:replace="fragments/components/modal-suppression-masse-modele-fdr :: modal-suppression-masse-modele-fdr"
+            ></div>
+        </div>
+    </main>
+</html>

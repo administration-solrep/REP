@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de login de l'application Réponses. -->
+<component name="fr.dila.reponses.core.service.ReponsesLoginManager">
+	<require>org.nuxeo.ecm.platform.usermanager.UserManagerImpl</require>
+
+	<implementation class="fr.dila.reponses.core.component.ReponsesLoginComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.ReponsesLoginManager" />
+	</service>
+</component>

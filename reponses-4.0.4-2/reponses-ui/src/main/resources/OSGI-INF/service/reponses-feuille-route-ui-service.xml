@@ -1,0 +1,12 @@
+<component name="fr.dila.reponses.ui.services.ReponsesFeuilleRouteUIComponent">
+  
+  <require>fr.dila.ss.ui.services.component.SSFeuilleRouteUIComponent</require>
+  
+  <implementation class="fr.dila.reponses.ui.services.component.ReponsesFeuilleRouteUIComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.ReponsesFeuilleRouteUIService" />
+    <provide interface="fr.dila.ss.ui.services.SSFeuilleRouteUIService" />
+  </service>
+
+</component>

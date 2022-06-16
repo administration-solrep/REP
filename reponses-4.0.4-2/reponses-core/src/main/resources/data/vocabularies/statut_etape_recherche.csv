@@ -1,0 +1,7 @@
+id,label
+"running_all","Étape en cours"
+"ready_all","Étape à venir"
+"done_1","validée manuellement"
+"done_2","invalidée"
+"done_3","validée automatiquement"
+"done_4","non concernée"

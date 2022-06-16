@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <th:block th:fragment="reponses-action-button(action, isDisabled, appendedClass)">
+            <button
+                th:if="${#strings.startsWith(action.link,'javascript:')}"
+                type="button"
+                class="base-btn base-btn--button base-btn--default"
+                th:classappend="${appendedClass == null ? '' : appendedClass}"
+                th:disabled="${ isDisabled }? 'disabled'"
+                th:attr="onclick=|${action.link}|"
+            >
+                <span th:text="#{__${action.label}__}"></span>
+            </button>
+            <a
+                th:unless="${#strings.startsWith(action.link,'javascript:')}"
+                type="button"
+                class="base-btn base-btn--button base-btn--default"
+                th:classappend="${appendedClass == null ? '' : appendedClass}"
+                th:disabled="${ isDisabled }? 'disabled'"
+                th:href="@{__${action.link}__}"
+            >
+                <span th:text="#{__${action.label}__}"></span>
+            </a>
+        </th:block>
+    </body>
+</html>

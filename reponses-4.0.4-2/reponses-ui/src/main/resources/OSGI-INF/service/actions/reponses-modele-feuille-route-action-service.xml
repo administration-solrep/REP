@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.component.ReponsesModeleFeuilleRouteActionComponent">
+	
+	<require>fr.dila.ss.ui.services.actions.component.SSModeleFeuilleRouteActionComponent</require>
+	
+	<implementation class="fr.dila.reponses.ui.services.actions.component.ReponsesModeleFeuilleRouteActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.ReponsesModeleFeuilleRouteActionService" />
+        <provide interface="fr.dila.ss.ui.services.actions.ModeleFeuilleRouteActionService" />
+	</service>
+
+</component>

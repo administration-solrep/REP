@@ -1,0 +1,33 @@
+{
+    "dossiers": [
+        {
+            "id": "1",
+            "nom": "Répertoire réservé au CGG",
+            "lstDocuments": [],
+            "authorized": "true"
+        },
+        {
+            "id": "2",
+            "nom": "Répertoire accessible à tous les utilisateurs",
+            "authorized": "true",
+            "lstDocuments": [
+                {
+                    "id": "2-2-1",
+                    "nom": "bbcc",
+                    "auteur": "",
+                    "entite": "",
+                    "date": "24/10/2019 10:47",
+                    "version": "",
+                    "link": "http://help.websico.net/fr/data/rawdata/exemple_pdf.pdf",
+                    "extension": ".pdf"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "nom": "Divers",
+            "lstDocuments": [],
+            "authorized": "true"
+        }
+    ]
+}

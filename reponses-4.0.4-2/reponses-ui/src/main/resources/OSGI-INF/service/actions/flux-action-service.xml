@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.component.FluxActionComponent">
+	<implementation class="fr.dila.reponses.ui.services.actions.component.FluxActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.FluxActionService" />
+	</service>
+
+</component>

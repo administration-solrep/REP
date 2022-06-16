@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="toolbar(id, isDisabledAction)" style="margin-top: 1.7857em" th:id="${id}">
+            <div class="actions-bar">
+                <div class="actions-bar__group" th:if="${generaleActions !=null && !generaleActions.isEmpty()}">
+                    <th:block th:each="action : ${generaleActions}">
+                        <button
+                            th:replace="fragments/components/action-button :: action-button(${action}, false, '')"
+                        ></button>
+                    </th:block>
+                </div>
+                <div class="actions-bar__group" th:if="${fdrActions !=null && !fdrActions.isEmpty()}">
+                    <th:block th:each="action : ${fdrActions}">
+                        <button
+                            th:replace="fragments/components/action-button :: action-button(${action}, false, '')"
+                        ></button>
+                    </th:block>
+                </div>
+                <div class="actions-bar__group" th:if="${noteActions !=null && !noteActions.isEmpty()}">
+                    <th:block th:each="action : ${noteActions}">
+                        <button
+                            th:replace="fragments/components/action-button-fixed :: action-button-fixed(${action}, false, '')"
+                        ></button>
+                    </th:block>
+                </div>
+
+                <div class="actions-bar__group" th:if="${printActions !=null && !printActions.isEmpty()}">
+                    <div
+                        th:replace="fragments/components/dropdown-action :: dropdown-action(
+                            'dossier-print',
+                            ${printActions}, 
+                            'icon--print', 
+                            true, 
+                            'dossier.print.dropdown.tooltip', 
+                            ${isDisabledAction} ? 'base-btn--transparent base-btn--light action-table-selection base-btn--md-icon' : 'base-btn--transparent base-btn--light base-btn--md-icon', 
+                            ${isDisabledAction}, 
+                            'base-drop-down--light'
+                            )"
+                    ></div>
+                </div>
+                <div class="actions-bar__group" th:if="${renvoiActions !=null && !renvoiActions.isEmpty()}">
+                    <div
+                        th:replace="fragments/components/dropdown-action :: dropdown-action(
+                            'dossier-renvoi', 
+                            ${renvoiActions}, 
+                            'icon--arrow-down-right', 
+                            true, 
+                            'dossier.renvois.dropdown.tooltip', 
+                            ${isDisabledAction} ? 'base-btn--transparent base-btn--light action-table-selection base-btn--md-icon' : 'base-btn--transparent base-btn--light base-btn--md-icon', 
+                            ${isDisabledAction}, 
+                            'base-drop-down--light'
+                            )"
+                    ></div>
+                </div>
+                <div class="actions-bar__group" th:if="${diversActions !=null && !diversActions.isEmpty()}">
+                    <div
+                        th:replace="fragments/components/dropdown-action :: dropdown-action(
+                            ${id}+'-divers', 
+                            ${diversActions}, 
+                            'icon--ellipsis', 
+                            false, 
+                            'dossier.divers.dropdown.tooltip', 
+                            ${isDisabledAction} ? 'base-btn--transparent base-btn--light action-table-selection base-btn--md-icon' : 'base-btn--transparent base-btn--light base-btn--md-icon', 
+                            ${isDisabledAction}, 
+                            'base-drop-down--light'
+                            )"
+                    ></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

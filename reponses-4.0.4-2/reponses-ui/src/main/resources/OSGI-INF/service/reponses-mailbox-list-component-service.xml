@@ -1,0 +1,10 @@
+<component name="fr.dila.reponses.ui.services.component.ReponsesMailboxListComponentComponent">
+
+  <implementation class="fr.dila.reponses.ui.services.component.ReponsesMailboxListComponentComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.ReponsesMailboxListComponentService" />
+  </service>
+  
+
+</component>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div class="rapid-search header__search" th:fragment="rapidSearch">
+            <form
+                method="GET"
+                class="rapidSearch-form--inverted"
+                id="rapidSearchForm"
+                th:action="@{/recherche/rapide} + '#main_content'"
+                style="display: flex; align-items: center"
+            >
+                <label for="question" id="question_label" class="form-label form-label--white">
+                    <span class="rapid-search__label" th:text="#{recherche.rapide.label}"> Recherche rapide </span>
+                </label>
+                <div class="form-input rapid-search__input">
+                    <div class="form-input__container">
+                        <input
+                            type="search"
+                            name="question"
+                            id="question"
+                            th:placeholder="#{recherche.rapide.placeholder}"
+                            class="form-input__field form-input__field--type-search form-input__field--with-icon"
+                            data-validation="does_not_start_with_asterisk, alpha_num_space_asterisk"
+                            th:value="${searchNumQuestion}"
+                        />
+                        <span aria-hidden="true" class="icon icon--search icon--v-align form-input__icon"></span>
+                    </div>
+                    <div class="form-input__footer" id="question_error"></div>
+                </div>
+                <button
+                    type="submit"
+                    th:title="#{recherche.rapide.button.title}"
+                    class="base-btn base-btn--submit base-btn--default base-btn--secondary base-btn--center"
+                    th:text="#{recherche.rapide.button.label}"
+                >
+                    Rechercher
+                </button>
+            </form>
+        </div>
+    </body>
+</html>

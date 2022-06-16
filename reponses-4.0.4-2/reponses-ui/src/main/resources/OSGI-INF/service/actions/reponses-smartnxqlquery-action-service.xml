@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.nxql.ReponsesSmartNXQLQueryActionComponent">
+	<implementation class="fr.dila.reponses.ui.services.actions.nxql.ReponsesSmartNXQLQueryActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.nxql.ReponsesSmartNXQLQueryActionService" />
+	</service>
+
+</component>

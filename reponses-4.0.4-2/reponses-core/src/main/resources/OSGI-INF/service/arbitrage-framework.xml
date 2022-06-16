@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service arbitrage l'application Réponses. -->
+<component name="fr.dila.reponses.core.service.ReponsesArbitrageService">
+	<implementation class="fr.dila.reponses.core.component.ReponsesArbitrageComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.ReponsesArbitrageService" />
+	</service>
+</component>

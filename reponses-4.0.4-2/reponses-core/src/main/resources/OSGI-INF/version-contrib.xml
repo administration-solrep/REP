@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.core.versioning.contrib">
+
+	<extension point="policies" target="org.nuxeo.ecm.core.api.versioning.VersioningService">
+
+		<policy id="FondDeDossierFichierPolicy" order="1" increment="NONE">
+			<initialState major="0" minor="0" />
+			<filter-id>FondDeDossierFichier-filter</filter-id>
+		</policy>
+
+		<policy id="ReponsePolicy" order="2" increment="NONE">
+			<initialState major="0" minor="0" />
+			<filter-id>Reponse-filter</filter-id>
+		</policy>
+
+	</extension>
+
+	<extension point="filters" target="org.nuxeo.ecm.core.api.versioning.VersioningService">
+
+		<filter id="FondDeDossierFichier-filter">
+			<type>FondDeDossierFichier</type>
+			<condition>#{currentDocument.currentLifeCycleState == running}</condition>
+		</filter>
+
+		<filter id="Reponse-filter">
+			<type>Reponse</type>
+			<condition>#{currentDocument.currentLifeCycleState == undefined}</condition>
+		</filter>
+
+	</extension>
+
+<!-- 
+	<extension target="org.nuxeo.ecm.core.api.versioning.VersioningService"
+		point="versioningRules">
+
+		<defaultVersioningRule>
+			<initialState major="0" minor="0" />
+		</defaultVersioningRule>
+
+		<versioningRule typeName="FondDeDossierFichier"
+			enabled="true">
+			<initialState major="0" minor="0" />
+			<options lifeCycleState="running">
+				<none default="true" />
+				<minor />
+				<major />
+			</options>
+		</versioningRule>
+
+		<versioningRule typeName="Reponse" enabled="true">
+			<initialState major="0" minor="0" />
+			<options lifeCycleState="undefined">
+				<none default="true" />
+				<minor />
+				<major />
+			</options>
+		</versioningRule>
+
+	</extension>
+ -->
+
+</component>

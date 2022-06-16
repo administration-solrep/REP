@@ -1,0 +1,12 @@
+<!-- Cet composant contribue le persisteur de feuille de routes du le socle 
+	SOLREP. -->
+<component name="fr.dila.reponses.core.persister">
+	<require>fr.dila.reponses.core.service.DocumentRoutingService</require>
+
+<!-- 	<extension target="fr.dila.reponses.core.service.DocumentRoutingService" -->
+<!-- 		point="persister"> -->
+<!-- 		<persister -->
+<!-- 			class="fr.sword.idl.naiad.nuxeo.feuilleroute.core.service.FeuilleRouteTreePersister" /> -->
+<!-- 	</extension> -->
+
+</component>

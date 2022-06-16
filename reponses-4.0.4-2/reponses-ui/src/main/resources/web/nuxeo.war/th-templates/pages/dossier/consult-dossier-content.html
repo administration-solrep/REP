@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="consult-dossier-content"
+            id="consult_dossier_content"
+            th:with="questionInfo=${monDossier.questionInfo}"
+        >
+            <div class="heading-complex">
+                <div class="heading-complex__main">
+                    <h1 class="heading-complex__title base-title base-title--lvl-1" id="main_content">
+                        [[${questionInfo.typeQuestion}]] N°
+                        <div class="link-copy">
+                            <a
+                                class="link-copy__link link"
+                                id="link-copy__link-14002"
+                                href="#"
+                                th:text="${questionInfo.numeroQuestion}"
+                            >
+                                Numéro question
+                            </a>
+                            <button
+                                class="js-copy link-copy__button js-tooltip base-btn base-btn--button base-btn--default base-btn--icon-action-blue base-btn--center base-btn--transparent"
+                                type="button"
+                                th:data-tippy-content="#{label.copy.num.clic}"
+                                data-copy="link-copy__link-14002"
+                                th:data-tippy-default-content="#{label.copy.num.clic}"
+                                data-tippy-trigger="mouseenter focus click"
+                            >
+                                <span class="sr-only" th:text="#{label.copy.num}">Copier</span
+                                ><span class="link-copy__icon icon icon--copy" aria-hidden="true"></span>
+                            </button>
+                            <span class="link-copy__live sr-only" role="status"></span>
+                        </div>
+                        <th:block
+                            th:text="|de ${questionInfo.civiliteAuteur} ${questionInfo.prenomAuteur} ${questionInfo.nomAuteur}
+	                    - ${questionInfo.groupePolitique}|"
+                        ></th:block>
+                    </h1>
+                    <p
+                        class="heading-complex__subtitle base-subtitle"
+                        th:text="|- ${#messages.msgOrNull(monDossier.delai) != null ? #messages.msg(monDossier.delai) : monDossier.delai}|"
+                    ></p>
+                    <span
+                        th:data-tippy-content="#{label.dossier.renouvele}"
+                        th:remove="${!monDossier.isRenouvele()}?all"
+                        aria-hidden="true"
+                        class="icon icon--folder-bubble-refresh base-btn--icon-action-blue consult_icon_folder"
+                    >
+                    </span>
+                    <span
+                        th:data-tippy-content="#{label.dossier.signale}"
+                        th:remove="${!monDossier.isSignale()}?all"
+                        aria-hidden="true"
+                        class="icon icon--folder-bubble-exclamation-point base-btn--icon-action-blue consult_icon_folder"
+                    >
+                    </span>
+                    <span
+                        th:data-tippy-content="#{label.dossier.rappele}"
+                        th:remove="${!monDossier.isUrgent()}?all"
+                        aria-hidden="true"
+                        class="icon icon--folder-bubble-arrow-left-circle base-btn--icon-action-blue consult_icon_folder"
+                    >
+                    </span>
+                </div>
+
+                <div class="heading-complex__options">
+                    <button
+                        type="button"
+                        class="pagination-table__button base-btn base-btn--button base-btn--default base-btn--icon-action-blue base-btn--center base-btn--transparent base-btn--rounded"
+                        th:aria-label="#{page.reload}"
+                        onclick="doDossierSauvegardeModale(event, reloadPage)"
+                        th:data-tippy-content="#{page.reload}"
+                    >
+                        <span aria-hidden="true" class="icon icon--refresh"></span>
+                        <span class="sr-only" th:text="#{page.reload}">Rafraichir</span>
+                    </button>
+                    <th:block th:each="action : ${lockActions}">
+                        <div
+                            th:replace="fragments/components/action-button :: action-button(${action}, false, 'base-btn--icon-action-blue base-btn--transparent')"
+                        ></div>
+                    </th:block>
+                    <p
+                        th:if="${monDossier.isVerrouille}"
+                        th:text="#{dossier.consult.lockinfo(${monDossier.lockTime},${monDossier.lockOwner})}"
+                    ></p>
+                </div>
+            </div>
+            <div
+                class="page-reponses-qe-base__steps m-t-3"
+                th:if="${routingActions.hasRelatedRoute and routingActions.isFeuilleRouteVisible}"
+                th:include="fragments/dossier/current-next-step-folder :: current-next-step-folder(${monDossier})"
+            ></div>
+            <div class="page-reponses__table-content">
+                <div th:replace="fragments/dossier/toolbar :: toolbar('dossier_toolbar_before', false)"></div>
+                <div th:if="${myTabs!=null}" class="tabulation m-t-5">
+                    <div role="tablist" class="tabulation__header">
+                        <button
+                            th:each="onglet, status : ${myTabs.onglets}"
+                            type="button"
+                            role="tab"
+                            class="tabulation__item js-tabulation base-btn base-btn--button base-btn--default base-btn--transparent dossier-onglet"
+                            th:classappend="${onglet.isActif ? 'tabulation\_\_item--active' : ''}"
+                            th:aria-selected="${onglet.isActif ? 'true' : 'false'}"
+                            th:aria-controls="'d_tab_content-'+${status.index}"
+                            th:id="'d_tab_link-'+${status.index}"
+                            th:data-name="${onglet.id}"
+                            th:attr="onclick=${onglet.script}"
+                            th:tabindex="${!onglet.isActif ? '-1' : null}"
+                            th:text="#{__${onglet.label}__}"
+                            name="tab-up"
+                        ></button>
+                    </div>
+                    <div class="tabulation__body">
+                        <div
+                            th:each="onglet, status : ${myTabs.onglets}"
+                            role="tabpanel"
+                            tabindex="0"
+                            class="tabulation__content"
+                            th:id="'d_tab_content-'+${status.index}"
+                            th:aria-hidden="${onglet.isActif ? 'false' : 'true'}"
+                            th:aria-labelledby="'d_tab_link-'+${status.index}"
+                            th:classappend="${onglet.isActif ? 'tabulation\_\_content--active' : ''}"
+                        >
+                            <th:block th:if="${onglet.isActif}">
+                                <div th:replace="${onglet.fragmentFile} :: ${onglet.fragmentName}"></div>
+                            </th:block>
+                            <p class="m-a-0" th:unless="${onglet.isActif}" th:id="'d_'+${onglet.id}+'_content'">
+                                Chargement
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div th:replace="fragments/dossier/toolbar :: toolbar('dossier_toolbar_after', false)"></div>
+            </div>
+
+            <!-- Modal d'arbitrage de document -->
+            <div th:replace="fragments/components/modal-arbitrage-dossier :: modal-arbitrage-dossier"></div>
+
+            <!-- Modal de réattribution -->
+            <div th:replace="fragments/components/question-reattribution-dialog :: question-reattribution-modal"></div>
+
+            <!-- Modal de réattribution direct-->
+            <div th:replace="fragments/components/modal-reattribution-direct :: modal-reattribution-direct"></div>
+
+            <!-- Modale ajout note d'étape (doit pouvoir être ouverte depuis n'importe quel onglet d'un dossier) -->
+            <div th:replace="fragments/fdr/addEditNoteEtape :: addEditNoteEtape"></div>
+
+            <!-- Modale de confirmation de déverouillage -->
+            <input
+                type="hidden"
+                id="init-modal-deverouillage"
+                th:data-title="${#messages.msg('deverouillage.title.label')}"
+                th:data-message="${#messages.msg('deverouillage.modal.confirm.question')}"
+                th:data-btn-confirm-label="${#messages.msg('button.confirmer')}"
+                data-function="deverouilleDossier()"
+                data-controls="validation-dialog-modal"
+            />
+            <!-- Modal de sauvegarde -->
+            <div
+                th:replace="fragments/components/modale-sauvegarde :: modale-sauvegarde('dossier', 
+	             'saveDossierFromModale',
+	             'initDossierSauvegardeModale',
+	             'checkDossierSauvegardeModale' 
+	         )"
+            ></div>
+
+            <!-- Modal d'envoie de mail -->
+            <div
+                th:replace="fragments/dossier/modal-dossier-send-mail :: modal-dossier-send-mail('sendDossierMail')"
+            ></div>
+
+            <div class="page-layout__content-nav is-below" th:if="${not #strings.isEmpty(urlPreviousPage)}">
+                <button
+                    type="button"
+                    style="margin-top: 1.7857em; padding-left: 2em; padding-right: 2em"
+                    class="base-btn base-btn--button base-btn--default base-btn--light base-btn--bordered"
+                    onclick="goPreviousPage()"
+                    th:text="#{button.label.back}"
+                >
+                    Retour
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

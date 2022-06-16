@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service des profils utilisateurs de l'application 
+	REPONSES. -->
+<component name="fr.dila.reponses.core.service.ProfilUtilisateurService">
+	<implementation class="fr.dila.reponses.core.component.ProfilUtilisateurComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.ProfilUtilisateurService" />
+		<provide interface="fr.dila.st.api.service.STProfilUtilisateurService" />
+	</service>
+</component>

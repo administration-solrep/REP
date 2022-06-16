@@ -1,0 +1,11 @@
+<component name="fr.dila.reponses.ui.services.ReponsesModeleFdrListUIComponent">
+
+  <require>fr.dila.ss.ui.services.component.SSModeleFdrListUIComponent</require>
+  <implementation class="fr.dila.reponses.ui.services.component.ReponsesModeleFdrListUIComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.ReponsesModeleFdrListUIService" />
+    <provide interface="fr.dila.ss.ui.services.SSModeleFdrListUIService" />
+  </service>
+
+</component>

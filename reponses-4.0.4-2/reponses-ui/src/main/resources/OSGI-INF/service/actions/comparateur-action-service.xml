@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.component.ComparateurActionComponent">    
+    <implementation class="fr.dila.reponses.ui.services.actions.component.ComparateurActionComponent" />
+
+    <service>
+        <provide interface="fr.dila.reponses.ui.services.actions.ComparateurActionService" />
+    </service>
+
+</component>

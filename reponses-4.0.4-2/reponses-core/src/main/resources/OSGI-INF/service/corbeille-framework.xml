@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service des corbeilles de l'application Réponses. -->
+<component name="fr.dila.reponses.core.service.ReponsesCorbeilleService">
+    <require>fr.dila.st.core.service.STCorbeilleService</require>
+    
+	<implementation class="fr.dila.reponses.core.component.ReponsesCorbeilleComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.ReponsesCorbeilleService" />
+		<provide interface="fr.dila.st.api.service.STCorbeilleService" />
+	</service>
+</component>

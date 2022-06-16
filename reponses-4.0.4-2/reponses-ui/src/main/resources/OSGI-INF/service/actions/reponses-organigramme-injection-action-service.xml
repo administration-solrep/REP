@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.organigramme.ReponsesOrganigrammeInjectionActionService">    
+    <implementation
+        class="fr.dila.reponses.ui.services.actions.organigramme.ReponsesOrganigrammeInjectionActionComponent"
+    />
+
+    <service>
+        <provide
+            interface="fr.dila.reponses.ui.services.actions.organigramme.ReponsesOrganigrammeInjectionActionService"
+        />
+    </service>
+
+</component>

@@ -1,0 +1,65 @@
+.organigramme-button-branch {
+    margin-left: 0.625rem;
+}
+
+.tree-navigation__toggle-wrapper .base-drop-down__button,
+.tree-navigation__item .base-drop-down__button {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.tree-navigation__toggle-wrapper .down-drop-node-actions {
+    margin-top: 5px;
+}
+
+.tree-navigation__toggle-wrapper .table-action__item {
+    margin: 0;
+}
+
+.organigramme-button-leaf {
+    display: inline-block;
+}
+
+.organigramme-optin {
+    margin-bottom: 25px;
+}
+
+.organigramme-row-actions {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 1.7857em;
+    margin-bottom: 1.7857em;
+}
+
+.organigramme-row-actions__left {
+    display: initial;
+}
+
+.organigramme-row-actions__right {
+    float: right;
+}
+
+.organigramme-row-actions__bottom {
+    margin-top: 25px;
+}
+
+.organigramme-row-actions__left > button {
+    margin-right: 0.5em;
+}
+
+.organigramme-row-actions__right > button {
+    margin-left: 0.5em;
+}
+
+.organigramme-title {
+    margin-bottom: 1.7857rem;
+}
+
+#CONFIRM_IMPORT_GOUVERNEMENT {
+    float: right;
+}
+
+#organigrammeTree {
+    width: 80%;
+}

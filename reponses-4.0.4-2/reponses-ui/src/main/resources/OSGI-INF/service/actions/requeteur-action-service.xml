@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.component.RequeteurActionComponent">
+	<implementation class="fr.dila.reponses.ui.services.actions.component.RequeteurActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.RequeteurActionService" />
+	</service>
+
+</component>

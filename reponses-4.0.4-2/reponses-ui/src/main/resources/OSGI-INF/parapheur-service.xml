@@ -1,0 +1,10 @@
+<component name="fr.dila.reponses.ui.services.ParapheurUIService">
+
+  <implementation class="fr.dila.reponses.ui.services.component.ParapheurUIComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.ParapheurUIService" />
+  </service>
+  
+
+</component>

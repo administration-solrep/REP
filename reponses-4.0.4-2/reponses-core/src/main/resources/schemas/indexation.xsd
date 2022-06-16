@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://dila.fr/solon/schemas/indexation/"
+    xmlns:ixa="http://dila.fr/solon/schemas/indexation/"
+>
+
+	<!-- Attention !!! Le nom des clés doit être le nom des vocabulaires. -->
+	<!-- Ce shéma est commun pour ls requetes et pour les documents recherchés(feuille 
+		de route, question). -->
+	<xs:include schemaLocation="base.xsd" />
+	<xs:element name="indexationReference" type="xs:string" />
+
+	<xs:element name="SE_theme" type="ixa:stringList" />
+	<xs:element name="SE_rubrique" type="ixa:stringList" />
+	<xs:element name="SE_renvoi" type="ixa:stringList" />
+
+	<xs:element name="AN_rubrique" type="ixa:stringList" />
+	<xs:element name="TA_rubrique" type="ixa:stringList" />
+	<xs:element name="AN_analyse" type="ixa:stringList" />
+
+	<xs:element name="motclef_ministere" type="ixa:stringList" />
+</xs:schema>

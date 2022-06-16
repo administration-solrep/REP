@@ -1,0 +1,25 @@
+{
+	"liste": [
+		{
+			"id": "1",
+			"ancienMinistere": "Ministère du travail",
+			"nouveauMinistere": "Ministère des travaux",
+			"migrerDossierClos": "oOui",
+			"briserSignature": "Non"
+		},
+		{
+			"id": "2",
+			"ancienMinistere": "Ministère de l'économie",
+			"nouveauMinistere": "Ministère des économies",
+			"migrerDossierClos": "Oui",
+			"briserSignature": "Non"
+		},
+		{
+			"id": "3",
+			"ancienMinistere": "Ministère des sports",
+			"nouveauMinistere": "Ministère de la jeunessse",
+			"migrerDossierClos": "Oui",
+			"briserSignature": "Non"
+		}
+	]
+}

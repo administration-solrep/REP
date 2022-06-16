@@ -1,0 +1,280 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.recherche-champ-contrib">
+
+    <extension target="fr.dila.st.core.requete.recherchechamp.RechercheChampService" point="champs">
+
+        <champ
+            name="AUTEUR"
+            label="label.requeteur.question_condition_auteur"
+            typeChamp="TEXT"
+            field="q.qu:nomCompletAuteur"
+        >
+            <parametres>
+                <parametre name="autocomplete" value="auteur" />
+                <parametre name="description" value="Pour lancer la recherche, veuillez taper au moins 3 caractères" />
+            </parametres>
+        </champ>
+        
+        <champ
+            name="DATE_CADUCITE"
+            label="label.requeteur.question_condition_date_caducite"
+            typeChamp="DATES"
+            field="q.qu:dateCaduciteQuestion"
+        />
+        
+        <champ
+            name="DATE_CLOTURE"
+            label="label.requeteur.question_condition_date_cloture"
+            typeChamp="DATES"
+            field="q.qu:dateClotureQuestion"
+        />
+        
+        <champ
+            name="DATE_DEBUT_ETAPE"
+            label="label.requeteur.fdr_condition_date_debut_etape"
+            typeChamp="DATES"
+            field="e2.rtsk:dateDebutEtape"
+        />
+        
+        <champ
+            name="DATE_FIN_ETAPE"
+            label="label.requeteur.fdr_condition_date_fin_etape"
+            typeChamp="DATES"
+            field="e2.rtsk:dateFinEtape"
+        />
+        
+        <champ
+            name="DATE_PUBLICATION_REPONSES"
+            label="label.requeteur.reponses_condition_date_publication"
+            typeChamp="DATES"
+            field="r.rep:datePublicationJOReponse"
+        />
+        
+        <champ
+            name="DATE_PUBLICATION_JO"
+            label="label.requeteur.question_condition_date_publication"
+            typeChamp="DATES"
+            field="q.qu:datePublicationJO"
+        />
+        
+        <champ
+            name="DATE_RAPPEL"
+            label="label.requeteur.question_condition_date_rappel"
+            typeChamp="DATES"
+            field="q.qu:dateRappelQuestion"
+        />
+        
+        <champ
+            name="DATE_RENOUVELLEMENT"
+            label="label.requeteur.question_condition_date_renouvellement"
+            typeChamp="DATES"
+            field="q.qu:dateRenouvellementQuestion"
+        />
+        
+        <champ
+            name="DATE_RETRAIT"
+            label="label.requeteur.question_condition_date_retrait"
+            typeChamp="DATES"
+            field="q.qu:dateRetraitQuestion"
+        />
+        
+        <champ
+            name="DATE_SIGNALEMENT"
+            label="label.requeteur.question_condition_date_signalement"
+            typeChamp="DATES"
+            field="q.qu:dateSignalementQuestion"
+        />
+        
+         <champ
+            name="DIRECTION_PILOTE"
+            label="label.requeteur.question_condition_direction_pilote"
+            typeChamp="ORGANIGRAMME"
+            field="q.qu:idDirectionPilote"
+        >
+            <parametres>
+                <parametre name="typeSelection" value="DIR_UST" />
+            </parametres>
+        </champ>
+
+        <champ
+            name="ETAT_ETAPE"
+            label="label.requeteur.fdr_condition_etat_etape"
+            typeChamp="SIMPLE_SELECT"
+            field="e2.ecm:currentLifeCycleState"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampEtatEtapeParameterServiceImpl"
+        />
+               
+        <champ
+            name="ETAT_QUESTION"
+            label="label.requeteur.question_condition_etat"
+            typeChamp="MULTIPLE_SELECT"
+            field="q.qu:etatQuestion"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampEtatQuestionParameterServiceImpl"
+        />
+               
+        <champ
+            name="GROUPE_POLITIQUE"
+            label="label.requeteur.question_condition_groupe_politique"
+            typeChamp="MULTIPLE_SELECT"
+            field="q.qu:groupePolitique"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampGroupePolitiqueParameterServiceImpl"
+        />
+               
+         <champ
+            name="MINISTERE_ATTRIBUTAIRE"
+            label="label.requeteur.question_condition_ministere_attributaire"
+            typeChamp="SIMPLE_SELECT"
+            field="d.dos:ministereAttributaireCourant"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampCurrentMinistereParameterServiceImpl"
+        />   
+               
+               
+         <champ
+            name="MINISTERE_RATTACHEMENT"
+            label="label.requeteur.question_condition_ministere_rattachement"
+            typeChamp="SIMPLE_SELECT"
+            field="q.qu:idMinistereRattachement"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampCurrentMinistereParameterServiceImpl"
+        />      
+
+         <champ
+            name="MINISTERE_INTERROGE"
+            label="label.requeteur.question_condition_ministere_interroge"
+            typeChamp="SIMPLE_SELECT"
+            field="q.qu:idMinistereInterroge"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampAllMinistereParameterServiceImpl"
+        />   
+               
+         <champ
+            name="NATURE"
+            label="label.requeteur.question_condition_nature"
+            typeChamp="MULTIPLE_SELECT"
+            field="q.qu:typeQuestion"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampNatureQuestionParameterServiceImpl"
+        />
+               
+        <champ
+            name="NUMERO_QUESTION"
+            label="label.requeteur.question_condition_numero"
+            typeChamp="TEXT"
+            field="q.ecm:fulltext_idQuestion"
+        />
+        
+        <champ
+            name="POSTE_ETAPE"
+            label="label.requeteur.fdr_condition_poste_etape"
+            typeChamp="ORGANIGRAMME"
+            field="e2.rtsk:distributionMailboxId"
+        >
+            <parametres>
+                <parametre name="typeSelection" value="PST" />
+            </parametres>
+        </champ>
+        
+        <champ
+            name="QUESTION_SIGNALEES"
+            label="label.requeteur.question_condition_signale"
+            typeChamp="SIMPLE_SELECT_BOOLEAN"
+            field="q.qu:etatSignale"
+            champParameter="fr.dila.ss.ui.services.requete.impl.RequeteChampOuiNonParameterServiceImpl"
+        />   
+         
+        <champ
+            name="QUESTION_RAPELEES"
+            label="label.requeteur.question_condition_rappele"
+            typeChamp="SIMPLE_SELECT_BOOLEAN"
+            field="q.qu:etatRappele"
+            champParameter="fr.dila.ss.ui.services.requete.impl.RequeteChampOuiNonParameterServiceImpl"
+        />  
+            
+        <champ
+            name="QUESTION_RENOUVELEES"
+            label="label.requeteur.question_condition_renouvele"
+            typeChamp="SIMPLE_SELECT_BOOLEAN"
+            field="q.qu:etatRenouvele"
+            champParameter="fr.dila.ss.ui.services.requete.impl.RequeteChampOuiNonParameterServiceImpl"
+        />  
+            
+        <champ
+            name="RENVOIS_SENAT"
+            label="label.requeteur.indexation_condition_senat_renvois"
+            typeChamp="TEXT"
+            field="q.ixa:SE_renvoi"
+        />
+        
+        <champ
+            name="RUBRIQUES_AN"
+            label="label.requeteur.indexation_condition_an_rubriques"
+            typeChamp="MULTIPLE_SELECT"
+            field="q.ixa:AN_rubrique"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampRubriqueANParameterServiceImpl"
+        />
+            
+        <champ
+            name="RUBRIQUES_SENAT"
+            label="label.requeteur.indexation_condition_senat_rubriques"
+            typeChamp="MULTIPLE_SELECT"
+            field="q.ixa:SE_rubrique"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampRubriqueSENATParameterServiceImpl"
+        />
+        
+        <champ
+            name="STATUT_ETAPE"
+            label="label.requeteur.fdr_condition_statut_etape"
+            typeChamp="SIMPLE_SELECT"
+            field="e2.rtsk:validationStatus"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampStatutEtapeParameterServiceImpl"
+        />
+               
+        <champ
+            name="TEXTE_QUESTION"
+            label="label.requeteur.question_condition_texte_question"
+            typeChamp="TEXT"
+            field="q.ecm:fulltext_txtQuestion"
+        />
+        
+        <champ
+            name="THEMES_SENAT"
+            label="label.requeteur.indexation_condition_senat_themes"
+            typeChamp="MULTIPLE_SELECT"
+            field="q.ixa:SE_theme"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampThemeSENATParameterServiceImpl"
+        />
+               
+        <champ
+            name="TITRE_FDR"
+            label="label.requeteur.fdr_condition_feuille_route_titre"
+            typeChamp="TEXT"
+            field="f.dc:title"
+        >
+            <parametres>
+                <parametre name="autocomplete" value="intituleFdr" />
+                <parametre name="description" value="Pour lancer la recherche, veuillez taper au moins 3 caractères" />
+            </parametres>
+        </champ>
+        
+        <champ
+            name="TITRE_SENAT"
+            label="label.requeteur.question_condition_senat_titre"
+            typeChamp="TEXT"
+            field="q.ecm:fulltext_senatTitre"
+        />
+        
+        <champ
+            name="TYPES_ETAPE"
+            label="label.requeteur.fdr_condition_type_etape"
+            typeChamp="MULTIPLE_SELECT"
+            field="e2.rtsk:type"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampTypesEtapeParameterServiceImpl"
+        />
+           
+        <champ
+            name="TA_AN"
+            label="label.requeteur.indexation_condition_an_analyses"
+            typeChamp="MULTIPLE_SELECT"
+            field="q.ixa:AN_analyse"
+            champParameter="fr.dila.reponses.ui.services.requete.impl.RequeteChampTeteAnalyseANParameterServiceImpl"
+        />
+
+    </extension>
+</component>

@@ -1,0 +1,230 @@
+/* Put SWORD specific CSS for appli here */
+
+#corbeille_plan_content .form-optin__container {
+    flex: 1;
+}
+
+#corbeille_plan_content .form-optin__label {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.tree-navigation__text-not-active {
+    color: #767676;
+}
+
+#dossierForm .form-input {
+    margin-bottom: 1.7857rem;
+}
+
+#dossierForm .form-input__container {
+    margin-bottom: 1.7857rem;
+}
+
+#dossierForm .accordion {
+    margin-bottom: 1.7857rem;
+}
+
+.form-date-picker-input__form-input--disabled,
+.form-input__action--disabled,
+.form-input__icon--disabled,
+.form-input__field--disabled,
+[disabled].form-date-picker-input__form-input,
+[disabled].form-input__field {
+    color: #2e2e2e;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.form-input-group--disabled .form-input-group__label,
+.form-choice-input__input[disabled] + .form-choice-input__label,
+.form-choice-input__input[readonly] + .form-choice-input__label,
+.form-optin--disabled .form-optin__legend,
+.form-optin--disabled .form-optin__label,
+.form-label--disabled {
+    cursor: not-allowed;
+}
+
+.indexation-table-view {
+    min-width: 400px;
+    text-align: left;
+    margin-bottom: 1.7857rem;
+}
+
+.indexation-table-view > td {
+    padding-right: 2em;
+}
+
+.indexation-edit-row {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 37.5em;
+}
+
+.index-delete-btn {
+    float: right;
+}
+
+#dossierForm .indexation-container > .form-input {
+    margin-bottom: 0em;
+}
+
+#dossierForm .indexation-container .form-input__container {
+    margin-bottom: 0.5em;
+}
+
+.indexation-container {
+    margin-bottom: 1.7857rem;
+}
+
+.index-add-btn {
+    min-width: 100px;
+}
+
+#searchForm .page-reponses__sidebar-select {
+    margin-bottom: 0 !important;
+}
+
+.th-border-header-one-col {
+    border-radius: 0.5em 0.5em 0 0 !important;
+}
+
+.button-border-one-col {
+    border-radius: 0.5em !important;
+}
+
+.icon-grey {
+    color: #5c5c5c;
+}
+
+.icon-green {
+    color: #118827;
+}
+
+.icon-red {
+    color: #d51622;
+}
+
+.icon-blue {
+    color: #5a76b8;
+}
+
+.textarea-tinymce {
+    height: 28.125em;
+}
+
+.flexgrow1 {
+    flex-grow: 1;
+}
+
+.bggrey {
+    padding: 1.5625em 1em;
+    background-color: #f5f5f5;
+    border-radius: 0.313em;
+}
+
+#listeDossiers,
+.position-relative {
+    position: relative;
+}
+
+#listeUsers .table-line__cell {
+    word-break: break-word;
+}
+
+#requeteField > .grid__row > .grid__col {
+    align-self: flex-start;
+}
+
+#recherche_date_data .grid__row {
+    align-items: normal !important;
+}
+
+#recherche_fdr_data .grid__row {
+    align-items: normal !important;
+}
+
+.versioncomparison__selection-col button:last-child {
+    margin-left: 0.625rem;
+}
+
+.interstitial__content.versioncomparison {
+    max-height: 47em;
+    padding: 0;
+}
+
+#modal-ministere-rattachement .interstitial__content {
+    overflow: auto !important;
+}
+
+.btn-favori-pc {
+    font-size: 0.4em;
+}
+.align-button-submit-editModelFDR {
+    width: inherit;
+}
+
+.overlay-img-arbre {
+    min-width: 29px;
+    min-height: 29px;
+}
+.classement .form-optin__container {
+    background-color: white;
+    display: flow-root;
+}
+
+#choix_ajout_favoris {
+    padding: 0 !important;
+}
+#accordion__content__favoris-de-travail .sidebar-delete-item + .sidebar-delete-item {
+    margin-top: 0.175em;
+}
+
+.interstitial--autocomplete-only .aria-autocomplete__wrapper {
+    flex-direction: column;
+}
+
+.interstitial--autocomplete-only .aria-autocomplete__list {
+    position: relative;
+    max-height: 13em;
+    top: 0;
+}
+
+.finished-progress {
+    display: inline-flex;
+    font-size: 1.125em;
+    vertical-align: middle;
+}
+
+.consult_icon_folder {
+    display: inline-flex;
+    font-size: 1.125em;
+    margin-left: 0.5em;
+}
+
+.table-line__action-column-right {
+    text-align: right;
+}
+
+#RECHERCHE_DOSSIER_EXPORT {
+    color: #fefefe !important;
+}
+
+#REMOVE_ZIP_STATS {
+    margin-left: 0.5em !important;
+}
+
+.interstitial-overlay.page-reponses__tree-icon {
+    right: 0;
+    z-index: auto;
+}
+
+#listeDossiers .table-line__action-button {
+    padding: 0.5em;
+}
+
+#tache-auto-label {
+    opacity: 1;
+}

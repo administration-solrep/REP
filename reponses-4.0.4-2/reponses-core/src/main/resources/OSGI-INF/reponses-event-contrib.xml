@@ -1,0 +1,732 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue les listeners de l'application Réponses. -->
+<component name="fr.dila.reponses.reponseCreationListener">
+	<require>fr.dila.cm.core.routing.listeners</require>
+	<require>com.nuxeo.case-management.eventContrib</require>
+	<!-- <require>org.nuxeo.ecm.platform.htmlsanitizer.HtmlSanitizerService
+	</require> -->
+	<!-- <require>org.nuxeo.ecm.relations.core.listener</require> -->
+	<!-- <require>org.nuxeo.ecm.platform.comment.service.listener</require> -->
+	<require>fr.dila.ss.core.listener</require>
+
+	<extension target="org.nuxeo.ecm.core.event.EventServiceComponent" point="listener">
+
+		<!-- *********************************************************************** 
+			Listeners transverses de Réponses *********************************************************************** -->
+
+		<!-- on ecrase htmlsanitizer qui plante -->
+		<listener name="htmlsanitizerlistener" enabled="false" />
+
+		<!-- Désactive le listener qui appelle jena sur la suppression d'etape 
+			de la feuille de route -->
+		<listener name="deleteRelationsListener" enabled="false" />
+
+		<!-- Désactive les listener sur la gestion des Commentaire par nuxeo -->
+		<listener name="commentListener" enabled="false" />
+		<listener name="docRemovedCommentListener" enabled="false" />
+
+		<!-- Désactive listener sur pour les annotations de version -->
+		<!-- Ce listener a été supprimé par suppression de la dépendance org.nuxeo.ecm.annotations.repository -->
+		<!-- Ce listener doit être commenté pour éviter le message -->
+		<!-- java.lang.IllegalArgumentException: Listener extension must define either a class or a script -->
+		<!-- <listener name="annotationsVersionEventListener" enabled="false" /> -->
+
+		<listener name="notificationListener" enabled="false" />
+
+		<!-- on ecrase updateMailboxRights pour l'appeler qu'à la creation' -->
+		<listener name="updateMailboxRights">
+			<event>documentCreated</event>
+		</listener>
+
+		<!-- Succès du login de l'utilisateur -->
+		<listener
+            name="reponsesLoginSuccessListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.LoginSuccessListener"
+            priority="200"
+        >
+			<event>loginSuccess</event>
+		</listener>
+
+		<!-- Verrou / Déverrou lors d'un changement de document -->
+		<listener
+            name="documentLockListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.DocumentLockListener"
+        >
+			<event>currentDocumentChanged</event>
+		</listener>
+
+		<!-- Listener permettant de créer un jeton quand il faut pour les minsitères 
+			interfacés -->
+		<listener
+            name="AlimenterWebservice"
+            async="false"
+            postCommit="false"
+            class="fr.dila.reponses.core.event.WebserviceFeederListener"
+            priority="170"
+        >
+			<event>aboutToCreate</event>
+		</listener>
+
+		<!-- Listener permettant de notifier la création de jeton -->
+		<listener
+            name="notifierCreationJetonListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.AfterJetonCreatedListener"
+        >
+			<event>afterCreationJeton</event>
+		</listener>
+
+		<!-- Listener permettant de tracer les événements dans le journal d'audit -->
+		<listener
+            name="auditLoggerListener"
+            async="false"
+            postCommit="false"
+            priority="500"
+            class="fr.dila.reponses.core.logger.NotificationAuditEventLogger"
+        />
+
+		<!-- *********************************************************************** 
+			Listeners des exports statistiques ************************************************************************ -->
+		<listener
+            name="exportListener"
+            async="true"
+            postCommit="true"
+            priority="170"
+            class="fr.dila.reponses.core.event.ExportListener"
+            transactionTimeOut="7200"
+        >
+			<event>exportStatsExportEvent</event>
+			<event>exportStatsMailEvent</event>
+		</listener>
+
+		<!-- *********************************************************************** 
+			Listeners des délégations *********************************************************************** -->
+		<!-- Événement de création / modification de délégations -->
+		<listener
+            name="delegationCreationListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.DelegationCreatedListener"
+        >
+			<event>documentCreated</event>
+			<event>documentModified</event>
+		</listener>
+
+		<!-- Événement de création / modification de délégations -->
+		<listener
+            name="delegationCAclListener"
+            async="false"
+            postCommit="false"
+            class="fr.dila.reponses.core.event.DelegationAclListener"
+        >
+			<event>documentCreated</event>
+			<event>documentModified</event>
+		</listener>
+
+		<!-- *********************************************************************** 
+			Listeners de l'organigramme *********************************************************************** -->
+
+		<!-- Listener permettant la migration d'un gouvernement -->
+		<listener
+            name="migrationGouvernementListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.MigrationGouvernementListener"
+            priority="150"
+        >
+			<event>migrationGvtEvent</event>
+		</listener>
+		
+		<!-- Listener permettant la migration des entités -->
+        <listener
+            name="migrationEntiteListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.MigrationEntiteListener"
+            priority="150"
+        >
+            <event>migrationEntiteEvent</event>
+        </listener>
+
+		<listener
+            name="migrationMinistereRattachementListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.MigrationMinistereRattachementListener"
+            priority="150"
+        >
+			<event>migrationGvtCloseEvent</event>
+		</listener>
+
+		<!-- Listener permettant le calcul des infos des timbres -->
+		<listener
+            name="countInfosTimbresListener"
+            async="false"
+            class="fr.dila.reponses.core.event.CountInfosTimbresListener"
+            priority="110"
+        >
+			<event>calculTimbresEvent</event>
+		</listener>
+		
+		<!-- Listener pour envoyer les détails d'une migration par mail -->
+        <listener
+            name="SendMigrationDetailsListener"
+            async="true"
+            postCommit="true"
+            priority="200"
+            class="fr.dila.reponses.core.event.ReponsesSendMigrationDetailsListener"
+        >
+            <event>sendMigrationDetails</event>
+        </listener>
+
+		<!-- *********************************************************************** 
+			Listeners des dossiers *********************************************************************** -->
+
+		<listener
+            name="dossierPathCreationHandler"
+            async="false"
+            postCommit="true"
+            priority="160"
+            class="fr.dila.reponses.core.event.DossierPathCreationListener"
+        >
+			<event>aboutToCreate</event>
+		</listener>
+
+		<listener
+            name="dossierRightSetterListener"
+            async="false"
+            postCommit="true"
+            priority="160"
+            class="fr.dila.reponses.core.event.DossierRightSetterListener"
+        >
+			<event>documentCreated</event>
+		</listener>
+
+		<!-- Événement de création de documents -->
+		<listener
+            name="hashConnexiteCreationListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.HashConnexiteCreationListener"
+        >
+			<event>documentCreated</event>
+			<event>documentModified</event>
+		</listener>
+
+		<listener
+            name="ExportDossierRechercheListener"
+            async="true"
+            postCommit="true"
+            priority="200"
+            class="fr.dila.reponses.core.event.ExportDossierRechercheListener"
+        >
+			<event>rechercheExportEvent</event>
+		</listener>
+
+		<!-- Événement de changement d'étape de feuille de route -->
+		<listener
+            name="routeStepChangedListener"
+            async="false"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.RouteStepChangedListener"
+        >
+			<event>afterCaseSentEvent</event>
+			<event>avisFavorable</event>
+			<event>avisDeFavorable</event>
+			<event>validerNonConcerne</event>
+			<event>substituerFeuilleRoute</event>
+			<event>dossierReattribution</event>
+			<event>dossierReorientation</event>
+			<event>dossierArbitrageSgg</event>
+			<event>feuilleRouteStepMove</event>
+			<event>feuilleRouteStepDelete</event>
+			<event>feuilleRouteStepUpdate</event>
+			<event>feuilleRouteStepCreate</event>
+		</listener>
+
+		<!-- ***********************************************************************
+			Listeners de la distribution des dossiers *********************************************************************** -->
+		<!-- Listener qui permet de renseigner les métadonnées du DossierLink lors 
+			de distribution d'un dossier -->
+		<listener
+            name="DossierLinkCreateFieldsListener"
+            async="false"
+            postCommit="true"
+            priority="160"
+            class="fr.dila.reponses.core.event.DossierLinkCreateFieldsListener"
+        >
+			<event>aboutToCreate</event>
+		</listener>
+
+		<!-- Listener qui permet d'initialiser les ACL d'un DossierLink après sa 
+			création -->
+		<listener
+            name="AfterDossierLinkCreatedListener"
+            async="false"
+            postCommit="false"
+            priority="180"
+            class="fr.dila.reponses.core.event.AfterDossierLinkCreatedListener"
+        >
+			<event>documentCreated</event>
+		</listener>
+
+
+		<!-- Listener pour mettre à jour les compteurs de type d'étape de feuille 
+			de route sur les mailbox -->
+		<listener
+            name="RemovedMailboxStepCountListenerListener"
+            async="false"
+            postCommit="false"
+            class="fr.dila.reponses.core.event.RemovedMailboxStepCountListener"
+            priority="200"
+        >
+			<event>beforeCaseLinkRemovedEvent</event>
+		</listener>
+
+        <!-- Listener pour mettre à jour les compteurs de type d'étape de feuille 
+            de route sur les mailbox -->
+        <listener
+            name="RemovedMailboxStepCountListenerListenerPostCommit"
+            async="false"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.RemovedMailboxStepCountListenerPostCommit"
+            priority="201"
+        >
+            <event>computeMailboxPreComptageEvent</event>
+        </listener>
+
+		<listener
+            name="UpdateMailboxStepCountListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.UpdateMailboxStepCountListener"
+            priority="200"
+        >
+			<event>updateMailboxStepCount</event>
+		</listener>
+
+		<!-- Renseigne les droits du dossier lors de la distribution -->
+		<listener
+            name="reponsesDistributionListener"
+            async="false"
+            postCommit="false"
+            priority="180"
+            class="fr.dila.ss.core.event.DistributionListener"
+        >
+			<event>afterCaseSentEvent</event>
+		</listener>
+
+		<!-- Listener permettant d'effectuer des traitements après la substitution 
+			d'une feuille de route -->
+		<listener
+            name="feuilleRouteSubstitutionListener"
+            async="false"
+            postCommit="false"
+            priority="10"
+            class="fr.dila.reponses.core.event.FeuilleRouteSubstitutionListener"
+        >
+			<event>afterSubstitutionFeuilleRoute</event>
+		</listener>
+
+		<!-- Listener exécuté après la terminaison d'une instance de feuille de 
+			route -->
+		<listener
+            name="afterRouteFinish"
+            async="false"
+            postCommit="false"
+            priority="10"
+            class="fr.dila.reponses.core.event.AfterRouteFinishListener"
+        >
+			<event>afterRouteFinish</event>
+		</listener>
+
+		<!-- Listener pour la gestion des listes d'élimination -->
+		<listener
+            name="AfterEliminationListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.AfterEliminationListener"
+            priority="250"
+        >
+			<event>afterEliminationListe</event>
+			<event>afterAbandonListe</event>
+		</listener>
+
+		<!-- Gestionnaire d'événements qui permet l'envoi d'un mail aux membres 
+			du poste lors de la distribution d'un dossier (surcharge socle_solrep) -->
+		<listener
+            name="MailAfterDistributionNotificationListener"
+            async="true"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.MailAfterDistributionNotificationListener"
+            priority="40"
+        >
+			<event>sendMailAfterDistributionNotification</event>
+		</listener>
+
+		<!-- *********************************************************************** 
+			Listeners des traitements batch *********************************************************************** -->
+
+		<!-- Batch général qui lance les autres batchs -->
+		<listener
+            name="LanceurGeneralListener"
+            async="false"
+            postCommit="false"
+            priority="100"
+            class="fr.dila.reponses.core.event.batch.LanceurGeneralBatchListener"
+        >
+			<event>lanceurGeneralBatchEvent</event>
+		</listener>
+
+		<!-- Listener permettant de purger le audit trail des messages -->
+		<listener
+            name="purgeAuditTrailListener"
+            async="false"
+            postCommit="false"
+            class="fr.dila.reponses.core.event.batch.PurgeAuditTrailListener"
+            priority="140"
+        >
+			<event>purgeJournal</event>
+		</listener>
+
+		<!-- Batch de generation du report birt pour les stats avec birt -->
+		<listener
+            name="GenerateReportListener"
+            async="false"
+            postCommit="true"
+            priority="200"
+            class="fr.dila.reponses.core.event.GenerateReportListener"
+        >
+			<event>generateReport</event>
+		</listener>
+
+		<!-- batch de mise à jour des statistiques -->
+		<listener
+            name="ComputeStatsBatchListener"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ComputeStatsBatchListener"
+        >
+			<event>computeStatsEvent</event>
+		</listener>
+
+		<!-- Batch de désactivation des utilisateurs -->
+		<listener
+            name="ReponsesUserDesactivationBatchListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.ReponsesUserDesactivationBatchListener"
+        >
+			<event>userDesactivationEvent</event>
+		</listener>
+
+		<!-- Batch de notification aux webservices -->
+		<listener
+            name="NotificationBatchListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.NotificationBatchListener"
+        >
+			<event>wsNotificationEvent</event>
+		</listener>
+
+		<!-- Batch d'envoi de mail d'archivage -->
+		<listener
+            name="archivageMailListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.ArchivageMailListener"
+        >
+			<event>archivageMailEvent</event>
+		</listener>
+
+		<!-- Batch journalier d'envoi des mails de distribution -->
+		<listener
+            name="dailyDistributionMailListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.DailyDistributionMailListener"
+        >
+			<event>dailyDistributionMailEvent</event>
+		</listener>
+
+		<!-- Batch journalier d'envoi des retraits -->
+		<listener
+            name="dailyRetiredMailListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.DailyRetiredMailListener"
+        >
+			<event>dailyRetiredMailEvent</event>
+		</listener>
+
+		<!-- Batch journalier d'envoi de prévenance de renouvellement de mot de 
+			passe -->
+		<listener
+            name="dailyRemindChangePasswordListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.DailyReminderChangePasswordListener"
+        >
+			<event>dailyReminderChangePassEvent</event>
+		</listener>
+
+		<!-- Batch de suppression des favoris a la date limite -->
+		<listener
+            name="EraseFavorisListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.EraseFavorisListener"
+        >
+			<event>eraseFavorisEvent</event>
+		</listener>
+
+		<listener
+            name="updateQuestionConnexeBatchListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.UpdateQuestionConnexeBatchListener"
+        >
+			<event>updateQuestionConnexeBatch</event>
+		</listener>
+
+		<listener
+            name="computePrecomptageBatchListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.ComputePrecomptageBatchListener"
+        >
+			<event>computePrecomptageBatch</event>
+		</listener>
+
+		<!-- Batch de déverrouillage des documents (surcharge du batch pour réponses) -->
+		<listener
+            name="DossierUnlockBatchListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.ReponsesDossierUnlockBatchListener"
+        >
+			<event>unlockBatchEvent</event>
+		</listener>
+
+		<!-- Batch d'envoi des mails d'alerte de dossiers bloqués -->
+		<listener
+            name="blockedRouteAlertListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.ReponsesBlockedRouteAlertBatchListener"
+        >
+			<event>blockedRoutesAlertEvent</event>
+		</listener>
+
+		<!-- Batch d'envoi des mails de dossiers avec étape et caseLink incohérents -->
+		<listener
+            name="dossierLinkIncoherentBatchListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.DossierLinkIncoherentBatchListener"
+        >
+			<event>dossierLinkIncoherentBatchEvent</event>
+		</listener>
+
+		<!-- Batch de suppression des documents d'export stat -->
+		<listener
+            name="cleanExportStatDocsBatchListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.CleanExportStatDocsBatchListener"
+        >
+			<event>cleanExportStatDocsBatchEvent</event>
+		</listener>
+
+		<!-- Batch d'extraction des questions au format xml -->
+		<listener
+            name="ExtractionQuestionsListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.ExtractionQuestionsListener"
+        >
+			<event>extractionQuestionsEvent</event>
+		</listener>
+
+		<!-- Batch de suppression des documents d'allotissement -->
+		<listener
+            name="CleanDeletedAllotissementListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.CleanDeletedAllotissementBatchListener"
+        >
+			<event>cleanDeletedAllotissementEvent</event>
+		</listener>
+		
+		<!-- Batch de purge de la table tentatives de connexion -->
+		<listener
+            name="purgeTentativesConnexionBatchEventListener"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ReponsesPurgeTentativesConnexionBatchEventListener"
+        >
+			<event>purgeTentativesConnexionEvent</event>
+		</listener>
+
+		<!-- *********************************************************************** 
+			Listeners des modifications sur la reponse *********************************************************************** -->
+		<listener
+            name="ReponseUpdateListener"
+            async="false"
+            postCommit="true"
+            class="fr.dila.reponses.core.event.ReponseUpdateListener"
+        >
+			<event>reponseUpdate</event>
+			<event>reponseVersionUpdate</event>
+		</listener>
+
+		<!-- *********************************************************************** 
+			Listeners des modifications sur la question *********************************************************************** -->
+		<listener
+            name="questionUpdateListener"
+            async="false"
+            postCommit="false"
+            priority="1000"
+            class="fr.dila.reponses.core.event.QuestionUpdateListener"
+        >
+			<event>documentCreated</event>
+			<event>documentModified</event>
+		</listener>
+		
+		<!-- Batch des questions en souffrance -->
+		<listener
+            name="questionReminderEventListener"
+            async="true"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.QuestionReminderEventListener"
+        >
+			<event>questionReminderEvent</event>
+		</listener>
+        
+		<!-- Batch journalier de déverrouillage de l'organigramme, surcharge celui de st -->
+		<listener
+            name="unlockOrganigrammeListener"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ReponsesOrganigrammeUnlockBatchListener"
+        >
+			<event>unlockOrganigrammeBatchEvent</event>
+		</listener>
+		
+		<!-- Batch de validation automatique des dossierslinks, surcharge de celui de ss -->
+		<listener
+            name="dossierLinkValidatorBatchListener"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ReponsesDossierLinkValidatorBatchListener"
+        >
+			<event>validateCaseLink</event>
+		</listener>
+		
+		<!-- Batch d'envoi des mails d'alerte, surcharge de celui de ss -->
+		<listener
+            name="sendAlertsListener"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ReponsesSendAlertsBatchListener"
+        >
+			<event>sendAlertEvent</event>
+		</listener>
+		
+		<!-- Batch de nettoyage des DossierLink supprimés, surcharge decelui de  ss -->
+		<listener
+            name="cleanDeletedDossierLinkBatchListener"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ReponsesCleanDeletedDossierLinkBatchListener"
+        >
+			<event>cleanDeletedDossierLinkEvent</event>
+		</listener>
+		
+		<!-- Batch de la suppression utilisateurs, surcharge de ss  -->
+		<listener
+            name="userDeletionBatchListener"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ReponsesUserDeletionBatchListener"
+        >
+			<event>userDeletionBatch</event>
+		</listener>
+		
+		<!-- Batch de "déconnexion" des utilisateurs, surcharge de ss -->
+		<listener
+            name="closeUsersConnectionsBatchListener"
+            async="false"
+            postCommit="false"
+            priority="200"
+            class="fr.dila.reponses.core.event.batch.ReponsesCloseUsersConnectionsBatchListener"
+        >
+			<event>closeUsersConnectionsEvent</event>
+		</listener>
+		
+		<!-- Batch de nettoyage des documents requete supprimés, surcharge de ss -->
+		<listener
+            name="cleanDeletedRequeteListener"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ReponsesCleanDeletedRequeteBatchListener"
+        >
+			<event>cleanDeletedRequeteEvent</event>
+		</listener>
+		
+		<!-- Batch de nettoyage des alertes supprimées, surcharge de ss -->
+		<listener
+            name="cleanDeletedAlertBatchListener"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ReponsesCleanDeletedAlertBatchListener"
+        >
+			<event>cleanDeletedAlertEvent</event>
+		</listener>
+		
+		<!-- Batch de nettoyage des documents fichier de FondDeDossier supprimés, surcharge de ss -->
+		<listener
+            name="cleanDeletedFddFileEvent"
+            async="false"
+            postCommit="false"
+            priority="190"
+            class="fr.dila.reponses.core.event.batch.ReponsesCleanDeletedFddFichierBatchListener"
+        >
+			<event>cleanDeletedFddFileEvent</event>
+		</listener>
+
+	</extension>
+
+</component>

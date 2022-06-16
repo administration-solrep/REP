@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de gestion du dossier -->
+<component name="fr.dila.reponses.ui.services.actions.component.SimpleIndexActionComponent">
+	<implementation class="fr.dila.reponses.ui.services.actions.component.SimpleIndexActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.SimpleIndexActionService" />
+	</service>
+
+</component>

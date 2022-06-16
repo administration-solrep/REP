@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="btn-load-organigramme-poste-etape(myID, typeSelection, activatePosteFilter, idSelection, isMulti, disabled)"
+        >
+            <button
+                type="button"
+                class="interstitial-overlay__trigger base-btn base-btn--button base-btn--default base-btn--discret"
+                th:attr="onclick=|loadSelectOrganigramme('${myID}','${typeSelection}',${activatePosteFilter},'${idSelection}',${isMulti})|"
+                th:data-controls="'modal-'+${myID}"
+                th:disabled="${disabled}"
+            >
+                <span aria-hidden="true" class="icon icon--tree"></span>
+                <span class="sr-only" th:text="#{organigramme.popup.open.__${typeSelection}__}">Ouvrir</span>
+            </button>
+        </div>
+    </body>
+</html>

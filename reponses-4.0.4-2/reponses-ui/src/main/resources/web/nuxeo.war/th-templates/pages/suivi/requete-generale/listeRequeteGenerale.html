@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout :: layout (template=~{::main},templateClass='', description='page résultats de requête', title=#{${isRequeteGenerale ? 'suivi.requete.generale.title' : 'suivi.requete.personnelle.title'}})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <th:block th:if="${!isRequeteGenerale}">
+            <div class="flex justify-end m-t-6">
+                <button
+                    type="button"
+                    id="add-champ-button-up"
+                    class="base-btn base-btn--button base-btn--default base-btn--center flex-button-right"
+                    th:text="#{suivi.modifier.requete}"
+                    th:data-id="${otherParameter.idRequete}"
+                    onclick="editRequeteFromList(this)"
+                ></button>
+            </div>
+        </th:block>
+        <h1
+            class="base-title base-title--lvl-1"
+            th:text="#{${isRequeteGenerale ? 'suivi.requete.generale.title' : 'suivi.requete.personnelle.title'}}"
+        >
+            Titre
+        </h1>
+
+        <div th:replace="fragments/recherche/requete-result"></div>
+
+        <th:block th:if="${!isRequeteGenerale}">
+            <div class="flex justify-end m-t-6">
+                <button
+                    type="button"
+                    id="add-champ-button-up"
+                    class="base-btn base-btn--button base-btn--default base-btn--center flex-button-right"
+                    th:text="#{suivi.modifier.requete}"
+                    th:data-id="${otherParameter.idRequete}"
+                    onclick="editRequeteFromList(this)"
+                ></button>
+            </div>
+        </th:block>
+    </main>
+</html>

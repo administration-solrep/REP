@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <!--/*fragment relatif au bloc 'Favoris du plan de classement: 
+    bloc présent dans l'espace de travail et dans PlanClassement*/-->
+    <body>
+        <div class="favorisPlanClassement" th:fragment="favorisPlanClassement">
+            <div class="accordion accordion--aside">
+                <div class="accordion__header js-toggle accordion__header--aside">
+                    <h2 class="accordion-title-lvl-2" th:text="#{favoris.plan.classement.label}">Plan de classement</h2>
+                    <button
+                        type="button"
+                        aria-controls="accordion__content__favorites"
+                        aria-expanded="true"
+                        id="accordion__header__favorites"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract-without-background"
+                        data-icon-closed="add-without-background"
+                        class="js-toggle accordion__header__button"
+                        th:aria-label="#{favoris.plan.classement.label}"
+                    >
+                        <span
+                            aria-hidden="true"
+                            class="icon icon--add-without-background bubble-icon bubble-icon--neutral accordion__icon accordion__icon--aside"
+                        ></span>
+                    </button>
+                </div>
+                <div
+                    aria-hidden="true"
+                    id="accordion__content__favorites"
+                    class="accordion__content accordion__content--aside accordion__content--is-closed"
+                >
+                    <div class="page-reponses__sidebar-content">
+                        <div th:aria-label="|#{tree.title} #{favoris.plan.classement.label}|" class="tree-navigation">
+                            <div class="tree-navigation__container">
+                                <ul class="tree-navigation__list tree-navigation__list--is-opened">
+                                    <li
+                                        th:with="concat_index=50"
+                                        class="tree-navigation__item tree-navigation__item--is-opened tree-navigation__item--has-toggler tree-navigation__item--lvl-1"
+                                    >
+                                        <div class="tree-navigation__toggle-wrapper">
+                                            <button
+                                                th:aria-controls="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                                aria-expanded="true"
+                                                th:id="'tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                data-toggle="tree-navigation__list"
+                                                data-icon-opened="minus"
+                                                data-icon-closed="plus"
+                                                class="tree-navigation__toggle js-toggle"
+                                            >
+                                                <span
+                                                    aria-hidden="true"
+                                                    class="tree-navigation__icon tree-navigation__icon--toggler tree-navigation__icon--opened icon icon--minus bubble-icon bubble-icon--squared bubble-icon--small"
+                                                    th:aria-describedby="'button\_\_tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                ></span
+                                                ><span
+                                                    th:id="'button\_\_tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                    class="sr-only"
+                                                ></span
+                                                ><span
+                                                    class="tree-navigation__text"
+                                                    th:text="#{favoris.left_panel.title}"
+                                                    >Favoris</span
+                                                >
+                                            </button>
+                                        </div>
+                                        <ul
+                                            th:id="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                            class="tree-navigation__list tree-navigation__list--is-opened tree-navigation__list--subtree"
+                                        >
+                                            <li
+                                                th:with="concat_index=${concat_index+10}"
+                                                class="tree-navigation__item tree-navigation__item--is-opened tree-navigation__item--has-toggler tree-navigation__item--lvl-2"
+                                            >
+                                                <ul class="tree-navigation__list tree-navigation__list--is-opened">
+                                                    <li
+                                                        class="tree-navigation__item tree-navigation__item--is-opened tree-navigation__item--has-toggler tree-navigation__item--lvl-1"
+                                                    >
+                                                        <div class="tree-navigation__toggle-wrapper">
+                                                            <button
+                                                                th:aria-controls="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                                                aria-expanded="true"
+                                                                th:id="'tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                data-toggle="tree-navigation__list"
+                                                                data-icon-opened="minus"
+                                                                data-icon-closed="plus"
+                                                                class="tree-navigation__toggle js-toggle"
+                                                            >
+                                                                <span
+                                                                    aria-hidden="true"
+                                                                    class="tree-navigation__icon tree-navigation__icon--toggler tree-navigation__icon--opened icon icon--minus bubble-icon bubble-icon--squared bubble-icon--small"
+                                                                    th:aria-describedby="'button\_\_tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                ></span
+                                                                ><span
+                                                                    th:id="'button\_\_tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                    class="sr-only"
+                                                                ></span
+                                                                ><span
+                                                                    class="tree-navigation__text"
+                                                                    th:text="${favorisPlanClassementMap.assemblee.label}"
+                                                                    >ASSEMBLEE NATIONALE</span
+                                                                >
+                                                            </button>
+                                                        </div>
+                                                        <ul
+                                                            th:id="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                                            class="tree-navigation__list tree-navigation__list--is-opened tree-navigation__list--subtree"
+                                                        >
+                                                            <li
+                                                                th:each="item, status : ${favorisPlanClassementMap.assemblee.childs}"
+                                                                th:with="concat_index=${concat_index+ status.index+10}"
+                                                                class="tree-navigation__item tree-navigation__item--is-opened tree-navigation__item--has-toggler tree-navigation__item--lvl-2"
+                                                            >
+                                                                <div class="tree-navigation__toggle-wrapper">
+                                                                    <button
+                                                                        th:aria-controls="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                                                        aria-expanded="true"
+                                                                        th:id="'tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                        data-toggle="tree-navigation__list"
+                                                                        data-icon-opened="minus"
+                                                                        data-icon-closed="plus"
+                                                                        class="tree-navigation__toggle js-toggle"
+                                                                    >
+                                                                        <span
+                                                                            aria-hidden="true"
+                                                                            class="tree-navigation__icon tree-navigation__icon--toggler tree-navigation__icon--opened icon bubble-icon bubble-icon--squared bubble-icon--small icon--minus"
+                                                                            th:aria-describedby="'button\_\_tree-navigation__toggler\_\_'+${concat_index}"
+                                                                        ></span
+                                                                        ><span
+                                                                            th:id="'button\_\_tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                            class="sr-only"
+                                                                        ></span
+                                                                        ><span
+                                                                            class="tree-navigation__text"
+                                                                            th:text="${item.label}"
+                                                                            >Administration</span
+                                                                        >
+                                                                    </button>
+                                                                </div>
+                                                                <ul
+                                                                    th:id="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                                                    class="tree-navigation__list tree-navigation__list--subtree tree-navigation__list--is-opened"
+                                                                    aria-hidden="false"
+                                                                >
+                                                                    <li
+                                                                        th:each="i: ${#numbers.sequence(0, item.childs.size-1)}"
+                                                                        class="tree-navigation__item tree-navigation__item--subitem"
+                                                                    >
+                                                                        <a
+                                                                            th:title="${item.childs[i].label}"
+                                                                            th:href="@{${item.childs[i].link} + '#main_content'}"
+                                                                            class="tree-navigation__link link"
+                                                                            th:id="|favori-item-${item.childs[i].label}|"
+                                                                        >
+                                                                            <span
+                                                                                class="tree-navigation__text"
+                                                                                th:text="${item.childs[i].label}"
+                                                                            ></span
+                                                                        ></a>
+                                                                        <th:block
+                                                                            th:if="${actionRemove!=null && actionRemove.id!=null}"
+                                                                        >
+                                                                            <button
+                                                                                type="button"
+                                                                                th:id="${actionRemove.id + '_'+ i}"
+                                                                                th:attr="onclick=${actionRemove.link}"
+                                                                                class="js-tooltip btn-favori-pc base-btn base-btn--button base-btn--default base-btn--icon-action-bg base-btn--center base-btn--rounded"
+                                                                                th:data-tippy-content="${#messages.msg(actionRemove.label)}"
+                                                                                th:data-item-key="${item.childs[i].key}"
+                                                                                th:aria-describedby="|favori-item-${item.childs[i].label}|"
+                                                                            >
+                                                                                <span
+                                                                                    aria-hidden="true"
+                                                                                    class="icon icon--cross-bold"
+                                                                                ></span
+                                                                                ><span
+                                                                                    class="sr-only"
+                                                                                    th:text="${#messages.msg(actionRemove.label)}"
+                                                                                    >Supprimer ce poste</span
+                                                                                >
+                                                                            </button>
+                                                                            <div class="tooltip-wrapper"></div>
+                                                                        </th:block>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <ul class="tree-navigation__list tree-navigation__list--is-opened">
+                                                    <li
+                                                        th:with="concat_index=70"
+                                                        class="tree-navigation__item tree-navigation__item--is-opened tree-navigation__item--has-toggler tree-navigation__item--lvl-1"
+                                                    >
+                                                        <div class="tree-navigation__toggle-wrapper">
+                                                            <button
+                                                                th:aria-controls="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                                                aria-expanded="true"
+                                                                th:id="'tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                data-toggle="tree-navigation__list"
+                                                                data-icon-opened="minus"
+                                                                data-icon-closed="plus"
+                                                                class="tree-navigation__toggle js-toggle"
+                                                            >
+                                                                <span
+                                                                    aria-hidden="true"
+                                                                    class="tree-navigation__icon tree-navigation__icon--toggler tree-navigation__icon--opened icon icon--minus bubble-icon bubble-icon--squared bubble-icon--small"
+                                                                    th:aria-describedby="'button\_\_tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                ></span
+                                                                ><span
+                                                                    th:id="'button\_\_tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                    class="sr-only"
+                                                                ></span
+                                                                ><span
+                                                                    class="tree-navigation__text"
+                                                                    th:text="${favorisPlanClassementMap.senat.label}"
+                                                                    >SENAT</span
+                                                                >
+                                                            </button>
+                                                        </div>
+                                                        <ul
+                                                            th:id="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                                            class="tree-navigation__list tree-navigation__list--is-opened tree-navigation__list--subtree"
+                                                        >
+                                                            <li
+                                                                th:each="item, status : ${favorisPlanClassementMap.senat.childs}"
+                                                                th:with="concat_index=${concat_index+status.index+10}"
+                                                                class="tree-navigation__item tree-navigation__item--is-opened tree-navigation__item--has-toggler tree-navigation__item--lvl-2"
+                                                            >
+                                                                <div class="tree-navigation__toggle-wrapper">
+                                                                    <button
+                                                                        th:aria-controls="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                                                        aria-expanded="true"
+                                                                        th:id="'tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                        data-toggle="tree-navigation__list"
+                                                                        data-icon-opened="minus"
+                                                                        data-icon-closed="plus"
+                                                                        class="tree-navigation__toggle js-toggle"
+                                                                    >
+                                                                        <span
+                                                                            aria-hidden="true"
+                                                                            class="tree-navigation__icon tree-navigation__icon--toggler tree-navigation__icon--opened icon bubble-icon bubble-icon--squared bubble-icon--small icon--minus"
+                                                                            th:aria-describedby="'button\_\_tree-navigation__toggler\_\_'+${concat_index}"
+                                                                        ></span
+                                                                        ><span
+                                                                            th:id="'button\_\_tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                                                            class="sr-only"
+                                                                        ></span
+                                                                        ><span
+                                                                            class="tree-navigation__text"
+                                                                            th:text="${item.label}"
+                                                                            >Thème</span
+                                                                        >
+                                                                    </button>
+                                                                </div>
+                                                                <ul
+                                                                    th:id="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                                                    class="tree-navigation__list tree-navigation__list--subtree tree-navigation__list--is-opened"
+                                                                    aria-hidden="false"
+                                                                >
+                                                                    <li
+                                                                        th:each="i: ${#numbers.sequence(0, item.childs.size-1)}"
+                                                                        class="tree-navigation__item tree-navigation__item--subitem"
+                                                                    >
+                                                                        <a
+                                                                            th:title="${item.childs[i].label}"
+                                                                            th:href="@{${item.childs[i].link} + '#main_content'}"
+                                                                            class="tree-navigation__link link"
+                                                                            th:id="|favori-item-${item.childs[i].label}|"
+                                                                        >
+                                                                            <span
+                                                                                class="tree-navigation__text"
+                                                                                th:text="${item.childs[i].label}"
+                                                                            ></span
+                                                                        ></a>
+                                                                        <th:block
+                                                                            th:if="${actionRemove!=null && actionRemove.id!=null}"
+                                                                        >
+                                                                            <button
+                                                                                type="button"
+                                                                                th:id="${actionRemove.id + ''+i}"
+                                                                                th:attr="onclick=${actionRemove.link}"
+                                                                                class="js-tooltip btn-favori-pc base-btn base-btn--button base-btn--default base-btn--icon-action-bg base-btn--center base-btn--rounded"
+                                                                                th:data-tippy-content="${#messages.msg(actionRemove.label)}"
+                                                                                th:data-item-key="${item.childs[i].key}"
+                                                                                th:aria-describedby="|favori-item-${item.childs[i].label}|"
+                                                                            >
+                                                                                <span
+                                                                                    aria-hidden="true"
+                                                                                    class="icon icon--cross-bold"
+                                                                                ></span
+                                                                                ><span
+                                                                                    class="sr-only"
+                                                                                    th:text="${#messages.msg(actionRemove.label)}"
+                                                                                    >Supprimer ce poste</span
+                                                                                >
+                                                                            </button>
+                                                                            <div class="tooltip-wrapper"></div>
+                                                                        </th:block>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

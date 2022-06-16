@@ -1,0 +1,11 @@
+1- se connecter au nxshell : 
+	$ cd /opt/reponses-server_inst1/tools/
+	$ sh nxshell.sh
+	
+2- lancer le script
+	> script feuille_route/skipUnstableStep.groovy -ctx "question='sourceQuestion'"
+		=> Ce script peut prendre en paramètre deux informations : 
+		question : l'origine + le numéro de question (ex : 'AN 314568' ou 'SENAT 314568') OBLIGATOIRE
+		legislature : le numéro de législature de la question (par défaut, prend la législature courante) Facultatif 
+
+3- Attendre la fin du script - voir détails dans les logs ( /var/log/reponses-server_inst1/server.log)	

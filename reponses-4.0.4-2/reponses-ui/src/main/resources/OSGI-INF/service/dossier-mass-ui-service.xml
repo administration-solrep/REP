@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.dossier.DossierMassUIComponent">
+
+  <implementation class="fr.dila.reponses.ui.services.dossier.DossierMassUIComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.dossier.DossierMassUIService" />
+  </service>
+  
+</component>

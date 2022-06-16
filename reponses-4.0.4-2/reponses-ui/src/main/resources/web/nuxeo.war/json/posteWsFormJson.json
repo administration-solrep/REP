@@ -1,0 +1,11 @@
+{
+    "id": "monIdentifiant",
+    "libelle": "WebService Agriculture",
+    "urlWs": "https://is.secoia.agriculture.ader.gouv.fr:7021/invoke/SGG_REPONSES_DECOUVERTE_CONNEXION.SGG_REPONSES_DECOUVERTE.services.factory.REPONSES/REPONSES_DECOUVERTE_RECEVOIR-NOTIF_IN/WSNotification/envoyerNotification",
+    "utilisateurWs": "SGG_REPONSES_DECOUVERTE_USER",
+    "mdpWs": "",
+    "keystore": "ws-reponses-notif-p",
+    "dateDebut": "01/02/2020",
+    "dateFin": "",
+    "ministeres": ["Ministère de l’agriculture et de l’alimentation"]
+}

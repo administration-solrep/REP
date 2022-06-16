@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<component name="fr.dila.reponses.ui.pageprovider.contrib">
+
+    <extension target="org.nuxeo.ecm.platform.query.api.PageProviderService" point="providers">
+
+        <genericPageProvider
+            name="favorisdossier_repertoire_content"
+            class="fr.dila.reponses.ui.contentview.FavorisDossierPageProvider"
+        >
+            <pattern>
+                ufnxql:SELECT f.ecm:uuid AS favoriId, f.fvd:targetDocument AS questionId FROM
+                FavorisDossier AS f, Question AS q
+                WHERE q.ecm:uuid = f.fvd:targetDocument AND f.ecm:parentId = ?
+            </pattern>
+            <pageSize>20</pageSize>
+        </genericPageProvider>
+
+    </extension>
+
+</component>

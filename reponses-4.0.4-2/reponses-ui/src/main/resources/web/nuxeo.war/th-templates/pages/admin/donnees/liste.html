@@ -1,0 +1,18 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='Page des profils', title=#{menu.admin.param.archivage.title})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <h1
+            class="m-t-6 m-b-6 base-title base-title--lvl-1 base-title--is-underlined"
+            th:text="#{menu.admin.param.archivage.title}"
+        >
+            Titre
+        </h1>
+
+        <div th:replace="fragments/table/tableEliminationDonnees :: searchResults"></div>
+    </main>
+</html>

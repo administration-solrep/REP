@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="fond"
+            id="d_fond_content"
+            class="tableForm"
+            th:with="dossierId=${repDossierId}"
+            th:data-url="@{${dataUrl}}"
+            th:data-ajaxurl="@{${dataAjaxUrl}}"
+        >
+            <a
+                href="#skip_link_action-table_prev"
+                id="skip_link_action-table_next"
+                class="skip-link"
+                th:text="#{skip.link.table.prev(#{fondDossier.table.caption})}"
+            >
+                Aller après le tableau
+            </a>
+            <span class="base-title base-title--lvl-4" th:text="#{dossier.onglet.fond}">Fond de dossier</span>
+            <th:block th:if="${fondDto.fondExportAction != null}">
+                <div
+                    th:replace="fragments/components/action-button :: action-button(${fondDto.fondExportAction}, false, 'base-btn--icon-action-blue base-btn--transparent')"
+                ></div>
+            </th:block>
+            <br />
+            <br />
+            <div class="table-wrapper">
+                <table class="file-tree-table__table custom-table">
+                    <caption class="sr-only" th:text="#{fondDossier.table.caption}">
+                        Tableau des documents du fond de dossier
+                    </caption>
+                    <thead class="table-header custom-table__header">
+                        <tr class="table-header__line">
+                            <th:block th:each="colonne, status : ${lstColonnes}">
+                                <th:block th:if="${colonne.visible && !colonne.sortable}">
+                                    <th class="table-header__cell" th:id="|fdd-table-header-${status.index}|">
+                                        <th:block
+                                            th:if="${colonne.isLabelVisible}"
+                                            class="table-header__cell-inner"
+                                            th:text="${colonne.label !=null? #messages.msg(colonne.label) : ''}"
+                                        >
+                                            &nbsp;
+                                        </th:block>
+                                        <span
+                                            th:unless="${colonne.isLabelVisible}"
+                                            class="sr-only"
+                                            th:text="#{__${colonne.label}__}"
+                                        >
+                                            Label
+                                        </span>
+                                    </th>
+                                </th:block>
+                            </th:block>
+                            <th
+                                class="table-header__cell table-header__cell--actions"
+                                th:id="|fdd-table-header-${#lists.size(lstColonnes)}|"
+                            >
+                                <span class="sr-only" th:text="#{header.label.actions}">Actions</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="custom-table__body">
+                        <th:block th:unless="${#lists.isEmpty(fondDto.dossiers)}">
+                            <th:block th:each="folder, status : ${fondDto.dossiers}">
+                                <tr
+                                    class="custom-table__table-line table-line table-line--complex-line"
+                                    th:data-id="${folder.id}"
+                                >
+                                    <th
+                                        class="table-line__cell table-line__cell--file-folder-info tab--1"
+                                        th:colspan="${fondDto.entiteVisible} ? 5 : 4"
+                                        th:id="|fdd-table-ss-header-${status.index}-nom|"
+                                        scope="row"
+                                    >
+                                        <p tabindex="-1" link-url="" class="folder-name">
+                                            <span class="folder-name__text" th:text="${folder.nom}">Nom</span>
+                                        </p>
+                                    </th>
+                                    <th
+                                        class="table-line__cell table-line__action-column"
+                                        th:headers="|fdd-table-header-${#lists.size(lstColonnes)}|"
+                                        th:id="|fdd-table-ss-header-${status.index}-actions|"
+                                    >
+                                        <div
+                                            th:if="${not #lists.isEmpty(fondAjoutActions)}"
+                                            class="table-line__action-column-container"
+                                            th:with="dropdownRight=true"
+                                        >
+                                            <div
+                                                th:replace="fragments/components/dropdown-action :: dropdown-action(
+			                                         ${folder.id},
+			                                         ${fondAjoutActions}, 
+			                                         'icon--ellipsis', 
+			                                         false, 
+			                                         'fondDossier.tooltip.showOptions', 
+			                                         'base-btn--transparent base-btn--light base-btn--md-icon', 
+			                                         false, 
+	                                                 'base-drop-down--light'
+	                                            )"
+                                            ></div>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <th:block th:with="ssHeaderIndex=${status.index}">
+                                    <div
+                                        th:replace="fragments/components/dossierContent :: dossierContent(${folder}, ${fondDto.entiteVisible}, 'fondDossier.tooltip.showOptions', '2')"
+                                    ></div>
+                                </th:block>
+                                <!-- Modal de modification document -->
+                                <div
+                                    th:replace="fragments/components/modal-modification-document :: modal-modification-document(${fondDto.dossiers})"
+                                ></div>
+
+                                <!-- Modal de confirmation de suppression document -->
+                                <div
+                                    th:replace="fragments/components/modal-suppression-document :: modal-suppression-document"
+                                ></div>
+
+                                <!-- Modal de confirmation d'ajout de document -->
+                                <div th:replace="fragments/components/modal-add-document :: modal-add-document"></div>
+                            </th:block>
+                        </th:block>
+                    </tbody>
+                </table>
+            </div>
+            <a
+                href="#skip_link_action-table_next"
+                id="skip_link_action-table_prev"
+                class="skip-link"
+                th:text="#{skip.link.table.next(#{fondDossier.table.caption})}"
+            >
+                Aller avant le tableau
+            </a>
+        </div>
+    </body>
+</html>

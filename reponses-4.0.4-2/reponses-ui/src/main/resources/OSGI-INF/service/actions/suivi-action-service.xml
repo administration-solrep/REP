@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.component.SuiviActionComponent">
+	<implementation class="fr.dila.reponses.ui.services.actions.component.SuiviActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.SuiviActionService" />
+	</service>
+
+</component>

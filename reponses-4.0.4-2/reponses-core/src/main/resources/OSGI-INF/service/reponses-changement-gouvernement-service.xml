@@ -1,0 +1,10 @@
+<component name="fr.dila.reponses.core.service.organigramme.ReponsesChangementGouvernementService">
+
+  <implementation class="fr.dila.reponses.core.service.organigramme.ReponsesChangementGouvernementComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.core.service.organigramme.ReponsesChangementGouvernementService" />
+  </service>
+  
+
+</component>

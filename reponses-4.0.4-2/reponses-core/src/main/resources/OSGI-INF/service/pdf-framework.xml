@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de manipulation de pdf. -->
+<component name="fr.dila.reponses.core.service.PdfDossierService">
+	<implementation class="fr.dila.reponses.core.component.PdfDossierComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.PdfDossierService" />
+	</service>
+</component>

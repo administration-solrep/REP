@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.mailbox.pageprovider">
+	<require>com.nuxeo.casemanagement.querymodel</require>
+
+	<extension target="org.nuxeo.ecm.platform.query.api.PageProviderService" point="providers">
+
+		<coreQueryPageProvider name="GET_MAILBOX_FROM_ID">
+			<pattern>
+				SELECT * FROM ReponsesMailbox WHERE mlbx:mailbox_id=? AND
+				ecm:isProxy = 0
+			</pattern>
+		</coreQueryPageProvider>
+
+		<coreQueryPageProvider name="GET_ALL_MAILBOX">
+			<pattern>
+				SELECT * FROM ReponsesMailbox WHERE ecm:isProxy = 0
+			</pattern>
+		</coreQueryPageProvider>
+	</extension>
+
+</component>

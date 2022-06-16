@@ -1,0 +1,92 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div class="table-wrapper" th:fragment="tableAllotissement (lstColonnes,listQuestions,context)">
+            <a
+                th:href="|#skip_link_action-table_${context}_prev|"
+                th:id="|skip_link_action-table_${context}_next|"
+                class="skip-link"
+                th:text="#{skip.link.table.prev(${#messages.msg('allotissement.table.'+context+'.caption')})}"
+            >
+                Aller après le tableau
+            </a>
+            <table class="custom-table custom-table--has-check" th:id="|table-${context}|">
+                <caption class="sr-only" th:text="${#messages.msg('allotissement.table.'+context+'.caption')}">
+                    Tableau des dossiers pouvant être allotis
+                </caption>
+                <thead class="table-header custom-table__header">
+                    <tr class="table-header__line">
+                        <th:block th:each="colonne : ${lstColonnes}">
+                            <th:block th:if="${colonne.visible && colonne.sortable}">
+                                <th
+                                    th:aria-sort="${colonne.sortValue == 'asc' ? 'ascending' : (colonne.sortValue== 'desc' ? 'descending' : '')}"
+                                    scope="col"
+                                    class="table-header__cell table-header__cell--with-filter-action"
+                                >
+                                    <button
+                                        th:replace="fragments/table/sortableHeader :: sortableHeader (#{__${colonne.label}__},${colonne.sortValue},${colonne.sortName},${colonne.sortId},${colonne.inverseSort})"
+                                    ></button>
+                                </th>
+                            </th:block>
+
+                            <th:block th:if="${colonne.visible && !colonne.sortable}">
+                                <th scope="col" class="table-header__cell">
+                                    <span
+                                        th:if="${colonne.isLabelVisible}"
+                                        class="table-header__cell-inner"
+                                        th:text="${colonne.label !=null? #messages.msg(colonne.label) : ''}"
+                                    >
+                                        Label
+                                    </span>
+                                    <span
+                                        th:unless="${colonne.isLabelVisible}"
+                                        class="sr-only"
+                                        th:text="#{__${colonne.label}__}"
+                                    >
+                                        Label
+                                    </span>
+                                </th>
+                            </th:block>
+                        </th:block>
+                    </tr>
+                </thead>
+                <tbody class="custom-table__body">
+                    <th:block th:if="${listQuestions.size > 0}">
+                        <tr
+                            class="custom-table__table-line table-line table-line--with-check table-line--with-action-column table-line--complex-line"
+                            th:each="item, nb : ${listQuestions}"
+                            th:data-id="${item.dossierId}"
+                        >
+                            <td class="table-line__cell">
+                                <button
+                                    th:replace="fragments/components/idComponent :: id (${context}, ${item.sourceNumeroQuestion}, 'numéro', null, false, true)"
+                                ></button>
+                            </td>
+                            <td class="table-line__cell" th:text="${item.auteur}">Auteur</td>
+                            <td class="table-line__cell" th:text="${item.minAttributaire}">Ministère attributaire</td>
+                            <td class="table-line__cell">
+                                <span class="sr-only" th:text="#{label.dossier.oneetat(${item.etatQuestion})}"
+                                    >Etat question</span
+                                >
+                                [[${item.etatQuestion}]]
+                            </td>
+                            <td class="table-line__cell">
+                                <th:block
+                                    th:replace="fragments/components/longText :: ellipser (${item.motsCles}, ${item.dossierId}+'-mot-cle')"
+                                ></th:block>
+                            </td>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+
+            <a
+                th:href="|#skip_link_action-table_${context}_next|"
+                th:id="|skip_link_action-table_${context}_prev|"
+                class="skip-link"
+                th:text="#{skip.link.table.next(${#messages.msg('allotissement.table.'+context+'.caption')})}"
+            >
+                Aller avant le tableau
+            </a>
+        </div>
+    </body>
+</html>

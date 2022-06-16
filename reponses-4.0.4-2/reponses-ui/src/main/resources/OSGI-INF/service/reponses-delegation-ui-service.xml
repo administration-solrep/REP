@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.component.DelegationUIServiceComponent">
+	<implementation class="fr.dila.reponses.ui.services.component.DelegationUIServiceComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.DelegationUIService" />
+	</service>
+
+</component>

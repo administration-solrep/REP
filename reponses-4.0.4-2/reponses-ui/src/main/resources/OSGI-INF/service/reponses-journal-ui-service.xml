@@ -1,0 +1,12 @@
+<component name="fr.dila.reponses.ui.services.component.ReponsesJournalUIComponent">
+
+  <require>fr.dila.ss.ui.services.SSJournalUIService</require>
+
+  <implementation class="fr.dila.reponses.ui.services.component.ReponsesJournalUIComponent" />
+  
+  <service>
+    <provide interface="fr.dila.ss.ui.services.SSJournalUIService" />
+  </service>
+  
+
+</component>

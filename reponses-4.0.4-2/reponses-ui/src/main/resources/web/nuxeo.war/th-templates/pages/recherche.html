@@ -1,0 +1,178 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='page-reponses-search', description='page administration', title=#{recherche.title})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <div th:replace="fragments/recherche/recherche-actions :: recherche-ations"></div>
+        <h1 class="m-b-10 base-title base-title--lvl-1" th:text="#{recherche.title}">Recherche</h1>
+        <input type="hidden" id="ajaxSearchEndpoint" value="/recherche/resultats" />
+        <form id="searchForm">
+            <div role="presentation" class="accordion accordion--is-opened">
+                <h2>
+                    <button
+                        type="button"
+                        aria-controls="recherche_generale_data"
+                        aria-expanded="true"
+                        tabindex="0"
+                        id="recherche_generale_data_button"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract"
+                        data-icon-closed="add"
+                        class="accordion__header js-toggle accordion__header--default"
+                    >
+                        [[#{recherche.generale.bloc}]]
+                        <span
+                            aria-hidden="true"
+                            class="icon icon--substract accordion__icon accordion__icon--default"
+                            neutral=""
+                        ></span>
+                    </button>
+                </h2>
+                <div
+                    role="region"
+                    aria-hidden="false"
+                    id="recherche_generale_data"
+                    aria-labelledby="recherche_generale_data_button"
+                    class="accordion__content accordion__content--is-opened accordion__content--has-background"
+                >
+                    <div
+                        th:replace="fragments/recherche/recherche-generale :: rechercheGenerale(${rechercheDto.rechercheGeneraleForm}, ${rechercheDto.initValueRechercheDto})"
+                    ></div>
+                </div>
+            </div>
+            <div role="presentation" class="m-t-12 accordion">
+                <h2>
+                    <button
+                        aria-controls="recherche_date_data"
+                        aria-expanded="false"
+                        tabindex="0"
+                        id="recherche_date_data_button"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract"
+                        data-icon-closed="add"
+                        class="accordion__header js-toggle accordion__header--default"
+                    >
+                        [[#{recherche.date.bloc}]]
+                        <span
+                            aria-hidden="true"
+                            class="icon icon--add accordion__icon accordion__icon--default"
+                            neutral=""
+                        ></span>
+                    </button>
+                </h2>
+                <div
+                    role="region"
+                    aria-hidden="true"
+                    id="recherche_date_data"
+                    aria-labelledby="recherche_date_data_button"
+                    class="accordion__content accordion__content--is-closed accordion__content--has-background"
+                >
+                    <div th:replace="fragments/recherche/dates-bloc :: datesBloc(${rechercheDto.blocDatesForm})"></div>
+                </div>
+            </div>
+            <div role="presentation" class="m-t-12 accordion">
+                <h2>
+                    <button
+                        aria-controls="recherche_fdr_data"
+                        aria-expanded="false"
+                        tabindex="0"
+                        id="recherche_fdr_data_button"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract"
+                        data-icon-closed="add"
+                        class="accordion__header js-toggle accordion__header--default"
+                    >
+                        [[#{recherche.fdr.bloc}]]
+                        <span
+                            aria-hidden="true"
+                            class="icon icon--add accordion__icon accordion__icon--default"
+                            neutral=""
+                        ></span>
+                    </button>
+                </h2>
+                <div
+                    role="region"
+                    aria-hidden="true"
+                    id="recherche_fdr_data"
+                    aria-labelledby="recherche_fdr_data_button"
+                    class="accordion__content accordion__content--is-closed accordion__content--has-background"
+                >
+                    <div
+                        th:replace="fragments/recherche/feuille-de-route :: feuilleDeRoute(${rechercheDto.feuilleRouteForm}, ${rechercheDto.initValueRechercheDto})"
+                    ></div>
+                </div>
+            </div>
+            <div role="presentation" class="m-t-12 accordion">
+                <h2>
+                    <button
+                        aria-controls="recherche_text_data"
+                        aria-expanded="true"
+                        tabindex="0"
+                        id="recherche_text_data_button"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract"
+                        data-icon-closed="add"
+                        class="accordion__header js-toggle accordion__header--default"
+                    >
+                        [[#{recherche.text.bloc}]]
+                        <span
+                            aria-hidden="true"
+                            class="icon icon--substract accordion__icon accordion__icon--default"
+                            neutral=""
+                        ></span>
+                    </button>
+                </h2>
+                <div
+                    role="region"
+                    aria-hidden="false"
+                    id="recherche_text_data"
+                    aria-labelledby="recherche_text_data_button"
+                    class="accordion__content accordion__content--is-opened accordion__content--has-background"
+                >
+                    <div
+                        th:replace="fragments/recherche/texte-integral :: texteIntegral(${rechercheDto.texteIntegralForm})"
+                    ></div>
+                </div>
+            </div>
+            <div role="presentation" class="m-t-12 accordion">
+                <h2>
+                    <button
+                        aria-controls="recherche_mots_data"
+                        aria-expanded="false"
+                        tabindex="0"
+                        id="recherche_mots_data_button"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract"
+                        data-icon-closed="add"
+                        class="accordion__header js-toggle accordion__header--default"
+                    >
+                        [[#{recherche.mots.bloc}]]
+                        <span
+                            aria-hidden="true"
+                            class="icon icon--add accordion__icon accordion__icon--default"
+                            neutral=""
+                        ></span>
+                    </button>
+                </h2>
+                <div
+                    role="region"
+                    aria-hidden="true"
+                    id="recherche_mots_data"
+                    aria-labelledby="recherche_mots_data_button"
+                    class="accordion__content accordion__content--is-closed accordion__content--has-background"
+                >
+                    <div
+                        th:replace="fragments/recherche/mots-cles :: motsCles(${rechercheDto.motsClesForm}, ${rechercheDto.initValueRechercheDto})"
+                    ></div>
+                </div>
+            </div>
+        </form>
+        <div th:replace="fragments/recherche/recherche-actions :: recherche-ations"></div>
+        <div class="page-reponses-search__results m-t-6" id="resultList">
+            <th:block th:replace="fragments/recherche/result-list :: resultList"></th:block>
+        </div>
+    </main>
+</html>

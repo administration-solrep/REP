@@ -1,0 +1,60 @@
+<!-- Cet composant contribue le mapping entre type de document et Operation 
+  Chains pour l'application Réponses. -->
+<component name="fr.dila.reponses.core.typeChains">
+
+  <require>fr.dila.reponses.core.service.DocumentRoutingService
+  </require>
+
+  <extension target="fr.sword.idl.naiad.feuilleroute.service" point="stepProcess">
+    <stepProcess
+            documentType="DistributionTask"
+            clazz="fr.sword.idl.naiad.nuxeo.feuilleroute.core.stepprocess.ChainStepProcess"
+        >
+      <parameter name="chainId" value="DistributionTaskChain" />
+      <parameter name="undoChainIdFromRunning" value="undoRunningActionable" />
+      <parameter name="undoChainIdFromDone" value="simpleUndo" />
+    </stepProcess>
+    <stepProcess
+            documentType="GenericDistributionTask"
+            clazz="fr.sword.idl.naiad.nuxeo.feuilleroute.core.stepprocess.ChainStepProcess"
+        >
+      <parameter name="chainId" value="GenericDistributionTaskChain" />
+      <parameter name="undoChainIdFromRunning" value="undoRunningActionable" />
+      <parameter name="undoChainIdFromDone" value="simpleUndo" />
+    </stepProcess>
+    <stepProcess
+            documentType="PersonalDistributionTask"
+            clazz="fr.sword.idl.naiad.nuxeo.feuilleroute.core.stepprocess.ChainStepProcess"
+        >
+      <parameter name="chainId" value="PersonalDistributionTaskChain" />
+      <parameter name="undoChainIdFromRunning" value="undoRunningActionable" />
+      <parameter name="undoChainIdFromDone" value="simpleUndo" />
+    </stepProcess>
+    <stepProcess
+            documentType="DistributionStep"
+            clazz="fr.sword.idl.naiad.nuxeo.feuilleroute.core.stepprocess.ChainStepProcess"
+        >
+      <parameter name="chainId" value="DistributionStepChain" />
+      <parameter name="undoChainIdFromRunning" value="simpleUndo" />
+      <parameter name="undoChainIdFromDone" value="simpleUndo" />
+    </stepProcess>
+    <stepProcess
+            documentType="FeuilleRouteStep"
+            clazz="fr.sword.idl.naiad.nuxeo.feuilleroute.core.stepprocess.ChainStepProcess"
+        >
+      <parameter name="chainId" value="setDone" />
+      <parameter name="undoChainIdFromRunning" value="simpleUndo" />
+      <parameter name="undoChainIdFromDone" value="simpleUndo" />
+    </stepProcess>
+    <stepProcess
+            documentType="RouteStep"
+            clazz="fr.sword.idl.naiad.nuxeo.feuilleroute.core.stepprocess.ChainStepProcess"
+        >
+      <parameter name="chainId" value="RouteStepChain" />
+      <parameter name="undoChainIdFromRunning" value="reponsesUndoRunningActionable" />
+      <parameter name="undoChainIdFromDone" value="simpleUndo" />
+    </stepProcess>
+  </extension>
+
+
+</component>

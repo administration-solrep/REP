@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://dila.fr/solon/schemas/feuille_route/"
+    xmlns:fdr="http://dila.fr/solon/schemas/feuille_route/"
+>
+
+	<!-- *********************************************************************** 
+		Données communes au socle transverse. *********************************************************************** -->
+	<!-- Feuille de route par défaut pour le ministère -->
+	<xs:element name="feuilleRouteDefaut" type="xs:boolean" />
+
+	<!-- Identifiant technique du ministère -->
+	<xs:element name="ministere" type="xs:string" />
+
+	<!-- Demande de validation à l'administrateur fonctionnel -->
+	<xs:element name="demandeValidation" type="xs:boolean" default="false" />
+
+	<!-- Type de création -->
+	<xs:element name="typeCreation" type="xs:string" />
+
+	<!-- *********************************************************************** 
+		Données spécifiques à Réponses. *********************************************************************** -->
+	<!-- Titre de la question -->
+	<xs:element name="titreQuestion" type="xs:string" />
+
+	<!-- idDirectionPilote -->
+	<xs:element name="idDirectionPilote" type="xs:string" />
+	<!-- intituleDirectionPilote -->
+	<xs:element name="intituleDirectionPilote" type="xs:string" />
+
+</xs:schema>

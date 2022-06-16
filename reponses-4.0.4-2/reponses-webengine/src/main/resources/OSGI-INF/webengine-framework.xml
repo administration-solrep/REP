@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.webengine.WebEngineComponent">
+	<require>org.nuxeo.ecm.webengine.WebEngineComponent</require>
+
+<!-- 	<extension target="org.nuxeo.ecm.webengine.WebEngineComponent" -->
+<!-- 		point="request-configuration"> -->
+
+<!-- 		<path value="/site/reponses/WSquestion/envoyerQuestions" -->
+<!-- 			stateful="false" autoTx="false" /> -->
+
+<!-- 	</extension> -->
+</component>

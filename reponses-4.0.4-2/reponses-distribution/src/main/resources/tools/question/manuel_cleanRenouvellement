@@ -1,0 +1,7 @@
+1- se connecter au nxshell : 
+	$ cd /opt/reponses-server_inst1/tools/
+	$ sh nxshell.sh
+	
+2- lancer le script
+	> script dossier/cleanRenouvellement.groovy -ctx "question='[Source Numéro]',mode='[info|delete]'"
+3- Attendre la fin du script - voir détails dans les logs ( /var/log/reponses-server_inst1/server.log)	

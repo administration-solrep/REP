@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service des états de questions (Smart Query) de l'application Reponses -->
+<component name="fr.dila.reponses.api.service.vocabulary.EtatQuestionService">
+	<implementation class="fr.dila.reponses.core.service.vocabulary.EtatQuestionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.vocabulary.EtatQuestionService" />
+	</service>
+</component>

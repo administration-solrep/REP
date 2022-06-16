@@ -1,0 +1,10 @@
+<component name="fr.dila.reponses.ui.services.organigramme.ReponsesMigrationGouvernementUIService">
+
+  <implementation class="fr.dila.reponses.ui.services.organigramme.ReponsesMigrationGouvernementUIComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.organigramme.ReponsesMigrationGouvernementUIService" />
+  </service>
+  
+
+</component>

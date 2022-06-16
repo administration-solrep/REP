@@ -1,0 +1,13 @@
+<component name="fr.dila.reponses.ui.services.component.ReponsesUtilisateursUIServiceComponent">
+  
+  <require>fr.dila.st.ui.STUtilisateursUIService</require>
+
+  <implementation class="fr.dila.reponses.ui.services.component.ReponsesUtilisateursUIServiceComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.ReponsesUtilisateursUIService" />
+    <provide interface="fr.dila.st.ui.services.STUtilisateursUIService" />
+  </service>
+  
+
+</component>

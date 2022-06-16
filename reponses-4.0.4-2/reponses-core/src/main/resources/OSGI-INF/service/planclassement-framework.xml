@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de PlanClassement de l'application 
+	Reponses -->
+<component name="fr.dila.reponses.api.service.PlanClassementService">
+	<implementation class="fr.dila.reponses.core.component.PlanClassementComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.PlanClassementService" />
+	</service>
+</component>

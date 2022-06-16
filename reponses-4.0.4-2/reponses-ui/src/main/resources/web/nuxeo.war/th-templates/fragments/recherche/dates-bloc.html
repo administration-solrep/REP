@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div class="search-form" th:fragment="datesBloc(form)">
+            <fieldset>
+                <legend class="sr-only" th:text="#{recherche.date.bloc}">Dates</legend>
+                <div class="grid__row">
+                    <div class="grid__col grid__col--middle">
+                        <th:block
+                            th:replace="fragments/components/formblocks/date-picker-range :: datepickerRange('recherche.date.jo.question.label', 'dateJOQuestion', ${#calendars.format(form.dateJOQuestionDebut,'dd/MM/yyyy')}, ${#calendars.format(form.dateJOQuestionFin,'dd/MM/yyyy')}, 'false', 'false')"
+                        ></th:block>
+                    </div>
+                    <div class="grid__col grid__col--middle">
+                        <th:block
+                            th:replace="fragments/components/formblocks/date-picker-range :: datepickerRange('recherche.date.jo.reponses.label', 'dateJOReponses', ${#calendars.format(form.dateJOReponsesDebut,'dd/MM/yyyy')}, ${#calendars.format(form.dateJOReponsesFin,'dd/MM/yyyy')}, 'false', 'false')"
+                        ></th:block>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <th:block
+                            th:replace="fragments/components/formblocks/date-picker-range :: datepickerRange('recherche.date.signalement.label', 'dateSignalement', ${#calendars.format(form.dateSignalementDebut,'dd/MM/yyyy')}, ${#calendars.format(form.dateSignalementFin,'dd/MM/yyyy')}, 'false', 'false')"
+                        ></th:block>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service des groupes politiques de l'application Reponses -->
+<component name="fr.dila.reponses.api.service.vocabulary.GroupePolitiqueService">
+	<implementation class="fr.dila.reponses.core.service.vocabulary.GroupePolitiqueComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.vocabulary.GroupePolitiqueService" />
+	</service>
+</component>

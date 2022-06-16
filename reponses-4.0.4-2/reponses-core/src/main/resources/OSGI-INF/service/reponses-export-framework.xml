@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service d'export de l'application Reponses -->
+<component name="fr.dila.reponses.core.service.ReponsesExportService">
+	<require>fr.dila.st.core.service.STExportService</require>
+	<implementation class="fr.dila.reponses.core.component.ReponsesExportComponent" />
+
+	<service>
+		<provide interface="fr.dila.st.api.service.STExportService" />
+		<provide interface="fr.dila.reponses.api.service.ReponsesExportService" />
+	</service>
+</component>

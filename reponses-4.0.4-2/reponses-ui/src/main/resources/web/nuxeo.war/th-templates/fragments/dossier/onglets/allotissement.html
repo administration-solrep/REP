@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="allotissement" id="d_allotissement_content">
+            <a
+                href="#skip_link_action-table_prev"
+                id="skip_link_action-table_next"
+                class="skip-link"
+                th:text="#{skip.link.table.prev(#{allotissement.table.caption})}"
+            >
+                Aller après le tableau
+            </a>
+            <div class="table-action">
+                <div class="table-action__action-container">
+                    <div class="table-action__group">
+                        <th:block th:each="action : ${tabActions}">
+                            <div
+                                th:replace="fragments/components/action-button :: action-button(${action}, ${not #strings.isEmpty(action.properties.specificClass) && #strings.contains(action.properties.specificClass,'action-table-selection')}, '')"
+                            ></div>
+                        </th:block>
+                    </div>
+                </div>
+            </div>
+            <div class="table-wrapper tableForm">
+                <table id="lotTable" class="custom-table custom-table--has-check">
+                    <caption class="sr-only" th:text="#{allotissement.table.caption}">
+                        Tableau des dossiers allotis
+                    </caption>
+                    <thead class="table-header custom-table__header">
+                        <tr class="table-header__line">
+                            <th scope="col" class="table-header__cell table-header__cell--check">
+                                <div class="form-choice-input">
+                                    <input
+                                        type="checkbox"
+                                        name="checkbox"
+                                        onclick="selectAllCheckBox(this);"
+                                        class="form-choice-input__input js-custom-table-header-check"
+                                        id="selectAllDossier"
+                                        autocomplete="off"
+                                    />
+                                    <label
+                                        id="selectAllDossier__label"
+                                        for="selectAllDossier"
+                                        th:title="#{liste.dossier.selectAll}"
+                                        th:data-select-label="#{liste.dossier.selectAll}"
+                                        th:data-deselect-label="#{liste.dossier.deselectAll}"
+                                        class="form-label form-choice-input__label form-choice-input__label--checkbox form-choice-input__label--hidden-label"
+                                    >
+                                        <span th:text="#{liste.dossier.selectAll}"></span>
+                                    </label>
+                                </div>
+                            </th>
+                            <th:block th:each="colonne : ${lstColonnes}">
+                                <th:block th:if="${colonne.visible && colonne.sortable}">
+                                    <th
+                                        th:aria-sort="${colonne.sortValue == 'asc' ? 'ascending' : (colonne.sortValue== 'desc' ? 'descending' : '')}"
+                                        scope="col"
+                                        class="table-header__cell table-header__cell--with-filter-action"
+                                    >
+                                        <button
+                                            th:replace="fragments/table/sortableHeader :: sortableHeader (#{__${colonne.label}__},${colonne.sortValue},${colonne.sortName},${colonne.sortId},${colonne.inverseSort})"
+                                        ></button>
+                                    </th>
+                                </th:block>
+
+                                <th:block th:if="${colonne.visible && !colonne.sortable}">
+                                    <th scope="col" class="table-header__cell">
+                                        <span
+                                            th:if="${colonne.isLabelVisible}"
+                                            class="table-header__cell-inner"
+                                            th:text="${colonne.label !=null? #messages.msg(colonne.label) : ''}"
+                                        >
+                                        </span>
+                                        <span
+                                            th:unless="${colonne.isLabelVisible}"
+                                            class="sr-only"
+                                            th:text="#{__${colonne.label}__}"
+                                        ></span>
+                                    </th>
+                                </th:block>
+                            </th:block>
+                        </tr>
+                    </thead>
+                    <tbody class="custom-table__body">
+                        <th:block th:if="${resultList.size > 0}">
+                            <tr
+                                class="custom-table__table-line table-line table-line--with-check table-line--with-action-column table-line--complex-line"
+                                th:each="item, nb : ${resultList}"
+                                th:data-id="${item.dossierId}"
+                            >
+                                <td class="table-line__cell table-line__cell--check">
+                                    <div class="form-choice-input">
+                                        <input
+                                            th:id="|select-${item.dossierId}|"
+                                            type="checkbox"
+                                            th:name="${'checkbox-'+nb.count}"
+                                            onclick="selectTableCheckbox(this)"
+                                            class="form-choice-input__input js-custom-table-line-check"
+                                            autocomplete="off"
+                                        />
+                                        <label
+                                            th:for="|select-${item.dossierId}|"
+                                            th:title="#{liste.dossier.selectOne(${item.sourceNumeroQuestion})}"
+                                            th:data-select-label="#{liste.dossier.selectOne(${item.sourceNumeroQuestion})}"
+                                            th:data-deselect-label="#{liste.dossier.deselectOne(${item.sourceNumeroQuestion})}"
+                                            class="form-label form-choice-input__label form-choice-input__label--checkbox form-choice-input__label--hidden-label"
+                                        >
+                                            <span
+                                                th:text="#{liste.dossier.selectOne(${item.sourceNumeroQuestion})}"
+                                            ></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="table-line__cell">
+                                    <div class="link-copy">
+                                        <a
+                                            class="link-copy__link link"
+                                            th:id="'link-copy__link-'+${item.dossierId}"
+                                            th:href="@{/dossier/{dossierId}/parapheur(dossierId=${item.dossierId},dossierLinkId=null)} + '#main_content'"
+                                            th:text="${item.sourceNumeroQuestion} + ${item.directeur?' *':''}"
+                                        >
+                                        </a>
+                                        <button
+                                            class="js-copy link-copy__button js-tooltip base-btn base-btn--button base-btn--default base-btn--icon-action-blue base-btn--center base-btn--transparent"
+                                            type="button"
+                                            th:data-tippy-content="#{label.copy.num.clic}"
+                                            th:data-copy="'link-copy__link-'+${item.dossierId}"
+                                            th:data-tippy-default-content="#{label.copy.num.clic}"
+                                            data-tippy-trigger="mouseenter focus click"
+                                        >
+                                            <span class="sr-only" th:text="#{label.copy.num}"></span>
+                                            <span class="link-copy__icon icon icon--copy" aria-hidden="true"></span>
+                                        </button>
+                                        <span class="link-copy__live sr-only" role="status"></span>
+                                    </div>
+                                </td>
+                                <td class="table-line__cell" th:text="${item.auteur}"></td>
+                                <td class="table-line__cell">
+                                    <span class="sr-only" th:text="#{label.dossier.oneetat(${item.etatQuestion})}">
+                                    </span>
+                                    [[${item.etatQuestion}]]
+                                </td>
+                                <td class="table-line__cell">
+                                    <th:block
+                                        th:replace="fragments/components/longText :: ellipser (${item.motsCles}, ${item.dossierId}+'-mot-cle')"
+                                    ></th:block>
+                                </td>
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-action">
+                <div class="table-action__action-container">
+                    <div class="table-action__group">
+                        <th:block th:each="action : ${tabActions}">
+                            <div
+                                th:replace="fragments/components/action-button :: action-button(${action}, ${not #strings.isEmpty(action.properties.specificClass) && #strings.contains(action.properties.specificClass,'action-table-selection')}, '')"
+                            ></div>
+                        </th:block>
+                    </div>
+                </div>
+            </div>
+            <a
+                href="#skip_link_action-table_next"
+                id="skip_link_action-table_prev"
+                class="skip-link"
+                th:text="#{skip.link.table.next(#{allotissement.table.caption})}"
+            >
+                Aller avant le tableau
+            </a>
+            <th:block th:if="${resultList.size > 0}">
+                <div class="m-t-4 form-input">
+                    <div class="form-input__header">
+                        <div class="form-input__header-top">
+                            <label
+                                for="form_input-add-lot"
+                                id="form_input_label"
+                                class="form-label"
+                                th:text="#{allotissement.button.add.label}"
+                            ></label>
+                        </div>
+                    </div>
+                    <div class="form-input__container">
+                        <input
+                            type="text"
+                            name="form_input"
+                            id="form_input-add-lot"
+                            aria-describedby=" label_header_bottom_form_input"
+                            class="form-input__field form-input__field--type-text"
+                            th:placeholder="#{allotissement.input.placeholder}"
+                        />
+                        <button
+                            class="m-l-1 base-btn base-btn--submit base-btn--default base-btn--light base-btn--center base-btn--transparent base-btn--uppercased"
+                            type="button"
+                            onclick="addToLot()"
+                        >
+                            <span
+                                class="base-btn__icon base-btn__icon--vertical-center base-btn__icon--left icon icon--add-without-background"
+                                aria-hidden="true"
+                            ></span>
+                            <span th:text="#{button.label.ajouter}">Ajouter</span>
+                        </button>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </body>
+</html>

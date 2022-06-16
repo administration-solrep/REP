@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="parapheur" id="d_parapheur_content">
+            <th:block th:each="action : ${tabActions}">
+                <div
+                    th:replace="fragments/components/action-button :: action-button(${action}, false, 'base-btn--transparent base-btn--light')"
+                ></div>
+            </th:block>
+            <form id="dossierFormParapheur">
+                <div role="presentation">
+                    <h2
+                        class="m-b-4 base-title--lvl-4 base-title base-title--lvl-2 base-title--is-underlined"
+                        id="parapheur_question_title"
+                        th:text="#{parapheur.question.bloc}"
+                    >
+                        Parapheur
+                    </h2>
+                    <div
+                        role="region"
+                        aria-hidden="false"
+                        id="parapheur_question_data"
+                        aria-labelledby="parapheur_question_title"
+                    >
+                        <input type="hidden" id="texteQuestion" th:value="${parapheurDto.texteQuestion}" />
+                        <th:block th:each="paragraphe : ${question}">
+                            <p th:utext="${paragraphe}" class="base-paragraph"></p>
+                        </th:block>
+
+                        <input type="hidden" name="texteJoint" id="texteJoint" th:value="${parapheurDto.texteJoint}" />
+                        <p th:text="${parapheurDto.texteJoint}" class="base-paragraph"></p>
+                    </div>
+                </div>
+
+                <div role="presentation">
+                    <h2
+                        class="m-b-4 base-title--lvl-4 base-title base-title--lvl-2 base-title--is-underlined"
+                        id="parapheur_reponse_title"
+                    >
+                        [[#{parapheur.reponse.bloc}]]
+                        <span class="base-tooltip js-tooltip m-1-1">
+                            <span
+                                tabindex="0"
+                                th:data-tippy-content="#{parapheur.reponse.tooltip}"
+                                class="icon icon--information bubble-icon bubble-icon--info"
+                            >
+                                <span class="sr-only" th:text="#{parapheur.reponse.tooltip}"></span>
+                            </span>
+                        </span>
+                    </h2>
+                    <div
+                        role="region"
+                        aria-hidden="false"
+                        id="parapheur_reponse_data"
+                        aria-labelledby="parapheur_reponse_title"
+                    >
+                        <p th:text="${parapheurDto.reponseType}" class="base-paragraph"></p>
+                        <div
+                            class="page-reponses-qe-paraph__form-select"
+                            th:with="simpleSelectExtraClasses='form-select-input__large',simpleSelectClickFunction=getVersionReponse"
+                        >
+                            <th:block
+                                th:replace="fragments/components/formblocks/simple-select :: simpleSelect('parapheur.version', 'version', '', ${versions}, ${parapheurDto.version.id}, 'false', false)"
+                            >
+                            </th:block>
+                            <button
+                                th:replace="fragments/components/action-button :: action-button(${comparerAction}, false, 'base-btn--icon-action-blue base-btn--transparent')"
+                            ></button>
+
+                            <th:block th:if="${cachetAction && monDossier.isSigned}">
+                                <button
+                                    th:replace="fragments/components/action-button :: action-button(${cachetAction}, false, '')"
+                                ></button>
+                            </th:block>
+                        </div>
+                        <br />
+                        <textarea
+                            th:if="${parapheurDto.isEdit}"
+                            name="tinymce"
+                            id="mce_dossier"
+                            cols="30"
+                            rows="3"
+                            aria-describedby="label_header_bottom_form_textarea form_textarea_description"
+                            class="form-input__field form-rich-text-field__field textarea-tinymce"
+                            th:text="${parapheurDto.reponseNote}"
+                        ></textarea>
+                        <p th:unless="${parapheurDto.isEdit}" th:utext="${parapheurDto.reponseNote}" id="mce"></p>
+                        <br />
+                        <div
+                            th:if="${parapheurDto.isEdit}"
+                            id="parapheur_reponse_format"
+                            class="form-input"
+                            th:with="simpleSelectExtraClasses='form-select-input__large', simpleSelectClickFunction=changeEditorTypeDossier"
+                        >
+                            <th:block
+                                th:replace="fragments/components/formblocks/simple-select :: simpleSelect('parapheur.reponse.format', 'format', '', ${formatListValues}, ${format}, 'false', false)"
+                            >
+                            </th:block>
+                        </div>
+                        <th:block th:if="${parapheurDto.published}">
+                            <th:block th:if="${parapheurDto.isEdit}">
+                                <div
+                                    th:replace="fragments/components/formblocks/textarea-input :: textArea('parapheur.erratum.reponse', 'erratum', '', ${parapheurDto.erratum}, 'false', '')"
+                                ></div>
+                            </th:block>
+                            <div th:unless="${parapheurDto.isEdit || !parapheurDto.hasErrata}">
+                                <p class="form-label" th:text="#{parapheur.erratum.reponse}"></p>
+                                <p th:text="${parapheurDto.erratum}"></p>
+                            </div>
+                        </th:block>
+                    </div>
+                </div>
+            </form>
+            <div th:replace="fragments/components/comparator :: compare-modal-version(${versions})"></div>
+        </div>
+    </body>
+</html>

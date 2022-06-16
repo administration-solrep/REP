@@ -1,0 +1,7 @@
+<component name="fr.dila.reponses.ui.requeteuiservice">
+	<implementation class="fr.dila.reponses.ui.services.component.RequeteUIComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.RequeteUIService" />
+	</service>
+</component>

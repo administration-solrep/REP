@@ -1,0 +1,30 @@
+{
+	"liste": [
+		{
+			"id": "1",
+			"message": "Migration de l'organigramme : [Secrétariat d’État, auprès du Premier ministre, porte-parole du Gouvernement] vers [Secrétariat d’État, auprès du Premier ministre, porte-parole du Gouvernement]",
+			"etat": "TERMINEE",
+			"dateDebut": "18/10/2018 15:29",
+			"dateFin": "18/10/2018 17:29",
+			"details": "[Déplacement du ministere]"
+		},
+		{
+			"id": "2",
+			"message": "Changement de gouvernement du 05/09/2018 12:43",
+			"etat": "FAILED",
+			"dateDebut": "18/09/2018 15:29",
+			"dateFin": "18/09/2018 17:29",
+			"details": "[Déplacement du ministere]"
+		},
+		{
+			"id": "3",
+			"message": "Changement de gouvernement du 27/11/2017 16:52",
+			"etat": "EN_COURS",
+			"dateDebut": "18/08/2018 15:29",
+			"dateFin": "18/08/2018 17:29",
+			"questionsAMigrer": 86,
+			"questionsMigrees": 86,
+			"details": "[Changement de gouvernement : [Secrétariat d’État, auprès du ministre de l’économie et des finances] vers [Secrétariat d’État auprès du ministre de l’économie et des finances], Migration des modèles de feuille de route, Fin de migration des modèles de feuille de route, Migration des dossiers, Fin de migration des dossiers, Migration des questions closes, Fin de migration des questions closes, Fin changement de gouvernement : [Secrétariat d’État, auprès du ministre de l’économie et des finances] vers [Secrétariat d’État auprès du ministre de l’économie et des finances]]"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+<component name="fr.dila.reponses.ui.services.comment.RouteStepNoteUIService">
+
+  <implementation class="fr.dila.reponses.ui.services.comment.RouteStepNoteUIComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.comment.RouteStepNoteUIService" />
+  </service>
+  
+
+</component>

@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "label": "libellé 1",
+        "status": "EN_COURS",
+        "elementFils": "1/3",
+        "modeleFDR": "1/4",
+        "posteCreateur": "1/5",
+        "dateDebut": "2020-01-01",
+        "dateFin": "2020-12-31",
+        "directionPilote": "1/2"
+    },
+    {
+        "id": "2",
+        "label": "libellé 2",
+        "status": "TERMINEE",
+        "elementFils": "2/3",
+        "modeleFDR": "2/4",
+        "posteCreateur": "2/5",
+        "dateDebut": "2021-01-01",
+        "dateFin": "2021-12-31",
+        "directionPilote": "2/2"
+    },
+    {
+        "id": "3",
+        "label": "libellé 3",
+        "status": "FAILED",
+        "elementFils": "3/3",
+        "modeleFDR": "3/4",
+        "posteCreateur": "3/5",
+        "dateDebut": "2022-01-01",
+        "dateFin": "2022-12-31",
+        "directionPilote": "3/2"
+    }
+]

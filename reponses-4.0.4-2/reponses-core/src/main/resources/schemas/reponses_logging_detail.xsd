@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://nuxeo.org/schemas/dossier_reponse/"
+    xmlns:replogd="http://nuxeo.org/schemas/dossier_reponse/"
+>
+
+	<xs:include schemaLocation="base.xsd" />
+
+	<xs:element name="message" type="xs:string" nillable="false" />
+	<xs:element name="status" type="xs:string" nillable="false" />
+	<xs:element name="fullLog" type="replogd:stringList" />
+
+</xs:schema>

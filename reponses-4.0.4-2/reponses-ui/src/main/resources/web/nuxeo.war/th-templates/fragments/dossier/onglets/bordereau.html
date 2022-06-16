@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="bordereau" id="d_bordereau_content">
+            <th:block th:each="action : ${tabActions}">
+                <div
+                    th:replace="fragments/components/action-button :: action-button(${action}, false, 'base-btn--transparent base-btn--light')"
+                ></div>
+            </th:block>
+            <form id="dossierFormBordereau">
+                <div role="presentation" class="accordion accordion--is-opened">
+                    <h2>
+                        <button
+                            type="button"
+                            aria-controls="bordereau_principal_data"
+                            aria-expanded="true"
+                            tabindex="0"
+                            id="bordereau_principal_data_button"
+                            data-toggle="accordion__content"
+                            data-icon-opened="substract"
+                            data-icon-closed="add"
+                            class="accordion__header js-toggle accordion__header--default"
+                        >
+                            [[#{bordereau.principal.bloc}]]
+                            <span
+                                aria-hidden="true"
+                                class="icon icon--substract accordion__icon accordion__icon--default"
+                            ></span>
+                        </button>
+                    </h2>
+                    <div
+                        role="region"
+                        aria-hidden="false"
+                        id="bordereau_principal_data"
+                        aria-labelledby="bordereau_principal_data_button"
+                        class="accordion__content accordion__content--is-opened"
+                    >
+                        <h3
+                            class="m-y-2 base-subtitle base-subtitle--secondary"
+                            th:text="#{bordereau.principal.bloc}"
+                        ></h3>
+                        <div th:unless="${bordereauDto.isEdit}" class="table-wrapper">
+                            <table class="folder-detail__table">
+                                <tbody>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.numero.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.numeroQuestion}"
+                                        ></td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.origine.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.origineQuestion}"
+                                        ></td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.auteur.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.auteur}"
+                                        ></td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.groupe.politique.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.groupePolitique}"
+                                        ></td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.circonscription.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.circonscriptionAuteur}"
+                                        ></td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.type.question.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.typeQuestion}"
+                                        ></td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.date.publication.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${#calendars.format(bordereauDto.datePublicationJO,'dd/MM/yyyy')}"
+                                        ></td>
+                                    </tr>
+
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.page.jo.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.pageJO}"
+                                        ></td>
+                                    </tr>
+                                    <th:block th:if="${not #strings.isEmpty(bordereauDto.senatQuestionTitre)}">
+                                        <tr class="folder-detail__table-line">
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.titre.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${bordereauDto.senatQuestionTitre}"
+                                            ></td>
+                                        </tr>
+                                    </th:block>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.ministere.attributaire.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.ministereAttributaireCourant}"
+                                        ></td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.ministere.interoge.label}"
+                                        ></td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.intituleMinistere}"
+                                        ></td>
+                                    </tr>
+                                    <th:block th:if="${bordereauDto.isQuestionTypeEcrite}">
+                                        <tr class="folder-detail__table-line">
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.ministere.rattachement.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${bordereauDto.intituleMinistereRattachement}"
+                                            ></td>
+                                        </tr>
+                                        <tr class="folder-detail__table-line">
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.direction.pilote.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${bordereauDto.intituleDirectionPilote}"
+                                            ></td>
+                                        </tr>
+                                    </th:block>
+                                </tbody>
+                            </table>
+                        </div>
+                        <th:block th:if="${bordereauDto.isEdit}">
+                            <div class="form-input">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="numero-question-label"
+                                            class="form-label form-label--disabled"
+                                            for="numero-question"
+                                            th:text="#{bordereau.numero.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="numero-question"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="numero-question"
+                                        th:value="${bordereauDto.numeroQuestion}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="origine-question-label"
+                                            class="form-label form-label--disabled"
+                                            for="origine-question"
+                                            th:text="#{bordereau.origine.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="origine-question"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="origine-question"
+                                        th:value="${bordereauDto.origineQuestion}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="auteur-question-label"
+                                            class="form-label form-label--disabled"
+                                            for="auteur-question"
+                                            th:text="#{bordereau.auteur.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="auteur-question"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="auteur-question"
+                                        th:value="${bordereauDto.auteur}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="groupe-politique-label"
+                                            class="form-label form-label--disabled"
+                                            for="groupe-politique"
+                                            th:text="#{bordereau.groupe.politique.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="groupe-politique"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="groupe-politique"
+                                        th:value="${bordereauDto.groupePolitique}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="circonscription-label"
+                                            class="form-label form-label--disabled"
+                                            for="circonscription"
+                                            th:text="#{bordereau.circonscription.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="circonscription"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="circonscription"
+                                        th:value="${bordereauDto.circonscriptionAuteur}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="type-question-label"
+                                            class="form-label form-label--disabled"
+                                            for="type-question"
+                                            th:text="#{bordereau.type.question.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="type-question"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="type-question"
+                                        th:value="${bordereauDto.typeQuestion}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="date-publication-label"
+                                            class="form-label form-label--disabled"
+                                            for="date-publication"
+                                            th:text="#{bordereau.date.publication.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="date-publication"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="date-publication"
+                                        th:value="${#calendars.format(bordereauDto.datePublicationJO,'dd/MM/yyyy')}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="page-jo-label"
+                                            class="form-label form-label--disabled"
+                                            for="page-jo"
+                                            th:text="#{bordereau.page.jo.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="page-jo"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="page-jo"
+                                        th:value="${bordereauDto.pageJO}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <th:block th:if="${not #strings.isEmpty(bordereauDto.senatQuestionTitre)}">
+                                <div class="form-input m-t-6">
+                                    <div class="form-input__header">
+                                        <div class="form-input__header-top">
+                                            <label
+                                                id="titre-senat-label"
+                                                class="form-label form-label--disabled"
+                                                for="titre-senat"
+                                                th:text="#{bordereau.titre.label}"
+                                            >
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-input__container">
+                                        <input
+                                            id="titre-senat"
+                                            class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                            type="text"
+                                            name="titre-senat"
+                                            th:value="${bordereauDto.senatQuestionTitre}"
+                                            disabled
+                                        />
+                                    </div>
+                                </div>
+                            </th:block>
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="ministere-attributaire-label"
+                                            class="form-label form-label--disabled"
+                                            for="ministere-attributaire"
+                                            th:text="#{bordereau.ministere.attributaire.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="ministere-attributaire"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="ministere-attributaire"
+                                        th:value="${bordereauDto.ministereAttributaireCourant}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="ministere-interoge-label"
+                                            class="form-label form-label--disabled"
+                                            for="ministere-interoge"
+                                            th:text="#{bordereau.ministere.interoge.label}"
+                                        >
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="ministere-interoge"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="ministere-interoge"
+                                        th:value="${bordereauDto.intituleMinistere}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <th:block th:if="${bordereauDto.isQuestionTypeEcrite}">
+                                <div class="form-input m-t-6" th:if="${bordereauDto.partEditMinistereRattachement}">
+                                    <th:block
+                                        th:replace="fragments/components/organigrammeSelectAutocomplete ::organigrammeSelectAutocomplete('bordereau.ministere.rattachement.label', false, 'ministere-rattachement', 'ministere-rattachement-key', 'MIN', ${bordereauDto.ministereRattachement}, false, false, ${bordereauDto.mapMinistereRattachement}, false)"
+                                    ></th:block>
+                                </div>
+                                <div class="form-input m-t-6" th:unless="${bordereauDto.partEditMinistereRattachement}">
+                                    <div class="form-input__header">
+                                        <div class="form-input__header-top">
+                                            <label
+                                                id="ministere-rattachement-label"
+                                                class="form-label form-label--disabled"
+                                                for="ministere-rattachement"
+                                                th:text="#{bordereau.ministere.rattachement.label}"
+                                            >
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-input__container">
+                                        <input
+                                            id="ministere-rattachement"
+                                            class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                            type="text"
+                                            name="ministere-rattachement"
+                                            th:value="${bordereauDto.intituleDirectionPilote}"
+                                            disabled
+                                        />
+                                        <input
+                                            type="hidden"
+                                            id="ministere-rattachement-key"
+                                            name="ministere-rattachement-key"
+                                            th:value="${bordereauDto.ministereRattachement}"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-input m-t-6" th:if="${bordereauDto.partEditDirectionPilote}">
+                                    <th:block
+                                        th:replace="fragments/components/organigrammeSelectAutocomplete ::organigrammeSelectAutocomplete('bordereau.direction.pilote.label', false, 'direction-pilote', 'direction-pilote-key', 'DIR', ${bordereauDto.directionPilote}, false, false, null, false)"
+                                    ></th:block>
+                                </div>
+                                <div class="form-input m-t-6" th:unless="${bordereauDto.partEditDirectionPilote}">
+                                    <div class="form-input__header">
+                                        <div class="form-input__header-top">
+                                            <label
+                                                id="direction-pilote-label"
+                                                class="form-label form-label--disabled"
+                                                for="direction-pilote"
+                                                th:text="#{bordereau.direction.pilote.label}"
+                                            >
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-input__container">
+                                        <input
+                                            id="direction-pilote"
+                                            class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                            type="text"
+                                            name="direction-pilote"
+                                            th:value="${bordereauDto.intituleDirectionPilote}"
+                                            disabled
+                                        />
+                                        <input
+                                            type="hidden"
+                                            id="direction-pilote-key"
+                                            name="direction-pilote-key"
+                                            th:value="${bordereauDto.directionPilote}"
+                                        />
+                                    </div>
+                                </div>
+                            </th:block>
+                        </th:block>
+
+                        <th:block th:if="${bordereauDto.partMiseAJour}">
+                            <div class="m-t-6">
+                                <h3
+                                    class="base-subtitle base-subtitle--secondary"
+                                    th:text="#{bordereau.mise.jour.label}"
+                                ></h3>
+                                <table th:unless="${bordereauDto.isEdit}" class="folder-detail__table">
+                                    <tbody>
+                                        <tr
+                                            class="folder-detail__table-line"
+                                            th:if="${bordereauDto.dateRetraitQuestion != null}"
+                                        >
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.date.retrait.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${#calendars.format(bordereauDto.dateRetraitQuestion,'dd/MM/yyyy')}"
+                                            ></td>
+                                        </tr>
+                                        <tr
+                                            class="folder-detail__table-line"
+                                            th:if="${bordereauDto.dateCaduciteQuestion != null}"
+                                        >
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.date.caducite.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${#calendars.format(bordereauDto.dateCaduciteQuestion,'dd/MM/yyyy')}"
+                                            ></td>
+                                        </tr>
+                                        <tr
+                                            class="folder-detail__table-line"
+                                            th:if="${bordereauDto.dateRappelQuestion != null}"
+                                        >
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.date.rappel.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${#calendars.format(bordereauDto.dateRappelQuestion,'dd/MM/yyyy')}"
+                                            ></td>
+                                        </tr>
+                                        <tr
+                                            class="folder-detail__table-line"
+                                            th:if="${bordereauDto.dateSignalementQuestion != null}"
+                                        >
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.date.signalement.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${#calendars.format(bordereauDto.dateSignalementQuestion,'dd/MM/yyyy')}"
+                                            ></td>
+                                        </tr>
+                                        <tr
+                                            class="folder-detail__table-line"
+                                            th:if="${bordereauDto.dateAttendueReponseSignalement != null}"
+                                        >
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.date.reponses.attendue.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${#calendars.format(bordereauDto.dateAttendueReponseSignalement,'dd/MM/yyyy')}"
+                                            ></td>
+                                        </tr>
+                                        <tr
+                                            class="folder-detail__table-line"
+                                            th:if="${bordereauDto.dateTransmissionAssemblees != null}"
+                                        >
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.date.reception.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${#calendars.format(bordereauDto.dateTransmissionAssemblees,'dd/MM/yyyy')}"
+                                            ></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <th:block th:if="${bordereauDto.isEdit}">
+                                    <div class="form-input m-t-6" th:if="${bordereauDto.dateRetraitQuestion != null}">
+                                        <div class="form-input__header">
+                                            <div class="form-input__header-top">
+                                                <label
+                                                    id="date-retrait-label"
+                                                    class="form-label form-label--disabled"
+                                                    for="date-retrait"
+                                                    th:text="#{bordereau.date.retrait.label}"
+                                                >
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-input__container">
+                                            <input
+                                                id="date-retrait"
+                                                class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                                type="text"
+                                                name="date-retrait"
+                                                th:value="${#calendars.format(bordereauDto.dateRetraitQuestion,'dd/MM/yyyy')}"
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="form-input m-t-6" th:if="${bordereauDto.dateCaduciteQuestion != null}">
+                                        <div class="form-input__header">
+                                            <div class="form-input__header-top">
+                                                <label
+                                                    id="date-caducite-label"
+                                                    class="form-labe form-label--disabled"
+                                                    for="date-caducite"
+                                                    th:text="#{bordereau.date.caducite.label}"
+                                                >
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-input__container">
+                                            <input
+                                                id="date-caducite"
+                                                class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                                type="text"
+                                                name="date-caducite"
+                                                th:value="${#calendars.format(bordereauDto.dateCaduciteQuestion,'dd/MM/yyyy')}"
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="form-input m-t-6" th:if="${bordereauDto.dateRappelQuestion != null}">
+                                        <div class="form-input__header">
+                                            <div class="form-input__header-top">
+                                                <label
+                                                    id="date-rappel-label"
+                                                    class="form-label form-label--disabled"
+                                                    for="date-rappel"
+                                                    th:text="#{bordereau.date.rappel.label}"
+                                                >
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-input__container">
+                                            <input
+                                                id="date-rappel"
+                                                class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                                type="text"
+                                                name="date-rappel"
+                                                th:value="${#calendars.format(bordereauDto.dateRappelQuestion,'dd/MM/yyyy')}"
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="form-input m-t-6"
+                                        th:if="${bordereauDto.dateSignalementQuestion != null}"
+                                    >
+                                        <div class="form-input__header">
+                                            <div class="form-input__header-top">
+                                                <label
+                                                    id="date-signalement-question-label"
+                                                    class="form-label form-label--disabled"
+                                                    for="date-signalement-question"
+                                                    th:text="#{bordereau.date.signalement.label}"
+                                                >
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-input__container">
+                                            <input
+                                                id="date-signalement-question"
+                                                class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                                type="text"
+                                                name="date-signalement-question"
+                                                th:value="${#calendars.format(bordereauDto.dateSignalementQuestion,'dd/MM/yyyy')}"
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="form-input m-t-6"
+                                        th:if="${bordereauDto.dateAttendueReponseSignalement != null}"
+                                    >
+                                        <div class="form-input__header">
+                                            <div class="form-input__header-top">
+                                                <label
+                                                    id="date-attendue-reponse-signalement-label"
+                                                    class="form-label form-label--disabled"
+                                                    for="date-attendue-reponse-signalement"
+                                                    th:text="#{bordereau.date.reponses.attendue.label}"
+                                                >
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-input__container">
+                                            <input
+                                                id="date-attendue-reponse-signalement"
+                                                class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                                type="text"
+                                                name="date-attendue-reponse-signalement"
+                                                th:value="${#calendars.format(bordereauDto.dateAttendueReponseSignalement,'dd/MM/yyyy')}"
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="form-input m-t-6"
+                                        th:if="${bordereauDto.dateTransmissionAssemblees != null}"
+                                    >
+                                        <div class="form-input__header">
+                                            <div class="form-input__header-top">
+                                                <label
+                                                    id="date-reception-label"
+                                                    class="form-label form-label--disabled"
+                                                    for="date-reception"
+                                                    th:text="#{bordereau.date.reception.label}"
+                                                >
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-input__container">
+                                            <input
+                                                id="date-reception"
+                                                class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                                type="text"
+                                                name="date-reception"
+                                                th:value="${#calendars.format(bordereauDto.dateTransmissionAssemblees,'dd/MM/yyyy')}"
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                </th:block>
+                            </div>
+                        </th:block>
+
+                        <th:block th:if="${bordereauDto.getRenouvellements().size() > 0}">
+                            <div class="m-t-6">
+                                <h3
+                                    class="base-subtitle base-subtitle--secondary"
+                                    th:text="#{bordereau.renouvellements.label}"
+                                ></h3>
+                                <div class="table-wrapper">
+                                    <table class="dataOutput">
+                                        <caption class="sr-only" th:text="#{bordereau.renouvellement.table.caption}">
+                                            Date de renouvellement du bordereau
+                                        </caption>
+                                        <thead>
+                                            <tr>
+                                                <th th:text="#{bordereau.date.effet.label}"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="renouvellement : ${bordereauDto.getRenouvellements()}">
+                                                <td th:text="${#calendars.format(renouvellement,'dd/MM/yyyy')}"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </th:block>
+
+                        <th:block th:if="${bordereauDto.partReponse}">
+                            <div class="m-t-6">
+                                <h3 class="base-subtitle base-subtitle--secondary" th:text="#{bordereau.reponse.label}">
+                                    Bordereau
+                                </h3>
+                                <table th:unless="${bordereauDto.isEdit}" class="folder-detail__table">
+                                    <tbody>
+                                        <tr
+                                            class="folder-detail__table-line"
+                                            th:if="${bordereauDto.datePublicationJOReponse != null}"
+                                        >
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.date.publication.reponse.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${#calendars.format(bordereauDto.datePublicationJOReponse,'dd/MM/yyyy')}"
+                                            ></td>
+                                        </tr>
+                                        <tr class="folder-detail__table-line">
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--label"
+                                                th:text="#{bordereau.page.jo.label}"
+                                            ></td>
+                                            <td
+                                                class="folder-detail__table-cell folder-detail__table-cell--value"
+                                                th:text="${bordereauDto.pageJOReponse}"
+                                            ></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </th:block>
+
+                        <th:block th:if="${bordereauDto.isEdit}">
+                            <div class="form-input m-t-6" th:if="${bordereauDto.datePublicationJOReponse != null}">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="date-publication-reponse-label"
+                                            class="form-label form-label--disabled"
+                                            for="date-publication-reponse"
+                                            th:text="#{bordereau.date.publication.reponse.label}"
+                                        >
+                                            Date réponse
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="date-publication-reponse"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="date-publication-reponse"
+                                        th:value="${#calendars.format(bordereauDto.datePublicationJOReponse,'dd/MM/yyyy')}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-input m-t-6" th:if="${bordereauDto.pageJOReponse != null}">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="page-jo-reponse-label"
+                                            class="form-label form-label--disabled"
+                                            for="page-jo-reponse"
+                                            th:text="#{bordereau.page.jo.label}"
+                                        >
+                                            JO
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="page-jo-reponse"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="page-jo"
+                                        th:value="${bordereauDto.pageJOReponse}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                        </th:block>
+
+                        <th:block th:if="#{bordereauDto.partIndexation}">
+                            <div class="m-t-6">
+                                <h3
+                                    class="m-y-2 base-subtitle base-subtitle--secondary"
+                                    th:text="#{bordereau.indexation.label}"
+                                >
+                                    Indexation
+                                </h3>
+                                <th:block th:if="${bordereauDto.partIndexationAN}">
+                                    <h4
+                                        id="label-indexation-an"
+                                        class="base-subtitle m-y-2"
+                                        th:text="#{bordereau.an.label}"
+                                    >
+                                        Assemblée Nationale
+                                    </h4>
+                                    <th:block
+                                        th:replace="fragments/components/indexation :: indexation('AN', #{bordereau.indexation.label} + ' - ' + #{bordereau.an.label}, ${bordereauDto.indexationDto.indexationAn}, ${bordereauDto.indexationDto.directoriesAn}, false, 'view')"
+                                    ></th:block>
+                                </th:block>
+                                <th:block th:if="${bordereauDto.partIndexationSENAT}">
+                                    <h4
+                                        id="label-indexation-senat"
+                                        class="base-subtitle m-y-2"
+                                        th:text="#{bordereau.senat.label}"
+                                    >
+                                        Sénat
+                                    </h4>
+                                    <th:block
+                                        th:replace="fragments/components/indexation :: indexation('Senat', #{bordereau.indexation.label} + ' - ' + #{bordereau.senat.label}, ${bordereauDto.indexationDto.indexationSenat}, ${bordereauDto.indexationDto.directoriesSenat}, false, 'view')"
+                                    ></th:block>
+                                </th:block>
+                            </div>
+                        </th:block>
+                    </div>
+                </div>
+                <div
+                    th:if="${bordereauDto.partEditableIndexationComplementaire ||
+                    bordereauDto.partIndexationComplementaireAN ||
+                    bordereauDto.partIndexationComplementaireSE ||
+                    bordereauDto.partIndexationComplementaireMotCle}"
+                    role="presentation"
+                    class="accordion accordion--is-opened"
+                >
+                    <h2>
+                        <button
+                            type="button"
+                            aria-controls="bordereau_indexation_data"
+                            aria-expanded="true"
+                            tabindex="0"
+                            id="bordereau_indexation_data_button"
+                            data-toggle="accordion__content"
+                            data-icon-opened="substract"
+                            data-icon-closed="add"
+                            class="accordion__header js-toggle accordion__header--default"
+                        >
+                            [[#{bordereau.indexation.bloc}]]
+                            <span
+                                aria-hidden="true"
+                                class="icon icon--substract accordion__icon accordion__icon--default"
+                            ></span>
+                        </button>
+                    </h2>
+                    <div
+                        role="region"
+                        aria-hidden="false"
+                        id="bordereau_indexation_data"
+                        aria-labelledby="bordereau_indexation_data_button"
+                        class="accordion__content accordion__content--is-opened"
+                    >
+                        <h3
+                            class="m-y-2 base-subtitle base-subtitle--secondary"
+                            th:text="#{bordereau.indexation.bloc}"
+                        ></h3>
+                        <th:block th:if="${(bordereauDto.partEditableIndexationComplementaire)}">
+                            <h4
+                                id="label-indexation-an-comp"
+                                class="base-subtitle m-y-2"
+                                th:text="#{bordereau.an.label}"
+                            ></h4>
+                            <td>
+                                <th:block
+                                    th:replace="fragments/components/indexation :: indexation('AN', #{bordereau.indexation.label} + ' - ' + #{bordereau.an.label}, ${bordereauDto.currentIndexationDto.indexationAn}, ${bordereauDto.indexationDto.directoriesAn}, true, 'edit')"
+                                ></th:block>
+                            </td>
+                            <h4
+                                id="label-indexation-senat-comp"
+                                class="base-subtitle m-y-2"
+                                th:text="#{bordereau.senat.label}"
+                            ></h4>
+                            <td>
+                                <th:block
+                                    th:replace="fragments/components/indexation :: indexation('Senat', #{bordereau.indexation.label} + ' - ' + #{bordereau.senat.label}, ${bordereauDto.currentIndexationDto.indexationSenat}, ${bordereauDto.indexationDto.directoriesSenat}, true, 'edit')"
+                                ></th:block>
+                            </td>
+                            <h4
+                                id="label-indexation-ministeres"
+                                class="base-subtitle m-y-2"
+                                th:text="#{bordereau.ministeres.label}"
+                            ></h4>
+                            <td th:with="acceptsCustomTags=true">
+                                <th:block
+                                    th:replace="fragments/components/indexation :: indexation('Ministere', #{bordereau.indexation.label} + ' - ' + #{bordereau.ministeres.label}, ${bordereauDto.currentIndexationDto.indexationMinistere}, ${bordereauDto.indexationDto.directoriesMinistere}, true, 'edit')"
+                                ></th:block>
+                            </td>
+                        </th:block>
+
+                        <th:block th:unless="${(bordereauDto.partEditableIndexationComplementaire)}">
+                            <th:block th:if="${bordereauDto.partIndexationComplementaireAN}">
+                                <h4
+                                    id="label-indexation-an-comp"
+                                    class="base-subtitle m-y-2"
+                                    th:text="#{bordereau.an.label}"
+                                ></h4>
+                                <td>
+                                    <th:block
+                                        th:replace="fragments/components/indexation :: indexation('AN', #{bordereau.indexation.label} + ' - ' + #{bordereau.an.label}, ${bordereauDto.currentIndexationDto.indexationAn}, ${bordereauDto.indexationDto.directoriesAn}, true, 'view')"
+                                    ></th:block>
+                                </td>
+                            </th:block>
+                            <th:block th:if="${bordereauDto.partIndexationComplementaireSE}">
+                                <h4
+                                    id="label-indexation-senat-comp"
+                                    class="base-subtitle m-y-2"
+                                    th:text="#{bordereau.senat.label}"
+                                ></h4>
+                                <td>
+                                    <th:block
+                                        th:replace="fragments/components/indexation :: indexation('Senat', #{bordereau.indexation.label} + ' - ' + #{bordereau.senat.label}, ${bordereauDto.currentIndexationDto.indexationSenat}, ${bordereauDto.indexationDto.directoriesSenat}, true, 'view')"
+                                    ></th:block>
+                                </td>
+                            </th:block>
+                            <th:block th:if="${bordereauDto.partIndexationComplementaireMotCle}">
+                                <h4
+                                    id="label-indexation-ministeres"
+                                    class="base-subtitle m-y-2"
+                                    th:text="#{bordereau.ministeres.label}"
+                                ></h4>
+                                <td th:with="acceptsCustomTags=true">
+                                    <th:block
+                                        th:replace="fragments/components/indexation :: indexation('Ministere', #{bordereau.indexation.label} + ' - ' + #{bordereau.ministeres.label}, ${bordereauDto.currentIndexationDto.indexationMinistere}, ${bordereauDto.indexationDto.directoriesMinistere}, true, 'view')"
+                                    ></th:block>
+                                </td>
+                            </th:block>
+                        </th:block>
+                    </div>
+                </div>
+                <div role="presentation" class="accordion accordion--is-opened">
+                    <h2>
+                        <button
+                            type="button"
+                            aria-controls="bordereau_secondaire_data"
+                            aria-expanded="true"
+                            tabindex="0"
+                            id="bordereau_secondaire_data_button"
+                            data-toggle="accordion__content"
+                            data-icon-opened="substract"
+                            data-icon-closed="add"
+                            class="accordion__header js-toggle accordion__header--default"
+                            th:if="${bordereauDto.partFeuilleRoute}"
+                        >
+                            [[#{bordereau.secondaire.bloc}]]
+                            <span
+                                aria-hidden="true"
+                                class="icon icon--substract accordion__icon accordion__icon--default"
+                            ></span>
+                        </button>
+                    </h2>
+                    <div
+                        role="region"
+                        aria-hidden="false"
+                        id="bordereau_secondaire_data"
+                        aria-labelledby="bordereau_secondaire_data_button"
+                        class="accordion__content accordion__content--is-opened"
+                    >
+                        <h3
+                            class="m-y-2 base-subtitle base-subtitle--secondary"
+                            th:text="#{bordereau.secondaire.bloc}"
+                        ></h3>
+                        <th:block
+                            th:if="${bordereauDto.getHistoriquesAttributionDto() != null and !bordereauDto.getHistoriquesAttributionDto().empty}"
+                        >
+                            <h4 class="base-subtitle m-y-2" th:text="#{bordereau.historique.attributions.label}">
+                                Historique des attributions
+                            </h4>
+                            <div class="table-wrapper m-b-6">
+                                <table class="custom-table">
+                                    <caption
+                                        class="sr-only"
+                                        th:text="#{bordereau.historique.attributions.table.caption}"
+                                    >
+                                        Tableau de l'historique des attributions
+                                    </caption>
+                                    <thead class="table-header custom-table__header">
+                                        <tr class="table-header__line">
+                                            <th class="table-header__cell" scope="col"></th>
+                                            <th
+                                                class="table-header__cell"
+                                                scope="col"
+                                                th:text="#{bordereau.historique.attributions.label}"
+                                            >
+                                                Historique des attributions
+                                            </th>
+                                            <th
+                                                class="table-header__cell"
+                                                scope="col"
+                                                th:text="#{bordereau.date.label}"
+                                            >
+                                                Date
+                                            </th>
+                                            <th
+                                                class="table-header__cell"
+                                                scope="col"
+                                                th:text="#{bordereau.type.attribution.label}"
+                                            >
+                                                Attribution
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="custom-table__body">
+                                        <tr
+                                            class="custom-table__table-line table-line"
+                                            th:each="histoAttribution, i : ${bordereauDto.getHistoriquesAttributionDto()}"
+                                        >
+                                            <td class="table-line__cell" th:text="${i.index + 1}"></td>
+                                            <td
+                                                class="table-line__cell"
+                                                th:text="${histoAttribution.minAttribution}"
+                                            ></td>
+                                            <td
+                                                class="table-line__cell"
+                                                th:text="${#dates.format(histoAttribution.dateAttribution, 'dd/MM/yyyy')}"
+                                            ></td>
+                                            <td
+                                                class="table-line__cell"
+                                                th:text="${histoAttribution.typeAttribution}"
+                                            ></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </th:block>
+
+                        <th:block
+                            th:if="${bordereauDto.getListingUnitesStruct() != null and !bordereauDto.getListingUnitesStruct().empty}"
+                        >
+                            <h4 class="base-subtitle m-y-2" th:text="#{bordereau.resume.fdr.label}">Résumé FDR</h4>
+                            <h5
+                                class="base-subtitle base-subtitle--secondary"
+                                th:text="#{bordereau.directions.concernees.label}"
+                            >
+                                Sous-titre
+                            </h5>
+                            <ul class="base-list base-list--unordered">
+                                <li
+                                    class="list-item list-item--unordered"
+                                    th:each="us : ${bordereauDto.getListingUnitesStruct()}"
+                                    th:text="${us}"
+                                >
+                                    US
+                                </li>
+                            </ul>
+                        </th:block>
+
+                        <th:block th:if="${bordereauDto.tacheCoursDate != null || bordereauDto.tacheCoursPoste !=null}">
+                            <h4 class="base-subtitle m-y-2" th:text="#{bordereau.tache.cours.label}">Tâche en cours</h4>
+                            <table class="folder-detail__table" th:unless="${bordereauDto.isEdit}">
+                                <tbody>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.debut.tache.cours.label}"
+                                        >
+                                            Libellé début tâche
+                                        </td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${#calendars.format(bordereauDto.tacheCoursDate,'dd/MM/yyyy')}"
+                                        >
+                                            Début tâche
+                                        </td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.poste.tache.label}"
+                                        >
+                                            Libellé poste
+                                        </td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.tacheCoursPoste}"
+                                        >
+                                            Poste
+                                        </td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.delai.tache.label}"
+                                        >
+                                            Libellé délai
+                                        </td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:if="${bordereauDto.tacheCoursDeadline}"
+                                            th:text="|${bordereauDto.tacheCoursDeadline} ${bordereauDto.tacheCoursDeadline <=1 ? #messages.msg('bordereau.label.jour') : #messages.msg('bordereau.label.jours')}|"
+                                        >
+                                            Délai
+                                        </td>
+                                    </tr>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.franchissement.auto.label}"
+                                        >
+                                            Libellé franchissement auto
+                                        </td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:if="${bordereauDto.tacheCoursAuto}"
+                                            th:text="#{bordereau.oui.label}"
+                                        >
+                                            Oui
+                                        </td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:unless="${bordereauDto.tacheCoursAuto}"
+                                            th:text="#{bordereau.non.label}"
+                                        >
+                                            Non
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <th:block th:if="${bordereauDto.isEdit}">
+                                <div class="form-input m-t-6">
+                                    <div class="form-input__header">
+                                        <div class="form-input__header-top">
+                                            <label
+                                                id="date-debut-tache-cours-label"
+                                                class="form-label form-label--disabled"
+                                                for="date-debut-tache-cours"
+                                                th:text="#{bordereau.debut.tache.cours.label}"
+                                            >
+                                                Début tâche
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-input__container">
+                                        <input
+                                            id="date-debut-tache-cours"
+                                            class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                            type="text"
+                                            name="date-debut-tache-cours"
+                                            th:value="${#calendars.format(bordereauDto.tacheCoursDate,'dd/MM/yyyy')}"
+                                            disabled
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-input m-t-6">
+                                    <div class="form-input__header">
+                                        <div class="form-input__header-top">
+                                            <label
+                                                id="date-poste-tache-cours-label"
+                                                class="form-label form-label--disabled"
+                                                for="date-poste-tache-cours"
+                                                th:text="#{bordereau.poste.tache.label}"
+                                            >
+                                                Poste
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-input__container">
+                                        <input
+                                            id="date-poste-tache-cours"
+                                            class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                            type="text"
+                                            name="date-poste-tache-cours"
+                                            th:value="${bordereauDto.tacheCoursPoste}"
+                                            disabled
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-input m-t-6">
+                                    <div class="form-input__header">
+                                        <div class="form-input__header-top">
+                                            <label
+                                                id="date-delai-tache-cours-label"
+                                                class="form-label form-label--disabled"
+                                                for="date-delai-tache-cours"
+                                                th:text="#{bordereau.delai.tache.label}"
+                                            >
+                                                Délai
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-input__container">
+                                        <input
+                                            id="date-delai-tache-cours"
+                                            class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                            type="text"
+                                            name="date-delai-tache-cours"
+                                            th:value="${bordereauDto.tacheCoursDeadline}"
+                                            disabled
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="form-choice-input">
+                                    <input
+                                        id="tache-auto"
+                                        class="form-choice-input__input"
+                                        type="checkbox"
+                                        name="tache-auto"
+                                        th:checked="${bordereauDto.tacheCoursAuto}"
+                                        disabled
+                                        autocomplete="off"
+                                    />
+                                    <label
+                                        id="tache-auto-label"
+                                        class="form-label form-label--disabled form-choice-input__label force-choice-input__label--checkbox"
+                                        for="tache-auto"
+                                        th:text="#{bordereau.franchissement.auto.label}"
+                                    >
+                                        Franchissement automatique
+                                    </label>
+                                </div>
+                            </th:block>
+                        </th:block>
+
+                        <h4 class="base-subtitle m-y-2" th:text="#{bordereau.tache.finale.signature.label}">
+                            Signature
+                        </h4>
+                        <div class="table-wrapper">
+                            <table class="folder-detail__table" th:unless="${bordereauDto.isEdit}">
+                                <tbody>
+                                    <tr class="folder-detail__table-line">
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--label"
+                                            th:text="#{bordereau.tache.finale.ministere.label}"
+                                        >
+                                            Tâche finale ministère
+                                        </td>
+                                        <td
+                                            class="folder-detail__table-cell folder-detail__table-cell--value"
+                                            th:text="${bordereauDto.tacheFinalePoste}"
+                                        >
+                                            Tâche finale poste
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <th:block th:if="${bordereauDto.isEdit}">
+                            <div class="form-input m-t-6">
+                                <div class="form-input__header">
+                                    <div class="form-input__header-top">
+                                        <label
+                                            id="tache-finale-ministere-label"
+                                            class="form-label form-label--disabled"
+                                            for="tache-finale-ministere"
+                                            th:text="#{bordereau.tache.finale.ministere.label}"
+                                        >
+                                            Ministère
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-input__container">
+                                    <input
+                                        id="tache-finale-ministere"
+                                        class="form-input__field form-input__field--type-text form-input__field--disabled"
+                                        type="text"
+                                        name="tache-finale-ministere"
+                                        th:value="${bordereauDto.tacheFinalePoste}"
+                                        disabled
+                                    />
+                                </div>
+                            </div>
+                        </th:block>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

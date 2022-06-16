@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <!-- Fragment ajout de dossiers à un favori de travail existant -->
+        <div th:fragment="favorisTravailFormSelect">
+            <th:block th:unless="${#lists.isEmpty(favoris)}">
+                <form id="selectFavorisForm">
+                    <div class="form-input">
+                        <div class="form-input__container">
+                            <input type="hidden" name="idDossiers" id="idDossiers" th:value="${idDossiers}" />
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <div
+                            th:replace="fragments/components/formblocks/simple-select ::simpleSelect('label.favoris.travail.mes.favoris','favoris','',${favoris},'','',null)"
+                        ></div>
+                    </div>
+                    <br />
+                    <div class="form-input">
+                        <button
+                            type="button"
+                            onclick="goPreviousPage()"
+                            class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                            th:text="#{button.label.cancel}"
+                        ></button>
+                        <button
+                            type="button"
+                            id="btn-add-favarites"
+                            class="base-btn base-btn--button base-btn--default"
+                            onclick="doAddToMyFavorites()"
+                            style="float: right"
+                            th:text="#{button.label.save}"
+                        ></button>
+                    </div>
+                </form>
+            </th:block>
+            <th:block th:if="${#lists.isEmpty(favoris)}">
+                <p th:text="#{label.favoris.travail.empty}">Aucun favori</p>
+            </th:block>
+        </div>
+    </body>
+</html>

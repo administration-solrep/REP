@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>fr.dila.reponses</groupId>
+		<artifactId>reponses-parent</artifactId>
+		<version>4.0.4-2</version>
+	</parent>
+
+	<artifactId>reponses-distribution</artifactId>
+	<name>Reponses distribution</name>
+	<packaging>pom</packaging>
+
+	<properties>
+		<target>build</target>
+
+		<distrib.nuxeo.classifier />
+		<distrib.datapath>${project.build.directory}/distribsetup</distrib.datapath>
+		<distrib.app.keyname>reponses</distrib.app.keyname>
+		<distrib.app.contextpath>reponses</distrib.app.contextpath>
+		<distrib.nuxeo.useDefaultContextPath>false</distrib.nuxeo.useDefaultContextPath>
+	</properties>
+
+	<dependencies>
+		<!-- Dépendance pour l'initialisation MDD -->
+		<!-- <dependency> <groupId>fr.dila.reponses</groupId> <artifactId>reponses-init</artifactId>
+			<version>${project.version}</version> <classifier>jar-with-dependencies</classifier>
+			</dependency> -->
+
+		<!-- Dépendances à Réponses -->
+		<dependency>
+			<groupId>fr.dila.reponses</groupId>
+			<artifactId>reponses-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>fr.dila.reponses</groupId>
+			<artifactId>reponses-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>fr.dila.reponses</groupId>
+			<artifactId>reponses-webengine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>fr.dila.st</groupId>
+			<artifactId>socle-transverse-ui</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>fr.dila.ss</groupId>
+			<artifactId>socle-solrep-ui</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>fr.dila.reponses</groupId>
+			<artifactId>reponses-ui</artifactId>
+		</dependency>
+
+		<!-- dependances Oracle -->
+		<dependency>
+		    <groupId>com.oracle.ojdbc</groupId>
+		    <artifactId>ojdbc8</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!-- execute the assembly at package time -->
+			<plugin>
+				<groupId>org.nuxeo.build</groupId>
+				<artifactId>ant-assembly-maven-plugin</artifactId>
+				<configuration>
+					<buildFile>${basedir}/src/main/assemble/assembly.xml</buildFile>
+				</configuration>
+				<executions>
+					<execution>
+						<id>antbuild</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+		<pluginManagement>
+
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+					<configuration>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+						<tagNameFormat>@{project.version}</tagNameFormat>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+</project>

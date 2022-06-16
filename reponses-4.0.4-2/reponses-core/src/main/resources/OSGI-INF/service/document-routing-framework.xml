@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de document routing de Réponses. -->
+<component name="fr.dila.reponses.core.service.DocumentRoutingService">
+	<implementation class="fr.dila.reponses.core.component.DocumentRoutingComponent" />
+
+	<service>
+		<!-- Ajoute les API de document routing du socle solrep + reponses -->
+		<provide interface="fr.dila.ss.api.service.DocumentRoutingService" />
+		<provide interface="fr.dila.reponses.api.service.DocumentRoutingService" />
+
+	</service>
+  
+</component>

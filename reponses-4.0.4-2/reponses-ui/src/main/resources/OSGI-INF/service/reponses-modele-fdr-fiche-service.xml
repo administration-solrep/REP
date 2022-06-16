@@ -1,0 +1,9 @@
+<component name="fr.dila.reponses.ui.services.component.ReponsesModeleFdrFicheUIComponent">
+
+  <implementation class="fr.dila.reponses.ui.services.component.ReponsesModeleFdrFicheUIComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.ReponsesModeleFdrFicheUIService" />
+  </service>
+
+</component>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <!--/*fragment relatif au bloc Favoris de travail : 
+    bloc présent dans la recherche et dans l'espace de travail*/-->
+    <body>
+        <div class="favorisTravailClass" th:fragment="favorisTravail">
+            <th:block th:unless="${#lists.isEmpty(favoris.liste)}">
+                <div class="accordion accordion--aside">
+                    <div class="accordion__header js-toggle accordion__header--aside">
+                        <h2 class="accordion-title-lvl-2" th:text="#{label.favoris.travail.title}"></h2>
+                        <button
+                            type="button"
+                            aria-controls="accordion__content__favoris-de-travail"
+                            aria-expanded="true"
+                            id="accordion__header__favoris-de-travail"
+                            data-toggle="accordion__content"
+                            data-icon-opened="substract-without-background"
+                            data-icon-closed="add-without-background"
+                            class="js-toggle accordion__header__button"
+                            th:aria-label="#{label.favoris.travail.title}"
+                        >
+                            <span
+                                aria-hidden="true"
+                                class="icon icon--substract-without-background bubble-icon bubble-icon--neutral accordion__icon accordion__icon--aside"
+                            ></span>
+                        </button>
+                    </div>
+                    <ul
+                        aria-hidden="false"
+                        id="accordion__content__favoris-de-travail"
+                        class="accordion__content accordion__content--aside accordion__content--is-opened p-a-0 m-t-4"
+                    >
+                        <th:block th:each="item,status : ${favoris.liste}">
+                            <li class="sidebar-delete-item sidebar-delete-item--has-background">
+                                <div class="sidebar-delete-item__label">
+                                    <a
+                                        th:id="|favori-item-${item.nom}|"
+                                        class="link"
+                                        th:text="${item.nom}"
+                                        th:href="@{${item.link}}"
+                                    ></a>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="js-sidebar-delete-item-action js-interstitial-trigger sidebar-delete-item__button base-btn base-btn--button base-btn--default base-btn--icon-action-bg base-btn--center base-btn--rounded"
+                                    th:id="${action.id + '_'+ status.index}"
+                                    th:data-tippy-content="#{label.favoris.travail.supprimer}"
+                                    th:data-controls="${action.properties.dataControls}"
+                                    th:data-title="${#messages.msg(action.properties.title)}"
+                                    th:data-message="${#messages.msgWithParams(action.properties.message, item.nom) }"
+                                    th:data-function="${action.properties.function}"
+                                    th:data-parameters="|idFavori=${item.id}|"
+                                    aria-haspopup="dialog"
+                                    th:aria-describedby="|favori-item-${item.nom}|"
+                                    onclick="doInitModal(this)"
+                                >
+                                    <span aria-hidden="true" class="icon icon--cross-bold"></span>
+                                    <span class="sr-only" th:text="#{label.favoris.travail.supprimer}">Supprimer</span>
+                                </button>
+                            </li>
+                        </th:block>
+                    </ul>
+                    <th:block th:if="${favoris.liste.size &gt; 1}">
+                        <div class="selection-tool__action-list m-t-4">
+                            <div
+                                th:replace="fragments/components/label-action-button :: label-action-button(${actionSupprimerTout}, false, 'base-btn--with-icon base-btn--with-icon-alt')"
+                            ></div>
+                        </div>
+                    </th:block>
+                </div>
+            </th:block>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <th:block th:fragment="requeteResult">
+            <div
+                class="page-reponses-search__results m-t-6"
+                id="resultList"
+                th:classappend="${titre != null ? '' : 'hide-element'}"
+            >
+                <h2 class="search-result-form__title base-title base-title--lvl-2" th:text="${titre}">
+                    Résultat(s) de recherche
+                </h2>
+
+                <div class="search-table">
+                    <h3
+                        class="m-t-6 p-b-2 m-b-6 base-title base-title--lvl-3 base-title--is-underlined"
+                        th:text="${sousTitre}"
+                    >
+                        résultat(s) trouvé(s)
+                    </h3>
+                    <th:block th:if="${displayTable}" th:with="tableCaption=${titre}+' - '+${sousTitre}">
+                        <div th:replace="fragments/table/tableDossiers :: searchResults"></div>
+                    </th:block>
+                </div>
+            </div>
+        </th:block>
+    </body>
+</html>

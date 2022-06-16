@@ -1,0 +1,143 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout::layout (template=~{::main},templateClass='', description='Page pour importer le  nouveau gouvernement', title=#{gouvernement.import.preview.title.inject})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <div id="importGouv">
+            <div class="form-input m-b-6">
+                <button
+                    type="button"
+                    onClick="history.back()"
+                    class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                    th:text="#{button.label.cancel}"
+                ></button>
+                <div
+                    th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, '')"
+                ></div>
+            </div>
+            <h1
+                class="base-title base-title--lvl-1 p-b-3 m-b-6 base-title--is-underlined"
+                th:text="#{gouvernement.import.preview.title.inject}"
+            >
+                Injection de nouveau gouvernement
+            </h1>
+            <h2 class="base-title base-title--lvl-3" th:text="#{gouvernement.import.preview.title.add}">
+                Ajout d'un nouveau gouvernement
+            </h2>
+            <input type="hidden" id="urlPreviousPage" name="urlPreviousPage" th:value="@{${urlPreviousPage}}" />
+            <div class="form-input">
+                <div class="form-input__container table-wrapper">
+                    <table class="custom-table">
+                        <caption class="sr-only" th:text="#{gouvernement.import.date.table.caption}">
+                            Date d'import du gouvernement
+                        </caption>
+                        <thead class="table-header custom-table__header">
+                            <tr class="table-header__line">
+                                <th
+                                    scope="col"
+                                    class="table-header__cell"
+                                    th:text="#{gouvernement.import.preview.inject.nomGouv}"
+                                >
+                                    Nom du gouvernement
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="table-header__cell"
+                                    th:text="#{gouvernement.import.preview.inject.dateGouv}"
+                                >
+                                    Date de début du gouvernement
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="custom-table__body">
+                            <th:block th:unless="${injections==null or injections.empty}">
+                                <tr class="custom-table__table-line table-line">
+                                    <td class="table-line__cell" th:text="${injections[0].libelleLong}"></td>
+                                    <td
+                                        class="table-line__cell"
+                                        th:text="${#dates.format(injections[0].dateDeDebut, 'dd/MMM/yyyy')}"
+                                    ></td>
+                                </tr>
+                            </th:block>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="form-input__container table-wrapper">
+                    <table class="custom-table">
+                        <caption class="sr-only" th:text="#{gouvernement.import.edit.table.caption}">
+                            Import d'un gouvernement - modification
+                        </caption>
+                        <thead class="table-header custom-table__header">
+                            <tr class="table-header__line">
+                                <th
+                                    scope="col"
+                                    class="table-header__cell"
+                                    th:text="#{gouvernement.import.preview.inject.organigrammeActuel}"
+                                >
+                                    Organigramme actuel
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="table-header__cell"
+                                    th:text="#{gouvernement.import.preview.inject.typeModification}"
+                                >
+                                    Type de modification
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="table-header__cell"
+                                    th:text="#{gouvernement.import.preview.inject.organigrammeModifie}"
+                                >
+                                    Organigramme modifié
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="custom-table__body">
+                            <th:block th:unless="${injections==null or injections.empty}">
+                                <tr
+                                    class="custom-table__table-line table-line"
+                                    th:each="i: ${#numbers.sequence(1, injections.size-1)}"
+                                    th:if="${injections[i].aModifierReponses or injections[i].aCreerReponses}"
+                                >
+                                    <td class="table-line__cell">
+                                        <th:block th:unless="${injections[i].typeModification == 'Nouveau'}">
+                                            <th:block
+                                                th:replace="fragments/admin/organigramme/organigramme-cell-format :: organigramme-cell-format(${injections[i]})"
+                                            ></th:block>
+                                        </th:block>
+                                    </td>
+                                    <td class="table-line__cell" th:text="${injections[i].typeModification}"></td>
+                                    <td class="table-line__cell">
+                                        <th:block th:if="${injections[i].typeModification == 'Nouveau'}">
+                                            <th:block
+                                                th:replace="fragments/admin/organigramme/organigramme-cell-format :: organigramme-cell-format(${injections[i]})"
+                                            ></th:block>
+                                        </th:block>
+                                    </td>
+                                </tr>
+                            </th:block>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-input m-t-6">
+                <button
+                    type="button"
+                    onClick="history.back()"
+                    class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                    th:text="#{button.label.cancel}"
+                >
+                    Annuler
+                </button>
+                <div
+                    th:replace="fragments/components/label-action-button :: label-action-button(${action}, false, '')"
+                ></div>
+            </div>
+        </div>
+    </main>
+</html>

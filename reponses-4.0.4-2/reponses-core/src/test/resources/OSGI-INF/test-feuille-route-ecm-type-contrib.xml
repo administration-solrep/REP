@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue les types ECM nécessaires pour les tests de feuille 
+	de route. -->
+<component name="fr.dila.reponses.web.ecmtype.feuilleRoute">
+	<extension target="org.nuxeo.ecm.platform.types.TypeService" point="types">
+		<!-- Feuille de route -->
+		<type id="FeuilleRoute" coretype="FeuilleRoute">
+			<category>Collaborative</category>
+			<subtypes>
+				<type>StepFolder</type>
+				<type>RouteStep</type>
+			</subtypes>
+		</type>
+
+		<!-- Tâche de distribution générique -->
+		<type id="RouteStep" coreType="RouteStep">
+		</type>
+
+		<!-- Branchement -->
+		<type id="StepFolder" coreType="StepFolder">
+			<subtypes>
+				<type>RouteStep</type>
+				<type>StepFolder</type>
+			</subtypes>
+			<deniedSubtypes>
+				<type>GenericDistributionTask</type>
+				<type>FeuilleRouteStep</type>
+				<type>DistributionStep</type>
+				<type>DistributionTask</type>
+				<type>PersonalDistributionTask</type>
+			</deniedSubtypes>
+		</type>
+
+	</extension>
+</component>

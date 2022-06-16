@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<!-- La contribution au service Jointure pour l'application Réponses -->
+<component name="fr.dila.reponses.query.jointure.contrib">
+
+	<extension target="fr.dila.st.core.service.STJointureService" point="queryassembler">
+		<queryassembler isDefault="true" class="fr.dila.reponses.core.recherche.query.ReponsesUFNXQLQueryAssembler" />
+	</extension>
+	<extension target="fr.dila.st.core.service.STJointureService" point="correspondences">
+		<correspondence
+            document="Question"
+            doc_prefix="q."
+            emplacement="BEFORE_WHERE"
+            query_part="ufnxql:SELECT DISTINCT q.ecm:uuid AS id FROM Question AS q"
+        />
+		<correspondence document="Reponse" doc_prefix="r." emplacement="BEFORE_WHERE" query_part=",Reponse AS r" />
+		<correspondence
+            document="Reponse"
+            doc_prefix="r."
+            emplacement="AFTER_WHERE"
+            query_part="AND d.dos:idDocumentReponse = r.ecm:uuid "
+        />
+		<correspondence document="Dossier" doc_prefix="d." emplacement="BEFORE_WHERE" query_part=",Dossier AS d" />
+		<correspondence
+            document="Dossier"
+            doc_prefix="d."
+            emplacement="AFTER_WHERE"
+            query_part="AND d.dos:idDocumentQuestion = q.ecm:uuid "
+        />
+
+		<!-- Le système historique qui prend fait la liaison sur les dossiers link -->
+		<correspondence
+            document="Etape"
+            doc_prefix="e."
+            emplacement="BEFORE_WHERE"
+            query_part=",DossierLink AS dl,RouteStep AS etape"
+        />
+		<correspondence
+            document="Etape"
+            doc_prefix="e."
+            emplacement="AFTER_WHERE"
+            query_part="AND d.ecm:uuid = dl.cslk:caseDocumentId AND dl.drl:routingTaskId = etape.ecm:uuid"
+        />
+
+		<!-- Le nouveau système qui utilise l'identifiant d'instance sur l'étape. 
+			Pour l'instant on laisse les 2 systèmes exister : le premier étant utilisé 
+			pour les requêtes de suivi, le second pour la recherche. Une fois valider 
+			les éventuels problèmes de rapidité, on ne devrait garder que ce système 
+			là (le même que pour EPG) -->
+
+		<!-- La restriction au ministère attributaire est une forme de gestion 
+			des droits basiques. -->
+
+		<correspondence document="Fdr" doc_prefix="f." emplacement="BEFORE_WHERE" query_part=", FeuilleRoute AS f" />
+		<correspondence
+            document="Fdr"
+            doc_prefix="f."
+            emplacement="AFTER_WHERE"
+            query_part="AND d.dos:lastDocumentRoute = f.ecm:uuid AND ufnxql_ministere:(d.dos:ministereAttributaireCourant) "
+        />
+		<correspondence document="RouteStep" doc_prefix="e2." emplacement="BEFORE_WHERE" query_part=",RouteStep AS e2" />
+		<correspondence
+            document="RouteStep"
+            doc_prefix="e2."
+            emplacement="AFTER_WHERE"
+            query_part="AND e2.rtsk:documentRouteId = f.ecm:uuid"
+        />
+
+	</extension>
+	<extension target="fr.dila.st.core.service.STJointureService" point="dependencies">
+		<dependency prefix="r." need="q." />
+		<dependency prefix="r." need="d." />
+		<dependency prefix="d." need="q." />
+
+		<dependency prefix="e." need="q." />
+		<dependency prefix="e." need="d." />
+
+		<dependency prefix="f." need="q." />
+		<dependency prefix="f." need="d." />
+		<dependency prefix="e2." need="q." />
+		<dependency prefix="e2." need="d." />
+		<dependency prefix="e2." need="f." />
+	</extension>
+</component>

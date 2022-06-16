@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='Page historique mise à jour des timbres', title=#{majtimbres.recapitulatif.page.title})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <div class="m-t-3 m-b-6 flex flex-row justify-between">
+            <button
+                class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                type="button"
+                onclick="goPreviousPage()"
+                th:text="#{reponses.migration.button.return}"
+            >
+                Retour
+            </button>
+            <button
+                class="js-tooltip base-btn base-btn--button base-btn--default base-btn--center js-interstitial-trigger"
+                onclick="openModalMettreAJour('modal-maj-timbres')"
+                type="button"
+                data-controls="modal-maj-timbres"
+                th:text="#{majtimbres.recapitulatif.action.maj}"
+            >
+                Mettre à jour
+            </button>
+        </div>
+
+        <input type="hidden" id="urlPreviousPage" name="urlPreviousPage" th:value="@{${urlPreviousPage}}" />
+
+        <h1 class="m-t-6 m-b-6 base-title base-title--lvl-1" th:text="#{majtimbres.recapitulatif.page.title}">Titre</h1>
+
+        <div th:replace="fragments/table/tableRecapitulatifMiseAJourTimbres :: searchResults"></div>
+
+        <div class="m-t-3 m-b-6 flex flex-row justify-between">
+            <button
+                class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                type="button"
+                onclick="goPreviousPage()"
+                th:text="#{reponses.migration.button.return}"
+            >
+                Retour
+            </button>
+            <button
+                class="js-tooltip base-btn base-btn--button base-btn--default base-btn--center js-interstitial-trigger"
+                onclick="openModalMettreAJour('modal-maj-timbres')"
+                type="button"
+                data-controls="modal-maj-timbres"
+                th:text="#{majtimbres.recapitulatif.action.maj}"
+            >
+                Mettre à jour
+            </button>
+        </div>
+
+        <div th:replace="fragments/components/modal-maj-timbres :: modal-maj-timbres"></div>
+    </main>
+</html>

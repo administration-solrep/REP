@@ -1,0 +1,55 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout :: layout (template=~{::main},templateClass='', description='page de sauvegarde de requête', title=#{id == null ? 'suivi.requete.sauvegarder.label' : 'suivi.renommer.requete'})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <h1 class="base-title base-title--lvl-1" th:if="${id == null}" th:text="#{suivi.requete.sauvegarder.label}">
+            Sauvegarder
+        </h1>
+        <h1 class="base-title base-title--lvl-1" th:unless="${id == null}" th:text="#{suivi.renommer.requete}">
+            Renommer
+        </h1>
+
+        <form id="requete-perso-form">
+            <input type="hidden" name="idRequete" th:value="${id}" />
+            <div class="form-input m-t-6" th:with="minlength=3,validation=no_slash">
+                <div
+                    th:replace="fragments/components/formblocks/simple-input :: simpleInput(#{suivi.requete.titre.label}, true, #{form.description.nocharlimit}, 'titre', 'titre', ${form.titre}, false)"
+                ></div>
+            </div>
+            <div class="form-input m-t-6">
+                <div
+                    th:replace="fragments/components/formblocks/textarea-input :: textArea('suivi.requete.commentaire.label', 'commentaire', '', ${form.commentaire}, 'false', '')"
+                ></div>
+            </div>
+            <div class="form-input m-t-6" th:if="${id == null}">
+                <div
+                    th:replace="fragments/components/formblocks/simple-input :: simpleInput(#{suivi.requete.label}, false, #{form.description.nocharlimit}, 'requete', 'requete', ${form.requete}, false)"
+                ></div>
+            </div>
+            <input type="hidden" name="requete" th:unless="${id == null}" th:value="${form.requete}" />
+
+            <div class="flex justify-between m-t-6 m-b-3">
+                <a
+                    type="button"
+                    th:href="@{/suivi#main_content}"
+                    class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                    th:text="#{button.label.cancel}"
+                >
+                    Annuler
+                </a>
+                <input
+                    id="btn-save-requetePerso"
+                    type="submit"
+                    th:value="#{suivi.requete.sauvegarder.label}"
+                    class="base-btn base-btn--button base-btn--default"
+                    style="float: right"
+                    onclick="saveRequetePerso()"
+                />
+            </div>
+        </form>
+    </main>
+</html>

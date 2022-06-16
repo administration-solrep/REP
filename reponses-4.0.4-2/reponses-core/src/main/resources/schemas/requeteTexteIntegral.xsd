@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://dila.fr/solon/schemas/requeteTexteIntegral/"
+    xmlns:rqti="http://dila.fr/solon/schemas/requeteTexteIntegral/"
+>
+
+	<xs:element name="appliquerRechercheExacte" type="xs:boolean" />
+	<xs:element name="critere_requete" type="xs:string" />
+	<xs:element name="dansTexteReponse" type="xs:boolean" />
+	<xs:element name="dansTexteQuestion" type="xs:boolean" />
+	<xs:element name="dansTitre" type="xs:boolean" />
+	<xs:element name="subclause" type="xs:string" />
+</xs:schema>

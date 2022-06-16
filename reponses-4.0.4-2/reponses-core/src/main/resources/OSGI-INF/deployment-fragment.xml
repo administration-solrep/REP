@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<fragment version="1">
+	
+	<require>org.nuxeo.ecm.core</require>
+	<require>org.nuxeo.ecm.core.api</require>
+	<require>org.nuxeo.ecm.core.schema</require>
+	<require>org.nuxeo.runtime</require>
+	<require>org.nuxeo.ecm.directory.types.contrib</require>
+	<require>org.nuxeo.ecm.platform.audit</require>
+	<require>fr.dila.reponses.api</require>
+	<require>fr.dila.ss.core</require>
+	<require>fr.dila.st.core</require>
+	
+
+	<extension target="application#MODULE">
+		<module>
+			<ejb>${bundle.fileName}</ejb>
+		</module>
+	</extension>
+</fragment>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="question-reattribution-modal"
+            id="modal-question-reattribution"
+            class="interstitial-overlay__content"
+        >
+            <div
+                class="interstitial interstitial--autocomplete-only"
+                role="dialog"
+                aria-labelledby="dialogTitle-reattribution"
+                style="position: relative"
+            >
+                <div class="interstitial__header">
+                    <h1
+                        id="dialogTitle-modal-question-reattribution"
+                        class="interstitial__title"
+                        th:text="#{question.reattribution.dialogue.title}"
+                    ></h1>
+                    <button
+                        type="button"
+                        class="interstitial__close base-btn base-btn--button base-btn--default base-btn--discret"
+                    >
+                        <span aria-hidden="true" class="icon icon--cross"></span>
+                        <span class="sr-only" th:text="#{modal.close}">Fermer la fenêtre de dialogue</span>
+                    </button>
+                </div>
+                <div class="interstitial__content">
+                    <div class="form-input">
+                        <th:block
+                            th:replace="fragments/components/organigrammeSelectAutocomplete ::organigrammeSelectAutocomplete(
+			            'dossier.popup.reattribution.ministere.label',
+			            false,
+			            'ministere-rattachement-reattribution-key',
+			            'ministere-rattachement-reattribution-key',
+			            'MIN', 
+			            '',  
+			            false,
+			            false,
+			            null,
+			            false)"
+                        ></th:block>
+                    </div>
+                </div>
+                <div class="interstitial__footer">
+                    <button
+                        type="button"
+                        class="interstitial__button base-btn base-btn--button base-btn--default base-btn--light base-btn--center base-btn--transparent base-btn--bordered"
+                        th:text="#{button.label.cancel}"
+                    ></button>
+                    <button
+                        type="button"
+                        onclick="doDossierSauvegardeModale(event, doReattributionQuestion)"
+                        id="btn-confirm-modal-question-reattribution"
+                        class="base-btn base-btn--button base-btn--default base-btn--center"
+                        th:text="#{button.label.valider}"
+                    ></button>
+                </div>
+            </div>
+            <div tabindex="-1" class="interstitial-overlay__tabindex"></div>
+        </div>
+    </body>
+</html>

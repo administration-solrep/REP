@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="modal-reattribution-direct"
+            id="reattribution-direct-modal"
+            class="interstitial-overlay__content"
+        >
+            <div
+                class="interstitial"
+                role="dialog"
+                th:aria-labelledby="dialogTitle-reattributionDirect"
+                style="position: relative"
+            >
+                <div class="interstitial__header">
+                    <h1
+                        id="dialogTitle-reattributionDirect"
+                        class="interstitial__title"
+                        th:text="#{dossier.action.fdr.reattribuerDirect}"
+                    ></h1>
+                    <button
+                        type="button"
+                        class="interstitial__close base-btn base-btn--button base-btn--default base-btn--discret"
+                    >
+                        <span aria-hidden="true" class="icon icon--cross"></span
+                        ><span class="sr-only" th:text="#{modal.close}"></span>
+                    </button>
+                </div>
+                <div class="interstitial__content">
+                    <!-- Ministère -->
+                    <div class="form-input">
+                        <th:block
+                            th:replace="fragments/components/organigrammeSelectAutocomplete ::organigrammeSelectAutocomplete(
+                        'dossier.popup.reattribution.ministere.label',
+                        false,
+                        'ministere-attache-key',
+                        'ministere-attache-key',
+                        'MIN', 
+                        '', 
+                        false,
+                        false,
+                        null,
+                        false)"
+                        ></th:block>
+                    </div>
+                    <!-- Observations -->
+                    <div class="form-input">
+                        <div class="form-input__header">
+                            <label
+                                for="observationReattributionDirect"
+                                id="form_textarea_label_reattribution"
+                                class="form-label"
+                                th:text="#{dossier.popup.reattribution.direct.note}"
+                            >
+                            </label>
+                        </div>
+                        <div class="form-input__container">
+                            <textarea
+                                name="observations"
+                                id="observationReattributionDirect"
+                                cols="30"
+                                rows="3"
+                                aria-describedby="label_header_bottom_form_textarea form_textarea_description "
+                                class="form-input__field"
+                            ></textarea>
+                        </div>
+                        <div id="form_textarea_description" class="form-input__footer"></div>
+                    </div>
+                </div>
+                <div class="interstitial__footer">
+                    <button
+                        type="button"
+                        class="interstitial__button base-btn base-btn--button base-btn--default base-btn--light base-btn--center base-btn--transparent base-btn--bordered"
+                        th:text="#{button.label.cancel}"
+                    ></button>
+                    <button
+                        type="button"
+                        onclick="doDossierSauvegardeModale(event, doReattributionDirect)"
+                        id="btn-confirm-reattribution-direct-modal"
+                        class="base-btn base-btn--button base-btn--default base-btn--center"
+                        th:text="#{button.label.valider}"
+                    ></button>
+                </div>
+            </div>
+            <div tabindex="-1" class="interstitial-overlay__tabindex"></div>
+        </div>
+    </body>
+</html>

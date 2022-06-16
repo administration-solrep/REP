@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <!-- Fragment ajout de dossiers à un nouveau favori -->
+        <div th:fragment="favorisTravailForm">
+            <form th:action="@{/favoris/sauvegarde}" th:object="${favorisForm}" method="POST">
+                <input type="hidden" name="csrf-token" th:value="${csrftoken}" />
+                <div class="form-input">
+                    <div class="form-input__container">
+                        <input type="hidden" name="idDossiers" id="idDossiers" th:value="${favorisForm.idDossiers}" />
+                    </div>
+                </div>
+                <div class="form-input">
+                    <div class="form-input__header">
+                        <div class="form-input__header-top">
+                            <label aria-disabled="false" for="nomFavoris" id="nomFavoris_label" class="form-label">
+                                <span th:text="#{label.favoris.travail.nom}">Label</span>
+                                <span class="form-label__required-text" th:text="#{form.input.required}"
+                                    >(requis)</span
+                                ></label
+                            >
+                            <div class="form-input__icon-group"></div>
+                        </div>
+                    </div>
+                    <div class="form-input__container">
+                        <input
+                            type="text"
+                            name="nomFavoris"
+                            id="nomFavoris"
+                            class="form-input__field form-input__field--type-text"
+                            data-validation="required"
+                            th:value="${favorisForm.nomFavoris}"
+                        />
+                    </div>
+                    <div id="nomFavoris_description" class="form-input__footer"></div>
+                </div>
+                <br />
+                <div class="form-input">
+                    <div class="form-input__header">
+                        <div class="form-input__header-top">
+                            <label
+                                for="dateFin"
+                                id="dateFin_label"
+                                class="form-label"
+                                th:text="#{label.favoris.travail.datefin}"
+                            >
+                                Label
+                            </label>
+                            <div class="form-input__icon-group"></div>
+                        </div>
+                        <div class="form-input__header-bottom"></div>
+                    </div>
+                    <div class="form-input__container">
+                        <div
+                            th:replace="fragments/components/input-date-picker :: inputDatePicker('datepicker_description_form_input_date_fin', 'dateFin', 'dateFin', false,${favorisForm.dateFin}, false)"
+                        ></div>
+                    </div>
+                    <div id="form_input_datepicker_description" class="form-input__footer"></div>
+                </div>
+                <br />
+                <div class="form-input">
+                    <button
+                        type="button"
+                        onclick="goPreviousPage()"
+                        class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                        th:text="#{button.label.cancel}"
+                    ></button>
+                    <input
+                        type="submit"
+                        th:value="#{button.label.save}"
+                        class="base-btn base-btn--button base-btn--default"
+                        style="float: right"
+                    />
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

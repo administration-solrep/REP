@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://dila.fr/solon/schemas/requeteMetadonnees/"
+    xmlns:rqmet="http://dila.fr/solon/schemas/requeteMetadonnees/"
+>
+	<xs:include schemaLocation="base.xsd" />
+
+	<xs:element name="etatQuestion" type="rqmet:stringList" />
+	<xs:element name="typeQuestion" type="rqmet:stringList" />
+	<xs:element name="etatRetire" type="xs:boolean" />
+	<xs:element name="etatNonRetire" type="xs:boolean" />
+	<xs:element name="clauseEtatRetireOuNonRetire" type="xs:string" />
+	<xs:element name="etatReattribue" type="xs:boolean" />
+	<xs:element name="etatRenouvele" type="xs:boolean" />
+	<xs:element name="etatSignale" type="xs:boolean" />
+	<xs:element name="etatRappele" type="xs:boolean" />
+	<!-- etatClos renvoie les questions caduques ou clos_autre -->
+	<xs:element name="etatCaduque" type="xs:boolean" />
+	<!-- etatNonClos renvoie les questions non caduques ou non clos_autre -->
+	<xs:element name="etatClotureAutre" type="xs:boolean" />
+</xs:schema>

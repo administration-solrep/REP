@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de notification aux webservice de 
+	Réponses -->
+<component name="fr.dila.reponses.core.service.WsNotificationService">
+	<implementation class="fr.dila.reponses.core.component.WsNotificationComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.WsNotificationService" />
+	</service>
+</component>

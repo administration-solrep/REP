@@ -1,0 +1,10 @@
+<component name="fr.dila.reponses.ui.planclassementcomponentservice">
+
+  <implementation class="fr.dila.reponses.ui.services.component.PlanClassementComponentComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.PlanClassementComponentService" />
+  </service>
+  
+
+</component>

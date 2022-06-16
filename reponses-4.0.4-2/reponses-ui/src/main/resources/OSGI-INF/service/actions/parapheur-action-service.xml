@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.component.ParapheurActionComponent">
+	<implementation class="fr.dila.reponses.ui.services.actions.component.ParapheurActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.ParapheurActionService" />
+	</service>
+
+</component>

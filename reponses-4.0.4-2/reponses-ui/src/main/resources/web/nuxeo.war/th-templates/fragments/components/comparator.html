@@ -1,0 +1,125 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="compare-modal-version(versions)"
+            id="compare-modal-version"
+            class="interstitial-overlay__content"
+        >
+            <div class="interstitial" role="dialog" th:aria-labelledby="dialogTitle-compare" style="position: relative">
+                <div class="interstitial__header">
+                    <h1
+                        id="dialogTitle-compare"
+                        class="interstitial__title"
+                        th:text="#{parapheur.comparaison.versions}"
+                    ></h1>
+                    <button
+                        type="button"
+                        class="interstitial__close base-btn base-btn--button base-btn--default base-btn--discret"
+                    >
+                        <span aria-hidden="true" class="icon icon--cross"></span
+                        ><span class="sr-only" th:text="#{modal.close}"></span>
+                    </button>
+                </div>
+                <div class="interstitial__content versioncomparison">
+                    <div class="versioncomparison__selection">
+                        <div class="versioncomparison__selection-col form-select--simple">
+                            <div class="versioncomparison__select form-select-input">
+                                <select
+                                    name="versioncomparaison__select-first"
+                                    id="versioncomparaison__select-first"
+                                    aria-labelledby="versioncomparaison__select-first_label"
+                                    class="form-select-input__field form-select-input__field--simple"
+                                    onChange="onSelectVersionComparator(this)"
+                                >
+                                    <th:block th:each="version, status : ${versions}">
+                                        <option
+                                            th:value="${version.id}"
+                                            th:text="${version.label}"
+                                            th:selected="status.index == 0"
+                                        ></option>
+                                    </th:block></select
+                                ><span
+                                    id="versioncomparaison__select-first_label"
+                                    class="sr-only"
+                                    th:text="#{parapheur.choix.premier.version}"
+                                >
+                                </span
+                                ><span
+                                    aria-hidden="true"
+                                    tabindex="-1"
+                                    class="form-select-input__arrow icon icon--arrow-bottom"
+                                ></span>
+                            </div>
+                        </div>
+                        <div class="versioncomparison__selection-col form-select--simple">
+                            <div class="versioncomparison__select form-select-input">
+                                <select
+                                    name="versioncomparaison__select-last"
+                                    id="versioncomparaison__select-last"
+                                    aria-labelledby="versioncomparaison__select-last_label"
+                                    class="form-select-input__field form-select-input__field--simple"
+                                    onChange="onSelectVersionComparator(this)"
+                                >
+                                    <th:block th:each="version, status : ${versions}">
+                                        <option
+                                            th:value="${version.id}"
+                                            th:text="${version.label}"
+                                            th:selected="status.index == 0"
+                                        ></option>
+                                    </th:block></select
+                                ><span
+                                    id="versioncomparaison__select-last_label"
+                                    class="sr-only"
+                                    th:text="#{parapheur.choix.seconde.version}"
+                                ></span
+                                ><span aria-hidden="true" tabindex="-1"
+                                    ><span
+                                        aria-hidden="true"
+                                        class="form-select-input__arrow icon icon--arrow-bottom"
+                                    ></span
+                                ></span>
+                            </div>
+                            <button
+                                type="button"
+                                onclick="compareVersions()"
+                                class="base-btn base-btn--button base-btn--default base-btn--center"
+                                th:text="#{parapheur.comparer}"
+                            ></button>
+                        </div>
+                    </div>
+                    <div class="versioncomparison__versions" id="versioncomparison__versions">
+                        <div class="versioncomparison__versions_diff">
+                            <h2 class="header" th:text="|Version : ${versions[0].label}|"></h2>
+                            <div class="content"></div>
+                        </div>
+                        <div class="versioncomparison__versions_diff">
+                            <h2 class="header" th:text="|Version : ${versions[0].label}|"></h2>
+                            <div class="content"></div>
+                        </div>
+                    </div>
+                    <div class="versioncomparison__caption">
+                        <p>
+                            <small class="mention-text" th:text="#{parapheur.comparaison.legende}"></small>
+                        </p>
+                        <p>
+                            <small class="mention-text" th:text="#{parapheur.comparaison.mention}"></small>
+                        </p>
+                        <p>
+                            <small class="mention-text">
+                                <span class="versioncomparison__del" th:text="#{parapheur.comparaison.rouge}"></span>
+                                [[#{parapheur.difference.non.present.droite}]]
+                            </small>
+                        </p>
+                        <p>
+                            <small class="mention-text">
+                                <span class="versioncomparison__ins" th:text="#{parapheur.comparaison.vert}"></span>
+                                [[#{parapheur.difference.ajoute.gauche}]]
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div tabindex="-1" class="interstitial-overlay__tabindex"></div>
+        </div>
+    </body>
+</html>

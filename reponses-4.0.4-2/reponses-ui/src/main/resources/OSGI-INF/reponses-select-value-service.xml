@@ -1,0 +1,9 @@
+<component name="fr.dila.reponses.ui.ReponsesSelectValueUIService">
+	<implementation class="fr.dila.reponses.ui.services.component.ReponsesSelectValueUIComponent" />
+	<require>fr.dila.ss.ui.services.component.SSSelectValueUIComponent</require>
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.ReponsesSelectValueUIService" />
+		<provide interface="fr.dila.ss.ui.services.SSSelectValueUIService" />
+	</service>
+</component>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://nuxeo.org/schemas/dossier_reponse/"
+    xmlns:replogl="http://nuxeo.org/schemas/dossier_reponse/"
+>
+
+	<xs:include schemaLocation="base.xsd" />
+
+	<xs:element name="startDate" type="xs:dateTime" nillable="false" />
+	<xs:element name="endDate" type="xs:dateTime" nillable="false" />
+	<xs:element name="message" type="xs:string" nillable="false" />
+	<xs:element name="fullLog" type="replogl:stringList" />
+	<xs:element name="status" type="xs:string" nillable="false" />
+
+	<xs:element name="endCount" type="xs:long" nillable="false" />
+	<xs:element name="previsionalCount" type="xs:long" nillable="false" />
+
+	<!-- lien vers les reponses_logging_detail -->
+	<xs:element name="details" type="replogl:stringList" />
+
+</xs:schema>

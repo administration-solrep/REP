@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="listeQuestionConnexe"
+            class="tableForm"
+            id="listeQuestionsConnexes"
+            style="position: relative"
+        >
+            <div role="presentation">
+                <input type="hidden" id="idMinistere" th:value="${idMinistere}" />
+                <div class="m-t-3 m-b-6">
+                    <th:block th:each="action : ${returnActions}">
+                        <div class="flex-row-actions__left">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, 'false', 'table-action\_\_item table-action\_\_button base-btn--light base-btn--transparent base-btn--bordered')"
+                            ></button>
+                        </div>
+                    </th:block>
+                    <th:block th:each="action : ${tabActions}">
+                        <div class="flex-row-actions__right">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, ${not #strings.isEmpty(action.properties.specificClass) && #strings.contains(action.properties.specificClass,'action-table-selection')}, 'table-action\_\_item table-action\_\_button')"
+                            ></button>
+                        </div>
+                    </th:block>
+                </div>
+                <h2
+                    class="m-b-4 base-title--lvl-4 base-title base-title--lvl-2 base-title--is-underlined"
+                    id="dossiers_connexes_title"
+                    th:text="#{dossier.connexe.ministere.title(${title})}"
+                ></h2>
+
+                <div id="overlay_table_fond" class="overlay" aria-live="polite">
+                    <img width="29" height="29" th:src="@{/img/loader.svg}" alt="" />
+                </div>
+
+                <div class="table-wrapper">
+                    <a
+                        href="#skip_link_action-table_prev"
+                        id="skip_link_action-table_next"
+                        class="skip-link"
+                        th:text="#{skip.link.table.prev(#{dossier.connexe.ministere.table.caption})}"
+                    >
+                        Aller après le tableau
+                    </a>
+                    <table class="custom-table custom-table--has-check">
+                        <caption class="sr-only" th:text="#{dossier.connexe.ministere.table.caption}">
+                            Tableau des questions connexes
+                        </caption>
+                        <thead class="table-header custom-table__header">
+                            <tr class="table-header__line">
+                                <th scope="col" class="table-header__cell table-header__cell--check">
+                                    <div class="form-choice-input">
+                                        <input
+                                            type="checkbox"
+                                            name="checkbox"
+                                            th:disabled="${selectionDisabled}"
+                                            onclick="selectAllCheckBox(this);"
+                                            class="form-choice-input__input js-custom-table-header-check"
+                                            id="selectAllDossier"
+                                            autocomplete="off"
+                                        />
+                                        <label
+                                            id="selectAllDossier__label"
+                                            for="selectAllDossier"
+                                            th:title="#{liste.dossier.selectAll}"
+                                            th:data-select-label="#{liste.dossier.selectAll}"
+                                            th:data-deselect-label="#{liste.dossier.deselectAll}"
+                                            class="form-label form-choice-input__label form-choice-input__label--checkbox form-choice-input__label--hidden-label"
+                                        >
+                                            <span th:text="#{liste.dossier.selectAll}"></span>
+                                        </label>
+                                    </div>
+                                </th>
+
+                                <th:block th:each="colonne : ${lstColonnes}">
+                                    <th:block th:if="${colonne.visible && !colonne.sortable}">
+                                        <th scope="col" class="table-header__cell">
+                                            <th:block
+                                                th:if="${colonne.isLabelVisible}"
+                                                class="table-header__cell-inner"
+                                                th:text="${colonne.label != null ? #messages.msg(colonne.label) : ''}"
+                                            >
+                                                &nbsp;
+                                            </th:block>
+                                            <span
+                                                th:unless="${colonne.isLabelVisible}"
+                                                class="sr-only"
+                                                th:text="#{__${colonne.label}__}"
+                                            >
+                                            </span>
+                                        </th>
+                                    </th:block>
+                                </th:block>
+                            </tr>
+                        </thead>
+
+                        <tbody class="custom-table__body">
+                            <th:block th:unless="${#lists.isEmpty(resultList)}">
+                                <tr
+                                    class="custom-table__table-line table-line table-line--with-check table-line--with-action-column table-line--complex-line"
+                                    th:each="item, nb : ${resultList}"
+                                    th:data-id="${item.dossierId}"
+                                >
+                                    <td class="table-line__cell table-line__cell--check">
+                                        <div class="form-choice-input" th:unless="${item.disabled}">
+                                            <input
+                                                th:id="|select-${item.dossierId}|"
+                                                type="checkbox"
+                                                th:name="${'checkbox-'+nb.count}"
+                                                aria-hidden="true"
+                                                onclick="selectTableCheckbox(this)"
+                                                class="form-choice-input__input js-custom-table-line-check"
+                                                autocomplete="off"
+                                            />
+                                            <label
+                                                th:for="|select-${item.dossierId}|"
+                                                th:title="#{liste.dossier.selectOne(${item.sourceNumeroQuestion})}"
+                                                th:data-select-label="#{liste.dossier.selectOne(${item.sourceNumeroQuestion})}"
+                                                th:data-deselect-label="#{liste.dossier.deselectOne(${item.sourceNumeroQuestion})}"
+                                                class="form-label form-choice-input__label form-choice-input__label--checkbox form-choice-input__label--hidden-label"
+                                            >
+                                                <span
+                                                    th:text="#{liste.dossier.selectOne(${item.sourceNumeroQuestion})}"
+                                                ></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="table-line__cell">
+                                        <button
+                                            type="button"
+                                            onclick="chargerQuestionConnexe(this);return false;"
+                                            class="link"
+                                            th:text="${item.sourceNumeroQuestion}"
+                                        ></button>
+                                    </td>
+
+                                    <td class="table-line__cell" th:text="${item.auteur}"></td>
+
+                                    <td class="table-line__cell" th:text="${item.etatQuestion}"></td>
+
+                                    <td class="table-line__cell" th:text="${item.motsCles}"></td>
+                                </tr>
+                            </th:block>
+                        </tbody>
+                    </table>
+                    <a
+                        href="#skip_link_action-table_next"
+                        id="skip_link_action-table_prev"
+                        class="skip-link"
+                        th:text="#{skip.link.table.next(#{dossier.connexe.ministere.table.caption})}"
+                    >
+                        Aller avant le tableau
+                    </a>
+                </div>
+                <div class="m-t-3 m-b-6">
+                    <th:block th:each="action : ${returnActions}">
+                        <div class="flex-row-actions__left">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, 'false', 'table-action\_\_item table-action\_\_button base-btn--light base-btn--transparent base-btn--bordered')"
+                            ></button>
+                        </div>
+                    </th:block>
+                    <th:block th:each="action : ${tabActions}">
+                        <div class="flex-row-actions__right">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, ${not #strings.isEmpty(action.properties.specificClass) && #strings.contains(action.properties.specificClass,'action-table-selection')}, 'table-action\_\_item table-action\_\_button')"
+                            ></button>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

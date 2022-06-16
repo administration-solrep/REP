@@ -1,0 +1,10 @@
+<component name="fr.dila.reponses.ui.favorisPlanClassementComponentService">
+
+  <implementation class="fr.dila.reponses.ui.services.component.FavorisPlanClassementComponentComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.FavorisPlanClassementComponentService" />
+  </service>
+  
+
+</component>

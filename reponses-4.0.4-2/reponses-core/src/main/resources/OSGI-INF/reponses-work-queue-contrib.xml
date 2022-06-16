@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.core.work.queue.contrib">
+    <extension point="queues" target="org.nuxeo.ecm.core.work.service">
+        <queue id="ExportQueue">
+            <name>ExportQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>exportListener</category>
+        </queue>
+
+        <queue id="MigrationGouvernementQueue">
+            <name>MigrationGouvernementQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>migrationGouvernementListener</category>
+        </queue>
+
+        <queue id="MigrationEntiteQueue">
+            <name>MigrationEntiteQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>migrationEntiteListener</category>
+        </queue>
+
+        <queue id="MigrationMinistereRattachementQueue">
+            <name>MigrationMinistereRattachementQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>migrationMinistereRattachementListener</category>
+        </queue>
+
+        <queue id="SendMigrationDetailsQueue">
+            <name>SendMigrationDetailsQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>SendMigrationDetailsListener</category>
+        </queue>
+
+        <queue id="UpdateMailboxStepCountQueue">
+            <name>UpdateMailboxStepCountQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>UpdateMailboxStepCountListener</category>
+        </queue>
+
+        <queue id="AfterEliminationQueue">
+            <name>AfterEliminationQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>AfterEliminationListener</category>
+        </queue>
+
+        <queue id="QuestionReminderWorkQueue">
+            <name>QuestionReminderWorkQueue</name>
+            <maxThreads>4</maxThreads>
+            <category>QuestionReminderEventStep</category>
+        </queue>
+
+        <queue id="QuestionReminderEventQueue">
+            <name>QuestionReminderEventQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>questionReminderEventListener</category>
+        </queue>
+
+        <queue id="CancelFDRQueue">
+            <name>CancelFDRQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>CancelFDRWork</category>
+        </queue>
+
+        <queue id="MailAfterDistributionNotificationQueue">
+            <name>MailAfterDistributionNotificationQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>MailAfterDistributionNotificationListener</category>
+        </queue>
+
+        <queue id="LoginSuccessListenerQueue">
+            <name>LoginSuccessListenerQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>reponsesLoginSuccessListener</category>
+        </queue>
+
+        <queue id="SendNotificationDossierRestartQueue">
+            <name>SendNotificationDossierRestartQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>SendNotificationDossierRestartWork</category>
+        </queue>
+
+        <queue id="ExportDossierRechercheQueue">
+            <name>ExportDossierRechercheQueue</name>
+            <maxThreads>2</maxThreads>
+            <category>ExportDossierRechercheListener</category>
+        </queue>
+    </extension>
+</component>

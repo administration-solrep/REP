@@ -1,0 +1,27 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div id="delete_step_modele_fdr_modal_content">
+            <th:block th:if="${#lists.isEmpty(listModeleFDR)}">
+                <span
+                    id="empty_delete_step"
+                    th:text="${#messages.msg('modeleFDR.content.modal.suppressionMasse.aucunModel')}"
+                >
+                    Aucun modèle
+                </span>
+            </th:block>
+
+            <th:block th:unless="${#lists.isEmpty(listModeleFDR)}">
+                <ul>
+                    <li th:each="modele : ${listModeleFDR}">
+                        [[${modele.intituleModele}]] - [[${modele.nbEtapesASupprimer}]] [[${modele.nbEtapesASupprimer ==
+                        1 ? ' ' + #messages.msg('modeleFDR.content.modal.suppressionMasse.etape.supprimee') : ' ' +
+                        #messages.msg('modeleFDR.content.modal.suppressionMasse.etapes.supprimees')}]]
+                        [[${modele.isParallele == true ? #messages.msg('modeleFDR.suppression.etape.paralleles') : ''}]]
+                    </li>
+                </ul>
+            </th:block>
+        </div>
+    </body>
+</html>

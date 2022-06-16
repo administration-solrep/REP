@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de statistiques de l'application Réponses. -->
+<component name="fr.dila.reponses.core.service.StatsService">
+	<implementation class="fr.dila.reponses.core.component.StatsComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.StatsService" />
+	</service>
+
+	<require>org.nuxeo.ecm.core.persistence.PersistenceComponent</require>
+
+	<extension target="org.nuxeo.ecm.core.persistence.PersistenceComponent" point="hibernate">
+		<hibernateConfiguration name="sword-provider">
+			<datasource>nxaudit-logs</datasource>
+			<properties>
+				<property name="hibernate.hbm2ddl.auto">update</property>
+			</properties>
+		</hibernateConfiguration>
+	</extension>
+</component>

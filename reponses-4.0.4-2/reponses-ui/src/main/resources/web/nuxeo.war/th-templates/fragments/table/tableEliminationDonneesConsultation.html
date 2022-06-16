@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="searchResults"
+            class="tableForm"
+            th:data-url="@{${dataUrl}}"
+            th:data-ajaxurl="@{${dataAjaxUrl}}"
+            id="listeDossierConsultation"
+        >
+            <div class="overlay" th:id="result_overlay" aria-live="polite">
+                <img width="29" height="29" th:src="@{/img/loader.svg}" alt="" />
+            </div>
+            <input name="id" th:value="${listId}" type="hidden" aria-hidden="true" data-isform="true" />
+
+            <th:block th:if="${#lists.isEmpty(resultList.liste)}">
+                <h2
+                    class="search-result-form__subtitle base-title base-title--lvl-3"
+                    th:text="#{elimination.donnees.liste.empty}"
+                >
+                    Aucun résultat
+                </h2>
+            </th:block>
+
+            <th:block th:unless="${resultForm.defaultSize >= resultList.nbTotal}">
+                <div
+                    th:replace="fragments/components/nombre-document-page :: documentParPage(${resultForm}, 'eliminationConsult_haut')"
+                ></div>
+            </th:block>
+
+            <th:block th:unless="${#lists.isEmpty(resultList.liste)}">
+                <a
+                    href="#skip_link_action-table_prev"
+                    id="skip_link_action-table_next"
+                    class="skip-link"
+                    th:text=" #{skip.link.table.prev(#{eliminationDonnees.liste.table.label}+' -
+                    '+#{recherche.result.numberResults(${resultList.nbTotal})})}"
+                >
+                    Aller après le tableau
+                </a>
+                <div class="table-action">
+                    <div class="table-action__action-container table-action__action-container--left">
+                        <div class="table-action">
+                            <div class="table-action__action-container">
+                                <div class="table-action__group">
+                                    <th:block th:each="action : ${generaleActions}">
+                                        <button
+                                            th:replace="fragments/components/action-button :: action-button(${action}, false, ${action.properties.classes})"
+                                        ></button>
+                                    </th:block>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-action__action-container table-action__action-container--right">
+                        <th:block th:unless="${resultList.liste.size == resultList.nbTotal}">
+                            <div
+                                th:replace="fragments/table/pagination :: pagination (${resultForm}, ${resultForm.page}, 'eliminationConsult_haut', ${resultList.nbTotal})"
+                            ></div>
+                        </th:block>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="custom-table">
+                        <caption
+                            class="sr-only"
+                            th:text="#{eliminationDonnees.liste.table.label}+' - '+#{recherche.result.numberResults(${resultList.nbTotal})}"
+                        >
+                            Caption
+                        </caption>
+                        <thead class="table-header custom-table__header">
+                            <tr class="table-header__line">
+                                <th scope="col" class="table-header__cell table-header__cell--check">
+                                    <div class="form-choice-input">
+                                        <input
+                                            type="checkbox"
+                                            name="selectAllDossier"
+                                            onclick="selectAllCheckBox(this);"
+                                            class="form-choice-input__input js-custom-table-header-check"
+                                            id="selectAllDossier"
+                                            autocomplete="off"
+                                        />
+                                        <label
+                                            for="selectAllDossier"
+                                            th:title="#{modeleFDR.liste.selectAll}"
+                                            th:data-select-label="#{modeleFDR.liste.selectAll}"
+                                            th:data-deselect-label="#{modeleFDR.liste.deselectAll}"
+                                            class="form-label form-choice-input__label form-choice-input__label--checkbox form-choice-input__label--hidden-label"
+                                        >
+                                            <span th:text="#{modeleFDR.liste.selectAll}">Tout sélectionner</span>
+                                        </label>
+                                    </div>
+                                </th>
+                                <th:block th:each="colonne : ${lstColonnes}">
+                                    <th:block th:if="${colonne.label != null}">
+                                        <th
+                                            scope="col"
+                                            class="table-header__cell"
+                                            th:text="${colonne.label !=null? #messages.msg(colonne.label) : ''}"
+                                        >
+                                            &nbsp;
+                                        </th>
+                                    </th:block>
+                                </th:block>
+                            </tr>
+                        </thead>
+                        <tbody class="custom-table__body">
+                            <th:block th:unless="${#lists.isEmpty(resultList.liste)}">
+                                <tr
+                                    class="custom-table__table-line table-line table-line--with-check table-line--with-action-column table-line--complex-line"
+                                    th:each="item, nb : ${resultList.liste}"
+                                    th:data-id="${item.id}"
+                                >
+                                    <td class="table-line__cell table-line__cell--check">
+                                        <div class="form-choice-input">
+                                            <input
+                                                th:id="|select-${item.id}|"
+                                                type="checkbox"
+                                                th:name="${'checkbox-'+nb.count}"
+                                                onclick="selectTableCheckbox(this)"
+                                                class="form-choice-input__input js-custom-table-line-check"
+                                                autocomplete="off"
+                                            />
+                                            <label
+                                                th:for="|select-${item.id}|"
+                                                th:title="#{modeleFDR.liste.selectOne(${item.id})}"
+                                                th:data-select-label="#{modeleFDR.liste.selectOne(${item.id})}"
+                                                th:data-deselect-label="#{modeleFDR.liste.deselectOne(${item.id})}"
+                                                class="form-label form-choice-input__label form-choice-input__label--checkbox form-choice-input__label--hidden-label"
+                                            >
+                                                <span th:text="#{modeleFDR.liste.selectOne(${item.id})}"
+                                                    >Sélectionner</span
+                                                >
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="table-line__cell" th:text="${item.origine}">Origine</td>
+                                    <td class="table-line__cell" th:text="${item.question}">Question</td>
+                                    <td class="table-line__cell" th:text="${item.nature}">Nature</td>
+                                    <td class="table-line__cell" th:text="${item.datePublication}">
+                                        Date de publication
+                                    </td>
+                                    <td class="table-line__cell" th:text="${item.auteur}">Auteur</td>
+                                    <td class="table-line__cell">
+                                        <span th:each="mot : ${item.motsCles}" th:text="|${mot} |">Mots-clé</span>
+                                    </td>
+                                    <td class="table-line__cell" th:text="${item.ministereAttributaire}">
+                                        Ministère attribué
+                                    </td>
+                                </tr>
+                            </th:block>
+                            <th:block th:if="${#lists.isEmpty(resultList.liste)}">
+                                <td colspan="5" th:text="#{label.fdr.nombre(0)}">Aucun résultat</td>
+                            </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-action">
+                    <div class="table-action__action-container table-action__action-container--left">
+                        <div class="table-action">
+                            <div class="table-action__action-container">
+                                <div class="table-action__group">
+                                    <th:block th:each="action : ${generaleActions}">
+                                        <button
+                                            th:replace="fragments/components/action-button :: action-button(${action}, false, ${action.properties.classes})"
+                                        ></button>
+                                    </th:block>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-action__action-container table-action__action-container--right">
+                        <th:block th:unless="${resultList.liste.size == resultList.nbTotal}">
+                            <div
+                                th:replace="fragments/table/pagination :: pagination (${resultForm}, ${resultForm.page}, 'eliminationConsult_bas', ${resultList.nbTotal})"
+                            ></div>
+                        </th:block>
+                    </div>
+                </div>
+                <a
+                    href="#skip_link_action-table_next"
+                    id="skip_link_action-table_prev"
+                    class="skip-link"
+                    th:text=" #{skip.link.table.next(#{eliminationDonnees.liste.table.label}+' -
+                    '+#{recherche.result.numberResults(${resultList.nbTotal})})} "
+                >
+                    Aller avant le tableau
+                </a>
+            </th:block>
+        </div>
+    </body>
+</html>

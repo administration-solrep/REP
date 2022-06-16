@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div class="classement" th:fragment="planClassement">
+            <div class="accordion accordion--aside accordion--is-opened">
+                <div class="accordion__header accordion__header--action accordion__header--aside">
+                    <h2 class="accordion-title-lvl-2" th:text="#{corbeille.plan.classement.label}">
+                        Plan de classement
+                    </h2>
+                    <button
+                        type="button"
+                        aria-controls="corbeille_plan_content"
+                        aria-expanded="true"
+                        id="corbeille_plan"
+                        aria-selected="false"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract-without-background"
+                        data-icon-closed="add-without-background"
+                        th:aria-label="#{corbeille.plan.classement.label}"
+                        class="js-toggle accordion__header__button"
+                    >
+                        <span
+                            aria-hidden="true"
+                            class="icon bubble-icon bubble-icon--neutral accordion__icon accordion__icon--aside icon--substract-without-background"
+                        ></span>
+                    </button>
+                </div>
+                <div
+                    role="region"
+                    aria-hidden="false"
+                    theme="aside"
+                    id="corbeille_plan_content"
+                    aria-labelledby="corbeille_plan"
+                    class="accordion__content accordion__content--is-opened"
+                >
+                    <div class="page-reponses__sidebar-content">
+                        <div class="form-input-group__list m-b-2">
+                            <fieldset class="form-optin__fieldset">
+                                <legend class="form-optin__legend" th:text="#{plan.classement.type.select}">
+                                    Sélection du type
+                                </legend>
+                                <div class="form-optin__optins">
+                                    <div class="form-optin__container">
+                                        <input
+                                            type="radio"
+                                            id="corb_an"
+                                            name="form-radio-button-column"
+                                            class="form-optin__checkbox"
+                                            th:attrappend="checked=${planClassementMap.assemblee != 'SENAT' } ? 'checked'"
+                                            onchange="onChangePlanType('AN')"
+                                            autocomplete="off"
+                                        />
+                                        <label
+                                            for="corb_an"
+                                            id="corb_an_label"
+                                            class="form-optin__label"
+                                            th:text="#{corbeille.radio.an}"
+                                        >
+                                            Label
+                                        </label>
+                                    </div>
+                                    <div class="form-optin__container">
+                                        <input
+                                            type="radio"
+                                            id="corb_senat"
+                                            name="form-radio-button-column"
+                                            class="form-optin__checkbox"
+                                            th:attrappend="checked=${planClassementMap.assemblee == 'SENAT' } ? 'checked'"
+                                            onchange="onChangePlanType('SENAT')"
+                                            autocomplete="off"
+                                        />
+                                        <label
+                                            for="corb_senat"
+                                            id="corb_senat_label"
+                                            class="form-optin__label"
+                                            th:text="#{corbeille.radio.senat}"
+                                        >
+                                            Label
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div id="planClassementTree">
+                            <ul
+                                th:replace="fragments/components/planClassementArbre :: planClassementArbre (${planClassementMap.childs}, 1, 'planClassementTree', '', true, ${actionAdd}, '', 'plan')"
+                            ></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <!--/*Arbre spécifique au plan de classement: 
+    ajout d'un bouton (ajout favoris) au dernier niveau*/-->
+    <body>
+        <th:block th:fragment="planClassementArbre(treeList, level, myID, togglerID, isOpen, action, parentID, title)">
+            <div class="overlay" th:if="${level == 1}" th:id="'overlay_'+${myID}" aria-live="polite">
+                <img width="29px" height="29px" th:src="@{/img/loader.svg}" alt="" />
+            </div>
+            <div class="tree-navigation" th:aria-label="|Navigation ${title}|">
+                <ul
+                    class="tree-navigation__list"
+                    th:id="${myID}"
+                    th:aria-labelledby="${togglerID}"
+                    th:classappend="${(level &gt; 1 ? ' tree-navigation\_\_list--subtree ' : '') + (isOpen ? ' tree-navigation\_\_list--is-opened ' : ' tree-navigation\_\_list--is-closed ') }"
+                    th:aria-hidden="${isOpen ? 'false' : 'true'}"
+                >
+                    <li
+                        th:each="item, status : ${treeList}"
+                        th:with="concat_index=${(#strings.isEmpty(parentID) ? '' : parentID + '_') + item.key + '_' + level + '_'+status.index}"
+                        class="tree-navigation__item tree-navigation__item--has-toggler"
+                        th:classappend="${(item.isOpen ? 'tree-navigation\_\_item--is-opened' : ' tree-navigation\_\_item--is-closed ') + (item.isLastLevel ? '' : ' tree-navigation\_\_item--lvl-'+level) + (item.completeKey == planClassementActivated || item.completeKey == mailboxListActivated ? ' tree-navigation\_\_item--active ' : '')}"
+                    >
+                        <th:block th:if="${!item.isLastLevel or item.childs.size &gt; 0 }">
+                            <div class="tree-navigation__toggle-wrapper">
+                                <button
+                                    th:aria-controls="'tree-navigation\_\_toggled\_\_'+${concat_index}"
+                                    th:aria-expanded="${item.isOpen}"
+                                    tabindex="0"
+                                    th:id="'tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                    data-toggle="tree-navigation__item"
+                                    class="tree-navigation__toggle js-toggle"
+                                    data-icon-opened="minus"
+                                    data-icon-closed="plus"
+                                    th:attrappend="onclick=${item.action !=null ? item.action : null}"
+                                    th:tabindex="${isOpen ? 0 : -1}"
+                                >
+                                    <span
+                                        class="tree-navigation__icon tree-navigation__icon--toggler icon bubble-icon bubble-icon--squared bubble-icon--small"
+                                        th:classappend="${(item.isOpen ? 'tree-navigation\_\_icon--opened icon--minus' : 'tree-navigation\_\_icon--closed icon--plus')}"
+                                        th:aria-describedby="'button\_\_tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                        aria-hidden="true"
+                                    ></span>
+                                    <span
+                                        th:id="'button__tree-navigation\_\_toggler\_\_'+${concat_index}"
+                                        class="sr-only"
+                                    ></span>
+                                    <span
+                                        class="tree-navigation__text tree-navigation__text-wrap"
+                                        th:classappend="|${(item.isBold ? '' : 'tree-navigation\_\_text-not-bold')}|"
+                                        th:text="${item.label}"
+                                        >Niveau</span
+                                    >
+                                </button>
+                            </div>
+                            <ul
+                                th:replace="fragments/components/planClassementArbre :: planClassementArbre (${item.childs}, ${level+1}, ${'tree-navigation\_\_toggled\_\_'+concat_index}, ${'tree-navigation\_\_toggler\_\_'+concat_index} , ${item.isOpen},${action}, ${concat_index}, ${title + ' niveau ' + (level + 1)})"
+                            ></ul>
+                        </th:block>
+                        <th:block th:unless="${!item.isLastLevel or item.childs.size &gt; 0 }">
+                            <div id="planLienDossiers">
+                                <a
+                                    th:title="(${isOpen} ? #{arbre.replier.label} : #{arbre.derouler.label}) + ' ' + ${item.label}"
+                                    th:href="@{${item.link} + '#main_content'}"
+                                    class="tree-navigation__link link"
+                                    th:tabindex="${isOpen ? 0 : -1}"
+                                    th:text="${item.label}"
+                                >
+                                    lien
+                                </a>
+                                <th:block th:if="${action!=null && action.id!=null}">
+                                    <button
+                                        type="button"
+                                        th:id="${action.id +'_'+ status.index}"
+                                        th:attr="onclick=${action.link}"
+                                        th:data-item-link="${item.link}"
+                                        class="js-tooltip btn-favori-pc base-btn base-btn--button base-btn--default base-btn--icon-action-bg base-btn--center base-btn--rounded"
+                                        th:data-tippy-content="${#messages.msg(action.label)}"
+                                    >
+                                        <span aria-hidden="true" class="icon" th:classappend="${action.icon}"></span
+                                        ><span class="sr-only" th:text="${#messages.msg(action.label)}"
+                                            >Ajouter aux favoris</span
+                                        >
+                                    </button>
+                                </th:block>
+                            </div>
+                        </th:block>
+                        <div class="tooltip-wrapper"></div>
+                    </li>
+                </ul>
+            </div>
+        </th:block>
+    </body>
+</html>

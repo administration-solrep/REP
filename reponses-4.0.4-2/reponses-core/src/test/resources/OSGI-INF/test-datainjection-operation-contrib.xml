@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.core.test.operation.datainjection">
+
+   <extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent" point="operations">
+    <operation class="fr.dila.reponses.core.operation.nxshell.DataInjectionOperation" />
+  </extension>
+
+</component>

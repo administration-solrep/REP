@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de fond de dossier de l'application 
+	Réponses. -->
+<component name="fr.dila.ss.core.service.SSFondDeDossierService">
+	<implementation class="fr.dila.reponses.core.component.FondDeDossierComponent" />
+
+	<service>
+		<provide interface="fr.dila.ss.api.service.SSFondDeDossierService" />
+	</service>
+</component>

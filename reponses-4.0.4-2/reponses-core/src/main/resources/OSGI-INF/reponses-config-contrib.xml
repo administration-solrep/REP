@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<!-- Ce composant permet de contribuer des valeurs par défaut des paramètres 
+	de configuration de l'application Réponses. /!\ Pour configurer l'application, 
+	ne pas modifier les paramètres dans ce fichier mais dans nuxeo.conf ! -->
+<component name="fr.dila.reponses.core.config">
+	<extension target="fr.dila.st.core.service.ConfigService" point="configParameter">
+		<!-- Configuration du bulk mode -->
+		<parameter>
+			<name>nuxeo.bulk.mode</name>
+			<value>false</value>
+		</parameter>
+
+		<!-- Nom de l'utilisateur qui injecte les dossiers Réponses -->
+		<parameter>
+			<name>reponses.dossier.owner</name>
+			<value>adminsgg</value>
+		</parameter>
+
+		<!-- Nom de l'utilisateur qui possède les Mailbox poste -->
+		<parameter>
+			<name>reponses.mailboxPoste.owner</name>
+			<value>adminsgg</value>
+		</parameter>
+
+		<!-- Nom de l'utilisateur qui exécute les batch -->
+		<parameter>
+			<name>nuxeo.batch.user</name>
+			<value>Administrator</value>
+		</parameter>
+
+		<parameter>
+			<name>reponses.purge.month.delai</name>
+			<value>1</value>
+		</parameter>
+
+		<!-- Utilisation du service bouchon de dictao -->
+		<parameter>
+			<name>reponses.dictao.useStub</name>
+			<value>false</value>
+		</parameter>
+
+		<!-- validation du contenu de la reponses fourni par ws -->
+		<parameter>
+			<name>reponses.ws.validate.reponse.content</name>
+			<value>true</value>
+		</parameter>
+		<parameter>
+			<name>reponses.ws.validate.reponse.authorized.tags</name>
+			<value>p,ul,ol,li,table,caption,thead,tbody,tr,th,td,b,i,strong,em</value>
+		</parameter>
+
+		<!-- Adress mail from -->
+		<parameter>
+			<name>mail.from</name>
+			<value>ne-pas-repondre@dila.gouv.fr</value>
+		</parameter>
+
+                <!-- Tomcat jvm namespace for current app -->
+                <parameter>
+                        <name>solon.tomcat.namespace</name>
+                        <value>Catalina:type=Manager,context=/reponses,host=localhost</value>
+                </parameter>
+
+	</extension>
+</component>

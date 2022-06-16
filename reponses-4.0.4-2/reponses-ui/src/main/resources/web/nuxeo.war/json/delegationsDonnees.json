@@ -1,0 +1,25 @@
+{
+	"liste": [
+		{
+			"id": "1",
+			"a": "délégation donnée 1",
+			"de": "Source 1",
+			"dateDebut": "25/10/2020",
+			"dateFin": "25/10/2020"
+		},
+		{
+			"id": "2",
+			"a": "délégation donnée 2",
+			"de": "Source 2",
+			"dateDebut": "26/10/2020",
+			"dateFin": "26/10/2020"
+		},
+		{
+			"id": "3",
+			"a": "délégation donnée 3",
+			"de": "Source 3",
+			"dateDebut": "27/10/2020",
+			"dateFin": "27/10/2020"
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"ministeres": [
+		{
+			"identifiant": "3000",
+			"appellation": "Ministère du travail"
+		},
+		{
+			"identifiant": "3001",
+			"appellation": "Ministère de la santé"
+		},
+		{
+			"identifiant": "3002",
+			"appellation": "Ministère des sports"
+		}
+	]
+}

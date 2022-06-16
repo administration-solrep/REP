@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div class="mailboxes" th:fragment="mailboxList">
+            <div class="accordion accordion--aside accordion--is-opened">
+                <div class="accordion__header accordion__header--action accordion__header--aside">
+                    <div class="flex">
+                        <h2 class="accordion-title-lvl-2" th:text="#{mailbox.list.title}">Titre</h2>
+                        <button
+                            type="button"
+                            class="base-btn base-btn--button base-btn--default base-btn--icon-action-blue base-btn--center base-btn--transparent"
+                            th:title="#{label.mailbox.actualiser}"
+                            onclick="actualiserMailbox()"
+                        >
+                            <span aria-hidden="true" class="icon icon--refresh"></span>
+                            <span class="sr-only" th:text="#{label.mailbox.actualiser}"></span>
+                        </button>
+                    </div>
+                    <button
+                        type="button"
+                        aria-controls="mailbox_list_content"
+                        aria-expanded="true"
+                        id="accordion__header__trash"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract-without-background"
+                        data-icon-closed="add-without-background"
+                        th:aria-label="#{mailbox.list.title}"
+                        class="js-toggle accordion__header__button"
+                    >
+                        <span
+                            aria-hidden="true"
+                            class="icon bubble-icon bubble-icon--neutral accordion__icon accordion__icon--aside icon--substract-without-background"
+                        ></span>
+                    </button>
+                </div>
+                <div
+                    role="region"
+                    aria-hidden="false"
+                    theme="aside"
+                    id="mailbox_list_content"
+                    class="accordion__content accordion__content--aside accordion__content--is-opened"
+                >
+                    <div class="page-reponses__sidebar-content">
+                        <th:block th:if="${displayCorbeilleSelection}">
+                            <div class="page-reponses__sidebar-select">
+                                <div
+                                    th:replace="fragments/components/organigrammeSelectAutocomplete :: organigrammeSelectAutocomplete('mailbox.select.poste',false,'selection_poste','selectionPoste','PST',${mailboxListMap.selectionPoste},false,false,${selectionPoste}, false)"
+                                ></div>
+                            </div>
+                            <div class="page-reponses__sidebar-select">
+                                <div
+                                    th:replace="fragments/components/organigrammeSelectAutocomplete :: organigrammeSelectAutocomplete('mailbox.select.user',false,'selection_user','selectionUser','USR',${mailboxListMap.selectionUser},false,false,${selectionUser}, false)"
+                                ></div>
+                            </div>
+                            <p
+                                id="selection_poste_user_error"
+                                style="display: none"
+                                class="form-input__description form-input__description--default form-input__description--error"
+                                th:text="#{mailbox.select.poste.user.error}"
+                            >
+                                Aucun poste ou utilisateur sélectionné
+                            </p>
+                            <button
+                                type="button"
+                                onclick="onValidateSelectionMailbox($('#selection_poste'),$('#selection_user'))"
+                                class="page-reponses__select-validation-button base-btn base-btn--button base-btn--default base-btn--center base-btn--full"
+                                th:text="#{button.label.valider}"
+                            >
+                                Valider
+                            </button>
+                            <button
+                                type="button"
+                                onclick="reinitMailboxSelect($('#selection_poste'),$('#selection_user'))"
+                                class="page-reponses__select-validation-button base-btn base-btn--button base-btn--default base-btn--light base-btn--bordered base-btn--center base-btn--full"
+                                th:text="#{mailbox.button.reinit}"
+                            >
+                                Réinitialiser
+                            </button>
+                            <hr class="page-reponses__separator" />
+                        </th:block>
+                        <div class="page-reponses__form-input-group form-input-group form-input-group--column">
+                            <fieldset class="form-input__fieldset">
+                                <legend class="form-input-group__label" th:text="#{mailbox.trier.par}">
+                                    Trier par
+                                </legend>
+                                <div class="form-input-group__list">
+                                    <div class="form-choice-input">
+                                        <input
+                                            type="radio"
+                                            id="tri_min"
+                                            name="form-radio-button-column"
+                                            class="form-choice-input__input"
+                                            th:attrappend="checked=${mailboxListMap.modeTri.name == 'PAR_MINISTERE' ? 'checked' : null}"
+                                            onchange="onChangeMailboxTri('PAR_MINISTERE')"
+                                            autocomplete="off"
+                                        />
+                                        <label
+                                            for="tri_min"
+                                            id="tri_min_label"
+                                            class="form-label form-choice-input__label form-choice-input__label--radio"
+                                            th:text="#{mailbox.radio.ministere}"
+                                        >
+                                            Label
+                                        </label>
+                                    </div>
+                                    <div class="form-choice-input">
+                                        <input
+                                            type="radio"
+                                            id="tri_poste"
+                                            name="form-radio-button-column"
+                                            class="form-choice-input__input"
+                                            th:attrappend="checked=${mailboxListMap.modeTri.name == 'PAR_POSTE' ? 'checked' : null}"
+                                            onchange="onChangeMailboxTri('PAR_POSTE')"
+                                            autocomplete="off"
+                                        />
+                                        <label
+                                            for="tri_poste"
+                                            id="tri_poste_label"
+                                            class="form-label form-choice-input__label form-choice-input__label--radio"
+                                            th:text="#{mailbox.radio.poste}"
+                                        >
+                                            Label
+                                        </label>
+                                    </div>
+                                    <div class="form-choice-input">
+                                        <input
+                                            type="radio"
+                                            id="tri_signale"
+                                            name="form-radio-button-column"
+                                            class="form-choice-input__input"
+                                            th:attrappend="checked=${mailboxListMap.modeTri.name == 'PAR_SIGNALE' ? 'checked' : null}"
+                                            onchange="onChangeMailboxTri('PAR_SIGNALE')"
+                                            autocomplete="off"
+                                        />
+                                        <label
+                                            for="tri_signale"
+                                            id="tri_signale_label"
+                                            class="form-label form-choice-input__label form-choice-input__label--radio"
+                                            th:text="#{mailbox.radio.signale}"
+                                        >
+                                            Label
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="page-reponses__separator" />
+                        <div class="form-choice-input page-reponses__form-choice-input">
+                            <input
+                                type="checkbox"
+                                id="masquer_corbeilles"
+                                name="form-checkbox-alone"
+                                class="form-choice-input__input"
+                                th:attrappend="checked=${mailboxListMap.masquerCorbeilles ? 'checked' : null}"
+                                onclick="onClickMasquerCorbeilles()"
+                                autocomplete="off"
+                            />
+                            <label
+                                aria-disabled="false"
+                                for="masquer_corbeilles"
+                                id="masquer_corbeilles_label"
+                                class="form-label form-choice-input__label form-choice-input__label--checkbox"
+                                th:text="#{mailbox.checkbox.masquer.corbeilles}"
+                            >
+                                Label
+                            </label>
+                        </div>
+                        <hr class="page-reponses__separator" />
+                        <div class="tree-navigation" th:aria-label="|#{tree.title} #{mailbox.list.title}|">
+                            <div id="mailboxListTree">
+                                <ul
+                                    th:replace="fragments/components/arbre :: arbre (${mailboxListMap.childs}, 1 , '', '', true)"
+                                ></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

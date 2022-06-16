@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='consultation dossier', 
+    title=|${monDossier.questionInfo.typeQuestion} N°${monDossier.questionInfo.numeroQuestion} de 
+    ${monDossier.questionInfo.civiliteAuteur} ${monDossier.questionInfo.prenomAuteur} 
+    ${monDossier.questionInfo.nomAuteur} - ${monDossier.questionInfo.groupePolitique}|)}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <input type="hidden" id="dossierId" name="dossierId" th:value="${monDossier.id}" />
+        <input type="hidden" id="dossierLinkId" name="dossierLinkId" th:value="${idDossierLink}" />
+        <input type="hidden" id="urlPreviousPage" name="urlPreviousPage" th:value="@{${urlPreviousPage}}" />
+        <th:block th:if="${hasMessageInQueue}">
+            <div th:replace="fragments/components/alert-banner :: alert-banner" th:if="true"></div>
+        </th:block>
+        <div class="page-layout__content-nav" th:if="${not #strings.isEmpty(urlPreviousPage)}">
+            <button
+                type="button"
+                style="margin-bottom: 1.7857em; padding-left: 2em; padding-right: 2em"
+                class="base-btn base-btn--button base-btn--default base-btn--light base-btn--bordered"
+                onclick="goPreviousPage()"
+                th:text="#{button.label.back}"
+                th:if="${not #strings.isEmpty(urlPreviousPage)}"
+            >
+                Retour
+            </button>
+        </div>
+        <!-- champ aria-live pour signaler si le dossier a été vérrouillé ou déverrouillé pendant un changement d'onglet (ajax) -->
+        <span id="statutLockDossierAria" aria-live="assertive" class="sr-only"></span>
+        <div th:replace="pages/dossier/consult-dossier-content :: consult-dossier-content"></div>
+    </main>
+</html>

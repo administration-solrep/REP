@@ -1,0 +1,8 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <!-- Fragment contentant les colonnes spécifiques à réponses -->
+        <td th:fragment="historiqueLine" class="table-line__cell">
+            <p class="table-line__cell-content" th:text="${migration.directionPilote}"></p>
+        </td>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{
+	"liste": [
+		{
+			"id": "1",
+			"message": "Migration de l'organigramme [Ministère chargé de la francophonie] vers [Secrétariat d'État, auprès du ministère des affaires étrangères et du développement international, chargé du développement et de la francophonie]",
+			"etat": "TERMINEE",
+			"details": "[Migration du modèle de feuille de route Francophonie (Modèle SGG) (Copie), Fin de migration du modèle de feuille de route Francophonie (Modèle SGG) (Copie)]"
+		},
+		{
+			"id": "2",
+			"message": "Migration du modèle de feuille de route Francophonie (Modèle SGG) (Copie)",
+			"etat": "FAILED",
+			"details": "[Migration du modèle de feuille de route FRANCOPHONIE/DGP/NUOI, Fin de migration du modèle de feuille de route FRANCOPHONIE/DGP/NUOI]"
+		},
+		{
+			"id": "3",
+			"message": "Migration du modèle de feuille de route Francophonie - DGM/DCUR",
+			"etat": "EN_COURS",
+			"details": "[Migration du modèle de feuille de route Francophonie - DGM/DCUR, Fin de migration du modèle de feuille de route Francophonie - DGM/DCUR]"
+		}
+	]
+}

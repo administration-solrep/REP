@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div
+            th:fragment="searchResults"
+            class="tableForm"
+            th:data-url="@{${dataUrl}}"
+            th:data-ajaxurl="@{${dataAjaxUrl}}"
+            id="listeDonnees"
+        >
+            <div class="overlay" th:id="result_overlay" aria-live="polite">
+                <img width="29" height="29" th:src="@{/img/loader.svg}" alt="" />
+            </div>
+
+            <th:block th:if="${#lists.isEmpty(resultList.liste)}">
+                <h2
+                    class="search-result-form__subtitle base-title base-title--lvl-3"
+                    th:text="#{elimination.liste.aucune}"
+                >
+                    Aucun résultat
+                </h2>
+            </th:block>
+
+            <th:block th:unless="${resultForm.defaultSize >= resultList.nbTotal}">
+                <div
+                    th:replace="fragments/components/nombre-document-page :: documentParPage(${resultForm}, 'elimination_haut')"
+                ></div>
+            </th:block>
+
+            <th:block th:unless="${#lists.isEmpty(resultList.liste)}">
+                <a
+                    href="#skip_link_action-table_prev"
+                    id="skip_link_action-table_next"
+                    class="skip-link"
+                    th:text=" #{skip.link.table.prev(#{eliminationDonnees.liste.table.label}+' -
+                    '+#{recherche.result.numberResults(${resultList.nbTotal})})} "
+                ></a>
+                <div class="table-action">
+                    <div class="table-action__action-container table-action__action-container--left">
+                        <div class="table-action">
+                            <div class="table-action__action-container">
+                                <div class="table-action__group">
+                                    <th:block th:each="action : ${generaleActions}">
+                                        <button
+                                            th:replace="fragments/components/action-button :: action-button(${action}, true, '')"
+                                        ></button>
+                                    </th:block>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-action__action-container table-action__action-container--right">
+                        <th:block th:unless="${resultList.liste.size == resultList.nbTotal}">
+                            <div
+                                th:replace="fragments/table/pagination :: pagination (${resultForm}, ${resultForm.page}, 'elimination_haut', ${resultList.nbTotal})"
+                            ></div>
+                        </th:block>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="custom-table">
+                        <caption
+                            class="sr-only"
+                            th:text="#{eliminationDonnees.liste.table.label}+' - '+#{recherche.result.numberResults(${resultList.nbTotal})}"
+                        >
+                            Tablau des modèles de feuilles de route
+                        </caption>
+                        <thead class="table-header custom-table__header">
+                            <tr class="table-header__line">
+                                <th:block th:each="colonne : ${lstColonnes}">
+                                    <th scope="col" class="table-header__cell">
+                                        <span
+                                            th:if="${colonne.isLabelVisible}"
+                                            class="table-header__cell-inner"
+                                            th:text="${colonne.label !=null? #messages.msg(colonne.label) : ''}"
+                                        >
+                                            &nbsp;
+                                        </span>
+                                        <span
+                                            th:unless="${colonne.isLabelVisible}"
+                                            class="sr-only"
+                                            th:text=" #{__${colonne.label}__} "
+                                        >
+                                            Label
+                                        </span>
+                                    </th>
+                                </th:block>
+                            </tr>
+                        </thead>
+                        <tbody class="custom-table__body">
+                            <th:block th:unless="${#lists.isEmpty(resultList.liste)}">
+                                <tr
+                                    class="custom-table__table-line table-line table-line--with-check table-line--with-action-column table-line--complex-line"
+                                    th:each="item, nb : ${resultList.liste}"
+                                    th:data-id="${item.id}"
+                                >
+                                    <td class="table-line__cell">
+                                        <th:block
+                                            th:if="${item.abandonEnCours || item.suppressionEnCours}"
+                                            th:text="${item.titre} + ' ' + (${item.abandonEnCours} ? #{eliminationDonnees.titre.encours.abandon} : #{eliminationDonnees.titre.encours.suppression})"
+                                        ></th:block>
+                                        <th:block th:unless="${item.abandonEnCours || item.suppressionEnCours}">
+                                            <a
+                                                th:href="@{|/admin/eliminationDonnees/consultation?id=${item.id}|}"
+                                                class="link"
+                                                th:text="${item.titre} + (${item.enCours} ? ' ' + #{eliminationDonnees.titre.encours} : '')"
+                                            >
+                                                En cours
+                                            </a>
+                                        </th:block>
+                                    </td>
+                                    <td class="table-line__cell" th:text="${item.dateCreation}"></td>
+                                    <td class="table-line__cell">
+                                        <div class="table-line__action-column-container">
+                                            <th:block
+                                                th:if="${not #lists.isEmpty(item.actions) && !item.abandonEnCours && !item.suppressionEnCours}"
+                                                th:with="dropdownRight=true"
+                                            >
+                                                <div
+                                                    th:replace="fragments/components/dropdown-action :: dropdown-action(
+                                                        'modele-action', 
+                                                        ${item.actions}, 
+                                                        'icon--ellipsis', 
+                                                        false, 
+                                                        null, 
+                                                        'base-btn--transparent base-btn--light base-btn--md-icon', 
+                                                        false, 
+                                                        'base-drop-down--light'
+                                                        )"
+                                                ></div>
+                                            </th:block>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </th:block>
+                            <th:block th:if="${#lists.isEmpty(resultList.liste)}">
+                                <td colspan="5" th:text="#{label.fdr.nombre(0)}">Aucun résultat</td>
+                            </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-action">
+                    <div class="table-action__action-container table-action__action-container--left">
+                        <div class="table-action">
+                            <div class="table-action__action-container">
+                                <div class="table-action__group">
+                                    <th:block th:each="action : ${generaleActions}">
+                                        <button
+                                            th:replace="fragments/components/action-button :: action-button(${action}, true, '')"
+                                        ></button>
+                                    </th:block>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-action__action-container table-action__action-container--right">
+                        <th:block th:unless="${resultList.liste.size == resultList.nbTotal}">
+                            <div
+                                th:replace="fragments/table/pagination :: pagination (${resultForm}, ${resultForm.page}, 'elimination_bas', ${resultList.nbTotal})"
+                            ></div>
+                        </th:block>
+                    </div>
+                </div>
+                <a
+                    href="#skip_link_action-table_next"
+                    id="skip_link_action-table_prev"
+                    class="skip-link"
+                    th:text=" #{skip.link.table.next(#{eliminationDonnees.liste.table.label}+' -
+                    '+#{recherche.result.numberResults(${resultList.nbTotal})})} "
+                >
+                    Aller avant le tableau
+                </a>
+            </th:block>
+        </div>
+    </body>
+</html>

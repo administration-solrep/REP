@@ -1,0 +1,58 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='page pour les favoris de travail', title=#{label.favoris.travail.add.title})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <input
+            type="hidden"
+            id="urlPreviousPage"
+            name="urlPreviousPage"
+            th:value="@{|${urlPreviousPage}#main_content|}"
+        />
+        <h1 class="base-title base-title--lvl-1" th:text="#{label.favoris.travail.add.title}">
+            Ajout dans un favori de travail
+        </h1>
+        <br />
+        <div id="choix_ajout_favoris" class="form-input-group__list m-b-6">
+            <fieldset class="form-optin__fieldset">
+                <legend class="form-optin__legend sr-only" th:text="#{label.favoris.travail.add.title}"></legend>
+                <div class="form-optin__optins">
+                    <div class="form-optin__container">
+                        <input
+                            type="radio"
+                            id="nouveau_favoris"
+                            name="form-radio-button-column"
+                            class="form-optin__checkbox"
+                            th:attrappend="checked=${isCreation} ? 'checked'"
+                            onchange="onChangeFavorisType('NOUVEAU')"
+                            autocomplete="off"
+                        />
+                        <label for="nouveau_favoris" id="nouveau_favoris_label" class="form-optin__label">
+                            <span th:text="#{label.favoris.travail.optin.nouveau}">Label</span>
+                        </label>
+                    </div>
+                    <div class="form-optin__container">
+                        <input
+                            type="radio"
+                            id="exist_favoris"
+                            name="form-radio-button-column"
+                            class="form-optin__checkbox"
+                            th:attrappend="checked=${!isCreation} ? 'checked'"
+                            onchange="onChangeFavorisType('ANCIEN')"
+                            autocomplete="off"
+                        />
+                        <label for="exist_favoris" id="exist_favoris_label" class="form-optin__label">
+                            <span th:text="#{label.favoris.travail.optin.existant}">Label</span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div id="favorisTravailForm">
+            <div th:replace="fragments/components/favoris/favorisTravailFormCreation :: favorisTravailForm"></div>
+        </div>
+    </main>
+</html>

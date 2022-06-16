@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="searchMenu">
+            <div class="accordion accordion--aside accordion--is-opened">
+                <div class="accordion__header js-toggle accordion__header--aside">
+                    <h2 class="accordion-title-lvl-2" th:text="#{search.menu.classement.label}">Plan de classement</h2>
+                    <button
+                        type="button"
+                        aria-controls="search_menu_content"
+                        aria-expanded="true"
+                        id="search_menu"
+                        aria-selected="false"
+                        th:aria-label="#{search.menu.classement.label}"
+                        data-toggle="accordion__content"
+                        data-icon-opened="substract-without-background"
+                        data-icon-closed="add-without-background"
+                        class="js-toggle accordion__header__button"
+                    >
+                        <span
+                            aria-hidden="true"
+                            class="icon bubble-icon bubble-icon--neutral accordion__icon accordion__icon--aside icon--substract-without-background"
+                        ></span>
+                    </button>
+                </div>
+                <div
+                    role="region"
+                    aria-hidden="false"
+                    theme="aside"
+                    id="search_menu_content"
+                    aria-labelledby="search_menu"
+                    class="accordion__content accordion__content--is-opened"
+                >
+                    <div
+                        th:replace="fragments/leftblocks/leftListSimple :: leftListSimple(${searchMenuActions}, #{search.menu.classement.label})"
+                    ></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

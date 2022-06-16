@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="questionConnexe" id="d_connexe_content" style="position: relative">
+            <div role="presentation">
+                <input type="hidden" id="idMinistere" th:value="${idMinistere}" />
+                <input type="hidden" id="selectedDossierId" th:value="${dto.dossierId}" />
+                <div class="m-t-3 m-b-6">
+                    <div class="flex-row-actions__left">
+                        <th:block th:each="action : ${returnActions}">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, 'false', 'table-action\_\_item table-action\_\_button base-btn--light base-btn--transparent base-btn--bordered')"
+                            ></button>
+                        </th:block>
+                        <th:block th:each="action : ${returnMinistereActions}">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, 'false', 'table-action\_\_item table-action\_\_button base-btn--light base-btn--transparent base-btn--bordered')"
+                            ></button>
+                        </th:block>
+                    </div>
+                    <div class="flex-row-actions__right">
+                        <th:block th:each="action : ${returnQuestionActions}">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, 'false', 'table-action\_\_item table-action\_\_button')"
+                            ></button>
+                        </th:block>
+                    </div>
+                </div>
+                <h2
+                    class="m-b-4 base-title--lvl-4 base-title base-title--lvl-2 base-title--is-underlined"
+                    id="dossiers_connexes_title"
+                    th:text="#{dossier.connexe.question.title(${title})}"
+                ></h2>
+
+                <div id="overlay_table_fond" class="overlay" aria-live="polite">
+                    <img width="29" height="29" th:src="@{/img/loader.svg}" alt="" />
+                </div>
+
+                <form>
+                    <div role="presentation">
+                        <h2
+                            class="m-b-4 base-title--lvl-4 base-title base-title--lvl-2 base-title--is-underlined"
+                            id="dossier_connexe_question_title"
+                            th:text="#{parapheur.question.bloc}"
+                        ></h2>
+                        <div
+                            role="region"
+                            aria-hidden="false"
+                            id="dossier_connexe_question_data"
+                            aria-labelledby="dossier_connexe_question_title"
+                        >
+                            <input type="hidden" id="dossierTextQuestion" th:value="${dto.dossierTextQuestion}" />
+                            <p th:utext="${dto.dossierTextQuestion}" class="base-paragraph"></p>
+                        </div>
+                    </div>
+
+                    <div role="presentation">
+                        <h2
+                            class="m-b-4 base-title--lvl-4 base-title base-title--lvl-2 base-title--is-underlined"
+                            id="dossier_connexe_reponse_title"
+                            th:text="#{parapheur.reponse.bloc}"
+                        ></h2>
+                        <div
+                            role="region"
+                            aria-hidden="false"
+                            id="dossier_connexe_reponse_data"
+                            aria-labelledby="dossier_connexe_reponse_title"
+                        >
+                            <input type="hidden" id="dossierTextReponse" th:value="${dto.dossierTextReponse}" />
+                            <p th:utext="${dto.dossierTextReponse}"></p>
+                        </div>
+                    </div>
+                </form>
+                <div class="m-t-3 m-b-6">
+                    <div class="flex-row-actions__left">
+                        <th:block th:each="action : ${returnActions}">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, 'false', 'table-action\_\_item table-action\_\_button base-btn--light base-btn--transparent base-btn--bordered')"
+                            ></button>
+                        </th:block>
+                        <th:block th:each="action : ${returnMinistereActions}">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, 'false', 'table-action\_\_item table-action\_\_button base-btn--light base-btn--transparent base-btn--bordered')"
+                            ></button>
+                        </th:block>
+                    </div>
+                    <div class="flex-row-actions__right">
+                        <th:block th:each="action : ${returnQuestionActions}">
+                            <button
+                                th:replace="fragments/components/label-action-button :: label-action-button(${action}, 'false', 'table-action\_\_item table-action\_\_button')"
+                            ></button>
+                        </th:block>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

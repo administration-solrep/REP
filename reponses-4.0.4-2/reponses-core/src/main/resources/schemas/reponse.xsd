@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://dila.fr/solon/schemas/reponse/"
+    xmlns:up="http://dila.fr/solon/schemas/reponse/"
+>
+
+	<xs:element name="idAuteurReponse" type="xs:string" />
+	<xs:element name="numeroJOReponse" type="xs:int" />
+	<xs:element name="identifiant" type="xs:int" />
+	<xs:element name="dateValidation" type="xs:dateTime" />
+	<xs:element name="datePublicationJOReponse" type="xs:dateTime" />
+	<xs:element name="pageJOReponse" type="xs:int" />
+	<xs:element name="verrou" type="xs:string" />
+	<xs:element name="signature" type="xs:string" />
+	<xs:element name="isSignatureValide" type="xs:boolean" default="false" />
+	<xs:element name="AN_rubrique" type="xs:string" />
+	<xs:element name="idAuteurRemoveSignature" type="xs:string" />
+
+	<!-- Errata -->
+	<!-- champ erratum courant de la réponse(cf #0032553) -->
+	<xs:element name="erratum" type="xs:string" />
+	<xs:element name="errata">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="erratum" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="datePublication" type="xs:date" minOccurs="1" maxOccurs="1" />
+							<xs:element name="pageJO" type="xs:int" minOccurs="1" maxOccurs="1" />
+							<xs:element name="texte_erratum" type="xs:string" minOccurs="1" maxOccurs="1" />
+							<xs:element name="texte_consolide" type="xs:string" minOccurs="1" maxOccurs="1" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>

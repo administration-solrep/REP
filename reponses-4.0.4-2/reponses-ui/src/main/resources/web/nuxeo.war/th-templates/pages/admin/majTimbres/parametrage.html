@@ -1,0 +1,173 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout  :: layout (template=~{::main},templateClass='', description='Page parametrage mise à jour des timbres', title=#{majtimbres.title.label})}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <input type="hidden" id="urlPreviousPage" name="urlPreviousPage" th:value="@{${urlPreviousPage}}" />
+
+        <form id="miseAJourForm">
+            <div class="m-t-3 m-b-6 flex flex-row justify-between">
+                <button
+                    class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                    type="button"
+                    onclick="goPreviousPage()"
+                >
+                    [[#{reponses.migration.button.return}]]
+                </button>
+                <button
+                    th:if="${isPageAccessible}"
+                    class="base-btn base-btn--default base-btn--center"
+                    onclick="goToRecap()"
+                    type="button"
+                >
+                    [[#{reponses.migration.button.goToRecap}]]
+                </button>
+            </div>
+
+            <th:block th:if="${isPageAccessible}">
+                <h1 class="m-t-6 m-b-6 base-title base-title--lvl-1">[[#{majtimbres.title.label}]]</h1>
+
+                <div class="page-layout__content--dark m-y-6 p-a-5">
+                    <h2 class="m-b-6 base-title base-title--lvl-2">[[#{majtimbres.title.lvl2.label}]]</h2>
+                    <div class="alert__light m-b-6 alert alert--warning">
+                        <div class="alerts--flex">
+                            <span
+                                class="icon icon--information bubble-icon alert__icon alert__icon--warning"
+                                aria-hidden="true"
+                            ></span
+                            ><span class="sr-only">Alerte</span>[[#{majtimbres.alert}]]
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="form-optin">
+                            <fieldset class="form-optin__fieldset">
+                                <legend
+                                    class="form-optin__legend"
+                                    th:text="#{majtimbres.optinGeneral.label.briserSignature}"
+                                >
+                                    Briser la signature
+                                </legend>
+                                <div class="form-optin__optins">
+                                    <div class="form-optin__container">
+                                        <input
+                                            name="briserToutesSignatures"
+                                            class="form-optin__checkbox"
+                                            id="briserToutesSignaturesOui"
+                                            type="radio"
+                                            value="true"
+                                            onChange="onChangeParametrageSignature()"
+                                            th:checked="${briserToutesSignatures}"
+                                            autocomplete="off"
+                                        /><label
+                                            class="form-optin__label"
+                                            for="briserToutesSignaturesOui"
+                                            th:text="#{choix.oui}"
+                                        >
+                                            Oui
+                                        </label>
+                                    </div>
+                                    <div class="form-optin__container">
+                                        <input
+                                            name="briserToutesSignatures"
+                                            class="form-optin__checkbox"
+                                            id="briserToutesSignaturesNon"
+                                            type="radio"
+                                            onChange="onChangeParametrageSignature()"
+                                            th:checked="${!briserToutesSignatures}"
+                                            value="false"
+                                            autocomplete="off"
+                                        /><label
+                                            class="form-optin__label"
+                                            for="briserToutesSignaturesNon"
+                                            th:text="#{choix.non}"
+                                        >
+                                            Non
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="m-l-12 form-optin">
+                            <fieldset class="form-optin__fieldset">
+                                <legend
+                                    class="form-optin__legend"
+                                    th:text="#{majtimbres.optinGeneral.label.migrerDossier}"
+                                >
+                                    Migrer le dossier
+                                    <!---->
+                                </legend>
+                                <div class="form-optin__optins">
+                                    <div class="form-optin__container">
+                                        <input
+                                            name="migrerTousDossiersClos"
+                                            class="form-optin__checkbox"
+                                            id="migrerTousDossiersClosOui"
+                                            type="radio"
+                                            value="true"
+                                            onChange="onChangeParametrageMigrer()"
+                                            th:checked="${migrerTousDossiersClos}"
+                                            autocomplete="off"
+                                        /><label
+                                            class="form-optin__label"
+                                            for="migrerTousDossiersClosOui"
+                                            th:text="#{choix.oui}"
+                                        >
+                                            Oui
+                                        </label>
+                                    </div>
+                                    <div class="form-optin__container">
+                                        <input
+                                            name="migrerTousDossiersClos"
+                                            class="form-optin__checkbox"
+                                            id="migrerTousDossiersClosNon"
+                                            type="radio"
+                                            onChange="onChangeParametrageMigrer()"
+                                            value="false"
+                                            th:checked="${!migrerTousDossiersClos}"
+                                            autocomplete="off"
+                                        /><label
+                                            class="form-optin__label"
+                                            for="migrerTousDossiersClosNon"
+                                            th:text="#{choix.non}"
+                                        >
+                                            Non
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <th:block th:each="item : ${ministeres}">
+                        <div
+                            th:replace="fragments/components/parametrage-timbres-line :: lineParametrageTimbres(${newMinisteresSelect})"
+                        ></div>
+                    </th:block>
+                </div>
+
+                <div class="m-t-3 m-b-6 flex flex-row justify-between">
+                    <button
+                        class="base-btn base-btn--button base-btn--default base-btn--light base-btn--transparent base-btn--bordered"
+                        type="button"
+                        onclick="goPreviousPage()"
+                        th:text="#{reponses.migration.button.return}"
+                    >
+                        Retour
+                    </button>
+                    <button
+                        class="base-btn base-btn--default base-btn--center"
+                        onclick="goToRecap()"
+                        type="button"
+                        th:text="#{reponses.migration.button.goToRecap}"
+                    >
+                        Récapitulatif
+                    </button>
+                </div>
+            </th:block>
+        </form>
+    </main>
+</html>

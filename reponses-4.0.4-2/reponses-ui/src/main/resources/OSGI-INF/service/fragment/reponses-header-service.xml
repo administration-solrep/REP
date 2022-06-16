@@ -1,0 +1,12 @@
+<component name="fr.dila.reponses.ui.services.impl.ReponsesHeaderServiceImpl">
+
+<require>fr.dila.st.ui.headerservice</require>
+
+  <implementation class="fr.dila.reponses.ui.services.component.ReponsesHeaderComponent" />
+  
+  <service>
+    <provide interface="fr.dila.st.ui.services.HeaderService" />
+  </service>
+  
+
+</component>

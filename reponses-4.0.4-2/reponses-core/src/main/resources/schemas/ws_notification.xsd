@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://nuxeo.org/schemas/ws_notification/"
+    xmlns:wsn="http://nuxeo.org/schemas/ws_notification/"
+>
+
+	<xs:element name="posteId" type="xs:string" />
+	<xs:element name="idQuestion" type="xs:string" />
+	<xs:element name="webservice" type="xs:string" />
+	<xs:element name="nbEssais" type="xs:int" default="0" />
+</xs:schema>

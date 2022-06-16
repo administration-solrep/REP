@@ -1,0 +1,9 @@
+<component name="fr.dila.reponses.ui.favorisTravailComponentService">
+
+  <implementation class="fr.dila.reponses.ui.services.component.FavorisTravailComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.FavorisTravailComponentService" />
+  </service>
+
+</component>

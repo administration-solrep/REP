@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!-- Ce composant lance les batchs de Réponses. /!\ Attention à la syntaxe 
+	non standard de l'expression cron. Voir http://www.jarvana.com/jarvana/view/opensymphony/quartz/1.6.1/quartz-1.6.1-javadoc.jar!/org/quartz/CronExpression.html -->
+<component name="fr.dila.reponses.core.scheduler.lock">
+	<require>org.nuxeo.runtime.started</require>
+	<extension target="org.nuxeo.ecm.platform.scheduler.core.service.SchedulerRegistryService" point="schedule">
+<!-- 
+		<schedule id="lanceurGeneralBatchEvent">
+			<username>${#nuxeo.batch.user}</username>
+			<password>${#nuxeo.batch.password}</password>
+			<eventId>lanceurGeneralBatchEvent</eventId>
+			<eventCategory>cmf</eventCategory>
+			<cronExpression>${nuxeo.batch.lanceurGeneralEvent}</cronExpression>
+		</schedule>
+        
+        <schedule id="questionReminderBatchSchedule">
+            <username>${#nuxeo.batch.user}</username>
+            <password>${#nuxeo.batch.password}</password>
+            <eventId>questionReminderEvent</eventId>
+            <eventCategory>cmf</eventCategory>
+            <cronExpression>${nuxeo.batch.questionReminderEvent}</cronExpression>
+        </schedule>
+
+		<schedule id="wsNotificationEvent">
+			<username>${#nuxeo.batch.user}</username>
+			<password>${#nuxeo.batch.password}</password>
+			<eventId>wsNotificationEvent</eventId>
+			<eventCategory>cmf</eventCategory>
+			<cronExpression>${nuxeo.batch.wsNotificationEvent}</cronExpression>
+		</schedule>
+
+		<schedule id="updateQuestionConnexeBatch">
+			<username>${#nuxeo.batch.user}</username>
+			<password>${#nuxeo.batch.password}</password>
+			<eventId>updateQuestionConnexeBatch</eventId>
+			<eventCategory>cmf</eventCategory>
+			<cronExpression>${nuxeo.batch.updateQuestionEvent}</cronExpression>
+		</schedule>
+
+        <schedule id="cleanDeletedStepBatch">
+            <eventId>cleanDeletedStep</eventId>
+            <eventCategory>cmf</eventCategory>
+            <cronExpression>0 0 * ? * * *</cronExpression>
+        </schedule>
+
+        <schedule id="cleanDeletedDossierLinkBatch">
+            <eventId>cleanDeletedDossierLinkEvent</eventId>
+            <eventCategory>cmf</eventCategory>
+            <cronExpression>0 0 * ? * * *</cronExpression>
+        </schedule> -->
+
+	</extension>
+</component>

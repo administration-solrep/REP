@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://nuxeo.org/schemas/liste_elimination/"
+    xmlns:lel="http://nuxeo.org/schemas/liste_elimination/"
+>
+
+	<xs:element name="en_cours" type="xs:boolean" />
+	<xs:element name="suppression_en_cours" type="xs:boolean" />
+	<xs:element name="abandon_en_cours" type="xs:boolean" />
+</xs:schema>

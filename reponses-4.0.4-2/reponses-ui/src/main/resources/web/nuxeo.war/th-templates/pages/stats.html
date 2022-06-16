@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{layouts/layout :: layout (template=~{::main},templateClass='', description='page statistiques', title=|#{statistique.title} - #{label.stats.nombre(${resultList.nbTotal})}|)}"
+>
+    <main role="main" id="main_content" class="page-layout__content">
+        <div id="ALERT_INFO-archive" class="alert alert--info" th:unless="${#strings.isEmpty(zipFilename)}">
+            <div class="alerts--flex">
+                <span aria-hidden="true" class="icon icon--lightbulb bubble-icon alert__icon alert__icon--info"></span
+                ><span class="sr-only" th:text="#{label.alert.levelinfo.srhelp.INFO}">Information</span>
+                <p class="alert__content">
+                    <a class="link" th:text="${zipFilename}" th:href="@{${zipLink}}"></a>
+                    <th:block th:if="${removeZipAction}">
+                        <button
+                            th:replace="fragments/components/icon-action-button :: icon-action-button(${removeZipAction}, false, 'base-btn--icon-action-bg-primary base-btn--center base-btn--rounded')"
+                        ></button>
+                    </th:block>
+                </p>
+            </div>
+        </div>
+        <div class="page-reponses__table-heading" style="margin-top: 0">
+            <h1 class="base-title base-title--lvl-1" style="flex: 1">
+                [[#{statistique.title}]]
+                <span class="base-paragraph page-reponses__folders-number">
+                    - [[#{label.stats.nombre(${resultList.nbTotal})}]]
+                </span>
+            </h1>
+            <th:block th:if="${zipAction}">
+                <div
+                    th:replace="fragments/components/action-button :: action-button(${zipAction}, false, 'base-btn--secondary base-btn--min base-btn--rounded')"
+                ></div>
+            </th:block>
+        </div>
+        <div
+            th:replace="fragments/table/tableBirtReports :: birtReports(|#{statistique.title} - #{label.stats.nombre(${resultList.nbTotal})}|)"
+        ></div>
+    </main>
+</html>

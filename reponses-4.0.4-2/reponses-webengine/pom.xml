@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>fr.dila.reponses</groupId>
+    <artifactId>reponses-parent</artifactId>
+    <version>4.0.4-2</version>
+  </parent>
+
+  <artifactId>reponses-webengine</artifactId>
+  <name>Reponses WebEngine</name>
+
+  <dependencies>
+    <!-- Dépendances au socle transverse -->
+    <dependency>
+      <groupId>fr.dila.st</groupId>
+      <artifactId>socle-transverse-interoperability</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>fr.dila.st</groupId>
+      <artifactId>socle-transverse-webengine</artifactId>
+    </dependency>
+
+    <!-- Dépendances au socle SOLREP -->
+    <dependency>
+      <groupId>fr.dila.ss</groupId>
+      <artifactId>socle-solrep-core</artifactId>
+    </dependency>
+
+    <!-- Dépendances à Réponses -->
+    <dependency>
+      <groupId>fr.dila.reponses</groupId>
+      <artifactId>reponses-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>fr.dila.reponses</groupId>
+      <artifactId>reponses-core</artifactId>
+    </dependency>
+
+    <!-- Dépendances externes -->
+
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>fr.dila.st</groupId>
+      <artifactId>socle-transverse-core</artifactId>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>fr.dila.reponses</groupId>
+      <artifactId>reponses-core</artifactId>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.nuxeo.ecm.platform</groupId>
+      <artifactId>nuxeo-platform-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.nuxeo.ecm.automation</groupId>
+      <artifactId>nuxeo-automation-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+      <!-- Ce plugin va générer le fichier META-INF/web-types -->
+      <!--			<plugin>
+              <groupId>org.apache.myfaces.tobago</groupId>
+              <artifactId>maven-apt-plugin</artifactId>
+              <executions>
+                <execution>
+                  <id>generate-bindings</id>
+                  <goals>
+                    <goal>execute</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+      -->
+    </plugins>
+  </build>
+
+
+</project>

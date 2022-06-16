@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div class="search-form" th:fragment="rechercheGenerale(form, options)">
+            <fieldset>
+                <legend class="sr-only">[[#{recherche.generale.bloc}]]</legend>
+                <div class="grid__row">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/simple-select :: simpleSelect('recherche.legislature.label', 'legislature', '', ${options.legislatures}, ${form.legislature}, 'false', 'recherche.select.toutes.label')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/simple-select :: simpleSelect('recherche.questions.label', 'questions', '', ${options.typesQuestion}, ${form.questions}, 'false', 'recherche.select.toutes.label')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/checkboxes :: alignedCheckboxes('recherche.statut.reponse.label', 'statusReponse', ${statusReponse}, ${form.statusReponse}, '', 'false', 'true')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/checkboxes :: alignedCheckboxes('recherche.origine.question.label', 'origineQuestion', ${origineQuestion}, ${form.origineQuestion}, '', 'false', 'true')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--full-witdh">
+                        <div
+                            th:replace="fragments/components/formblocks/checkboxes :: alignedCheckboxes('recherche.etat.question.label', 'etatQuestion', ${etatQuestion}, ${form.etatQuestion}, '', 'false', 'true')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle" th:with="validation=query_param">
+                        <div
+                            th:replace="fragments/components/formblocks/simple-input :: simpleInput(#{recherche.numeros.label}, false, 'Exemple : 12 ou 125-130 ou 12;125-130', 'numeros', 'numeros', ${form.numeros}, false)"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/autocomplete-select :: autocompleteSelect('recherche.auteur.label', 'auteur', 'auteur', 'form.description.nocharlimit', ${ {} }, ${ {form.auteur} }, false, @{/ajax/recherche/suggestions?typeSelection=auteur}, '0', 'input', '', '', false, false, false)"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/simple-select :: simpleSelect('recherche.ministere.attributaire.label', 'ministereAttributaire', '',${options.ministeresAttributaires}, ${form.ministereAttributaire}, 'false', 'recherche.select.tous.toutes.label')"
+                        ></div>
+                    </div>
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/simple-select :: simpleSelect('recherche.ministere.interroge.label', 'ministereInterroge', '', ${options.ministeresInterroges}, ${form.ministereInterroge}, 'false', 'recherche.select.tous.toutes.label')"
+                        ></div>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <th:block
+                            th:replace="fragments/components/organigrammeSelectAutocomplete ::organigrammeSelectAutocomplete(
+                                    'recherche.ministere.rattachement.label',
+                                    false,
+                                    'ministereRattachement',
+                                    'ministereRattachement-key',
+                                    'MIN', 
+                                    ${form.ministereRattachement}, 
+                                    false,
+                                    false,
+                                    ${form.mapMinistereRattachement},
+                                    false)"
+                        ></th:block>
+                    </div>
+                    <div class="grid__col grid__col--middle">
+                        <th:block
+                            th:replace="fragments/components/organigrammeSelectAutocomplete ::organigrammeSelectAutocomplete(
+                                    'recherche.direction.pilote.label',
+                                    false,
+                                    'directionPilote',
+                                    'directionPilote-key',
+                                    'DIR_UST', 
+                                    ${form.directionPilote}, 
+                                    false,
+                                    false,
+                                    ${form.mapDirectionPilote},
+                                    false)"
+                        ></th:block>
+                    </div>
+                </div>
+                <div class="grid__row m-t-6">
+                    <div class="grid__col grid__col--middle">
+                        <div
+                            th:replace="fragments/components/formblocks/simple-select :: simpleSelect('recherche.groupe.politique.label', 'groupePolitique', '', ${options.groupesPolitiques}, ${form.groupePolitique}, 'false', 'recherche.select.tous.toutes.label')"
+                        ></div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </body>
+</html>

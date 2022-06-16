@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<con:soapui-project
+    name="REPONSES WS tests"
+    resourceRoot=""
+    soapui-version="3.6.1"
+    abortOnError="false"
+    runType="SEQUENTIAL"
+    xmlns:con="http://eviware.com/soapui/config"
+>
+	<con:settings />
+	<con:interface
+        xsi:type="con:RestService"
+        wadlVersion="http://wadl.dev.java.net/2009/02"
+        name="WSQuestion"
+        type="rest"
+        basePath="/nuxeo/site/reponses/WSquestion/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    >
+		<con:settings />
+
+		<con:definitionCache type="TEXT" rootPart="" />
+		<con:endpoints>
+			<con:endpoint>http://sword-solon-dev.swordgroup.lan</con:endpoint>
+		</con:endpoints>
+		<con:resource name="envoyerQuestions" path="envoyerQuestions">
+			<con:settings />
+			<con:parameters />
+			<con:method name="post" method="POST">
+				<con:settings />
+				<con:parameters />
+				<con:representation type="REQUEST">
+					<con:mediaType>application/xml</con:mediaType>
+					<con:params />
+					<con:element>data</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType xsi:nil="true" />
+					<con:status>0</con:status>
+					<con:params />
+					<con:element>data</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/html</con:mediaType>
+					<con:status>401 404 500</con:status>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>text/html</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="REQUEST">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="REQUEST">
+					<con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:envoyerQuestionsResponse</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType xsi:nil="true" />
+					<con:status>0</con:status>
+					<con:params />
+					<con:element>data</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType xsi:nil="true" />
+					<con:status>0</con:status>
+					<con:params />
+					<con:element>data</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType xsi:nil="true" />
+					<con:status>0</con:status>
+					<con:params />
+					<con:element>data</con:element>
+				</con:representation>
+				<con:request name="Request 1" mediaType="text/xml" postQueryString="false" sslKeystore="">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+							YWRtaW5zZ2c6YWRtaW5zZ2c="
+							xmlns="http://eviware.com/soapui/config"/></con:setting>
+						<con:setting id="RecordRequestRepresentations">true</con:setting>
+					</con:settings>
+					<con:encoding>UTF-8</con:encoding>
+					<con:endpoint>http://sword-solon-dev.swordgroup.lan</con:endpoint>
+					<con:request
+                    ><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wsq:envoyerQuestionsRequest xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:qu="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:rep="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:ns9="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSrecherche" xmlns:ns10="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSnotification">
+    <wsq:questionReponse>
+        <qu:question>
+            <qu:id_question>
+                <numero_question>36002</numero_question>
+                <type>QE</type>
+                <source>AN</source>
+                <legislature>0</legislature>
+            </qu:id_question>
+            <qu:date_publication_jo>2008-11-25</qu:date_publication_jo>
+            <qu:page_jo>10107</qu:page_jo>
+            <qu:ministre_depot id="17">
+                <titre_jo>Éducation nationale</titre_jo>
+                <intitule_min>M. le ministre de l'éducation nationale</intitule_min>
+            </qu:ministre_depot>
+            <qu:auteur id_mandat="386399">
+                <qu:civilite>M.</qu:civilite>
+                <qu:prenom>Philippe Armand</qu:prenom>
+                <qu:nom>Martin</qu:nom>
+                <qu:grp_pol>Non connu</qu:grp_pol>
+            </qu:auteur>
+            <qu:texte>M. Philippe Armand Martin attire l'attention de M. le ministre de l'éducation nationale sur la situation budgétaire des professeurs documentalistes. M. le Président de la République a tenu à ce que tous les Français puissent, dans leurs fonctions, s'ils le souhaitent, bénéficier d'heures supplémentaires dans des conditions très attractives. Les personnels enseignants de l'éducation nationale, tous corps confondus, peuvent accéder à cette opportunité. Or une seule catégorie d'enseignants est exclue de cette possibilité : il s'agit des professeurs documentalistes des lycées et collèges, recrutés par voie de CAPES, et dont la gestion de carrière est la même que celle des certifiés des autres disciplines. Alors que leurs collègues peuvent prétendre à l'obtention d'heures supplémentaires correspondant à leur mode de recrutement et au statut afférent, les professeurs documentalistes n'y ont pas droit. Associés à un même projet pédagogique, à l'occasion de l'accompagnement scolaire ou lors d'une intervention dans le cadre de la formation continue du personnel enseignant, les professeurs documentalistes ne sont pas rémunérés ou, quand ils le sont, à des taux très inférieurs à ceux des autres certifiés. Certes, devant une telle aberration et en signe de reconnaissance pour la qualité du travail réalisé par ces personnels, certains chefs d'établissements ont adopté, un temps, des solutions de « contournement » (avec, par exemple, l'attribution d'heures péri-éducatives). Dans la « lettre flash » du ministère de l'éducation nationale (septembre 2008), « l'engagement a été pris pour les certifiés de documentation qui participent à l'accompagnement éducatif de porter dès la rentrée la rémunération à hauteur de l'heure supplémentaire effective d'enseignement » ; cet engagement n'est, à ce jour, pas entré en application. Mais plus que de porter « à la hauteur de l'HSE effective » une rémunération qui ne s'appliquerait qu'aux heures d'accompagnement éducatif, il importe de généraliser ce principe à l'ensemble des activités pédagogiques exercées par les professeurs documentalistes en dehors de leur horaire statutaire. Autrement, on le constate au quotidien, les palliatifs administratifs entraînent des disparités inacceptables d'une académie à l'autre, d'un établissement à l'autre. De plus, ces situations d'exclusion et ces expédients sont vécus par ces enseignants comme insultants, en regard de leur statut et de la qualité du travail effectué. C'est pourquoi il souhaiterait connaître les mesures envisagées qui permettront aux professeurs documentalistes d'être considérés comme leurs collègues et de bénéficier des mêmes conditions de rétribution pour le travail réalisé dans le cadre de leurs activités de professeur certifié.</qu:texte>
+            <qu:etat_question>EN_COURS</qu:etat_question>
+            <qu:indexation_an>
+                <qu:rubrique>enseignement secondaire : personnel</qu:rubrique>
+                <qu:rubrique_ta>professeurs documentalistes</qu:rubrique_ta>
+                <qu:analyse>rémunérations</qu:analyse>
+            </qu:indexation_an>
+        </qu:question>
+    </wsq:questionReponse>
+</wsq:envoyerQuestionsRequest>
+]]></con:request>
+					<con:credentials>
+						<con:username />
+						<con:password />
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="chercherQuestions" path="chercherQuestions">
+			<con:settings />
+			<con:parameters />
+			<con:method name="post" method="POST">
+				<con:settings />
+				<con:parameters />
+				<con:representation type="RESPONSE">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:chercherQuestionsResponse</con:element>
+				</con:representation>
+				<con:representation type="REQUEST">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:chercherQuestionsResponse</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>text/html</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/html</con:mediaType>
+					<con:status>503 500 401</con:status>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/plain</con:mediaType>
+					<con:status>500</con:status>
+					<con:params />
+					<con:element>data</con:element>
+				</con:representation>
+				<con:request name="Request 1" mediaType="text/xml" postQueryString="false">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+							YWRtaW5zZ2c6YWRtaW5zZ2c="
+							xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:encoding>UTF-8</con:encoding>
+					<con:endpoint>http://sword-solon-dev.swordgroup.lan</con:endpoint>
+					<con:request
+                    ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<chercherQuestionsRequest
+	xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:ar="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar"
+	xmlns:repco="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:qn="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns:rep="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion ../../main/resources/xsd/reponses/WSquestion.xsd ">
+	<login_ministere>50000507</login_ministere>
+	<id_questions>
+		<repco:numero_question>12001</repco:numero_question>
+		<repco:type>QE</repco:type>
+		<repco:source>AN</repco:source>
+		<repco:legislature>13</repco:legislature>
+	</id_questions>
+</chercherQuestionsRequest>
+]]></con:request>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+				<con:request name="Request 2" mediaType="text/xml" postQueryString="false">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+							YWRtaW5zZ2c6YWRtaW5zZ2c="
+							xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>http://sword-solon-dev.swordgroup.lan</con:endpoint>
+					<con:request
+                    ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:chercherQuestionsRequest
+	xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+	xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons"
+	xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions"
+	xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses"
+	xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion ../../main/resources/xsd/reponses/WSquestion.xsd ">
+	<p:login_ministere>50000507</p:login_ministere>
+	<p:jeton_questions>1</p:jeton_questions>
+</p:chercherQuestionsRequest>
+]]></con:request>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="chercherErrataQuestions" path="chercherErrataQuestions">
+			<con:settings />
+			<con:parameters />
+			<con:method name="post" method="POST">
+				<con:settings />
+				<con:parameters />
+				<con:representation type="REQUEST">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:chercherErrataQuestionsResponse</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:chercherErrataQuestionsResponse</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/plain</con:mediaType>
+					<con:status>400</con:status>
+					<con:params />
+					<con:element>data</con:element>
+				</con:representation>
+				<con:request name="Request 1" mediaType="text/xml" postQueryString="false">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+							YWRtaW5zZ2c6YWRtaW5zZ2c="
+							xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>http://sword-solon-dev.swordgroup.lan</con:endpoint>
+					<con:request
+                    ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:chercherErrataQuestionsRequest xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion WSquestion.xsd ">
+  <p:jeton_errata>2</p:jeton_errata>
+  <p:login_ministere>50000507</p:login_ministere>
+</p:chercherErrataQuestionsRequest>
+]]></con:request>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="chercherChangementDEtatQuestions" path="chercherChangementDEtatQuestions">
+			<con:settings />
+			<con:parameters />
+			<con:method name="post" method="POST">
+				<con:settings />
+				<con:parameters />
+				<con:representation type="REQUEST">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/html</con:mediaType>
+					<con:status>401</con:status>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:chercherChangementDEtatQuestionsResponse
+					</con:element>
+				</con:representation>
+				<con:request name="Request 1" mediaType="text/xml" postQueryString="false">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+							YWRtaW5zZ2c6YWRtaW5zZ2c="
+							xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>http://sword-solon-dev.swordgroup.lan</con:endpoint>
+					<con:request
+                    ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:chercherChangementDEtatQuestionsRequest xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion WSquestion.xsd ">
+  <p:jeton_changements_etat>0</p:jeton_changements_etat>
+  <p:login_ministere>5003</p:login_ministere>
+</p:chercherChangementDEtatQuestionsRequest>
+]]></con:request>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="envoyerQuestionsErrata" path="envoyerQuestionsErrata">
+			<con:settings />
+			<con:parameters />
+			<con:method name="post" method="POST">
+				<con:settings />
+				<con:parameters />
+				<con:representation type="RESPONSE">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:envoyerQuestionsErrataResponse</con:element>
+				</con:representation>
+				<con:representation type="REQUEST">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:envoyerQuestionsErrataResponse</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/plain</con:mediaType>
+					<con:status>400</con:status>
+					<con:params />
+					<con:element>data</con:element>
+				</con:representation>
+				<con:request name="Request 1" mediaType="text/xml" postQueryString="false">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+							YWRtaW5zZ2c6YWRtaW5zZ2c="
+							xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>http://sword-solon-dev.swordgroup.lan</con:endpoint>
+					<con:request
+                    ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:envoyerQuestionsErrataRequest xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion WSquestion.xsd ">
+  <p:erratum>
+    <p1:id_question>
+      <p1:numero_question>0</p1:numero_question>
+      <p1:type>QE</p1:type>
+      <p1:source>AN</p1:source>
+      <p1:legislature>0</p1:legislature>
+    </p1:id_question>
+    <p1:date_publication_erratum>2001-01-01</p1:date_publication_erratum>
+    <p1:page_jo_erratum>0</p1:page_jo_erratum>
+    <p1:texte_erratum>p1:texte_erratum</p1:texte_erratum>
+    <p1:texte_consolide>p1:texte_consolide</p1:texte_consolide>
+  </p:erratum>
+</p:envoyerQuestionsErrataRequest>
+]]></con:request>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="changerEtatQuestions" path="changerEtatQuestions">
+			<con:settings />
+			<con:parameters />
+			<con:method name="post" method="POST">
+				<con:settings />
+				<con:parameters />
+				<con:representation type="REQUEST">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:changerEtatQuestionsResponse</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element
+                        xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion"
+                    >wsq:changerEtatQuestionsResponse</con:element>
+				</con:representation>
+				<con:request name="Request 1" mediaType="text/xml" postQueryString="false">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+							YWRtaW5zZ2c6YWRtaW5zZ2c="
+							xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>http://sword-solon-dev.swordgroup.lan</con:endpoint>
+					<con:request
+                    ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:changerEtatQuestionsRequest xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion WSquestion.xsd ">
+  <p:nouvel_etat>
+    <p1:id_question>
+      <p1:numero_question>0</p1:numero_question>
+      <p1:type>QE</p1:type>
+      <p1:source>AN</p1:source>
+      <p1:legislature>0</p1:legislature>
+    </p1:id_question>
+    <p1:type_modif>EN_COURS</p1:type_modif>
+    <p1:date_modif>2001-01-01</p1:date_modif>
+  </p:nouvel_etat>
+</p:changerEtatQuestionsRequest>
+]]></con:request>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+			</con:method>
+		</con:resource>
+	</con:interface>
+	<con:interface
+        xsi:type="con:RestService"
+        wadlVersion="http://wadl.dev.java.net/2009/02"
+        name="WSReponse"
+        type="rest"
+        basePath="/nuxeo/site/reponses/WSReponse/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    >
+		<con:settings />
+		<con:definitionCache />
+		<con:endpoints />
+		<con:resource name="chercherReponses" path="chercherReponses">
+			<con:settings />
+			<con:parameters />
+			<con:method name="post" method="POST">
+				<con:settings />
+				<con:parameters />
+				<con:representation type="FAULT">
+					<con:mediaType>text/html</con:mediaType>
+					<con:status>404</con:status>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="REQUEST">
+					<con:mediaType>text/xml</con:mediaType>
+					<con:params />
+					<con:element>html</con:element>
+				</con:representation>
+				<con:request name="Request 1" mediaType="text/xml" postQueryString="false">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+					</con:settings>
+					<con:endpoint>http://sword-solon-dev.swordgroup.lan</con:endpoint>
+					<con:request
+                    ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:chercherReponsesRequest xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSreponse" xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSreponse WSreponse.xsd ">
+  <p:login>50000507</p:login>
+  <p:jeton>1</p:jeton>
+</p:chercherReponsesRequest>]]></con:request>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+			</con:method>
+		</con:resource>
+	</con:interface>
+	<con:testSuite name="WSQuestion TestSuite">
+		<con:description>TestSuite generated for REST Service [WSQuestion]
+		</con:description>
+		<con:settings />
+		<con:runType>SEQUENTIAL</con:runType>
+		<con:testCase
+            failOnError="true"
+            failTestCaseOnErrors="true"
+            keepSession="false"
+            maxResults="0"
+            name="envoyerQuestions TestCase"
+            searchProperties="true"
+            id="d68237d0-b2c3-4d7d-8250-5eae0d41c03f"
+        >
+			<con:description>TestCase generated for REST Resource
+				[envoyerQuestions] located at [/envoyerQuestions]</con:description>
+			<con:settings />
+			<con:testStep type="restrequest" name="Request 1">
+				<con:settings />
+				<con:config
+                    service="WSQuestion"
+                    resourcePath="/nuxeo/site/reponses/WSquestion/envoyerQuestions"
+                    methodName="post"
+                    xsi:type="con:RestRequestStep"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                >
+					<con:restRequest name="Request 1" mediaType="text/xml" postQueryString="false" sslKeystore="" accept="">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+								YWRtaW5zZ2c6YWRtaW5zZ2c="
+								xmlns="http://eviware.com/soapui/config"/></con:setting>
+							<con:setting id="RecordRequestRepresentations">true</con:setting>
+						</con:settings>
+						<con:encoding>UTF-8</con:encoding>
+						<con:endpoint>http://sword-solon-dev.swordgroup.lan
+						</con:endpoint>
+						<con:request
+                        ><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wsq:envoyerQuestionsRequest xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:qu="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:rep="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:wsq="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:ns9="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSrecherche" xmlns:ns10="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSnotification">
+    <wsq:questionReponse>
+        <qu:question>
+            <qu:id_question>
+                <numero_question>36002</numero_question>
+                <type>QE</type>
+                <source>AN</source>
+                <legislature>0</legislature>
+            </qu:id_question>
+            <qu:date_publication_jo>2008-11-25</qu:date_publication_jo>
+            <qu:page_jo>10107</qu:page_jo>
+            <qu:ministre_depot id="17">
+                <titre_jo>Éducation nationale</titre_jo>
+                <intitule_min>M. le ministre de l'éducation nationale</intitule_min>
+            </qu:ministre_depot>
+            <qu:auteur id_mandat="386399">
+                <qu:civilite>M.</qu:civilite>
+                <qu:prenom>Philippe Armand</qu:prenom>
+                <qu:nom>Martin</qu:nom>
+                <qu:grp_pol>Non connu</qu:grp_pol>
+            </qu:auteur>
+            <qu:texte>M. Philippe Armand Martin attire l'attention de M. le ministre de l'éducation nationale sur la situation budgétaire des professeurs documentalistes. M. le Président de la République a tenu à ce que tous les Français puissent, dans leurs fonctions, s'ils le souhaitent, bénéficier d'heures supplémentaires dans des conditions très attractives. Les personnels enseignants de l'éducation nationale, tous corps confondus, peuvent accéder à cette opportunité. Or une seule catégorie d'enseignants est exclue de cette possibilité : il s'agit des professeurs documentalistes des lycées et collèges, recrutés par voie de CAPES, et dont la gestion de carrière est la même que celle des certifiés des autres disciplines. Alors que leurs collègues peuvent prétendre à l'obtention d'heures supplémentaires correspondant à leur mode de recrutement et au statut afférent, les professeurs documentalistes n'y ont pas droit. Associés à un même projet pédagogique, à l'occasion de l'accompagnement scolaire ou lors d'une intervention dans le cadre de la formation continue du personnel enseignant, les professeurs documentalistes ne sont pas rémunérés ou, quand ils le sont, à des taux très inférieurs à ceux des autres certifiés. Certes, devant une telle aberration et en signe de reconnaissance pour la qualité du travail réalisé par ces personnels, certains chefs d'établissements ont adopté, un temps, des solutions de « contournement » (avec, par exemple, l'attribution d'heures péri-éducatives). Dans la « lettre flash » du ministère de l'éducation nationale (septembre 2008), « l'engagement a été pris pour les certifiés de documentation qui participent à l'accompagnement éducatif de porter dès la rentrée la rémunération à hauteur de l'heure supplémentaire effective d'enseignement » ; cet engagement n'est, à ce jour, pas entré en application. Mais plus que de porter « à la hauteur de l'HSE effective » une rémunération qui ne s'appliquerait qu'aux heures d'accompagnement éducatif, il importe de généraliser ce principe à l'ensemble des activités pédagogiques exercées par les professeurs documentalistes en dehors de leur horaire statutaire. Autrement, on le constate au quotidien, les palliatifs administratifs entraînent des disparités inacceptables d'une académie à l'autre, d'un établissement à l'autre. De plus, ces situations d'exclusion et ces expédients sont vécus par ces enseignants comme insultants, en regard de leur statut et de la qualité du travail effectué. C'est pourquoi il souhaiterait connaître les mesures envisagées qui permettront aux professeurs documentalistes d'être considérés comme leurs collègues et de bénéficier des mêmes conditions de rétribution pour le travail réalisé dans le cadre de leurs activités de professeur certifié.</qu:texte>
+            <qu:etat_question>EN_COURS</qu:etat_question>
+            <qu:indexation_an>
+                <qu:rubrique>enseignement secondaire : personnel</qu:rubrique>
+                <qu:rubrique_ta>professeurs documentalistes</qu:rubrique_ta>
+                <qu:analyse>rémunérations</qu:analyse>
+            </qu:indexation_an>
+        </qu:question>
+    </wsq:questionReponse>
+</wsq:envoyerQuestionsRequest>
+]]></con:request>
+						<con:assertion type="Simple Contains" name="Contains">
+							<con:configuration>
+								<token>envoyerQuestionsResponse</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:credentials>
+							<con:username />
+							<con:password />
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+						<con:jmsPropertyConfig />
+						<con:parameters />
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:loadTest name="LoadTest 1">
+				<con:settings>
+					<con:setting id="HttpSettings@close-connections">false</con:setting>
+				</con:settings>
+				<con:threadCount>5</con:threadCount>
+				<con:startDelay>0</con:startDelay>
+				<con:sampleInterval>250</con:sampleInterval>
+				<con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed>
+				<con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange>
+				<con:historyLimit>-1</con:historyLimit>
+				<con:testLimit>60</con:testLimit>
+				<con:limitType>TIME</con:limitType>
+				<con:loadStrategy>
+					<con:type>Simple</con:type>
+				</con:loadStrategy>
+				<con:assertion type="Step Status" name="Step Status" />
+				<con:maxAssertionErrors>100</con:maxAssertionErrors>
+				<con:cancelExcessiveThreads>true</con:cancelExcessiveThreads>
+				<con:strategyInterval>500</con:strategyInterval>
+			</con:loadTest>
+			<con:properties />
+		</con:testCase>
+		<con:testCase
+            failOnError="true"
+            failTestCaseOnErrors="true"
+            keepSession="false"
+            maxResults="0"
+            name="chercherQuestions TestCase"
+            searchProperties="true"
+            id="66efebc3-8521-4fdf-a988-2694158e9cda"
+        >
+			<con:description>TestCase generated for REST Resource
+				[chercherQuestions] located at [/chercherQuestions]
+			</con:description>
+			<con:settings />
+			<con:testStep type="restrequest" name="Request 1">
+				<con:settings />
+				<con:config
+                    service="WSQuestion"
+                    resourcePath="/nuxeo/site/reponses/WSquestion/chercherQuestions"
+                    methodName="post"
+                    xsi:type="con:RestRequestStep"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                >
+					<con:restRequest name="Request 1" mediaType="text/xml" postQueryString="false" accept="">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+								YWRtaW5zZ2c6YWRtaW5zZ2c="
+								xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:encoding>UTF-8</con:encoding>
+						<con:endpoint>http://sword-solon-dev.swordgroup.lan
+						</con:endpoint>
+						<con:request
+                        ><![CDATA[<chercherQuestionsRequest xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion D:\AGORA-SOLON\EXECUT~1\LIVRAB~1\Interoperabilite\20110223\reponses\WSquestion.xsd" xmlns="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:ar="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:repco="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:qn="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:rep="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<login_ministere>50000507</login_ministere>
+
+   <id_questions>
+      <repco:numero_question>12001</repco:numero_question>
+      <repco:type>QE</repco:type>
+      <repco:source>AN</repco:source>
+      <repco:legislature>13</repco:legislature>
+   </id_questions>
+</chercherQuestionsRequest>]]></con:request>
+						<con:assertion type="Simple Contains" name="Contains">
+							<con:configuration>
+								<token>chercherQuestionsResponse</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+						<con:jmsPropertyConfig />
+						<con:parameters />
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:properties />
+		</con:testCase>
+		<con:testCase
+            failOnError="true"
+            failTestCaseOnErrors="true"
+            keepSession="false"
+            maxResults="0"
+            name="chercherErrataQuestions TestCase"
+            searchProperties="true"
+            id="14c85967-83e7-4904-b432-bdc9a9e45935"
+        >
+			<con:description>TestCase generated for REST Resource
+				[chercherErrataQuestions] located at [/chercherErrataQuestions]
+			</con:description>
+			<con:settings />
+			<con:testStep type="restrequest" name="Request 1">
+				<con:settings />
+				<con:config
+                    service="WSQuestion"
+                    resourcePath="/nuxeo/site/reponses/WSquestion/chercherErrataQuestions"
+                    methodName="post"
+                    xsi:type="con:RestRequestStep"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                >
+					<con:restRequest name="Request 1" mediaType="text/xml" postQueryString="false">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+								YWRtaW5zZ2c6YWRtaW5zZ2c="
+								xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>http://sword-solon-dev.swordgroup.lan
+						</con:endpoint>
+						<con:request
+                        ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:chercherErrataQuestionsRequest xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion WSquestion.xsd ">
+  <p:jeton_errata>2</p:jeton_errata>
+  <p:login_ministere>50000507</p:login_ministere>
+</p:chercherErrataQuestionsRequest>
+]]></con:request>
+						<con:assertion type="Simple Contains" name="Contains">
+							<con:configuration>
+								<token>chercherErrataQuestionsResponse</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+						<con:jmsPropertyConfig />
+						<con:parameters />
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:properties />
+		</con:testCase>
+		<con:testCase
+            failOnError="true"
+            failTestCaseOnErrors="true"
+            keepSession="false"
+            maxResults="0"
+            name="chercherChangementDEtatQuestions TestCase"
+            searchProperties="true"
+            id="9eb91f77-5a35-48cf-8a55-d10434144cd9"
+        >
+			<con:description>TestCase generated for REST Resource
+				[chercherChangementDEtatQuestions] located at
+				[/chercherChangementDEtatQuestions]</con:description>
+			<con:settings />
+			<con:testStep type="restrequest" name="Request 1">
+				<con:settings />
+				<con:config
+                    service="WSQuestion"
+                    resourcePath="/nuxeo/site/reponses/WSquestion/chercherChangementDEtatQuestions"
+                    methodName="post"
+                    xsi:type="con:RestRequestStep"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                >
+					<con:restRequest name="Request 1" mediaType="text/xml" postQueryString="false">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+								YWRtaW5zZ2c6YWRtaW5zZ2c="
+								xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>http://sword-solon-dev.swordgroup.lan
+						</con:endpoint>
+						<con:request
+                        ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:chercherChangementDEtatQuestionsRequest xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion WSquestion.xsd ">
+  <p:jeton_changements_etat>0</p:jeton_changements_etat>
+  <p:login_ministere>5003</p:login_ministere>
+</p:chercherChangementDEtatQuestionsRequest>
+]]></con:request>
+						<con:assertion type="Simple Contains" name="Contains">
+							<con:configuration>
+								<token>chercherChangementDEtatQuestionsResponse</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+						<con:jmsPropertyConfig />
+						<con:parameters />
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:properties />
+		</con:testCase>
+		<con:testCase
+            failOnError="true"
+            failTestCaseOnErrors="true"
+            keepSession="false"
+            maxResults="0"
+            name="envoyerQuestionsErrata TestCase"
+            searchProperties="true"
+            id="8953c3b9-c80b-4870-b7ef-95ce33310d35"
+        >
+			<con:description>TestCase generated for REST Resource
+				[envoyerQuestionsErrata] located at [/envoyerQuestionsErrata]
+			</con:description>
+			<con:settings />
+			<con:testStep type="restrequest" name="Request 1">
+				<con:settings />
+				<con:config
+                    service="WSQuestion"
+                    resourcePath="/nuxeo/site/reponses/WSquestion/envoyerQuestionsErrata"
+                    methodName="post"
+                    xsi:type="con:RestRequestStep"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                >
+					<con:restRequest name="Request 1" mediaType="text/xml" postQueryString="false">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+								YWRtaW5zZ2c6YWRtaW5zZ2c="
+								xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>http://sword-solon-dev.swordgroup.lan
+						</con:endpoint>
+						<con:request
+                        ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:envoyerQuestionsErrataRequest xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion WSquestion.xsd ">
+  <p:erratum>
+    <p1:id_question>
+      <p1:numero_question>214165</p1:numero_question>
+      <p1:type>QE</p1:type>
+      <p1:source>AN</p1:source>
+      <p1:legislature>0</p1:legislature>
+    </p1:id_question>
+    <p1:date_publication_erratum>2001-01-01</p1:date_publication_erratum>
+    <p1:page_jo_erratum>0</p1:page_jo_erratum>
+    <p1:texte_erratum>p1:texte_erratum</p1:texte_erratum>
+    <p1:texte_consolide>Ceci est la vrai question du texte consolidé</p1:texte_consolide>
+  </p:erratum>
+</p:envoyerQuestionsErrataRequest>
+
+]]></con:request>
+						<con:assertion type="Simple Contains" name="Contains">
+							<con:configuration>
+								<token>envoyerQuestionsErrataResponse</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+						<con:jmsPropertyConfig />
+						<con:parameters />
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:properties />
+		</con:testCase>
+		<con:testCase
+            failOnError="true"
+            failTestCaseOnErrors="true"
+            keepSession="false"
+            maxResults="0"
+            name="changerEtatQuestions TestCase"
+            searchProperties="true"
+            id="4ad6e348-ce8c-4740-a381-eb5533a7a1c3"
+        >
+			<con:description>TestCase generated for REST Resource
+				[changerEtatQuestions] located at [/changerEtatQuestions]
+			</con:description>
+			<con:settings />
+			<con:testStep type="restrequest" name="Request 1">
+				<con:settings />
+				<con:config
+                    service="WSQuestion"
+                    resourcePath="/nuxeo/site/reponses/WSquestion/changerEtatQuestions"
+                    methodName="post"
+                    xsi:type="con:RestRequestStep"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                >
+					<con:restRequest name="Request 1" mediaType="text/xml" postQueryString="false">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic
+								YWRtaW5zZ2c6YWRtaW5zZ2c="
+								xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>http://sword-solon-dev.swordgroup.lan
+						</con:endpoint>
+						<con:request
+                        ><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<p:changerEtatQuestionsRequest xmlns:p="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion" xmlns:p1="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/commons" xmlns:p2="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/questions" xmlns:p3="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/reponses" xmlns:p4="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/ar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dila.premier-ministre.gouv.fr/solrep/reponses/WSquestion WSquestion.xsd ">
+  <p:nouvel_etat>
+    <p1:id_question>
+      <p1:numero_question>0</p1:numero_question>
+      <p1:type>QE</p1:type>
+      <p1:source>AN</p1:source>
+      <p1:legislature>0</p1:legislature>
+    </p1:id_question>
+    <p1:type_modif>EN_COURS</p1:type_modif>
+    <p1:date_modif>2001-01-01</p1:date_modif>
+  </p:nouvel_etat>
+</p:changerEtatQuestionsRequest>
+]]></con:request>
+						<con:assertion type="Simple Contains" name="Contains">
+							<con:configuration>
+								<token>changerEtatQuestionsResponse</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+						<con:jmsPropertyConfig />
+						<con:parameters />
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:properties />
+		</con:testCase>
+		<con:properties />
+	</con:testSuite>
+	<con:properties />
+	<con:wssContainer />
+</con:soapui-project>

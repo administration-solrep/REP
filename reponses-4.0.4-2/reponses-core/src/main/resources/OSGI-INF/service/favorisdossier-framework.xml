@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de favoris de dossier de l'application 
+	Réponses. -->
+<component name="fr.dila.reponses.core.service.FavorisDossierService">
+	<implementation class="fr.dila.reponses.core.component.FavorisDossierComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.FavorisDossierService" />
+	</service>
+</component>

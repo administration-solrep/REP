@@ -1,0 +1,10 @@
+<component name="fr.dila.reponses.ui.SsDerniersElementsService">
+
+  <implementation class="fr.dila.reponses.ui.services.component.ReponsesDerniersElementsComponent" />
+  
+  <service>
+    <provide interface="fr.dila.reponses.ui.services.ReponsesDerniersElementsComponentService" />
+  </service>
+  
+
+</component>

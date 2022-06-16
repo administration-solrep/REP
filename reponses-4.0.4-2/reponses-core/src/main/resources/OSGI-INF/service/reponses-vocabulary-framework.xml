@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de vocabulaire de l'application Réponses. -->
+<component name="fr.dila.reponses.core.service.ReponsesVocabularyService">
+	<require>fr.dila.st.core.service.VocabularyService</require>
+	<implementation class="fr.dila.reponses.core.component.ReponsesVocabularyComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.ReponsesVocabularyService" />
+	</service>
+</component>

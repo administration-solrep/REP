@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component name="fr.dila.reponses.ui.services.actions.ReponsesDossierDistributionActionService">
+	<implementation class="fr.dila.reponses.ui.services.actions.component.ReponsesDossierDistributionActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.ReponsesDossierDistributionActionService" />
+	</service>
+
+</component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service des statuts d'étape de feuille de route de l'application Reponses -->
+<component name="fr.dila.reponses.api.service.vocabulary.StatutEtapeRechercheService">
+	<implementation class="fr.dila.reponses.core.service.vocabulary.StatutEtapeRechercheComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.api.service.vocabulary.StatutEtapeRechercheService" />
+	</service>
+</component>

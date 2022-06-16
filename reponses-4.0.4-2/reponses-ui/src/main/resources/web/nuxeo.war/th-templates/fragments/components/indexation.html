@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <th:block th:fragment="indexation(indexationZone, indexationCaption, indexation, directories, isComp, mode)">
+            <th:block th:if="${mode == 'edit'}" th:with="acceptsCustomTags=${acceptsCustomTags} ?: false">
+                <fieldset>
+                    <legend class="sr-only" th:text="${indexationCaption}"></legend>
+                    <div
+                        th:each="directoryName: ${directories}"
+                        th:unless="${isComp and directoryName == 'TA_rubrique'}"
+                        th:id="|${directoryName}-${indexationZone}${isComp ? '-comp' : ''}-container|"
+                        class="indexation-container"
+                    >
+                        <div
+                            class="form-input"
+                            th:replace="fragments/components/formblocks/autocomplete-select :: autocompleteSelect(
+	                            ${'label.vocabulary.' + directoryName }, 
+	                            |${directoryName}-${indexationZone}${isComp ? '-comp' : ''}|, 
+	                            |${directoryName}${isComp ? '-comp' : ''}|, 
+	                            'form.description.nocharlimit', 
+	                            ${ {} }, 
+	                            ${indexation !=null && indexation.get(directoryName) !=null ? indexation.get(directoryName).allValues : {} }, 
+	                            'false', 
+	                            ${acceptsCustomTags} ? null : @{|/ajax/dossier/suggestions?typeSelection=${directoryName}|},
+	                            '0',
+	                            'input',
+	                            '',
+	                            '',
+	                             false,
+	                             true,
+	                            ${acceptsCustomTags})"
+                        ></div>
+                    </div>
+                </fieldset>
+            </th:block>
+            <table
+                class="folder-detail__table indexation-table-view"
+                th:id="|indexation-${indexationZone}${isComp ? '-comp' : ''}|"
+                th:if="${mode != 'edit'}"
+            >
+                <tbody>
+                    <tr class="folder-detail__table-line">
+                        <th
+                            class="folder-detail__table-cell"
+                            scope="col"
+                            th:text="#{bordereau.indexation.categorie.label}"
+                        ></th>
+                        <th
+                            class="folder-detail__table-cell"
+                            scope="col"
+                            th:text="#{bordereau.indexation.libelle.label}"
+                        ></th>
+                    </tr>
+                    <th:block th:each="indexItem: ${indexation}">
+                        <tr
+                            class="folder-detail__table-line"
+                            th:each="indexItemData: ${indexItem.value.allValues}"
+                            th:unless="${isComp and indexItem.key == 'TA_rubrique'}"
+                        >
+                            <th
+                                class="folder-detail__table-cell"
+                                th:text="${#messages.msg(indexItem.value.labels.get(indexItemData))}"
+                                scope="row"
+                            ></th>
+                            <td class="folder-detail__table-cell" th:text="${indexItemData}"></td>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+        </th:block>
+    </body>
+</html>

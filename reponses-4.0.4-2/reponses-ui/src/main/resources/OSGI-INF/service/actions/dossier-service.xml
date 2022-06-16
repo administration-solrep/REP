@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Ce composant contribue le service de gestion du dossier -->
+<component name="fr.dila.reponses.ui.services.actions.impl.DossierActionServiceImpl">
+	<implementation class="fr.dila.reponses.ui.services.actions.component.DossierActionComponent" />
+
+	<service>
+		<provide interface="fr.dila.reponses.ui.services.actions.DossierActionService" />
+	</service>
+
+</component>

@@ -1,0 +1,58 @@
+{
+    "liste": [
+        {
+            "id": "1",
+            "titre": "Liste d'élimination 0027",
+            "dateCreation": "16/10/20 15:43",
+            "actions": [
+                {
+                    "label": "eliminationDonnees.action.label.editerBordereau",
+                    "link": "javascript:alert('Editer bordereau')",
+                    "enabled": true
+                },
+                {
+                    "label": "eliminationDonnees.action.label.vider",
+                    "link": "javascript:alert('Vider')",
+                    "enabled": true
+                },
+                {
+                    "label": "eliminationDonnees.action.label.eliminer",
+                    "link": "javascript:alert('Eliminer les données')",
+                    "enabled": true
+                },
+                {
+                    "label": "eliminationDonnees.action.label.abandonner",
+                    "link": "javascript:alert('Abandonner')",
+                    "enabled": true
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "titre": "Liste d'élimination 0028 en cours",
+            "dateCreation": "13/10/20 17:52",
+            "actions": [
+                {
+                    "label": "EliminationDonnees.action.label.editerBordereau",
+                    "link": "javascript:alert('Editer bordereau')",
+                    "enabled": true
+                },
+                {
+                    "label": "eliminationDonnees.action.label.vider",
+                    "link": "javascript:alert('Vider')",
+                    "enabled": true
+                },
+                {
+                    "label": "EliminationDonnees.action.label.eliminer",
+                    "link": "javascript:alert('Eliminer les données')",
+                    "enabled": true
+                },
+                {
+                    "label": "eliminationDonnees.action.label.abandonner",
+                    "link": "javascript:alert('Abandonner')",
+                    "enabled": true
+                }
+            ]
+        }
+    ]
+}

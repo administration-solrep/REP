@@ -1,0 +1,11 @@
+<component name="fr.dila.reponses.ui.services.component.TemplateUIComponent">
+    <require>fr.dila.ss.ui.services.component.SSTemplateUIComponent</require>
+
+    <implementation class="fr.dila.reponses.ui.services.component.TemplateUIComponent" />
+
+    <service>
+        <provide interface="fr.dila.ss.ui.services.SSTemplateUIService" />
+    </service>
+
+
+</component>
